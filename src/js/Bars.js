@@ -39,12 +39,11 @@ function GroupedBars (domNode, data, seriesField, categoryField, valueField, gro
 				var groupWidth = (barOffset * this.seriesNames.length) - barOffset + barWidthFactor;
 				var fieldX = (catIndex + 0.5) * this.seriesNames.length - (groupWidth * 0.5);
 				var seriesX = barOffset * seriesIndex;
-
 				var attrs = {
 					width: barWidthFactor,
-					height: Math.abs(datapoint.value),
+					height: Math.abs(datapoint[valueField]),
 					x: fieldX + seriesX,
-					y: this.getPosition(datapoint.value, max, 0),
+					y: this.getPosition(datapoint[valueField], max, 0),
 					class: "Bar " + "series-" + (seriesIndex + 1)
 				}
 

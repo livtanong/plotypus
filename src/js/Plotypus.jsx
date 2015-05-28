@@ -45,17 +45,17 @@ var Chart = React.createClass({
 	}
 });
 
-var CharttableRow = React.createClass({
+var PlotypusRow = React.createClass({
 	render: function() {
 		return (
-			<div className="CharttableRow">
+			<div className="PlotypusRow">
 				{ this.props.children }
 			</div>
 		);
 	}
 });
 
-var Charttable = React.createClass({
+var Plotypus = React.createClass({
 	render: function() {
 		return (
 			<div {...this.props} className={ classnames("Plotypus", this.props.className) }>
@@ -66,8 +66,8 @@ var Charttable = React.createClass({
 });
 
 module.exports = {
-	Charttable: Charttable,
-	CharttableRow: CharttableRow,
+	Plotypus: Plotypus,
+	PlotypusRow: PlotypusRow,
 	Chart: Chart,
 	GroupedBarLayer: GroupedBarLayer,
 	StackedBarLayer: StackedBarLayer,
