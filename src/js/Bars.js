@@ -44,7 +44,7 @@ function GroupedBars (domNode, data, seriesField, categoryField, valueField, gro
 					height: Math.abs(datapoint[valueField]),
 					x: fieldX + seriesX,
 					y: this.getPosition(datapoint[valueField], max, 0),
-					class: "Bar " + "series-" + (seriesIndex + 1)
+					class: "Bar " + "category-" + (seriesIndex + 1)
 				}
 
 				this.addSVGElement(this.content, "rect", attrs);
