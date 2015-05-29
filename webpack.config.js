@@ -21,7 +21,7 @@ styleLoaders.forEach(function(item) {
 module.exports = {
   entry: "./docs/js/index.jsx",
   output: {
-    path: "build",
+    path: __dirname,
     filename: "bundle.js"
   },
   resolve: {
