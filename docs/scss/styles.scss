@@ -1,0 +1,42 @@
+@import "bourbon";
+@import "variables";
+
+body {
+	margin: 0;
+	font-family: 'Roboto';
+	color: $dark
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.toolbar {
+	@include display(flex);
+	@include align-items(center);
+	height: 64px;
+	background-color: $accentDark;
+	color: white;
+	h1 {
+		font-size: 24px;
+		font-weight: 100;
+		margin: 0px 16px;
+	}
+	.spacer {
+		@include flex(1);
+	}
+	.toolbar-item {
+		margin: 0px 16px;
+		cursor: pointer;
+	}
+}
+
+.split-pane {
+	@include display(flex);
+	.sidebar {
+		width: 240px;
+		background-color: #eee;
+	}
+}

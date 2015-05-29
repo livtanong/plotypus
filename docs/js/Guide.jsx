@@ -1,7 +1,7 @@
 import React from "react";
 import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotypus.jsx";
 
-export default class ApiDocs extends React.Component {
+export default class Guide extends React.Component {
 	genData(count, values, cats, series) {
 	  /*
 	    count (Number):           How many datapoints you want.
@@ -20,10 +20,10 @@ export default class ApiDocs extends React.Component {
 	render() {
 		var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
 		return (
-			<div className="ApiDocs split-pane">
+			<div className="Guide split-pane">
 				<div className="sidebar">
 					<div>
-						<h4>Structure</h4>
+						<h4>Derp</h4>
 						<ul>
 							<li><a>Plotypus</a></li>
 							<li><a>PlotypusRow</a></li>

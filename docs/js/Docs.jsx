@@ -6,6 +6,7 @@ import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotyp
 
 import ApiDocs from "./ApiDocs";
 import Home from "./Home";
+import Guide from "./Guide";
 
 export default class Docs extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class Docs extends React.Component {
 
     this.views = {
       "HOME": "HOME",
+      "GUIDE": "GUIDE",
       "API": "API"
     }
 
@@ -28,6 +30,9 @@ export default class Docs extends React.Component {
       switch (this.state.currentView) {
         case this.views.HOME:
           return <Home />
+          break;
+        case this.views.GUIDE:
+          return <Guide />
           break;
         case this.views.API:
           return <ApiDocs />
