@@ -40833,7 +40833,20 @@
 	    key: "render",
 	    value: function render() {
 	      var data = this.genData(8, [0, 8]);
-	      console.log(data);
+
+	      var sineFunc = function sineFunc(x, offset) {
+	        var offset = offset || 0;
+	        return Math.sin(x + offset) * 4 + 4;
+	      };
+
+	      var sineData = _.times(8, function (n) {
+	        return {
+	          value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	          category: n,
+	          series: null
+	        };
+	      });
+	      // console.log(data);
 	      return _react2["default"].createElement(
 	        "div",
 	        null,
@@ -40900,14 +40913,19 @@
 	                categoryField: "category",
 	                seriesField: "series",
 	                valueField: "value",
-	                data: data })
+	                data: sineData }),
+	              _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
+	                xMax: 8,
+	                yMax: 8,
+	                func: sineFunc,
+	                samples: 32 })
 	            )
 	          )
 	        ),
 	        _react2["default"].createElement(
 	          _HighlightJsx2["default"],
 	          { className: "solarized_light" },
-	          "<Plotypus>\n  <PlotypusRow>\n    <Chart>\n      <GridLayer \n        xMax={ 8 }\n        yMax={ 8 }/>\n      <GroupedBarLayer \n        barWidth={ 0.3 }\n        max={ 8 }\n        min={ 0 }\n        categoryField=\"category\"\n        seriesField=\"series\"\n        valueField=\"value\"\n        data={ data }/>\n    </Chart>\n  </PlotypusRow>\n</Plotypus>"
+	          "<Plotypus>\n  <PlotypusRow>\n    <Chart>\n      <GridLayer \n        xMax={ 8 }\n        yMax={ 8 }\n        />\n      <GroupedBarLayer \n        barWidth={ 0.3 }\n        max={ 8 }\n        min={ 0 }\n        categoryField=\"category\"\n        seriesField=\"series\"\n        valueField=\"value\"\n        data={ sineData }  {/* data I'm generating. */}\n        />\n      <FuncLayer\n        xMax={ 8 }\n        yMax={ 8 }\n        func={ sineFunc } {/* the sine wave on which sineData is based */}\n        samples={ 8 }\n        />\n    </Chart>\n  </PlotypusRow>\n</Plotypus>"
 	        )
 	      );
 	    }
@@ -41022,27 +41040,6 @@
 	              )
 	            ),
 	            _react2["default"].createElement(ChartsAndLayers, null)
-	          ),
-	          _react2["default"].createElement(
-	            _srcJsPlotypusJsx.Plotypus,
-	            null,
-	            _react2["default"].createElement(
-	              _srcJsPlotypusJsx.PlotypusRow,
-	              null,
-	              _react2["default"].createElement(
-	                _srcJsPlotypusJsx.Chart,
-	                null,
-	                _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
-	                  groupOffset: 1.2,
-	                  barWidth: 0.1,
-	                  max: 10,
-	                  min: 0,
-	                  categoryField: "category",
-	                  seriesField: "series",
-	                  valueField: "value",
-	                  data: data })
-	              )
-	            )
 	          )
 	        )
 	      );
@@ -41054,6 +41051,21 @@
 
 	exports["default"] = Guide;
 	module.exports = exports["default"];
+	/* data is just random data I'm generating. */ /*<Plotypus>
+	                                                          <PlotypusRow>
+	                                                            <Chart>
+	                                                              <GroupedBarLayer 
+	                                                                groupOffset={ 1.2 } 
+	                                                                barWidth={ 0.1 }
+	                                                                max={ 10 }
+	                                                                min={ 0 }
+	                                                                categoryField="category"
+	                                                                seriesField="series"
+	                                                                valueField="value"
+	                                                                data={ data } />
+	                                                            </Chart>
+	                                                          </PlotypusRow>
+	                                                        </Plotypus>*/
 
 /***/ },
 /* 209 */
