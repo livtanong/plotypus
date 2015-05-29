@@ -36,16 +36,22 @@ export default class Guide extends React.Component {
             <h2>Structure</h2>
             <div>
               <p>
-                Building out components in Plotypus is easy.
+                Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts. It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have just one axis, two, none, and even 4, if you're insane.
               </p>
               <Highlight className="solarized_dark">
                 { 
                   `<Plotypus>
   <PlotypusRow>
-    wat
+    <Axis />
+    <Chart />
   </PlotypusRow>
   <PlotypusRow>
-    derp
+    <Null /> <!-- We need a <null /> element here because we need to have the same number of columns in each row! -->
+    <Axis />
+  </PlotypusRow>
+  <PlotypusRow>
+    <Null /> <!-- We need a <null /> element here because we need to have the same number of columns in each row! -->
+    <Legend /> <!-- We can include anything. A legend, a title, an axis, label, etc... -->
   </PlotypusRow>
 </Plotypus>` }
               </Highlight>

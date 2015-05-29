@@ -40,7 +40,7 @@ code {
 .split-pane {
 	@include display(flex);
 	.sidebar {
-		width: 240px;
+		min-width: 25%;
 		background-color: $light;
 	}
 }
