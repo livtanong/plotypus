@@ -2,6 +2,34 @@ import React from "react";
 import Highlight from "./Highlight.jsx";
 import {Plotypus, PlotypusRow, PlotypusComponent, Chart, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
+class BasicStructure extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Basic Structure</h3>
+        <p>Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts.</p>
+        <p>It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have one axis, two, none, and even 4, if you're insane.</p>
+        <p>All <code>PlotypusRow</code>s act like table rows, while all <code>PlotypusComponent</code>s act like table cells.</p>
+        <Highlight className="solarized_light">
+{ 
+`<Plotypus>
+  <PlotypusRow>
+    <!-- PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Chart, to a Legend. -->
+    <PlotypusComponent />
+    <PlotypusComponent />
+  </PlotypusRow>
+  <PlotypusRow>
+    <PlotypusComponent />
+    <PlotypusComponent />
+  </PlotypusRow>
+</Plotypus>` 
+}
+        </Highlight>
+      </div>
+    )
+  }
+}
+
 class ChartsAndLayers extends React.Component {
   genData(count, values, cats, series) {
     /*
@@ -140,28 +168,10 @@ export default class Guide extends React.Component {
         <div className="main">
           <section>
             <h2>Structure</h2>
-            <div>
-              <p>Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts.</p>
-              <p>It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have one axis, two, none, and even 4, if you're insane.</p>
-              <Highlight className="solarized_light">
-                { 
-                  `<Plotypus>
-  <PlotypusRow>
-    <!-- PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Chart, to a Legend. -->
-    <PlotypusComponent />
-    <PlotypusComponent />
-  </PlotypusRow>
-  <PlotypusRow>
-    <PlotypusComponent />
-    <PlotypusComponent />
-  </PlotypusRow>
-</Plotypus>` }
-              </Highlight>
-
-              <p>All <code>PlotypusComponent</code>s act like table cells.</p>
-            </div>
+            <BasicStructure />
             <ChartsAndLayers />
-          </section>
+            <OtherComponents />
+          
           {/*<Plotypus>
                       <PlotypusRow>
                         <Chart>
@@ -177,6 +187,7 @@ export default class Guide extends React.Component {
                         </Chart>
                       </PlotypusRow>
                     </Plotypus>*/}
+          </section>
         </div>
       </div>
     )

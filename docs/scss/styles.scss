@@ -4,7 +4,16 @@
 body {
 	margin: 0;
 	font-family: 'Roboto';
-	color: $dark
+	color: $dark;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+#docs {
+	height: 100%;
 }
 
 ul {
@@ -42,6 +51,9 @@ code {
 	.sidebar {
 		min-width: 25%;
 		background-color: $light;
+	}
+	.main {
+		overflow-y: auto;
 	}
 }
 

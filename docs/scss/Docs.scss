@@ -5,9 +5,16 @@
 
 .Docs {
 	// background-color: pink;
+	height: 100%;
+	@include display(flex);
+	@include flex-direction(column);
 	.toolbar {
+		@include flex-shrink(0);
 		h1 {
 			color: $accent;
 		}
+	}
+	.split-pane {
+		@include flex(1);
 	}
 }
