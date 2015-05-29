@@ -1,44 +1,59 @@
+import Style from "../scss/Demo.scss";
+
 import React from "react";
+import _ from "lodash";
 import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotypus.jsx";
+
+import Documentation from "./Documentation";
+import Home from "./Home";
 
 export default class Demo extends React.Component {
   constructor(props) {
     super(props);
+
+    this.views = {
+      "HOME": "HOME",
+      "DOCS": "DOCS"
+    }
+
+    this.state = {
+      currentView: this.views.HOME
+    }
   }
-  genData(count, values, cats, series) {
-    /*
-      count (Number):           How many datapoints you want.
-      values (Array(Number)):   Must be of length 2. Min and Max.
-      cats (Array(String)):     Set of all possible categories.
-      series (Array(String)):   Set of all possible series.
-    */
-    return _.times(count, function(n){
-      return {
-        value: (values[1] - values[0]) * Math.random(),
-        category: _.sample(cats),
-        series: _.sample(series)
-      }
-    })
+  changeView(view) {
+    this.setState({currentView: view});
   }
   render() {
-    var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
+    var views = function(){
+      switch (this.state.currentView) {
+        case this.views.HOME:
+          return <Home />
+          break;
+        case this.views.DOCS:
+          return <Documentation />
+          break;
+        default:
+          console.log("illegal currentView");
+      }
+    }.bind(this);
+
+    var nav = _.keys(this.views).map((view) => 
+      (<a key={ view } onClick={ this.changeView.bind(this, view) }>{ view.toLowerCase() }</a>)
+    )
+    // var nav = _.keys(this.views).map(function(view){
+    //   return (<a onClick={ this.changeView(view) }>{ view.toLowerCase() }</a>)
+    // }, this);
+
     return (
-      <div>
-        <Plotypus>
-          <PlotypusRow>
-            <Chart>
-              <GroupedBarLayer 
-                groupOffset={ 1.2 } 
-                barWidth={ 0.1 }
-                max={ 10 }
-                min={ 0 }
-                categoryField="category"
-                seriesField="series"
-                valueField="value"
-                data={ data } />
-            </Chart>
-          </PlotypusRow>
-        </Plotypus>
+      <div className="Demo">
+        <div className="toolbar">
+          <h1>Plotypus</h1>
+          <div className="spacer" />
+          <div>
+            { nav }
+          </div>
+        </div>
+        { views() }
       </div>
     );
   }
