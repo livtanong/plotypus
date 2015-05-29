@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight.jsx";
-import {Plotypus, PlotypusRow, Chart, GroupedBarLayer, GridLayer} from "../../src/js/Plotypus.jsx";
+import {Plotypus, PlotypusRow, Chart, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 class ChartsAndLayers extends React.Component {
   genData(count, values, cats, series) {
@@ -20,7 +20,20 @@ class ChartsAndLayers extends React.Component {
   }
   render() {
     var data = this.genData(8, [0, 8]);
-    console.log(data);
+
+    var sineFunc = function(x, offset) {
+      var offset = offset || 0
+      return Math.sin(x + offset) * 4 + 4;
+    }
+
+    var sineData = _.times(8, function(n){
+      return {
+        value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+        category: n,
+        series: null
+      }
+    })
+    // console.log(data);
     return (
       <div>
         <h3>Charts and Layers</h3>
@@ -39,18 +52,24 @@ class ChartsAndLayers extends React.Component {
                 categoryField="category"
                 seriesField="series"
                 valueField="value"
-                data={ data }/>
+                data={ sineData }/>{/* data is just random data I'm generating. */}
+              <FuncLayer
+                xMax={ 8 }
+                yMax={ 8 }
+                func={ sineFunc }
+                samples={ 32 }/>
             </Chart>
           </PlotypusRow>
         </Plotypus>
         <Highlight className="solarized_light">
-{ 
+{
 `<Plotypus>
   <PlotypusRow>
     <Chart>
       <GridLayer 
         xMax={ 8 }
-        yMax={ 8 }/>
+        yMax={ 8 }
+        />
       <GroupedBarLayer 
         barWidth={ 0.3 }
         max={ 8 }
@@ -58,10 +77,17 @@ class ChartsAndLayers extends React.Component {
         categoryField="category"
         seriesField="series"
         valueField="value"
-        data={ data }/>
+        data={ sineData }  {/* data I'm generating. */}
+        />
+      <FuncLayer
+        xMax={ 8 }
+        yMax={ 8 }
+        func={ sineFunc } {/* the sine wave on which sineData is based */}
+        samples={ 8 }
+        />
     </Chart>
   </PlotypusRow>
-</Plotypus>` 
+</Plotypus>`
 }
         </Highlight>
       </div>
@@ -122,21 +148,21 @@ export default class Guide extends React.Component {
             </div>
             <ChartsAndLayers />
           </section>
-          <Plotypus>
-            <PlotypusRow>
-              <Chart>
-                <GroupedBarLayer 
-                  groupOffset={ 1.2 } 
-                  barWidth={ 0.1 }
-                  max={ 10 }
-                  min={ 0 }
-                  categoryField="category"
-                  seriesField="series"
-                  valueField="value"
-                  data={ data } />
-              </Chart>
-            </PlotypusRow>
-          </Plotypus>
+          {/*<Plotypus>
+                      <PlotypusRow>
+                        <Chart>
+                          <GroupedBarLayer 
+                            groupOffset={ 1.2 } 
+                            barWidth={ 0.1 }
+                            max={ 10 }
+                            min={ 0 }
+                            categoryField="category"
+                            seriesField="series"
+                            valueField="value"
+                            data={ data } />
+                        </Chart>
+                      </PlotypusRow>
+                    </Plotypus>*/}
         </div>
       </div>
     )
