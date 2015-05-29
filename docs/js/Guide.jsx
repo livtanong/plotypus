@@ -1,4 +1,5 @@
 import React from "react";
+import Highlight from "./Highlight.jsx";
 import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotypus.jsx";
 
 export default class Guide extends React.Component {
@@ -25,12 +26,23 @@ export default class Guide extends React.Component {
 					<div>
 						<h4>Derp</h4>
 						<ul>
-							<li><a>Plotypus</a></li>
+							<li><a>Structure</a></li>
 							<li><a>PlotypusRow</a></li>
 						</ul>
 					</div>
 				</div>
 				<div className="main">
+					<section>
+						<h2>Structure</h2>
+						<div>
+							<p>
+								Building out components in Plotypus is easy.
+							</p>
+							<Highlight className="solarized_dark">
+								{ "<div>wat</div>" }
+							</Highlight>
+						</div>
+					</section>
 					<Plotypus>
 					  <PlotypusRow>
 					    <Chart>

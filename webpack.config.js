@@ -30,6 +30,7 @@ module.exports = {
   },
   module: {
     loaders: styleLoaders.concat([
+      { test: /\.html$/, loader: 'html' },
       { test: /\.css$/, loader: "style!css" },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"}
     ])

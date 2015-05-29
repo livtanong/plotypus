@@ -3,6 +3,11 @@
 
 
 
-.Demo {
+.Docs {
 	// background-color: pink;
+	.toolbar {
+		h1 {
+			color: $accent;
+		}
+	}
 }
