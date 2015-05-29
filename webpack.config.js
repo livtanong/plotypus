@@ -19,7 +19,7 @@ styleLoaders.forEach(function(item) {
 
 
 module.exports = {
-  entry: "./demo/js/index.jsx",
+  entry: "./docs/js/index.jsx",
   output: {
     path: "build",
     filename: "bundle.js"

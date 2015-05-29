@@ -1,19 +1,19 @@
-import Style from "../scss/Demo.scss";
+import Style from "../scss/Docs.scss";
 
 import React from "react";
 import _ from "lodash";
 import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotypus.jsx";
 
-import Documentation from "./Documentation";
+import ApiDocs from "./ApiDocs";
 import Home from "./Home";
 
-export default class Demo extends React.Component {
+export default class Docs extends React.Component {
   constructor(props) {
     super(props);
 
     this.views = {
       "HOME": "HOME",
-      "DOCS": "DOCS"
+      "API": "API"
     }
 
     this.state = {
@@ -29,8 +29,8 @@ export default class Demo extends React.Component {
         case this.views.HOME:
           return <Home />
           break;
-        case this.views.DOCS:
-          return <Documentation />
+        case this.views.API:
+          return <ApiDocs />
           break;
         default:
           console.log("illegal currentView");
@@ -38,14 +38,14 @@ export default class Demo extends React.Component {
     }.bind(this);
 
     var nav = _.keys(this.views).map((view) => 
-      (<a key={ view } onClick={ this.changeView.bind(this, view) }>{ view.toLowerCase() }</a>)
+      (<a className="toolbar-item" key={ view } onClick={ this.changeView.bind(this, view) }>{ view.toLowerCase() }</a>)
     )
     // var nav = _.keys(this.views).map(function(view){
     //   return (<a onClick={ this.changeView(view) }>{ view.toLowerCase() }</a>)
     // }, this);
 
     return (
-      <div className="Demo">
+      <div className="Docs">
         <div className="toolbar">
           <h1>Plotypus</h1>
           <div className="spacer" />

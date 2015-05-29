@@ -1,7 +1,7 @@
 import React from "react";
 import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotypus.jsx";
 
-export default class Documentation extends React.Component {
+export default class ApiDocs extends React.Component {
 	genData(count, values, cats, series) {
 	  /*
 	    count (Number):           How many datapoints you want.
@@ -20,7 +20,7 @@ export default class Documentation extends React.Component {
 	render() {
 		var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
 		return (
-			<div className="Documentation">
+			<div className="ApiDocs">
 				<Plotypus>
 				  <PlotypusRow>
 				    <Chart>
