@@ -55,6 +55,16 @@ var PlotypusRow = React.createClass({
 	}
 });
 
+var PlotypusComponent = React.createClass({
+	render: function() {
+		return (
+			<div className="PlotypusComponent">
+				{ this.props.children }
+			</div>
+		);
+	}
+});
+
 var Plotypus = React.createClass({
 	render: function() {
 		return (
@@ -68,6 +78,7 @@ var Plotypus = React.createClass({
 module.exports = {
 	Plotypus: Plotypus,
 	PlotypusRow: PlotypusRow,
+	PlotypusComponent: PlotypusComponent,
 	Chart: Chart,
 	GroupedBarLayer: GroupedBarLayer,
 	StackedBarLayer: StackedBarLayer,

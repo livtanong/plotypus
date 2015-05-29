@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight.jsx";
-import {Plotypus, PlotypusRow, Chart, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
+import {Plotypus, PlotypusRow, PlotypusComponent, Chart, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 class ChartsAndLayers extends React.Component {
   genData(count, values, cats, series) {
@@ -38,58 +38,71 @@ class ChartsAndLayers extends React.Component {
       <div>
         <h3>Charts and Layers</h3>
         <p>The chart component is obviously the most important of the components, and structurally, they are unique in that they have <strong>layers</strong>. Layers are graphical elements that stack on top of each other inside a Chart. Currently, only Charts have layers, but over time this may change.</p>
-        <p><code>GridLayer</code> and <code>GroupedBarLayer</code> are the first layers we'll encounter in this guide, and perfectly demonstrate the concept of layers. For now, we will simplify our layout to only include one Component: <code>Chart</code>, leaving only one <code>PlotypusRow</code> in our markup.</p>
+        <p>We'll use <code>GridLayer</code>, <code>GroupedBarLayer</code>, and <code>FuncLayer</code> to demonstrate the concept of layers. For now, we will simplify our layout to only include one Component: <code>Chart</code>, leaving only one <code>PlotypusRow</code> and one <code>PlotypusComponent</code> in our markup.</p>
         <Plotypus>
           <PlotypusRow>
-            <Chart>
-              <GridLayer 
-                xMax={ 8 }
-                yMax={ 8 }/>
-              <GroupedBarLayer 
-                barWidth={ 0.3 }
-                max={ 8 }
-                min={ 0 }
-                categoryField="category"
-                seriesField="series"
-                valueField="value"
-                data={ sineData }/>{/* data is just random data I'm generating. */}
-              <FuncLayer
-                xMax={ 8 }
-                yMax={ 8 }
-                func={ sineFunc }
-                samples={ 32 }/>
-            </Chart>
+            <PlotypusComponent>
+              <Chart>
+                <GridLayer 
+                  xMax={ 8 }
+                  yMax={ 8 }/>
+                <GroupedBarLayer 
+                  barWidth={ 0.3 }
+                  max={ 8 }
+                  min={ 0 }
+                  categoryField="category"
+                  seriesField="series"
+                  valueField="value"
+                  data={ sineData /* data I'm generating. */}/>
+                <FuncLayer
+                  xMax={ 8 }
+                  yMax={ 8 }
+                  func={ sineFunc /* the sine wave on which sineData is based */}
+                  samples={ 32 }/>
+              </Chart>
+            </PlotypusComponent>
           </PlotypusRow>
         </Plotypus>
         <Highlight className="solarized_light">
 {
 `<Plotypus>
   <PlotypusRow>
-    <Chart>
-      <GridLayer 
-        xMax={ 8 }
-        yMax={ 8 }
-        />
-      <GroupedBarLayer 
-        barWidth={ 0.3 }
-        max={ 8 }
-        min={ 0 }
-        categoryField="category"
-        seriesField="series"
-        valueField="value"
-        data={ sineData }  {/* data I'm generating. */}
-        />
-      <FuncLayer
-        xMax={ 8 }
-        yMax={ 8 }
-        func={ sineFunc } {/* the sine wave on which sineData is based */}
-        samples={ 8 }
-        />
-    </Chart>
+    <PlotypusComponent>
+      <Chart>
+        <GridLayer 
+          xMax={ 8 }
+          yMax={ 8 }/>
+        <GroupedBarLayer 
+          barWidth={ 0.3 }
+          max={ 8 }
+          min={ 0 }
+          categoryField="category"
+          seriesField="series"
+          valueField="value"
+          data={ sineData /* data I'm generating. */}/>
+        <FuncLayer
+          xMax={ 8 }
+          yMax={ 8 }
+          func={ sineFunc /* the sine wave on which sineData is based */}
+          samples={ 32 }/>
+      </Chart>
+    </PlotypusComponent>
   </PlotypusRow>
 </Plotypus>`
 }
         </Highlight>
+      </div>
+    )
+  }
+}
+
+class OtherComponents extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Other Components</h3>
+        <p>Now that we've gotten the <code>Chart</code> out of the way, we can work on the other simpler components. These don't have layers, and therefore just stand alone.</p>
+        <p>To keep </p>
       </div>
     )
   }
@@ -134,17 +147,18 @@ export default class Guide extends React.Component {
                 { 
                   `<Plotypus>
   <PlotypusRow>
-    <Component1 />
-    <Component2 /> <!-- Components here are just placeholders. They can be anything from an Axis to a Chart, to a Legend. -->
+    <!-- PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Chart, to a Legend. -->
+    <PlotypusComponent />
+    <PlotypusComponent />
   </PlotypusRow>
   <PlotypusRow>
-    <Null /> <!-- Null is just like any other Component, except it simply doesn't display anything. -->
-    <Component3 />
+    <PlotypusComponent />
+    <PlotypusComponent />
   </PlotypusRow>
 </Plotypus>` }
               </Highlight>
 
-              <p>All Plotypus components that aren't structural like PlotypusRow, act like table cells. And generally, they all behave identically, with the exception of the Chart component.</p>
+              <p>All <code>PlotypusComponent</code>s act like table cells.</p>
             </div>
             <ChartsAndLayers />
           </section>
