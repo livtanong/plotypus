@@ -17,4 +17,34 @@
 	.split-pane {
 		@include flex(1);
 	}
+
+	.Plot {
+		.FuncLayer {
+			path {
+				stroke: $accent;
+			}
+		}
+		rect {
+			fill: lighten($dark, 10%);
+		}
+	}
+	.Axis {
+		text {
+			fill: lighten($dark, 10%);
+		}
+	}
+	.table-of-contents {
+		box-sizing: border-box;
+		padding: 16px;
+		font-weight: 300;
+		h4 {
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		a {
+			color: $dark;
+			text-decoration: none;
+		}
+	}
 }

@@ -125,46 +125,51 @@ function AxisNumbers(domNode, max, min, interval, align, orientation, onUpdate){
 		return minSize / axisSize;
 	};
 	this.getInterval = function(){
-		var floatInterval = (max - min) * this.getMinSizeFraction();
-		// if greater than or equal to 5, keep counting up to find the smallest integer divisible by 5 that is greater than or equal to floatInterval;
-		// if between 1 and 5, use 2.5.
-		// if less than 1, 1, 0.5, 0.1, 0.05, 0.01, etc...
 
-		var fives = function(n, guess){
-			// find the smallest multiple of 5 greater than or equal to n
-			var guess = guess || 5;
-			if (guess >= n) {
-				// done!
-				return guess;
-			} else {
-				return fives(n, guess + 5)
-			}
-		}
-		var ones = function(n, guess, divisor){
-			// find the smallest member of the pattern (1, 0.5, 0.1, 0.05, 0.01...) greater than or equal to n
-			var guess = guess || 1;
-			var divisor = divisor || 2;
+		if (_.isFinite(max)) {
+			var floatInterval = (max - min) * this.getMinSizeFraction();
+			// if greater than or equal to 5, keep counting up to find the smallest integer divisible by 5 that is greater than or equal to floatInterval;
+			// if between 1 and 5, use 2.5.
+			// if less than 1, 1, 0.5, 0.1, 0.05, 0.01, etc...
 
-			if (guess / divisor < n) {
-				return guess;
-			} else {
-				return ones(
-					n,
-					guess / divisor,
-					(divisor === 2) ? 5 : 2
-				)
+			var fives = function(n, guess){
+				// find the smallest multiple of 5 greater than or equal to n
+				var guess = guess || 5;
+				if (guess >= n) {
+					// done!
+					return guess;
+				} else {
+					return fives(n, guess + 5)
+				}
 			}
-		}
-		if (floatInterval > 2.5) {
-			return fives(floatInterval);
-		} else if (floatInterval > 1 && floatInterval <= 2.5) {
-			return 2.5;
+			var ones = function(n, guess, divisor){
+				// find the smallest member of the pattern (1, 0.5, 0.1, 0.05, 0.01...) greater than or equal to n
+				var guess = guess || 1;
+				var divisor = divisor || 2;
+
+				if (guess / divisor < n) {
+					return guess;
+				} else {
+					return ones(
+						n,
+						guess / divisor,
+						(divisor === 2) ? 5 : 2
+					)
+				}
+			}
+			if (floatInterval > 2.5) {
+				return fives(floatInterval);
+			} else if (floatInterval > 1 && floatInterval <= 2.5) {
+				return 2.5;
+			} else {
+				return ones(floatInterval);
+			}
 		} else {
-			return ones(floatInterval);
+			console.log("warning, max is undefined");
 		}
 	}
 
-	this.interval = this.getInterval();
+	this.interval = interval || this.getInterval();
 	this.intervalledMax = utils.sanify(Math.ceil(max / this.interval + 1) * this.interval, 5);
 	this.intervalledMin = utils.sanify(Math.floor(min / this.interval) * this.interval, 5);
 	onUpdate && onUpdate(this);

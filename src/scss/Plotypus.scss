@@ -23,7 +23,8 @@
 			font-size: 10px;
 		}
 		&.v {
-			height: 99%; // BECAUSE FUCK SAFARI. IF THIS NUMBER IS INCREASED BY 0.1%, BUG RETURNS.
+			// height: 99%; // BECAUSE FUCK SAFARI. IF THIS NUMBER IS INCREASED BY 0.1%, BUG RETURNS.
+			height: 100%;
 			width: 48px;
 		}
 		&.h {
@@ -65,7 +66,8 @@
 .PlotypusRow {
 	display: table-row;
 	.Plot {
-		height: 99%; // BECAUSE FUCK SAFARI. IF THIS NUMBER IS INCREASED BY 0.1%, BUG RETURNS.
+		// height: 99%; // BECAUSE FUCK SAFARI. IF THIS NUMBER IS INCREASED BY 0.1%, BUG RETURNS.
+		height: 100%;
 		width: 100%;
 	}
 	.null {
@@ -80,6 +82,12 @@
 		height: 100%;
 		// height: 1
 		width: 100%;
+	}
+	& > .Axis.v {
+		margin-right: 8px;
+	}
+	& > .Axis.h {
+		margin-top: 8px;
 	}
 }
 

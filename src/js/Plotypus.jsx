@@ -75,10 +75,19 @@ var Plotypus = React.createClass({
 	}
 });
 
+var Null = React.createClass({
+	render: function(){
+		return (
+			<div className="null" />
+		)
+	}
+})
+
 module.exports = {
 	Plotypus: Plotypus,
 	PlotypusRow: PlotypusRow,
 	PlotypusComponent: PlotypusComponent,
+	Null: Null,
 	Plot: Plot,
 	GroupedBarLayer: GroupedBarLayer,
 	StackedBarLayer: StackedBarLayer,

@@ -22,6 +22,7 @@ var Axis = React.createClass({
 	getDefaultProps: function() {
 		return {
 			min: 0,
+			interval: 1,
 			align: "start",
 			orientation: "v"
 		};

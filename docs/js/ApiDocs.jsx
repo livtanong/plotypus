@@ -21,7 +21,7 @@ export default class ApiDocs extends React.Component {
 		var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
 		return (
 			<div className="ApiDocs split-pane">
-				<div className="sidebar">
+				<div className="sidebar table-of-contents">
 					<div>
 						<h4>Structure</h4>
 						<ul>
