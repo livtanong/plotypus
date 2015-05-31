@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight.jsx";
-import {Plotypus, PlotypusRow, PlotypusComponent, Null, Plot, GroupedBarLayer, GridLayer, FuncLayer, Axis} from "../../src/js/Plotypus.jsx";
+import {Plotypus, PlotypusRow, PlotypusComponent, Null, Plot, GroupedBarLayer, GridLayer, FuncLayer, Axis, CategoryAxis} from "../../src/js/Plotypus.jsx";
 
 export class ChartsAndLayers extends React.Component {
   genData(count, values, cats, series) {
@@ -132,9 +132,11 @@ export class Composition extends React.Component {
         <p>Now let's take the Plot from the previous section, place it in the tabular structure and then add axes.</p>
         <Plotypus>
           <PlotypusRow>
+
             <PlotypusComponent>
               <Axis max={ 8 }/>
             </PlotypusComponent>
+
             <PlotypusComponent>
               <Plot>
                 <GridLayer 
@@ -150,23 +152,28 @@ export class Composition extends React.Component {
                   samples={ 64 }/>
               </Plot>
             </PlotypusComponent>
+
           </PlotypusRow>
           <PlotypusRow>
             {/* The Null element simply occupies a space on the lower left corner of the tabular structure. 
             This makes sure that the axis element below is perfectly aligned with the Plot above. */}
             <Null /> 
+
             <PlotypusComponent>
-              <Axis max={ 8 } orientation="h"/>
+              <CategoryAxis categories={["a", "b", "c", "d", "e", "f", "g", "h"]} orientation="h"/>
             </PlotypusComponent>
+
           </PlotypusRow>
         </Plotypus>
         <Highlight className="solarized_light">
 {
 `<Plotypus>
   <PlotypusRow>
+
     <PlotypusComponent>
       <Axis max={ 8 }/>
     </PlotypusComponent>
+
     <PlotypusComponent>
       <Plot>
         <GridLayer 
@@ -182,14 +189,17 @@ export class Composition extends React.Component {
           samples={ 64 }/>
       </Plot>
     </PlotypusComponent>
+
   </PlotypusRow>
   <PlotypusRow>
     {/* The Null element simply occupies a space on the lower left corner of the tabular structure. 
     This makes sure that the axis element below is perfectly aligned with the Plot above. */}
     <Null /> 
+
     <PlotypusComponent>
       <Axis max={ 8 } orientation="h"/>
     </PlotypusComponent>
+
   </PlotypusRow>
 </Plotypus>`
 }
