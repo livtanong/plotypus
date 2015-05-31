@@ -20990,7 +20990,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, ".Docs {\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  box-orient: vertical;\n  -webkit-box-direction: normal;\n  -moz-box-direction: normal;\n  box-direction: normal;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-direction: column; }\n  .Docs .toolbar {\n    -webkit-flex-shrink: 0;\n    -moz-flex-shrink: 0;\n    flex-shrink: 0;\n    -ms-flex-negative: 0; }\n    .Docs .toolbar h1 {\n      color: #D1603D; }\n  .Docs .split-pane {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n  .Docs .Plot .FuncLayer path {\n    stroke: #D1603D; }\n  .Docs .Plot rect {\n    fill: #50244f; }\n  .Docs .Axis text {\n    fill: #50244f; }\n  .Docs .table-of-contents {\n    box-sizing: border-box;\n    padding: 16px;\n    font-weight: 300; }\n    .Docs .table-of-contents h4 {\n      font-size: 14px;\n      text-transform: uppercase;\n      font-weight: 700; }\n    .Docs .table-of-contents a {\n      color: #2D142C;\n      text-decoration: none; }\n  .Docs #hero {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n    -moz-box-pack: center;\n    box-pack: center;\n    -webkit-justify-content: center;\n    -moz-justify-content: center;\n    -ms-justify-content: center;\n    -o-justify-content: center;\n    justify-content: center;\n    -ms-flex-pack: center;\n    -webkit-box-align: center;\n    -moz-box-align: center;\n    box-align: center;\n    -webkit-align-items: center;\n    -moz-align-items: center;\n    -ms-align-items: center;\n    -o-align-items: center;\n    align-items: center;\n    -ms-flex-align: center;\n    height: 320px;\n    background-color: #D5EDE2; }\n    .Docs #hero #logo {\n      margin-right: 24px; }\n      .Docs #hero #logo svg {\n        width: 144px;\n        height: 144px; }\n    .Docs #hero h1 {\n      font-weight: 300;\n      font-size: 72px;\n      margin: 0px; }\n    .Docs #hero h2 {\n      margin: 0px;\n      font-size: 24px;\n      color: rgba(45, 20, 44, 0.4);\n      font-weight: 300; }\n", ""]);
+	exports.push([module.id, ".Docs {\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  box-orient: vertical;\n  -webkit-box-direction: normal;\n  -moz-box-direction: normal;\n  box-direction: normal;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-direction: column; }\n  .Docs .toolbar {\n    -webkit-flex-shrink: 0;\n    -moz-flex-shrink: 0;\n    flex-shrink: 0;\n    -ms-flex-negative: 0; }\n    .Docs .toolbar h1 {\n      color: #D1603D; }\n  .Docs .split-pane {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n  .Docs .Plot .FuncLayer path {\n    stroke: #D1603D; }\n  .Docs .Axis text {\n    fill: #50244f; }\n  .Docs .table-of-contents {\n    box-sizing: border-box;\n    padding: 16px;\n    font-weight: 300; }\n    .Docs .table-of-contents h4 {\n      font-size: 14px;\n      text-transform: uppercase;\n      font-weight: 700; }\n    .Docs .table-of-contents a {\n      color: #2D142C;\n      text-decoration: none; }\n  .Docs #hero {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n    -moz-box-pack: center;\n    box-pack: center;\n    -webkit-justify-content: center;\n    -moz-justify-content: center;\n    -ms-justify-content: center;\n    -o-justify-content: center;\n    justify-content: center;\n    -ms-flex-pack: center;\n    -webkit-box-align: center;\n    -moz-box-align: center;\n    box-align: center;\n    -webkit-align-items: center;\n    -moz-align-items: center;\n    -ms-align-items: center;\n    -o-align-items: center;\n    align-items: center;\n    -ms-flex-align: center;\n    height: 320px;\n    background-color: #D5EDE2; }\n    .Docs #hero #logo {\n      margin-right: 24px; }\n      .Docs #hero #logo svg {\n        width: 144px;\n        height: 144px; }\n    .Docs #hero h1 {\n      font-weight: 300;\n      font-size: 72px;\n      margin: 0px; }\n    .Docs #hero h2 {\n      margin: 0px;\n      font-size: 24px;\n      color: rgba(45, 20, 44, 0.4);\n      font-weight: 300; }\n", ""]);
 
 /***/ },
 /* 172 */
@@ -33517,7 +33517,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, ".Plotypus {\n  display: table;\n  overflow: hidden;\n  table-layout: auto; }\n  .Plotypus .labels-container {\n    height: 48px; }\n  .Plotypus .labels {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex; }\n    .Plotypus .labels .label {\n      -webkit-box-flex: 1;\n      -moz-box-flex: 1;\n      box-flex: 1;\n      -webkit-flex: 1;\n      -moz-flex: 1;\n      -ms-flex: 1;\n      flex: 1;\n      width: 0;\n      height: 0;\n      white-space: nowrap;\n      font-size: 12px; }\n  .Plotypus .Axis text {\n    height: 100%;\n    font-size: 10px; }\n  .Plotypus .Axis.v {\n    height: 100%;\n    width: 48px; }\n  .Plotypus .Axis.h {\n    height: 48px;\n    width: 100%; }\n  .Plotypus .Axis.Category.v {\n    width: auto; }\n  .Plotypus .Axis.Category.h {\n    height: auto; }\n  .Plotypus .axis-label {\n    text-align: center;\n    font-size: 12px;\n    font-weight: 300;\n    white-space: nowrap; }\n    .Plotypus .axis-label.rotate {\n      width: 24px; }\n      .Plotypus .axis-label.rotate .label {\n        position: absolute;\n        bottom: 50%;\n        left: 0px;\n        -webkit-transform: rotate(-90deg) translate(-50%);\n        -moz-transform: rotate(-90deg) translate(-50%);\n        -ms-transform: rotate(-90deg) translate(-50%);\n        -o-transform: rotate(-90deg) translate(-50%);\n        transform: rotate(-90deg) translate(-50%);\n        -webkit-transform-origin: top left;\n        -moz-transform-origin: top left;\n        -ms-transform-origin: top left;\n        -o-transform-origin: top left;\n        transform-origin: top left; }\n    .Plotypus .axis-label.x {\n      display: -webkit-box;\n      display: -moz-box;\n      display: box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -moz-box-orient: horizontal;\n      box-orient: horizontal;\n      -webkit-box-direction: normal;\n      -moz-box-direction: normal;\n      box-direction: normal;\n      -webkit-flex-direction: row;\n      -moz-flex-direction: row;\n      flex-direction: row;\n      -ms-flex-direction: row;\n      -webkit-box-pack: center;\n      -moz-box-pack: center;\n      box-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      -ms-justify-content: center;\n      -o-justify-content: center;\n      justify-content: center;\n      -ms-flex-pack: center; }\n\n.PlotypusRow {\n  display: table-row; }\n  .PlotypusRow .Plot {\n    height: 100%;\n    width: 100%; }\n  .PlotypusRow .null {\n    display: table-cell;\n    width: 0px;\n    height: 0px; }\n\n.PlotypusComponent {\n  display: table-cell; }\n  .PlotypusComponent.full {\n    height: 100%;\n    width: 100%; }\n  .PlotypusComponent > .Axis.v {\n    margin-right: 8px; }\n  .PlotypusComponent > .Axis.h {\n    margin-top: 8px; }\n\n.FuncLayer path {\n  stroke-dasharray: 3, 3;\n  stroke-width: 1px;\n  fill: none;\n  stroke: black;\n  vector-effect: non-scaling-stroke; }\n", ""]);
+	exports.push([module.id, ".Plotypus {\n  display: table;\n  overflow: hidden;\n  table-layout: auto; }\n  .Plotypus .labels-container {\n    height: 48px; }\n  .Plotypus .labels {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex; }\n    .Plotypus .labels .label {\n      -webkit-box-flex: 1;\n      -moz-box-flex: 1;\n      box-flex: 1;\n      -webkit-flex: 1;\n      -moz-flex: 1;\n      -ms-flex: 1;\n      flex: 1;\n      width: 0;\n      height: 0;\n      white-space: nowrap;\n      font-size: 12px; }\n  .Plotypus .Axis text {\n    height: 100%;\n    font-size: 10px; }\n  .Plotypus .Axis.v {\n    height: 100%;\n    width: 48px; }\n  .Plotypus .Axis.h {\n    height: 48px;\n    width: 100%; }\n  .Plotypus .Axis.Category.v {\n    width: auto; }\n  .Plotypus .Axis.Category.h {\n    height: auto; }\n  .Plotypus .axis-label {\n    text-align: center;\n    font-size: 12px;\n    font-weight: 300;\n    white-space: nowrap; }\n    .Plotypus .axis-label.rotate {\n      width: 24px; }\n      .Plotypus .axis-label.rotate .label {\n        position: absolute;\n        bottom: 50%;\n        left: 0px;\n        -webkit-transform: rotate(-90deg) translate(-50%);\n        -moz-transform: rotate(-90deg) translate(-50%);\n        -ms-transform: rotate(-90deg) translate(-50%);\n        -o-transform: rotate(-90deg) translate(-50%);\n        transform: rotate(-90deg) translate(-50%);\n        -webkit-transform-origin: top left;\n        -moz-transform-origin: top left;\n        -ms-transform-origin: top left;\n        -o-transform-origin: top left;\n        transform-origin: top left; }\n    .Plotypus .axis-label.x {\n      display: -webkit-box;\n      display: -moz-box;\n      display: box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -moz-box-orient: horizontal;\n      box-orient: horizontal;\n      -webkit-box-direction: normal;\n      -moz-box-direction: normal;\n      box-direction: normal;\n      -webkit-flex-direction: row;\n      -moz-flex-direction: row;\n      flex-direction: row;\n      -ms-flex-direction: row;\n      -webkit-box-pack: center;\n      -moz-box-pack: center;\n      box-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      -ms-justify-content: center;\n      -o-justify-content: center;\n      justify-content: center;\n      -ms-flex-pack: center; }\n\n.Plot .series-1 {\n  fill: #d70206; }\n\n.Plot .series-2 {\n  fill: #f05b4f; }\n\n.Plot .series-3 {\n  fill: #f4c63d; }\n\n.Plot .series-4 {\n  fill: #d17905; }\n\n.Plot .series-5 {\n  fill: #453d3f; }\n\n.Plot .series-6 {\n  fill: #59922b; }\n\n.Plot .series-7 {\n  fill: #0544d3; }\n\n.Plot .series-8 {\n  fill: #6b0392; }\n\n.Plot .series-9 {\n  fill: #f05b4f; }\n\n.Plot .series-10 {\n  fill: #dda458; }\n\n.Plot .series-11 {\n  fill: #eacf7d; }\n\n.Plot .series-12 {\n  fill: #86797d; }\n\n.Plot .series-13 {\n  fill: #b2c326; }\n\n.Plot .series-14 {\n  fill: #6188e2; }\n\n.Plot .series-15 {\n  fill: #a748ca; }\n\n.PlotypusRow {\n  display: table-row; }\n  .PlotypusRow .Plot {\n    height: 100%;\n    width: 100%; }\n  .PlotypusRow .null {\n    display: table-cell;\n    width: 0px;\n    height: 0px; }\n\n.PlotypusComponent {\n  display: table-cell; }\n  .PlotypusComponent.full {\n    height: 100%;\n    width: 100%; }\n  .PlotypusComponent > .Axis.v {\n    margin-right: 8px; }\n  .PlotypusComponent > .Axis.h {\n    margin-top: 8px; }\n\n.FuncLayer path {\n  stroke-dasharray: 3, 3;\n  stroke-width: 1px;\n  fill: none;\n  stroke: black;\n  vector-effect: non-scaling-stroke; }\n", ""]);
 
 /***/ },
 /* 179 */
@@ -35724,7 +35724,7 @@
 					height: Math.abs(datapoint[valueField]),
 					x: fieldX + seriesX,
 					y: this.getPosition(datapoint[valueField], max, 0),
-					"class": "Bar " + "category-" + (seriesIndex + 1)
+					"class": "Bar " + "series-" + (seriesIndex + 1)
 				};
 
 				this.addSVGElement(this.content, "rect", attrs);
@@ -42040,8 +42040,20 @@
 	                  "Plot"
 	                ),
 	                " layers data."
+	              ),
+	              _react2["default"].createElement(
+	                "p",
+	                null,
+	                "Plotypus likes thinking about data as a set of points in n-dimensional space. ",
+	                _react2["default"].createElement(
+	                  "em",
+	                  null,
+	                  "Whoa, n-dimensional space? How did we get here?"
+	                ),
+	                " Relax, young padawan. It isn't as complicated as it sounds."
 	              )
-	            )
+	            ),
+	            _react2["default"].createElement(_GuidePages.DataFormat, null)
 	          )
 	        )
 	      );
@@ -53925,38 +53937,116 @@
 
 	exports.Composition = Composition;
 
-	var Data = (function (_React$Component3) {
-	  function Data() {
-	    _classCallCheck(this, Data);
+	var DataFormat = (function (_React$Component3) {
+	  function DataFormat() {
+	    _classCallCheck(this, DataFormat);
 
 	    if (_React$Component3 != null) {
 	      _React$Component3.apply(this, arguments);
 	    }
 	  }
 
-	  _inherits(Data, _React$Component3);
+	  _inherits(DataFormat, _React$Component3);
 
-	  _createClass(Data, [{
+	  _createClass(DataFormat, [{
+	    key: "genData",
+	    value: function genData(count, values, cats, series) {
+	      /*
+	        count (Number):           How many datapoints you want.
+	        values (Array(Number)):   Must be of length 2. Min and Max.
+	        cats (Array(String)):     Set of all possible categories.
+	        series (Array(String)):   Set of all possible series.
+	      */
+	      return _.times(count, function (n) {
+	        return {
+	          value: (values[1] - values[0]) * Math.random(),
+	          category: n,
+	          series: null
+	        };
+	      });
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
+	      var data = this.genData(8, [0, 8]);
+
+	      var sineFunc = function sineFunc(x, offset) {
+	        var offset = offset || 0;
+	        return Math.sin(x + offset) * 4 + 4;
+	      };
+
+	      var seriesNames = ["a", "b", "c"];
+
+	      var data = _.flatten(_.times(8, function (n) {
+	        return _.times(3, function (m) {
+	          return {
+	            value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	            category: n,
+	            series: seriesNames[m]
+	          };
+	        });
+	      }));
 	      return _react2["default"].createElement(
 	        "section",
-	        { id: "Data" },
+	        { id: "DataFormat" },
 	        _react2["default"].createElement(
 	          "h2",
 	          null,
-	          "Data"
+	          "Data Format"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the ",
+	          _react2["default"].createElement(
+	            "em",
+	            null,
+	            "number"
+	          ),
+	          " of keys needed for the datapoints change depending on the plot. For now, let's look at ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          )
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          ),
+	          " requires the following keys: ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "series, category, value"
+	          ),
+	          ". If you only have one series, you can leave it blank."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plot,
+	          null,
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	            xMax: 8,
+	            yMax: 8 }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	            max: 8,
+	            groupOffset: 1.3,
+	            data: data })
 	        )
 	      );
 	    }
 	  }]);
 
-	  return Data;
+	  return DataFormat;
 	})(_react2["default"].Component);
 
-	exports.Data = Data;
+	exports.DataFormat = DataFormat;
 	/* data I'm generating. */ /* the sine wave on which sineData is based */ /* data I'm generating. */ /* the sine wave on which sineData is based */ /* The Null element simply occupies a space on the lower left corner of the tabular structure. 
-	                                                                                                                                                    This makes sure that the axis element below is perfectly aligned with the Plot above. */
+	                                                                                                                                                    This makes sure that the axis element below is perfectly aligned with the Plot above. */ /* data I'm generating. */
 
 /***/ }
 /******/ ]);
