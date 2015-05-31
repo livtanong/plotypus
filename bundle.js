@@ -97,7 +97,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, "body {\n  margin: 0;\n  font-family: 'Roboto';\n  color: #2D142C; }\n\nul {\n  margin: 0px;\n  padding: 0px;\n  list-style: none; }\n\ncode {\n  background-color: #D5EDE2; }\n\n.toolbar {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  height: 64px;\n  background-color: #2D142C;\n  color: white; }\n  .toolbar h1 {\n    font-size: 24px;\n    font-weight: 100;\n    margin: 0px 16px; }\n  .toolbar .spacer {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n  .toolbar .toolbar-item {\n    margin: 0px 16px;\n    cursor: pointer; }\n\n.split-pane {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex; }\n  .split-pane .sidebar {\n    min-width: 25%;\n    background-color: #D5EDE2; }\n\nsection {\n  padding: 16px; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  font-family: 'Roboto';\n  color: #2D142C;\n  position: absolute;\n  top: 0px;\n  bottom: 0px;\n  left: 0px;\n  right: 0px; }\n\n#docs {\n  height: 100%; }\n\nul {\n  margin: 0px;\n  padding: 0px;\n  list-style: none; }\n\ncode {\n  background-color: #D5EDE2; }\n\n.toolbar {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  height: 64px;\n  background-color: #2D142C;\n  color: white; }\n  .toolbar h1 {\n    font-size: 24px;\n    font-weight: 100;\n    margin: 0px 16px; }\n  .toolbar .spacer {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n  .toolbar .toolbar-item {\n    margin: 0px 16px;\n    cursor: pointer; }\n\n.split-pane {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex; }\n  .split-pane .sidebar {\n    min-width: 25%;\n    background-color: #D5EDE2; }\n  .split-pane .main {\n    overflow-y: auto; }\n\nsection {\n  padding: 16px; }\n", ""]);
 
 /***/ },
 /* 3 */
@@ -20789,15 +20789,15 @@
 
 	var _srcJsPlotypusJsx = __webpack_require__(166);
 
-	var _ApiDocs = __webpack_require__(206);
+	var _ApiDocs = __webpack_require__(207);
 
 	var _ApiDocs2 = _interopRequireDefault(_ApiDocs);
 
-	var _Home = __webpack_require__(207);
+	var _Home = __webpack_require__(208);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Guide = __webpack_require__(208);
+	var _Guide = __webpack_require__(209);
 
 	var _Guide2 = _interopRequireDefault(_Guide);
 
@@ -20917,7 +20917,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, ".Docs .toolbar h1 {\n  color: #D1603D; }\n", ""]);
+	exports.push([module.id, ".Docs {\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  box-orient: vertical;\n  -webkit-box-direction: normal;\n  -moz-box-direction: normal;\n  box-direction: normal;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-direction: column; }\n  .Docs .toolbar {\n    -webkit-flex-shrink: 0;\n    -moz-flex-shrink: 0;\n    flex-shrink: 0;\n    -ms-flex-negative: 0; }\n    .Docs .toolbar h1 {\n      color: #D1603D; }\n  .Docs .split-pane {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n", ""]);
 
 /***/ },
 /* 164 */
@@ -33219,14 +33219,14 @@
 		}
 	};
 
-	var Chart = React.createClass({
-		displayName: "Chart",
+	var Plot = React.createClass({
+		displayName: "Plot",
 
 		render: function render() {
 			// scale depending on the maximum value we get from children.
 			return React.createElement(
 				"svg",
-				{ className: "Chart" },
+				{ className: "Plot" },
 				React.createElement(
 					"g",
 					{ className: "render-area" },
@@ -33248,6 +33248,18 @@
 		}
 	});
 
+	var PlotypusComponent = React.createClass({
+		displayName: "PlotypusComponent",
+
+		render: function render() {
+			return React.createElement(
+				"div",
+				{ className: "PlotypusComponent" },
+				this.props.children
+			);
+		}
+	});
+
 	var Plotypus = React.createClass({
 		displayName: "Plotypus",
 
@@ -33263,7 +33275,8 @@
 	module.exports = {
 		Plotypus: Plotypus,
 		PlotypusRow: PlotypusRow,
-		Chart: Chart,
+		PlotypusComponent: PlotypusComponent,
+		Plot: Plot,
 		GroupedBarLayer: GroupedBarLayer,
 		StackedBarLayer: StackedBarLayer,
 		LineLayer: LineLayer,
@@ -33312,7 +33325,11 @@
 			return {
 				barWidth: 0.5,
 				groupOffset: 0.6,
-				stacked: false
+				stacked: false,
+				min: 0,
+				seriesField: "series",
+				categoryField: "category",
+				valueField: "value"
 			};
 		},
 		_chartLayer: undefined,
@@ -33418,7 +33435,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, ".Plotypus {\n  display: table;\n  overflow: hidden;\n  table-layout: auto; }\n  .Plotypus .labels-container {\n    height: 48px; }\n  .Plotypus .labels {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex; }\n    .Plotypus .labels .label {\n      -webkit-box-flex: 1;\n      -moz-box-flex: 1;\n      box-flex: 1;\n      -webkit-flex: 1;\n      -moz-flex: 1;\n      -ms-flex: 1;\n      flex: 1;\n      width: 0;\n      height: 0;\n      white-space: nowrap;\n      font-size: 12px; }\n  .Plotypus .Axis text {\n    height: 100%;\n    font-size: 10px; }\n  .Plotypus .Axis.v {\n    height: 99%;\n    width: 48px; }\n  .Plotypus .Axis.h {\n    height: 48px;\n    width: 100%; }\n  .Plotypus .Axis.Category.v {\n    width: auto; }\n  .Plotypus .Axis.Category.h {\n    height: auto; }\n  .Plotypus .axis-label {\n    text-align: center;\n    font-size: 12px;\n    font-weight: 300;\n    white-space: nowrap; }\n    .Plotypus .axis-label.rotate {\n      width: 24px; }\n      .Plotypus .axis-label.rotate .label {\n        position: absolute;\n        bottom: 50%;\n        left: 0px;\n        -webkit-transform: rotate(-90deg) translate(-50%);\n        -moz-transform: rotate(-90deg) translate(-50%);\n        -ms-transform: rotate(-90deg) translate(-50%);\n        -o-transform: rotate(-90deg) translate(-50%);\n        transform: rotate(-90deg) translate(-50%);\n        -webkit-transform-origin: top left;\n        -moz-transform-origin: top left;\n        -ms-transform-origin: top left;\n        -o-transform-origin: top left;\n        transform-origin: top left; }\n    .Plotypus .axis-label.x {\n      display: -webkit-box;\n      display: -moz-box;\n      display: box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -moz-box-orient: horizontal;\n      box-orient: horizontal;\n      -webkit-box-direction: normal;\n      -moz-box-direction: normal;\n      box-direction: normal;\n      -webkit-flex-direction: row;\n      -moz-flex-direction: row;\n      flex-direction: row;\n      -ms-flex-direction: row;\n      -webkit-box-pack: center;\n      -moz-box-pack: center;\n      box-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      -ms-justify-content: center;\n      -o-justify-content: center;\n      justify-content: center;\n      -ms-flex-pack: center; }\n  .Plotypus .component {\n    display: table-cell; }\n    .Plotypus .component.full {\n      height: 100%;\n      width: 100%; }\n\n.PlotypusRow {\n  display: table-row; }\n  .PlotypusRow .Chart {\n    height: 99%;\n    width: 100%; }\n  .PlotypusRow .null {\n    display: table-cell;\n    width: 0px;\n    height: 0px; }\n", ""]);
+	exports.push([module.id, ".Plotypus {\n  display: table;\n  overflow: hidden;\n  table-layout: auto; }\n  .Plotypus .labels-container {\n    height: 48px; }\n  .Plotypus .labels {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex; }\n    .Plotypus .labels .label {\n      -webkit-box-flex: 1;\n      -moz-box-flex: 1;\n      box-flex: 1;\n      -webkit-flex: 1;\n      -moz-flex: 1;\n      -ms-flex: 1;\n      flex: 1;\n      width: 0;\n      height: 0;\n      white-space: nowrap;\n      font-size: 12px; }\n  .Plotypus .Axis text {\n    height: 100%;\n    font-size: 10px; }\n  .Plotypus .Axis.v {\n    height: 99%;\n    width: 48px; }\n  .Plotypus .Axis.h {\n    height: 48px;\n    width: 100%; }\n  .Plotypus .Axis.Category.v {\n    width: auto; }\n  .Plotypus .Axis.Category.h {\n    height: auto; }\n  .Plotypus .axis-label {\n    text-align: center;\n    font-size: 12px;\n    font-weight: 300;\n    white-space: nowrap; }\n    .Plotypus .axis-label.rotate {\n      width: 24px; }\n      .Plotypus .axis-label.rotate .label {\n        position: absolute;\n        bottom: 50%;\n        left: 0px;\n        -webkit-transform: rotate(-90deg) translate(-50%);\n        -moz-transform: rotate(-90deg) translate(-50%);\n        -ms-transform: rotate(-90deg) translate(-50%);\n        -o-transform: rotate(-90deg) translate(-50%);\n        transform: rotate(-90deg) translate(-50%);\n        -webkit-transform-origin: top left;\n        -moz-transform-origin: top left;\n        -ms-transform-origin: top left;\n        -o-transform-origin: top left;\n        transform-origin: top left; }\n    .Plotypus .axis-label.x {\n      display: -webkit-box;\n      display: -moz-box;\n      display: box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -moz-box-orient: horizontal;\n      box-orient: horizontal;\n      -webkit-box-direction: normal;\n      -moz-box-direction: normal;\n      box-direction: normal;\n      -webkit-flex-direction: row;\n      -moz-flex-direction: row;\n      flex-direction: row;\n      -ms-flex-direction: row;\n      -webkit-box-pack: center;\n      -moz-box-pack: center;\n      box-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      -ms-justify-content: center;\n      -o-justify-content: center;\n      justify-content: center;\n      -ms-flex-pack: center; }\n\n.PlotypusRow {\n  display: table-row; }\n  .PlotypusRow .Plot {\n    height: 99%;\n    width: 100%; }\n  .PlotypusRow .null {\n    display: table-cell;\n    width: 0px;\n    height: 0px; }\n\n.PlotypusComponent {\n  display: table-cell; }\n  .PlotypusComponent.full {\n    height: 100%;\n    width: 100%; }\n\n.FuncLayer path {\n  stroke-dasharray: 3, 3;\n  stroke-width: 1px;\n  fill: none;\n  stroke: black;\n  vector-effect: non-scaling-stroke; }\n", ""]);
 
 /***/ },
 /* 171 */
@@ -35589,9 +35606,9 @@
 	function Bars(domNode, data, seriesField, categoryField, valueField) {
 		SVGLayer.call(this, domNode);
 		this.data = data;
-		this.seriesField = seriesField;
-		this.categoryField = categoryField;
-		this.valueField = valueField;
+		this.seriesField = seriesField || "series";
+		this.categoryField = categoryField || "category";
+		this.valueField = valueField || "value";
 
 		this.pluckField = (function (fieldName) {
 
@@ -35610,6 +35627,7 @@
 
 	function GroupedBars(domNode, data, seriesField, categoryField, valueField, groupOffsetFactor, barWidthFactor, max, min) {
 		Bars.call(this, domNode, data, seriesField, categoryField, valueField);
+
 		_.chain(data).groupBy(categoryField).sortBy(function (c, i) {
 			return i;
 		}).forEach(function (series, catIndex, categoryObject) {
@@ -36269,7 +36287,11 @@
 			return {
 				barWidth: 0.5,
 				groupOffset: 0.6,
-				stacked: false
+				min: 0,
+				stacked: false,
+				seriesField: "series",
+				categoryField: "category",
+				valueField: "value"
 			};
 		},
 		_chartLayer: undefined,
@@ -36362,49 +36384,6 @@
 
 			this.addSVGElement(this.content, "path", attrs);
 		}, this).value();
-
-		// _.chain(data)
-		// 	.groupBy("category")
-		// 	.forEach(function(dataPoints, categoryName, categoryList){
-		// 		dataPoints.forEach(function(dataPoint, seriesIndex, series){
-
-		// 			var values = _.pluck(dataPoints, "value")
-		// 				catIndex = _.keys(categoryList).indexOf(categoryName),
-		// 				valueRange = max - min;
-
-		// 			catCount = _.size(categoryList);
-
-		// 			// seriesCount = series.length;
-		// 			// barCount = data.length;
-
-		// 			// if (isStacked) {			
-		// 			// 	var barWidth = barWidthFactor,
-		// 			// 		fieldX = catIndex,
-		// 			// 		seriesX = (0.5) - (0.5 * barWidth),
-		// 			// 		yOffset = getOffset(_.take(values, seriesIndex), bar.value),
-		// 			// 		y = getPosition(bar.value, yOffset);
-		// 			// } else {
-		// 			// 	var barWidth = barWidthFactor,
-		// 			// 		barOffset = groupOffsetFactor * barWidth,
-		// 			// 		barMargin = barOffset - barWidth,
-		// 			// 		groupWidth = (barOffset * seriesCount) - barMargin,
-		// 			// 		fieldX = (catIndex + 0.5) * seriesCount - (groupWidth * 0.5),
-		// 			// 		seriesX = barOffset * seriesIndex,
-		// 			// 		y = getPosition(bar.value, 0);
-		// 			// }
-
-		// 			var attrs = {
-		// 				cx: catIndex,
-		// 				cy: dataPoint.value,
-		// 				r: 1,
-		// 				class: "Point " + "series-" + (seriesIndex + 1)
-		// 			};
-
-		// 			this.addSVGElement(this.content, "circle", attrs);
-
-		// 		}, this)
-		// 	}, this)
-		// 	.value();
 
 		this.domNode.setAttribute("viewBox", "0 0 " + catCount + " " + (max - min));
 		this.domNode.setAttribute("preserveAspectRatio", "none");
@@ -40527,6 +40506,8 @@
 	var React = __webpack_require__(5);
 	var _ = __webpack_require__(164);
 	var classnames = __webpack_require__(168);
+	var Funcs = __webpack_require__(206);
+	var ChartLayerMixin = __webpack_require__(189);
 
 	var FuncLayer = React.createClass({
 		displayName: "FuncLayer",
@@ -40542,53 +40523,23 @@
 		getDefaultProps: function getDefaultProps() {
 			return {
 				xMin: 0,
-				yMin: 0
+				yMin: 0,
+				samples: 64
 			};
 		},
+		mixins: [ChartLayerMixin],
+		_chartLayer: undefined,
+		updateChart: function updateChart() {
+			this.destroyChart();
+			this._chartLayer = new Funcs(React.findDOMNode(this), this.props.func, this.props.xMin, this.props.xMax, this.props.yMin, this.props.yMax, this.props.samples);
+		},
+		destroyChart: function destroyChart() {
+			if (this._chartLayer && this._chartLayer.clear) {
+				this._chartLayer.clear();
+			}
+		},
 		render: function render() {
-
-			var interval = this.props.xMax / this.props.samples;
-			var xNumRange = this.props.xMax - this.props.xMin;
-			var yNumRange = this.props.yMax - this.props.yMin;
-
-			var points = _.range(this.props.xMin, this.props.xMax + interval, interval).map(function (x, index) {
-				var y = this.props.yMax - this.props.func(x);
-				var pX = x / this.props.xMax * 100 + "%";
-				var pY = y / (this.props.yMax - this.props.yMin) * 100 + "%";
-				// return (
-				// 	<circle key={ index } cx={ pX } cy={ pY } r="1" />
-				// )
-				return {
-					x: pX,
-					y: pY,
-					i: index
-				};
-			}, this);
-
-			var path = _.rest(points).reduce(function (accPath, point) {
-
-				var prevPoint = accPath.prevPoint;
-
-				var line = React.createElement("line", { key: "p" + point.i, x1: prevPoint.x, y1: prevPoint.y, x2: point.x, y2: point.y, strokeWidth: 1, stroke: "black" });
-
-				return {
-					prevPoint: point,
-					path: accPath.path.concat(line)
-				};
-			}, {
-				prevPoint: _.head(points),
-				path: []
-			});
-
-			return React.createElement(
-				"svg",
-				{ className: classnames("FuncLayer", this.props.className) },
-				React.createElement(
-					"g",
-					null,
-					path.path
-				)
-			);
+			return React.createElement("svg", { className: classnames("FuncLayer", this.props.className) });
 		}
 	});
 
@@ -40596,6 +40547,61 @@
 
 /***/ },
 /* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _lodash = __webpack_require__(164);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _SVGLayer2 = __webpack_require__(191);
+
+	var _SVGLayer3 = _interopRequireDefault(_SVGLayer2);
+
+	var Funcs = (function (_SVGLayer) {
+		function Funcs(domNode, func, xMin, xMax, yMin, yMax, samples) {
+			_classCallCheck(this, Funcs);
+
+			_get(Object.getPrototypeOf(Funcs.prototype), "constructor", this).call(this, domNode);
+			var interval = xMax / samples,
+			    xNumRange = xMax - xMin,
+			    yNumRange = yMax - yMin;
+
+			var points = _lodash2["default"].range(xMin, xMax + interval, interval).map(function (x, i) {
+				return "" + (i ? "L" : "M") + " " + x + " " + (yMax - func(x));
+			});
+
+			var attrs = {
+				d: points.join(" ") };
+
+			this.addSVGElement(this.content, "path", attrs);
+			this.domNode.setAttribute("viewBox", "0 0 " + xNumRange + " " + yNumRange);
+			this.domNode.setAttribute("preserveAspectRatio", "none");
+		}
+
+		_inherits(Funcs, _SVGLayer);
+
+		return Funcs;
+	})(_SVGLayer3["default"]);
+
+	exports["default"] = Funcs;
+	module.exports = exports["default"];
+
+/***/ },
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40724,7 +40730,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40774,7 +40780,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40795,22 +40801,83 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _HighlightJsx = __webpack_require__(209);
+	var _HighlightJsx = __webpack_require__(210);
 
 	var _HighlightJsx2 = _interopRequireDefault(_HighlightJsx);
 
 	var _srcJsPlotypusJsx = __webpack_require__(166);
 
-	var ChartsAndLayers = (function (_React$Component) {
-	  function ChartsAndLayers() {
-	    _classCallCheck(this, ChartsAndLayers);
+	var BasicStructure = (function (_React$Component) {
+	  function BasicStructure() {
+	    _classCallCheck(this, BasicStructure);
 
 	    if (_React$Component != null) {
 	      _React$Component.apply(this, arguments);
 	    }
 	  }
 
-	  _inherits(ChartsAndLayers, _React$Component);
+	  _inherits(BasicStructure, _React$Component);
+
+	  _createClass(BasicStructure, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "div",
+	        null,
+	        _react2["default"].createElement(
+	          "h3",
+	          null,
+	          "Basic Structure"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have one axis, two, none, and even 4, if you're insane."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "All ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "PlotypusRow"
+	          ),
+	          "s act like table rows, while all ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "PlotypusComponent"
+	          ),
+	          "s act like table cells."
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          { className: "solarized_light" },
+	          "<Plotypus>\n  <PlotypusRow>\n    <!-- PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Plot, to a Legend. -->\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n  <PlotypusRow>\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n</Plotypus>"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return BasicStructure;
+	})(_react2["default"].Component);
+
+	var ChartsAndLayers = (function (_React$Component2) {
+	  function ChartsAndLayers() {
+	    _classCallCheck(this, ChartsAndLayers);
+
+	    if (_React$Component2 != null) {
+	      _React$Component2.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(ChartsAndLayers, _React$Component2);
 
 	  _createClass(ChartsAndLayers, [{
 	    key: "genData",
@@ -40853,79 +40920,72 @@
 	        _react2["default"].createElement(
 	          "h3",
 	          null,
-	          "Charts and Layers"
+	          "Plots and Layers"
 	        ),
 	        _react2["default"].createElement(
 	          "p",
 	          null,
-	          "The chart component is obviously the most important of the components, and structurally, they are unique in that they have ",
+	          "The ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plot"
+	          ),
+	          " component is the most important of the components, and structurally, they are unique in that they have ",
 	          _react2["default"].createElement(
 	            "strong",
 	            null,
 	            "layers"
 	          ),
-	          ". Layers are graphical elements that stack on top of each other inside a Chart. Currently, only Charts have layers, but over time this may change."
+	          ". Layers are graphical elements that stack on top of each other and take up the same area. Currently, only Plots have layers, but over time this may change."
 	        ),
 	        _react2["default"].createElement(
 	          "p",
 	          null,
+	          "We'll use ",
 	          _react2["default"].createElement(
 	            "code",
 	            null,
 	            "GridLayer"
 	          ),
-	          " and ",
+	          ", ",
 	          _react2["default"].createElement(
 	            "code",
 	            null,
 	            "GroupedBarLayer"
 	          ),
-	          " are the first layers we'll encounter in this guide, and perfectly demonstrate the concept of layers. For now, we will simplify our layout to only include one Component: ",
+	          ", and ",
 	          _react2["default"].createElement(
 	            "code",
 	            null,
-	            "Chart"
+	            "FuncLayer"
 	          ),
-	          ", leaving only one ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "PlotypusRow"
-	          ),
-	          " in our markup."
+	          " to demonstrate the concept of layers."
 	        ),
 	        _react2["default"].createElement(
-	          _srcJsPlotypusJsx.Plotypus,
+	          "p",
 	          null,
-	          _react2["default"].createElement(
-	            _srcJsPlotypusJsx.PlotypusRow,
-	            null,
-	            _react2["default"].createElement(
-	              _srcJsPlotypusJsx.Chart,
-	              null,
-	              _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
-	                xMax: 8,
-	                yMax: 8 }),
-	              _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
-	                barWidth: 0.3,
-	                max: 8,
-	                min: 0,
-	                categoryField: "category",
-	                seriesField: "series",
-	                valueField: "value",
-	                data: sineData }),
-	              _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
-	                xMax: 8,
-	                yMax: 8,
-	                func: sineFunc,
-	                samples: 32 })
-	            )
-	          )
+	          "For now, you can ignore the properties I'm passing to each layer, as I will expound on them later on, but you can also study them now if you like."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plot,
+	          null,
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	            xMax: 8,
+	            yMax: 8 }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	            max: 8,
+	            data: sineData }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
+	            xMax: 8,
+	            yMax: 8,
+	            func: sineFunc,
+	            samples: 64 })
 	        ),
 	        _react2["default"].createElement(
 	          _HighlightJsx2["default"],
 	          { className: "solarized_light" },
-	          "<Plotypus>\n  <PlotypusRow>\n    <Chart>\n      <GridLayer \n        xMax={ 8 }\n        yMax={ 8 }\n        />\n      <GroupedBarLayer \n        barWidth={ 0.3 }\n        max={ 8 }\n        min={ 0 }\n        categoryField=\"category\"\n        seriesField=\"series\"\n        valueField=\"value\"\n        data={ sineData }  {/* data I'm generating. */}\n        />\n      <FuncLayer\n        xMax={ 8 }\n        yMax={ 8 }\n        func={ sineFunc } {/* the sine wave on which sineData is based */}\n        samples={ 8 }\n        />\n    </Chart>\n  </PlotypusRow>\n</Plotypus>"
+	          "<Plot>\n  <GridLayer \n    xMax={ 8 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    data={ sineData /* data I'm generating. */}/>\n  <FuncLayer\n    xMax={ 8 }\n    yMax={ 8 }\n    func={ sineFunc /* the sine wave on which sineData is based */}\n    samples={ 64 }/>\n</Plot>"
 	        )
 	      );
 	    }
@@ -40934,16 +40994,61 @@
 	  return ChartsAndLayers;
 	})(_react2["default"].Component);
 
-	var Guide = (function (_React$Component2) {
-	  function Guide() {
-	    _classCallCheck(this, Guide);
+	var OtherComponents = (function (_React$Component3) {
+	  function OtherComponents() {
+	    _classCallCheck(this, OtherComponents);
 
-	    if (_React$Component2 != null) {
-	      _React$Component2.apply(this, arguments);
+	    if (_React$Component3 != null) {
+	      _React$Component3.apply(this, arguments);
 	    }
 	  }
 
-	  _inherits(Guide, _React$Component2);
+	  _inherits(OtherComponents, _React$Component3);
+
+	  _createClass(OtherComponents, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "div",
+	        null,
+	        _react2["default"].createElement(
+	          "h3",
+	          null,
+	          "Other Components"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "Now that we've gotten the ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plot"
+	          ),
+	          " out of the way, we can work on the other simpler components. These don't have layers, and therefore just stand alone."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "To keep "
+	        )
+	      );
+	    }
+	  }]);
+
+	  return OtherComponents;
+	})(_react2["default"].Component);
+
+	var Guide = (function (_React$Component4) {
+	  function Guide() {
+	    _classCallCheck(this, Guide);
+
+	    if (_React$Component4 != null) {
+	      _React$Component4.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(Guide, _React$Component4);
 
 	  _createClass(Guide, [{
 	    key: "genData",
@@ -41016,30 +41121,54 @@
 	              "Structure"
 	            ),
 	            _react2["default"].createElement(
-	              "div",
+	              "p",
 	              null,
+	              "There are two things you need to know about the structure of Plotypus charts. First, ",
 	              _react2["default"].createElement(
-	                "p",
+	                "code",
 	                null,
-	                "Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts."
+	                "Plot"
 	              ),
+	              "s are layered, and second, they can be composed with other Plotypus components like ",
 	              _react2["default"].createElement(
-	                "p",
+	                "code",
 	                null,
-	                "It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have one axis, two, none, and even 4, if you're insane."
+	                "Axis"
 	              ),
+	              " and ",
 	              _react2["default"].createElement(
-	                _HighlightJsx2["default"],
-	                { className: "solarized_light" },
-	                "<Plotypus>\n  <PlotypusRow>\n    <Component1 />\n    <Component2 /> <!-- Components here are just placeholders. They can be anything from an Axis to a Chart, to a Legend. -->\n  </PlotypusRow>\n  <PlotypusRow>\n    <Null /> <!-- Null is just like any other Component, except it simply doesn't display anything. -->\n    <Component3 />\n  </PlotypusRow>\n</Plotypus>"
-	              ),
-	              _react2["default"].createElement(
-	                "p",
+	                "code",
 	                null,
-	                "All Plotypus components that aren't structural like PlotypusRow, act like table cells. And generally, they all behave identically, with the exception of the Chart component."
-	              )
+	                "AxisLabel"
+	              ),
+	              ", and even other ",
+	              _react2["default"].createElement(
+	                "code",
+	                null,
+	                "Plot"
+	              ),
+	              "s, by way of a tabular layouting system."
 	            ),
-	            _react2["default"].createElement(ChartsAndLayers, null)
+	            _react2["default"].createElement(
+	              "aside",
+	              null,
+	              "Note: because we are using react, all comments that would have used the HTML comment, ",
+	              _react2["default"].createElement(
+	                "code",
+	                null,
+	                "<!-- -->"
+	              ),
+	              ", will instead use the react comment, ",
+	              _react2["default"].createElement(
+	                "code",
+	                null,
+	                "{/* */}"
+	              ),
+	              "."
+	            ),
+	            _react2["default"].createElement(ChartsAndLayers, null),
+	            _react2["default"].createElement(BasicStructure, null),
+	            _react2["default"].createElement(OtherComponents, null)
 	          )
 	        )
 	      );
@@ -41051,24 +41180,24 @@
 
 	exports["default"] = Guide;
 	module.exports = exports["default"];
-	/* data is just random data I'm generating. */ /*<Plotypus>
-	                                                          <PlotypusRow>
-	                                                            <Chart>
-	                                                              <GroupedBarLayer 
-	                                                                groupOffset={ 1.2 } 
-	                                                                barWidth={ 0.1 }
-	                                                                max={ 10 }
-	                                                                min={ 0 }
-	                                                                categoryField="category"
-	                                                                seriesField="series"
-	                                                                valueField="value"
-	                                                                data={ data } />
-	                                                            </Chart>
-	                                                          </PlotypusRow>
-	                                                        </Plotypus>*/
+	/* data I'm generating. */ /* the sine wave on which sineData is based */ /*<Plotypus>
+	                                                                                     <PlotypusRow>
+	                                                                                       <Plot>
+	                                                                                         <GroupedBarLayer 
+	                                                                                           groupOffset={ 1.2 } 
+	                                                                                           barWidth={ 0.1 }
+	                                                                                           max={ 10 }
+	                                                                                           min={ 0 }
+	                                                                                           categoryField="category"
+	                                                                                           seriesField="series"
+	                                                                                           valueField="value"
+	                                                                                           data={ data } />
+	                                                                                       </Plot>
+	                                                                                     </PlotypusRow>
+	                                                                                   </Plotypus>*/
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41087,7 +41216,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-	var _highlightJs = __webpack_require__(210);
+	var _highlightJs = __webpack_require__(211);
 
 	var _highlightJs2 = _interopRequireDefault(_highlightJs);
 
@@ -41155,141 +41284,141 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var hljs = __webpack_require__(212);
+	var hljs = __webpack_require__(213);
 
-	hljs.registerLanguage('1c', __webpack_require__(213));
-	hljs.registerLanguage('actionscript', __webpack_require__(214));
-	hljs.registerLanguage('apache', __webpack_require__(215));
-	hljs.registerLanguage('applescript', __webpack_require__(216));
-	hljs.registerLanguage('armasm', __webpack_require__(217));
-	hljs.registerLanguage('xml', __webpack_require__(218));
-	hljs.registerLanguage('asciidoc', __webpack_require__(219));
-	hljs.registerLanguage('aspectj', __webpack_require__(220));
-	hljs.registerLanguage('autohotkey', __webpack_require__(221));
-	hljs.registerLanguage('avrasm', __webpack_require__(222));
-	hljs.registerLanguage('axapta', __webpack_require__(223));
-	hljs.registerLanguage('bash', __webpack_require__(224));
-	hljs.registerLanguage('brainfuck', __webpack_require__(225));
-	hljs.registerLanguage('cal', __webpack_require__(226));
-	hljs.registerLanguage('capnproto', __webpack_require__(227));
-	hljs.registerLanguage('ceylon', __webpack_require__(228));
-	hljs.registerLanguage('clojure', __webpack_require__(229));
-	hljs.registerLanguage('clojure-repl', __webpack_require__(230));
-	hljs.registerLanguage('cmake', __webpack_require__(231));
-	hljs.registerLanguage('coffeescript', __webpack_require__(232));
-	hljs.registerLanguage('cpp', __webpack_require__(233));
-	hljs.registerLanguage('cs', __webpack_require__(234));
-	hljs.registerLanguage('css', __webpack_require__(235));
-	hljs.registerLanguage('d', __webpack_require__(236));
-	hljs.registerLanguage('markdown', __webpack_require__(237));
-	hljs.registerLanguage('dart', __webpack_require__(238));
-	hljs.registerLanguage('delphi', __webpack_require__(239));
-	hljs.registerLanguage('diff', __webpack_require__(240));
-	hljs.registerLanguage('django', __webpack_require__(241));
-	hljs.registerLanguage('dns', __webpack_require__(242));
-	hljs.registerLanguage('dockerfile', __webpack_require__(243));
-	hljs.registerLanguage('dos', __webpack_require__(244));
-	hljs.registerLanguage('dust', __webpack_require__(245));
-	hljs.registerLanguage('elixir', __webpack_require__(246));
-	hljs.registerLanguage('ruby', __webpack_require__(247));
-	hljs.registerLanguage('erb', __webpack_require__(248));
-	hljs.registerLanguage('erlang-repl', __webpack_require__(249));
-	hljs.registerLanguage('erlang', __webpack_require__(250));
-	hljs.registerLanguage('fix', __webpack_require__(251));
-	hljs.registerLanguage('fortran', __webpack_require__(252));
-	hljs.registerLanguage('fsharp', __webpack_require__(253));
-	hljs.registerLanguage('gcode', __webpack_require__(254));
-	hljs.registerLanguage('gherkin', __webpack_require__(255));
-	hljs.registerLanguage('glsl', __webpack_require__(256));
-	hljs.registerLanguage('go', __webpack_require__(257));
-	hljs.registerLanguage('gradle', __webpack_require__(258));
-	hljs.registerLanguage('groovy', __webpack_require__(259));
-	hljs.registerLanguage('haml', __webpack_require__(260));
-	hljs.registerLanguage('handlebars', __webpack_require__(261));
-	hljs.registerLanguage('haskell', __webpack_require__(262));
-	hljs.registerLanguage('haxe', __webpack_require__(263));
-	hljs.registerLanguage('http', __webpack_require__(264));
-	hljs.registerLanguage('inform7', __webpack_require__(265));
-	hljs.registerLanguage('ini', __webpack_require__(266));
-	hljs.registerLanguage('java', __webpack_require__(267));
-	hljs.registerLanguage('javascript', __webpack_require__(268));
-	hljs.registerLanguage('json', __webpack_require__(269));
-	hljs.registerLanguage('julia', __webpack_require__(270));
-	hljs.registerLanguage('kotlin', __webpack_require__(271));
-	hljs.registerLanguage('lasso', __webpack_require__(272));
-	hljs.registerLanguage('less', __webpack_require__(273));
-	hljs.registerLanguage('lisp', __webpack_require__(274));
-	hljs.registerLanguage('livecodeserver', __webpack_require__(211));
-	hljs.registerLanguage('livescript', __webpack_require__(275));
-	hljs.registerLanguage('lua', __webpack_require__(276));
-	hljs.registerLanguage('makefile', __webpack_require__(277));
-	hljs.registerLanguage('mathematica', __webpack_require__(278));
-	hljs.registerLanguage('matlab', __webpack_require__(279));
-	hljs.registerLanguage('mel', __webpack_require__(280));
-	hljs.registerLanguage('mercury', __webpack_require__(281));
-	hljs.registerLanguage('mizar', __webpack_require__(282));
-	hljs.registerLanguage('monkey', __webpack_require__(283));
-	hljs.registerLanguage('nginx', __webpack_require__(284));
-	hljs.registerLanguage('nimrod', __webpack_require__(285));
-	hljs.registerLanguage('nix', __webpack_require__(286));
-	hljs.registerLanguage('nsis', __webpack_require__(287));
-	hljs.registerLanguage('objectivec', __webpack_require__(288));
-	hljs.registerLanguage('ocaml', __webpack_require__(289));
-	hljs.registerLanguage('openscad', __webpack_require__(290));
-	hljs.registerLanguage('oxygene', __webpack_require__(291));
-	hljs.registerLanguage('parser3', __webpack_require__(292));
-	hljs.registerLanguage('perl', __webpack_require__(293));
-	hljs.registerLanguage('pf', __webpack_require__(294));
-	hljs.registerLanguage('php', __webpack_require__(295));
-	hljs.registerLanguage('powershell', __webpack_require__(296));
-	hljs.registerLanguage('processing', __webpack_require__(297));
-	hljs.registerLanguage('profile', __webpack_require__(298));
-	hljs.registerLanguage('prolog', __webpack_require__(299));
-	hljs.registerLanguage('protobuf', __webpack_require__(300));
-	hljs.registerLanguage('puppet', __webpack_require__(301));
-	hljs.registerLanguage('python', __webpack_require__(302));
-	hljs.registerLanguage('q', __webpack_require__(303));
-	hljs.registerLanguage('r', __webpack_require__(304));
-	hljs.registerLanguage('rib', __webpack_require__(305));
-	hljs.registerLanguage('roboconf', __webpack_require__(306));
-	hljs.registerLanguage('rsl', __webpack_require__(307));
-	hljs.registerLanguage('ruleslanguage', __webpack_require__(308));
-	hljs.registerLanguage('rust', __webpack_require__(309));
-	hljs.registerLanguage('scala', __webpack_require__(310));
-	hljs.registerLanguage('scheme', __webpack_require__(311));
-	hljs.registerLanguage('scilab', __webpack_require__(312));
-	hljs.registerLanguage('scss', __webpack_require__(313));
-	hljs.registerLanguage('smali', __webpack_require__(314));
-	hljs.registerLanguage('smalltalk', __webpack_require__(315));
-	hljs.registerLanguage('sml', __webpack_require__(316));
-	hljs.registerLanguage('sql', __webpack_require__(317));
-	hljs.registerLanguage('stata', __webpack_require__(318));
-	hljs.registerLanguage('step21', __webpack_require__(319));
-	hljs.registerLanguage('stylus', __webpack_require__(320));
-	hljs.registerLanguage('swift', __webpack_require__(321));
-	hljs.registerLanguage('tcl', __webpack_require__(322));
-	hljs.registerLanguage('tex', __webpack_require__(323));
-	hljs.registerLanguage('thrift', __webpack_require__(324));
-	hljs.registerLanguage('tp', __webpack_require__(325));
-	hljs.registerLanguage('twig', __webpack_require__(326));
-	hljs.registerLanguage('typescript', __webpack_require__(327));
-	hljs.registerLanguage('vala', __webpack_require__(328));
-	hljs.registerLanguage('vbnet', __webpack_require__(329));
-	hljs.registerLanguage('vbscript', __webpack_require__(330));
-	hljs.registerLanguage('vbscript-html', __webpack_require__(331));
-	hljs.registerLanguage('verilog', __webpack_require__(332));
-	hljs.registerLanguage('vhdl', __webpack_require__(333));
-	hljs.registerLanguage('vim', __webpack_require__(334));
-	hljs.registerLanguage('x86asm', __webpack_require__(335));
-	hljs.registerLanguage('xl', __webpack_require__(336));
+	hljs.registerLanguage('1c', __webpack_require__(214));
+	hljs.registerLanguage('actionscript', __webpack_require__(215));
+	hljs.registerLanguage('apache', __webpack_require__(216));
+	hljs.registerLanguage('applescript', __webpack_require__(217));
+	hljs.registerLanguage('armasm', __webpack_require__(218));
+	hljs.registerLanguage('xml', __webpack_require__(219));
+	hljs.registerLanguage('asciidoc', __webpack_require__(220));
+	hljs.registerLanguage('aspectj', __webpack_require__(221));
+	hljs.registerLanguage('autohotkey', __webpack_require__(222));
+	hljs.registerLanguage('avrasm', __webpack_require__(223));
+	hljs.registerLanguage('axapta', __webpack_require__(224));
+	hljs.registerLanguage('bash', __webpack_require__(225));
+	hljs.registerLanguage('brainfuck', __webpack_require__(226));
+	hljs.registerLanguage('cal', __webpack_require__(227));
+	hljs.registerLanguage('capnproto', __webpack_require__(228));
+	hljs.registerLanguage('ceylon', __webpack_require__(229));
+	hljs.registerLanguage('clojure', __webpack_require__(230));
+	hljs.registerLanguage('clojure-repl', __webpack_require__(231));
+	hljs.registerLanguage('cmake', __webpack_require__(232));
+	hljs.registerLanguage('coffeescript', __webpack_require__(233));
+	hljs.registerLanguage('cpp', __webpack_require__(234));
+	hljs.registerLanguage('cs', __webpack_require__(235));
+	hljs.registerLanguage('css', __webpack_require__(236));
+	hljs.registerLanguage('d', __webpack_require__(237));
+	hljs.registerLanguage('markdown', __webpack_require__(238));
+	hljs.registerLanguage('dart', __webpack_require__(239));
+	hljs.registerLanguage('delphi', __webpack_require__(240));
+	hljs.registerLanguage('diff', __webpack_require__(241));
+	hljs.registerLanguage('django', __webpack_require__(242));
+	hljs.registerLanguage('dns', __webpack_require__(243));
+	hljs.registerLanguage('dockerfile', __webpack_require__(244));
+	hljs.registerLanguage('dos', __webpack_require__(245));
+	hljs.registerLanguage('dust', __webpack_require__(246));
+	hljs.registerLanguage('elixir', __webpack_require__(247));
+	hljs.registerLanguage('ruby', __webpack_require__(248));
+	hljs.registerLanguage('erb', __webpack_require__(249));
+	hljs.registerLanguage('erlang-repl', __webpack_require__(250));
+	hljs.registerLanguage('erlang', __webpack_require__(251));
+	hljs.registerLanguage('fix', __webpack_require__(252));
+	hljs.registerLanguage('fortran', __webpack_require__(253));
+	hljs.registerLanguage('fsharp', __webpack_require__(254));
+	hljs.registerLanguage('gcode', __webpack_require__(255));
+	hljs.registerLanguage('gherkin', __webpack_require__(256));
+	hljs.registerLanguage('glsl', __webpack_require__(257));
+	hljs.registerLanguage('go', __webpack_require__(258));
+	hljs.registerLanguage('gradle', __webpack_require__(259));
+	hljs.registerLanguage('groovy', __webpack_require__(260));
+	hljs.registerLanguage('haml', __webpack_require__(261));
+	hljs.registerLanguage('handlebars', __webpack_require__(262));
+	hljs.registerLanguage('haskell', __webpack_require__(263));
+	hljs.registerLanguage('haxe', __webpack_require__(264));
+	hljs.registerLanguage('http', __webpack_require__(265));
+	hljs.registerLanguage('inform7', __webpack_require__(266));
+	hljs.registerLanguage('ini', __webpack_require__(267));
+	hljs.registerLanguage('java', __webpack_require__(268));
+	hljs.registerLanguage('javascript', __webpack_require__(269));
+	hljs.registerLanguage('json', __webpack_require__(270));
+	hljs.registerLanguage('julia', __webpack_require__(271));
+	hljs.registerLanguage('kotlin', __webpack_require__(272));
+	hljs.registerLanguage('lasso', __webpack_require__(273));
+	hljs.registerLanguage('less', __webpack_require__(274));
+	hljs.registerLanguage('lisp', __webpack_require__(275));
+	hljs.registerLanguage('livecodeserver', __webpack_require__(212));
+	hljs.registerLanguage('livescript', __webpack_require__(276));
+	hljs.registerLanguage('lua', __webpack_require__(277));
+	hljs.registerLanguage('makefile', __webpack_require__(278));
+	hljs.registerLanguage('mathematica', __webpack_require__(279));
+	hljs.registerLanguage('matlab', __webpack_require__(280));
+	hljs.registerLanguage('mel', __webpack_require__(281));
+	hljs.registerLanguage('mercury', __webpack_require__(282));
+	hljs.registerLanguage('mizar', __webpack_require__(283));
+	hljs.registerLanguage('monkey', __webpack_require__(284));
+	hljs.registerLanguage('nginx', __webpack_require__(285));
+	hljs.registerLanguage('nimrod', __webpack_require__(286));
+	hljs.registerLanguage('nix', __webpack_require__(287));
+	hljs.registerLanguage('nsis', __webpack_require__(288));
+	hljs.registerLanguage('objectivec', __webpack_require__(289));
+	hljs.registerLanguage('ocaml', __webpack_require__(290));
+	hljs.registerLanguage('openscad', __webpack_require__(291));
+	hljs.registerLanguage('oxygene', __webpack_require__(292));
+	hljs.registerLanguage('parser3', __webpack_require__(293));
+	hljs.registerLanguage('perl', __webpack_require__(294));
+	hljs.registerLanguage('pf', __webpack_require__(295));
+	hljs.registerLanguage('php', __webpack_require__(296));
+	hljs.registerLanguage('powershell', __webpack_require__(297));
+	hljs.registerLanguage('processing', __webpack_require__(298));
+	hljs.registerLanguage('profile', __webpack_require__(299));
+	hljs.registerLanguage('prolog', __webpack_require__(300));
+	hljs.registerLanguage('protobuf', __webpack_require__(301));
+	hljs.registerLanguage('puppet', __webpack_require__(302));
+	hljs.registerLanguage('python', __webpack_require__(303));
+	hljs.registerLanguage('q', __webpack_require__(304));
+	hljs.registerLanguage('r', __webpack_require__(305));
+	hljs.registerLanguage('rib', __webpack_require__(306));
+	hljs.registerLanguage('roboconf', __webpack_require__(307));
+	hljs.registerLanguage('rsl', __webpack_require__(308));
+	hljs.registerLanguage('ruleslanguage', __webpack_require__(309));
+	hljs.registerLanguage('rust', __webpack_require__(310));
+	hljs.registerLanguage('scala', __webpack_require__(311));
+	hljs.registerLanguage('scheme', __webpack_require__(312));
+	hljs.registerLanguage('scilab', __webpack_require__(313));
+	hljs.registerLanguage('scss', __webpack_require__(314));
+	hljs.registerLanguage('smali', __webpack_require__(315));
+	hljs.registerLanguage('smalltalk', __webpack_require__(316));
+	hljs.registerLanguage('sml', __webpack_require__(317));
+	hljs.registerLanguage('sql', __webpack_require__(318));
+	hljs.registerLanguage('stata', __webpack_require__(319));
+	hljs.registerLanguage('step21', __webpack_require__(320));
+	hljs.registerLanguage('stylus', __webpack_require__(321));
+	hljs.registerLanguage('swift', __webpack_require__(322));
+	hljs.registerLanguage('tcl', __webpack_require__(323));
+	hljs.registerLanguage('tex', __webpack_require__(324));
+	hljs.registerLanguage('thrift', __webpack_require__(325));
+	hljs.registerLanguage('tp', __webpack_require__(326));
+	hljs.registerLanguage('twig', __webpack_require__(327));
+	hljs.registerLanguage('typescript', __webpack_require__(328));
+	hljs.registerLanguage('vala', __webpack_require__(329));
+	hljs.registerLanguage('vbnet', __webpack_require__(330));
+	hljs.registerLanguage('vbscript', __webpack_require__(331));
+	hljs.registerLanguage('vbscript-html', __webpack_require__(332));
+	hljs.registerLanguage('verilog', __webpack_require__(333));
+	hljs.registerLanguage('vhdl', __webpack_require__(334));
+	hljs.registerLanguage('vim', __webpack_require__(335));
+	hljs.registerLanguage('x86asm', __webpack_require__(336));
+	hljs.registerLanguage('xl', __webpack_require__(337));
 
 	module.exports = hljs;
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -41451,7 +41580,7 @@
 	};
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -42223,7 +42352,7 @@
 
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs){
@@ -42313,7 +42442,7 @@
 	};
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -42391,7 +42520,7 @@
 	};
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -42441,7 +42570,7 @@
 	};
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -42542,7 +42671,7 @@
 	};
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -42638,7 +42767,7 @@
 	};
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -42745,7 +42874,7 @@
 	};
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -42941,7 +43070,7 @@
 	};
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -43083,7 +43212,7 @@
 	};
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43149,7 +43278,7 @@
 	};
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43215,7 +43344,7 @@
 	};
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43250,7 +43379,7 @@
 	};
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43330,7 +43459,7 @@
 	};
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs){
@@ -43371,7 +43500,7 @@
 	};
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43454,7 +43583,7 @@
 	};
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43507,7 +43636,7 @@
 	};
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43579,7 +43708,7 @@
 	};
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43680,7 +43809,7 @@
 	};
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43699,7 +43828,7 @@
 	};
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43742,7 +43871,7 @@
 	};
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43890,7 +44019,7 @@
 	};
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44007,7 +44136,7 @@
 	};
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44130,7 +44259,7 @@
 	};
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44237,7 +44366,7 @@
 	};
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = /**
@@ -44499,7 +44628,7 @@
 	};
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44605,7 +44734,7 @@
 	};
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -44712,7 +44841,7 @@
 	};
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44783,7 +44912,7 @@
 	};
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44827,7 +44956,7 @@
 	};
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44881,7 +45010,7 @@
 	};
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44913,7 +45042,7 @@
 	};
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44952,7 +45081,7 @@
 	};
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45004,7 +45133,7 @@
 	};
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45043,7 +45172,7 @@
 	};
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45149,7 +45278,7 @@
 	};
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45323,7 +45452,7 @@
 	};
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45342,7 +45471,7 @@
 	};
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45394,7 +45523,7 @@
 	};
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45550,7 +45679,7 @@
 	};
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45583,7 +45712,7 @@
 	};
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45657,7 +45786,7 @@
 	};
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45717,7 +45846,7 @@
 	};
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45794,7 +45923,7 @@
 	};
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -45831,7 +45960,7 @@
 	};
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45929,7 +46058,7 @@
 	};
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45972,7 +46101,7 @@
 	};
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46011,7 +46140,7 @@
 	};
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46102,7 +46231,7 @@
 	};
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = // TODO support filter tags like :javascript, support inline HTML
@@ -46214,7 +46343,7 @@
 	};
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46251,7 +46380,7 @@
 	};
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46379,7 +46508,7 @@
 	};
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46444,7 +46573,7 @@
 	};
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46483,7 +46612,7 @@
 	};
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46555,7 +46684,7 @@
 	};
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46586,7 +46715,7 @@
 	};
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46690,7 +46819,7 @@
 	};
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46806,7 +46935,7 @@
 	};
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46848,7 +46977,7 @@
 	};
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47013,7 +47142,7 @@
 	};
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -47118,7 +47247,7 @@
 	};
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47308,7 +47437,7 @@
 	};
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47449,7 +47578,7 @@
 	};
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47560,7 +47689,7 @@
 	};
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47715,7 +47844,7 @@
 	};
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47775,7 +47904,7 @@
 	};
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47825,7 +47954,7 @@
 	};
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47888,7 +48017,7 @@
 	};
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47983,7 +48112,7 @@
 	};
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48217,7 +48346,7 @@
 	};
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48310,7 +48439,7 @@
 	};
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48333,7 +48462,7 @@
 	};
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48415,7 +48544,7 @@
 	};
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48501,7 +48630,7 @@
 	};
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48557,7 +48686,7 @@
 	};
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48611,7 +48740,7 @@
 	};
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48703,7 +48832,7 @@
 	};
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48786,7 +48915,7 @@
 	};
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48860,7 +48989,7 @@
 	};
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48923,7 +49052,7 @@
 	};
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48996,7 +49125,7 @@
 	};
 
 /***/ },
-/* 292 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49048,7 +49177,7 @@
 	};
 
 /***/ },
-/* 293 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49206,7 +49335,7 @@
 	};
 
 /***/ },
-/* 294 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49262,7 +49391,7 @@
 	};
 
 /***/ },
-/* 295 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49382,7 +49511,7 @@
 	};
 
 /***/ },
-/* 296 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49438,7 +49567,7 @@
 	};
 
 /***/ },
-/* 297 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49490,7 +49619,7 @@
 	};
 
 /***/ },
-/* 298 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49536,7 +49665,7 @@
 	};
 
 /***/ },
-/* 299 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49629,7 +49758,7 @@
 	};
 
 /***/ },
-/* 300 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49670,7 +49799,7 @@
 	};
 
 /***/ },
-/* 301 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49781,7 +49910,7 @@
 	};
 
 /***/ },
-/* 302 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49870,7 +49999,7 @@
 	};
 
 /***/ },
-/* 303 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49897,7 +50026,7 @@
 	};
 
 /***/ },
-/* 304 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49971,7 +50100,7 @@
 	};
 
 /***/ },
-/* 305 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50002,7 +50131,7 @@
 	};
 
 /***/ },
-/* 306 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50066,7 +50195,7 @@
 	};
 
 /***/ },
-/* 307 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50107,7 +50236,7 @@
 	};
 
 /***/ },
-/* 308 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50168,7 +50297,7 @@
 	};
 
 /***/ },
-/* 309 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50250,7 +50379,7 @@
 	};
 
 /***/ },
-/* 310 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50317,7 +50446,7 @@
 	};
 
 /***/ },
-/* 311 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50443,7 +50572,7 @@
 	};
 
 /***/ },
-/* 312 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50502,7 +50631,7 @@
 	};
 
 /***/ },
-/* 313 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50623,7 +50752,7 @@
 	};
 
 /***/ },
-/* 314 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50710,7 +50839,7 @@
 	};
 
 /***/ },
-/* 315 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50767,7 +50896,7 @@
 	};
 
 /***/ },
-/* 316 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50836,7 +50965,7 @@
 	};
 
 /***/ },
-/* 317 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50940,7 +51069,7 @@
 	};
 
 /***/ },
-/* 318 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50982,7 +51111,7 @@
 	};
 
 /***/ },
-/* 319 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51038,7 +51167,7 @@
 	};
 
 /***/ },
-/* 320 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51485,7 +51614,7 @@
 	};
 
 /***/ },
-/* 321 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51600,7 +51729,7 @@
 	};
 
 /***/ },
-/* 322 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51666,7 +51795,7 @@
 	};
 
 /***/ },
-/* 323 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51725,7 +51854,7 @@
 	};
 
 /***/ },
-/* 324 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51764,7 +51893,7 @@
 	};
 
 /***/ },
-/* 325 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51852,7 +51981,7 @@
 	};
 
 /***/ },
-/* 326 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51913,7 +52042,7 @@
 	};
 
 /***/ },
-/* 327 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52020,7 +52149,7 @@
 	};
 
 /***/ },
-/* 328 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52079,7 +52208,7 @@
 	};
 
 /***/ },
-/* 329 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52139,7 +52268,7 @@
 	};
 
 /***/ },
-/* 330 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52182,7 +52311,7 @@
 	};
 
 /***/ },
-/* 331 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52198,7 +52327,7 @@
 	};
 
 /***/ },
-/* 332 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52252,7 +52381,7 @@
 	};
 
 /***/ },
-/* 333 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52312,7 +52441,7 @@
 	};
 
 /***/ },
-/* 334 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52379,7 +52508,7 @@
 	};
 
 /***/ },
-/* 335 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52531,7 +52660,7 @@
 	};
 
 /***/ },
-/* 336 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
