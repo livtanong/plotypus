@@ -32,11 +32,11 @@ var calcInterval = function(min, max, limit){
 	}
 }
 
-var Chart = React.createClass({
+var Plot = React.createClass({
 	render: function() {
 		// scale depending on the maximum value we get from children.
 		return (
-			<svg className="Chart">
+			<svg className="Plot">
 				<g className="render-area">
 					{ this.props.children }
 				</g>
@@ -79,7 +79,7 @@ module.exports = {
 	Plotypus: Plotypus,
 	PlotypusRow: PlotypusRow,
 	PlotypusComponent: PlotypusComponent,
-	Chart: Chart,
+	Plot: Plot,
 	GroupedBarLayer: GroupedBarLayer,
 	StackedBarLayer: StackedBarLayer,
 	LineLayer: LineLayer,

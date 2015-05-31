@@ -4,9 +4,9 @@ var SVGLayer = require("./SVGLayer");
 function Bars (domNode, data, seriesField, categoryField, valueField) {
 	SVGLayer.call(this, domNode);
 	this.data = data;
-	this.seriesField = seriesField;
-	this.categoryField = categoryField;
-	this.valueField = valueField;
+	this.seriesField = seriesField || "series";
+	this.categoryField = categoryField || "category";
+	this.valueField = valueField || "value";
 
 	this.pluckField = function(fieldName){
 
@@ -29,6 +29,7 @@ Bars.prototype = new SVGLayer();
 
 function GroupedBars (domNode, data, seriesField, categoryField, valueField, groupOffsetFactor, barWidthFactor, max, min){
 	Bars.call(this, domNode, data, seriesField, categoryField, valueField);
+	
 	_.chain(data)
 		.groupBy(categoryField)
 		.sortBy(function(c, i){ return i })
