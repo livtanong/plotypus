@@ -37,10 +37,9 @@ export default class Guide extends React.Component {
             <h4>
               <a href="#Data">Data</a>
             </h4>
-            {/*<ul>
-                          <li><a href="#PlotsAndLayers">Plots and Layers</a></li>
-                          <li><a href="#Composition">Composition</a></li>
-                        </ul>*/}
+            <ul>
+              <li><a href="#DataFormat">Data Format</a></li>
+            </ul>
           </div>
         </div>
         <div className="main">
