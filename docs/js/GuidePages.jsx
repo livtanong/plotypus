@@ -163,6 +163,43 @@ export class Composition extends React.Component {
             </PlotypusComponent>
           </PlotypusRow>
         </Plotypus>
+        <Highlight className="solarized_light">
+{
+`<Plotypus>
+  <PlotypusRow>
+  	<PlotypusComponent>
+  		<Axis
+  			max={ 8 }/>
+  	</PlotypusComponent>
+    <PlotypusComponent>
+    	<Plot>
+    	  <GridLayer 
+    	    xMax={ 8 }
+    	    yMax={ 8 }/>
+    	  <GroupedBarLayer 
+    	    max={ 8 }
+    	    data={ sineData /* data I'm generating. */}/>
+    	  <FuncLayer
+    	    xMax={ 8 }
+    	    yMax={ 8 }
+    	    func={ sineFunc /* the sine wave on which sineData is based */}
+    	    samples={ 64 }/>
+    	</Plot>
+    </PlotypusComponent>
+  </PlotypusRow>
+  <PlotypusRow>
+  	{/* This element simply occupies a space on the lower left corner of the tabular structure. 
+  	This makes sure that the axis element below is perfectly aligned with the Plot above. */}
+    <Null /> 
+    <PlotypusComponent>
+    	<Axis
+    		max={ 8 }
+    		orientation="h"/>
+    </PlotypusComponent>
+  </PlotypusRow>
+</Plotypus>`
+}
+        </Highlight>
 
       </div>
     )
