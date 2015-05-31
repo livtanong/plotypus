@@ -2,7 +2,7 @@ import React from "react";
 import Highlight from "./Highlight.jsx";
 import {Plotypus, PlotypusRow, PlotypusComponent, Null, Plot, GroupedBarLayer, GridLayer, FuncLayer, Axis, CategoryAxis} from "../../src/js/Plotypus.jsx";
 
-export class ChartsAndLayers extends React.Component {
+export class PlotsAndLayers extends React.Component {
   genData(count, values, cats, series) {
     /*
       count (Number):           How many datapoints you want.
@@ -35,7 +35,7 @@ export class ChartsAndLayers extends React.Component {
     })
     // console.log(data);
     return (
-      <div>
+      <section id="PlotsAndLayers">
         <h3>Plots and Layers</h3>
         <p>The <code>Plot</code> component is the most important of the components, and structurally, they are unique in that they have <strong>layers</strong>. Layers are graphical elements that stack on top of each other and take up the same area. Currently, only Plots have layers, but over time this may change.</p>
         <p>We'll use <code>GridLayer</code>, <code>GroupedBarLayer</code>, and <code>FuncLayer</code> to demonstrate the concept of layers.</p>
@@ -70,7 +70,7 @@ export class ChartsAndLayers extends React.Component {
 </Plot>`
 }
         </Highlight>
-      </div>
+      </section>
     )
   }
 }
@@ -108,7 +108,7 @@ export class Composition extends React.Component {
       }
     })
     return (
-      <div>
+      <section id="Composition">
         <h3>Composition</h3>
         <p>Composition with Plotypus is easy. All Plotypus charts can be laid out in a tabular manner: that is, you define a table, then the rows, then the cells.</p>
         <p>The Plotypus components that correspond to this structure are as follows: <code>Plotypus</code>(table), <code>PlotypusRow</code>(row), <code>PlotypusComponent</code>(cell).</p>
@@ -205,7 +205,7 @@ export class Composition extends React.Component {
 }
         </Highlight>
 
-      </div>
+      </section>
     )
   }
 }

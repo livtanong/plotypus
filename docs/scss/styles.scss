@@ -10,6 +10,7 @@ body {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
+	line-height: 1.4;
 }
 
 #docs {
@@ -34,7 +35,7 @@ code {
 	color: white;
 	h1 {
 		font-size: 24px;
-		font-weight: 100;
+		font-weight: 300;
 		margin: 0px 16px;
 	}
 	.spacer {
@@ -50,7 +51,7 @@ code {
 	@include display(flex);
 	.sidebar {
 		min-width: 25%;
-		background-color: $light;
+		// background-color: $light;
 	}
 	.main {
 		overflow-y: auto;

@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight";
-import {ChartsAndLayers, Composition, OtherComponents} from "./GuidePages";
+import {PlotsAndLayers, Composition, OtherComponents} from "./GuidePages";
 import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 export default class Guide extends React.Component {
@@ -23,25 +23,28 @@ export default class Guide extends React.Component {
     var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
     return (
       <div className="Guide split-pane">
-        <div className="sidebar">
+        <div className="sidebar table-of-contents">
           <div>
-            <h4>Derp</h4>
+            <h4>
+              <a href="#Structure">Structure</a>
+            </h4>
             <ul>
-              <li><a>Structure</a></li>
-              <li><a>PlotypusRow</a></li>
+              <li><a href="#PlotsAndLayers">Plots and Layers</a></li>
+              <li><a href="#Composition">Composition</a></li>
             </ul>
           </div>
         </div>
         <div className="main">
-          <section>
-            <h2>Structure</h2>
-            <p>There are two things you need to know about the structure of Plotypus charts. First, <code>Plot</code>s are layered, and second, they can be composed with other Plotypus components like <code>Axis</code> and <code>AxisLabel</code>, and even other <code>Plot</code>s, by way of a tabular layouting system.</p>
-            <aside>Note: because we are using react, all comments that would have used the HTML comment, <code>{"<!-- -->"}</code>, will instead use the react comment, <code>{"{/* */}"}</code>.</aside>
-
-            <ChartsAndLayers />
+          <article id="Structure">
+            <section>
+              <h2>Structure</h2>
+              <p>There are two things you need to know about the structure of Plotypus charts. First, <code>Plot</code>s are layered, and second, they can be composed with other Plotypus components like <code>Axis</code> and <code>AxisLabel</code>, and even other <code>Plot</code>s, by way of a tabular layouting system.</p>
+              <aside>Note: because we are using react, all comments that would have used the HTML comment, <code>{"<!-- -->"}</code>, will instead use the react comment, <code>{"{/* */}"}</code>.</aside>
+            </section>
+            <PlotsAndLayers />
             <Composition />
             <OtherComponents />
-          </section>
+          </article>
         </div>
       </div>
     )
