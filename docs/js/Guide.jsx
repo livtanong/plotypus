@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight";
-import {ChartsAndLayers, BasicStructure, OtherComponents} from "./GuidePages";
+import {ChartsAndLayers, Composition, OtherComponents} from "./GuidePages";
 import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 export default class Guide extends React.Component {
@@ -37,9 +37,9 @@ export default class Guide extends React.Component {
             <h2>Structure</h2>
             <p>There are two things you need to know about the structure of Plotypus charts. First, <code>Plot</code>s are layered, and second, they can be composed with other Plotypus components like <code>Axis</code> and <code>AxisLabel</code>, and even other <code>Plot</code>s, by way of a tabular layouting system.</p>
             <aside>Note: because we are using react, all comments that would have used the HTML comment, <code>{"<!-- -->"}</code>, will instead use the react comment, <code>{"{/* */}"}</code>.</aside>
-            
+
             <ChartsAndLayers />
-            <BasicStructure />
+            <Composition />
             <OtherComponents />
           </section>
         </div>
