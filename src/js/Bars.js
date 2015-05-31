@@ -27,6 +27,11 @@ function Bars (domNode, data, seriesField, categoryField, valueField) {
 }
 Bars.prototype = new SVGLayer();
 
+
+/*
+TODO: change structure so that you go from raw datapoints to presentational datapoints (if categorical, the locations of the points on the plot, given the category). THEN render based on presentational datapoints.
+*/
+
 function GroupedBars (domNode, data, seriesField, categoryField, valueField, groupOffsetFactor, barWidthFactor, max, min){
 	Bars.call(this, domNode, data, seriesField, categoryField, valueField);
 	
