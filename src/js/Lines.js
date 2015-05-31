@@ -36,49 +36,6 @@ var Lines = function(domNode, data, max, min){
 		}, this)
 		.value();
 
-	// _.chain(data)
-	// 	.groupBy("category")
-	// 	.forEach(function(dataPoints, categoryName, categoryList){
-	// 		dataPoints.forEach(function(dataPoint, seriesIndex, series){
-
-	// 			var values = _.pluck(dataPoints, "value")
-	// 				catIndex = _.keys(categoryList).indexOf(categoryName),
-	// 				valueRange = max - min;
-
-	// 			catCount = _.size(categoryList);
-
-	// 			// seriesCount = series.length;
-	// 			// barCount = data.length;
-
-	// 			// if (isStacked) {			
-	// 			// 	var barWidth = barWidthFactor,
-	// 			// 		fieldX = catIndex,
-	// 			// 		seriesX = (0.5) - (0.5 * barWidth),
-	// 			// 		yOffset = getOffset(_.take(values, seriesIndex), bar.value),
-	// 			// 		y = getPosition(bar.value, yOffset);
-	// 			// } else {
-	// 			// 	var barWidth = barWidthFactor,
-	// 			// 		barOffset = groupOffsetFactor * barWidth,
-	// 			// 		barMargin = barOffset - barWidth,
-	// 			// 		groupWidth = (barOffset * seriesCount) - barMargin,
-	// 			// 		fieldX = (catIndex + 0.5) * seriesCount - (groupWidth * 0.5),
-	// 			// 		seriesX = barOffset * seriesIndex,
-	// 			// 		y = getPosition(bar.value, 0);
-	// 			// }
-
-	// 			var attrs = {
-	// 				cx: catIndex,
-	// 				cy: dataPoint.value,
-	// 				r: 1,
-	// 				class: "Point " + "series-" + (seriesIndex + 1)
-	// 			};
-
-	// 			this.addSVGElement(this.content, "circle", attrs);
-
-	// 		}, this)
-	// 	}, this)
-	// 	.value();
-
 	this.domNode.setAttribute("viewBox", "0 0 " + catCount + " " + (max - min));
 	this.domNode.setAttribute("preserveAspectRatio", "none");
 }	

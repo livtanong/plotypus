@@ -82,3 +82,13 @@
 		width: 100%;
 	}
 }
+
+.FuncLayer {
+	path {
+		stroke-dasharray: 3, 3;
+		stroke-width: 1px;
+		fill: none;
+		stroke: black;
+		vector-effect: non-scaling-stroke;
+	}
+}
