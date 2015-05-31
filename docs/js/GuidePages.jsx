@@ -36,7 +36,7 @@ export class PlotsAndLayers extends React.Component {
     // console.log(data);
     return (
       <section id="PlotsAndLayers">
-        <h3>Plots and Layers</h3>
+        <h2>Plots and Layers</h2>
         <p>The <code>Plot</code> component is the most important of the components, and structurally, they are unique in that they have <strong>layers</strong>. Layers are graphical elements that stack on top of each other and take up the same area. Currently, only Plots have layers, but over time this may change.</p>
         <p>We'll use <code>GridLayer</code>, <code>GroupedBarLayer</code>, and <code>FuncLayer</code> to demonstrate the concept of layers.</p>
         <p>For now, you can ignore the properties I'm passing to each layer, as I will expound on them later on, but you can also study them now if you like.</p>
@@ -109,7 +109,7 @@ export class Composition extends React.Component {
     })
     return (
       <section id="Composition">
-        <h3>Composition</h3>
+        <h2>Composition</h2>
         <p>Composition with Plotypus is easy. All Plotypus charts can be laid out in a tabular manner: that is, you define a table, then the rows, then the cells.</p>
         <p>The Plotypus components that correspond to this structure are as follows: <code>Plotypus</code>(table), <code>PlotypusRow</code>(row), <code>PlotypusComponent</code>(cell).</p>
         <Highlight className="solarized_light">
@@ -210,15 +210,13 @@ export class Composition extends React.Component {
   }
 }
 
-
-export class OtherComponents extends React.Component {
-  render() {
+export class Data extends React.Component {
+  render() {  
     return (
-      <div>
-        <h3>Other Components</h3>
-        <p>Now that we've gotten the <code>Plot</code> out of the way, we can work on the other simpler components. These don't have layers, and therefore just stand alone.</p>
-        <p>To keep </p>
-      </div>
+      <section id="Data">
+        <h2>Data</h2>
+      </section>
     )
   }
 }
+

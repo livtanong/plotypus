@@ -1,0 +1,24 @@
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+/* ================================================================================
+Example showing how to change the color/size of the icons:
+.icon-name {
+	font-size: 32px; // works because "width" & "height" were set using em units
+	color: red; // works because "fill" was set to "currentColor"
+}
+================================================================================ */
+
+.icon-plotypus {
+	width: 0.8798828125em;
+}
+#icon-plotypus .path1 {
+	fill: rgb(209, 96, 61);
+}
+#icon-plotypus .path2, #icon-plotypus .path3, #icon-plotypus .path4 {
+	fill: rgb(45, 20, 44);
+}
