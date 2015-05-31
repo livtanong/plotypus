@@ -17,4 +17,15 @@
 	.split-pane {
 		@include flex(1);
 	}
+
+	.Plot {
+		.FuncLayer {
+			path {
+				stroke: $accent;
+			}
+		}
+		rect {
+			fill: lighten($dark, 10%);
+		}
+	}
 }
