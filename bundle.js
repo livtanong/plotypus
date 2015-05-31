@@ -97,7 +97,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, "body {\n  margin: 0;\n  font-family: 'Roboto';\n  color: #2D142C;\n  position: absolute;\n  top: 0px;\n  bottom: 0px;\n  left: 0px;\n  right: 0px; }\n\n#docs {\n  height: 100%; }\n\nul {\n  margin: 0px;\n  padding: 0px;\n  list-style: none; }\n\ncode {\n  background-color: #D5EDE2; }\n\n.toolbar {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  height: 64px;\n  background-color: #2D142C;\n  color: white; }\n  .toolbar h1 {\n    font-size: 24px;\n    font-weight: 100;\n    margin: 0px 16px; }\n  .toolbar .spacer {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n  .toolbar .toolbar-item {\n    margin: 0px 16px;\n    cursor: pointer; }\n\n.split-pane {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex; }\n  .split-pane .sidebar {\n    min-width: 25%;\n    background-color: #D5EDE2; }\n  .split-pane .main {\n    overflow-y: auto; }\n\nsection {\n  padding: 16px; }\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  font-family: 'Roboto';\n  color: #2D142C;\n  position: absolute;\n  top: 0px;\n  bottom: 0px;\n  left: 0px;\n  right: 0px;\n  line-height: 1.4; }\n\n#docs {\n  height: 100%; }\n\nul {\n  margin: 0px;\n  padding: 0px;\n  list-style: none; }\n\ncode {\n  background-color: #D5EDE2; }\n\n.toolbar {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  box-align: center;\n  -webkit-align-items: center;\n  -moz-align-items: center;\n  -ms-align-items: center;\n  -o-align-items: center;\n  align-items: center;\n  -ms-flex-align: center;\n  height: 64px;\n  background-color: #2D142C;\n  color: white; }\n  .toolbar h1 {\n    font-size: 24px;\n    font-weight: 300;\n    margin: 0px 16px; }\n  .toolbar .spacer {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n  .toolbar .toolbar-item {\n    margin: 0px 16px;\n    cursor: pointer; }\n\n.split-pane {\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex; }\n  .split-pane .sidebar {\n    min-width: 25%; }\n  .split-pane .main {\n    overflow-y: auto; }\n\nsection {\n  padding: 16px; }\n", ""]);
 
 /***/ },
 /* 3 */
@@ -20917,7 +20917,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, ".Docs {\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  box-orient: vertical;\n  -webkit-box-direction: normal;\n  -moz-box-direction: normal;\n  box-direction: normal;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-direction: column; }\n  .Docs .toolbar {\n    -webkit-flex-shrink: 0;\n    -moz-flex-shrink: 0;\n    flex-shrink: 0;\n    -ms-flex-negative: 0; }\n    .Docs .toolbar h1 {\n      color: #D1603D; }\n  .Docs .split-pane {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n", ""]);
+	exports.push([module.id, ".Docs {\n  height: 100%;\n  display: -webkit-box;\n  display: -moz-box;\n  display: box;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  box-orient: vertical;\n  -webkit-box-direction: normal;\n  -moz-box-direction: normal;\n  box-direction: normal;\n  -webkit-flex-direction: column;\n  -moz-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-direction: column; }\n  .Docs .toolbar {\n    -webkit-flex-shrink: 0;\n    -moz-flex-shrink: 0;\n    flex-shrink: 0;\n    -ms-flex-negative: 0; }\n    .Docs .toolbar h1 {\n      color: #D1603D; }\n  .Docs .split-pane {\n    -webkit-box-flex: 1;\n    -moz-box-flex: 1;\n    box-flex: 1;\n    -webkit-flex: 1;\n    -moz-flex: 1;\n    -ms-flex: 1;\n    flex: 1; }\n  .Docs .Plot .FuncLayer path {\n    stroke: #D1603D; }\n  .Docs .Plot rect {\n    fill: #50244f; }\n  .Docs .Axis text {\n    fill: #50244f; }\n  .Docs .table-of-contents {\n    box-sizing: border-box;\n    padding: 16px;\n    font-weight: 300; }\n    .Docs .table-of-contents h4 {\n      font-size: 14px;\n      text-transform: uppercase;\n      font-weight: 700; }\n    .Docs .table-of-contents a {\n      color: #2D142C;\n      text-decoration: none; }\n", ""]);
 
 /***/ },
 /* 164 */
@@ -33272,10 +33272,19 @@
 		}
 	});
 
+	var Null = React.createClass({
+		displayName: "Null",
+
+		render: function render() {
+			return React.createElement("div", { className: "null" });
+		}
+	});
+
 	module.exports = {
 		Plotypus: Plotypus,
 		PlotypusRow: PlotypusRow,
 		PlotypusComponent: PlotypusComponent,
+		Null: Null,
 		Plot: Plot,
 		GroupedBarLayer: GroupedBarLayer,
 		StackedBarLayer: StackedBarLayer,
@@ -33435,7 +33444,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
-	exports.push([module.id, ".Plotypus {\n  display: table;\n  overflow: hidden;\n  table-layout: auto; }\n  .Plotypus .labels-container {\n    height: 48px; }\n  .Plotypus .labels {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex; }\n    .Plotypus .labels .label {\n      -webkit-box-flex: 1;\n      -moz-box-flex: 1;\n      box-flex: 1;\n      -webkit-flex: 1;\n      -moz-flex: 1;\n      -ms-flex: 1;\n      flex: 1;\n      width: 0;\n      height: 0;\n      white-space: nowrap;\n      font-size: 12px; }\n  .Plotypus .Axis text {\n    height: 100%;\n    font-size: 10px; }\n  .Plotypus .Axis.v {\n    height: 99%;\n    width: 48px; }\n  .Plotypus .Axis.h {\n    height: 48px;\n    width: 100%; }\n  .Plotypus .Axis.Category.v {\n    width: auto; }\n  .Plotypus .Axis.Category.h {\n    height: auto; }\n  .Plotypus .axis-label {\n    text-align: center;\n    font-size: 12px;\n    font-weight: 300;\n    white-space: nowrap; }\n    .Plotypus .axis-label.rotate {\n      width: 24px; }\n      .Plotypus .axis-label.rotate .label {\n        position: absolute;\n        bottom: 50%;\n        left: 0px;\n        -webkit-transform: rotate(-90deg) translate(-50%);\n        -moz-transform: rotate(-90deg) translate(-50%);\n        -ms-transform: rotate(-90deg) translate(-50%);\n        -o-transform: rotate(-90deg) translate(-50%);\n        transform: rotate(-90deg) translate(-50%);\n        -webkit-transform-origin: top left;\n        -moz-transform-origin: top left;\n        -ms-transform-origin: top left;\n        -o-transform-origin: top left;\n        transform-origin: top left; }\n    .Plotypus .axis-label.x {\n      display: -webkit-box;\n      display: -moz-box;\n      display: box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -moz-box-orient: horizontal;\n      box-orient: horizontal;\n      -webkit-box-direction: normal;\n      -moz-box-direction: normal;\n      box-direction: normal;\n      -webkit-flex-direction: row;\n      -moz-flex-direction: row;\n      flex-direction: row;\n      -ms-flex-direction: row;\n      -webkit-box-pack: center;\n      -moz-box-pack: center;\n      box-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      -ms-justify-content: center;\n      -o-justify-content: center;\n      justify-content: center;\n      -ms-flex-pack: center; }\n\n.PlotypusRow {\n  display: table-row; }\n  .PlotypusRow .Plot {\n    height: 99%;\n    width: 100%; }\n  .PlotypusRow .null {\n    display: table-cell;\n    width: 0px;\n    height: 0px; }\n\n.PlotypusComponent {\n  display: table-cell; }\n  .PlotypusComponent.full {\n    height: 100%;\n    width: 100%; }\n\n.FuncLayer path {\n  stroke-dasharray: 3, 3;\n  stroke-width: 1px;\n  fill: none;\n  stroke: black;\n  vector-effect: non-scaling-stroke; }\n", ""]);
+	exports.push([module.id, ".Plotypus {\n  display: table;\n  overflow: hidden;\n  table-layout: auto; }\n  .Plotypus .labels-container {\n    height: 48px; }\n  .Plotypus .labels {\n    display: -webkit-box;\n    display: -moz-box;\n    display: box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex; }\n    .Plotypus .labels .label {\n      -webkit-box-flex: 1;\n      -moz-box-flex: 1;\n      box-flex: 1;\n      -webkit-flex: 1;\n      -moz-flex: 1;\n      -ms-flex: 1;\n      flex: 1;\n      width: 0;\n      height: 0;\n      white-space: nowrap;\n      font-size: 12px; }\n  .Plotypus .Axis text {\n    height: 100%;\n    font-size: 10px; }\n  .Plotypus .Axis.v {\n    height: 100%;\n    width: 48px; }\n  .Plotypus .Axis.h {\n    height: 48px;\n    width: 100%; }\n  .Plotypus .Axis.Category.v {\n    width: auto; }\n  .Plotypus .Axis.Category.h {\n    height: auto; }\n  .Plotypus .axis-label {\n    text-align: center;\n    font-size: 12px;\n    font-weight: 300;\n    white-space: nowrap; }\n    .Plotypus .axis-label.rotate {\n      width: 24px; }\n      .Plotypus .axis-label.rotate .label {\n        position: absolute;\n        bottom: 50%;\n        left: 0px;\n        -webkit-transform: rotate(-90deg) translate(-50%);\n        -moz-transform: rotate(-90deg) translate(-50%);\n        -ms-transform: rotate(-90deg) translate(-50%);\n        -o-transform: rotate(-90deg) translate(-50%);\n        transform: rotate(-90deg) translate(-50%);\n        -webkit-transform-origin: top left;\n        -moz-transform-origin: top left;\n        -ms-transform-origin: top left;\n        -o-transform-origin: top left;\n        transform-origin: top left; }\n    .Plotypus .axis-label.x {\n      display: -webkit-box;\n      display: -moz-box;\n      display: box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -moz-box-orient: horizontal;\n      box-orient: horizontal;\n      -webkit-box-direction: normal;\n      -moz-box-direction: normal;\n      box-direction: normal;\n      -webkit-flex-direction: row;\n      -moz-flex-direction: row;\n      flex-direction: row;\n      -ms-flex-direction: row;\n      -webkit-box-pack: center;\n      -moz-box-pack: center;\n      box-pack: center;\n      -webkit-justify-content: center;\n      -moz-justify-content: center;\n      -ms-justify-content: center;\n      -o-justify-content: center;\n      justify-content: center;\n      -ms-flex-pack: center; }\n\n.PlotypusRow {\n  display: table-row; }\n  .PlotypusRow .Plot {\n    height: 100%;\n    width: 100%; }\n  .PlotypusRow .null {\n    display: table-cell;\n    width: 0px;\n    height: 0px; }\n\n.PlotypusComponent {\n  display: table-cell; }\n  .PlotypusComponent.full {\n    height: 100%;\n    width: 100%; }\n  .PlotypusComponent > .Axis.v {\n    margin-right: 8px; }\n  .PlotypusComponent > .Axis.h {\n    margin-top: 8px; }\n\n.FuncLayer path {\n  stroke-dasharray: 3, 3;\n  stroke-width: 1px;\n  fill: none;\n  stroke: black;\n  vector-effect: non-scaling-stroke; }\n", ""]);
 
 /***/ },
 /* 171 */
@@ -35779,6 +35788,7 @@
 		getDefaultProps: function getDefaultProps() {
 			return {
 				min: 0,
+				interval: 1,
 				align: "start",
 				orientation: "v"
 			};
@@ -36013,68 +36023,73 @@
 			return minSize / axisSize;
 		};
 		this.getInterval = function () {
-			var floatInterval = (max - min) * this.getMinSizeFraction();
-			// if greater than or equal to 5, keep counting up to find the smallest integer divisible by 5 that is greater than or equal to floatInterval;
-			// if between 1 and 5, use 2.5.
-			// if less than 1, 1, 0.5, 0.1, 0.05, 0.01, etc...
 
-			var fives = function fives(_x, _x2) {
-				var _again = true;
+			if (_.isFinite(max)) {
+				var floatInterval = (max - min) * this.getMinSizeFraction();
+				// if greater than or equal to 5, keep counting up to find the smallest integer divisible by 5 that is greater than or equal to floatInterval;
+				// if between 1 and 5, use 2.5.
+				// if less than 1, 1, 0.5, 0.1, 0.05, 0.01, etc...
 
-				_function: while (_again) {
-					var n = _x,
-					    guess = _x2;
-					guess = undefined;
-					_again = false;
+				var fives = function fives(_x, _x2) {
+					var _again = true;
 
-					// find the smallest multiple of 5 greater than or equal to n
-					var guess = guess || 5;
-					if (guess >= n) {
-						// done!
-						return guess;
-					} else {
-						_x = n;
-						_x2 = guess + 5;
-						_again = true;
-						continue _function;
+					_function: while (_again) {
+						var n = _x,
+						    guess = _x2;
+						guess = undefined;
+						_again = false;
+
+						// find the smallest multiple of 5 greater than or equal to n
+						var guess = guess || 5;
+						if (guess >= n) {
+							// done!
+							return guess;
+						} else {
+							_x = n;
+							_x2 = guess + 5;
+							_again = true;
+							continue _function;
+						}
 					}
-				}
-			};
-			var ones = function ones(_x3, _x4, _x5) {
-				var _again2 = true;
+				};
+				var ones = function ones(_x3, _x4, _x5) {
+					var _again2 = true;
 
-				_function2: while (_again2) {
-					var n = _x3,
-					    guess = _x4,
-					    divisor = _x5;
-					guess = divisor = undefined;
-					_again2 = false;
+					_function2: while (_again2) {
+						var n = _x3,
+						    guess = _x4,
+						    divisor = _x5;
+						guess = divisor = undefined;
+						_again2 = false;
 
-					// find the smallest member of the pattern (1, 0.5, 0.1, 0.05, 0.01...) greater than or equal to n
-					var guess = guess || 1;
-					var divisor = divisor || 2;
+						// find the smallest member of the pattern (1, 0.5, 0.1, 0.05, 0.01...) greater than or equal to n
+						var guess = guess || 1;
+						var divisor = divisor || 2;
 
-					if (guess / divisor < n) {
-						return guess;
-					} else {
-						_x3 = n;
-						_x4 = guess / divisor;
-						_x5 = divisor === 2 ? 5 : 2;
-						_again2 = true;
-						continue _function2;
+						if (guess / divisor < n) {
+							return guess;
+						} else {
+							_x3 = n;
+							_x4 = guess / divisor;
+							_x5 = divisor === 2 ? 5 : 2;
+							_again2 = true;
+							continue _function2;
+						}
 					}
+				};
+				if (floatInterval > 2.5) {
+					return fives(floatInterval);
+				} else if (floatInterval > 1 && floatInterval <= 2.5) {
+					return 2.5;
+				} else {
+					return ones(floatInterval);
 				}
-			};
-			if (floatInterval > 2.5) {
-				return fives(floatInterval);
-			} else if (floatInterval > 1 && floatInterval <= 2.5) {
-				return 2.5;
 			} else {
-				return ones(floatInterval);
+				console.log("warning, max is undefined");
 			}
 		};
 
-		this.interval = this.getInterval();
+		this.interval = interval || this.getInterval();
 		this.intervalledMax = utils.sanify(Math.ceil(max / this.interval + 1) * this.interval, 5);
 		this.intervalledMin = utils.sanify(Math.floor(min / this.interval) * this.interval, 5);
 		onUpdate && onUpdate(this);
@@ -40661,7 +40676,7 @@
 					{ className: "ApiDocs split-pane" },
 					_react2["default"].createElement(
 						"div",
-						{ className: "sidebar" },
+						{ className: "sidebar table-of-contents" },
 						_react2["default"].createElement(
 							"div",
 							null,
@@ -40801,254 +40816,24 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _HighlightJsx = __webpack_require__(210);
+	var _Highlight = __webpack_require__(210);
 
-	var _HighlightJsx2 = _interopRequireDefault(_HighlightJsx);
+	var _Highlight2 = _interopRequireDefault(_Highlight);
+
+	var _GuidePages = __webpack_require__(338);
 
 	var _srcJsPlotypusJsx = __webpack_require__(166);
 
-	var BasicStructure = (function (_React$Component) {
-	  function BasicStructure() {
-	    _classCallCheck(this, BasicStructure);
+	var Guide = (function (_React$Component) {
+	  function Guide() {
+	    _classCallCheck(this, Guide);
 
 	    if (_React$Component != null) {
 	      _React$Component.apply(this, arguments);
 	    }
 	  }
 
-	  _inherits(BasicStructure, _React$Component);
-
-	  _createClass(BasicStructure, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2["default"].createElement(
-	        "div",
-	        null,
-	        _react2["default"].createElement(
-	          "h3",
-	          null,
-	          "Basic Structure"
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts."
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have one axis, two, none, and even 4, if you're insane."
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "All ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "PlotypusRow"
-	          ),
-	          "s act like table rows, while all ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "PlotypusComponent"
-	          ),
-	          "s act like table cells."
-	        ),
-	        _react2["default"].createElement(
-	          _HighlightJsx2["default"],
-	          { className: "solarized_light" },
-	          "<Plotypus>\n  <PlotypusRow>\n    <!-- PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Plot, to a Legend. -->\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n  <PlotypusRow>\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n</Plotypus>"
-	        )
-	      );
-	    }
-	  }]);
-
-	  return BasicStructure;
-	})(_react2["default"].Component);
-
-	var ChartsAndLayers = (function (_React$Component2) {
-	  function ChartsAndLayers() {
-	    _classCallCheck(this, ChartsAndLayers);
-
-	    if (_React$Component2 != null) {
-	      _React$Component2.apply(this, arguments);
-	    }
-	  }
-
-	  _inherits(ChartsAndLayers, _React$Component2);
-
-	  _createClass(ChartsAndLayers, [{
-	    key: "genData",
-	    value: function genData(count, values, cats, series) {
-	      /*
-	        count (Number):           How many datapoints you want.
-	        values (Array(Number)):   Must be of length 2. Min and Max.
-	        cats (Array(String)):     Set of all possible categories.
-	        series (Array(String)):   Set of all possible series.
-	      */
-	      return _.times(count, function (n) {
-	        return {
-	          value: (values[1] - values[0]) * Math.random(),
-	          category: n,
-	          series: null
-	        };
-	      });
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      var data = this.genData(8, [0, 8]);
-
-	      var sineFunc = function sineFunc(x, offset) {
-	        var offset = offset || 0;
-	        return Math.sin(x + offset) * 4 + 4;
-	      };
-
-	      var sineData = _.times(8, function (n) {
-	        return {
-	          value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
-	          category: n,
-	          series: null
-	        };
-	      });
-	      // console.log(data);
-	      return _react2["default"].createElement(
-	        "div",
-	        null,
-	        _react2["default"].createElement(
-	          "h3",
-	          null,
-	          "Plots and Layers"
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "The ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "Plot"
-	          ),
-	          " component is the most important of the components, and structurally, they are unique in that they have ",
-	          _react2["default"].createElement(
-	            "strong",
-	            null,
-	            "layers"
-	          ),
-	          ". Layers are graphical elements that stack on top of each other and take up the same area. Currently, only Plots have layers, but over time this may change."
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "We'll use ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "GridLayer"
-	          ),
-	          ", ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "GroupedBarLayer"
-	          ),
-	          ", and ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "FuncLayer"
-	          ),
-	          " to demonstrate the concept of layers."
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "For now, you can ignore the properties I'm passing to each layer, as I will expound on them later on, but you can also study them now if you like."
-	        ),
-	        _react2["default"].createElement(
-	          _srcJsPlotypusJsx.Plot,
-	          null,
-	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
-	            xMax: 8,
-	            yMax: 8 }),
-	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
-	            max: 8,
-	            data: sineData }),
-	          _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
-	            xMax: 8,
-	            yMax: 8,
-	            func: sineFunc,
-	            samples: 64 })
-	        ),
-	        _react2["default"].createElement(
-	          _HighlightJsx2["default"],
-	          { className: "solarized_light" },
-	          "<Plot>\n  <GridLayer \n    xMax={ 8 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    data={ sineData /* data I'm generating. */}/>\n  <FuncLayer\n    xMax={ 8 }\n    yMax={ 8 }\n    func={ sineFunc /* the sine wave on which sineData is based */}\n    samples={ 64 }/>\n</Plot>"
-	        )
-	      );
-	    }
-	  }]);
-
-	  return ChartsAndLayers;
-	})(_react2["default"].Component);
-
-	var OtherComponents = (function (_React$Component3) {
-	  function OtherComponents() {
-	    _classCallCheck(this, OtherComponents);
-
-	    if (_React$Component3 != null) {
-	      _React$Component3.apply(this, arguments);
-	    }
-	  }
-
-	  _inherits(OtherComponents, _React$Component3);
-
-	  _createClass(OtherComponents, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2["default"].createElement(
-	        "div",
-	        null,
-	        _react2["default"].createElement(
-	          "h3",
-	          null,
-	          "Other Components"
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "Now that we've gotten the ",
-	          _react2["default"].createElement(
-	            "code",
-	            null,
-	            "Plot"
-	          ),
-	          " out of the way, we can work on the other simpler components. These don't have layers, and therefore just stand alone."
-	        ),
-	        _react2["default"].createElement(
-	          "p",
-	          null,
-	          "To keep "
-	        )
-	      );
-	    }
-	  }]);
-
-	  return OtherComponents;
-	})(_react2["default"].Component);
-
-	var Guide = (function (_React$Component4) {
-	  function Guide() {
-	    _classCallCheck(this, Guide);
-
-	    if (_React$Component4 != null) {
-	      _React$Component4.apply(this, arguments);
-	    }
-	  }
-
-	  _inherits(Guide, _React$Component4);
+	  _inherits(Guide, _React$Component);
 
 	  _createClass(Guide, [{
 	    key: "genData",
@@ -41076,14 +40861,18 @@
 	        { className: "Guide split-pane" },
 	        _react2["default"].createElement(
 	          "div",
-	          { className: "sidebar" },
+	          { className: "sidebar table-of-contents" },
 	          _react2["default"].createElement(
 	            "div",
 	            null,
 	            _react2["default"].createElement(
 	              "h4",
 	              null,
-	              "Derp"
+	              _react2["default"].createElement(
+	                "a",
+	                { href: "#Structure" },
+	                "Structure"
+	              )
 	            ),
 	            _react2["default"].createElement(
 	              "ul",
@@ -41093,8 +40882,8 @@
 	                null,
 	                _react2["default"].createElement(
 	                  "a",
-	                  null,
-	                  "Structure"
+	                  { href: "#PlotsAndLayers" },
+	                  "Plots and Layers"
 	                )
 	              ),
 	              _react2["default"].createElement(
@@ -41102,8 +40891,8 @@
 	                null,
 	                _react2["default"].createElement(
 	                  "a",
-	                  null,
-	                  "PlotypusRow"
+	                  { href: "#Composition" },
+	                  "Composition"
 	                )
 	              )
 	            )
@@ -41113,62 +40902,66 @@
 	          "div",
 	          { className: "main" },
 	          _react2["default"].createElement(
-	            "section",
-	            null,
+	            "article",
+	            { id: "Structure" },
 	            _react2["default"].createElement(
-	              "h2",
+	              "section",
 	              null,
-	              "Structure"
+	              _react2["default"].createElement(
+	                "h2",
+	                null,
+	                "Structure"
+	              ),
+	              _react2["default"].createElement(
+	                "p",
+	                null,
+	                "There are two things you need to know about the structure of Plotypus charts. First, ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "Plot"
+	                ),
+	                "s are layered, and second, they can be composed with other Plotypus components like ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "Axis"
+	                ),
+	                " and ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "AxisLabel"
+	                ),
+	                ", and even other ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "Plot"
+	                ),
+	                "s, by way of a tabular layouting system."
+	              ),
+	              _react2["default"].createElement(
+	                "aside",
+	                null,
+	                "Note: because we are using react, all comments that would have used the HTML comment, ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "<!-- -->"
+	                ),
+	                ", will instead use the react comment, ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "{/* */}"
+	                ),
+	                "."
+	              )
 	            ),
-	            _react2["default"].createElement(
-	              "p",
-	              null,
-	              "There are two things you need to know about the structure of Plotypus charts. First, ",
-	              _react2["default"].createElement(
-	                "code",
-	                null,
-	                "Plot"
-	              ),
-	              "s are layered, and second, they can be composed with other Plotypus components like ",
-	              _react2["default"].createElement(
-	                "code",
-	                null,
-	                "Axis"
-	              ),
-	              " and ",
-	              _react2["default"].createElement(
-	                "code",
-	                null,
-	                "AxisLabel"
-	              ),
-	              ", and even other ",
-	              _react2["default"].createElement(
-	                "code",
-	                null,
-	                "Plot"
-	              ),
-	              "s, by way of a tabular layouting system."
-	            ),
-	            _react2["default"].createElement(
-	              "aside",
-	              null,
-	              "Note: because we are using react, all comments that would have used the HTML comment, ",
-	              _react2["default"].createElement(
-	                "code",
-	                null,
-	                "<!-- -->"
-	              ),
-	              ", will instead use the react comment, ",
-	              _react2["default"].createElement(
-	                "code",
-	                null,
-	                "{/* */}"
-	              ),
-	              "."
-	            ),
-	            _react2["default"].createElement(ChartsAndLayers, null),
-	            _react2["default"].createElement(BasicStructure, null),
-	            _react2["default"].createElement(OtherComponents, null)
+	            _react2["default"].createElement(_GuidePages.PlotsAndLayers, null),
+	            _react2["default"].createElement(_GuidePages.Composition, null),
+	            _react2["default"].createElement(_GuidePages.OtherComponents, null)
 	          )
 	        )
 	      );
@@ -41180,21 +40973,6 @@
 
 	exports["default"] = Guide;
 	module.exports = exports["default"];
-	/* data I'm generating. */ /* the sine wave on which sineData is based */ /*<Plotypus>
-	                                                                                     <PlotypusRow>
-	                                                                                       <Plot>
-	                                                                                         <GroupedBarLayer 
-	                                                                                           groupOffset={ 1.2 } 
-	                                                                                           barWidth={ 0.1 }
-	                                                                                           max={ 10 }
-	                                                                                           min={ 0 }
-	                                                                                           categoryField="category"
-	                                                                                           seriesField="series"
-	                                                                                           valueField="value"
-	                                                                                           data={ data } />
-	                                                                                       </Plot>
-	                                                                                     </PlotypusRow>
-	                                                                                   </Plotypus>*/
 
 /***/ },
 /* 210 */
@@ -52742,6 +52520,375 @@
 	    ]
 	  };
 	};
+
+/***/ },
+/* 338 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _HighlightJsx = __webpack_require__(210);
+
+	var _HighlightJsx2 = _interopRequireDefault(_HighlightJsx);
+
+	var _srcJsPlotypusJsx = __webpack_require__(166);
+
+	var PlotsAndLayers = (function (_React$Component) {
+	  function PlotsAndLayers() {
+	    _classCallCheck(this, PlotsAndLayers);
+
+	    if (_React$Component != null) {
+	      _React$Component.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(PlotsAndLayers, _React$Component);
+
+	  _createClass(PlotsAndLayers, [{
+	    key: "genData",
+	    value: function genData(count, values, cats, series) {
+	      /*
+	        count (Number):           How many datapoints you want.
+	        values (Array(Number)):   Must be of length 2. Min and Max.
+	        cats (Array(String)):     Set of all possible categories.
+	        series (Array(String)):   Set of all possible series.
+	      */
+	      return _.times(count, function (n) {
+	        return {
+	          value: (values[1] - values[0]) * Math.random(),
+	          category: n,
+	          series: null
+	        };
+	      });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var data = this.genData(8, [0, 8]);
+
+	      var sineFunc = function sineFunc(x, offset) {
+	        var offset = offset || 0;
+	        return Math.sin(x + offset) * 4 + 4;
+	      };
+
+	      var sineData = _.times(8, function (n) {
+	        return {
+	          value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	          category: n,
+	          series: null
+	        };
+	      });
+	      // console.log(data);
+	      return _react2["default"].createElement(
+	        "section",
+	        { id: "PlotsAndLayers" },
+	        _react2["default"].createElement(
+	          "h3",
+	          null,
+	          "Plots and Layers"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "The ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plot"
+	          ),
+	          " component is the most important of the components, and structurally, they are unique in that they have ",
+	          _react2["default"].createElement(
+	            "strong",
+	            null,
+	            "layers"
+	          ),
+	          ". Layers are graphical elements that stack on top of each other and take up the same area. Currently, only Plots have layers, but over time this may change."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "We'll use ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GridLayer"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          ),
+	          ", and ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "FuncLayer"
+	          ),
+	          " to demonstrate the concept of layers."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "For now, you can ignore the properties I'm passing to each layer, as I will expound on them later on, but you can also study them now if you like."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plot,
+	          null,
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	            xMax: 8,
+	            yMax: 8 }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	            max: 8,
+	            data: sineData }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
+	            xMax: 8,
+	            yMax: 8,
+	            func: sineFunc,
+	            samples: 64 })
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          { className: "solarized_light" },
+	          "<Plot>\n  <GridLayer \n    xMax={ 8 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    data={ sineData /* data I'm generating. */}/>\n  <FuncLayer\n    xMax={ 8 }\n    yMax={ 8 }\n    func={ sineFunc /* the sine wave on which sineData is based */}\n    samples={ 64 }/>\n</Plot>"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PlotsAndLayers;
+	})(_react2["default"].Component);
+
+	exports.PlotsAndLayers = PlotsAndLayers;
+
+	var Composition = (function (_React$Component2) {
+	  function Composition() {
+	    _classCallCheck(this, Composition);
+
+	    if (_React$Component2 != null) {
+	      _React$Component2.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(Composition, _React$Component2);
+
+	  _createClass(Composition, [{
+	    key: "genData",
+	    value: function genData(count, values, cats, series) {
+	      /*
+	        count (Number):           How many datapoints you want.
+	        values (Array(Number)):   Must be of length 2. Min and Max.
+	        cats (Array(String)):     Set of all possible categories.
+	        series (Array(String)):   Set of all possible series.
+	      */
+	      return _.times(count, function (n) {
+	        return {
+	          value: (values[1] - values[0]) * Math.random(),
+	          category: n,
+	          series: null
+	        };
+	      });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var data = this.genData(8, [0, 8]);
+
+	      var sineFunc = function sineFunc(x, offset) {
+	        var offset = offset || 0;
+	        return Math.sin(x + offset) * 4 + 4;
+	      };
+
+	      var sineData = _.times(8, function (n) {
+	        return {
+	          value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	          category: n,
+	          series: null
+	        };
+	      });
+	      return _react2["default"].createElement(
+	        "section",
+	        { id: "Composition" },
+	        _react2["default"].createElement(
+	          "h3",
+	          null,
+	          "Composition"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "Composition with Plotypus is easy. All Plotypus charts can be laid out in a tabular manner: that is, you define a table, then the rows, then the cells."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "The Plotypus components that correspond to this structure are as follows: ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plotypus"
+	          ),
+	          "(table), ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "PlotypusRow"
+	          ),
+	          "(row), ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "PlotypusComponent"
+	          ),
+	          "(cell)."
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          { className: "solarized_light" },
+	          "<Plotypus>\n  <PlotypusRow>\n    {/* PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Plot, to a Legend. */}\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n  <PlotypusRow>\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n</Plotypus>"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "This makes it easy to combine any of the Plotypus components and align them properly. You can have as many ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plot"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Axis"
+	          ),
+	          ", and other components aligned together as you like."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "Now let's take the Plot from the previous section, place it in the tabular structure and then add axes."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plotypus,
+	          null,
+	          _react2["default"].createElement(
+	            _srcJsPlotypusJsx.PlotypusRow,
+	            null,
+	            _react2["default"].createElement(
+	              _srcJsPlotypusJsx.PlotypusComponent,
+	              null,
+	              _react2["default"].createElement(_srcJsPlotypusJsx.Axis, { max: 8 })
+	            ),
+	            _react2["default"].createElement(
+	              _srcJsPlotypusJsx.PlotypusComponent,
+	              null,
+	              _react2["default"].createElement(
+	                _srcJsPlotypusJsx.Plot,
+	                null,
+	                _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	                  xMax: 8,
+	                  yMax: 8 }),
+	                _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	                  max: 8,
+	                  data: sineData }),
+	                _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
+	                  xMax: 8,
+	                  yMax: 8,
+	                  func: sineFunc,
+	                  samples: 64 })
+	              )
+	            )
+	          ),
+	          _react2["default"].createElement(
+	            _srcJsPlotypusJsx.PlotypusRow,
+	            null,
+	            _react2["default"].createElement(_srcJsPlotypusJsx.Null, null),
+	            _react2["default"].createElement(
+	              _srcJsPlotypusJsx.PlotypusComponent,
+	              null,
+	              _react2["default"].createElement(_srcJsPlotypusJsx.CategoryAxis, { categories: ["a", "b", "c", "d", "e", "f", "g", "h"], orientation: "h" })
+	            )
+	          )
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          { className: "solarized_light" },
+	          "<Plotypus>\n  <PlotypusRow>\n\n    <PlotypusComponent>\n      <Axis max={ 8 }/>\n    </PlotypusComponent>\n\n    <PlotypusComponent>\n      <Plot>\n        <GridLayer \n          xMax={ 8 }\n          yMax={ 8 }/>\n        <GroupedBarLayer \n          max={ 8 }\n          data={ sineData /* data I'm generating. */}/>\n        <FuncLayer\n          xMax={ 8 }\n          yMax={ 8 }\n          func={ sineFunc /* the sine wave on which sineData is based */}\n          samples={ 64 }/>\n      </Plot>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n  <PlotypusRow>\n    {/* The Null element simply occupies a space on the lower left corner of the tabular structure. \n    This makes sure that the axis element below is perfectly aligned with the Plot above. */}\n    <Null /> \n\n    <PlotypusComponent>\n      <Axis max={ 8 } orientation=\"h\"/>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n</Plotypus>"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Composition;
+	})(_react2["default"].Component);
+
+	exports.Composition = Composition;
+
+	var OtherComponents = (function (_React$Component3) {
+	  function OtherComponents() {
+	    _classCallCheck(this, OtherComponents);
+
+	    if (_React$Component3 != null) {
+	      _React$Component3.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(OtherComponents, _React$Component3);
+
+	  _createClass(OtherComponents, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "div",
+	        null,
+	        _react2["default"].createElement(
+	          "h3",
+	          null,
+	          "Other Components"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "Now that we've gotten the ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plot"
+	          ),
+	          " out of the way, we can work on the other simpler components. These don't have layers, and therefore just stand alone."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "To keep "
+	        )
+	      );
+	    }
+	  }]);
+
+	  return OtherComponents;
+	})(_react2["default"].Component);
+
+	exports.OtherComponents = OtherComponents;
+	/* data I'm generating. */ /* the sine wave on which sineData is based */ /* data I'm generating. */ /* the sine wave on which sineData is based */ /* The Null element simply occupies a space on the lower left corner of the tabular structure. 
+	                                                                                                                                                    This makes sure that the axis element below is perfectly aligned with the Plot above. */
 
 /***/ }
 /******/ ]);
