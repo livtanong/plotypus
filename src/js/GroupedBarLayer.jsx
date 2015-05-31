@@ -26,6 +26,7 @@ var GroupedBarLayer = React.createClass({
 			barWidth: 0.5,
 			groupOffset: 0.6,
 			stacked: false,
+			min: 0,
 			seriesField: "series",
 			categoryField: "category",
 			valueField: "value"

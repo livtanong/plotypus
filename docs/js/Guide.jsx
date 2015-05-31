@@ -73,15 +73,13 @@ class ChartsAndLayers extends React.Component {
             xMax={ 8 }
             yMax={ 8 }/>
           <GroupedBarLayer 
-            barWidth={ 0.3 }
             max={ 8 }
-            min={ 0 }
             data={ sineData /* data I'm generating. */}/>
           <FuncLayer
             xMax={ 8 }
             yMax={ 8 }
             func={ sineFunc /* the sine wave on which sineData is based */}
-            samples={ 32 }/>
+            samples={ 64 }/>
         </Plot>
         <Highlight className="solarized_light">
 {
@@ -90,18 +88,13 @@ class ChartsAndLayers extends React.Component {
     xMax={ 8 }
     yMax={ 8 }/>
   <GroupedBarLayer 
-    barWidth={ 0.3 }
     max={ 8 }
-    min={ 0 }
-    categoryField="category"
-    seriesField="series"
-    valueField="value"
     data={ sineData /* data I'm generating. */}/>
   <FuncLayer
     xMax={ 8 }
     yMax={ 8 }
     func={ sineFunc /* the sine wave on which sineData is based */}
-    samples={ 32 }/>
+    samples={ 64 }/>
 </Plot>`
 }
         </Highlight>

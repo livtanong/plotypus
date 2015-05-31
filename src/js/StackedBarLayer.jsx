@@ -24,6 +24,7 @@ var StackedBarLayer = React.createClass({
 		return {
 			barWidth: 0.5,
 			groupOffset: 0.6,
+			min: 0,
 			stacked: false,
 			seriesField: "series",
 			categoryField: "category",
