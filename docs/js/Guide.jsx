@@ -1,6 +1,34 @@
 import React from "react";
 import Highlight from "./Highlight.jsx";
-import {Plotypus, PlotypusRow, Chart, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
+import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
+
+class BasicStructure extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Basic Structure</h3>
+        <p>Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts.</p>
+        <p>It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have one axis, two, none, and even 4, if you're insane.</p>
+        <p>All <code>PlotypusRow</code>s act like table rows, while all <code>PlotypusComponent</code>s act like table cells.</p>
+        <Highlight className="solarized_light">
+{ 
+`<Plotypus>
+  <PlotypusRow>
+    <!-- PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Plot, to a Legend. -->
+    <PlotypusComponent />
+    <PlotypusComponent />
+  </PlotypusRow>
+  <PlotypusRow>
+    <PlotypusComponent />
+    <PlotypusComponent />
+  </PlotypusRow>
+</Plotypus>` 
+}
+        </Highlight>
+      </div>
+    )
+  }
+}
 
 class ChartsAndLayers extends React.Component {
   genData(count, values, cats, series) {
@@ -36,60 +64,52 @@ class ChartsAndLayers extends React.Component {
     // console.log(data);
     return (
       <div>
-        <h3>Charts and Layers</h3>
-        <p>The chart component is obviously the most important of the components, and structurally, they are unique in that they have <strong>layers</strong>. Layers are graphical elements that stack on top of each other inside a Chart. Currently, only Charts have layers, but over time this may change.</p>
-        <p><code>GridLayer</code> and <code>GroupedBarLayer</code> are the first layers we'll encounter in this guide, and perfectly demonstrate the concept of layers. For now, we will simplify our layout to only include one Component: <code>Chart</code>, leaving only one <code>PlotypusRow</code> in our markup.</p>
-        <Plotypus>
-          <PlotypusRow>
-            <Chart>
-              <GridLayer 
-                xMax={ 8 }
-                yMax={ 8 }/>
-              <GroupedBarLayer 
-                barWidth={ 0.3 }
-                max={ 8 }
-                min={ 0 }
-                categoryField="category"
-                seriesField="series"
-                valueField="value"
-                data={ sineData }/>{/* data is just random data I'm generating. */}
-              <FuncLayer
-                xMax={ 8 }
-                yMax={ 8 }
-                func={ sineFunc }
-                samples={ 32 }/>
-            </Chart>
-          </PlotypusRow>
-        </Plotypus>
+        <h3>Plots and Layers</h3>
+        <p>The <code>Plot</code> component is the most important of the components, and structurally, they are unique in that they have <strong>layers</strong>. Layers are graphical elements that stack on top of each other and take up the same area. Currently, only Plots have layers, but over time this may change.</p>
+        <p>We'll use <code>GridLayer</code>, <code>GroupedBarLayer</code>, and <code>FuncLayer</code> to demonstrate the concept of layers.</p>
+        <p>For now, you can ignore the properties I'm passing to each layer, as I will expound on them later on, but you can also study them now if you like.</p>
+        <Plot>
+          <GridLayer 
+            xMax={ 8 }
+            yMax={ 8 }/>
+          <GroupedBarLayer 
+            max={ 8 }
+            data={ sineData /* data I'm generating. */}/>
+          <FuncLayer
+            xMax={ 8 }
+            yMax={ 8 }
+            func={ sineFunc /* the sine wave on which sineData is based */}
+            samples={ 64 }/>
+        </Plot>
         <Highlight className="solarized_light">
 {
-`<Plotypus>
-  <PlotypusRow>
-    <Chart>
-      <GridLayer 
-        xMax={ 8 }
-        yMax={ 8 }
-        />
-      <GroupedBarLayer 
-        barWidth={ 0.3 }
-        max={ 8 }
-        min={ 0 }
-        categoryField="category"
-        seriesField="series"
-        valueField="value"
-        data={ sineData }  {/* data I'm generating. */}
-        />
-      <FuncLayer
-        xMax={ 8 }
-        yMax={ 8 }
-        func={ sineFunc } {/* the sine wave on which sineData is based */}
-        samples={ 8 }
-        />
-    </Chart>
-  </PlotypusRow>
-</Plotypus>`
+`<Plot>
+  <GridLayer 
+    xMax={ 8 }
+    yMax={ 8 }/>
+  <GroupedBarLayer 
+    max={ 8 }
+    data={ sineData /* data I'm generating. */}/>
+  <FuncLayer
+    xMax={ 8 }
+    yMax={ 8 }
+    func={ sineFunc /* the sine wave on which sineData is based */}
+    samples={ 64 }/>
+</Plot>`
 }
         </Highlight>
+      </div>
+    )
+  }
+}
+
+class OtherComponents extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Other Components</h3>
+        <p>Now that we've gotten the <code>Plot</code> out of the way, we can work on the other simpler components. These don't have layers, and therefore just stand alone.</p>
+        <p>To keep </p>
       </div>
     )
   }
@@ -127,30 +147,15 @@ export default class Guide extends React.Component {
         <div className="main">
           <section>
             <h2>Structure</h2>
-            <div>
-              <p>Building out components in Plotypus is easy. Plotypus charts are laid out in a tabular manner. Think, way back then, when we still used tables to lay out websites—that's what we're doing now with the charts.</p>
-              <p>It sounds atrocious, I know, but it helps amazingly with composing your charts. You can have one axis, two, none, and even 4, if you're insane.</p>
-              <Highlight className="solarized_light">
-                { 
-                  `<Plotypus>
-  <PlotypusRow>
-    <Component1 />
-    <Component2 /> <!-- Components here are just placeholders. They can be anything from an Axis to a Chart, to a Legend. -->
-  </PlotypusRow>
-  <PlotypusRow>
-    <Null /> <!-- Null is just like any other Component, except it simply doesn't display anything. -->
-    <Component3 />
-  </PlotypusRow>
-</Plotypus>` }
-              </Highlight>
-
-              <p>All Plotypus components that aren't structural like PlotypusRow, act like table cells. And generally, they all behave identically, with the exception of the Chart component.</p>
-            </div>
+            <p>There are two things you need to know about the structure of Plotypus charts. First, <code>Plot</code>s are layered, and second, they can be composed with other Plotypus components like <code>Axis</code> and <code>AxisLabel</code>, and even other <code>Plot</code>s, by way of a tabular layouting system.</p>
+            <aside>Note: because we are using react, all comments that would have used the HTML comment, <code>{"<!-- -->"}</code>, will instead use the react comment, <code>{"{/* */}"}</code>.</aside>
             <ChartsAndLayers />
-          </section>
+            <BasicStructure />
+            <OtherComponents />
+          
           {/*<Plotypus>
                       <PlotypusRow>
-                        <Chart>
+                        <Plot>
                           <GroupedBarLayer 
                             groupOffset={ 1.2 } 
                             barWidth={ 0.1 }
@@ -160,9 +165,10 @@ export default class Guide extends React.Component {
                             seriesField="series"
                             valueField="value"
                             data={ data } />
-                        </Chart>
+                        </Plot>
                       </PlotypusRow>
                     </Plotypus>*/}
+          </section>
         </div>
       </div>
     )
