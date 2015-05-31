@@ -210,11 +210,57 @@ export class Composition extends React.Component {
   }
 }
 
-export class Data extends React.Component {
-  render() {  
+export class DataFormat extends React.Component {
+  genData(count, values, cats, series) {
+    /*
+      count (Number):           How many datapoints you want.
+      values (Array(Number)):   Must be of length 2. Min and Max.
+      cats (Array(String)):     Set of all possible categories.
+      series (Array(String)):   Set of all possible series.
+    */
+    return _.times(count, function(n){
+      return {
+        value: (values[1] - values[0]) * Math.random(),
+        category: n,
+        series: null
+      }
+    })
+  }
+  render() { 
+    var data = this.genData(8, [0, 8]);
+
+    var sineFunc = function(x, offset) {
+      var offset = offset || 0
+      return Math.sin(x + offset) * 4 + 4;
+    }
+
+    var seriesNames = ["a", "b", "c"]
+
+    var data = _.flatten(
+      _.times(8, function(n){
+        return _.times(3, function(m){
+          return {
+            value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+            category: n,
+            series: seriesNames[m]
+          }
+        })
+      })
+    );
     return (
-      <section id="Data">
-        <h2>Data</h2>
+      <section id="DataFormat">
+        <h2>Data Format</h2>
+        <p>All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the <em>number</em> of keys needed for the datapoints change depending on the plot. For now, let's look at <code>GroupedBarLayer</code></p>
+        <p><code>GroupedBarLayer</code> requires the following keys: <code>series, category, value</code>. If you only have one series, you can leave it blank.</p>
+        <Plot>
+          <GridLayer 
+            xMax={ 8 }
+            yMax={ 8 }/>
+          <GroupedBarLayer 
+            max={ 8 }
+            groupOffset={ 1.3 }
+            data={ data /* data I'm generating. */}/>
+        </Plot>
       </section>
     )
   }
