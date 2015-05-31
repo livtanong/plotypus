@@ -77,36 +77,36 @@ export class ChartsAndLayers extends React.Component {
 
 
 export class Composition extends React.Component {
-	genData(count, values, cats, series) {
-	  /*
-	    count (Number):           How many datapoints you want.
-	    values (Array(Number)):   Must be of length 2. Min and Max.
-	    cats (Array(String)):     Set of all possible categories.
-	    series (Array(String)):   Set of all possible series.
-	  */
-	  return _.times(count, function(n){
-	    return {
-	      value: (values[1] - values[0]) * Math.random(),
-	      category: n,
-	      series: null
-	    }
-	  })
-	}
+  genData(count, values, cats, series) {
+    /*
+      count (Number):           How many datapoints you want.
+      values (Array(Number)):   Must be of length 2. Min and Max.
+      cats (Array(String)):     Set of all possible categories.
+      series (Array(String)):   Set of all possible series.
+    */
+    return _.times(count, function(n){
+      return {
+        value: (values[1] - values[0]) * Math.random(),
+        category: n,
+        series: null
+      }
+    })
+  }
   render() {
-  	var data = this.genData(8, [0, 8]);
+    var data = this.genData(8, [0, 8]);
 
-  	var sineFunc = function(x, offset) {
-  	  var offset = offset || 0
-  	  return Math.sin(x + offset) * 4 + 4;
-  	}
+    var sineFunc = function(x, offset) {
+      var offset = offset || 0
+      return Math.sin(x + offset) * 4 + 4;
+    }
 
-  	var sineData = _.times(8, function(n){
-  	  return {
-  	    value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
-  	    category: n,
-  	    series: null
-  	  }
-  	})
+    var sineData = _.times(8, function(n){
+      return {
+        value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+        category: n,
+        series: null
+      }
+    })
     return (
       <div>
         <h3>Composition</h3>
@@ -132,34 +132,31 @@ export class Composition extends React.Component {
         <p>Now let's take the Plot from the previous section, place it in the tabular structure and then add axes.</p>
         <Plotypus>
           <PlotypusRow>
-          	<PlotypusComponent>
-          		<Axis
-          			max={ 8 }/>
-          	</PlotypusComponent>
             <PlotypusComponent>
-            	<Plot>
-            	  <GridLayer 
-            	    xMax={ 8 }
-            	    yMax={ 8 }/>
-            	  <GroupedBarLayer 
-            	    max={ 8 }
-            	    data={ sineData /* data I'm generating. */}/>
-            	  <FuncLayer
-            	    xMax={ 8 }
-            	    yMax={ 8 }
-            	    func={ sineFunc /* the sine wave on which sineData is based */}
-            	    samples={ 64 }/>
-            	</Plot>
+              <Axis max={ 8 }/>
+            </PlotypusComponent>
+            <PlotypusComponent>
+              <Plot>
+                <GridLayer 
+                  xMax={ 8 }
+                  yMax={ 8 }/>
+                <GroupedBarLayer 
+                  max={ 8 }
+                  data={ sineData /* data I'm generating. */}/>
+                <FuncLayer
+                  xMax={ 8 }
+                  yMax={ 8 }
+                  func={ sineFunc /* the sine wave on which sineData is based */}
+                  samples={ 64 }/>
+              </Plot>
             </PlotypusComponent>
           </PlotypusRow>
           <PlotypusRow>
-          	{/* This element simply occupies a space on the lower left corner of the tabular structure. 
-          	This makes sure that the axis element below is perfectly aligned with the Plot above. */}
+            {/* The Null element simply occupies a space on the lower left corner of the tabular structure. 
+            This makes sure that the axis element below is perfectly aligned with the Plot above. */}
             <Null /> 
             <PlotypusComponent>
-            	<Axis
-            		max={ 8 }
-            		orientation="h"/>
+              <Axis max={ 8 } orientation="h"/>
             </PlotypusComponent>
           </PlotypusRow>
         </Plotypus>
@@ -167,34 +164,31 @@ export class Composition extends React.Component {
 {
 `<Plotypus>
   <PlotypusRow>
-  	<PlotypusComponent>
-  		<Axis
-  			max={ 8 }/>
-  	</PlotypusComponent>
     <PlotypusComponent>
-    	<Plot>
-    	  <GridLayer 
-    	    xMax={ 8 }
-    	    yMax={ 8 }/>
-    	  <GroupedBarLayer 
-    	    max={ 8 }
-    	    data={ sineData /* data I'm generating. */}/>
-    	  <FuncLayer
-    	    xMax={ 8 }
-    	    yMax={ 8 }
-    	    func={ sineFunc /* the sine wave on which sineData is based */}
-    	    samples={ 64 }/>
-    	</Plot>
+      <Axis max={ 8 }/>
+    </PlotypusComponent>
+    <PlotypusComponent>
+      <Plot>
+        <GridLayer 
+          xMax={ 8 }
+          yMax={ 8 }/>
+        <GroupedBarLayer 
+          max={ 8 }
+          data={ sineData /* data I'm generating. */}/>
+        <FuncLayer
+          xMax={ 8 }
+          yMax={ 8 }
+          func={ sineFunc /* the sine wave on which sineData is based */}
+          samples={ 64 }/>
+      </Plot>
     </PlotypusComponent>
   </PlotypusRow>
   <PlotypusRow>
-  	{/* This element simply occupies a space on the lower left corner of the tabular structure. 
-  	This makes sure that the axis element below is perfectly aligned with the Plot above. */}
+    {/* The Null element simply occupies a space on the lower left corner of the tabular structure. 
+    This makes sure that the axis element below is perfectly aligned with the Plot above. */}
     <Null /> 
     <PlotypusComponent>
-    	<Axis
-    		max={ 8 }
-    		orientation="h"/>
+      <Axis max={ 8 } orientation="h"/>
     </PlotypusComponent>
   </PlotypusRow>
 </Plotypus>`
