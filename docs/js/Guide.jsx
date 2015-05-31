@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight";
-import {PlotsAndLayers, Composition} from "./GuidePages";
+import {PlotsAndLayers, Composition, DataFormat} from "./GuidePages";
 import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 export default class Guide extends React.Component {
@@ -57,7 +57,9 @@ export default class Guide extends React.Component {
             <section>
               <h1>Data</h1>
               <p>There are a number of things to consider when supplying Plotypus <code>Plot</code> layers data.</p>
+              <p>Plotypus likes thinking about data as a set of points in n-dimensional space. <em>Whoa, n-dimensional space? How did we get here?</em> Relax, young padawan. It isn't as complicated as it sounds.</p>
             </section>
+            <DataFormat />
           </article>
         </div>
       </div>
