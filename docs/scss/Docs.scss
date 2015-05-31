@@ -47,4 +47,29 @@
 			text-decoration: none;
 		}
 	}
+	#hero {
+		@include display(flex);
+		@include justify-content(center);
+		@include align-items(center);
+		height: 320px;
+		background-color: $light;
+		#logo {
+			svg {
+				width: 144px;
+				height: 144px;
+			}
+			margin-right: 24px;
+		}
+		h1 {
+			font-weight: 300;
+			font-size: 72px;
+			margin: 0px;
+		}
+		h2 {
+			margin: 0px;
+			font-size: 24px;
+			color: rgba($dark, 0.4);
+			font-weight: 300;
+		}
+	}
 }
