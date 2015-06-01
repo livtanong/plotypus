@@ -1,5 +1,6 @@
-var _ = require("lodash");
-var SVGLayer = require("./SVGLayer");
+import _ from "lodash";
+import SVGLayer from "./SVGLayer";
+import {CorePlot} from "./Core";
 
 function Bars (domNode, data, seriesField, categoryField, valueField) {
 	SVGLayer.call(this, domNode);
@@ -34,29 +35,33 @@ TODO: change structure so that you go from raw datapoints to presentational data
 
 function GroupedBars (domNode, data, seriesField, categoryField, valueField, groupOffsetFactor, barWidthFactor, max, min){
 	Bars.call(this, domNode, data, seriesField, categoryField, valueField);
-	
-	_.chain(data)
-		.groupBy(categoryField)
-		.sortBy(function(c, i){ return i })
-		.forEach(function(series, catIndex, categoryObject){
-			_.sortBy(series, seriesField).forEach(function(datapoint, seriesIndex, seriesList){
-				
-				var barOffset = groupOffsetFactor * barWidthFactor;
-				var groupWidth = (barOffset * this.seriesNames.length) - barOffset + barWidthFactor;
-				var fieldX = (catIndex + 0.5) * this.seriesNames.length - (groupWidth * 0.5);
-				var seriesX = barOffset * seriesIndex;
-				var attrs = {
-					width: barWidthFactor,
-					height: Math.abs(datapoint[valueField]),
-					x: fieldX + seriesX,
-					y: this.getPosition(datapoint[valueField], max, 0),
-					class: "Bar " + "series-" + (seriesIndex + 1)
-				}
 
-				this.addSVGElement(this.content, "rect", attrs);
-			}, this);
-		}, this)
-		.value();
+	var BarPlot = new CorePlot(
+		[{name: categoryField, type: "DISCRETE"}, {name: seriesField, type: "DISCRETE"}, {name: valueField, type: "CONTINUOUS"}], 
+		[categoryField, valueField]
+	);
+
+	var indexMap = BarPlot.generateDiscreteIndexMap(data); // returns a map from categoryname to the sorted index of that categoryname.
+
+	data.forEach(datapoint => {
+		const seriesSize = _.size(indexMap[seriesField]),
+			catIndex = indexMap[categoryField][datapoint[categoryField]],
+			seriesIndex = indexMap[seriesField][datapoint[seriesField]];
+
+		const barOffset = groupOffsetFactor * barWidthFactor,
+			groupWidth = (barOffset * seriesSize) - barOffset + barWidthFactor,
+			catX = (catIndex + 0.5) * seriesSize - (groupWidth * 0.5),
+			seriesX = barOffset * seriesIndex;
+
+		const attrs = {
+			width: barWidthFactor,
+			height: Math.abs(datapoint[valueField]),
+			x: catX + seriesX,
+			y: this.getPosition(datapoint[valueField], max, 0),
+			class: "Bar series-" + (seriesIndex + 1)
+		}
+		this.addSVGElement(this.content, "rect", attrs);
+	});
 
 	this.domNode.setAttribute("viewBox", "0 0 " + (this.seriesNames.length * this.catNames.length) + " " + (max - min));
 	this.domNode.setAttribute("preserveAspectRatio", "none");
