@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 					</div>
 					<div>
 						<h1>Plotypus</h1>
-						<h2>Cahrts misspelled.</h2>
+						<h2>An out of the box way of thinking inside the box. Of charts.</h2>
 					</div>
 				</div>
 			</div>

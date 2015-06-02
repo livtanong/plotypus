@@ -16,7 +16,7 @@ export default class Docs extends React.Component {
     this.views = {
       "HOME": "HOME",
       "GUIDE": "GUIDE",
-      "API": "API"
+      /*"API": "API"*/
     }
 
     this.state = {
