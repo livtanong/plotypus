@@ -17,6 +17,7 @@ development: clean deps
 
 production: clean index.html
 	./node_modules/.bin/webpack --config webpack.config.js
+	babel src --out-dir lib
 	# node prerender.js
 	# rm build/webpack-prerender.js
 	# rm build/stats.json
