@@ -34,7 +34,7 @@ var Plot = React.createClass({
 	render: function() {
 		// scale depending on the maximum value we get from children.
 		return (
-			<svg className="Plot">
+			<svg className={ classnames("Plot", this.props.className) }>
 				<g className="render-area">
 					{ this.props.children }
 				</g>
@@ -56,7 +56,7 @@ var PlotypusRow = React.createClass({
 var PlotypusComponent = React.createClass({
 	render: function() {
 		return (
-			<div className="PlotypusComponent">
+			<div className={ classnames("PlotypusComponent", this.props.className) }>
 				{ this.props.children }
 			</div>
 		);

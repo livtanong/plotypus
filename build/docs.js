@@ -19977,7 +19977,7 @@
 			// scale depending on the maximum value we get from children.
 			return React.createElement(
 				"svg",
-				{ className: "Plot" },
+				{ className: classnames("Plot", this.props.className) },
 				React.createElement(
 					"g",
 					{ className: "render-area" },
@@ -20005,7 +20005,7 @@
 		render: function render() {
 			return React.createElement(
 				"div",
-				{ className: "PlotypusComponent" },
+				{ className: classnames("PlotypusComponent", this.props.className) },
 				this.props.children
 			);
 		}
