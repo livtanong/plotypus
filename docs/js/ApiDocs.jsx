@@ -20,33 +20,8 @@ export default class ApiDocs extends React.Component {
 	render() {
 		var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
 		return (
-			<div className="ApiDocs split-pane">
-				<div className="sidebar table-of-contents">
-					<div>
-						<h4>Structure</h4>
-						<ul>
-							<li><a>Plotypus</a></li>
-							<li><a>PlotypusRow</a></li>
-						</ul>
-					</div>
-				</div>
-				<div className="main">
-					<Plotypus>
-					  <PlotypusRow>
-					    <Chart>
-					      <GroupedBarLayer 
-					        groupOffset={ 1.2 } 
-					        barWidth={ 0.1 }
-					        max={ 10 }
-					        min={ 0 }
-					        categoryField="category"
-					        seriesField="series"
-					        valueField="value"
-					        data={ data } />
-					    </Chart>
-					  </PlotypusRow>
-					</Plotypus>
-				</div>
+			<div>
+				Under Construction
 			</div>
 		)
 	}

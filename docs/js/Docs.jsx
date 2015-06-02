@@ -2,6 +2,7 @@ import Style from "../scss/Docs.scss";
 
 import React from "react";
 import _ from "lodash";
+import classnames from "classnames";
 import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotypus.jsx";
 
 import ApiDocs from "./ApiDocs";
@@ -43,8 +44,14 @@ export default class Docs extends React.Component {
     }.bind(this);
 
     var nav = _.keys(this.views).map((view) => 
-      (<a className="toolbar-item" key={ view } onClick={ this.changeView.bind(this, view) }>{ view.toLowerCase() }</a>)
-    )
+      (
+        <a className={ classnames("toolbar-item", {"active": view === this.state.currentView}) } 
+          key={ view } 
+          onClick={ this.changeView.bind(this, view) }>
+          { view.toLowerCase() }
+        </a>
+      )
+    );
     // var nav = _.keys(this.views).map(function(view){
     //   return (<a onClick={ this.changeView(view) }>{ view.toLowerCase() }</a>)
     // }, this);
@@ -52,10 +59,15 @@ export default class Docs extends React.Component {
     return (
       <div className="Docs">
         <div className="toolbar">
-          <h1>Plotypus</h1>
+          <a id="brand" onClick={ this.changeView.bind(this, this.views.HOME) }>
+            <h1>Plotypus <small>v0.0.0.0...0.1</small></h1>
+          </a>
           <div className="spacer" />
-          <div>
+          <div className="toolbar-group">
             { nav }
+            <a className="toolbar-item" href="https://github.com/levitanong/plotypus">
+              Github
+            </a>
           </div>
         </div>
         { views() }
