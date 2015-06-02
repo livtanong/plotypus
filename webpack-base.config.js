@@ -64,7 +64,8 @@ var baseConfig = function(options) {
     output: {
       path: 'build',
       publicPath: '/build/',
-      filename: '[name].js'
+      filename: '[name].js',
+      libraryTarget: options.production ? "commonjs2" : "var"
     },
     resolve: {
       alias: { lib: __dirname+'/js/lib' },
