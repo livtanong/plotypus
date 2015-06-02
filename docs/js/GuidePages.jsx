@@ -208,7 +208,7 @@ export class ArbitraryKeys extends React.Component {
         <p>For this next example, we can do something crazy and switch the series and categories of our existing data with each other. To be more specific, what we're going to do is: <code>seriesField="category"</code> and <code>categoryField="series"</code>.</p>
         <Plot>
           <GridLayer 
-            xMax={ 8 }
+            xMax={ 3 }
             yMax={ 8 }/>
           <GroupedBarLayer 
             max={ 8 }
@@ -221,7 +221,7 @@ export class ArbitraryKeys extends React.Component {
 {
 `<Plot>
   <GridLayer 
-    xMax={ 8 }
+    xMax={ 3 }
     yMax={ 8 }/>
   <GroupedBarLayer 
     max={ 8 }
