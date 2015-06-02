@@ -1,5 +1,3 @@
-require("../scss/Plotypus.scss");
-
 var React = require("react/addons");
 var _ = require("lodash");
 var classnames = require("classnames");
