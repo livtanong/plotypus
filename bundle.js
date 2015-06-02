@@ -20886,9 +20886,7 @@
 
 	    this.views = {
 	      "HOME": "HOME",
-	      "GUIDE": "GUIDE",
-	      "API": "API"
-	    };
+	      "GUIDE": "GUIDE" };
 
 	    this.state = {
 	      currentView: this.views.GUIDE
@@ -20978,6 +20976,8 @@
 
 	exports["default"] = Docs;
 	module.exports = exports["default"];
+
+	/*"API": "API"*/
 
 /***/ },
 /* 170 */
@@ -40999,7 +40999,7 @@
 							_react2["default"].createElement(
 								"h2",
 								null,
-								"Cahrts misspelled."
+								"An out of the box way of thinking inside the box. Of charts."
 							)
 						)
 					)
