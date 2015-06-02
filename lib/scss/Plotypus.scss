@@ -1,0 +1,127 @@
+@import "bourbon";
+
+$plotypus-series-colors: (
+  #d70206,
+  #f05b4f,
+  #f4c63d,
+  #d17905,
+  #453d3f,
+  #59922b,
+  #0544d3,
+  #6b0392,
+  #f05b4f,
+  #dda458,
+  #eacf7d,
+  #86797d,
+  #b2c326,
+  #6188e2,
+  #a748ca
+) !default;
+
+.Plotypus {
+	display: table;
+	overflow: hidden;
+	table-layout: auto;
+	.labels-container {
+		height: 48px;
+	}
+	.labels {
+		@include display(flex);
+		.label {
+			@include flex(1);
+			width: 0;
+			height: 0;
+			white-space: nowrap;
+			font-size: 12px;
+		}
+	}
+	.Axis {
+		text {
+			height: 100%;
+			font-size: 10px;
+		}
+		&.v {
+			// height: 99%; // BECAUSE FUCK SAFARI. IF THIS NUMBER IS INCREASED BY 0.1%, BUG RETURNS.
+			height: 100%;
+			width: 48px;
+		}
+		&.h {
+			height: 48px;
+			width: 100%;
+		}
+		&.Category {
+			&.v {
+				width: auto;
+			}
+			&.h {
+				height: auto;
+			}
+		}
+	}
+	.axis-label {
+		text-align: center;
+		font-size: 12px;
+		font-weight: 300;
+		white-space: nowrap;
+		&.rotate {
+			width: 24px;
+			.label {
+				position: absolute;
+				bottom: 50%;
+				left: 0px;
+				@include transform(rotate(-90deg) translate(-50%));
+				@include transform-origin(top left);
+			}
+		}
+		&.x {
+			@include display(flex);
+			@include flex-direction(row);
+			@include justify-content(center);
+		}
+	}
+}
+.Plot {
+	@for $i from 0 to length($plotypus-series-colors) {
+	  .series-#{$i + 1} {
+	    fill: nth($plotypus-series-colors, $i + 1);
+	  }
+	}
+}
+
+.PlotypusRow {
+	display: table-row;
+	.Plot {
+		// height: 99%; // BECAUSE FUCK SAFARI. IF THIS NUMBER IS INCREASED BY 0.1%, BUG RETURNS.
+		height: 100%;
+		width: 100%;
+	}
+	.null {
+		display: table-cell;
+		width: 0px;
+		height: 0px;
+	}
+}
+.PlotypusComponent {
+	display: table-cell;
+	&.full {
+		height: 100%;
+		// height: 1
+		width: 100%;
+	}
+	& > .Axis.v {
+		margin-right: 8px;
+	}
+	& > .Axis.h {
+		margin-top: 8px;
+	}
+}
+
+.FuncLayer {
+	path {
+		stroke-dasharray: 3, 3;
+		stroke-width: 1px;
+		fill: none;
+		stroke: black;
+		vector-effect: non-scaling-stroke;
+	}
+}
