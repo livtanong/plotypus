@@ -7,7 +7,7 @@ deps:
 	@npm install
 
 development: clean deps
-	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack.config.js --inline --hot --content-base .
+	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --hot --content-base .
 
 
 # cordova: clean index.html
@@ -15,8 +15,12 @@ development: clean deps
 # 	node inject-static-resources.js index.html build -c bundle.css -j cordova.js
 # 	cp -R data build
 
-production: clean index.html
-	./node_modules/.bin/webpack --config webpack.config.js
+production: clean deps
+	./node_modules/.bin/webpack --config webpack-prod.config.js
+	./node_modules/.bin/webpack --config webpack-docs.config.js
+
+docs: clean deps
+	./node_modules/.bin/webpack --config webpack-docs.config.js
 	# node prerender.js
 	# rm build/webpack-prerender.js
 	# rm build/stats.json
