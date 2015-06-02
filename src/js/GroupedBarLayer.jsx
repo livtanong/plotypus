@@ -43,8 +43,8 @@ var GroupedBarLayer = React.createClass({
 			this.props.valueField,
 			this.props.groupOffset,
 			this.props.barWidth,
-			this.props.max,
-			this.props.min);
+			this.props.min,
+			this.props.max);
 	},
 	destroyChart: function(){
 		if (this._chartLayer) {

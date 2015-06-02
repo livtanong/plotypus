@@ -1,7 +1,7 @@
 import React from "react";
 import Highlight from "./Highlight";
-import {PlotsAndLayers, Composition, DataFormat} from "./GuidePages";
-import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
+import {PlotsAndLayers, Composition, DataFormat, ArbitraryKeys} from "./GuidePages";
+import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, StackedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 export default class Guide extends React.Component {
   genData(count, values, cats, series) {
@@ -37,10 +37,10 @@ export default class Guide extends React.Component {
             <h4>
               <a href="#Data">Data</a>
             </h4>
-            {/*<ul>
-                          <li><a href="#PlotsAndLayers">Plots and Layers</a></li>
-                          <li><a href="#Composition">Composition</a></li>
-                        </ul>*/}
+            <ul>
+              <li><a href="#DataFormat">Format</a></li>
+              <li><a href="#ArbitraryKeys">Arbitrary Keys</a></li>
+            </ul>
           </div>
         </div>
         <div className="main">
@@ -60,6 +60,7 @@ export default class Guide extends React.Component {
               <p>Plotypus likes thinking about data as a set of points in n-dimensional space. <em>Whoa, n-dimensional space? How did we get here?</em> Relax, young padawan. It isn't as complicated as it sounds.</p>
             </section>
             <DataFormat />
+            <ArbitraryKeys />
           </article>
         </div>
       </div>
