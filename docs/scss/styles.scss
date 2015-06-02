@@ -32,6 +32,10 @@ code {
 	background-color: $light;
 }
 
+#brand {
+	cursor: pointer;
+}
+
 .toolbar {
 	@include display(flex);
 	@include align-items(center);
@@ -46,9 +50,27 @@ code {
 	.spacer {
 		@include flex(1);
 	}
+	.toolbar-group {
+		padding: 0px 16px;
+		height: 100%;
+		@include display(flex);
+		@include align-items(stretch);
+	}
 	.toolbar-item {
-		margin: 0px 16px;
+		display: inline-block;
+		color: white;
+		padding: 0px 8px;
+		margin: 0px 8px;
+		height: 100%;
 		cursor: pointer;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 14px;
+		@include display(flex);
+		@include align-items(center);
+		&.active {
+			box-shadow: 0px -4px 0px 0px $accent inset;
+		}
 	}
 }
 

@@ -232,6 +232,7 @@ export class ArbitraryKeys extends React.Component {
 </Plot>`
 }
         </Highlight>
+        <p>The great thing about this system is you can share a single dataset with a large number of properties across multiple plots, and each plot can just define which of these properties to look at.</p>
       </section>
     )
   }
