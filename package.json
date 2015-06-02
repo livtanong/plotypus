@@ -2,7 +2,7 @@
   "name": "plotypus",
   "version": "0.0.4",
   "description": "A plotting and charting library for the enterprising aquatic mammal THAT LAYS EGGS!",
-  "main": "lib/js/Plotypus.js",
+  "main": "build/lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
