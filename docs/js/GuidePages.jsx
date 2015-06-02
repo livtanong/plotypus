@@ -156,23 +156,9 @@ export class Composition extends React.Component {
 
 export class DataFormat extends React.Component {
   render() { 
-
-    // var seriesNames = ["a", "b", "c"]
-
-    // var data = _.flatten(
-    //   _.times(8, function(n){
-    //     return _.times(3, function(m){
-    //       return {
-    //         value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
-    //         category: n,
-    //         series: seriesNames[m]
-    //       }
-    //     })
-    //   })
-    // );
     return (
       <section id="DataFormat">
-        <h2>Data Format</h2>
+        <h2>Format</h2>
         <p>All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the <em>number</em> of keys needed for the datapoints change depending on the plot. For now, let's look at <code>GroupedBarLayer</code></p>
         <p><code>GroupedBarLayer</code> requires the following keys: <code>series, category, value</code>. If you only have one series, you can leave it blank.</p>
         <Highlight>
@@ -212,3 +198,41 @@ ${JSON.stringify(data.filter(d => d.category === 3))}`
   }
 }
 
+export class ArbitraryKeys extends React.Component {
+  render() {
+    return (
+      <section id="ArbitraryKeys">
+        <h2>Arbitrary Keys</h2>
+        <p><em>But what if the data I have don't have the right property names?</em> We got you covered. All layers that accept data have a fieldnameField prop.</p>
+        <p>For <code>GroupedBarLayer</code>, it's <code>seriesField</code>, <code>categoryField</code>, <code>valueField</code></p>
+        <p>For this next example, we can do something crazy and switch the series and categories of our existing data with each other. To be more specific, what we're going to do is: <code>seriesField="category"</code> and <code>categoryField="series"</code>.</p>
+        <Plot>
+          <GridLayer 
+            xMax={ 8 }
+            yMax={ 8 }/>
+          <GroupedBarLayer 
+            max={ 8 }
+            seriesField="category"
+            categoryField="series"
+            groupOffset={ 1.3 /* basically the spacing between series */}
+            data={ data /* data I'm generating. */}/>
+        </Plot>
+        <Highlight>
+{
+`<Plot>
+  <GridLayer 
+    xMax={ 8 }
+    yMax={ 8 }/>
+  <GroupedBarLayer 
+    max={ 8 }
+    seriesField="category"
+    categoryField="series"
+    groupOffset={ 1.3 /* basically the spacing between series */}
+    data={ data /* data I'm generating. */}/>
+</Plot>`
+}
+        </Highlight>
+      </section>
+    )
+  }
+}
