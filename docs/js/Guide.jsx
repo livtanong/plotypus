@@ -1,7 +1,7 @@
 import React from "react";
 import Highlight from "./Highlight";
 import {PlotsAndLayers, Composition, DataFormat} from "./GuidePages";
-import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
+import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, StackedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 export default class Guide extends React.Component {
   genData(count, values, cats, series) {

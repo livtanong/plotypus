@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight.jsx";
-import {Plotypus, PlotypusRow, PlotypusComponent, Null, Plot, GroupedBarLayer, GridLayer, FuncLayer, Axis, CategoryAxis} from "../../src/js/Plotypus.jsx";
+import {Plotypus, PlotypusRow, PlotypusComponent, Null, Plot, GroupedBarLayer, StackedBarLayer, GridLayer, FuncLayer, Axis, CategoryAxis} from "../../src/js/Plotypus.jsx";
 
 export class PlotsAndLayers extends React.Component {
   genData(count, values, cats, series) {
@@ -256,8 +256,8 @@ export class DataFormat extends React.Component {
           <GridLayer 
             xMax={ 8 }
             yMax={ 8 }/>
-          <GroupedBarLayer 
-            max={ 8 }
+          <StackedBarLayer 
+            max={ 24 }
             groupOffset={ 1.3 }
             data={ data /* data I'm generating. */}/>
         </Plot>
