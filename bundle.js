@@ -20862,15 +20862,15 @@
 
 	var _srcJsPlotypusJsx = __webpack_require__(174);
 
-	var _ApiDocs = __webpack_require__(215);
+	var _ApiDocs = __webpack_require__(216);
 
 	var _ApiDocs2 = _interopRequireDefault(_ApiDocs);
 
-	var _Home = __webpack_require__(216);
+	var _Home = __webpack_require__(217);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Guide = __webpack_require__(232);
+	var _Guide = __webpack_require__(233);
 
 	var _Guide2 = _interopRequireDefault(_Guide);
 
@@ -33264,18 +33264,18 @@
 	var _ = __webpack_require__(172);
 	var classnames = __webpack_require__(176);
 
-	var A = __webpack_require__(200);
+	var A = __webpack_require__(201);
 	var Axis = A.Axis;
 	var CategoryAxis = A.Category;
 	var AxisLabel = A.AxisLabel;
 
-	var GridLayer = __webpack_require__(203);
+	var GridLayer = __webpack_require__(204);
 	var GroupedBarLayer = __webpack_require__(175);
-	var StackedBarLayer = __webpack_require__(205);
-	var LineLayer = __webpack_require__(206);
-	var CircleLayer = __webpack_require__(208);
-	var ScatterLayer = __webpack_require__(210);
-	var FuncLayer = __webpack_require__(213);
+	var StackedBarLayer = __webpack_require__(206);
+	var LineLayer = __webpack_require__(207);
+	var CircleLayer = __webpack_require__(209);
+	var ScatterLayer = __webpack_require__(211);
+	var FuncLayer = __webpack_require__(214);
 
 	var calcInterval = function calcInterval(min, max, limit) {
 		var range = max - min;
@@ -33417,7 +33417,7 @@
 		_chartLayer: undefined,
 		updateChart: function updateChart() {
 			this.destroyChart();
-			this._chartLayer = new GroupedBars(React.findDOMNode(this), this.props.data, this.props.seriesField, this.props.categoryField, this.props.valueField, this.props.groupOffset, this.props.barWidth, this.props.max, this.props.min);
+			this._chartLayer = new GroupedBars(React.findDOMNode(this), this.props.data, this.props.seriesField, this.props.categoryField, this.props.valueField, this.props.groupOffset, this.props.barWidth, this.props.min, this.props.max);
 		},
 		destroyChart: function destroyChart() {
 			if (this._chartLayer) {
@@ -35682,54 +35682,90 @@
 
 	"use strict";
 
-	var _ = __webpack_require__(172);
-	var SVGLayer = __webpack_require__(199);
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	function Bars(domNode, data, seriesField, categoryField, valueField) {
-		SVGLayer.call(this, domNode);
-		this.data = data;
-		this.seriesField = seriesField || "series";
-		this.categoryField = categoryField || "category";
-		this.valueField = valueField || "value";
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-		this.pluckField = (function (fieldName) {
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-			return _.chain(this.data).pluck(fieldName).unique().sortBy().value();
-		}).bind(this);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-		this.getPosition = function (value, max, yOffset) {
-			var origin = max - yOffset;
-			return Math.min(origin - value, origin);
-		};
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-		this.seriesNames = this.pluckField(seriesField);
-		this.catNames = this.pluckField(categoryField);
-	}
-	Bars.prototype = new SVGLayer();
+	var _lodash = __webpack_require__(172);
 
-	function GroupedBars(domNode, data, seriesField, categoryField, valueField, groupOffsetFactor, barWidthFactor, max, min) {
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _SVGLayer2 = __webpack_require__(199);
+
+	var _SVGLayer3 = _interopRequireDefault(_SVGLayer2);
+
+	var _Core = __webpack_require__(200);
+
+	var Bars = (function (_SVGLayer) {
+		function Bars(domNode, data, seriesField, categoryField, valueField) {
+			_classCallCheck(this, Bars);
+
+			_get(Object.getPrototypeOf(Bars.prototype), "constructor", this).call(this, domNode);
+			this.data = data;
+			this.seriesField = seriesField || "series";
+			this.categoryField = categoryField || "category";
+			this.valueField = valueField || "value";
+
+			var BarPlot = new _Core.CorePlot([{ name: categoryField, type: "DISCRETE", isPrincipal: true }, { name: seriesField, type: "DISCRETE" }, { name: valueField, type: "CONTINUOUS", isPrincipal: true }], data);
+			this.indexMap = BarPlot.indexMap;
+			this.presentationalData = BarPlot.presentationalData;
+			this.seriesNames = this.pluckField(seriesField);
+			this.catNames = this.pluckField(categoryField);
+		}
+
+		_inherits(Bars, _SVGLayer);
+
+		_createClass(Bars, [{
+			key: "pluckField",
+			value: function pluckField(fieldName) {
+				return _lodash2["default"].chain(this.data).pluck(fieldName).unique().sortBy().value();
+			}
+		}, {
+			key: "getPosition",
+			value: function getPosition(value, max, yOffset) {
+				var origin = max - yOffset;
+				return Math.min(origin - value, origin);
+			}
+		}]);
+
+		return Bars;
+	})(_SVGLayer3["default"]);
+
+	/*
+	TODO: change structure so that you go from raw datapoints to presentational datapoints (if categorical, the locations of the points on the plot, given the category). THEN render based on presentational datapoints.
+	*/
+
+	function GroupedBars(domNode, data, seriesField, categoryField, valueField, groupOffsetFactor, barWidthFactor, min, max) {
+		var _this = this;
+
 		Bars.call(this, domNode, data, seriesField, categoryField, valueField);
 
-		_.chain(data).groupBy(categoryField).sortBy(function (c, i) {
-			return i;
-		}).forEach(function (series, catIndex, categoryObject) {
-			_.sortBy(series, seriesField).forEach(function (datapoint, seriesIndex, seriesList) {
+		// returns a map from categoryname to the sorted index of that categoryname.
+		this.presentationalData.forEach(function (datapoint) {
+			var seriesSize = _this.seriesNames.length,
+			    catIndex = datapoint[categoryField],
+			    seriesIndex = datapoint[seriesField];
 
-				var barOffset = groupOffsetFactor * barWidthFactor;
-				var groupWidth = barOffset * this.seriesNames.length - barOffset + barWidthFactor;
-				var fieldX = (catIndex + 0.5) * this.seriesNames.length - groupWidth * 0.5;
-				var seriesX = barOffset * seriesIndex;
-				var attrs = {
-					width: barWidthFactor,
-					height: Math.abs(datapoint[valueField]),
-					x: fieldX + seriesX,
-					y: this.getPosition(datapoint[valueField], max, 0),
-					"class": "Bar " + "series-" + (seriesIndex + 1)
-				};
+			var barOffset = groupOffsetFactor * barWidthFactor,
+			    groupWidth = barOffset * seriesSize - barOffset + barWidthFactor,
+			    catX = (catIndex + 0.5) * seriesSize - groupWidth * 0.5,
+			    seriesX = barOffset * seriesIndex;
 
-				this.addSVGElement(this.content, "rect", attrs);
-			}, this);
-		}, this).value();
+			var attrs = {
+				width: barWidthFactor,
+				height: Math.abs(datapoint[valueField]),
+				x: catX + seriesX,
+				y: _this.getPosition(datapoint[valueField], max, 0),
+				"class": "Bar series-" + (seriesIndex + 1)
+			};
+			_this.addSVGElement(_this.content, "rect", attrs);
+		});
 
 		this.domNode.setAttribute("viewBox", "0 0 " + this.seriesNames.length * this.catNames.length + " " + (max - min));
 		this.domNode.setAttribute("preserveAspectRatio", "none");
@@ -35737,36 +35773,35 @@
 	GroupedBars.prototype = new Bars();
 
 	function StackedBars(domNode, data, seriesField, categoryField, valueField, barWidthFactor, min, max) {
+		var _this2 = this;
+
 		Bars.call(this, domNode, data, seriesField, categoryField, valueField);
 
 		function getOffset(values, value) {
 			return values.filter(function (d) {
-				// return the sign equal to the sign of value.
 				return value >= 0 ? d >= 0 : d < 0;
-			}).reduce(function (a, b) {
-				return _.add(a, b);
-			}, 0);
+			}).reduce(_lodash2["default"].add, 0);
 		};
 
-		_.chain(data).groupBy(categoryField).sortBy(function (c, i) {
+		_lodash2["default"].chain(this.presentationalData).groupBy(categoryField).sortBy(function (c, i) {
 			return i;
-		}).forEach(function (series, catIndex, categoryObject) {
-			_.sortBy(series, seriesField).forEach(function (datapoint, seriesIndex, seriesList) {
-
-				var values = _.pluck(seriesList, valueField);
-				var yOffset = getOffset(_.take(values, seriesIndex), datapoint.value);
+		}).forEach(function (series) {
+			_lodash2["default"].sortBy(series, seriesField).forEach(function (datapoint, seriesIndex, seriesList) {
+				var catIndex = datapoint[categoryField];
+				var values = _lodash2["default"].pluck(seriesList, valueField);
+				var yOffset = getOffset(_lodash2["default"].take(values, seriesIndex), datapoint[valueField]);
 
 				var attrs = {
 					width: barWidthFactor,
-					height: Math.abs(datapoint.value),
+					height: Math.abs(datapoint[valueField]),
 					x: catIndex + 0.5 - 0.5 * barWidthFactor,
-					y: this.getPosition(datapoint.value, max, yOffset),
+					y: _this2.getPosition(datapoint[valueField], max, yOffset),
 					"class": "Bar " + "series-" + (seriesIndex + 1)
 				};
 
-				this.addSVGElement(this.content, "rect", attrs);
-			}, this);
-		}, this).value();
+				_this2.addSVGElement(_this2.content, "rect", attrs);
+			});
+		}).value();
 
 		this.domNode.setAttribute("viewBox", "0 0 " + this.catNames.length + " " + (max - min));
 		this.domNode.setAttribute("preserveAspectRatio", "none");
@@ -35833,6 +35868,126 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var _lodash = __webpack_require__(172);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var CorePlot = (function () {
+		// either cartesian or polar.
+
+		function CorePlot(axes, /* array of objects with name, type and isPrincipal */data) {
+			_classCallCheck(this, CorePlot);
+
+			this.axes = axes;
+			this.data = data;
+			var groupedAxes = _lodash2["default"].groupBy(this.axes, "type");
+			// splits into DISCRETE and CONTINUOUS;
+			this.discreteAxes = groupedAxes.DISCRETE;
+			this.continuousAxes = groupedAxes.CONTINUOUS;
+			this.indexMap = this.generateDiscreteIndexMap();
+			this.presentationalData = this.generatePresentationalData();
+		}
+
+		_createClass(CorePlot, [{
+			key: "generateDiscreteIndexMap",
+			value: function generateDiscreteIndexMap() {
+				var _this = this;
+
+				/*
+	   	returns a map from axisName to a map from discrete value to index.
+	   */
+				return _lodash2["default"].chain(this.discreteAxes).pluck("name").transform(function (result, axisName) {
+					result[axisName] = _lodash2["default"].chain(_this.data).pluck(axisName).unique().sortBy().invert().mapValues(function (val) {
+						return parseInt(val);
+					}).value();
+				}).value();
+			}
+		}, {
+			key: "generatePresentationalData",
+			value: function generatePresentationalData() {
+				var _this2 = this;
+
+				var data = this.data || [];
+				return data.map(function (datapoint) {
+					// look at all the axes available to us. reconstruct a new object based on this.
+					var res = _lodash2["default"].transform(_this2.axes, function (result, axis) {
+						if (axis.type === "DISCRETE") {
+							result[axis.name] = _this2.indexMap[axis.name][datapoint[axis.name]]; // returns an appropriate numerical value, given a categorical value
+						} else {
+							result[axis.name] = datapoint[axis.name];
+						}
+					}, {});
+					return res;
+				});
+			}
+		}]);
+
+		return CorePlot;
+	})();
+
+	exports.CorePlot = CorePlot;
+
+	var CartesianPlot = (function (_CorePlot) {
+		function CartesianPlot(axes, principalAxisNames) {
+			_classCallCheck(this, CartesianPlot);
+
+			// ask for principal axes. what is the axis type for each of these axes? discrete or continuous?
+			// where do we define the non-principal axes? maybe not in core.
+			_get(Object.getPrototypeOf(CartesianPlot.prototype), "constructor", this).call(this, axes);
+		}
+		// generateIndexMap(data) {
+		// 	return _.mapValues(this.principalAxes, (value, key) {
+		// 		return {
+
+		// 		}
+		// 	})
+		// }
+
+		_inherits(CartesianPlot, _CorePlot);
+
+		return CartesianPlot;
+	})(CorePlot);
+
+	exports.CartesianPlot = CartesianPlot;
+
+	var PolarPlot = (function (_CorePlot2) {
+		function PolarPlot(thetaType, rType) {
+			_classCallCheck(this, PolarPlot);
+
+			var principalAxes = {
+				theta: thetaType,
+				r: rType
+			};
+			_get(Object.getPrototypeOf(PolarPlot.prototype), "constructor", this).call(this, principalAxes);
+		}
+
+		_inherits(PolarPlot, _CorePlot2);
+
+		return PolarPlot;
+	})(CorePlot);
+
+	exports.PolarPlot = PolarPlot;
+
+/***/ },
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	__webpack_require__(177);
@@ -35841,7 +35996,7 @@
 	var _ = __webpack_require__(172);
 	var classnames = __webpack_require__(176);
 
-	var AxisElements = __webpack_require__(201);
+	var AxisElements = __webpack_require__(202);
 	var AxisNumbers = AxisElements.AxisNumbers;
 	var AxisCategories = AxisElements.AxisCategories;
 	var ChartLayerMixin = __webpack_require__(197);
@@ -35968,14 +36123,14 @@
 	};
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(172);
 	var SVGLayer = __webpack_require__(199);
-	var utils = __webpack_require__(202);
+	var utils = __webpack_require__(203);
 
 	function AxisElements(domNode, ticks, align, orientation, onClickLabel) {
 		this.domNode = domNode;
@@ -36184,7 +36339,7 @@
 	};
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36218,7 +36373,7 @@
 	module.exports = utils;
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36229,7 +36384,7 @@
 	var _ = __webpack_require__(172);
 	var classnames = __webpack_require__(176);
 
-	var Gridlines = __webpack_require__(204);
+	var Gridlines = __webpack_require__(205);
 
 	var GridLayer = React.createClass({
 		displayName: "GridLayer",
@@ -36281,7 +36436,7 @@
 	module.exports = GridLayer;
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36342,7 +36497,7 @@
 	module.exports = Gridlines;
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36400,7 +36555,7 @@
 	module.exports = StackedBarLayer;
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36409,7 +36564,7 @@
 	var _ = __webpack_require__(172);
 	var classnames = __webpack_require__(176);
 	var ChartLayerMixin = __webpack_require__(197);
-	var Lines = __webpack_require__(207);
+	var Lines = __webpack_require__(208);
 
 	var LineLayer = React.createClass({
 		displayName: "LineLayer",
@@ -36438,7 +36593,7 @@
 	module.exports = LineLayer;
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36481,7 +36636,7 @@
 	module.exports = Lines;
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36493,7 +36648,7 @@
 	var classnames = __webpack_require__(176);
 	var ChartLayerMixin = __webpack_require__(197);
 
-	var Circles = __webpack_require__(209);
+	var Circles = __webpack_require__(210);
 
 	var CircleLayer = React.createClass({
 		displayName: "CircleLayer",
@@ -36534,7 +36689,7 @@
 	module.exports = CircleLayer;
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36581,7 +36736,7 @@
 	module.exports = Circles;
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -36592,7 +36747,7 @@
 	var _ = __webpack_require__(172);
 	var classnames = __webpack_require__(176);
 	var ChartLayerMixin = __webpack_require__(197);
-	var ScatterPoints = __webpack_require__(211);
+	var ScatterPoints = __webpack_require__(212);
 
 	var ScatterLayer = React.createClass({
 		displayName: "ScatterLayer",
@@ -36634,15 +36789,15 @@
 	module.exports = ScatterLayer;
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(172);
-	var Velocity = __webpack_require__(212);
+	var Velocity = __webpack_require__(213);
 	var SVGLayer = __webpack_require__(199);
-	var utils = __webpack_require__(202);
+	var utils = __webpack_require__(203);
 
 	function ScatterPoints(domNode, data, xField, yField, xMin, xMax, yMin, yMax, classFunc, onClickDot, onMouseoverDot, onMouseoutDot) {
 		SVGLayer.call(this, domNode);
@@ -36711,7 +36866,7 @@
 	module.exports = ScatterPoints;
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! VelocityJS.org (1.2.2). (C) 2014 Julian Shapiro. MIT @license: en.wikipedia.org/wiki/MIT_License */
@@ -40584,7 +40739,7 @@
 	will produce an inaccurate conversion value. The same issue exists with the cx/cy attributes of SVG circles and ellipses. */
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40594,7 +40749,7 @@
 	var React = __webpack_require__(13);
 	var _ = __webpack_require__(172);
 	var classnames = __webpack_require__(176);
-	var Funcs = __webpack_require__(214);
+	var Funcs = __webpack_require__(215);
 	var ChartLayerMixin = __webpack_require__(197);
 
 	var FuncLayer = React.createClass({
@@ -40634,7 +40789,7 @@
 	module.exports = FuncLayer;
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40689,7 +40844,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40818,7 +40973,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40839,7 +40994,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactInlinesvg = __webpack_require__(217);
+	var _reactInlinesvg = __webpack_require__(218);
 
 	var _reactInlinesvg2 = _interopRequireDefault(_reactInlinesvg);
 
@@ -40898,7 +41053,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var InlineSVGError, PropTypes, React, Status, configurationError, createError, delay, getHash, http, httpplease, ieXDomain, isSupportedEnvironment, me, once, span, supportsInlineSVG, uniquifyIDs, unsupportedBrowserError,
@@ -40908,11 +41063,11 @@
 
 	React = __webpack_require__(13);
 
-	once = __webpack_require__(218);
+	once = __webpack_require__(219);
 
-	httpplease = __webpack_require__(220);
+	httpplease = __webpack_require__(221);
 
-	ieXDomain = __webpack_require__(230);
+	ieXDomain = __webpack_require__(231);
 
 	PropTypes = React.PropTypes;
 
@@ -41165,10 +41320,10 @@
 
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var wrappy = __webpack_require__(219)
+	var wrappy = __webpack_require__(220)
 	module.exports = wrappy(once)
 
 	once.proto = once(function () {
@@ -41192,7 +41347,7 @@
 
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Returns a wrapper function that returns a wrapped callback
@@ -41231,20 +41386,20 @@
 
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var
-	  cleanURL = __webpack_require__(225),
-	  XHR = __webpack_require__(226),
-	  delay = __webpack_require__(227),
-	  RequestError = __webpack_require__(228),
-	  Response = __webpack_require__(221),
-	  Request = __webpack_require__(222),
-	  extend = __webpack_require__(224),
-	  once = __webpack_require__(229);
+	  cleanURL = __webpack_require__(226),
+	  XHR = __webpack_require__(227),
+	  delay = __webpack_require__(228),
+	  RequestError = __webpack_require__(229),
+	  Response = __webpack_require__(222),
+	  Request = __webpack_require__(223),
+	  extend = __webpack_require__(225),
+	  once = __webpack_require__(230);
 
 	var i,
 	    createError = RequestError.create;
@@ -41449,13 +41604,13 @@
 
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Request = __webpack_require__(222);
-	var extractResponseProps = __webpack_require__(223);
+	var Request = __webpack_require__(223);
+	var extractResponseProps = __webpack_require__(224);
 
 	function Response(props) {
 	  this.request = props.request;
@@ -41479,7 +41634,7 @@
 
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41528,12 +41683,12 @@
 
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var extend = __webpack_require__(224);
+	var extend = __webpack_require__(225);
 
 	module.exports = function(req) {
 	  var xhr = req.xhr;
@@ -41567,7 +41722,7 @@
 
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = extend
@@ -41590,7 +41745,7 @@
 
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41605,14 +41760,14 @@
 
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = window.XMLHttpRequest;
 
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41633,14 +41788,14 @@
 
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var Response = __webpack_require__(221);
-	var extractResponseProps = __webpack_require__(223);
-	var extend = __webpack_require__(224);
+	var Response = __webpack_require__(222);
+	var extractResponseProps = __webpack_require__(224);
+	var extend = __webpack_require__(225);
 
 	function RequestError(message, props) {
 	  var err = new Error(message);
@@ -41675,7 +41830,7 @@
 
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41694,14 +41849,14 @@
 
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var
-	  urllite = __webpack_require__(231),
-	  once = __webpack_require__(229);
+	  urllite = __webpack_require__(232),
+	  once = __webpack_require__(230);
 
 	var warningShown = false;
 
@@ -41768,7 +41923,7 @@
 
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function() {
@@ -41839,7 +41994,7 @@
 
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41860,11 +42015,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Highlight = __webpack_require__(233);
+	var _Highlight = __webpack_require__(234);
 
 	var _Highlight2 = _interopRequireDefault(_Highlight);
 
-	var _GuidePages = __webpack_require__(361);
+	var _GuidePages = __webpack_require__(362);
 
 	var _srcJsPlotypusJsx = __webpack_require__(174);
 
@@ -41951,6 +42106,28 @@
 	                "a",
 	                { href: "#Data" },
 	                "Data"
+	              )
+	            ),
+	            _react2["default"].createElement(
+	              "ul",
+	              null,
+	              _react2["default"].createElement(
+	                "li",
+	                null,
+	                _react2["default"].createElement(
+	                  "a",
+	                  { href: "#DataFormat" },
+	                  "Format"
+	                )
+	              ),
+	              _react2["default"].createElement(
+	                "li",
+	                null,
+	                _react2["default"].createElement(
+	                  "a",
+	                  { href: "#ArbitraryKeys" },
+	                  "Arbitrary Keys"
+	                )
 	              )
 	            )
 	          )
@@ -42053,7 +42230,8 @@
 	                " Relax, young padawan. It isn't as complicated as it sounds."
 	              )
 	            ),
-	            _react2["default"].createElement(_GuidePages.DataFormat, null)
+	            _react2["default"].createElement(_GuidePages.DataFormat, null),
+	            _react2["default"].createElement(_GuidePages.ArbitraryKeys, null)
 	          )
 	        )
 	      );
@@ -42065,13 +42243,9 @@
 
 	exports["default"] = Guide;
 	module.exports = exports["default"];
-	/*<ul>
-	             <li><a href="#PlotsAndLayers">Plots and Layers</a></li>
-	             <li><a href="#Composition">Composition</a></li>
-	           </ul>*/
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -42090,7 +42264,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-	var _highlightJs = __webpack_require__(234);
+	var _highlightJs = __webpack_require__(235);
 
 	var _highlightJs2 = _interopRequireDefault(_highlightJs);
 
@@ -42158,141 +42332,141 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var hljs = __webpack_require__(236);
+	var hljs = __webpack_require__(237);
 
-	hljs.registerLanguage('1c', __webpack_require__(237));
-	hljs.registerLanguage('actionscript', __webpack_require__(238));
-	hljs.registerLanguage('apache', __webpack_require__(239));
-	hljs.registerLanguage('applescript', __webpack_require__(240));
-	hljs.registerLanguage('armasm', __webpack_require__(241));
-	hljs.registerLanguage('xml', __webpack_require__(242));
-	hljs.registerLanguage('asciidoc', __webpack_require__(243));
-	hljs.registerLanguage('aspectj', __webpack_require__(244));
-	hljs.registerLanguage('autohotkey', __webpack_require__(245));
-	hljs.registerLanguage('avrasm', __webpack_require__(246));
-	hljs.registerLanguage('axapta', __webpack_require__(247));
-	hljs.registerLanguage('bash', __webpack_require__(248));
-	hljs.registerLanguage('brainfuck', __webpack_require__(249));
-	hljs.registerLanguage('cal', __webpack_require__(250));
-	hljs.registerLanguage('capnproto', __webpack_require__(251));
-	hljs.registerLanguage('ceylon', __webpack_require__(252));
-	hljs.registerLanguage('clojure', __webpack_require__(253));
-	hljs.registerLanguage('clojure-repl', __webpack_require__(254));
-	hljs.registerLanguage('cmake', __webpack_require__(255));
-	hljs.registerLanguage('coffeescript', __webpack_require__(256));
-	hljs.registerLanguage('cpp', __webpack_require__(257));
-	hljs.registerLanguage('cs', __webpack_require__(258));
-	hljs.registerLanguage('css', __webpack_require__(259));
-	hljs.registerLanguage('d', __webpack_require__(260));
-	hljs.registerLanguage('markdown', __webpack_require__(261));
-	hljs.registerLanguage('dart', __webpack_require__(262));
-	hljs.registerLanguage('delphi', __webpack_require__(263));
-	hljs.registerLanguage('diff', __webpack_require__(264));
-	hljs.registerLanguage('django', __webpack_require__(265));
-	hljs.registerLanguage('dns', __webpack_require__(266));
-	hljs.registerLanguage('dockerfile', __webpack_require__(267));
-	hljs.registerLanguage('dos', __webpack_require__(268));
-	hljs.registerLanguage('dust', __webpack_require__(269));
-	hljs.registerLanguage('elixir', __webpack_require__(270));
-	hljs.registerLanguage('ruby', __webpack_require__(271));
-	hljs.registerLanguage('erb', __webpack_require__(272));
-	hljs.registerLanguage('erlang-repl', __webpack_require__(273));
-	hljs.registerLanguage('erlang', __webpack_require__(274));
-	hljs.registerLanguage('fix', __webpack_require__(275));
-	hljs.registerLanguage('fortran', __webpack_require__(276));
-	hljs.registerLanguage('fsharp', __webpack_require__(277));
-	hljs.registerLanguage('gcode', __webpack_require__(278));
-	hljs.registerLanguage('gherkin', __webpack_require__(279));
-	hljs.registerLanguage('glsl', __webpack_require__(280));
-	hljs.registerLanguage('go', __webpack_require__(281));
-	hljs.registerLanguage('gradle', __webpack_require__(282));
-	hljs.registerLanguage('groovy', __webpack_require__(283));
-	hljs.registerLanguage('haml', __webpack_require__(284));
-	hljs.registerLanguage('handlebars', __webpack_require__(285));
-	hljs.registerLanguage('haskell', __webpack_require__(286));
-	hljs.registerLanguage('haxe', __webpack_require__(287));
-	hljs.registerLanguage('http', __webpack_require__(288));
-	hljs.registerLanguage('inform7', __webpack_require__(289));
-	hljs.registerLanguage('ini', __webpack_require__(290));
-	hljs.registerLanguage('java', __webpack_require__(291));
-	hljs.registerLanguage('javascript', __webpack_require__(292));
-	hljs.registerLanguage('json', __webpack_require__(293));
-	hljs.registerLanguage('julia', __webpack_require__(294));
-	hljs.registerLanguage('kotlin', __webpack_require__(295));
-	hljs.registerLanguage('lasso', __webpack_require__(296));
-	hljs.registerLanguage('less', __webpack_require__(297));
-	hljs.registerLanguage('lisp', __webpack_require__(298));
-	hljs.registerLanguage('livecodeserver', __webpack_require__(235));
-	hljs.registerLanguage('livescript', __webpack_require__(299));
-	hljs.registerLanguage('lua', __webpack_require__(300));
-	hljs.registerLanguage('makefile', __webpack_require__(301));
-	hljs.registerLanguage('mathematica', __webpack_require__(302));
-	hljs.registerLanguage('matlab', __webpack_require__(303));
-	hljs.registerLanguage('mel', __webpack_require__(304));
-	hljs.registerLanguage('mercury', __webpack_require__(305));
-	hljs.registerLanguage('mizar', __webpack_require__(306));
-	hljs.registerLanguage('monkey', __webpack_require__(307));
-	hljs.registerLanguage('nginx', __webpack_require__(308));
-	hljs.registerLanguage('nimrod', __webpack_require__(309));
-	hljs.registerLanguage('nix', __webpack_require__(310));
-	hljs.registerLanguage('nsis', __webpack_require__(311));
-	hljs.registerLanguage('objectivec', __webpack_require__(312));
-	hljs.registerLanguage('ocaml', __webpack_require__(313));
-	hljs.registerLanguage('openscad', __webpack_require__(314));
-	hljs.registerLanguage('oxygene', __webpack_require__(315));
-	hljs.registerLanguage('parser3', __webpack_require__(316));
-	hljs.registerLanguage('perl', __webpack_require__(317));
-	hljs.registerLanguage('pf', __webpack_require__(318));
-	hljs.registerLanguage('php', __webpack_require__(319));
-	hljs.registerLanguage('powershell', __webpack_require__(320));
-	hljs.registerLanguage('processing', __webpack_require__(321));
-	hljs.registerLanguage('profile', __webpack_require__(322));
-	hljs.registerLanguage('prolog', __webpack_require__(323));
-	hljs.registerLanguage('protobuf', __webpack_require__(324));
-	hljs.registerLanguage('puppet', __webpack_require__(325));
-	hljs.registerLanguage('python', __webpack_require__(326));
-	hljs.registerLanguage('q', __webpack_require__(327));
-	hljs.registerLanguage('r', __webpack_require__(328));
-	hljs.registerLanguage('rib', __webpack_require__(329));
-	hljs.registerLanguage('roboconf', __webpack_require__(330));
-	hljs.registerLanguage('rsl', __webpack_require__(331));
-	hljs.registerLanguage('ruleslanguage', __webpack_require__(332));
-	hljs.registerLanguage('rust', __webpack_require__(333));
-	hljs.registerLanguage('scala', __webpack_require__(334));
-	hljs.registerLanguage('scheme', __webpack_require__(335));
-	hljs.registerLanguage('scilab', __webpack_require__(336));
-	hljs.registerLanguage('scss', __webpack_require__(337));
-	hljs.registerLanguage('smali', __webpack_require__(338));
-	hljs.registerLanguage('smalltalk', __webpack_require__(339));
-	hljs.registerLanguage('sml', __webpack_require__(340));
-	hljs.registerLanguage('sql', __webpack_require__(341));
-	hljs.registerLanguage('stata', __webpack_require__(342));
-	hljs.registerLanguage('step21', __webpack_require__(343));
-	hljs.registerLanguage('stylus', __webpack_require__(344));
-	hljs.registerLanguage('swift', __webpack_require__(345));
-	hljs.registerLanguage('tcl', __webpack_require__(346));
-	hljs.registerLanguage('tex', __webpack_require__(347));
-	hljs.registerLanguage('thrift', __webpack_require__(348));
-	hljs.registerLanguage('tp', __webpack_require__(349));
-	hljs.registerLanguage('twig', __webpack_require__(350));
-	hljs.registerLanguage('typescript', __webpack_require__(351));
-	hljs.registerLanguage('vala', __webpack_require__(352));
-	hljs.registerLanguage('vbnet', __webpack_require__(353));
-	hljs.registerLanguage('vbscript', __webpack_require__(354));
-	hljs.registerLanguage('vbscript-html', __webpack_require__(355));
-	hljs.registerLanguage('verilog', __webpack_require__(356));
-	hljs.registerLanguage('vhdl', __webpack_require__(357));
-	hljs.registerLanguage('vim', __webpack_require__(358));
-	hljs.registerLanguage('x86asm', __webpack_require__(359));
-	hljs.registerLanguage('xl', __webpack_require__(360));
+	hljs.registerLanguage('1c', __webpack_require__(238));
+	hljs.registerLanguage('actionscript', __webpack_require__(239));
+	hljs.registerLanguage('apache', __webpack_require__(240));
+	hljs.registerLanguage('applescript', __webpack_require__(241));
+	hljs.registerLanguage('armasm', __webpack_require__(242));
+	hljs.registerLanguage('xml', __webpack_require__(243));
+	hljs.registerLanguage('asciidoc', __webpack_require__(244));
+	hljs.registerLanguage('aspectj', __webpack_require__(245));
+	hljs.registerLanguage('autohotkey', __webpack_require__(246));
+	hljs.registerLanguage('avrasm', __webpack_require__(247));
+	hljs.registerLanguage('axapta', __webpack_require__(248));
+	hljs.registerLanguage('bash', __webpack_require__(249));
+	hljs.registerLanguage('brainfuck', __webpack_require__(250));
+	hljs.registerLanguage('cal', __webpack_require__(251));
+	hljs.registerLanguage('capnproto', __webpack_require__(252));
+	hljs.registerLanguage('ceylon', __webpack_require__(253));
+	hljs.registerLanguage('clojure', __webpack_require__(254));
+	hljs.registerLanguage('clojure-repl', __webpack_require__(255));
+	hljs.registerLanguage('cmake', __webpack_require__(256));
+	hljs.registerLanguage('coffeescript', __webpack_require__(257));
+	hljs.registerLanguage('cpp', __webpack_require__(258));
+	hljs.registerLanguage('cs', __webpack_require__(259));
+	hljs.registerLanguage('css', __webpack_require__(260));
+	hljs.registerLanguage('d', __webpack_require__(261));
+	hljs.registerLanguage('markdown', __webpack_require__(262));
+	hljs.registerLanguage('dart', __webpack_require__(263));
+	hljs.registerLanguage('delphi', __webpack_require__(264));
+	hljs.registerLanguage('diff', __webpack_require__(265));
+	hljs.registerLanguage('django', __webpack_require__(266));
+	hljs.registerLanguage('dns', __webpack_require__(267));
+	hljs.registerLanguage('dockerfile', __webpack_require__(268));
+	hljs.registerLanguage('dos', __webpack_require__(269));
+	hljs.registerLanguage('dust', __webpack_require__(270));
+	hljs.registerLanguage('elixir', __webpack_require__(271));
+	hljs.registerLanguage('ruby', __webpack_require__(272));
+	hljs.registerLanguage('erb', __webpack_require__(273));
+	hljs.registerLanguage('erlang-repl', __webpack_require__(274));
+	hljs.registerLanguage('erlang', __webpack_require__(275));
+	hljs.registerLanguage('fix', __webpack_require__(276));
+	hljs.registerLanguage('fortran', __webpack_require__(277));
+	hljs.registerLanguage('fsharp', __webpack_require__(278));
+	hljs.registerLanguage('gcode', __webpack_require__(279));
+	hljs.registerLanguage('gherkin', __webpack_require__(280));
+	hljs.registerLanguage('glsl', __webpack_require__(281));
+	hljs.registerLanguage('go', __webpack_require__(282));
+	hljs.registerLanguage('gradle', __webpack_require__(283));
+	hljs.registerLanguage('groovy', __webpack_require__(284));
+	hljs.registerLanguage('haml', __webpack_require__(285));
+	hljs.registerLanguage('handlebars', __webpack_require__(286));
+	hljs.registerLanguage('haskell', __webpack_require__(287));
+	hljs.registerLanguage('haxe', __webpack_require__(288));
+	hljs.registerLanguage('http', __webpack_require__(289));
+	hljs.registerLanguage('inform7', __webpack_require__(290));
+	hljs.registerLanguage('ini', __webpack_require__(291));
+	hljs.registerLanguage('java', __webpack_require__(292));
+	hljs.registerLanguage('javascript', __webpack_require__(293));
+	hljs.registerLanguage('json', __webpack_require__(294));
+	hljs.registerLanguage('julia', __webpack_require__(295));
+	hljs.registerLanguage('kotlin', __webpack_require__(296));
+	hljs.registerLanguage('lasso', __webpack_require__(297));
+	hljs.registerLanguage('less', __webpack_require__(298));
+	hljs.registerLanguage('lisp', __webpack_require__(299));
+	hljs.registerLanguage('livecodeserver', __webpack_require__(236));
+	hljs.registerLanguage('livescript', __webpack_require__(300));
+	hljs.registerLanguage('lua', __webpack_require__(301));
+	hljs.registerLanguage('makefile', __webpack_require__(302));
+	hljs.registerLanguage('mathematica', __webpack_require__(303));
+	hljs.registerLanguage('matlab', __webpack_require__(304));
+	hljs.registerLanguage('mel', __webpack_require__(305));
+	hljs.registerLanguage('mercury', __webpack_require__(306));
+	hljs.registerLanguage('mizar', __webpack_require__(307));
+	hljs.registerLanguage('monkey', __webpack_require__(308));
+	hljs.registerLanguage('nginx', __webpack_require__(309));
+	hljs.registerLanguage('nimrod', __webpack_require__(310));
+	hljs.registerLanguage('nix', __webpack_require__(311));
+	hljs.registerLanguage('nsis', __webpack_require__(312));
+	hljs.registerLanguage('objectivec', __webpack_require__(313));
+	hljs.registerLanguage('ocaml', __webpack_require__(314));
+	hljs.registerLanguage('openscad', __webpack_require__(315));
+	hljs.registerLanguage('oxygene', __webpack_require__(316));
+	hljs.registerLanguage('parser3', __webpack_require__(317));
+	hljs.registerLanguage('perl', __webpack_require__(318));
+	hljs.registerLanguage('pf', __webpack_require__(319));
+	hljs.registerLanguage('php', __webpack_require__(320));
+	hljs.registerLanguage('powershell', __webpack_require__(321));
+	hljs.registerLanguage('processing', __webpack_require__(322));
+	hljs.registerLanguage('profile', __webpack_require__(323));
+	hljs.registerLanguage('prolog', __webpack_require__(324));
+	hljs.registerLanguage('protobuf', __webpack_require__(325));
+	hljs.registerLanguage('puppet', __webpack_require__(326));
+	hljs.registerLanguage('python', __webpack_require__(327));
+	hljs.registerLanguage('q', __webpack_require__(328));
+	hljs.registerLanguage('r', __webpack_require__(329));
+	hljs.registerLanguage('rib', __webpack_require__(330));
+	hljs.registerLanguage('roboconf', __webpack_require__(331));
+	hljs.registerLanguage('rsl', __webpack_require__(332));
+	hljs.registerLanguage('ruleslanguage', __webpack_require__(333));
+	hljs.registerLanguage('rust', __webpack_require__(334));
+	hljs.registerLanguage('scala', __webpack_require__(335));
+	hljs.registerLanguage('scheme', __webpack_require__(336));
+	hljs.registerLanguage('scilab', __webpack_require__(337));
+	hljs.registerLanguage('scss', __webpack_require__(338));
+	hljs.registerLanguage('smali', __webpack_require__(339));
+	hljs.registerLanguage('smalltalk', __webpack_require__(340));
+	hljs.registerLanguage('sml', __webpack_require__(341));
+	hljs.registerLanguage('sql', __webpack_require__(342));
+	hljs.registerLanguage('stata', __webpack_require__(343));
+	hljs.registerLanguage('step21', __webpack_require__(344));
+	hljs.registerLanguage('stylus', __webpack_require__(345));
+	hljs.registerLanguage('swift', __webpack_require__(346));
+	hljs.registerLanguage('tcl', __webpack_require__(347));
+	hljs.registerLanguage('tex', __webpack_require__(348));
+	hljs.registerLanguage('thrift', __webpack_require__(349));
+	hljs.registerLanguage('tp', __webpack_require__(350));
+	hljs.registerLanguage('twig', __webpack_require__(351));
+	hljs.registerLanguage('typescript', __webpack_require__(352));
+	hljs.registerLanguage('vala', __webpack_require__(353));
+	hljs.registerLanguage('vbnet', __webpack_require__(354));
+	hljs.registerLanguage('vbscript', __webpack_require__(355));
+	hljs.registerLanguage('vbscript-html', __webpack_require__(356));
+	hljs.registerLanguage('verilog', __webpack_require__(357));
+	hljs.registerLanguage('vhdl', __webpack_require__(358));
+	hljs.registerLanguage('vim', __webpack_require__(359));
+	hljs.registerLanguage('x86asm', __webpack_require__(360));
+	hljs.registerLanguage('xl', __webpack_require__(361));
 
 	module.exports = hljs;
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -42454,7 +42628,7 @@
 	};
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -43226,7 +43400,7 @@
 
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs){
@@ -43316,7 +43490,7 @@
 	};
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43394,7 +43568,7 @@
 	};
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43444,7 +43618,7 @@
 	};
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43545,7 +43719,7 @@
 	};
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43641,7 +43815,7 @@
 	};
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43748,7 +43922,7 @@
 	};
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -43944,7 +44118,7 @@
 	};
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -44086,7 +44260,7 @@
 	};
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44152,7 +44326,7 @@
 	};
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44218,7 +44392,7 @@
 	};
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44253,7 +44427,7 @@
 	};
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44333,7 +44507,7 @@
 	};
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs){
@@ -44374,7 +44548,7 @@
 	};
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44457,7 +44631,7 @@
 	};
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44510,7 +44684,7 @@
 	};
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44582,7 +44756,7 @@
 	};
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44683,7 +44857,7 @@
 	};
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44702,7 +44876,7 @@
 	};
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44745,7 +44919,7 @@
 	};
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -44893,7 +45067,7 @@
 	};
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45010,7 +45184,7 @@
 	};
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45133,7 +45307,7 @@
 	};
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45240,7 +45414,7 @@
 	};
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = /**
@@ -45502,7 +45676,7 @@
 	};
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45608,7 +45782,7 @@
 	};
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -45715,7 +45889,7 @@
 	};
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45786,7 +45960,7 @@
 	};
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45830,7 +46004,7 @@
 	};
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45884,7 +46058,7 @@
 	};
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45916,7 +46090,7 @@
 	};
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -45955,7 +46129,7 @@
 	};
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46007,7 +46181,7 @@
 	};
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46046,7 +46220,7 @@
 	};
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46152,7 +46326,7 @@
 	};
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46326,7 +46500,7 @@
 	};
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46345,7 +46519,7 @@
 	};
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46397,7 +46571,7 @@
 	};
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46553,7 +46727,7 @@
 	};
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46586,7 +46760,7 @@
 	};
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46660,7 +46834,7 @@
 	};
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46720,7 +46894,7 @@
 	};
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46797,7 +46971,7 @@
 	};
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -46834,7 +47008,7 @@
 	};
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46932,7 +47106,7 @@
 	};
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -46975,7 +47149,7 @@
 	};
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47014,7 +47188,7 @@
 	};
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47105,7 +47279,7 @@
 	};
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = // TODO support filter tags like :javascript, support inline HTML
@@ -47217,7 +47391,7 @@
 	};
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47254,7 +47428,7 @@
 	};
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47382,7 +47556,7 @@
 	};
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47447,7 +47621,7 @@
 	};
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47486,7 +47660,7 @@
 	};
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47558,7 +47732,7 @@
 	};
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47589,7 +47763,7 @@
 	};
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47693,7 +47867,7 @@
 	};
 
 /***/ },
-/* 292 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47809,7 +47983,7 @@
 	};
 
 /***/ },
-/* 293 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -47851,7 +48025,7 @@
 	};
 
 /***/ },
-/* 294 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48016,7 +48190,7 @@
 	};
 
 /***/ },
-/* 295 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function (hljs) {
@@ -48121,7 +48295,7 @@
 	};
 
 /***/ },
-/* 296 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48311,7 +48485,7 @@
 	};
 
 /***/ },
-/* 297 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48452,7 +48626,7 @@
 	};
 
 /***/ },
-/* 298 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48563,7 +48737,7 @@
 	};
 
 /***/ },
-/* 299 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48718,7 +48892,7 @@
 	};
 
 /***/ },
-/* 300 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48778,7 +48952,7 @@
 	};
 
 /***/ },
-/* 301 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48828,7 +49002,7 @@
 	};
 
 /***/ },
-/* 302 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48891,7 +49065,7 @@
 	};
 
 /***/ },
-/* 303 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -48986,7 +49160,7 @@
 	};
 
 /***/ },
-/* 304 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49220,7 +49394,7 @@
 	};
 
 /***/ },
-/* 305 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49313,7 +49487,7 @@
 	};
 
 /***/ },
-/* 306 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49336,7 +49510,7 @@
 	};
 
 /***/ },
-/* 307 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49418,7 +49592,7 @@
 	};
 
 /***/ },
-/* 308 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49504,7 +49678,7 @@
 	};
 
 /***/ },
-/* 309 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49560,7 +49734,7 @@
 	};
 
 /***/ },
-/* 310 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49614,7 +49788,7 @@
 	};
 
 /***/ },
-/* 311 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49706,7 +49880,7 @@
 	};
 
 /***/ },
-/* 312 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49789,7 +49963,7 @@
 	};
 
 /***/ },
-/* 313 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49863,7 +50037,7 @@
 	};
 
 /***/ },
-/* 314 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49926,7 +50100,7 @@
 	};
 
 /***/ },
-/* 315 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -49999,7 +50173,7 @@
 	};
 
 /***/ },
-/* 316 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50051,7 +50225,7 @@
 	};
 
 /***/ },
-/* 317 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50209,7 +50383,7 @@
 	};
 
 /***/ },
-/* 318 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50265,7 +50439,7 @@
 	};
 
 /***/ },
-/* 319 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50385,7 +50559,7 @@
 	};
 
 /***/ },
-/* 320 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50441,7 +50615,7 @@
 	};
 
 /***/ },
-/* 321 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50493,7 +50667,7 @@
 	};
 
 /***/ },
-/* 322 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50539,7 +50713,7 @@
 	};
 
 /***/ },
-/* 323 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50632,7 +50806,7 @@
 	};
 
 /***/ },
-/* 324 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50673,7 +50847,7 @@
 	};
 
 /***/ },
-/* 325 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50784,7 +50958,7 @@
 	};
 
 /***/ },
-/* 326 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50873,7 +51047,7 @@
 	};
 
 /***/ },
-/* 327 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50900,7 +51074,7 @@
 	};
 
 /***/ },
-/* 328 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -50974,7 +51148,7 @@
 	};
 
 /***/ },
-/* 329 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51005,7 +51179,7 @@
 	};
 
 /***/ },
-/* 330 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51069,7 +51243,7 @@
 	};
 
 /***/ },
-/* 331 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51110,7 +51284,7 @@
 	};
 
 /***/ },
-/* 332 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51171,7 +51345,7 @@
 	};
 
 /***/ },
-/* 333 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51253,7 +51427,7 @@
 	};
 
 /***/ },
-/* 334 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51320,7 +51494,7 @@
 	};
 
 /***/ },
-/* 335 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51446,7 +51620,7 @@
 	};
 
 /***/ },
-/* 336 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51505,7 +51679,7 @@
 	};
 
 /***/ },
-/* 337 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51626,7 +51800,7 @@
 	};
 
 /***/ },
-/* 338 */
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51713,7 +51887,7 @@
 	};
 
 /***/ },
-/* 339 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51770,7 +51944,7 @@
 	};
 
 /***/ },
-/* 340 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51839,7 +52013,7 @@
 	};
 
 /***/ },
-/* 341 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51943,7 +52117,7 @@
 	};
 
 /***/ },
-/* 342 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -51985,7 +52159,7 @@
 	};
 
 /***/ },
-/* 343 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52041,7 +52215,7 @@
 	};
 
 /***/ },
-/* 344 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52488,7 +52662,7 @@
 	};
 
 /***/ },
-/* 345 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52603,7 +52777,7 @@
 	};
 
 /***/ },
-/* 346 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52669,7 +52843,7 @@
 	};
 
 /***/ },
-/* 347 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52728,7 +52902,7 @@
 	};
 
 /***/ },
-/* 348 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52767,7 +52941,7 @@
 	};
 
 /***/ },
-/* 349 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52855,7 +53029,7 @@
 	};
 
 /***/ },
-/* 350 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -52916,7 +53090,7 @@
 	};
 
 /***/ },
-/* 351 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53023,7 +53197,7 @@
 	};
 
 /***/ },
-/* 352 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53082,7 +53256,7 @@
 	};
 
 /***/ },
-/* 353 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53142,7 +53316,7 @@
 	};
 
 /***/ },
-/* 354 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53185,7 +53359,7 @@
 	};
 
 /***/ },
-/* 355 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53201,7 +53375,7 @@
 	};
 
 /***/ },
-/* 356 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53255,7 +53429,7 @@
 	};
 
 /***/ },
-/* 357 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53315,7 +53489,7 @@
 	};
 
 /***/ },
-/* 358 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53382,7 +53556,7 @@
 	};
 
 /***/ },
-/* 359 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53534,7 +53708,7 @@
 	};
 
 /***/ },
-/* 360 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(hljs) {
@@ -53618,7 +53792,7 @@
 	};
 
 /***/ },
-/* 361 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53639,11 +53813,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _HighlightJsx = __webpack_require__(233);
+	var _HighlightJsx = __webpack_require__(234);
 
 	var _HighlightJsx2 = _interopRequireDefault(_HighlightJsx);
 
 	var _srcJsPlotypusJsx = __webpack_require__(174);
+
+	var _DataStore = __webpack_require__(363);
 
 	var PlotsAndLayers = (function (_React$Component) {
 	  function PlotsAndLayers() {
@@ -53657,40 +53833,11 @@
 	  _inherits(PlotsAndLayers, _React$Component);
 
 	  _createClass(PlotsAndLayers, [{
-	    key: "genData",
-	    value: function genData(count, values, cats, series) {
-	      /*
-	        count (Number):           How many datapoints you want.
-	        values (Array(Number)):   Must be of length 2. Min and Max.
-	        cats (Array(String)):     Set of all possible categories.
-	        series (Array(String)):   Set of all possible series.
-	      */
-	      return _.times(count, function (n) {
-	        return {
-	          value: (values[1] - values[0]) * Math.random(),
-	          category: n,
-	          series: null
-	        };
-	      });
-	    }
-	  }, {
 	    key: "render",
 	    value: function render() {
-	      var data = this.genData(8, [0, 8]);
-
-	      var sineFunc = function sineFunc(x, offset) {
-	        var offset = offset || 0;
-	        return Math.sin(x + offset) * 4 + 4;
-	      };
-
-	      var sineData = _.times(8, function (n) {
-	        return {
-	          value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
-	          category: n,
-	          series: null
-	        };
+	      var singleSeries = _DataStore.data.filter(function (d) {
+	        return d.series === "a";
 	      });
-	      // console.log(data);
 	      return _react2["default"].createElement(
 	        "section",
 	        { id: "PlotsAndLayers" },
@@ -53752,11 +53899,11 @@
 	            yMax: 8 }),
 	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
 	            max: 8,
-	            data: sineData }),
+	            data: singleSeries }),
 	          _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
 	            xMax: 8,
 	            yMax: 8,
-	            func: sineFunc,
+	            func: _DataStore.sineFunc,
 	            samples: 64 })
 	        ),
 	        _react2["default"].createElement(
@@ -53785,38 +53932,10 @@
 	  _inherits(Composition, _React$Component2);
 
 	  _createClass(Composition, [{
-	    key: "genData",
-	    value: function genData(count, values, cats, series) {
-	      /*
-	        count (Number):           How many datapoints you want.
-	        values (Array(Number)):   Must be of length 2. Min and Max.
-	        cats (Array(String)):     Set of all possible categories.
-	        series (Array(String)):   Set of all possible series.
-	      */
-	      return _.times(count, function (n) {
-	        return {
-	          value: (values[1] - values[0]) * Math.random(),
-	          category: n,
-	          series: null
-	        };
-	      });
-	    }
-	  }, {
 	    key: "render",
 	    value: function render() {
-	      var data = this.genData(8, [0, 8]);
-
-	      var sineFunc = function sineFunc(x, offset) {
-	        var offset = offset || 0;
-	        return Math.sin(x + offset) * 4 + 4;
-	      };
-
-	      var sineData = _.times(8, function (n) {
-	        return {
-	          value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
-	          category: n,
-	          series: null
-	        };
+	      var singleSeries = _DataStore.data.filter(function (d) {
+	        return d.series === "a";
 	      });
 	      return _react2["default"].createElement(
 	        "section",
@@ -53903,11 +54022,11 @@
 	                  yMax: 8 }),
 	                _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
 	                  max: 8,
-	                  data: sineData }),
+	                  data: singleSeries }),
 	                _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
 	                  xMax: 8,
 	                  yMax: 8,
-	                  func: sineFunc,
+	                  func: _DataStore.sineFunc,
 	                  samples: 64 })
 	              )
 	            )
@@ -53949,50 +54068,15 @@
 	  _inherits(DataFormat, _React$Component3);
 
 	  _createClass(DataFormat, [{
-	    key: "genData",
-	    value: function genData(count, values, cats, series) {
-	      /*
-	        count (Number):           How many datapoints you want.
-	        values (Array(Number)):   Must be of length 2. Min and Max.
-	        cats (Array(String)):     Set of all possible categories.
-	        series (Array(String)):   Set of all possible series.
-	      */
-	      return _.times(count, function (n) {
-	        return {
-	          value: (values[1] - values[0]) * Math.random(),
-	          category: n,
-	          series: null
-	        };
-	      });
-	    }
-	  }, {
 	    key: "render",
 	    value: function render() {
-	      var data = this.genData(8, [0, 8]);
-
-	      var sineFunc = function sineFunc(x, offset) {
-	        var offset = offset || 0;
-	        return Math.sin(x + offset) * 4 + 4;
-	      };
-
-	      var seriesNames = ["a", "b", "c"];
-
-	      var data = _.flatten(_.times(8, function (n) {
-	        return _.times(3, function (m) {
-	          return {
-	            value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
-	            category: n,
-	            series: seriesNames[m]
-	          };
-	        });
-	      }));
 	      return _react2["default"].createElement(
 	        "section",
 	        { id: "DataFormat" },
 	        _react2["default"].createElement(
 	          "h2",
 	          null,
-	          "Data Format"
+	          "Format"
 	        ),
 	        _react2["default"].createElement(
 	          "p",
@@ -54027,6 +54111,15 @@
 	          ". If you only have one series, you can leave it blank."
 	        ),
 	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          null,
+	          "Everything\n" + JSON.stringify(_DataStore.data) + "\n\nThird series (colored yellow)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
+	            return d.series === "c";
+	          })) + "\n\nFourth Category (note zero indexed. so category is 3)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
+	            return d.category === 3;
+	          }))
+	        ),
+	        _react2["default"].createElement(
 	          _srcJsPlotypusJsx.Plot,
 	          null,
 	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
@@ -54035,7 +54128,12 @@
 	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
 	            max: 8,
 	            groupOffset: 1.3,
-	            data: data })
+	            data: _DataStore.data })
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          null,
+	          "<Plot>\n  <GridLayer \n    xMax={ 8 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    groupOffset={ 1.3 }\n    data={ data /* data I'm generating. */}/>\n</Plot>"
 	        )
 	      );
 	    }
@@ -54045,8 +54143,172 @@
 	})(_react2["default"].Component);
 
 	exports.DataFormat = DataFormat;
+
+	var ArbitraryKeys = (function (_React$Component4) {
+	  function ArbitraryKeys() {
+	    _classCallCheck(this, ArbitraryKeys);
+
+	    if (_React$Component4 != null) {
+	      _React$Component4.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(ArbitraryKeys, _React$Component4);
+
+	  _createClass(ArbitraryKeys, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "section",
+	        { id: "ArbitraryKeys" },
+	        _react2["default"].createElement(
+	          "h2",
+	          null,
+	          "Arbitrary Keys"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          _react2["default"].createElement(
+	            "em",
+	            null,
+	            "But what if the data I have don't have the right property names?"
+	          ),
+	          " We got you covered. All layers that accept data have a fieldnameField prop."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "For ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          ),
+	          ", it's ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "seriesField"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "categoryField"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "valueField"
+	          )
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "For this next example, we can do something crazy and switch the series and categories of our existing data with each other. To be more specific, what we're going to do is: ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "seriesField=\"category\""
+	          ),
+	          " and ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "categoryField=\"series\""
+	          ),
+	          "."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plot,
+	          null,
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	            xMax: 8,
+	            yMax: 8 }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	            max: 8,
+	            seriesField: "category",
+	            categoryField: "series",
+	            groupOffset: 1.3,
+	            data: _DataStore.data })
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          null,
+	          "<Plot>\n  <GridLayer \n    xMax={ 8 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    seriesField=\"category\"\n    categoryField=\"series\"\n    groupOffset={ 1.3 /* basically the spacing between series */}\n    data={ data /* data I'm generating. */}/>\n</Plot>"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ArbitraryKeys;
+	})(_react2["default"].Component);
+
+	exports.ArbitraryKeys = ArbitraryKeys;
 	/* data I'm generating. */ /* the sine wave on which sineData is based */ /* data I'm generating. */ /* the sine wave on which sineData is based */ /* The Null element simply occupies a space on the lower left corner of the tabular structure. 
-	                                                                                                                                                    This makes sure that the axis element below is perfectly aligned with the Plot above. */ /* data I'm generating. */
+	                                                                                                                                                    This makes sure that the axis element below is perfectly aligned with the Plot above. */ /* basically the spacing between series */ /* data I'm generating. */ /* basically the spacing between series */ /* data I'm generating. */
+
+/***/ },
+/* 363 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// not really a store. hehe.
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.sineFunc = sineFunc;
+	exports.datagen = datagen;
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _lodash = __webpack_require__(172);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	function sineFunc(x, offset) {
+		var offset = offset || 0;
+		return Math.sin(x + offset) * 4 + 4;
+	}
+
+	// export let sineData = _.times(8, function(n){
+	//   return {
+	//     value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	//     category: n,
+	//     series: null
+	//   }
+	// })
+
+	function datagen(count, cats, series) {
+		return _lodash2["default"].flatten(_lodash2["default"].times(count, function (n) {
+			return _lodash2["default"].map(series, function (serie) {
+				return {
+					value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2, //(values[1] - values[0]) * Math.random(),
+					category: n,
+					series: serie
+				};
+			});
+		}));
+	}
+
+	var data = datagen(8, _lodash2["default"].range(0, 8), ["a", "b", "c"]);
+
+	// export let data = _.flatten(
+	//   _.times(8, function(n){
+	//     return _.times(3, function(m){
+	//       return {
+	//         value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	//         category: n,
+	//         series: seriesNames[m]
+	//       }
+	//     })
+	//   })
+	// );
+	exports.data = data;
 
 /***/ }
 /******/ ]);
