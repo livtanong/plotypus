@@ -1,5 +1,5 @@
 var global = this;
-var prerendered = require('./build/webpack-prerender');
+var prerendered = require('./build/prerenderHtml');
 var fs = require('fs');
 
 // var replace = function(html) {
@@ -9,5 +9,5 @@ var fs = require('fs');
 //             .replace('embed.js', 'embed.'+hash+'.js')
 //     );
 // }
-fs.writeFileSync('./build/index.html', replace(prerendered.index));
+fs.writeFileSync('./index.html', prerendered);
 // fs.writeFileSync('./build/embed.html', replace(prerendered.embed));
