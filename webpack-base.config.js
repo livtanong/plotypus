@@ -14,18 +14,30 @@ var baseConfig = function(options) {
       item.loader = item.loader.join("!");
     }
 
-    if(options.production || options.docs) {
+    if(options.docs) {
       item.loader = ExtractTextPlugin.extract('style-loader', item.loader);
-    } else {
+    } /*else if (options.prerender) {
+      item.loader = 'null';
+    }*/ else {
       item.loader = 'style!'+item.loader;
     }
   });
 
-  plugins.push(new webpack.DefinePlugin({
-    "__production": options.production,
-  }));
+  // plugins.push(new webpack.DefinePlugin({
+  //   "__production": options.production,
+  // }));
 
-  if(options.production || options.prerender || options.docs) {
+  var cssPlugin = new ExtractTextPlugin("bundle.css");
+  var entry = {"docs": "./docs/js/index.jsx"};
+  var externals = {};
+  var output = {
+    path: 'build',
+    publicPath: '/build/',
+    filename: '[name].js',
+  }
+
+  if (options.docs) {
+    // generate docs.js, for use in populating the prerendered document
     plugins.push(
       new webpack.DefinePlugin({
         "process.env": {
@@ -33,44 +45,35 @@ var baseConfig = function(options) {
         }
       })
     );
-  }
-
-  var cssPlugin = new ExtractTextPlugin("bundle.css");
-  if(options.production || options.docs) {
     plugins.push(cssPlugin);
   }
 
-  var entry;
-  if (options.production) {
-    entry = {
-      "lib": "./src/js/Plotypus.jsx"
-    }
-  } else {
-    entry = {
-      "docs": "./docs/js/index.jsx"
-    }
+  if (options.prerender) {
+    // prerendered document.
+    entry = {"prerenderHtml": "./prerenderHtml"};
+    externals = {
+      'velocity-animate': 'fs',
+      "react-inlinesvg": "react-inlinesvg"
+    };
+    output.libraryTarget = "commonjs2";
   }
+
+  // if (options.production) {
+  //   output.library = "Plotypus";
+  // };
 
   return {
     __extra: {
       cssPlugin: cssPlugin
     },
-    // entry: "./docs/js/index.jsx",
-    // output: {
-    //   path: __dirname,
-    //   filename: "bundle.js"
-    // },
     entry: entry,
-    output: {
-      path: 'build',
-      publicPath: '/build/',
-      filename: '[name].js'
-    },
+    output: output,
     resolve: {
       alias: { lib: __dirname+'/js/lib' },
       extensions: ['', '.js', '.jsx']
     },
     plugins: plugins,
+    externals: externals,
     module: {
       loaders: styleLoaders.concat([
         { test: /\.html$/, loader: 'html' },

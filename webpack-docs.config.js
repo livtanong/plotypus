@@ -1,6 +1,6 @@
 var config = require('./webpack-base.config.js')({
-    production: false,
-    docs: true
+  docs: true,
+  prerender: false
 });
 
 module.exports = config;

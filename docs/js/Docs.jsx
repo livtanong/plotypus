@@ -1,9 +1,11 @@
-import Style from "../scss/Docs.scss";
+import DocStyles from "../scss/Docs.scss";
+import Styles from "../scss/styles.scss";
+import IconStyles from "../icons/style.css";
+import PlotypusStyles from "../../src/scss/Plotypus.scss";
 
 import React from "react";
 import _ from "lodash";
 import classnames from "classnames";
-import {Plotypus, PlotypusRow, Chart, GroupedBarLayer} from "../../src/js/Plotypus.jsx";
 
 import ApiDocs from "./ApiDocs";
 import Home from "./Home";
