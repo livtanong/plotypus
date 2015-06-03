@@ -1,8 +1,8 @@
 {
   "name": "plotypus",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A plotting and charting library for the enterprising aquatic mammal THAT LAYS EGGS!",
-  "main": "lib/js/Plotypus.js",
+  "main": "build/lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -43,6 +43,6 @@
     "react-highlight": "^0.4.1",
     "react-inlinesvg": "^0.4.1",
     "url-loader": "^0.5.6",
-    "velocity-animate": "^1.2.2"
+    "velocity-animate": "^1.2.1"
   }
 }

@@ -3,4 +3,8 @@ var config = require('./webpack-base.config.js')({
     docs: false
 });
 
+config.externals = {
+  "react": "react"
+};
+
 module.exports = config;

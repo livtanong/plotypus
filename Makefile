@@ -19,6 +19,7 @@ production: clean deps
 	./node_modules/.bin/webpack --config webpack-prod.config.js
 	./node_modules/.bin/webpack --config webpack-docs.config.js
 	babel src --out-dir lib
+	# node prerender.js
 
 docs: clean deps
 	./node_modules/.bin/webpack --config webpack-docs.config.js

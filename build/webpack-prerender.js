@@ -45,26 +45,263 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Docs = __webpack_require__(2);
+
+	var indexHtml = __webpack_require__(344);
+	var indexComponent = React.renderToString(React.createElement(Docs, { isPrerender: true }));
+
+	module.exports = {
+		'index': indexHtml.replace('CONTENT', indexComponent) };
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = require("react");
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _scssStylesScss = __webpack_require__(3);
+
+	var _scssStylesScss2 = _interopRequireDefault(_scssStylesScss);
+
+	var _iconsStyleCss = __webpack_require__(7);
+
+	var _iconsStyleCss2 = _interopRequireDefault(_iconsStyleCss);
+
+	var _srcScssPlotypusScss = __webpack_require__(15);
+
+	var _srcScssPlotypusScss2 = _interopRequireDefault(_srcScssPlotypusScss);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _DocsJsx = __webpack_require__(17);
+
+	var _DocsJsx2 = _interopRequireDefault(_DocsJsx);
+
+	var _srcJsPlotypusJsx = __webpack_require__(18);
+
+	var _srcJsPlotypusJsx2 = _interopRequireDefault(_srcJsPlotypusJsx);
+
+	if (typeof document != "undefined") {
+		var app = _react2["default"].render(_react2["default"].createElement(_DocsJsx2["default"], null), document.getElementById("docs"));
+	}
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 16 */,
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _scssDocsScss = __webpack_require__(209);
+
+	var _scssDocsScss2 = _interopRequireDefault(_scssDocsScss);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _lodash = __webpack_require__(19);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _classnames = __webpack_require__(21);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _srcJsPlotypusJsx = __webpack_require__(18);
+
+	var _ApiDocs = __webpack_require__(211);
+
+	var _ApiDocs2 = _interopRequireDefault(_ApiDocs);
+
+	var _Home = __webpack_require__(212);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
+	var _Guide = __webpack_require__(213);
+
+	var _Guide2 = _interopRequireDefault(_Guide);
+
+	var Docs = (function (_React$Component) {
+	  function Docs(props) {
+	    _classCallCheck(this, Docs);
+
+	    _get(Object.getPrototypeOf(Docs.prototype), "constructor", this).call(this, props);
+
+	    this.views = {
+	      "HOME": "HOME",
+	      "GUIDE": "GUIDE" };
+
+	    this.state = {
+	      currentView: this.views.GUIDE
+	    };
+	  }
+
+	  _inherits(Docs, _React$Component);
+
+	  _createClass(Docs, [{
+	    key: "changeView",
+	    value: function changeView(view) {
+	      this.setState({ currentView: view });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var _this = this;
+
+	      var views = (function () {
+	        switch (this.state.currentView) {
+	          case this.views.HOME:
+	            return _react2["default"].createElement(_Home2["default"], null);
+	            break;
+	          case this.views.GUIDE:
+	            return _react2["default"].createElement(_Guide2["default"], null);
+	            break;
+	          case this.views.API:
+	            return _react2["default"].createElement(_ApiDocs2["default"], null);
+	            break;
+	          default:
+	            console.log("illegal currentView");
+	        }
+	      }).bind(this);
+
+	      var nav = _lodash2["default"].keys(this.views).map(function (view) {
+	        return _react2["default"].createElement(
+	          "a",
+	          { className: (0, _classnames2["default"])("toolbar-item", { "active": view === _this.state.currentView }),
+	            key: view,
+	            onClick: _this.changeView.bind(_this, view) },
+	          view.toLowerCase()
+	        );
+	      });
+	      // var nav = _.keys(this.views).map(function(view){
+	      //   return (<a onClick={ this.changeView(view) }>{ view.toLowerCase() }</a>)
+	      // }, this);
+
+	      return _react2["default"].createElement(
+	        "div",
+	        { className: "Docs" },
+	        _react2["default"].createElement(
+	          "div",
+	          { className: "toolbar" },
+	          _react2["default"].createElement(
+	            "a",
+	            { id: "brand", onClick: this.changeView.bind(this, this.views.HOME) },
+	            _react2["default"].createElement(
+	              "h1",
+	              null,
+	              "Plotypus ",
+	              _react2["default"].createElement(
+	                "small",
+	                null,
+	                "v0.0.0.0...0.1"
+	              )
+	            )
+	          ),
+	          _react2["default"].createElement("div", { className: "spacer" }),
+	          _react2["default"].createElement(
+	            "div",
+	            { className: "toolbar-group" },
+	            nav,
+	            _react2["default"].createElement(
+	              "a",
+	              { className: "toolbar-item", href: "https://github.com/levitanong/plotypus" },
+	              "Github"
+	            )
+	          )
+	        ),
+	        views()
+	      );
+	    }
+	  }]);
+
+	  return Docs;
+	})(_react2["default"].Component);
+
+	exports["default"] = Docs;
+	module.exports = exports["default"];
+
+	/*"API": "API"*/
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var React = __webpack_require__(1);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
 
-	var A = __webpack_require__(5);
+	var A = __webpack_require__(22);
 	var Axis = A.Axis;
 	var CategoryAxis = A.Category;
 	var AxisLabel = A.AxisLabel;
 
-	var GridLayer = __webpack_require__(10);
-	var GroupedBarLayer = __webpack_require__(12);
-	var StackedBarLayer = __webpack_require__(182);
-	var LineLayer = __webpack_require__(183);
-	var CircleLayer = __webpack_require__(185);
-	var ScatterLayer = __webpack_require__(187);
-	var FuncLayer = __webpack_require__(190);
+	var GridLayer = __webpack_require__(27);
+	var GroupedBarLayer = __webpack_require__(29);
+	var StackedBarLayer = __webpack_require__(199);
+	var LineLayer = __webpack_require__(200);
+	var CircleLayer = __webpack_require__(202);
+	var ScatterLayer = __webpack_require__(204);
+	var FuncLayer = __webpack_require__(207);
 
 	var calcInterval = function calcInterval(min, max, limit) {
 		var range = max - min;
@@ -162,13 +399,7 @@ module.exports =
 	};
 
 /***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = require("react");
-
-/***/ },
-/* 2 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -12407,10 +12638,10 @@ module.exports =
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20)(module), (function() { return this; }())))
 
 /***/ },
-/* 3 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module) {
@@ -12426,7 +12657,7 @@ module.exports =
 
 
 /***/ },
-/* 4 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -12481,7 +12712,7 @@ module.exports =
 
 
 /***/ },
-/* 5 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12489,13 +12720,13 @@ module.exports =
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var React = __webpack_require__(1);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
 
-	var AxisElements = __webpack_require__(6);
+	var AxisElements = __webpack_require__(23);
 	var AxisNumbers = AxisElements.AxisNumbers;
 	var AxisCategories = AxisElements.AxisCategories;
-	var ChartLayerMixin = __webpack_require__(9);
+	var ChartLayerMixin = __webpack_require__(26);
 
 	var Axis = React.createClass({
 		displayName: "Axis",
@@ -12619,14 +12850,14 @@ module.exports =
 	};
 
 /***/ },
-/* 6 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _ = __webpack_require__(2);
-	var SVGLayer = __webpack_require__(7);
-	var utils = __webpack_require__(8);
+	var _ = __webpack_require__(19);
+	var SVGLayer = __webpack_require__(24);
+	var utils = __webpack_require__(25);
 
 	function AxisElements(domNode, ticks, align, orientation, onClickLabel) {
 		this.domNode = domNode;
@@ -12835,12 +13066,12 @@ module.exports =
 	};
 
 /***/ },
-/* 7 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _ = __webpack_require__(2);
+	var _ = __webpack_require__(19);
 
 	function SVGLayer(domNode) {
 		this.domNode = domNode;
@@ -12886,7 +13117,7 @@ module.exports =
 	module.exports = SVGLayer;
 
 /***/ },
-/* 8 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12920,7 +13151,7 @@ module.exports =
 	module.exports = utils;
 
 /***/ },
-/* 9 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12956,16 +13187,16 @@ module.exports =
 	module.exports = ChartLayerMixin;
 
 /***/ },
-/* 10 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(1);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
 
-	var Gridlines = __webpack_require__(11);
+	var Gridlines = __webpack_require__(28);
 
 	var GridLayer = React.createClass({
 		displayName: "GridLayer",
@@ -13017,12 +13248,12 @@ module.exports =
 	module.exports = GridLayer;
 
 /***/ },
-/* 11 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _ = __webpack_require__(2);
+	var _ = __webpack_require__(19);
 
 	var Gridlines = function Gridlines(domNode, xMax, xMin, yMax, yMin, xInterval, yInterval) {
 		// var xRange = xMax - xMin;
@@ -13078,17 +13309,17 @@ module.exports =
 	module.exports = Gridlines;
 
 /***/ },
-/* 12 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var React = __webpack_require__(13);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
-	var ChartLayerMixin = __webpack_require__(9);
+	var React = __webpack_require__(30);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
+	var ChartLayerMixin = __webpack_require__(26);
 
-	var Bars = __webpack_require__(180);
+	var Bars = __webpack_require__(197);
 	var GroupedBars = Bars.GroupedBars;
 
 	var GroupedBarLayer = React.createClass({
@@ -13135,14 +13366,14 @@ module.exports =
 	module.exports = GroupedBarLayer;
 
 /***/ },
-/* 13 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(14);
+	module.exports = __webpack_require__(31);
 
 
 /***/ },
-/* 14 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13165,18 +13396,18 @@ module.exports =
 
 	'use strict';
 
-	var LinkedStateMixin = __webpack_require__(170);
-	var React = __webpack_require__(16);
+	var LinkedStateMixin = __webpack_require__(187);
+	var React = __webpack_require__(33);
 	var ReactComponentWithPureRenderMixin =
-	  __webpack_require__(173);
-	var ReactCSSTransitionGroup = __webpack_require__(174);
-	var ReactFragment = __webpack_require__(23);
-	var ReactTransitionGroup = __webpack_require__(15);
-	var ReactUpdates = __webpack_require__(39);
+	  __webpack_require__(190);
+	var ReactCSSTransitionGroup = __webpack_require__(191);
+	var ReactFragment = __webpack_require__(40);
+	var ReactTransitionGroup = __webpack_require__(32);
+	var ReactUpdates = __webpack_require__(56);
 
-	var cx = __webpack_require__(178);
-	var cloneWithProps = __webpack_require__(167);
-	var update = __webpack_require__(179);
+	var cx = __webpack_require__(195);
+	var cloneWithProps = __webpack_require__(184);
+	var update = __webpack_require__(196);
 
 	React.addons = {
 	  CSSTransitionGroup: ReactCSSTransitionGroup,
@@ -13200,7 +13431,7 @@ module.exports =
 
 
 /***/ },
-/* 15 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13216,12 +13447,12 @@ module.exports =
 
 	'use strict';
 
-	var React = __webpack_require__(16);
-	var ReactTransitionChildMapping = __webpack_require__(166);
+	var React = __webpack_require__(33);
+	var ReactTransitionChildMapping = __webpack_require__(183);
 
-	var assign = __webpack_require__(28);
-	var cloneWithProps = __webpack_require__(167);
-	var emptyFunction = __webpack_require__(26);
+	var assign = __webpack_require__(45);
+	var cloneWithProps = __webpack_require__(184);
+	var emptyFunction = __webpack_require__(43);
 
 	var ReactTransitionGroup = React.createClass({
 	  displayName: 'ReactTransitionGroup',
@@ -13434,7 +13665,7 @@ module.exports =
 
 
 /***/ },
-/* 16 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13452,27 +13683,27 @@ module.exports =
 
 	'use strict';
 
-	var EventPluginUtils = __webpack_require__(17);
-	var ReactChildren = __webpack_require__(21);
-	var ReactComponent = __webpack_require__(35);
-	var ReactClass = __webpack_require__(50);
-	var ReactContext = __webpack_require__(27);
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactElement = __webpack_require__(24);
-	var ReactElementValidator = __webpack_require__(45);
-	var ReactDOM = __webpack_require__(53);
-	var ReactDOMTextComponent = __webpack_require__(55);
-	var ReactDefaultInjection = __webpack_require__(104);
-	var ReactInstanceHandles = __webpack_require__(32);
-	var ReactMount = __webpack_require__(80);
-	var ReactPerf = __webpack_require__(41);
-	var ReactPropTypes = __webpack_require__(135);
-	var ReactReconciler = __webpack_require__(42);
-	var ReactServerRendering = __webpack_require__(163);
+	var EventPluginUtils = __webpack_require__(34);
+	var ReactChildren = __webpack_require__(38);
+	var ReactComponent = __webpack_require__(52);
+	var ReactClass = __webpack_require__(67);
+	var ReactContext = __webpack_require__(44);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactElement = __webpack_require__(41);
+	var ReactElementValidator = __webpack_require__(62);
+	var ReactDOM = __webpack_require__(70);
+	var ReactDOMTextComponent = __webpack_require__(72);
+	var ReactDefaultInjection = __webpack_require__(121);
+	var ReactInstanceHandles = __webpack_require__(49);
+	var ReactMount = __webpack_require__(97);
+	var ReactPerf = __webpack_require__(58);
+	var ReactPropTypes = __webpack_require__(152);
+	var ReactReconciler = __webpack_require__(59);
+	var ReactServerRendering = __webpack_require__(180);
 
-	var assign = __webpack_require__(28);
-	var findDOMNode = __webpack_require__(108);
-	var onlyChild = __webpack_require__(165);
+	var assign = __webpack_require__(45);
+	var findDOMNode = __webpack_require__(125);
+	var onlyChild = __webpack_require__(182);
 
 	ReactDefaultInjection.inject();
 
@@ -13588,7 +13819,7 @@ module.exports =
 
 
 /***/ },
-/* 17 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13604,9 +13835,9 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
+	var EventConstants = __webpack_require__(35);
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Injected dependencies:
@@ -13811,7 +14042,7 @@ module.exports =
 
 
 /***/ },
-/* 18 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13827,7 +14058,7 @@ module.exports =
 
 	'use strict';
 
-	var keyMirror = __webpack_require__(19);
+	var keyMirror = __webpack_require__(36);
 
 	var PropagationPhases = keyMirror({bubbled: null, captured: null});
 
@@ -13887,7 +14118,7 @@ module.exports =
 
 
 /***/ },
-/* 19 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13904,7 +14135,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Constructs an enumeration with keys equal to their value.
@@ -13944,7 +14175,7 @@ module.exports =
 
 
 /***/ },
-/* 20 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14003,7 +14234,7 @@ module.exports =
 
 
 /***/ },
-/* 21 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14019,11 +14250,11 @@ module.exports =
 
 	'use strict';
 
-	var PooledClass = __webpack_require__(22);
-	var ReactFragment = __webpack_require__(23);
+	var PooledClass = __webpack_require__(39);
+	var ReactFragment = __webpack_require__(40);
 
-	var traverseAllChildren = __webpack_require__(31);
-	var warning = __webpack_require__(25);
+	var traverseAllChildren = __webpack_require__(48);
+	var warning = __webpack_require__(42);
 
 	var twoArgumentPooler = PooledClass.twoArgumentPooler;
 	var threeArgumentPooler = PooledClass.threeArgumentPooler;
@@ -14158,7 +14389,7 @@ module.exports =
 
 
 /***/ },
-/* 22 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14174,7 +14405,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Static poolers. Several custom versions for each potential number of
@@ -14276,7 +14507,7 @@ module.exports =
 
 
 /***/ },
-/* 23 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14292,9 +14523,9 @@ module.exports =
 
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
+	var ReactElement = __webpack_require__(41);
 
-	var warning = __webpack_require__(25);
+	var warning = __webpack_require__(42);
 
 	/**
 	 * We used to allow keyed objects to serve as a collection of ReactElements,
@@ -14463,7 +14694,7 @@ module.exports =
 
 
 /***/ },
-/* 24 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14479,11 +14710,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactContext = __webpack_require__(27);
-	var ReactCurrentOwner = __webpack_require__(30);
+	var ReactContext = __webpack_require__(44);
+	var ReactCurrentOwner = __webpack_require__(47);
 
-	var assign = __webpack_require__(28);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var warning = __webpack_require__(42);
 
 	var RESERVED_PROPS = {
 	  key: true,
@@ -14773,7 +15004,7 @@ module.exports =
 
 
 /***/ },
-/* 25 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14789,7 +15020,7 @@ module.exports =
 
 	"use strict";
 
-	var emptyFunction = __webpack_require__(26);
+	var emptyFunction = __webpack_require__(43);
 
 	/**
 	 * Similar to invariant but only logs a warning if the condition is not met.
@@ -14838,7 +15069,7 @@ module.exports =
 
 
 /***/ },
-/* 26 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14876,7 +15107,7 @@ module.exports =
 
 
 /***/ },
-/* 27 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -14892,9 +15123,9 @@ module.exports =
 
 	'use strict';
 
-	var assign = __webpack_require__(28);
-	var emptyObject = __webpack_require__(29);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var emptyObject = __webpack_require__(46);
+	var warning = __webpack_require__(42);
 
 	var didWarn = false;
 
@@ -14956,7 +15187,7 @@ module.exports =
 
 
 /***/ },
-/* 28 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15009,7 +15240,7 @@ module.exports =
 
 
 /***/ },
-/* 29 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15035,7 +15266,7 @@ module.exports =
 
 
 /***/ },
-/* 30 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15073,7 +15304,7 @@ module.exports =
 
 
 /***/ },
-/* 31 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15089,13 +15320,13 @@ module.exports =
 
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
-	var ReactFragment = __webpack_require__(23);
-	var ReactInstanceHandles = __webpack_require__(32);
+	var ReactElement = __webpack_require__(41);
+	var ReactFragment = __webpack_require__(40);
+	var ReactInstanceHandles = __webpack_require__(49);
 
-	var getIteratorFn = __webpack_require__(34);
-	var invariant = __webpack_require__(20);
-	var warning = __webpack_require__(25);
+	var getIteratorFn = __webpack_require__(51);
+	var invariant = __webpack_require__(37);
+	var warning = __webpack_require__(42);
 
 	var SEPARATOR = ReactInstanceHandles.SEPARATOR;
 	var SUBSEPARATOR = ':';
@@ -15328,7 +15559,7 @@ module.exports =
 
 
 /***/ },
-/* 32 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15345,9 +15576,9 @@ module.exports =
 
 	'use strict';
 
-	var ReactRootIndex = __webpack_require__(33);
+	var ReactRootIndex = __webpack_require__(50);
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	var SEPARATOR = '.';
 	var SEPARATOR_LENGTH = SEPARATOR.length;
@@ -15666,7 +15897,7 @@ module.exports =
 
 
 /***/ },
-/* 33 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15701,7 +15932,7 @@ module.exports =
 
 
 /***/ },
-/* 34 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15749,7 +15980,7 @@ module.exports =
 
 
 /***/ },
-/* 35 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15765,10 +15996,10 @@ module.exports =
 
 	'use strict';
 
-	var ReactUpdateQueue = __webpack_require__(36);
+	var ReactUpdateQueue = __webpack_require__(53);
 
-	var invariant = __webpack_require__(20);
-	var warning = __webpack_require__(25);
+	var invariant = __webpack_require__(37);
+	var warning = __webpack_require__(42);
 
 	/**
 	 * Base class helpers for the updating state of a component.
@@ -15905,7 +16136,7 @@ module.exports =
 
 
 /***/ },
-/* 36 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -15921,15 +16152,15 @@ module.exports =
 
 	'use strict';
 
-	var ReactLifeCycle = __webpack_require__(37);
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactElement = __webpack_require__(24);
-	var ReactInstanceMap = __webpack_require__(38);
-	var ReactUpdates = __webpack_require__(39);
+	var ReactLifeCycle = __webpack_require__(54);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactElement = __webpack_require__(41);
+	var ReactInstanceMap = __webpack_require__(55);
+	var ReactUpdates = __webpack_require__(56);
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
+	var warning = __webpack_require__(42);
 
 	function enqueueUpdate(internalInstance) {
 	  if (internalInstance !== ReactLifeCycle.currentlyMountingInstance) {
@@ -16206,7 +16437,7 @@ module.exports =
 
 
 /***/ },
-/* 37 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16247,7 +16478,7 @@ module.exports =
 
 
 /***/ },
-/* 38 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16300,7 +16531,7 @@ module.exports =
 
 
 /***/ },
-/* 39 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16316,16 +16547,16 @@ module.exports =
 
 	'use strict';
 
-	var CallbackQueue = __webpack_require__(40);
-	var PooledClass = __webpack_require__(22);
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactPerf = __webpack_require__(41);
-	var ReactReconciler = __webpack_require__(42);
-	var Transaction = __webpack_require__(49);
+	var CallbackQueue = __webpack_require__(57);
+	var PooledClass = __webpack_require__(39);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactPerf = __webpack_require__(58);
+	var ReactReconciler = __webpack_require__(59);
+	var Transaction = __webpack_require__(66);
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
+	var warning = __webpack_require__(42);
 
 	var dirtyComponents = [];
 	var asapCallbackQueue = CallbackQueue.getPooled();
@@ -16584,7 +16815,7 @@ module.exports =
 
 
 /***/ },
-/* 40 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16600,10 +16831,10 @@ module.exports =
 
 	'use strict';
 
-	var PooledClass = __webpack_require__(22);
+	var PooledClass = __webpack_require__(39);
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * A specialized pseudo-event module to help keep track of components waiting to
@@ -16686,7 +16917,7 @@ module.exports =
 
 
 /***/ },
-/* 41 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16792,7 +17023,7 @@ module.exports =
 
 
 /***/ },
-/* 42 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16808,8 +17039,8 @@ module.exports =
 
 	'use strict';
 
-	var ReactRef = __webpack_require__(43);
-	var ReactElementValidator = __webpack_require__(45);
+	var ReactRef = __webpack_require__(60);
+	var ReactElementValidator = __webpack_require__(62);
 
 	/**
 	 * Helper to call ReactRef.attachRefs with this composite component, split out
@@ -16918,7 +17149,7 @@ module.exports =
 
 
 /***/ },
-/* 43 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -16934,7 +17165,7 @@ module.exports =
 
 	'use strict';
 
-	var ReactOwner = __webpack_require__(44);
+	var ReactOwner = __webpack_require__(61);
 
 	var ReactRef = {};
 
@@ -16993,7 +17224,7 @@ module.exports =
 
 
 /***/ },
-/* 44 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -17009,7 +17240,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * ReactOwners are capable of storing references to owned components.
@@ -17107,7 +17338,7 @@ module.exports =
 
 
 /***/ },
-/* 45 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -17130,16 +17361,16 @@ module.exports =
 
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
-	var ReactFragment = __webpack_require__(23);
-	var ReactPropTypeLocations = __webpack_require__(46);
-	var ReactPropTypeLocationNames = __webpack_require__(47);
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactNativeComponent = __webpack_require__(48);
+	var ReactElement = __webpack_require__(41);
+	var ReactFragment = __webpack_require__(40);
+	var ReactPropTypeLocations = __webpack_require__(63);
+	var ReactPropTypeLocationNames = __webpack_require__(64);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactNativeComponent = __webpack_require__(65);
 
-	var getIteratorFn = __webpack_require__(34);
-	var invariant = __webpack_require__(20);
-	var warning = __webpack_require__(25);
+	var getIteratorFn = __webpack_require__(51);
+	var invariant = __webpack_require__(37);
+	var warning = __webpack_require__(42);
 
 	function getDeclarationErrorAddendum() {
 	  if (ReactCurrentOwner.current) {
@@ -17574,7 +17805,7 @@ module.exports =
 
 
 /***/ },
-/* 46 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -17590,7 +17821,7 @@ module.exports =
 
 	'use strict';
 
-	var keyMirror = __webpack_require__(19);
+	var keyMirror = __webpack_require__(36);
 
 	var ReactPropTypeLocations = keyMirror({
 	  prop: null,
@@ -17602,7 +17833,7 @@ module.exports =
 
 
 /***/ },
-/* 47 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -17632,7 +17863,7 @@ module.exports =
 
 
 /***/ },
-/* 48 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -17648,8 +17879,8 @@ module.exports =
 
 	'use strict';
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
 
 	var autoGenerateWrapperClass = null;
 	var genericComponentClass = null;
@@ -17741,7 +17972,7 @@ module.exports =
 
 
 /***/ },
-/* 49 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -17757,7 +17988,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * `Transaction` creates a black box that is able to wrap any method such that
@@ -17984,7 +18215,7 @@ module.exports =
 
 
 /***/ },
-/* 50 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18000,21 +18231,21 @@ module.exports =
 
 	'use strict';
 
-	var ReactComponent = __webpack_require__(35);
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactElement = __webpack_require__(24);
-	var ReactErrorUtils = __webpack_require__(51);
-	var ReactInstanceMap = __webpack_require__(38);
-	var ReactLifeCycle = __webpack_require__(37);
-	var ReactPropTypeLocations = __webpack_require__(46);
-	var ReactPropTypeLocationNames = __webpack_require__(47);
-	var ReactUpdateQueue = __webpack_require__(36);
+	var ReactComponent = __webpack_require__(52);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactElement = __webpack_require__(41);
+	var ReactErrorUtils = __webpack_require__(68);
+	var ReactInstanceMap = __webpack_require__(55);
+	var ReactLifeCycle = __webpack_require__(54);
+	var ReactPropTypeLocations = __webpack_require__(63);
+	var ReactPropTypeLocationNames = __webpack_require__(64);
+	var ReactUpdateQueue = __webpack_require__(53);
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
-	var keyMirror = __webpack_require__(19);
-	var keyOf = __webpack_require__(52);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
+	var keyMirror = __webpack_require__(36);
+	var keyOf = __webpack_require__(69);
+	var warning = __webpack_require__(42);
 
 	var MIXINS_KEY = keyOf({mixins: null});
 
@@ -18932,7 +19163,7 @@ module.exports =
 
 
 /***/ },
-/* 51 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -18968,7 +19199,7 @@ module.exports =
 
 
 /***/ },
-/* 52 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19008,7 +19239,7 @@ module.exports =
 
 
 /***/ },
-/* 53 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19025,10 +19256,10 @@ module.exports =
 
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
-	var ReactElementValidator = __webpack_require__(45);
+	var ReactElement = __webpack_require__(41);
+	var ReactElementValidator = __webpack_require__(62);
 
-	var mapObject = __webpack_require__(54);
+	var mapObject = __webpack_require__(71);
 
 	/**
 	 * Create a factory that creates HTML tag elements.
@@ -19189,7 +19420,7 @@ module.exports =
 
 
 /***/ },
-/* 54 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19246,7 +19477,7 @@ module.exports =
 
 
 /***/ },
-/* 55 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19263,13 +19494,13 @@ module.exports =
 
 	'use strict';
 
-	var DOMPropertyOperations = __webpack_require__(56);
+	var DOMPropertyOperations = __webpack_require__(73);
 	var ReactComponentBrowserEnvironment =
-	  __webpack_require__(60);
-	var ReactDOMComponent = __webpack_require__(100);
+	  __webpack_require__(77);
+	var ReactDOMComponent = __webpack_require__(117);
 
-	var assign = __webpack_require__(28);
-	var escapeTextContentForBrowser = __webpack_require__(59);
+	var assign = __webpack_require__(45);
+	var escapeTextContentForBrowser = __webpack_require__(76);
 
 	/**
 	 * Text nodes violate a couple assumptions that React makes about components:
@@ -19367,7 +19598,7 @@ module.exports =
 
 
 /***/ },
-/* 56 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19384,10 +19615,10 @@ module.exports =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(57);
+	var DOMProperty = __webpack_require__(74);
 
-	var quoteAttributeValueForBrowser = __webpack_require__(58);
-	var warning = __webpack_require__(25);
+	var quoteAttributeValueForBrowser = __webpack_require__(75);
+	var warning = __webpack_require__(42);
 
 	function shouldIgnoreValue(name, value) {
 	  return value == null ||
@@ -19561,7 +19792,7 @@ module.exports =
 
 
 /***/ },
-/* 57 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19580,7 +19811,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	function checkMask(value, bitmask) {
 	  return (value & bitmask) === bitmask;
@@ -19862,7 +20093,7 @@ module.exports =
 
 
 /***/ },
-/* 58 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19878,7 +20109,7 @@ module.exports =
 
 	'use strict';
 
-	var escapeTextContentForBrowser = __webpack_require__(59);
+	var escapeTextContentForBrowser = __webpack_require__(76);
 
 	/**
 	 * Escapes attribute value to prevent scripting attacks.
@@ -19894,7 +20125,7 @@ module.exports =
 
 
 /***/ },
-/* 59 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19938,7 +20169,7 @@ module.exports =
 
 
 /***/ },
-/* 60 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19956,8 +20187,8 @@ module.exports =
 
 	'use strict';
 
-	var ReactDOMIDOperations = __webpack_require__(61);
-	var ReactMount = __webpack_require__(80);
+	var ReactDOMIDOperations = __webpack_require__(78);
+	var ReactMount = __webpack_require__(97);
 
 	/**
 	 * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -19989,7 +20220,7 @@ module.exports =
 
 
 /***/ },
-/* 61 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20008,14 +20239,14 @@ module.exports =
 
 	'use strict';
 
-	var CSSPropertyOperations = __webpack_require__(62);
-	var DOMChildrenOperations = __webpack_require__(71);
-	var DOMPropertyOperations = __webpack_require__(56);
-	var ReactMount = __webpack_require__(80);
-	var ReactPerf = __webpack_require__(41);
+	var CSSPropertyOperations = __webpack_require__(79);
+	var DOMChildrenOperations = __webpack_require__(88);
+	var DOMPropertyOperations = __webpack_require__(73);
+	var ReactMount = __webpack_require__(97);
+	var ReactPerf = __webpack_require__(58);
 
-	var invariant = __webpack_require__(20);
-	var setInnerHTML = __webpack_require__(79);
+	var invariant = __webpack_require__(37);
+	var setInnerHTML = __webpack_require__(96);
 
 	/**
 	 * Errors for properties that should not be updated with `updatePropertyById()`.
@@ -20159,7 +20390,7 @@ module.exports =
 
 
 /***/ },
-/* 62 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20176,14 +20407,14 @@ module.exports =
 
 	'use strict';
 
-	var CSSProperty = __webpack_require__(65);
-	var ExecutionEnvironment = __webpack_require__(66);
+	var CSSProperty = __webpack_require__(82);
+	var ExecutionEnvironment = __webpack_require__(83);
 
-	var camelizeStyleName = __webpack_require__(67);
-	var dangerousStyleValue = __webpack_require__(69);
-	var hyphenateStyleName = __webpack_require__(63);
-	var memoizeStringOnly = __webpack_require__(70);
-	var warning = __webpack_require__(25);
+	var camelizeStyleName = __webpack_require__(84);
+	var dangerousStyleValue = __webpack_require__(86);
+	var hyphenateStyleName = __webpack_require__(80);
+	var memoizeStringOnly = __webpack_require__(87);
+	var warning = __webpack_require__(42);
 
 	var processStyleName = memoizeStringOnly(function(styleName) {
 	  return hyphenateStyleName(styleName);
@@ -20343,7 +20574,7 @@ module.exports =
 
 
 /***/ },
-/* 63 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20360,7 +20591,7 @@ module.exports =
 
 	"use strict";
 
-	var hyphenate = __webpack_require__(64);
+	var hyphenate = __webpack_require__(81);
 
 	var msPattern = /^ms-/;
 
@@ -20388,7 +20619,7 @@ module.exports =
 
 
 /***/ },
-/* 64 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20425,7 +20656,7 @@ module.exports =
 
 
 /***/ },
-/* 65 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20554,7 +20785,7 @@ module.exports =
 
 
 /***/ },
-/* 66 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20602,7 +20833,7 @@ module.exports =
 
 
 /***/ },
-/* 67 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20619,7 +20850,7 @@ module.exports =
 
 	"use strict";
 
-	var camelize = __webpack_require__(68);
+	var camelize = __webpack_require__(85);
 
 	var msPattern = /^-ms-/;
 
@@ -20648,7 +20879,7 @@ module.exports =
 
 
 /***/ },
-/* 68 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20684,7 +20915,7 @@ module.exports =
 
 
 /***/ },
-/* 69 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20701,7 +20932,7 @@ module.exports =
 
 	'use strict';
 
-	var CSSProperty = __webpack_require__(65);
+	var CSSProperty = __webpack_require__(82);
 
 	var isUnitlessNumber = CSSProperty.isUnitlessNumber;
 
@@ -20746,7 +20977,7 @@ module.exports =
 
 
 /***/ },
-/* 70 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20783,7 +21014,7 @@ module.exports =
 
 
 /***/ },
-/* 71 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20800,11 +21031,11 @@ module.exports =
 
 	'use strict';
 
-	var Danger = __webpack_require__(72);
-	var ReactMultiChildUpdateTypes = __webpack_require__(77);
+	var Danger = __webpack_require__(89);
+	var ReactMultiChildUpdateTypes = __webpack_require__(94);
 
-	var setTextContent = __webpack_require__(78);
-	var invariant = __webpack_require__(20);
+	var setTextContent = __webpack_require__(95);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Inserts `childNode` as a child of `parentNode` at the `index`.
@@ -20923,7 +21154,7 @@ module.exports =
 
 
 /***/ },
-/* 72 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20942,12 +21173,12 @@ module.exports =
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
-	var createNodesFromMarkup = __webpack_require__(73);
-	var emptyFunction = __webpack_require__(26);
-	var getMarkupWrap = __webpack_require__(76);
-	var invariant = __webpack_require__(20);
+	var createNodesFromMarkup = __webpack_require__(90);
+	var emptyFunction = __webpack_require__(43);
+	var getMarkupWrap = __webpack_require__(93);
+	var invariant = __webpack_require__(37);
 
 	var OPEN_TAG_NAME_EXP = /^(<[^ \/>]+)/;
 	var RESULT_INDEX_ATTR = 'data-danger-index';
@@ -21112,7 +21343,7 @@ module.exports =
 
 
 /***/ },
-/* 73 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21129,11 +21360,11 @@ module.exports =
 
 	/*jslint evil: true, sub: true */
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
-	var createArrayFromMixed = __webpack_require__(74);
-	var getMarkupWrap = __webpack_require__(76);
-	var invariant = __webpack_require__(20);
+	var createArrayFromMixed = __webpack_require__(91);
+	var getMarkupWrap = __webpack_require__(93);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Dummy container used to render all markup.
@@ -21204,7 +21435,7 @@ module.exports =
 
 
 /***/ },
-/* 74 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21219,7 +21450,7 @@ module.exports =
 	 * @typechecks
 	 */
 
-	var toArray = __webpack_require__(75);
+	var toArray = __webpack_require__(92);
 
 	/**
 	 * Perform a heuristic test to determine if an object is "array-like".
@@ -21294,7 +21525,7 @@ module.exports =
 
 
 /***/ },
-/* 75 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21309,7 +21540,7 @@ module.exports =
 	 * @typechecks
 	 */
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Convert array-like objects to arrays.
@@ -21368,7 +21599,7 @@ module.exports =
 
 
 /***/ },
-/* 76 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21382,9 +21613,9 @@ module.exports =
 	 * @providesModule getMarkupWrap
 	 */
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Dummy container used to detect which wraps are necessary.
@@ -21489,7 +21720,7 @@ module.exports =
 
 
 /***/ },
-/* 77 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21505,7 +21736,7 @@ module.exports =
 
 	'use strict';
 
-	var keyMirror = __webpack_require__(19);
+	var keyMirror = __webpack_require__(36);
 
 	/**
 	 * When a component's children are updated, a series of update configuration
@@ -21526,7 +21757,7 @@ module.exports =
 
 
 /***/ },
-/* 78 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21542,9 +21773,9 @@ module.exports =
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(66);
-	var escapeTextContentForBrowser = __webpack_require__(59);
-	var setInnerHTML = __webpack_require__(79);
+	var ExecutionEnvironment = __webpack_require__(83);
+	var escapeTextContentForBrowser = __webpack_require__(76);
+	var setInnerHTML = __webpack_require__(96);
 
 	/**
 	 * Set the textContent property of a node, ensuring that whitespace is preserved
@@ -21572,7 +21803,7 @@ module.exports =
 
 
 /***/ },
-/* 79 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21590,7 +21821,7 @@ module.exports =
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
 	var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 	var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
@@ -21665,7 +21896,7 @@ module.exports =
 
 
 /***/ },
-/* 80 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21681,28 +21912,28 @@ module.exports =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(57);
-	var ReactBrowserEventEmitter = __webpack_require__(81);
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactElement = __webpack_require__(24);
-	var ReactElementValidator = __webpack_require__(45);
-	var ReactEmptyComponent = __webpack_require__(89);
-	var ReactInstanceHandles = __webpack_require__(32);
-	var ReactInstanceMap = __webpack_require__(38);
-	var ReactMarkupChecksum = __webpack_require__(90);
-	var ReactPerf = __webpack_require__(41);
-	var ReactReconciler = __webpack_require__(42);
-	var ReactUpdateQueue = __webpack_require__(36);
-	var ReactUpdates = __webpack_require__(39);
+	var DOMProperty = __webpack_require__(74);
+	var ReactBrowserEventEmitter = __webpack_require__(98);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactElement = __webpack_require__(41);
+	var ReactElementValidator = __webpack_require__(62);
+	var ReactEmptyComponent = __webpack_require__(106);
+	var ReactInstanceHandles = __webpack_require__(49);
+	var ReactInstanceMap = __webpack_require__(55);
+	var ReactMarkupChecksum = __webpack_require__(107);
+	var ReactPerf = __webpack_require__(58);
+	var ReactReconciler = __webpack_require__(59);
+	var ReactUpdateQueue = __webpack_require__(53);
+	var ReactUpdates = __webpack_require__(56);
 
-	var emptyObject = __webpack_require__(29);
-	var containsNode = __webpack_require__(92);
-	var getReactRootElementInContainer = __webpack_require__(95);
-	var instantiateReactComponent = __webpack_require__(96);
-	var invariant = __webpack_require__(20);
-	var setInnerHTML = __webpack_require__(79);
-	var shouldUpdateReactComponent = __webpack_require__(99);
-	var warning = __webpack_require__(25);
+	var emptyObject = __webpack_require__(46);
+	var containsNode = __webpack_require__(109);
+	var getReactRootElementInContainer = __webpack_require__(112);
+	var instantiateReactComponent = __webpack_require__(113);
+	var invariant = __webpack_require__(37);
+	var setInnerHTML = __webpack_require__(96);
+	var shouldUpdateReactComponent = __webpack_require__(116);
+	var warning = __webpack_require__(42);
 
 	var SEPARATOR = ReactInstanceHandles.SEPARATOR;
 
@@ -22558,7 +22789,7 @@ module.exports =
 
 
 /***/ },
-/* 81 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22575,14 +22806,14 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var EventPluginHub = __webpack_require__(82);
-	var EventPluginRegistry = __webpack_require__(83);
-	var ReactEventEmitterMixin = __webpack_require__(86);
-	var ViewportMetrics = __webpack_require__(87);
+	var EventConstants = __webpack_require__(35);
+	var EventPluginHub = __webpack_require__(99);
+	var EventPluginRegistry = __webpack_require__(100);
+	var ReactEventEmitterMixin = __webpack_require__(103);
+	var ViewportMetrics = __webpack_require__(104);
 
-	var assign = __webpack_require__(28);
-	var isEventSupported = __webpack_require__(88);
+	var assign = __webpack_require__(45);
+	var isEventSupported = __webpack_require__(105);
 
 	/**
 	 * Summary of `ReactBrowserEventEmitter` event handling:
@@ -22915,7 +23146,7 @@ module.exports =
 
 
 /***/ },
-/* 82 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22931,12 +23162,12 @@ module.exports =
 
 	'use strict';
 
-	var EventPluginRegistry = __webpack_require__(83);
-	var EventPluginUtils = __webpack_require__(17);
+	var EventPluginRegistry = __webpack_require__(100);
+	var EventPluginUtils = __webpack_require__(34);
 
-	var accumulateInto = __webpack_require__(84);
-	var forEachAccumulated = __webpack_require__(85);
-	var invariant = __webpack_require__(20);
+	var accumulateInto = __webpack_require__(101);
+	var forEachAccumulated = __webpack_require__(102);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Internal store for event listeners
@@ -23195,7 +23426,7 @@ module.exports =
 
 
 /***/ },
-/* 83 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23212,7 +23443,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Injectable ordering of event plugins.
@@ -23477,7 +23708,7 @@ module.exports =
 
 
 /***/ },
-/* 84 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23493,7 +23724,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 *
@@ -23545,7 +23776,7 @@ module.exports =
 
 
 /***/ },
-/* 85 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23580,7 +23811,7 @@ module.exports =
 
 
 /***/ },
-/* 86 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23596,7 +23827,7 @@ module.exports =
 
 	'use strict';
 
-	var EventPluginHub = __webpack_require__(82);
+	var EventPluginHub = __webpack_require__(99);
 
 	function runEventQueueInBatch(events) {
 	  EventPluginHub.enqueueEvents(events);
@@ -23634,7 +23865,7 @@ module.exports =
 
 
 /***/ },
-/* 87 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23667,7 +23898,7 @@ module.exports =
 
 
 /***/ },
-/* 88 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23683,7 +23914,7 @@ module.exports =
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
 	var useHasFeature;
 	if (ExecutionEnvironment.canUseDOM) {
@@ -23736,7 +23967,7 @@ module.exports =
 
 
 /***/ },
-/* 89 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23752,10 +23983,10 @@ module.exports =
 
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
-	var ReactInstanceMap = __webpack_require__(38);
+	var ReactElement = __webpack_require__(41);
+	var ReactInstanceMap = __webpack_require__(55);
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	var component;
 	// This registry keeps track of the React IDs of the components that rendered to
@@ -23833,7 +24064,7 @@ module.exports =
 
 
 /***/ },
-/* 90 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23849,7 +24080,7 @@ module.exports =
 
 	'use strict';
 
-	var adler32 = __webpack_require__(91);
+	var adler32 = __webpack_require__(108);
 
 	var ReactMarkupChecksum = {
 	  CHECKSUM_ATTR_NAME: 'data-react-checksum',
@@ -23885,7 +24116,7 @@ module.exports =
 
 
 /***/ },
-/* 91 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23923,7 +24154,7 @@ module.exports =
 
 
 /***/ },
-/* 92 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23938,7 +24169,7 @@ module.exports =
 	 * @typechecks
 	 */
 
-	var isTextNode = __webpack_require__(93);
+	var isTextNode = __webpack_require__(110);
 
 	/*jslint bitwise:true */
 
@@ -23971,7 +24202,7 @@ module.exports =
 
 
 /***/ },
-/* 93 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23986,7 +24217,7 @@ module.exports =
 	 * @typechecks
 	 */
 
-	var isNode = __webpack_require__(94);
+	var isNode = __webpack_require__(111);
 
 	/**
 	 * @param {*} object The object to check.
@@ -24000,7 +24231,7 @@ module.exports =
 
 
 /***/ },
-/* 94 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24031,7 +24262,7 @@ module.exports =
 
 
 /***/ },
-/* 95 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24070,7 +24301,7 @@ module.exports =
 
 
 /***/ },
-/* 96 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24087,13 +24318,13 @@ module.exports =
 
 	'use strict';
 
-	var ReactCompositeComponent = __webpack_require__(97);
-	var ReactEmptyComponent = __webpack_require__(89);
-	var ReactNativeComponent = __webpack_require__(48);
+	var ReactCompositeComponent = __webpack_require__(114);
+	var ReactEmptyComponent = __webpack_require__(106);
+	var ReactNativeComponent = __webpack_require__(65);
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
+	var warning = __webpack_require__(42);
 
 	// To avoid a cyclic dependency, we create the final class in this module
 	var ReactCompositeComponentWrapper = function() { };
@@ -24210,7 +24441,7 @@ module.exports =
 
 
 /***/ },
-/* 97 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24226,25 +24457,25 @@ module.exports =
 
 	'use strict';
 
-	var ReactComponentEnvironment = __webpack_require__(98);
-	var ReactContext = __webpack_require__(27);
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactElement = __webpack_require__(24);
-	var ReactElementValidator = __webpack_require__(45);
-	var ReactInstanceMap = __webpack_require__(38);
-	var ReactLifeCycle = __webpack_require__(37);
-	var ReactNativeComponent = __webpack_require__(48);
-	var ReactPerf = __webpack_require__(41);
-	var ReactPropTypeLocations = __webpack_require__(46);
-	var ReactPropTypeLocationNames = __webpack_require__(47);
-	var ReactReconciler = __webpack_require__(42);
-	var ReactUpdates = __webpack_require__(39);
+	var ReactComponentEnvironment = __webpack_require__(115);
+	var ReactContext = __webpack_require__(44);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactElement = __webpack_require__(41);
+	var ReactElementValidator = __webpack_require__(62);
+	var ReactInstanceMap = __webpack_require__(55);
+	var ReactLifeCycle = __webpack_require__(54);
+	var ReactNativeComponent = __webpack_require__(65);
+	var ReactPerf = __webpack_require__(58);
+	var ReactPropTypeLocations = __webpack_require__(63);
+	var ReactPropTypeLocationNames = __webpack_require__(64);
+	var ReactReconciler = __webpack_require__(59);
+	var ReactUpdates = __webpack_require__(56);
 
-	var assign = __webpack_require__(28);
-	var emptyObject = __webpack_require__(29);
-	var invariant = __webpack_require__(20);
-	var shouldUpdateReactComponent = __webpack_require__(99);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var emptyObject = __webpack_require__(46);
+	var invariant = __webpack_require__(37);
+	var shouldUpdateReactComponent = __webpack_require__(116);
+	var warning = __webpack_require__(42);
 
 	function getDeclarationErrorAddendum(component) {
 	  var owner = component._currentElement._owner || null;
@@ -25125,7 +25356,7 @@ module.exports =
 
 
 /***/ },
-/* 98 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25141,7 +25372,7 @@ module.exports =
 
 	'use strict';
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	var injected = false;
 
@@ -25188,7 +25419,7 @@ module.exports =
 
 
 /***/ },
-/* 99 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25205,7 +25436,7 @@ module.exports =
 
 	'use strict';
 
-	var warning = __webpack_require__(25);
+	var warning = __webpack_require__(42);
 
 	/**
 	 * Given a `prevElement` and `nextElement`, determines if the existing
@@ -25294,7 +25525,7 @@ module.exports =
 
 
 /***/ },
-/* 100 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25313,22 +25544,22 @@ module.exports =
 
 	'use strict';
 
-	var CSSPropertyOperations = __webpack_require__(62);
-	var DOMProperty = __webpack_require__(57);
-	var DOMPropertyOperations = __webpack_require__(56);
-	var ReactBrowserEventEmitter = __webpack_require__(81);
+	var CSSPropertyOperations = __webpack_require__(79);
+	var DOMProperty = __webpack_require__(74);
+	var DOMPropertyOperations = __webpack_require__(73);
+	var ReactBrowserEventEmitter = __webpack_require__(98);
 	var ReactComponentBrowserEnvironment =
-	  __webpack_require__(60);
-	var ReactMount = __webpack_require__(80);
-	var ReactMultiChild = __webpack_require__(101);
-	var ReactPerf = __webpack_require__(41);
+	  __webpack_require__(77);
+	var ReactMount = __webpack_require__(97);
+	var ReactMultiChild = __webpack_require__(118);
+	var ReactPerf = __webpack_require__(58);
 
-	var assign = __webpack_require__(28);
-	var escapeTextContentForBrowser = __webpack_require__(59);
-	var invariant = __webpack_require__(20);
-	var isEventSupported = __webpack_require__(88);
-	var keyOf = __webpack_require__(52);
-	var warning = __webpack_require__(25);
+	var assign = __webpack_require__(45);
+	var escapeTextContentForBrowser = __webpack_require__(76);
+	var invariant = __webpack_require__(37);
+	var isEventSupported = __webpack_require__(105);
+	var keyOf = __webpack_require__(69);
+	var warning = __webpack_require__(42);
 
 	var deleteListener = ReactBrowserEventEmitter.deleteListener;
 	var listenTo = ReactBrowserEventEmitter.listenTo;
@@ -25806,7 +26037,7 @@ module.exports =
 
 
 /***/ },
-/* 101 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25823,11 +26054,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactComponentEnvironment = __webpack_require__(98);
-	var ReactMultiChildUpdateTypes = __webpack_require__(77);
+	var ReactComponentEnvironment = __webpack_require__(115);
+	var ReactMultiChildUpdateTypes = __webpack_require__(94);
 
-	var ReactReconciler = __webpack_require__(42);
-	var ReactChildReconciler = __webpack_require__(102);
+	var ReactReconciler = __webpack_require__(59);
+	var ReactChildReconciler = __webpack_require__(119);
 
 	/**
 	 * Updating children of a component may trigger recursive updates. The depth is
@@ -26240,7 +26471,7 @@ module.exports =
 
 
 /***/ },
-/* 102 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26257,11 +26488,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactReconciler = __webpack_require__(42);
+	var ReactReconciler = __webpack_require__(59);
 
-	var flattenChildren = __webpack_require__(103);
-	var instantiateReactComponent = __webpack_require__(96);
-	var shouldUpdateReactComponent = __webpack_require__(99);
+	var flattenChildren = __webpack_require__(120);
+	var instantiateReactComponent = __webpack_require__(113);
+	var shouldUpdateReactComponent = __webpack_require__(116);
 
 	/**
 	 * ReactChildReconciler provides helpers for initializing or updating a set of
@@ -26371,7 +26602,7 @@ module.exports =
 
 
 /***/ },
-/* 103 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26387,8 +26618,8 @@ module.exports =
 
 	'use strict';
 
-	var traverseAllChildren = __webpack_require__(31);
-	var warning = __webpack_require__(25);
+	var traverseAllChildren = __webpack_require__(48);
+	var warning = __webpack_require__(42);
 
 	/**
 	 * @param {function} traverseContext Context passed through traversal.
@@ -26431,7 +26662,7 @@ module.exports =
 
 
 /***/ },
-/* 104 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26447,42 +26678,42 @@ module.exports =
 
 	'use strict';
 
-	var BeforeInputEventPlugin = __webpack_require__(109);
-	var ChangeEventPlugin = __webpack_require__(117);
-	var ClientReactRootIndex = __webpack_require__(119);
-	var DefaultEventPluginOrder = __webpack_require__(120);
-	var EnterLeaveEventPlugin = __webpack_require__(121);
-	var ExecutionEnvironment = __webpack_require__(66);
-	var HTMLDOMPropertyConfig = __webpack_require__(125);
-	var MobileSafariClickEventPlugin = __webpack_require__(126);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
+	var BeforeInputEventPlugin = __webpack_require__(126);
+	var ChangeEventPlugin = __webpack_require__(134);
+	var ClientReactRootIndex = __webpack_require__(136);
+	var DefaultEventPluginOrder = __webpack_require__(137);
+	var EnterLeaveEventPlugin = __webpack_require__(138);
+	var ExecutionEnvironment = __webpack_require__(83);
+	var HTMLDOMPropertyConfig = __webpack_require__(142);
+	var MobileSafariClickEventPlugin = __webpack_require__(143);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
 	var ReactComponentBrowserEnvironment =
-	  __webpack_require__(60);
-	var ReactDefaultBatchingStrategy = __webpack_require__(127);
-	var ReactDOMComponent = __webpack_require__(100);
-	var ReactDOMButton = __webpack_require__(128);
-	var ReactDOMForm = __webpack_require__(131);
-	var ReactDOMImg = __webpack_require__(132);
-	var ReactDOMIDOperations = __webpack_require__(61);
-	var ReactDOMIframe = __webpack_require__(105);
-	var ReactDOMInput = __webpack_require__(133);
-	var ReactDOMOption = __webpack_require__(136);
-	var ReactDOMSelect = __webpack_require__(137);
-	var ReactDOMTextarea = __webpack_require__(138);
-	var ReactDOMTextComponent = __webpack_require__(55);
-	var ReactElement = __webpack_require__(24);
-	var ReactEventListener = __webpack_require__(139);
-	var ReactInjection = __webpack_require__(142);
-	var ReactInstanceHandles = __webpack_require__(32);
-	var ReactMount = __webpack_require__(80);
-	var ReactReconcileTransaction = __webpack_require__(143);
-	var SelectEventPlugin = __webpack_require__(149);
-	var ServerReactRootIndex = __webpack_require__(151);
-	var SimpleEventPlugin = __webpack_require__(152);
-	var SVGDOMPropertyConfig = __webpack_require__(161);
+	  __webpack_require__(77);
+	var ReactDefaultBatchingStrategy = __webpack_require__(144);
+	var ReactDOMComponent = __webpack_require__(117);
+	var ReactDOMButton = __webpack_require__(145);
+	var ReactDOMForm = __webpack_require__(148);
+	var ReactDOMImg = __webpack_require__(149);
+	var ReactDOMIDOperations = __webpack_require__(78);
+	var ReactDOMIframe = __webpack_require__(122);
+	var ReactDOMInput = __webpack_require__(150);
+	var ReactDOMOption = __webpack_require__(153);
+	var ReactDOMSelect = __webpack_require__(154);
+	var ReactDOMTextarea = __webpack_require__(155);
+	var ReactDOMTextComponent = __webpack_require__(72);
+	var ReactElement = __webpack_require__(41);
+	var ReactEventListener = __webpack_require__(156);
+	var ReactInjection = __webpack_require__(159);
+	var ReactInstanceHandles = __webpack_require__(49);
+	var ReactMount = __webpack_require__(97);
+	var ReactReconcileTransaction = __webpack_require__(160);
+	var SelectEventPlugin = __webpack_require__(166);
+	var ServerReactRootIndex = __webpack_require__(168);
+	var SimpleEventPlugin = __webpack_require__(169);
+	var SVGDOMPropertyConfig = __webpack_require__(178);
 
-	var createFullPageComponent = __webpack_require__(162);
+	var createFullPageComponent = __webpack_require__(179);
 
 	function autoGenerateWrapperClass(type) {
 	  return ReactClass.createClass({
@@ -26592,7 +26823,7 @@ module.exports =
 
 
 /***/ },
-/* 105 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26608,11 +26839,11 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var LocalEventTrapMixin = __webpack_require__(106);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
+	var EventConstants = __webpack_require__(35);
+	var LocalEventTrapMixin = __webpack_require__(123);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
 
 	var iframe = ReactElement.createFactory('iframe');
 
@@ -26641,7 +26872,7 @@ module.exports =
 
 
 /***/ },
-/* 106 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26657,11 +26888,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactBrowserEventEmitter = __webpack_require__(81);
+	var ReactBrowserEventEmitter = __webpack_require__(98);
 
-	var accumulateInto = __webpack_require__(84);
-	var forEachAccumulated = __webpack_require__(85);
-	var invariant = __webpack_require__(20);
+	var accumulateInto = __webpack_require__(101);
+	var forEachAccumulated = __webpack_require__(102);
+	var invariant = __webpack_require__(37);
 
 	function remove(event) {
 	  event.remove();
@@ -26700,7 +26931,7 @@ module.exports =
 
 
 /***/ },
-/* 107 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26716,7 +26947,7 @@ module.exports =
 
 	'use strict';
 
-	var findDOMNode = __webpack_require__(108);
+	var findDOMNode = __webpack_require__(125);
 
 	var ReactBrowserComponentMixin = {
 	  /**
@@ -26735,7 +26966,7 @@ module.exports =
 
 
 /***/ },
-/* 108 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26752,13 +26983,13 @@ module.exports =
 
 	'use strict';
 
-	var ReactCurrentOwner = __webpack_require__(30);
-	var ReactInstanceMap = __webpack_require__(38);
-	var ReactMount = __webpack_require__(80);
+	var ReactCurrentOwner = __webpack_require__(47);
+	var ReactInstanceMap = __webpack_require__(55);
+	var ReactMount = __webpack_require__(97);
 
-	var invariant = __webpack_require__(20);
-	var isNode = __webpack_require__(94);
-	var warning = __webpack_require__(25);
+	var invariant = __webpack_require__(37);
+	var isNode = __webpack_require__(111);
+	var warning = __webpack_require__(42);
 
 	/**
 	 * Returns the DOM node rendered by this element.
@@ -26810,7 +27041,7 @@ module.exports =
 
 
 /***/ },
-/* 109 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26827,14 +27058,14 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var EventPropagators = __webpack_require__(110);
-	var ExecutionEnvironment = __webpack_require__(66);
-	var FallbackCompositionState = __webpack_require__(111);
-	var SyntheticCompositionEvent = __webpack_require__(113);
-	var SyntheticInputEvent = __webpack_require__(116);
+	var EventConstants = __webpack_require__(35);
+	var EventPropagators = __webpack_require__(127);
+	var ExecutionEnvironment = __webpack_require__(83);
+	var FallbackCompositionState = __webpack_require__(128);
+	var SyntheticCompositionEvent = __webpack_require__(130);
+	var SyntheticInputEvent = __webpack_require__(133);
 
-	var keyOf = __webpack_require__(52);
+	var keyOf = __webpack_require__(69);
 
 	var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 	var START_KEYCODE = 229;
@@ -27309,7 +27540,7 @@ module.exports =
 
 
 /***/ },
-/* 110 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27325,11 +27556,11 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var EventPluginHub = __webpack_require__(82);
+	var EventConstants = __webpack_require__(35);
+	var EventPluginHub = __webpack_require__(99);
 
-	var accumulateInto = __webpack_require__(84);
-	var forEachAccumulated = __webpack_require__(85);
+	var accumulateInto = __webpack_require__(101);
+	var forEachAccumulated = __webpack_require__(102);
 
 	var PropagationPhases = EventConstants.PropagationPhases;
 	var getListener = EventPluginHub.getListener;
@@ -27453,7 +27684,7 @@ module.exports =
 
 
 /***/ },
-/* 111 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27470,10 +27701,10 @@ module.exports =
 
 	'use strict';
 
-	var PooledClass = __webpack_require__(22);
+	var PooledClass = __webpack_require__(39);
 
-	var assign = __webpack_require__(28);
-	var getTextContentAccessor = __webpack_require__(112);
+	var assign = __webpack_require__(45);
+	var getTextContentAccessor = __webpack_require__(129);
 
 	/**
 	 * This helper class stores information about text content of a target node,
@@ -27548,7 +27779,7 @@ module.exports =
 
 
 /***/ },
-/* 112 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27564,7 +27795,7 @@ module.exports =
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
 	var contentKey = null;
 
@@ -27589,7 +27820,7 @@ module.exports =
 
 
 /***/ },
-/* 113 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27606,7 +27837,7 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(114);
+	var SyntheticEvent = __webpack_require__(131);
 
 	/**
 	 * @interface Event
@@ -27638,7 +27869,7 @@ module.exports =
 
 
 /***/ },
-/* 114 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27655,11 +27886,11 @@ module.exports =
 
 	'use strict';
 
-	var PooledClass = __webpack_require__(22);
+	var PooledClass = __webpack_require__(39);
 
-	var assign = __webpack_require__(28);
-	var emptyFunction = __webpack_require__(26);
-	var getEventTarget = __webpack_require__(115);
+	var assign = __webpack_require__(45);
+	var emptyFunction = __webpack_require__(43);
+	var getEventTarget = __webpack_require__(132);
 
 	/**
 	 * @interface Event
@@ -27808,7 +28039,7 @@ module.exports =
 
 
 /***/ },
-/* 115 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27843,7 +28074,7 @@ module.exports =
 
 
 /***/ },
-/* 116 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27860,7 +28091,7 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(114);
+	var SyntheticEvent = __webpack_require__(131);
 
 	/**
 	 * @interface Event
@@ -27893,7 +28124,7 @@ module.exports =
 
 
 /***/ },
-/* 117 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27909,16 +28140,16 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var EventPluginHub = __webpack_require__(82);
-	var EventPropagators = __webpack_require__(110);
-	var ExecutionEnvironment = __webpack_require__(66);
-	var ReactUpdates = __webpack_require__(39);
-	var SyntheticEvent = __webpack_require__(114);
+	var EventConstants = __webpack_require__(35);
+	var EventPluginHub = __webpack_require__(99);
+	var EventPropagators = __webpack_require__(127);
+	var ExecutionEnvironment = __webpack_require__(83);
+	var ReactUpdates = __webpack_require__(56);
+	var SyntheticEvent = __webpack_require__(131);
 
-	var isEventSupported = __webpack_require__(88);
-	var isTextInputElement = __webpack_require__(118);
-	var keyOf = __webpack_require__(52);
+	var isEventSupported = __webpack_require__(105);
+	var isTextInputElement = __webpack_require__(135);
+	var keyOf = __webpack_require__(69);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -28279,7 +28510,7 @@ module.exports =
 
 
 /***/ },
-/* 118 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28326,7 +28557,7 @@ module.exports =
 
 
 /***/ },
-/* 119 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28355,7 +28586,7 @@ module.exports =
 
 
 /***/ },
-/* 120 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28371,7 +28602,7 @@ module.exports =
 
 	'use strict';
 
-	var keyOf = __webpack_require__(52);
+	var keyOf = __webpack_require__(69);
 
 	/**
 	 * Module that is injectable into `EventPluginHub`, that specifies a
@@ -28398,7 +28629,7 @@ module.exports =
 
 
 /***/ },
-/* 121 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28415,12 +28646,12 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var EventPropagators = __webpack_require__(110);
-	var SyntheticMouseEvent = __webpack_require__(122);
+	var EventConstants = __webpack_require__(35);
+	var EventPropagators = __webpack_require__(127);
+	var SyntheticMouseEvent = __webpack_require__(139);
 
-	var ReactMount = __webpack_require__(80);
-	var keyOf = __webpack_require__(52);
+	var ReactMount = __webpack_require__(97);
+	var keyOf = __webpack_require__(69);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 	var getFirstReactDOM = ReactMount.getFirstReactDOM;
@@ -28542,7 +28773,7 @@ module.exports =
 
 
 /***/ },
-/* 122 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28559,10 +28790,10 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(123);
-	var ViewportMetrics = __webpack_require__(87);
+	var SyntheticUIEvent = __webpack_require__(140);
+	var ViewportMetrics = __webpack_require__(104);
 
-	var getEventModifierState = __webpack_require__(124);
+	var getEventModifierState = __webpack_require__(141);
 
 	/**
 	 * @interface MouseEvent
@@ -28627,7 +28858,7 @@ module.exports =
 
 
 /***/ },
-/* 123 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28644,9 +28875,9 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(114);
+	var SyntheticEvent = __webpack_require__(131);
 
-	var getEventTarget = __webpack_require__(115);
+	var getEventTarget = __webpack_require__(132);
 
 	/**
 	 * @interface UIEvent
@@ -28693,7 +28924,7 @@ module.exports =
 
 
 /***/ },
-/* 124 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28744,7 +28975,7 @@ module.exports =
 
 
 /***/ },
-/* 125 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28762,8 +28993,8 @@ module.exports =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(57);
-	var ExecutionEnvironment = __webpack_require__(66);
+	var DOMProperty = __webpack_require__(74);
+	var ExecutionEnvironment = __webpack_require__(83);
 
 	var MUST_USE_ATTRIBUTE = DOMProperty.injection.MUST_USE_ATTRIBUTE;
 	var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
@@ -28959,7 +29190,7 @@ module.exports =
 
 
 /***/ },
-/* 126 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28976,9 +29207,9 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
+	var EventConstants = __webpack_require__(35);
 
-	var emptyFunction = __webpack_require__(26);
+	var emptyFunction = __webpack_require__(43);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -29021,7 +29252,7 @@ module.exports =
 
 
 /***/ },
-/* 127 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29037,11 +29268,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactUpdates = __webpack_require__(39);
-	var Transaction = __webpack_require__(49);
+	var ReactUpdates = __webpack_require__(56);
+	var Transaction = __webpack_require__(66);
 
-	var assign = __webpack_require__(28);
-	var emptyFunction = __webpack_require__(26);
+	var assign = __webpack_require__(45);
+	var emptyFunction = __webpack_require__(43);
 
 	var RESET_BATCHED_UPDATES = {
 	  initialize: emptyFunction,
@@ -29098,7 +29329,7 @@ module.exports =
 
 
 /***/ },
-/* 128 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29114,12 +29345,12 @@ module.exports =
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(129);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
+	var AutoFocusMixin = __webpack_require__(146);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
 
-	var keyMirror = __webpack_require__(19);
+	var keyMirror = __webpack_require__(36);
 
 	var button = ReactElement.createFactory('button');
 
@@ -29166,7 +29397,7 @@ module.exports =
 
 
 /***/ },
-/* 129 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29183,7 +29414,7 @@ module.exports =
 
 	'use strict';
 
-	var focusNode = __webpack_require__(130);
+	var focusNode = __webpack_require__(147);
 
 	var AutoFocusMixin = {
 	  componentDidMount: function() {
@@ -29197,7 +29428,7 @@ module.exports =
 
 
 /***/ },
-/* 130 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29230,7 +29461,7 @@ module.exports =
 
 
 /***/ },
-/* 131 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29246,11 +29477,11 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var LocalEventTrapMixin = __webpack_require__(106);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
+	var EventConstants = __webpack_require__(35);
+	var LocalEventTrapMixin = __webpack_require__(123);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
 
 	var form = ReactElement.createFactory('form');
 
@@ -29283,7 +29514,7 @@ module.exports =
 
 
 /***/ },
-/* 132 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29299,11 +29530,11 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var LocalEventTrapMixin = __webpack_require__(106);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
+	var EventConstants = __webpack_require__(35);
+	var LocalEventTrapMixin = __webpack_require__(123);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
 
 	var img = ReactElement.createFactory('img');
 
@@ -29333,7 +29564,7 @@ module.exports =
 
 
 /***/ },
-/* 133 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29349,17 +29580,17 @@ module.exports =
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(129);
-	var DOMPropertyOperations = __webpack_require__(56);
-	var LinkedValueUtils = __webpack_require__(134);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
-	var ReactMount = __webpack_require__(80);
-	var ReactUpdates = __webpack_require__(39);
+	var AutoFocusMixin = __webpack_require__(146);
+	var DOMPropertyOperations = __webpack_require__(73);
+	var LinkedValueUtils = __webpack_require__(151);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
+	var ReactMount = __webpack_require__(97);
+	var ReactUpdates = __webpack_require__(56);
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
 
 	var input = ReactElement.createFactory('input');
 
@@ -29512,7 +29743,7 @@ module.exports =
 
 
 /***/ },
-/* 134 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29529,9 +29760,9 @@ module.exports =
 
 	'use strict';
 
-	var ReactPropTypes = __webpack_require__(135);
+	var ReactPropTypes = __webpack_require__(152);
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	var hasReadOnlyValue = {
 	  'button': true,
@@ -29670,7 +29901,7 @@ module.exports =
 
 
 /***/ },
-/* 135 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29686,11 +29917,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
-	var ReactFragment = __webpack_require__(23);
-	var ReactPropTypeLocationNames = __webpack_require__(47);
+	var ReactElement = __webpack_require__(41);
+	var ReactFragment = __webpack_require__(40);
+	var ReactPropTypeLocationNames = __webpack_require__(64);
 
-	var emptyFunction = __webpack_require__(26);
+	var emptyFunction = __webpack_require__(43);
 
 	/**
 	 * Collection of methods that allow declaration and validation of props that are
@@ -30023,7 +30254,7 @@ module.exports =
 
 
 /***/ },
-/* 136 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30039,11 +30270,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
 
-	var warning = __webpack_require__(25);
+	var warning = __webpack_require__(42);
 
 	var option = ReactElement.createFactory('option');
 
@@ -30077,7 +30308,7 @@ module.exports =
 
 
 /***/ },
-/* 137 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30093,14 +30324,14 @@ module.exports =
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(129);
-	var LinkedValueUtils = __webpack_require__(134);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
-	var ReactUpdates = __webpack_require__(39);
+	var AutoFocusMixin = __webpack_require__(146);
+	var LinkedValueUtils = __webpack_require__(151);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
+	var ReactUpdates = __webpack_require__(56);
 
-	var assign = __webpack_require__(28);
+	var assign = __webpack_require__(45);
 
 	var select = ReactElement.createFactory('select');
 
@@ -30259,7 +30490,7 @@ module.exports =
 
 
 /***/ },
-/* 138 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30275,18 +30506,18 @@ module.exports =
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(129);
-	var DOMPropertyOperations = __webpack_require__(56);
-	var LinkedValueUtils = __webpack_require__(134);
-	var ReactBrowserComponentMixin = __webpack_require__(107);
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
-	var ReactUpdates = __webpack_require__(39);
+	var AutoFocusMixin = __webpack_require__(146);
+	var DOMPropertyOperations = __webpack_require__(73);
+	var LinkedValueUtils = __webpack_require__(151);
+	var ReactBrowserComponentMixin = __webpack_require__(124);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
+	var ReactUpdates = __webpack_require__(56);
 
-	var assign = __webpack_require__(28);
-	var invariant = __webpack_require__(20);
+	var assign = __webpack_require__(45);
+	var invariant = __webpack_require__(37);
 
-	var warning = __webpack_require__(25);
+	var warning = __webpack_require__(42);
 
 	var textarea = ReactElement.createFactory('textarea');
 
@@ -30401,7 +30632,7 @@ module.exports =
 
 
 /***/ },
-/* 139 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30418,16 +30649,16 @@ module.exports =
 
 	'use strict';
 
-	var EventListener = __webpack_require__(140);
-	var ExecutionEnvironment = __webpack_require__(66);
-	var PooledClass = __webpack_require__(22);
-	var ReactInstanceHandles = __webpack_require__(32);
-	var ReactMount = __webpack_require__(80);
-	var ReactUpdates = __webpack_require__(39);
+	var EventListener = __webpack_require__(157);
+	var ExecutionEnvironment = __webpack_require__(83);
+	var PooledClass = __webpack_require__(39);
+	var ReactInstanceHandles = __webpack_require__(49);
+	var ReactMount = __webpack_require__(97);
+	var ReactUpdates = __webpack_require__(56);
 
-	var assign = __webpack_require__(28);
-	var getEventTarget = __webpack_require__(115);
-	var getUnboundedScrollPosition = __webpack_require__(141);
+	var assign = __webpack_require__(45);
+	var getEventTarget = __webpack_require__(132);
+	var getUnboundedScrollPosition = __webpack_require__(158);
 
 	/**
 	 * Finds the parent React component of `node`.
@@ -30588,7 +30819,7 @@ module.exports =
 
 
 /***/ },
-/* 140 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30610,7 +30841,7 @@ module.exports =
 	 * @typechecks
 	 */
 
-	var emptyFunction = __webpack_require__(26);
+	var emptyFunction = __webpack_require__(43);
 
 	/**
 	 * Upstream version of event listener. Does not take into account specific
@@ -30680,7 +30911,7 @@ module.exports =
 
 
 /***/ },
-/* 141 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30724,7 +30955,7 @@ module.exports =
 
 
 /***/ },
-/* 142 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30740,17 +30971,17 @@ module.exports =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(57);
-	var EventPluginHub = __webpack_require__(82);
-	var ReactComponentEnvironment = __webpack_require__(98);
-	var ReactClass = __webpack_require__(50);
-	var ReactEmptyComponent = __webpack_require__(89);
-	var ReactBrowserEventEmitter = __webpack_require__(81);
-	var ReactNativeComponent = __webpack_require__(48);
-	var ReactDOMComponent = __webpack_require__(100);
-	var ReactPerf = __webpack_require__(41);
-	var ReactRootIndex = __webpack_require__(33);
-	var ReactUpdates = __webpack_require__(39);
+	var DOMProperty = __webpack_require__(74);
+	var EventPluginHub = __webpack_require__(99);
+	var ReactComponentEnvironment = __webpack_require__(115);
+	var ReactClass = __webpack_require__(67);
+	var ReactEmptyComponent = __webpack_require__(106);
+	var ReactBrowserEventEmitter = __webpack_require__(98);
+	var ReactNativeComponent = __webpack_require__(65);
+	var ReactDOMComponent = __webpack_require__(117);
+	var ReactPerf = __webpack_require__(58);
+	var ReactRootIndex = __webpack_require__(50);
+	var ReactUpdates = __webpack_require__(56);
 
 	var ReactInjection = {
 	  Component: ReactComponentEnvironment.injection,
@@ -30770,7 +31001,7 @@ module.exports =
 
 
 /***/ },
-/* 143 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30787,14 +31018,14 @@ module.exports =
 
 	'use strict';
 
-	var CallbackQueue = __webpack_require__(40);
-	var PooledClass = __webpack_require__(22);
-	var ReactBrowserEventEmitter = __webpack_require__(81);
-	var ReactInputSelection = __webpack_require__(144);
-	var ReactPutListenerQueue = __webpack_require__(148);
-	var Transaction = __webpack_require__(49);
+	var CallbackQueue = __webpack_require__(57);
+	var PooledClass = __webpack_require__(39);
+	var ReactBrowserEventEmitter = __webpack_require__(98);
+	var ReactInputSelection = __webpack_require__(161);
+	var ReactPutListenerQueue = __webpack_require__(165);
+	var Transaction = __webpack_require__(66);
 
-	var assign = __webpack_require__(28);
+	var assign = __webpack_require__(45);
 
 	/**
 	 * Ensures that, when possible, the selection range (currently selected text
@@ -30950,7 +31181,7 @@ module.exports =
 
 
 /***/ },
-/* 144 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30966,11 +31197,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactDOMSelection = __webpack_require__(145);
+	var ReactDOMSelection = __webpack_require__(162);
 
-	var containsNode = __webpack_require__(92);
-	var focusNode = __webpack_require__(130);
-	var getActiveElement = __webpack_require__(147);
+	var containsNode = __webpack_require__(109);
+	var focusNode = __webpack_require__(147);
+	var getActiveElement = __webpack_require__(164);
 
 	function isInDocument(node) {
 	  return containsNode(document.documentElement, node);
@@ -31089,7 +31320,7 @@ module.exports =
 
 
 /***/ },
-/* 145 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31105,10 +31336,10 @@ module.exports =
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
-	var getNodeForCharacterOffset = __webpack_require__(146);
-	var getTextContentAccessor = __webpack_require__(112);
+	var getNodeForCharacterOffset = __webpack_require__(163);
+	var getTextContentAccessor = __webpack_require__(129);
 
 	/**
 	 * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -31306,7 +31537,7 @@ module.exports =
 
 
 /***/ },
-/* 146 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31385,7 +31616,7 @@ module.exports =
 
 
 /***/ },
-/* 147 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31418,7 +31649,7 @@ module.exports =
 
 
 /***/ },
-/* 148 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31434,10 +31665,10 @@ module.exports =
 
 	'use strict';
 
-	var PooledClass = __webpack_require__(22);
-	var ReactBrowserEventEmitter = __webpack_require__(81);
+	var PooledClass = __webpack_require__(39);
+	var ReactBrowserEventEmitter = __webpack_require__(98);
 
-	var assign = __webpack_require__(28);
+	var assign = __webpack_require__(45);
 
 	function ReactPutListenerQueue() {
 	  this.listenersToPut = [];
@@ -31478,7 +31709,7 @@ module.exports =
 
 
 /***/ },
-/* 149 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31494,15 +31725,15 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var EventPropagators = __webpack_require__(110);
-	var ReactInputSelection = __webpack_require__(144);
-	var SyntheticEvent = __webpack_require__(114);
+	var EventConstants = __webpack_require__(35);
+	var EventPropagators = __webpack_require__(127);
+	var ReactInputSelection = __webpack_require__(161);
+	var SyntheticEvent = __webpack_require__(131);
 
-	var getActiveElement = __webpack_require__(147);
-	var isTextInputElement = __webpack_require__(118);
-	var keyOf = __webpack_require__(52);
-	var shallowEqual = __webpack_require__(150);
+	var getActiveElement = __webpack_require__(164);
+	var isTextInputElement = __webpack_require__(135);
+	var keyOf = __webpack_require__(69);
+	var shallowEqual = __webpack_require__(167);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -31677,7 +31908,7 @@ module.exports =
 
 
 /***/ },
-/* 150 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31725,7 +31956,7 @@ module.exports =
 
 
 /***/ },
-/* 151 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31760,7 +31991,7 @@ module.exports =
 
 
 /***/ },
-/* 152 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31776,24 +32007,24 @@ module.exports =
 
 	'use strict';
 
-	var EventConstants = __webpack_require__(18);
-	var EventPluginUtils = __webpack_require__(17);
-	var EventPropagators = __webpack_require__(110);
-	var SyntheticClipboardEvent = __webpack_require__(153);
-	var SyntheticEvent = __webpack_require__(114);
-	var SyntheticFocusEvent = __webpack_require__(154);
-	var SyntheticKeyboardEvent = __webpack_require__(155);
-	var SyntheticMouseEvent = __webpack_require__(122);
-	var SyntheticDragEvent = __webpack_require__(158);
-	var SyntheticTouchEvent = __webpack_require__(159);
-	var SyntheticUIEvent = __webpack_require__(123);
-	var SyntheticWheelEvent = __webpack_require__(160);
+	var EventConstants = __webpack_require__(35);
+	var EventPluginUtils = __webpack_require__(34);
+	var EventPropagators = __webpack_require__(127);
+	var SyntheticClipboardEvent = __webpack_require__(170);
+	var SyntheticEvent = __webpack_require__(131);
+	var SyntheticFocusEvent = __webpack_require__(171);
+	var SyntheticKeyboardEvent = __webpack_require__(172);
+	var SyntheticMouseEvent = __webpack_require__(139);
+	var SyntheticDragEvent = __webpack_require__(175);
+	var SyntheticTouchEvent = __webpack_require__(176);
+	var SyntheticUIEvent = __webpack_require__(140);
+	var SyntheticWheelEvent = __webpack_require__(177);
 
-	var getEventCharCode = __webpack_require__(156);
+	var getEventCharCode = __webpack_require__(173);
 
-	var invariant = __webpack_require__(20);
-	var keyOf = __webpack_require__(52);
-	var warning = __webpack_require__(25);
+	var invariant = __webpack_require__(37);
+	var keyOf = __webpack_require__(69);
+	var warning = __webpack_require__(42);
 
 	var topLevelTypes = EventConstants.topLevelTypes;
 
@@ -32190,7 +32421,7 @@ module.exports =
 
 
 /***/ },
-/* 153 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32207,7 +32438,7 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticEvent = __webpack_require__(114);
+	var SyntheticEvent = __webpack_require__(131);
 
 	/**
 	 * @interface Event
@@ -32239,7 +32470,7 @@ module.exports =
 
 
 /***/ },
-/* 154 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32256,7 +32487,7 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(123);
+	var SyntheticUIEvent = __webpack_require__(140);
 
 	/**
 	 * @interface FocusEvent
@@ -32282,7 +32513,7 @@ module.exports =
 
 
 /***/ },
-/* 155 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32299,11 +32530,11 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(123);
+	var SyntheticUIEvent = __webpack_require__(140);
 
-	var getEventCharCode = __webpack_require__(156);
-	var getEventKey = __webpack_require__(157);
-	var getEventModifierState = __webpack_require__(124);
+	var getEventCharCode = __webpack_require__(173);
+	var getEventKey = __webpack_require__(174);
+	var getEventModifierState = __webpack_require__(141);
 
 	/**
 	 * @interface KeyboardEvent
@@ -32373,7 +32604,7 @@ module.exports =
 
 
 /***/ },
-/* 156 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32429,7 +32660,7 @@ module.exports =
 
 
 /***/ },
-/* 157 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32446,7 +32677,7 @@ module.exports =
 
 	'use strict';
 
-	var getEventCharCode = __webpack_require__(156);
+	var getEventCharCode = __webpack_require__(173);
 
 	/**
 	 * Normalization of deprecated HTML5 `key` values
@@ -32538,7 +32769,7 @@ module.exports =
 
 
 /***/ },
-/* 158 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32555,7 +32786,7 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticMouseEvent = __webpack_require__(122);
+	var SyntheticMouseEvent = __webpack_require__(139);
 
 	/**
 	 * @interface DragEvent
@@ -32581,7 +32812,7 @@ module.exports =
 
 
 /***/ },
-/* 159 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32598,9 +32829,9 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticUIEvent = __webpack_require__(123);
+	var SyntheticUIEvent = __webpack_require__(140);
 
-	var getEventModifierState = __webpack_require__(124);
+	var getEventModifierState = __webpack_require__(141);
 
 	/**
 	 * @interface TouchEvent
@@ -32633,7 +32864,7 @@ module.exports =
 
 
 /***/ },
-/* 160 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32650,7 +32881,7 @@ module.exports =
 
 	'use strict';
 
-	var SyntheticMouseEvent = __webpack_require__(122);
+	var SyntheticMouseEvent = __webpack_require__(139);
 
 	/**
 	 * @interface WheelEvent
@@ -32698,7 +32929,7 @@ module.exports =
 
 
 /***/ },
-/* 161 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32716,7 +32947,7 @@ module.exports =
 
 	'use strict';
 
-	var DOMProperty = __webpack_require__(57);
+	var DOMProperty = __webpack_require__(74);
 
 	var MUST_USE_ATTRIBUTE = DOMProperty.injection.MUST_USE_ATTRIBUTE;
 
@@ -32796,7 +33027,7 @@ module.exports =
 
 
 /***/ },
-/* 162 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32814,10 +33045,10 @@ module.exports =
 	'use strict';
 
 	// Defeat circular references by requiring this directly.
-	var ReactClass = __webpack_require__(50);
-	var ReactElement = __webpack_require__(24);
+	var ReactClass = __webpack_require__(67);
+	var ReactElement = __webpack_require__(41);
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Create a component that will throw an exception when unmounted.
@@ -32860,7 +33091,7 @@ module.exports =
 
 
 /***/ },
-/* 163 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32876,15 +33107,15 @@ module.exports =
 	 */
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
-	var ReactInstanceHandles = __webpack_require__(32);
-	var ReactMarkupChecksum = __webpack_require__(90);
+	var ReactElement = __webpack_require__(41);
+	var ReactInstanceHandles = __webpack_require__(49);
+	var ReactMarkupChecksum = __webpack_require__(107);
 	var ReactServerRenderingTransaction =
-	  __webpack_require__(164);
+	  __webpack_require__(181);
 
-	var emptyObject = __webpack_require__(29);
-	var instantiateReactComponent = __webpack_require__(96);
-	var invariant = __webpack_require__(20);
+	var emptyObject = __webpack_require__(46);
+	var instantiateReactComponent = __webpack_require__(113);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * @param {ReactElement} element
@@ -32944,7 +33175,7 @@ module.exports =
 
 
 /***/ },
-/* 164 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -32961,13 +33192,13 @@ module.exports =
 
 	'use strict';
 
-	var PooledClass = __webpack_require__(22);
-	var CallbackQueue = __webpack_require__(40);
-	var ReactPutListenerQueue = __webpack_require__(148);
-	var Transaction = __webpack_require__(49);
+	var PooledClass = __webpack_require__(39);
+	var CallbackQueue = __webpack_require__(57);
+	var ReactPutListenerQueue = __webpack_require__(165);
+	var Transaction = __webpack_require__(66);
 
-	var assign = __webpack_require__(28);
-	var emptyFunction = __webpack_require__(26);
+	var assign = __webpack_require__(45);
+	var emptyFunction = __webpack_require__(43);
 
 	/**
 	 * Provides a `CallbackQueue` queue for collecting `onDOMReady` callbacks
@@ -33061,7 +33292,7 @@ module.exports =
 
 
 /***/ },
-/* 165 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33076,9 +33307,9 @@ module.exports =
 	 */
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
+	var ReactElement = __webpack_require__(41);
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * Returns the first child in a collection of children and verifies that there
@@ -33103,7 +33334,7 @@ module.exports =
 
 
 /***/ },
-/* 166 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33120,8 +33351,8 @@ module.exports =
 
 	'use strict';
 
-	var ReactChildren = __webpack_require__(21);
-	var ReactFragment = __webpack_require__(23);
+	var ReactChildren = __webpack_require__(38);
+	var ReactFragment = __webpack_require__(40);
 
 	var ReactTransitionChildMapping = {
 	  /**
@@ -33212,7 +33443,7 @@ module.exports =
 
 
 /***/ },
-/* 167 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33229,11 +33460,11 @@ module.exports =
 
 	'use strict';
 
-	var ReactElement = __webpack_require__(24);
-	var ReactPropTransferer = __webpack_require__(168);
+	var ReactElement = __webpack_require__(41);
+	var ReactPropTransferer = __webpack_require__(185);
 
-	var keyOf = __webpack_require__(52);
-	var warning = __webpack_require__(25);
+	var keyOf = __webpack_require__(69);
+	var warning = __webpack_require__(42);
 
 	var CHILDREN_PROP = keyOf({children: null});
 
@@ -33273,7 +33504,7 @@ module.exports =
 
 
 /***/ },
-/* 168 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33289,9 +33520,9 @@ module.exports =
 
 	'use strict';
 
-	var assign = __webpack_require__(28);
-	var emptyFunction = __webpack_require__(26);
-	var joinClasses = __webpack_require__(169);
+	var assign = __webpack_require__(45);
+	var emptyFunction = __webpack_require__(43);
+	var joinClasses = __webpack_require__(186);
 
 	/**
 	 * Creates a transfer strategy that will merge prop values using the supplied
@@ -33387,7 +33618,7 @@ module.exports =
 
 
 /***/ },
-/* 169 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33432,7 +33663,7 @@ module.exports =
 
 
 /***/ },
-/* 170 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33449,8 +33680,8 @@ module.exports =
 
 	'use strict';
 
-	var ReactLink = __webpack_require__(171);
-	var ReactStateSetters = __webpack_require__(172);
+	var ReactLink = __webpack_require__(188);
+	var ReactStateSetters = __webpack_require__(189);
 
 	/**
 	 * A simple mixin around ReactLink.forState().
@@ -33477,7 +33708,7 @@ module.exports =
 
 
 /***/ },
-/* 171 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33517,7 +33748,7 @@ module.exports =
 	 * consumption of ReactLink easier; see LinkedValueUtils and LinkedStateMixin.
 	 */
 
-	var React = __webpack_require__(16);
+	var React = __webpack_require__(33);
 
 	/**
 	 * @param {*} value current value of the link
@@ -33554,7 +33785,7 @@ module.exports =
 
 
 /***/ },
-/* 172 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33664,7 +33895,7 @@ module.exports =
 
 
 /***/ },
-/* 173 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33680,7 +33911,7 @@ module.exports =
 
 	'use strict';
 
-	var shallowEqual = __webpack_require__(150);
+	var shallowEqual = __webpack_require__(167);
 
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -33717,7 +33948,7 @@ module.exports =
 
 
 /***/ },
-/* 174 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33734,15 +33965,15 @@ module.exports =
 
 	'use strict';
 
-	var React = __webpack_require__(16);
+	var React = __webpack_require__(33);
 
-	var assign = __webpack_require__(28);
+	var assign = __webpack_require__(45);
 
 	var ReactTransitionGroup = React.createFactory(
-	  __webpack_require__(15)
+	  __webpack_require__(32)
 	);
 	var ReactCSSTransitionGroupChild = React.createFactory(
-	  __webpack_require__(175)
+	  __webpack_require__(192)
 	);
 
 	var ReactCSSTransitionGroup = React.createClass({
@@ -33791,7 +34022,7 @@ module.exports =
 
 
 /***/ },
-/* 175 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33808,13 +34039,13 @@ module.exports =
 
 	'use strict';
 
-	var React = __webpack_require__(16);
+	var React = __webpack_require__(33);
 
-	var CSSCore = __webpack_require__(176);
-	var ReactTransitionEvents = __webpack_require__(177);
+	var CSSCore = __webpack_require__(193);
+	var ReactTransitionEvents = __webpack_require__(194);
 
-	var onlyChild = __webpack_require__(165);
-	var warning = __webpack_require__(25);
+	var onlyChild = __webpack_require__(182);
+	var warning = __webpack_require__(42);
 
 	// We don't remove the element from the DOM until we receive an animationend or
 	// transitionend event. If the user screws up and forgets to add an animation
@@ -33941,7 +34172,7 @@ module.exports =
 
 
 /***/ },
-/* 176 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33956,7 +34187,7 @@ module.exports =
 	 * @typechecks
 	 */
 
-	var invariant = __webpack_require__(20);
+	var invariant = __webpack_require__(37);
 
 	/**
 	 * The CSSCore module specifies the API (and implements most of the methods)
@@ -34055,7 +34286,7 @@ module.exports =
 
 
 /***/ },
-/* 177 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34071,7 +34302,7 @@ module.exports =
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(66);
+	var ExecutionEnvironment = __webpack_require__(83);
 
 	/**
 	 * EVENT_NAME_MAP is used to determine which event fired when a
@@ -34170,7 +34401,7 @@ module.exports =
 
 
 /***/ },
-/* 178 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34201,7 +34432,7 @@ module.exports =
 	 */
 
 	'use strict';
-	var warning = __webpack_require__(25);
+	var warning = __webpack_require__(42);
 
 	var warned = false;
 
@@ -34228,7 +34459,7 @@ module.exports =
 
 
 /***/ },
-/* 179 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34246,9 +34477,9 @@ module.exports =
 
 	'use strict';
 
-	var assign = __webpack_require__(28);
-	var keyOf = __webpack_require__(52);
-	var invariant = __webpack_require__(20);
+	var assign = __webpack_require__(45);
+	var keyOf = __webpack_require__(69);
+	var invariant = __webpack_require__(37);
 	var hasOwnProperty = {}.hasOwnProperty;
 
 	function shallowCopy(x) {
@@ -34401,7 +34632,7 @@ module.exports =
 
 
 /***/ },
-/* 180 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34416,15 +34647,15 @@ module.exports =
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-	var _lodash = __webpack_require__(2);
+	var _lodash = __webpack_require__(19);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _SVGLayer2 = __webpack_require__(7);
+	var _SVGLayer2 = __webpack_require__(24);
 
 	var _SVGLayer3 = _interopRequireDefault(_SVGLayer2);
 
-	var _Core = __webpack_require__(181);
+	var _Core = __webpack_require__(198);
 
 	var Bars = (function (_SVGLayer) {
 		function Bars(domNode, data, seriesField, categoryField, valueField) {
@@ -34538,7 +34769,7 @@ module.exports =
 	};
 
 /***/ },
-/* 181 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34557,7 +34788,7 @@ module.exports =
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var _lodash = __webpack_require__(2);
+	var _lodash = __webpack_require__(19);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -34658,17 +34889,17 @@ module.exports =
 	exports.PolarPlot = PolarPlot;
 
 /***/ },
-/* 182 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var React = __webpack_require__(13);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
-	var ChartLayerMixin = __webpack_require__(9);
+	var React = __webpack_require__(30);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
+	var ChartLayerMixin = __webpack_require__(26);
 
-	var Bars = __webpack_require__(180);
+	var Bars = __webpack_require__(197);
 	var StackedBars = Bars.StackedBars;
 
 	var StackedBarLayer = React.createClass({
@@ -34714,16 +34945,16 @@ module.exports =
 	module.exports = StackedBarLayer;
 
 /***/ },
-/* 183 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(1);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
-	var ChartLayerMixin = __webpack_require__(9);
-	var Lines = __webpack_require__(184);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
+	var ChartLayerMixin = __webpack_require__(26);
+	var Lines = __webpack_require__(201);
 
 	var LineLayer = React.createClass({
 		displayName: "LineLayer",
@@ -34752,13 +34983,13 @@ module.exports =
 	module.exports = LineLayer;
 
 /***/ },
-/* 184 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _ = __webpack_require__(2);
-	var SVGLayer = __webpack_require__(7);
+	var _ = __webpack_require__(19);
+	var SVGLayer = __webpack_require__(24);
 
 	var Lines = function Lines(domNode, data, max, min) {
 		SVGLayer.call(this, domNode);
@@ -34795,17 +35026,17 @@ module.exports =
 	module.exports = Lines;
 
 /***/ },
-/* 185 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(1);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
-	var ChartLayerMixin = __webpack_require__(9);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
+	var ChartLayerMixin = __webpack_require__(26);
 
-	var Circles = __webpack_require__(186);
+	var Circles = __webpack_require__(203);
 
 	var CircleLayer = React.createClass({
 		displayName: "CircleLayer",
@@ -34846,12 +35077,12 @@ module.exports =
 	module.exports = CircleLayer;
 
 /***/ },
-/* 186 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _ = __webpack_require__(2);
+	var _ = __webpack_require__(19);
 
 	var Circles = function Circles(domNode, data, min, max, xField, yField, valueField) {
 
@@ -34893,16 +35124,16 @@ module.exports =
 	module.exports = Circles;
 
 /***/ },
-/* 187 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var React = __webpack_require__(13);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
-	var ChartLayerMixin = __webpack_require__(9);
-	var ScatterPoints = __webpack_require__(188);
+	var React = __webpack_require__(30);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
+	var ChartLayerMixin = __webpack_require__(26);
+	var ScatterPoints = __webpack_require__(205);
 
 	var ScatterLayer = React.createClass({
 		displayName: "ScatterLayer",
@@ -34944,15 +35175,15 @@ module.exports =
 	module.exports = ScatterLayer;
 
 /***/ },
-/* 188 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _ = __webpack_require__(2);
-	var Velocity = __webpack_require__(189);
-	var SVGLayer = __webpack_require__(7);
-	var utils = __webpack_require__(8);
+	var _ = __webpack_require__(19);
+	var Velocity = __webpack_require__(206);
+	var SVGLayer = __webpack_require__(24);
+	var utils = __webpack_require__(25);
 
 	function ScatterPoints(domNode, data, xField, yField, xMin, xMax, yMin, yMax, classFunc, onClickDot, onMouseoverDot, onMouseoutDot) {
 		SVGLayer.call(this, domNode);
@@ -35021,3889 +35252,22 @@ module.exports =
 	module.exports = ScatterPoints;
 
 /***/ },
-/* 189 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! VelocityJS.org (1.2.2). (C) 2014 Julian Shapiro. MIT @license: en.wikipedia.org/wiki/MIT_License */
-
-	/*************************
-	   Velocity jQuery Shim
-	*************************/
-
-	/*! VelocityJS.org jQuery Shim (1.0.1). (C) 2014 The jQuery Foundation. MIT @license: en.wikipedia.org/wiki/MIT_License. */
-
-	/* This file contains the jQuery functions that Velocity relies on, thereby removing Velocity's dependency on a full copy of jQuery, and allowing it to work in any environment. */
-	/* These shimmed functions are only used if jQuery isn't present. If both this shim and jQuery are loaded, Velocity defaults to jQuery proper. */
-	/* Browser support: Using this shim instead of jQuery proper removes support for IE8. */
-
-	;(function (window) {
-	    /***************
-	         Setup
-	    ***************/
-
-	    /* If jQuery is already loaded, there's no point in loading this shim. */
-	    if (window.jQuery) {
-	        return;
-	    }
-
-	    /* jQuery base. */
-	    var $ = function (selector, context) {
-	        return new $.fn.init(selector, context);
-	    };
-
-	    /********************
-	       Private Methods
-	    ********************/
-
-	    /* jQuery */
-	    $.isWindow = function (obj) {
-	        /* jshint eqeqeq: false */
-	        return obj != null && obj == obj.window;
-	    };
-
-	    /* jQuery */
-	    $.type = function (obj) {
-	        if (obj == null) {
-	            return obj + "";
-	        }
-
-	        return typeof obj === "object" || typeof obj === "function" ?
-	            class2type[toString.call(obj)] || "object" :
-	            typeof obj;
-	    };
-
-	    /* jQuery */
-	    $.isArray = Array.isArray || function (obj) {
-	        return $.type(obj) === "array";
-	    };
-
-	    /* jQuery */
-	    function isArraylike (obj) {
-	        var length = obj.length,
-	            type = $.type(obj);
-
-	        if (type === "function" || $.isWindow(obj)) {
-	            return false;
-	        }
-
-	        if (obj.nodeType === 1 && length) {
-	            return true;
-	        }
-
-	        return type === "array" || length === 0 || typeof length === "number" && length > 0 && (length - 1) in obj;
-	    }
-
-	    /***************
-	       $ Methods
-	    ***************/
-
-	    /* jQuery: Support removed for IE<9. */
-	    $.isPlainObject = function (obj) {
-	        var key;
-
-	        if (!obj || $.type(obj) !== "object" || obj.nodeType || $.isWindow(obj)) {
-	            return false;
-	        }
-
-	        try {
-	            if (obj.constructor &&
-	                !hasOwn.call(obj, "constructor") &&
-	                !hasOwn.call(obj.constructor.prototype, "isPrototypeOf")) {
-	                return false;
-	            }
-	        } catch (e) {
-	            return false;
-	        }
-
-	        for (key in obj) {}
-
-	        return key === undefined || hasOwn.call(obj, key);
-	    };
-
-	    /* jQuery */
-	    $.each = function(obj, callback, args) {
-	        var value,
-	            i = 0,
-	            length = obj.length,
-	            isArray = isArraylike(obj);
-
-	        if (args) {
-	            if (isArray) {
-	                for (; i < length; i++) {
-	                    value = callback.apply(obj[i], args);
-
-	                    if (value === false) {
-	                        break;
-	                    }
-	                }
-	            } else {
-	                for (i in obj) {
-	                    value = callback.apply(obj[i], args);
-
-	                    if (value === false) {
-	                        break;
-	                    }
-	                }
-	            }
-
-	        } else {
-	            if (isArray) {
-	                for (; i < length; i++) {
-	                    value = callback.call(obj[i], i, obj[i]);
-
-	                    if (value === false) {
-	                        break;
-	                    }
-	                }
-	            } else {
-	                for (i in obj) {
-	                    value = callback.call(obj[i], i, obj[i]);
-
-	                    if (value === false) {
-	                        break;
-	                    }
-	                }
-	            }
-	        }
-
-	        return obj;
-	    };
-
-	    /* Custom */
-	    $.data = function (node, key, value) {
-	        /* $.getData() */
-	        if (value === undefined) {
-	            var id = node[$.expando],
-	                store = id && cache[id];
-
-	            if (key === undefined) {
-	                return store;
-	            } else if (store) {
-	                if (key in store) {
-	                    return store[key];
-	                }
-	            }
-	        /* $.setData() */
-	        } else if (key !== undefined) {
-	            var id = node[$.expando] || (node[$.expando] = ++$.uuid);
-
-	            cache[id] = cache[id] || {};
-	            cache[id][key] = value;
-
-	            return value;
-	        }
-	    };
-
-	    /* Custom */
-	    $.removeData = function (node, keys) {
-	        var id = node[$.expando],
-	            store = id && cache[id];
-
-	        if (store) {
-	            $.each(keys, function(_, key) {
-	                delete store[key];
-	            });
-	        }
-	    };
-
-	    /* jQuery */
-	    $.extend = function () {
-	        var src, copyIsArray, copy, name, options, clone,
-	            target = arguments[0] || {},
-	            i = 1,
-	            length = arguments.length,
-	            deep = false;
-
-	        if (typeof target === "boolean") {
-	            deep = target;
-
-	            target = arguments[i] || {};
-	            i++;
-	        }
-
-	        if (typeof target !== "object" && $.type(target) !== "function") {
-	            target = {};
-	        }
-
-	        if (i === length) {
-	            target = this;
-	            i--;
-	        }
-
-	        for (; i < length; i++) {
-	            if ((options = arguments[i]) != null) {
-	                for (name in options) {
-	                    src = target[name];
-	                    copy = options[name];
-
-	                    if (target === copy) {
-	                        continue;
-	                    }
-
-	                    if (deep && copy && ($.isPlainObject(copy) || (copyIsArray = $.isArray(copy)))) {
-	                        if (copyIsArray) {
-	                            copyIsArray = false;
-	                            clone = src && $.isArray(src) ? src : [];
-
-	                        } else {
-	                            clone = src && $.isPlainObject(src) ? src : {};
-	                        }
-
-	                        target[name] = $.extend(deep, clone, copy);
-
-	                    } else if (copy !== undefined) {
-	                        target[name] = copy;
-	                    }
-	                }
-	            }
-	        }
-
-	        return target;
-	    };
-
-	    /* jQuery 1.4.3 */
-	    $.queue = function (elem, type, data) {
-	        function $makeArray (arr, results) {
-	            var ret = results || [];
-
-	            if (arr != null) {
-	                if (isArraylike(Object(arr))) {
-	                    /* $.merge */
-	                    (function(first, second) {
-	                        var len = +second.length,
-	                            j = 0,
-	                            i = first.length;
-
-	                        while (j < len) {
-	                            first[i++] = second[j++];
-	                        }
-
-	                        if (len !== len) {
-	                            while (second[j] !== undefined) {
-	                                first[i++] = second[j++];
-	                            }
-	                        }
-
-	                        first.length = i;
-
-	                        return first;
-	                    })(ret, typeof arr === "string" ? [arr] : arr);
-	                } else {
-	                    [].push.call(ret, arr);
-	                }
-	            }
-
-	            return ret;
-	        }
-
-	        if (!elem) {
-	            return;
-	        }
-
-	        type = (type || "fx") + "queue";
-
-	        var q = $.data(elem, type);
-
-	        if (!data) {
-	            return q || [];
-	        }
-
-	        if (!q || $.isArray(data)) {
-	            q = $.data(elem, type, $makeArray(data));
-	        } else {
-	            q.push(data);
-	        }
-
-	        return q;
-	    };
-
-	    /* jQuery 1.4.3 */
-	    $.dequeue = function (elems, type) {
-	        /* Custom: Embed element iteration. */
-	        $.each(elems.nodeType ? [ elems ] : elems, function(i, elem) {
-	            type = type || "fx";
-
-	            var queue = $.queue(elem, type),
-	                fn = queue.shift();
-
-	            if (fn === "inprogress") {
-	                fn = queue.shift();
-	            }
-
-	            if (fn) {
-	                if (type === "fx") {
-	                    queue.unshift("inprogress");
-	                }
-
-	                fn.call(elem, function() {
-	                    $.dequeue(elem, type);
-	                });
-	            }
-	        });
-	    };
-
-	    /******************
-	       $.fn Methods
-	    ******************/
-
-	    /* jQuery */
-	    $.fn = $.prototype = {
-	        init: function (selector) {
-	            /* Just return the element wrapped inside an array; don't proceed with the actual jQuery node wrapping process. */
-	            if (selector.nodeType) {
-	                this[0] = selector;
-
-	                return this;
-	            } else {
-	                throw new Error("Not a DOM node.");
-	            }
-	        },
-
-	        offset: function () {
-	            /* jQuery altered code: Dropped disconnected DOM node checking. */
-	            var box = this[0].getBoundingClientRect ? this[0].getBoundingClientRect() : { top: 0, left: 0 };
-
-	            return {
-	                top: box.top + (window.pageYOffset || document.scrollTop  || 0)  - (document.clientTop  || 0),
-	                left: box.left + (window.pageXOffset || document.scrollLeft  || 0) - (document.clientLeft || 0)
-	            };
-	        },
-
-	        position: function () {
-	            /* jQuery */
-	            function offsetParent() {
-	                var offsetParent = this.offsetParent || document;
-
-	                while (offsetParent && (!offsetParent.nodeType.toLowerCase === "html" && offsetParent.style.position === "static")) {
-	                    offsetParent = offsetParent.offsetParent;
-	                }
-
-	                return offsetParent || document;
-	            }
-
-	            /* Zepto */
-	            var elem = this[0],
-	                offsetParent = offsetParent.apply(elem),
-	                offset = this.offset(),
-	                parentOffset = /^(?:body|html)$/i.test(offsetParent.nodeName) ? { top: 0, left: 0 } : $(offsetParent).offset()
-
-	            offset.top -= parseFloat(elem.style.marginTop) || 0;
-	            offset.left -= parseFloat(elem.style.marginLeft) || 0;
-
-	            if (offsetParent.style) {
-	                parentOffset.top += parseFloat(offsetParent.style.borderTopWidth) || 0
-	                parentOffset.left += parseFloat(offsetParent.style.borderLeftWidth) || 0
-	            }
-
-	            return {
-	                top: offset.top - parentOffset.top,
-	                left: offset.left - parentOffset.left
-	            };
-	        }
-	    };
-
-	    /**********************
-	       Private Variables
-	    **********************/
-
-	    /* For $.data() */
-	    var cache = {};
-	    $.expando = "velocity" + (new Date().getTime());
-	    $.uuid = 0;
-
-	    /* For $.queue() */
-	    var class2type = {},
-	        hasOwn = class2type.hasOwnProperty,
-	        toString = class2type.toString;
-
-	    var types = "Boolean Number String Function Array Date RegExp Object Error".split(" ");
-	    for (var i = 0; i < types.length; i++) {
-	        class2type["[object " + types[i] + "]"] = types[i].toLowerCase();
-	    }
-
-	    /* Makes $(node) possible, without having to call init. */
-	    $.fn.init.prototype = $.fn;
-
-	    /* Globalize Velocity onto the window, and assign its Utilities property. */
-	    window.Velocity = { Utilities: $ };
-	})(window);
-
-	/******************
-	    Velocity.js
-	******************/
-
-	;(function (factory) {
-	    /* CommonJS module. */
-	    if (typeof module === "object" && typeof module.exports === "object") {
-	        module.exports = factory();
-	    /* AMD module. */
-	    } else if (true) {
-	        !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	    /* Browser globals. */
-	    } else {
-	        factory();
-	    }
-	}(function() {
-	return function (global, window, document, undefined) {
-
-	    /***************
-	        Summary
-	    ***************/
-
-	    /*
-	    - CSS: CSS stack that works independently from the rest of Velocity.
-	    - animate(): Core animation method that iterates over the targeted elements and queues the incoming call onto each element individually.
-	      - Pre-Queueing: Prepare the element for animation by instantiating its data cache and processing the call's options.
-	      - Queueing: The logic that runs once the call has reached its point of execution in the element's $.queue() stack.
-	                  Most logic is placed here to avoid risking it becoming stale (if the element's properties have changed).
-	      - Pushing: Consolidation of the tween data followed by its push onto the global in-progress calls container.
-	    - tick(): The single requestAnimationFrame loop responsible for tweening all in-progress calls.
-	    - completeCall(): Handles the cleanup process for each Velocity call.
-	    */
-
-	    /*********************
-	       Helper Functions
-	    *********************/
-
-	    /* IE detection. Gist: https://gist.github.com/julianshapiro/9098609 */
-	    var IE = (function() {
-	        if (document.documentMode) {
-	            return document.documentMode;
-	        } else {
-	            for (var i = 7; i > 4; i--) {
-	                var div = document.createElement("div");
-
-	                div.innerHTML = "<!--[if IE " + i + "]><span></span><![endif]-->";
-
-	                if (div.getElementsByTagName("span").length) {
-	                    div = null;
-
-	                    return i;
-	                }
-	            }
-	        }
-
-	        return undefined;
-	    })();
-
-	    /* rAF shim. Gist: https://gist.github.com/julianshapiro/9497513 */
-	    var rAFShim = (function() {
-	        var timeLast = 0;
-
-	        return window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
-	            var timeCurrent = (new Date()).getTime(),
-	                timeDelta;
-
-	            /* Dynamically set delay on a per-tick basis to match 60fps. */
-	            /* Technique by Erik Moller. MIT license: https://gist.github.com/paulirish/1579671 */
-	            timeDelta = Math.max(0, 16 - (timeCurrent - timeLast));
-	            timeLast = timeCurrent + timeDelta;
-
-	            return setTimeout(function() { callback(timeCurrent + timeDelta); }, timeDelta);
-	        };
-	    })();
-
-	    /* Array compacting. Copyright Lo-Dash. MIT License: https://github.com/lodash/lodash/blob/master/LICENSE.txt */
-	    function compactSparseArray (array) {
-	        var index = -1,
-	            length = array ? array.length : 0,
-	            result = [];
-
-	        while (++index < length) {
-	            var value = array[index];
-
-	            if (value) {
-	                result.push(value);
-	            }
-	        }
-
-	        return result;
-	    }
-
-	    function sanitizeElements (elements) {
-	        /* Unwrap jQuery/Zepto objects. */
-	        if (Type.isWrapped(elements)) {
-	            elements = [].slice.call(elements);
-	        /* Wrap a single element in an array so that $.each() can iterate with the element instead of its node's children. */
-	        } else if (Type.isNode(elements)) {
-	            elements = [ elements ];
-	        }
-
-	        return elements;
-	    }
-
-	    var Type = {
-	        isString: function (variable) {
-	            return (typeof variable === "string");
-	        },
-	        isArray: Array.isArray || function (variable) {
-	            return Object.prototype.toString.call(variable) === "[object Array]";
-	        },
-	        isFunction: function (variable) {
-	            return Object.prototype.toString.call(variable) === "[object Function]";
-	        },
-	        isNode: function (variable) {
-	            return variable && variable.nodeType;
-	        },
-	        /* Copyright Martin Bohm. MIT License: https://gist.github.com/Tomalak/818a78a226a0738eaade */
-	        isNodeList: function (variable) {
-	            return typeof variable === "object" &&
-	                /^\[object (HTMLCollection|NodeList|Object)\]$/.test(Object.prototype.toString.call(variable)) &&
-	                variable.length !== undefined &&
-	                (variable.length === 0 || (typeof variable[0] === "object" && variable[0].nodeType > 0));
-	        },
-	        /* Determine if variable is a wrapped jQuery or Zepto element. */
-	        isWrapped: function (variable) {
-	            return variable && (variable.jquery || (window.Zepto && window.Zepto.zepto.isZ(variable)));
-	        },
-	        isSVG: function (variable) {
-	            return window.SVGElement && (variable instanceof window.SVGElement);
-	        },
-	        isEmptyObject: function (variable) {
-	            for (var name in variable) {
-	                return false;
-	            }
-
-	            return true;
-	        }
-	    };
-
-	    /*****************
-	       Dependencies
-	    *****************/
-
-	    var $,
-	        isJQuery = false;
-
-	    if (global.fn && global.fn.jquery) {
-	        $ = global;
-	        isJQuery = true;
-	    } else {
-	        $ = window.Velocity.Utilities;
-	    }
-
-	    if (IE <= 8 && !isJQuery) {
-	        throw new Error("Velocity: IE8 and below require jQuery to be loaded before Velocity.");
-	    } else if (IE <= 7) {
-	        /* Revert to jQuery's $.animate(), and lose Velocity's extra features. */
-	        jQuery.fn.velocity = jQuery.fn.animate;
-
-	        /* Now that $.fn.velocity is aliased, abort this Velocity declaration. */
-	        return;
-	    }
-
-	    /*****************
-	        Constants
-	    *****************/
-
-	    var DURATION_DEFAULT = 400,
-	        EASING_DEFAULT = "swing";
-
-	    /*************
-	        State
-	    *************/
-
-	    var Velocity = {
-	        /* Container for page-wide Velocity state data. */
-	        State: {
-	            /* Detect mobile devices to determine if mobileHA should be turned on. */
-	            isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-	            /* The mobileHA option's behavior changes on older Android devices (Gingerbread, versions 2.3.3-2.3.7). */
-	            isAndroid: /Android/i.test(navigator.userAgent),
-	            isGingerbread: /Android 2\.3\.[3-7]/i.test(navigator.userAgent),
-	            isChrome: window.chrome,
-	            isFirefox: /Firefox/i.test(navigator.userAgent),
-	            /* Create a cached element for re-use when checking for CSS property prefixes. */
-	            prefixElement: document.createElement("div"),
-	            /* Cache every prefix match to avoid repeating lookups. */
-	            prefixMatches: {},
-	            /* Cache the anchor used for animating window scrolling. */
-	            scrollAnchor: null,
-	            /* Cache the browser-specific property names associated with the scroll anchor. */
-	            scrollPropertyLeft: null,
-	            scrollPropertyTop: null,
-	            /* Keep track of whether our RAF tick is running. */
-	            isTicking: false,
-	            /* Container for every in-progress call to Velocity. */
-	            calls: []
-	        },
-	        /* Velocity's custom CSS stack. Made global for unit testing. */
-	        CSS: { /* Defined below. */ },
-	        /* A shim of the jQuery utility functions used by Velocity -- provided by Velocity's optional jQuery shim. */
-	        Utilities: $,
-	        /* Container for the user's custom animation redirects that are referenced by name in place of the properties map argument. */
-	        Redirects: { /* Manually registered by the user. */ },
-	        Easings: { /* Defined below. */ },
-	        /* Attempt to use ES6 Promises by default. Users can override this with a third-party promises library. */
-	        Promise: window.Promise,
-	        /* Velocity option defaults, which can be overriden by the user. */
-	        defaults: {
-	            queue: "",
-	            duration: DURATION_DEFAULT,
-	            easing: EASING_DEFAULT,
-	            begin: undefined,
-	            complete: undefined,
-	            progress: undefined,
-	            display: undefined,
-	            visibility: undefined,
-	            loop: false,
-	            delay: false,
-	            mobileHA: true,
-	            /* Advanced: Set to false to prevent property values from being cached between consecutive Velocity-initiated chain calls. */
-	            _cacheValues: true
-	        },
-	        /* A design goal of Velocity is to cache data wherever possible in order to avoid DOM requerying. Accordingly, each element has a data cache. */
-	        init: function (element) {
-	            $.data(element, "velocity", {
-	                /* Store whether this is an SVG element, since its properties are retrieved and updated differently than standard HTML elements. */
-	                isSVG: Type.isSVG(element),
-	                /* Keep track of whether the element is currently being animated by Velocity.
-	                   This is used to ensure that property values are not transferred between non-consecutive (stale) calls. */
-	                isAnimating: false,
-	                /* A reference to the element's live computedStyle object. Learn more here: https://developer.mozilla.org/en/docs/Web/API/window.getComputedStyle */
-	                computedStyle: null,
-	                /* Tween data is cached for each animation on the element so that data can be passed across calls --
-	                   in particular, end values are used as subsequent start values in consecutive Velocity calls. */
-	                tweensContainer: null,
-	                /* The full root property values of each CSS hook being animated on this element are cached so that:
-	                   1) Concurrently-animating hooks sharing the same root can have their root values' merged into one while tweening.
-	                   2) Post-hook-injection root values can be transferred over to consecutively chained Velocity calls as starting root values. */
-	                rootPropertyValueCache: {},
-	                /* A cache for transform updates, which must be manually flushed via CSS.flushTransformCache(). */
-	                transformCache: {}
-	            });
-	        },
-	        /* A parallel to jQuery's $.css(), used for getting/setting Velocity's hooked CSS properties. */
-	        hook: null, /* Defined below. */
-	        /* Velocity-wide animation time remapping for testing purposes. */
-	        mock: false,
-	        version: { major: 1, minor: 2, patch: 2 },
-	        /* Set to 1 or 2 (most verbose) to output debug info to console. */
-	        debug: false
-	    };
-
-	    /* Retrieve the appropriate scroll anchor and property name for the browser: https://developer.mozilla.org/en-US/docs/Web/API/Window.scrollY */
-	    if (window.pageYOffset !== undefined) {
-	        Velocity.State.scrollAnchor = window;
-	        Velocity.State.scrollPropertyLeft = "pageXOffset";
-	        Velocity.State.scrollPropertyTop = "pageYOffset";
-	    } else {
-	        Velocity.State.scrollAnchor = document.documentElement || document.body.parentNode || document.body;
-	        Velocity.State.scrollPropertyLeft = "scrollLeft";
-	        Velocity.State.scrollPropertyTop = "scrollTop";
-	    }
-
-	    /* Shorthand alias for jQuery's $.data() utility. */
-	    function Data (element) {
-	        /* Hardcode a reference to the plugin name. */
-	        var response = $.data(element, "velocity");
-
-	        /* jQuery <=1.4.2 returns null instead of undefined when no match is found. We normalize this behavior. */
-	        return response === null ? undefined : response;
-	    };
-
-	    /**************
-	        Easing
-	    **************/
-
-	    /* Step easing generator. */
-	    function generateStep (steps) {
-	        return function (p) {
-	            return Math.round(p * steps) * (1 / steps);
-	        };
-	    }
-
-	    /* Bezier curve function generator. Copyright Gaetan Renaudeau. MIT License: http://en.wikipedia.org/wiki/MIT_License */
-	    function generateBezier (mX1, mY1, mX2, mY2) {
-	        var NEWTON_ITERATIONS = 4,
-	            NEWTON_MIN_SLOPE = 0.001,
-	            SUBDIVISION_PRECISION = 0.0000001,
-	            SUBDIVISION_MAX_ITERATIONS = 10,
-	            kSplineTableSize = 11,
-	            kSampleStepSize = 1.0 / (kSplineTableSize - 1.0),
-	            float32ArraySupported = "Float32Array" in window;
-
-	        /* Must contain four arguments. */
-	        if (arguments.length !== 4) {
-	            return false;
-	        }
-
-	        /* Arguments must be numbers. */
-	        for (var i = 0; i < 4; ++i) {
-	            if (typeof arguments[i] !== "number" || isNaN(arguments[i]) || !isFinite(arguments[i])) {
-	                return false;
-	            }
-	        }
-
-	        /* X values must be in the [0, 1] range. */
-	        mX1 = Math.min(mX1, 1);
-	        mX2 = Math.min(mX2, 1);
-	        mX1 = Math.max(mX1, 0);
-	        mX2 = Math.max(mX2, 0);
-
-	        var mSampleValues = float32ArraySupported ? new Float32Array(kSplineTableSize) : new Array(kSplineTableSize);
-
-	        function A (aA1, aA2) { return 1.0 - 3.0 * aA2 + 3.0 * aA1; }
-	        function B (aA1, aA2) { return 3.0 * aA2 - 6.0 * aA1; }
-	        function C (aA1)      { return 3.0 * aA1; }
-
-	        function calcBezier (aT, aA1, aA2) {
-	            return ((A(aA1, aA2)*aT + B(aA1, aA2))*aT + C(aA1))*aT;
-	        }
-
-	        function getSlope (aT, aA1, aA2) {
-	            return 3.0 * A(aA1, aA2)*aT*aT + 2.0 * B(aA1, aA2) * aT + C(aA1);
-	        }
-
-	        function newtonRaphsonIterate (aX, aGuessT) {
-	            for (var i = 0; i < NEWTON_ITERATIONS; ++i) {
-	                var currentSlope = getSlope(aGuessT, mX1, mX2);
-
-	                if (currentSlope === 0.0) return aGuessT;
-
-	                var currentX = calcBezier(aGuessT, mX1, mX2) - aX;
-	                aGuessT -= currentX / currentSlope;
-	            }
-
-	            return aGuessT;
-	        }
-
-	        function calcSampleValues () {
-	            for (var i = 0; i < kSplineTableSize; ++i) {
-	                mSampleValues[i] = calcBezier(i * kSampleStepSize, mX1, mX2);
-	            }
-	        }
-
-	        function binarySubdivide (aX, aA, aB) {
-	            var currentX, currentT, i = 0;
-
-	            do {
-	                currentT = aA + (aB - aA) / 2.0;
-	                currentX = calcBezier(currentT, mX1, mX2) - aX;
-	                if (currentX > 0.0) {
-	                  aB = currentT;
-	                } else {
-	                  aA = currentT;
-	                }
-	            } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS);
-
-	            return currentT;
-	        }
-
-	        function getTForX (aX) {
-	            var intervalStart = 0.0,
-	                currentSample = 1,
-	                lastSample = kSplineTableSize - 1;
-
-	            for (; currentSample != lastSample && mSampleValues[currentSample] <= aX; ++currentSample) {
-	                intervalStart += kSampleStepSize;
-	            }
-
-	            --currentSample;
-
-	            var dist = (aX - mSampleValues[currentSample]) / (mSampleValues[currentSample+1] - mSampleValues[currentSample]),
-	                guessForT = intervalStart + dist * kSampleStepSize,
-	                initialSlope = getSlope(guessForT, mX1, mX2);
-
-	            if (initialSlope >= NEWTON_MIN_SLOPE) {
-	                return newtonRaphsonIterate(aX, guessForT);
-	            } else if (initialSlope == 0.0) {
-	                return guessForT;
-	            } else {
-	                return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize);
-	            }
-	        }
-
-	        var _precomputed = false;
-
-	        function precompute() {
-	            _precomputed = true;
-	            if (mX1 != mY1 || mX2 != mY2) calcSampleValues();
-	        }
-
-	        var f = function (aX) {
-	            if (!_precomputed) precompute();
-	            if (mX1 === mY1 && mX2 === mY2) return aX;
-	            if (aX === 0) return 0;
-	            if (aX === 1) return 1;
-
-	            return calcBezier(getTForX(aX), mY1, mY2);
-	        };
-
-	        f.getControlPoints = function() { return [{ x: mX1, y: mY1 }, { x: mX2, y: mY2 }]; };
-
-	        var str = "generateBezier(" + [mX1, mY1, mX2, mY2] + ")";
-	        f.toString = function () { return str; };
-
-	        return f;
-	    }
-
-	    /* Runge-Kutta spring physics function generator. Adapted from Framer.js, copyright Koen Bok. MIT License: http://en.wikipedia.org/wiki/MIT_License */
-	    /* Given a tension, friction, and duration, a simulation at 60FPS will first run without a defined duration in order to calculate the full path. A second pass
-	       then adjusts the time delta -- using the relation between actual time and duration -- to calculate the path for the duration-constrained animation. */
-	    var generateSpringRK4 = (function () {
-	        function springAccelerationForState (state) {
-	            return (-state.tension * state.x) - (state.friction * state.v);
-	        }
-
-	        function springEvaluateStateWithDerivative (initialState, dt, derivative) {
-	            var state = {
-	                x: initialState.x + derivative.dx * dt,
-	                v: initialState.v + derivative.dv * dt,
-	                tension: initialState.tension,
-	                friction: initialState.friction
-	            };
-
-	            return { dx: state.v, dv: springAccelerationForState(state) };
-	        }
-
-	        function springIntegrateState (state, dt) {
-	            var a = {
-	                    dx: state.v,
-	                    dv: springAccelerationForState(state)
-	                },
-	                b = springEvaluateStateWithDerivative(state, dt * 0.5, a),
-	                c = springEvaluateStateWithDerivative(state, dt * 0.5, b),
-	                d = springEvaluateStateWithDerivative(state, dt, c),
-	                dxdt = 1.0 / 6.0 * (a.dx + 2.0 * (b.dx + c.dx) + d.dx),
-	                dvdt = 1.0 / 6.0 * (a.dv + 2.0 * (b.dv + c.dv) + d.dv);
-
-	            state.x = state.x + dxdt * dt;
-	            state.v = state.v + dvdt * dt;
-
-	            return state;
-	        }
-
-	        return function springRK4Factory (tension, friction, duration) {
-
-	            var initState = {
-	                    x: -1,
-	                    v: 0,
-	                    tension: null,
-	                    friction: null
-	                },
-	                path = [0],
-	                time_lapsed = 0,
-	                tolerance = 1 / 10000,
-	                DT = 16 / 1000,
-	                have_duration, dt, last_state;
-
-	            tension = parseFloat(tension) || 500;
-	            friction = parseFloat(friction) || 20;
-	            duration = duration || null;
-
-	            initState.tension = tension;
-	            initState.friction = friction;
-
-	            have_duration = duration !== null;
-
-	            /* Calculate the actual time it takes for this animation to complete with the provided conditions. */
-	            if (have_duration) {
-	                /* Run the simulation without a duration. */
-	                time_lapsed = springRK4Factory(tension, friction);
-	                /* Compute the adjusted time delta. */
-	                dt = time_lapsed / duration * DT;
-	            } else {
-	                dt = DT;
-	            }
-
-	            while (true) {
-	                /* Next/step function .*/
-	                last_state = springIntegrateState(last_state || initState, dt);
-	                /* Store the position. */
-	                path.push(1 + last_state.x);
-	                time_lapsed += 16;
-	                /* If the change threshold is reached, break. */
-	                if (!(Math.abs(last_state.x) > tolerance && Math.abs(last_state.v) > tolerance)) {
-	                    break;
-	                }
-	            }
-
-	            /* If duration is not defined, return the actual time required for completing this animation. Otherwise, return a closure that holds the
-	               computed path and returns a snapshot of the position according to a given percentComplete. */
-	            return !have_duration ? time_lapsed : function(percentComplete) { return path[ (percentComplete * (path.length - 1)) | 0 ]; };
-	        };
-	    }());
-
-	    /* jQuery easings. */
-	    Velocity.Easings = {
-	        linear: function(p) { return p; },
-	        swing: function(p) { return 0.5 - Math.cos( p * Math.PI ) / 2 },
-	        /* Bonus "spring" easing, which is a less exaggerated version of easeInOutElastic. */
-	        spring: function(p) { return 1 - (Math.cos(p * 4.5 * Math.PI) * Math.exp(-p * 6)); }
-	    };
-
-	    /* CSS3 and Robert Penner easings. */
-	    $.each(
-	        [
-	            [ "ease", [ 0.25, 0.1, 0.25, 1.0 ] ],
-	            [ "ease-in", [ 0.42, 0.0, 1.00, 1.0 ] ],
-	            [ "ease-out", [ 0.00, 0.0, 0.58, 1.0 ] ],
-	            [ "ease-in-out", [ 0.42, 0.0, 0.58, 1.0 ] ],
-	            [ "easeInSine", [ 0.47, 0, 0.745, 0.715 ] ],
-	            [ "easeOutSine", [ 0.39, 0.575, 0.565, 1 ] ],
-	            [ "easeInOutSine", [ 0.445, 0.05, 0.55, 0.95 ] ],
-	            [ "easeInQuad", [ 0.55, 0.085, 0.68, 0.53 ] ],
-	            [ "easeOutQuad", [ 0.25, 0.46, 0.45, 0.94 ] ],
-	            [ "easeInOutQuad", [ 0.455, 0.03, 0.515, 0.955 ] ],
-	            [ "easeInCubic", [ 0.55, 0.055, 0.675, 0.19 ] ],
-	            [ "easeOutCubic", [ 0.215, 0.61, 0.355, 1 ] ],
-	            [ "easeInOutCubic", [ 0.645, 0.045, 0.355, 1 ] ],
-	            [ "easeInQuart", [ 0.895, 0.03, 0.685, 0.22 ] ],
-	            [ "easeOutQuart", [ 0.165, 0.84, 0.44, 1 ] ],
-	            [ "easeInOutQuart", [ 0.77, 0, 0.175, 1 ] ],
-	            [ "easeInQuint", [ 0.755, 0.05, 0.855, 0.06 ] ],
-	            [ "easeOutQuint", [ 0.23, 1, 0.32, 1 ] ],
-	            [ "easeInOutQuint", [ 0.86, 0, 0.07, 1 ] ],
-	            [ "easeInExpo", [ 0.95, 0.05, 0.795, 0.035 ] ],
-	            [ "easeOutExpo", [ 0.19, 1, 0.22, 1 ] ],
-	            [ "easeInOutExpo", [ 1, 0, 0, 1 ] ],
-	            [ "easeInCirc", [ 0.6, 0.04, 0.98, 0.335 ] ],
-	            [ "easeOutCirc", [ 0.075, 0.82, 0.165, 1 ] ],
-	            [ "easeInOutCirc", [ 0.785, 0.135, 0.15, 0.86 ] ]
-	        ], function(i, easingArray) {
-	            Velocity.Easings[easingArray[0]] = generateBezier.apply(null, easingArray[1]);
-	        });
-
-	    /* Determine the appropriate easing type given an easing input. */
-	    function getEasing(value, duration) {
-	        var easing = value;
-
-	        /* The easing option can either be a string that references a pre-registered easing,
-	           or it can be a two-/four-item array of integers to be converted into a bezier/spring function. */
-	        if (Type.isString(value)) {
-	            /* Ensure that the easing has been assigned to jQuery's Velocity.Easings object. */
-	            if (!Velocity.Easings[value]) {
-	                easing = false;
-	            }
-	        } else if (Type.isArray(value) && value.length === 1) {
-	            easing = generateStep.apply(null, value);
-	        } else if (Type.isArray(value) && value.length === 2) {
-	            /* springRK4 must be passed the animation's duration. */
-	            /* Note: If the springRK4 array contains non-numbers, generateSpringRK4() returns an easing
-	               function generated with default tension and friction values. */
-	            easing = generateSpringRK4.apply(null, value.concat([ duration ]));
-	        } else if (Type.isArray(value) && value.length === 4) {
-	            /* Note: If the bezier array contains non-numbers, generateBezier() returns false. */
-	            easing = generateBezier.apply(null, value);
-	        } else {
-	            easing = false;
-	        }
-
-	        /* Revert to the Velocity-wide default easing type, or fall back to "swing" (which is also jQuery's default)
-	           if the Velocity-wide default has been incorrectly modified. */
-	        if (easing === false) {
-	            if (Velocity.Easings[Velocity.defaults.easing]) {
-	                easing = Velocity.defaults.easing;
-	            } else {
-	                easing = EASING_DEFAULT;
-	            }
-	        }
-
-	        return easing;
-	    }
-
-	    /*****************
-	        CSS Stack
-	    *****************/
-
-	    /* The CSS object is a highly condensed and performant CSS stack that fully replaces jQuery's.
-	       It handles the validation, getting, and setting of both standard CSS properties and CSS property hooks. */
-	    /* Note: A "CSS" shorthand is aliased so that our code is easier to read. */
-	    var CSS = Velocity.CSS = {
-
-	        /*************
-	            RegEx
-	        *************/
-
-	        RegEx: {
-	            isHex: /^#([A-f\d]{3}){1,2}$/i,
-	            /* Unwrap a property value's surrounding text, e.g. "rgba(4, 3, 2, 1)" ==> "4, 3, 2, 1" and "rect(4px 3px 2px 1px)" ==> "4px 3px 2px 1px". */
-	            valueUnwrap: /^[A-z]+\((.*)\)$/i,
-	            wrappedValueAlreadyExtracted: /[0-9.]+ [0-9.]+ [0-9.]+( [0-9.]+)?/,
-	            /* Split a multi-value property into an array of subvalues, e.g. "rgba(4, 3, 2, 1) 4px 3px 2px 1px" ==> [ "rgba(4, 3, 2, 1)", "4px", "3px", "2px", "1px" ]. */
-	            valueSplit: /([A-z]+\(.+\))|(([A-z0-9#-.]+?)(?=\s|$))/ig
-	        },
-
-	        /************
-	            Lists
-	        ************/
-
-	        Lists: {
-	            colors: [ "fill", "stroke", "stopColor", "color", "backgroundColor", "borderColor", "borderTopColor", "borderRightColor", "borderBottomColor", "borderLeftColor", "outlineColor" ],
-	            transformsBase: [ "translateX", "translateY", "scale", "scaleX", "scaleY", "skewX", "skewY", "rotateZ" ],
-	            transforms3D: [ "transformPerspective", "translateZ", "scaleZ", "rotateX", "rotateY" ]
-	        },
-
-	        /************
-	            Hooks
-	        ************/
-
-	        /* Hooks allow a subproperty (e.g. "boxShadowBlur") of a compound-value CSS property
-	           (e.g. "boxShadow: X Y Blur Spread Color") to be animated as if it were a discrete property. */
-	        /* Note: Beyond enabling fine-grained property animation, hooking is necessary since Velocity only
-	           tweens properties with single numeric values; unlike CSS transitions, Velocity does not interpolate compound-values. */
-	        Hooks: {
-	            /********************
-	                Registration
-	            ********************/
-
-	            /* Templates are a concise way of indicating which subproperties must be individually registered for each compound-value CSS property. */
-	            /* Each template consists of the compound-value's base name, its constituent subproperty names, and those subproperties' default values. */
-	            templates: {
-	                "textShadow": [ "Color X Y Blur", "black 0px 0px 0px" ],
-	                "boxShadow": [ "Color X Y Blur Spread", "black 0px 0px 0px 0px" ],
-	                "clip": [ "Top Right Bottom Left", "0px 0px 0px 0px" ],
-	                "backgroundPosition": [ "X Y", "0% 0%" ],
-	                "transformOrigin": [ "X Y Z", "50% 50% 0px" ],
-	                "perspectiveOrigin": [ "X Y", "50% 50%" ]
-	            },
-
-	            /* A "registered" hook is one that has been converted from its template form into a live,
-	               tweenable property. It contains data to associate it with its root property. */
-	            registered: {
-	                /* Note: A registered hook looks like this ==> textShadowBlur: [ "textShadow", 3 ],
-	                   which consists of the subproperty's name, the associated root property's name,
-	                   and the subproperty's position in the root's value. */
-	            },
-	            /* Convert the templates into individual hooks then append them to the registered object above. */
-	            register: function () {
-	                /* Color hooks registration: Colors are defaulted to white -- as opposed to black -- since colors that are
-	                   currently set to "transparent" default to their respective template below when color-animated,
-	                   and white is typically a closer match to transparent than black is. An exception is made for text ("color"),
-	                   which is almost always set closer to black than white. */
-	                for (var i = 0; i < CSS.Lists.colors.length; i++) {
-	                    var rgbComponents = (CSS.Lists.colors[i] === "color") ? "0 0 0 1" : "255 255 255 1";
-	                    CSS.Hooks.templates[CSS.Lists.colors[i]] = [ "Red Green Blue Alpha", rgbComponents ];
-	                }
-
-	                var rootProperty,
-	                    hookTemplate,
-	                    hookNames;
-
-	                /* In IE, color values inside compound-value properties are positioned at the end the value instead of at the beginning.
-	                   Thus, we re-arrange the templates accordingly. */
-	                if (IE) {
-	                    for (rootProperty in CSS.Hooks.templates) {
-	                        hookTemplate = CSS.Hooks.templates[rootProperty];
-	                        hookNames = hookTemplate[0].split(" ");
-
-	                        var defaultValues = hookTemplate[1].match(CSS.RegEx.valueSplit);
-
-	                        if (hookNames[0] === "Color") {
-	                            /* Reposition both the hook's name and its default value to the end of their respective strings. */
-	                            hookNames.push(hookNames.shift());
-	                            defaultValues.push(defaultValues.shift());
-
-	                            /* Replace the existing template for the hook's root property. */
-	                            CSS.Hooks.templates[rootProperty] = [ hookNames.join(" "), defaultValues.join(" ") ];
-	                        }
-	                    }
-	                }
-
-	                /* Hook registration. */
-	                for (rootProperty in CSS.Hooks.templates) {
-	                    hookTemplate = CSS.Hooks.templates[rootProperty];
-	                    hookNames = hookTemplate[0].split(" ");
-
-	                    for (var i in hookNames) {
-	                        var fullHookName = rootProperty + hookNames[i],
-	                            hookPosition = i;
-
-	                        /* For each hook, register its full name (e.g. textShadowBlur) with its root property (e.g. textShadow)
-	                           and the hook's position in its template's default value string. */
-	                        CSS.Hooks.registered[fullHookName] = [ rootProperty, hookPosition ];
-	                    }
-	                }
-	            },
-
-	            /*****************************
-	               Injection and Extraction
-	            *****************************/
-
-	            /* Look up the root property associated with the hook (e.g. return "textShadow" for "textShadowBlur"). */
-	            /* Since a hook cannot be set directly (the browser won't recognize it), style updating for hooks is routed through the hook's root property. */
-	            getRoot: function (property) {
-	                var hookData = CSS.Hooks.registered[property];
-
-	                if (hookData) {
-	                    return hookData[0];
-	                } else {
-	                    /* If there was no hook match, return the property name untouched. */
-	                    return property;
-	                }
-	            },
-	            /* Convert any rootPropertyValue, null or otherwise, into a space-delimited list of hook values so that
-	               the targeted hook can be injected or extracted at its standard position. */
-	            cleanRootPropertyValue: function(rootProperty, rootPropertyValue) {
-	                /* If the rootPropertyValue is wrapped with "rgb()", "clip()", etc., remove the wrapping to normalize the value before manipulation. */
-	                if (CSS.RegEx.valueUnwrap.test(rootPropertyValue)) {
-	                    rootPropertyValue = rootPropertyValue.match(CSS.RegEx.valueUnwrap)[1];
-	                }
-
-	                /* If rootPropertyValue is a CSS null-value (from which there's inherently no hook value to extract),
-	                   default to the root's default value as defined in CSS.Hooks.templates. */
-	                /* Note: CSS null-values include "none", "auto", and "transparent". They must be converted into their
-	                   zero-values (e.g. textShadow: "none" ==> textShadow: "0px 0px 0px black") for hook manipulation to proceed. */
-	                if (CSS.Values.isCSSNullValue(rootPropertyValue)) {
-	                    rootPropertyValue = CSS.Hooks.templates[rootProperty][1];
-	                }
-
-	                return rootPropertyValue;
-	            },
-	            /* Extracted the hook's value from its root property's value. This is used to get the starting value of an animating hook. */
-	            extractValue: function (fullHookName, rootPropertyValue) {
-	                var hookData = CSS.Hooks.registered[fullHookName];
-
-	                if (hookData) {
-	                    var hookRoot = hookData[0],
-	                        hookPosition = hookData[1];
-
-	                    rootPropertyValue = CSS.Hooks.cleanRootPropertyValue(hookRoot, rootPropertyValue);
-
-	                    /* Split rootPropertyValue into its constituent hook values then grab the desired hook at its standard position. */
-	                    return rootPropertyValue.toString().match(CSS.RegEx.valueSplit)[hookPosition];
-	                } else {
-	                    /* If the provided fullHookName isn't a registered hook, return the rootPropertyValue that was passed in. */
-	                    return rootPropertyValue;
-	                }
-	            },
-	            /* Inject the hook's value into its root property's value. This is used to piece back together the root property
-	               once Velocity has updated one of its individually hooked values through tweening. */
-	            injectValue: function (fullHookName, hookValue, rootPropertyValue) {
-	                var hookData = CSS.Hooks.registered[fullHookName];
-
-	                if (hookData) {
-	                    var hookRoot = hookData[0],
-	                        hookPosition = hookData[1],
-	                        rootPropertyValueParts,
-	                        rootPropertyValueUpdated;
-
-	                    rootPropertyValue = CSS.Hooks.cleanRootPropertyValue(hookRoot, rootPropertyValue);
-
-	                    /* Split rootPropertyValue into its individual hook values, replace the targeted value with hookValue,
-	                       then reconstruct the rootPropertyValue string. */
-	                    rootPropertyValueParts = rootPropertyValue.toString().match(CSS.RegEx.valueSplit);
-	                    rootPropertyValueParts[hookPosition] = hookValue;
-	                    rootPropertyValueUpdated = rootPropertyValueParts.join(" ");
-
-	                    return rootPropertyValueUpdated;
-	                } else {
-	                    /* If the provided fullHookName isn't a registered hook, return the rootPropertyValue that was passed in. */
-	                    return rootPropertyValue;
-	                }
-	            }
-	        },
-
-	        /*******************
-	           Normalizations
-	        *******************/
-
-	        /* Normalizations standardize CSS property manipulation by pollyfilling browser-specific implementations (e.g. opacity)
-	           and reformatting special properties (e.g. clip, rgba) to look like standard ones. */
-	        Normalizations: {
-	            /* Normalizations are passed a normalization target (either the property's name, its extracted value, or its injected value),
-	               the targeted element (which may need to be queried), and the targeted property value. */
-	            registered: {
-	                clip: function (type, element, propertyValue) {
-	                    switch (type) {
-	                        case "name":
-	                            return "clip";
-	                        /* Clip needs to be unwrapped and stripped of its commas during extraction. */
-	                        case "extract":
-	                            var extracted;
-
-	                            /* If Velocity also extracted this value, skip extraction. */
-	                            if (CSS.RegEx.wrappedValueAlreadyExtracted.test(propertyValue)) {
-	                                extracted = propertyValue;
-	                            } else {
-	                                /* Remove the "rect()" wrapper. */
-	                                extracted = propertyValue.toString().match(CSS.RegEx.valueUnwrap);
-
-	                                /* Strip off commas. */
-	                                extracted = extracted ? extracted[1].replace(/,(\s+)?/g, " ") : propertyValue;
-	                            }
-
-	                            return extracted;
-	                        /* Clip needs to be re-wrapped during injection. */
-	                        case "inject":
-	                            return "rect(" + propertyValue + ")";
-	                    }
-	                },
-
-	                blur: function(type, element, propertyValue) {
-	                    switch (type) {
-	                        case "name":
-	                            return Velocity.State.isFirefox ? "filter" : "-webkit-filter";
-	                        case "extract":
-	                            var extracted = parseFloat(propertyValue);
-
-	                            /* If extracted is NaN, meaning the value isn't already extracted. */
-	                            if (!(extracted || extracted === 0)) {
-	                                var blurComponent = propertyValue.toString().match(/blur\(([0-9]+[A-z]+)\)/i);
-
-	                                /* If the filter string had a blur component, return just the blur value and unit type. */
-	                                if (blurComponent) {
-	                                    extracted = blurComponent[1];
-	                                /* If the component doesn't exist, default blur to 0. */
-	                                } else {
-	                                    extracted = 0;
-	                                }
-	                            }
-
-	                            return extracted;
-	                        /* Blur needs to be re-wrapped during injection. */
-	                        case "inject":
-	                            /* For the blur effect to be fully de-applied, it needs to be set to "none" instead of 0. */
-	                            if (!parseFloat(propertyValue)) {
-	                                return "none";
-	                            } else {
-	                                return "blur(" + propertyValue + ")";
-	                            }
-	                    }
-	                },
-
-	                /* <=IE8 do not support the standard opacity property. They use filter:alpha(opacity=INT) instead. */
-	                opacity: function (type, element, propertyValue) {
-	                    if (IE <= 8) {
-	                        switch (type) {
-	                            case "name":
-	                                return "filter";
-	                            case "extract":
-	                                /* <=IE8 return a "filter" value of "alpha(opacity=\d{1,3})".
-	                                   Extract the value and convert it to a decimal value to match the standard CSS opacity property's formatting. */
-	                                var extracted = propertyValue.toString().match(/alpha\(opacity=(.*)\)/i);
-
-	                                if (extracted) {
-	                                    /* Convert to decimal value. */
-	                                    propertyValue = extracted[1] / 100;
-	                                } else {
-	                                    /* When extracting opacity, default to 1 since a null value means opacity hasn't been set. */
-	                                    propertyValue = 1;
-	                                }
-
-	                                return propertyValue;
-	                            case "inject":
-	                                /* Opacified elements are required to have their zoom property set to a non-zero value. */
-	                                element.style.zoom = 1;
-
-	                                /* Setting the filter property on elements with certain font property combinations can result in a
-	                                   highly unappealing ultra-bolding effect. There's no way to remedy this throughout a tween, but dropping the
-	                                   value altogether (when opacity hits 1) at leasts ensures that the glitch is gone post-tweening. */
-	                                if (parseFloat(propertyValue) >= 1) {
-	                                    return "";
-	                                } else {
-	                                  /* As per the filter property's spec, convert the decimal value to a whole number and wrap the value. */
-	                                  return "alpha(opacity=" + parseInt(parseFloat(propertyValue) * 100, 10) + ")";
-	                                }
-	                        }
-	                    /* With all other browsers, normalization is not required; return the same values that were passed in. */
-	                    } else {
-	                        switch (type) {
-	                            case "name":
-	                                return "opacity";
-	                            case "extract":
-	                                return propertyValue;
-	                            case "inject":
-	                                return propertyValue;
-	                        }
-	                    }
-	                }
-	            },
-
-	            /*****************************
-	                Batched Registrations
-	            *****************************/
-
-	            /* Note: Batched normalizations extend the CSS.Normalizations.registered object. */
-	            register: function () {
-
-	                /*****************
-	                    Transforms
-	                *****************/
-
-	                /* Transforms are the subproperties contained by the CSS "transform" property. Transforms must undergo normalization
-	                   so that they can be referenced in a properties map by their individual names. */
-	                /* Note: When transforms are "set", they are actually assigned to a per-element transformCache. When all transform
-	                   setting is complete complete, CSS.flushTransformCache() must be manually called to flush the values to the DOM.
-	                   Transform setting is batched in this way to improve performance: the transform style only needs to be updated
-	                   once when multiple transform subproperties are being animated simultaneously. */
-	                /* Note: IE9 and Android Gingerbread have support for 2D -- but not 3D -- transforms. Since animating unsupported
-	                   transform properties results in the browser ignoring the *entire* transform string, we prevent these 3D values
-	                   from being normalized for these browsers so that tweening skips these properties altogether
-	                   (since it will ignore them as being unsupported by the browser.) */
-	                if (!(IE <= 9) && !Velocity.State.isGingerbread) {
-	                    /* Note: Since the standalone CSS "perspective" property and the CSS transform "perspective" subproperty
-	                    share the same name, the latter is given a unique token within Velocity: "transformPerspective". */
-	                    CSS.Lists.transformsBase = CSS.Lists.transformsBase.concat(CSS.Lists.transforms3D);
-	                }
-
-	                for (var i = 0; i < CSS.Lists.transformsBase.length; i++) {
-	                    /* Wrap the dynamically generated normalization function in a new scope so that transformName's value is
-	                    paired with its respective function. (Otherwise, all functions would take the final for loop's transformName.) */
-	                    (function() {
-	                        var transformName = CSS.Lists.transformsBase[i];
-
-	                        CSS.Normalizations.registered[transformName] = function (type, element, propertyValue) {
-	                            switch (type) {
-	                                /* The normalized property name is the parent "transform" property -- the property that is actually set in CSS. */
-	                                case "name":
-	                                    return "transform";
-	                                /* Transform values are cached onto a per-element transformCache object. */
-	                                case "extract":
-	                                    /* If this transform has yet to be assigned a value, return its null value. */
-	                                    if (Data(element) === undefined || Data(element).transformCache[transformName] === undefined) {
-	                                        /* Scale CSS.Lists.transformsBase default to 1 whereas all other transform properties default to 0. */
-	                                        return /^scale/i.test(transformName) ? 1 : 0;
-	                                    /* When transform values are set, they are wrapped in parentheses as per the CSS spec.
-	                                       Thus, when extracting their values (for tween calculations), we strip off the parentheses. */
-	                                    } else {
-	                                        return Data(element).transformCache[transformName].replace(/[()]/g, "");
-	                                    }
-	                                case "inject":
-	                                    var invalid = false;
-
-	                                    /* If an individual transform property contains an unsupported unit type, the browser ignores the *entire* transform property.
-	                                       Thus, protect users from themselves by skipping setting for transform values supplied with invalid unit types. */
-	                                    /* Switch on the base transform type; ignore the axis by removing the last letter from the transform's name. */
-	                                    switch (transformName.substr(0, transformName.length - 1)) {
-	                                        /* Whitelist unit types for each transform. */
-	                                        case "translate":
-	                                            invalid = !/(%|px|em|rem|vw|vh|\d)$/i.test(propertyValue);
-	                                            break;
-	                                        /* Since an axis-free "scale" property is supported as well, a little hack is used here to detect it by chopping off its last letter. */
-	                                        case "scal":
-	                                        case "scale":
-	                                            /* Chrome on Android has a bug in which scaled elements blur if their initial scale
-	                                               value is below 1 (which can happen with forcefeeding). Thus, we detect a yet-unset scale property
-	                                               and ensure that its first value is always 1. More info: http://stackoverflow.com/questions/10417890/css3-animations-with-transform-causes-blurred-elements-on-webkit/10417962#10417962 */
-	                                            if (Velocity.State.isAndroid && Data(element).transformCache[transformName] === undefined && propertyValue < 1) {
-	                                                propertyValue = 1;
-	                                            }
-
-	                                            invalid = !/(\d)$/i.test(propertyValue);
-	                                            break;
-	                                        case "skew":
-	                                            invalid = !/(deg|\d)$/i.test(propertyValue);
-	                                            break;
-	                                        case "rotate":
-	                                            invalid = !/(deg|\d)$/i.test(propertyValue);
-	                                            break;
-	                                    }
-
-	                                    if (!invalid) {
-	                                        /* As per the CSS spec, wrap the value in parentheses. */
-	                                        Data(element).transformCache[transformName] = "(" + propertyValue + ")";
-	                                    }
-
-	                                    /* Although the value is set on the transformCache object, return the newly-updated value for the calling code to process as normal. */
-	                                    return Data(element).transformCache[transformName];
-	                            }
-	                        };
-	                    })();
-	                }
-
-	                /*************
-	                    Colors
-	                *************/
-
-	                /* Since Velocity only animates a single numeric value per property, color animation is achieved by hooking the individual RGBA components of CSS color properties.
-	                   Accordingly, color values must be normalized (e.g. "#ff0000", "red", and "rgb(255, 0, 0)" ==> "255 0 0 1") so that their components can be injected/extracted by CSS.Hooks logic. */
-	                for (var i = 0; i < CSS.Lists.colors.length; i++) {
-	                    /* Wrap the dynamically generated normalization function in a new scope so that colorName's value is paired with its respective function.
-	                       (Otherwise, all functions would take the final for loop's colorName.) */
-	                    (function () {
-	                        var colorName = CSS.Lists.colors[i];
-
-	                        /* Note: In IE<=8, which support rgb but not rgba, color properties are reverted to rgb by stripping off the alpha component. */
-	                        CSS.Normalizations.registered[colorName] = function(type, element, propertyValue) {
-	                            switch (type) {
-	                                case "name":
-	                                    return colorName;
-	                                /* Convert all color values into the rgb format. (Old IE can return hex values and color names instead of rgb/rgba.) */
-	                                case "extract":
-	                                    var extracted;
-
-	                                    /* If the color is already in its hookable form (e.g. "255 255 255 1") due to having been previously extracted, skip extraction. */
-	                                    if (CSS.RegEx.wrappedValueAlreadyExtracted.test(propertyValue)) {
-	                                        extracted = propertyValue;
-	                                    } else {
-	                                        var converted,
-	                                            colorNames = {
-	                                                black: "rgb(0, 0, 0)",
-	                                                blue: "rgb(0, 0, 255)",
-	                                                gray: "rgb(128, 128, 128)",
-	                                                green: "rgb(0, 128, 0)",
-	                                                red: "rgb(255, 0, 0)",
-	                                                white: "rgb(255, 255, 255)"
-	                                            };
-
-	                                        /* Convert color names to rgb. */
-	                                        if (/^[A-z]+$/i.test(propertyValue)) {
-	                                            if (colorNames[propertyValue] !== undefined) {
-	                                                converted = colorNames[propertyValue]
-	                                            } else {
-	                                                /* If an unmatched color name is provided, default to black. */
-	                                                converted = colorNames.black;
-	                                            }
-	                                        /* Convert hex values to rgb. */
-	                                        } else if (CSS.RegEx.isHex.test(propertyValue)) {
-	                                            converted = "rgb(" + CSS.Values.hexToRgb(propertyValue).join(" ") + ")";
-	                                        /* If the provided color doesn't match any of the accepted color formats, default to black. */
-	                                        } else if (!(/^rgba?\(/i.test(propertyValue))) {
-	                                            converted = colorNames.black;
-	                                        }
-
-	                                        /* Remove the surrounding "rgb/rgba()" string then replace commas with spaces and strip
-	                                           repeated spaces (in case the value included spaces to begin with). */
-	                                        extracted = (converted || propertyValue).toString().match(CSS.RegEx.valueUnwrap)[1].replace(/,(\s+)?/g, " ");
-	                                    }
-
-	                                    /* So long as this isn't <=IE8, add a fourth (alpha) component if it's missing and default it to 1 (visible). */
-	                                    if (!(IE <= 8) && extracted.split(" ").length === 3) {
-	                                        extracted += " 1";
-	                                    }
-
-	                                    return extracted;
-	                                case "inject":
-	                                    /* If this is IE<=8 and an alpha component exists, strip it off. */
-	                                    if (IE <= 8) {
-	                                        if (propertyValue.split(" ").length === 4) {
-	                                            propertyValue = propertyValue.split(/\s+/).slice(0, 3).join(" ");
-	                                        }
-	                                    /* Otherwise, add a fourth (alpha) component if it's missing and default it to 1 (visible). */
-	                                    } else if (propertyValue.split(" ").length === 3) {
-	                                        propertyValue += " 1";
-	                                    }
-
-	                                    /* Re-insert the browser-appropriate wrapper("rgb/rgba()"), insert commas, and strip off decimal units
-	                                       on all values but the fourth (R, G, and B only accept whole numbers). */
-	                                    return (IE <= 8 ? "rgb" : "rgba") + "(" + propertyValue.replace(/\s+/g, ",").replace(/\.(\d)+(?=,)/g, "") + ")";
-	                            }
-	                        };
-	                    })();
-	                }
-	            }
-	        },
-
-	        /************************
-	           CSS Property Names
-	        ************************/
-
-	        Names: {
-	            /* Camelcase a property name into its JavaScript notation (e.g. "background-color" ==> "backgroundColor").
-	               Camelcasing is used to normalize property names between and across calls. */
-	            camelCase: function (property) {
-	                return property.replace(/-(\w)/g, function (match, subMatch) {
-	                    return subMatch.toUpperCase();
-	                });
-	            },
-
-	            /* For SVG elements, some properties (namely, dimensional ones) are GET/SET via the element's HTML attributes (instead of via CSS styles). */
-	            SVGAttribute: function (property) {
-	                var SVGAttributes = "width|height|x|y|cx|cy|r|rx|ry|x1|x2|y1|y2";
-
-	                /* Certain browsers require an SVG transform to be applied as an attribute. (Otherwise, application via CSS is preferable due to 3D support.) */
-	                if (IE || (Velocity.State.isAndroid && !Velocity.State.isChrome)) {
-	                    SVGAttributes += "|transform";
-	                }
-
-	                return new RegExp("^(" + SVGAttributes + ")$", "i").test(property);
-	            },
-
-	            /* Determine whether a property should be set with a vendor prefix. */
-	            /* If a prefixed version of the property exists, return it. Otherwise, return the original property name.
-	               If the property is not at all supported by the browser, return a false flag. */
-	            prefixCheck: function (property) {
-	                /* If this property has already been checked, return the cached value. */
-	                if (Velocity.State.prefixMatches[property]) {
-	                    return [ Velocity.State.prefixMatches[property], true ];
-	                } else {
-	                    var vendors = [ "", "Webkit", "Moz", "ms", "O" ];
-
-	                    for (var i = 0, vendorsLength = vendors.length; i < vendorsLength; i++) {
-	                        var propertyPrefixed;
-
-	                        if (i === 0) {
-	                            propertyPrefixed = property;
-	                        } else {
-	                            /* Capitalize the first letter of the property to conform to JavaScript vendor prefix notation (e.g. webkitFilter). */
-	                            propertyPrefixed = vendors[i] + property.replace(/^\w/, function(match) { return match.toUpperCase(); });
-	                        }
-
-	                        /* Check if the browser supports this property as prefixed. */
-	                        if (Type.isString(Velocity.State.prefixElement.style[propertyPrefixed])) {
-	                            /* Cache the match. */
-	                            Velocity.State.prefixMatches[property] = propertyPrefixed;
-
-	                            return [ propertyPrefixed, true ];
-	                        }
-	                    }
-
-	                    /* If the browser doesn't support this property in any form, include a false flag so that the caller can decide how to proceed. */
-	                    return [ property, false ];
-	                }
-	            }
-	        },
-
-	        /************************
-	           CSS Property Values
-	        ************************/
-
-	        Values: {
-	            /* Hex to RGB conversion. Copyright Tim Down: http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb */
-	            hexToRgb: function (hex) {
-	                var shortformRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
-	                    longformRegex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i,
-	                    rgbParts;
-
-	                hex = hex.replace(shortformRegex, function (m, r, g, b) {
-	                    return r + r + g + g + b + b;
-	                });
-
-	                rgbParts = longformRegex.exec(hex);
-
-	                return rgbParts ? [ parseInt(rgbParts[1], 16), parseInt(rgbParts[2], 16), parseInt(rgbParts[3], 16) ] : [ 0, 0, 0 ];
-	            },
-
-	            isCSSNullValue: function (value) {
-	                /* The browser defaults CSS values that have not been set to either 0 or one of several possible null-value strings.
-	                   Thus, we check for both falsiness and these special strings. */
-	                /* Null-value checking is performed to default the special strings to 0 (for the sake of tweening) or their hook
-	                   templates as defined as CSS.Hooks (for the sake of hook injection/extraction). */
-	                /* Note: Chrome returns "rgba(0, 0, 0, 0)" for an undefined color whereas IE returns "transparent". */
-	                return (value == 0 || /^(none|auto|transparent|(rgba\(0, ?0, ?0, ?0\)))$/i.test(value));
-	            },
-
-	            /* Retrieve a property's default unit type. Used for assigning a unit type when one is not supplied by the user. */
-	            getUnitType: function (property) {
-	                if (/^(rotate|skew)/i.test(property)) {
-	                    return "deg";
-	                } else if (/(^(scale|scaleX|scaleY|scaleZ|alpha|flexGrow|flexHeight|zIndex|fontWeight)$)|((opacity|red|green|blue|alpha)$)/i.test(property)) {
-	                    /* The above properties are unitless. */
-	                    return "";
-	                } else {
-	                    /* Default to px for all other properties. */
-	                    return "px";
-	                }
-	            },
-
-	            /* HTML elements default to an associated display type when they're not set to display:none. */
-	            /* Note: This function is used for correctly setting the non-"none" display value in certain Velocity redirects, such as fadeIn/Out. */
-	            getDisplayType: function (element) {
-	                var tagName = element && element.tagName.toString().toLowerCase();
-
-	                if (/^(b|big|i|small|tt|abbr|acronym|cite|code|dfn|em|kbd|strong|samp|var|a|bdo|br|img|map|object|q|script|span|sub|sup|button|input|label|select|textarea)$/i.test(tagName)) {
-	                    return "inline";
-	                } else if (/^(li)$/i.test(tagName)) {
-	                    return "list-item";
-	                } else if (/^(tr)$/i.test(tagName)) {
-	                    return "table-row";
-	                } else if (/^(table)$/i.test(tagName)) {
-	                    return "table";
-	                } else if (/^(tbody)$/i.test(tagName)) {
-	                    return "table-row-group";
-	                /* Default to "block" when no match is found. */
-	                } else {
-	                    return "block";
-	                }
-	            },
-
-	            /* The class add/remove functions are used to temporarily apply a "velocity-animating" class to elements while they're animating. */
-	            addClass: function (element, className) {
-	                if (element.classList) {
-	                    element.classList.add(className);
-	                } else {
-	                    element.className += (element.className.length ? " " : "") + className;
-	                }
-	            },
-
-	            removeClass: function (element, className) {
-	                if (element.classList) {
-	                    element.classList.remove(className);
-	                } else {
-	                    element.className = element.className.toString().replace(new RegExp("(^|\\s)" + className.split(" ").join("|") + "(\\s|$)", "gi"), " ");
-	                }
-	            }
-	        },
-
-	        /****************************
-	           Style Getting & Setting
-	        ****************************/
-
-	        /* The singular getPropertyValue, which routes the logic for all normalizations, hooks, and standard CSS properties. */
-	        getPropertyValue: function (element, property, rootPropertyValue, forceStyleLookup) {
-	            /* Get an element's computed property value. */
-	            /* Note: Retrieving the value of a CSS property cannot simply be performed by checking an element's
-	               style attribute (which only reflects user-defined values). Instead, the browser must be queried for a property's
-	               *computed* value. You can read more about getComputedStyle here: https://developer.mozilla.org/en/docs/Web/API/window.getComputedStyle */
-	            function computePropertyValue (element, property) {
-	                /* When box-sizing isn't set to border-box, height and width style values are incorrectly computed when an
-	                   element's scrollbars are visible (which expands the element's dimensions). Thus, we defer to the more accurate
-	                   offsetHeight/Width property, which includes the total dimensions for interior, border, padding, and scrollbar.
-	                   We subtract border and padding to get the sum of interior + scrollbar. */
-	                var computedValue = 0;
-
-	                /* IE<=8 doesn't support window.getComputedStyle, thus we defer to jQuery, which has an extensive array
-	                   of hacks to accurately retrieve IE8 property values. Re-implementing that logic here is not worth bloating the
-	                   codebase for a dying browser. The performance repercussions of using jQuery here are minimal since
-	                   Velocity is optimized to rarely (and sometimes never) query the DOM. Further, the $.css() codepath isn't that slow. */
-	                if (IE <= 8) {
-	                    computedValue = $.css(element, property); /* GET */
-	                /* All other browsers support getComputedStyle. The returned live object reference is cached onto its
-	                   associated element so that it does not need to be refetched upon every GET. */
-	                } else {
-	                    /* Browsers do not return height and width values for elements that are set to display:"none". Thus, we temporarily
-	                       toggle display to the element type's default value. */
-	                    var toggleDisplay = false;
-
-	                    if (/^(width|height)$/.test(property) && CSS.getPropertyValue(element, "display") === 0) {
-	                        toggleDisplay = true;
-	                        CSS.setPropertyValue(element, "display", CSS.Values.getDisplayType(element));
-	                    }
-
-	                    function revertDisplay () {
-	                        if (toggleDisplay) {
-	                            CSS.setPropertyValue(element, "display", "none");
-	                        }
-	                    }
-
-	                    if (!forceStyleLookup) {
-	                        if (property === "height" && CSS.getPropertyValue(element, "boxSizing").toString().toLowerCase() !== "border-box") {
-	                            var contentBoxHeight = element.offsetHeight - (parseFloat(CSS.getPropertyValue(element, "borderTopWidth")) || 0) - (parseFloat(CSS.getPropertyValue(element, "borderBottomWidth")) || 0) - (parseFloat(CSS.getPropertyValue(element, "paddingTop")) || 0) - (parseFloat(CSS.getPropertyValue(element, "paddingBottom")) || 0);
-	                            revertDisplay();
-
-	                            return contentBoxHeight;
-	                        } else if (property === "width" && CSS.getPropertyValue(element, "boxSizing").toString().toLowerCase() !== "border-box") {
-	                            var contentBoxWidth = element.offsetWidth - (parseFloat(CSS.getPropertyValue(element, "borderLeftWidth")) || 0) - (parseFloat(CSS.getPropertyValue(element, "borderRightWidth")) || 0) - (parseFloat(CSS.getPropertyValue(element, "paddingLeft")) || 0) - (parseFloat(CSS.getPropertyValue(element, "paddingRight")) || 0);
-	                            revertDisplay();
-
-	                            return contentBoxWidth;
-	                        }
-	                    }
-
-	                    var computedStyle;
-
-	                    /* For elements that Velocity hasn't been called on directly (e.g. when Velocity queries the DOM on behalf
-	                       of a parent of an element its animating), perform a direct getComputedStyle lookup since the object isn't cached. */
-	                    if (Data(element) === undefined) {
-	                        computedStyle = window.getComputedStyle(element, null); /* GET */
-	                    /* If the computedStyle object has yet to be cached, do so now. */
-	                    } else if (!Data(element).computedStyle) {
-	                        computedStyle = Data(element).computedStyle = window.getComputedStyle(element, null); /* GET */
-	                    /* If computedStyle is cached, use it. */
-	                    } else {
-	                        computedStyle = Data(element).computedStyle;
-	                    }
-
-	                    /* IE and Firefox do not return a value for the generic borderColor -- they only return individual values for each border side's color.
-	                       Also, in all browsers, when border colors aren't all the same, a compound value is returned that Velocity isn't setup to parse.
-	                       So, as a polyfill for querying individual border side colors, we just return the top border's color and animate all borders from that value. */
-	                    if (property === "borderColor") {
-	                        property = "borderTopColor";
-	                    }
-
-	                    /* IE9 has a bug in which the "filter" property must be accessed from computedStyle using the getPropertyValue method
-	                       instead of a direct property lookup. The getPropertyValue method is slower than a direct lookup, which is why we avoid it by default. */
-	                    if (IE === 9 && property === "filter") {
-	                        computedValue = computedStyle.getPropertyValue(property); /* GET */
-	                    } else {
-	                        computedValue = computedStyle[property];
-	                    }
-
-	                    /* Fall back to the property's style value (if defined) when computedValue returns nothing,
-	                       which can happen when the element hasn't been painted. */
-	                    if (computedValue === "" || computedValue === null) {
-	                        computedValue = element.style[property];
-	                    }
-
-	                    revertDisplay();
-	                }
-
-	                /* For top, right, bottom, and left (TRBL) values that are set to "auto" on elements of "fixed" or "absolute" position,
-	                   defer to jQuery for converting "auto" to a numeric value. (For elements with a "static" or "relative" position, "auto" has the same
-	                   effect as being set to 0, so no conversion is necessary.) */
-	                /* An example of why numeric conversion is necessary: When an element with "position:absolute" has an untouched "left"
-	                   property, which reverts to "auto", left's value is 0 relative to its parent element, but is often non-zero relative
-	                   to its *containing* (not parent) element, which is the nearest "position:relative" ancestor or the viewport (and always the viewport in the case of "position:fixed"). */
-	                if (computedValue === "auto" && /^(top|right|bottom|left)$/i.test(property)) {
-	                    var position = computePropertyValue(element, "position"); /* GET */
-
-	                    /* For absolute positioning, jQuery's $.position() only returns values for top and left;
-	                       right and bottom will have their "auto" value reverted to 0. */
-	                    /* Note: A jQuery object must be created here since jQuery doesn't have a low-level alias for $.position().
-	                       Not a big deal since we're currently in a GET batch anyway. */
-	                    if (position === "fixed" || (position === "absolute" && /top|left/i.test(property))) {
-	                        /* Note: jQuery strips the pixel unit from its returned values; we re-add it here to conform with computePropertyValue's behavior. */
-	                        computedValue = $(element).position()[property] + "px"; /* GET */
-	                    }
-	                }
-
-	                return computedValue;
-	            }
-
-	            var propertyValue;
-
-	            /* If this is a hooked property (e.g. "clipLeft" instead of the root property of "clip"),
-	               extract the hook's value from a normalized rootPropertyValue using CSS.Hooks.extractValue(). */
-	            if (CSS.Hooks.registered[property]) {
-	                var hook = property,
-	                    hookRoot = CSS.Hooks.getRoot(hook);
-
-	                /* If a cached rootPropertyValue wasn't passed in (which Velocity always attempts to do in order to avoid requerying the DOM),
-	                   query the DOM for the root property's value. */
-	                if (rootPropertyValue === undefined) {
-	                    /* Since the browser is now being directly queried, use the official post-prefixing property name for this lookup. */
-	                    rootPropertyValue = CSS.getPropertyValue(element, CSS.Names.prefixCheck(hookRoot)[0]); /* GET */
-	                }
-
-	                /* If this root has a normalization registered, peform the associated normalization extraction. */
-	                if (CSS.Normalizations.registered[hookRoot]) {
-	                    rootPropertyValue = CSS.Normalizations.registered[hookRoot]("extract", element, rootPropertyValue);
-	                }
-
-	                /* Extract the hook's value. */
-	                propertyValue = CSS.Hooks.extractValue(hook, rootPropertyValue);
-
-	            /* If this is a normalized property (e.g. "opacity" becomes "filter" in <=IE8) or "translateX" becomes "transform"),
-	               normalize the property's name and value, and handle the special case of transforms. */
-	            /* Note: Normalizing a property is mutually exclusive from hooking a property since hook-extracted values are strictly
-	               numerical and therefore do not require normalization extraction. */
-	            } else if (CSS.Normalizations.registered[property]) {
-	                var normalizedPropertyName,
-	                    normalizedPropertyValue;
-
-	                normalizedPropertyName = CSS.Normalizations.registered[property]("name", element);
-
-	                /* Transform values are calculated via normalization extraction (see below), which checks against the element's transformCache.
-	                   At no point do transform GETs ever actually query the DOM; initial stylesheet values are never processed.
-	                   This is because parsing 3D transform matrices is not always accurate and would bloat our codebase;
-	                   thus, normalization extraction defaults initial transform values to their zero-values (e.g. 1 for scaleX and 0 for translateX). */
-	                if (normalizedPropertyName !== "transform") {
-	                    normalizedPropertyValue = computePropertyValue(element, CSS.Names.prefixCheck(normalizedPropertyName)[0]); /* GET */
-
-	                    /* If the value is a CSS null-value and this property has a hook template, use that zero-value template so that hooks can be extracted from it. */
-	                    if (CSS.Values.isCSSNullValue(normalizedPropertyValue) && CSS.Hooks.templates[property]) {
-	                        normalizedPropertyValue = CSS.Hooks.templates[property][1];
-	                    }
-	                }
-
-	                propertyValue = CSS.Normalizations.registered[property]("extract", element, normalizedPropertyValue);
-	            }
-
-	            /* If a (numeric) value wasn't produced via hook extraction or normalization, query the DOM. */
-	            if (!/^[\d-]/.test(propertyValue)) {
-	                /* For SVG elements, dimensional properties (which SVGAttribute() detects) are tweened via
-	                   their HTML attribute values instead of their CSS style values. */
-	                if (Data(element) && Data(element).isSVG && CSS.Names.SVGAttribute(property)) {
-	                    /* Since the height/width attribute values must be set manually, they don't reflect computed values.
-	                       Thus, we use use getBBox() to ensure we always get values for elements with undefined height/width attributes. */
-	                    if (/^(height|width)$/i.test(property)) {
-	                        /* Firefox throws an error if .getBBox() is called on an SVG that isn't attached to the DOM. */
-	                        try {
-	                            propertyValue = element.getBBox()[property];
-	                        } catch (error) {
-	                            propertyValue = 0;
-	                        }
-	                    /* Otherwise, access the attribute value directly. */
-	                    } else {
-	                        propertyValue = element.getAttribute(property);
-	                    }
-	                } else {
-	                    propertyValue = computePropertyValue(element, CSS.Names.prefixCheck(property)[0]); /* GET */
-	                }
-	            }
-
-	            /* Since property lookups are for animation purposes (which entails computing the numeric delta between start and end values),
-	               convert CSS null-values to an integer of value 0. */
-	            if (CSS.Values.isCSSNullValue(propertyValue)) {
-	                propertyValue = 0;
-	            }
-
-	            if (Velocity.debug >= 2) console.log("Get " + property + ": " + propertyValue);
-
-	            return propertyValue;
-	        },
-
-	        /* The singular setPropertyValue, which routes the logic for all normalizations, hooks, and standard CSS properties. */
-	        setPropertyValue: function(element, property, propertyValue, rootPropertyValue, scrollData) {
-	            var propertyName = property;
-
-	            /* In order to be subjected to call options and element queueing, scroll animation is routed through Velocity as if it were a standard CSS property. */
-	            if (property === "scroll") {
-	                /* If a container option is present, scroll the container instead of the browser window. */
-	                if (scrollData.container) {
-	                    scrollData.container["scroll" + scrollData.direction] = propertyValue;
-	                /* Otherwise, Velocity defaults to scrolling the browser window. */
-	                } else {
-	                    if (scrollData.direction === "Left") {
-	                        window.scrollTo(propertyValue, scrollData.alternateValue);
-	                    } else {
-	                        window.scrollTo(scrollData.alternateValue, propertyValue);
-	                    }
-	                }
-	            } else {
-	                /* Transforms (translateX, rotateZ, etc.) are applied to a per-element transformCache object, which is manually flushed via flushTransformCache().
-	                   Thus, for now, we merely cache transforms being SET. */
-	                if (CSS.Normalizations.registered[property] && CSS.Normalizations.registered[property]("name", element) === "transform") {
-	                    /* Perform a normalization injection. */
-	                    /* Note: The normalization logic handles the transformCache updating. */
-	                    CSS.Normalizations.registered[property]("inject", element, propertyValue);
-
-	                    propertyName = "transform";
-	                    propertyValue = Data(element).transformCache[property];
-	                } else {
-	                    /* Inject hooks. */
-	                    if (CSS.Hooks.registered[property]) {
-	                        var hookName = property,
-	                            hookRoot = CSS.Hooks.getRoot(property);
-
-	                        /* If a cached rootPropertyValue was not provided, query the DOM for the hookRoot's current value. */
-	                        rootPropertyValue = rootPropertyValue || CSS.getPropertyValue(element, hookRoot); /* GET */
-
-	                        propertyValue = CSS.Hooks.injectValue(hookName, propertyValue, rootPropertyValue);
-	                        property = hookRoot;
-	                    }
-
-	                    /* Normalize names and values. */
-	                    if (CSS.Normalizations.registered[property]) {
-	                        propertyValue = CSS.Normalizations.registered[property]("inject", element, propertyValue);
-	                        property = CSS.Normalizations.registered[property]("name", element);
-	                    }
-
-	                    /* Assign the appropriate vendor prefix before performing an official style update. */
-	                    propertyName = CSS.Names.prefixCheck(property)[0];
-
-	                    /* A try/catch is used for IE<=8, which throws an error when "invalid" CSS values are set, e.g. a negative width.
-	                       Try/catch is avoided for other browsers since it incurs a performance overhead. */
-	                    if (IE <= 8) {
-	                        try {
-	                            element.style[propertyName] = propertyValue;
-	                        } catch (error) { if (Velocity.debug) console.log("Browser does not support [" + propertyValue + "] for [" + propertyName + "]"); }
-	                    /* SVG elements have their dimensional properties (width, height, x, y, cx, etc.) applied directly as attributes instead of as styles. */
-	                    /* Note: IE8 does not support SVG elements, so it's okay that we skip it for SVG animation. */
-	                    } else if (Data(element) && Data(element).isSVG && CSS.Names.SVGAttribute(property)) {
-	                        /* Note: For SVG attributes, vendor-prefixed property names are never used. */
-	                        /* Note: Not all CSS properties can be animated via attributes, but the browser won't throw an error for unsupported properties. */
-	                        element.setAttribute(property, propertyValue);
-	                    } else {
-	                        element.style[propertyName] = propertyValue;
-	                    }
-
-	                    if (Velocity.debug >= 2) console.log("Set " + property + " (" + propertyName + "): " + propertyValue);
-	                }
-	            }
-
-	            /* Return the normalized property name and value in case the caller wants to know how these values were modified before being applied to the DOM. */
-	            return [ propertyName, propertyValue ];
-	        },
-
-	        /* To increase performance by batching transform updates into a single SET, transforms are not directly applied to an element until flushTransformCache() is called. */
-	        /* Note: Velocity applies transform properties in the same order that they are chronogically introduced to the element's CSS styles. */
-	        flushTransformCache: function(element) {
-	            var transformString = "";
-
-	            /* Certain browsers require that SVG transforms be applied as an attribute. However, the SVG transform attribute takes a modified version of CSS's transform string
-	               (units are dropped and, except for skewX/Y, subproperties are merged into their master property -- e.g. scaleX and scaleY are merged into scale(X Y). */
-	            if ((IE || (Velocity.State.isAndroid && !Velocity.State.isChrome)) && Data(element).isSVG) {
-	                /* Since transform values are stored in their parentheses-wrapped form, we use a helper function to strip out their numeric values.
-	                   Further, SVG transform properties only take unitless (representing pixels) values, so it's okay that parseFloat() strips the unit suffixed to the float value. */
-	                function getTransformFloat (transformProperty) {
-	                    return parseFloat(CSS.getPropertyValue(element, transformProperty));
-	                }
-
-	                /* Create an object to organize all the transforms that we'll apply to the SVG element. To keep the logic simple,
-	                   we process *all* transform properties -- even those that may not be explicitly applied (since they default to their zero-values anyway). */
-	                var SVGTransforms = {
-	                    translate: [ getTransformFloat("translateX"), getTransformFloat("translateY") ],
-	                    skewX: [ getTransformFloat("skewX") ], skewY: [ getTransformFloat("skewY") ],
-	                    /* If the scale property is set (non-1), use that value for the scaleX and scaleY values
-	                       (this behavior mimics the result of animating all these properties at once on HTML elements). */
-	                    scale: getTransformFloat("scale") !== 1 ? [ getTransformFloat("scale"), getTransformFloat("scale") ] : [ getTransformFloat("scaleX"), getTransformFloat("scaleY") ],
-	                    /* Note: SVG's rotate transform takes three values: rotation degrees followed by the X and Y values
-	                       defining the rotation's origin point. We ignore the origin values (default them to 0). */
-	                    rotate: [ getTransformFloat("rotateZ"), 0, 0 ]
-	                };
-
-	                /* Iterate through the transform properties in the user-defined property map order.
-	                   (This mimics the behavior of non-SVG transform animation.) */
-	                $.each(Data(element).transformCache, function(transformName) {
-	                    /* Except for with skewX/Y, revert the axis-specific transform subproperties to their axis-free master
-	                       properties so that they match up with SVG's accepted transform properties. */
-	                    if (/^translate/i.test(transformName)) {
-	                        transformName = "translate";
-	                    } else if (/^scale/i.test(transformName)) {
-	                        transformName = "scale";
-	                    } else if (/^rotate/i.test(transformName)) {
-	                        transformName = "rotate";
-	                    }
-
-	                    /* Check that we haven't yet deleted the property from the SVGTransforms container. */
-	                    if (SVGTransforms[transformName]) {
-	                        /* Append the transform property in the SVG-supported transform format. As per the spec, surround the space-delimited values in parentheses. */
-	                        transformString += transformName + "(" + SVGTransforms[transformName].join(" ") + ")" + " ";
-
-	                        /* After processing an SVG transform property, delete it from the SVGTransforms container so we don't
-	                           re-insert the same master property if we encounter another one of its axis-specific properties. */
-	                        delete SVGTransforms[transformName];
-	                    }
-	                });
-	            } else {
-	                var transformValue,
-	                    perspective;
-
-	                /* Transform properties are stored as members of the transformCache object. Concatenate all the members into a string. */
-	                $.each(Data(element).transformCache, function(transformName) {
-	                    transformValue = Data(element).transformCache[transformName];
-
-	                    /* Transform's perspective subproperty must be set first in order to take effect. Store it temporarily. */
-	                    if (transformName === "transformPerspective") {
-	                        perspective = transformValue;
-	                        return true;
-	                    }
-
-	                    /* IE9 only supports one rotation type, rotateZ, which it refers to as "rotate". */
-	                    if (IE === 9 && transformName === "rotateZ") {
-	                        transformName = "rotate";
-	                    }
-
-	                    transformString += transformName + transformValue + " ";
-	                });
-
-	                /* If present, set the perspective subproperty first. */
-	                if (perspective) {
-	                    transformString = "perspective" + perspective + " " + transformString;
-	                }
-	            }
-
-	            CSS.setPropertyValue(element, "transform", transformString);
-	        }
-	    };
-
-	    /* Register hooks and normalizations. */
-	    CSS.Hooks.register();
-	    CSS.Normalizations.register();
-
-	    /* Allow hook setting in the same fashion as jQuery's $.css(). */
-	    Velocity.hook = function (elements, arg2, arg3) {
-	        var value = undefined;
-
-	        elements = sanitizeElements(elements);
-
-	        $.each(elements, function(i, element) {
-	            /* Initialize Velocity's per-element data cache if this element hasn't previously been animated. */
-	            if (Data(element) === undefined) {
-	                Velocity.init(element);
-	            }
-
-	            /* Get property value. If an element set was passed in, only return the value for the first element. */
-	            if (arg3 === undefined) {
-	                if (value === undefined) {
-	                    value = Velocity.CSS.getPropertyValue(element, arg2);
-	                }
-	            /* Set property value. */
-	            } else {
-	                /* sPV returns an array of the normalized propertyName/propertyValue pair used to update the DOM. */
-	                var adjustedSet = Velocity.CSS.setPropertyValue(element, arg2, arg3);
-
-	                /* Transform properties don't automatically set. They have to be flushed to the DOM. */
-	                if (adjustedSet[0] === "transform") {
-	                    Velocity.CSS.flushTransformCache(element);
-	                }
-
-	                value = adjustedSet;
-	            }
-	        });
-
-	        return value;
-	    };
-
-	    /*****************
-	        Animation
-	    *****************/
-
-	    var animate = function() {
-
-	        /******************
-	            Call Chain
-	        ******************/
-
-	        /* Logic for determining what to return to the call stack when exiting out of Velocity. */
-	        function getChain () {
-	            /* If we are using the utility function, attempt to return this call's promise. If no promise library was detected,
-	               default to null instead of returning the targeted elements so that utility function's return value is standardized. */
-	            if (isUtility) {
-	                return promiseData.promise || null;
-	            /* Otherwise, if we're using $.fn, return the jQuery-/Zepto-wrapped element set. */
-	            } else {
-	                return elementsWrapped;
-	            }
-	        }
-
-	        /*************************
-	           Arguments Assignment
-	        *************************/
-
-	        /* To allow for expressive CoffeeScript code, Velocity supports an alternative syntax in which "elements" (or "e"), "properties" (or "p"), and "options" (or "o")
-	           objects are defined on a container object that's passed in as Velocity's sole argument. */
-	        /* Note: Some browsers automatically populate arguments with a "properties" object. We detect it by checking for its default "names" property. */
-	        var syntacticSugar = (arguments[0] && (arguments[0].p || (($.isPlainObject(arguments[0].properties) && !arguments[0].properties.names) || Type.isString(arguments[0].properties)))),
-	            /* Whether Velocity was called via the utility function (as opposed to on a jQuery/Zepto object). */
-	            isUtility,
-	            /* When Velocity is called via the utility function ($.Velocity()/Velocity()), elements are explicitly
-	               passed in as the first parameter. Thus, argument positioning varies. We normalize them here. */
-	            elementsWrapped,
-	            argumentIndex;
-
-	        var elements,
-	            propertiesMap,
-	            options;
-
-	        /* Detect jQuery/Zepto elements being animated via the $.fn method. */
-	        if (Type.isWrapped(this)) {
-	            isUtility = false;
-
-	            argumentIndex = 0;
-	            elements = this;
-	            elementsWrapped = this;
-	        /* Otherwise, raw elements are being animated via the utility function. */
-	        } else {
-	            isUtility = true;
-
-	            argumentIndex = 1;
-	            elements = syntacticSugar ? (arguments[0].elements || arguments[0].e) : arguments[0];
-	        }
-
-	        elements = sanitizeElements(elements);
-
-	        if (!elements) {
-	            return;
-	        }
-
-	        if (syntacticSugar) {
-	            propertiesMap = arguments[0].properties || arguments[0].p;
-	            options = arguments[0].options || arguments[0].o;
-	        } else {
-	            propertiesMap = arguments[argumentIndex];
-	            options = arguments[argumentIndex + 1];
-	        }
-
-	        /* The length of the element set (in the form of a nodeList or an array of elements) is defaulted to 1 in case a
-	           single raw DOM element is passed in (which doesn't contain a length property). */
-	        var elementsLength = elements.length,
-	            elementsIndex = 0;
-
-	        /***************************
-	            Argument Overloading
-	        ***************************/
-
-	        /* Support is included for jQuery's argument overloading: $.animate(propertyMap [, duration] [, easing] [, complete]).
-	           Overloading is detected by checking for the absence of an object being passed into options. */
-	        /* Note: The stop and finish actions do not accept animation options, and are therefore excluded from this check. */
-	        if (!/^(stop|finish)$/i.test(propertiesMap) && !$.isPlainObject(options)) {
-	            /* The utility function shifts all arguments one position to the right, so we adjust for that offset. */
-	            var startingArgumentPosition = argumentIndex + 1;
-
-	            options = {};
-
-	            /* Iterate through all options arguments */
-	            for (var i = startingArgumentPosition; i < arguments.length; i++) {
-	                /* Treat a number as a duration. Parse it out. */
-	                /* Note: The following RegEx will return true if passed an array with a number as its first item.
-	                   Thus, arrays are skipped from this check. */
-	                if (!Type.isArray(arguments[i]) && (/^(fast|normal|slow)$/i.test(arguments[i]) || /^\d/.test(arguments[i]))) {
-	                    options.duration = arguments[i];
-	                /* Treat strings and arrays as easings. */
-	                } else if (Type.isString(arguments[i]) || Type.isArray(arguments[i])) {
-	                    options.easing = arguments[i];
-	                /* Treat a function as a complete callback. */
-	                } else if (Type.isFunction(arguments[i])) {
-	                    options.complete = arguments[i];
-	                }
-	            }
-	        }
-
-	        /***************
-	            Promises
-	        ***************/
-
-	        var promiseData = {
-	                promise: null,
-	                resolver: null,
-	                rejecter: null
-	            };
-
-	        /* If this call was made via the utility function (which is the default method of invocation when jQuery/Zepto are not being used), and if
-	           promise support was detected, create a promise object for this call and store references to its resolver and rejecter methods. The resolve
-	           method is used when a call completes naturally or is prematurely stopped by the user. In both cases, completeCall() handles the associated
-	           call cleanup and promise resolving logic. The reject method is used when an invalid set of arguments is passed into a Velocity call. */
-	        /* Note: Velocity employs a call-based queueing architecture, which means that stopping an animating element actually stops the full call that
-	           triggered it -- not that one element exclusively. Similarly, there is one promise per call, and all elements targeted by a Velocity call are
-	           grouped together for the purposes of resolving and rejecting a promise. */
-	        if (isUtility && Velocity.Promise) {
-	            promiseData.promise = new Velocity.Promise(function (resolve, reject) {
-	                promiseData.resolver = resolve;
-	                promiseData.rejecter = reject;
-	            });
-	        }
-
-	        /*********************
-	           Action Detection
-	        *********************/
-
-	        /* Velocity's behavior is categorized into "actions": Elements can either be specially scrolled into view,
-	           or they can be started, stopped, or reversed. If a literal or referenced properties map is passed in as Velocity's
-	           first argument, the associated action is "start". Alternatively, "scroll", "reverse", or "stop" can be passed in instead of a properties map. */
-	        var action;
-
-	        switch (propertiesMap) {
-	            case "scroll":
-	                action = "scroll";
-	                break;
-
-	            case "reverse":
-	                action = "reverse";
-	                break;
-
-	            case "finish":
-	            case "stop":
-	                /*******************
-	                    Action: Stop
-	                *******************/
-
-	                /* Clear the currently-active delay on each targeted element. */
-	                $.each(elements, function(i, element) {
-	                    if (Data(element) && Data(element).delayTimer) {
-	                        /* Stop the timer from triggering its cached next() function. */
-	                        clearTimeout(Data(element).delayTimer.setTimeout);
-
-	                        /* Manually call the next() function so that the subsequent queue items can progress. */
-	                        if (Data(element).delayTimer.next) {
-	                            Data(element).delayTimer.next();
-	                        }
-
-	                        delete Data(element).delayTimer;
-	                    }
-	                });
-
-	                var callsToStop = [];
-
-	                /* When the stop action is triggered, the elements' currently active call is immediately stopped. The active call might have
-	                   been applied to multiple elements, in which case all of the call's elements will be stopped. When an element
-	                   is stopped, the next item in its animation queue is immediately triggered. */
-	                /* An additional argument may be passed in to clear an element's remaining queued calls. Either true (which defaults to the "fx" queue)
-	                   or a custom queue string can be passed in. */
-	                /* Note: The stop command runs prior to Velocity's Queueing phase since its behavior is intended to take effect *immediately*,
-	                   regardless of the element's current queue state. */
-
-	                /* Iterate through every active call. */
-	                $.each(Velocity.State.calls, function(i, activeCall) {
-	                    /* Inactive calls are set to false by the logic inside completeCall(). Skip them. */
-	                    if (activeCall) {
-	                        /* Iterate through the active call's targeted elements. */
-	                        $.each(activeCall[1], function(k, activeElement) {
-	                            /* If true was passed in as a secondary argument, clear absolutely all calls on this element. Otherwise, only
-	                               clear calls associated with the relevant queue. */
-	                            /* Call stopping logic works as follows:
-	                               - options === true --> stop current default queue calls (and queue:false calls), including remaining queued ones.
-	                               - options === undefined --> stop current queue:"" call and all queue:false calls.
-	                               - options === false --> stop only queue:false calls.
-	                               - options === "custom" --> stop current queue:"custom" call, including remaining queued ones (there is no functionality to only clear the currently-running queue:"custom" call). */
-	                            var queueName = (options === undefined) ? "" : options;
-
-	                            if (queueName !== true && (activeCall[2].queue !== queueName) && !(options === undefined && activeCall[2].queue === false)) {
-	                                return true;
-	                            }
-
-	                            /* Iterate through the calls targeted by the stop command. */
-	                            $.each(elements, function(l, element) {                                
-	                                /* Check that this call was applied to the target element. */
-	                                if (element === activeElement) {
-	                                    /* Optionally clear the remaining queued calls. */
-	                                    if (options === true || Type.isString(options)) {
-	                                        /* Iterate through the items in the element's queue. */
-	                                        $.each($.queue(element, Type.isString(options) ? options : ""), function(_, item) {
-	                                            /* The queue array can contain an "inprogress" string, which we skip. */
-	                                            if (Type.isFunction(item)) {
-	                                                /* Pass the item's callback a flag indicating that we want to abort from the queue call.
-	                                                   (Specifically, the queue will resolve the call's associated promise then abort.)  */
-	                                                item(null, true);
-	                                            }
-	                                        });
-
-	                                        /* Clearing the $.queue() array is achieved by resetting it to []. */
-	                                        $.queue(element, Type.isString(options) ? options : "", []);
-	                                    }
-
-	                                    if (propertiesMap === "stop") {
-	                                        /* Since "reverse" uses cached start values (the previous call's endValues), these values must be
-	                                           changed to reflect the final value that the elements were actually tweened to. */
-	                                        /* Note: If only queue:false animations are currently running on an element, it won't have a tweensContainer
-	                                           object. Also, queue:false animations can't be reversed. */
-	                                        if (Data(element) && Data(element).tweensContainer && queueName !== false) {
-	                                            $.each(Data(element).tweensContainer, function(m, activeTween) {
-	                                                activeTween.endValue = activeTween.currentValue;
-	                                            });
-	                                        }
-
-	                                        callsToStop.push(i);
-	                                    } else if (propertiesMap === "finish") {
-	                                        /* To get active tweens to finish immediately, we forcefully shorten their durations to 1ms so that
-	                                        they finish upon the next rAf tick then proceed with normal call completion logic. */
-	                                        activeCall[2].duration = 1;
-	                                    }
-	                                }
-	                            });
-	                        });
-	                    }
-	                });
-
-	                /* Prematurely call completeCall() on each matched active call. Pass an additional flag for "stop" to indicate
-	                   that the complete callback and display:none setting should be skipped since we're completing prematurely. */
-	                if (propertiesMap === "stop") {
-	                    $.each(callsToStop, function(i, j) {
-	                        completeCall(j, true);
-	                    });
-
-	                    if (promiseData.promise) {
-	                        /* Immediately resolve the promise associated with this stop call since stop runs synchronously. */
-	                        promiseData.resolver(elements);
-	                    }
-	                }
-
-	                /* Since we're stopping, and not proceeding with queueing, exit out of Velocity. */
-	                return getChain();
-
-	            default:
-	                /* Treat a non-empty plain object as a literal properties map. */
-	                if ($.isPlainObject(propertiesMap) && !Type.isEmptyObject(propertiesMap)) {
-	                    action = "start";
-
-	                /****************
-	                    Redirects
-	                ****************/
-
-	                /* Check if a string matches a registered redirect (see Redirects above). */
-	                } else if (Type.isString(propertiesMap) && Velocity.Redirects[propertiesMap]) {
-	                    var opts = $.extend({}, options),
-	                        durationOriginal = opts.duration,
-	                        delayOriginal = opts.delay || 0;
-
-	                    /* If the backwards option was passed in, reverse the element set so that elements animate from the last to the first. */
-	                    if (opts.backwards === true) {
-	                        elements = $.extend(true, [], elements).reverse();
-	                    }
-
-	                    /* Individually trigger the redirect for each element in the set to prevent users from having to handle iteration logic in their redirect. */
-	                    $.each(elements, function(elementIndex, element) {
-	                        /* If the stagger option was passed in, successively delay each element by the stagger value (in ms). Retain the original delay value. */
-	                        if (parseFloat(opts.stagger)) {
-	                            opts.delay = delayOriginal + (parseFloat(opts.stagger) * elementIndex);
-	                        } else if (Type.isFunction(opts.stagger)) {
-	                            opts.delay = delayOriginal + opts.stagger.call(element, elementIndex, elementsLength);
-	                        }
-
-	                        /* If the drag option was passed in, successively increase/decrease (depending on the presense of opts.backwards)
-	                           the duration of each element's animation, using floors to prevent producing very short durations. */
-	                        if (opts.drag) {
-	                            /* Default the duration of UI pack effects (callouts and transitions) to 1000ms instead of the usual default duration of 400ms. */
-	                            opts.duration = parseFloat(durationOriginal) || (/^(callout|transition)/.test(propertiesMap) ? 1000 : DURATION_DEFAULT);
-
-	                            /* For each element, take the greater duration of: A) animation completion percentage relative to the original duration,
-	                               B) 75% of the original duration, or C) a 200ms fallback (in case duration is already set to a low value).
-	                               The end result is a baseline of 75% of the redirect's duration that increases/decreases as the end of the element set is approached. */
-	                            opts.duration = Math.max(opts.duration * (opts.backwards ? 1 - elementIndex/elementsLength : (elementIndex + 1) / elementsLength), opts.duration * 0.75, 200);
-	                        }
-
-	                        /* Pass in the call's opts object so that the redirect can optionally extend it. It defaults to an empty object instead of null to
-	                           reduce the opts checking logic required inside the redirect. */
-	                        Velocity.Redirects[propertiesMap].call(element, element, opts || {}, elementIndex, elementsLength, elements, promiseData.promise ? promiseData : undefined);
-	                    });
-
-	                    /* Since the animation logic resides within the redirect's own code, abort the remainder of this call.
-	                       (The performance overhead up to this point is virtually non-existant.) */
-	                    /* Note: The jQuery call chain is kept intact by returning the complete element set. */
-	                    return getChain();
-	                } else {
-	                    var abortError = "Velocity: First argument (" + propertiesMap + ") was not a property map, a known action, or a registered redirect. Aborting.";
-
-	                    if (promiseData.promise) {
-	                        promiseData.rejecter(new Error(abortError));
-	                    } else {
-	                        console.log(abortError);
-	                    }
-
-	                    return getChain();
-	                }
-	        }
-
-	        /**************************
-	            Call-Wide Variables
-	        **************************/
-
-	        /* A container for CSS unit conversion ratios (e.g. %, rem, and em ==> px) that is used to cache ratios across all elements
-	           being animated in a single Velocity call. Calculating unit ratios necessitates DOM querying and updating, and is therefore
-	           avoided (via caching) wherever possible. This container is call-wide instead of page-wide to avoid the risk of using stale
-	           conversion metrics across Velocity animations that are not immediately consecutively chained. */
-	        var callUnitConversionData = {
-	                lastParent: null,
-	                lastPosition: null,
-	                lastFontSize: null,
-	                lastPercentToPxWidth: null,
-	                lastPercentToPxHeight: null,
-	                lastEmToPx: null,
-	                remToPx: null,
-	                vwToPx: null,
-	                vhToPx: null
-	            };
-
-	        /* A container for all the ensuing tween data and metadata associated with this call. This container gets pushed to the page-wide
-	           Velocity.State.calls array that is processed during animation ticking. */
-	        var call = [];
-
-	        /************************
-	           Element Processing
-	        ************************/
-
-	        /* Element processing consists of three parts -- data processing that cannot go stale and data processing that *can* go stale (i.e. third-party style modifications):
-	           1) Pre-Queueing: Element-wide variables, including the element's data storage, are instantiated. Call options are prepared. If triggered, the Stop action is executed.
-	           2) Queueing: The logic that runs once this call has reached its point of execution in the element's $.queue() stack. Most logic is placed here to avoid risking it becoming stale.
-	           3) Pushing: Consolidation of the tween data followed by its push onto the global in-progress calls container.
-	        */
-
-	        function processElement () {
-
-	            /*************************
-	               Part I: Pre-Queueing
-	            *************************/
-
-	            /***************************
-	               Element-Wide Variables
-	            ***************************/
-
-	            var element = this,
-	                /* The runtime opts object is the extension of the current call's options and Velocity's page-wide option defaults. */
-	                opts = $.extend({}, Velocity.defaults, options),
-	                /* A container for the processed data associated with each property in the propertyMap.
-	                   (Each property in the map produces its own "tween".) */
-	                tweensContainer = {},
-	                elementUnitConversionData;
-
-	            /******************
-	               Element Init
-	            ******************/
-
-	            if (Data(element) === undefined) {
-	                Velocity.init(element);
-	            }
-
-	            /******************
-	               Option: Delay
-	            ******************/
-
-	            /* Since queue:false doesn't respect the item's existing queue, we avoid injecting its delay here (it's set later on). */
-	            /* Note: Velocity rolls its own delay function since jQuery doesn't have a utility alias for $.fn.delay()
-	               (and thus requires jQuery element creation, which we avoid since its overhead includes DOM querying). */
-	            if (parseFloat(opts.delay) && opts.queue !== false) {
-	                $.queue(element, opts.queue, function(next) {
-	                    /* This is a flag used to indicate to the upcoming completeCall() function that this queue entry was initiated by Velocity. See completeCall() for further details. */
-	                    Velocity.velocityQueueEntryFlag = true;
-
-	                    /* The ensuing queue item (which is assigned to the "next" argument that $.queue() automatically passes in) will be triggered after a setTimeout delay.
-	                       The setTimeout is stored so that it can be subjected to clearTimeout() if this animation is prematurely stopped via Velocity's "stop" command. */
-	                    Data(element).delayTimer = {
-	                        setTimeout: setTimeout(next, parseFloat(opts.delay)),
-	                        next: next
-	                    };
-	                });
-	            }
-
-	            /*********************
-	               Option: Duration
-	            *********************/
-
-	            /* Support for jQuery's named durations. */
-	            switch (opts.duration.toString().toLowerCase()) {
-	                case "fast":
-	                    opts.duration = 200;
-	                    break;
-
-	                case "normal":
-	                    opts.duration = DURATION_DEFAULT;
-	                    break;
-
-	                case "slow":
-	                    opts.duration = 600;
-	                    break;
-
-	                default:
-	                    /* Remove the potential "ms" suffix and default to 1 if the user is attempting to set a duration of 0 (in order to produce an immediate style change). */
-	                    opts.duration = parseFloat(opts.duration) || 1;
-	            }
-
-	            /************************
-	               Global Option: Mock
-	            ************************/
-
-	            if (Velocity.mock !== false) {
-	                /* In mock mode, all animations are forced to 1ms so that they occur immediately upon the next rAF tick.
-	                   Alternatively, a multiplier can be passed in to time remap all delays and durations. */
-	                if (Velocity.mock === true) {
-	                    opts.duration = opts.delay = 1;
-	                } else {
-	                    opts.duration *= parseFloat(Velocity.mock) || 1;
-	                    opts.delay *= parseFloat(Velocity.mock) || 1;
-	                }
-	            }
-
-	            /*******************
-	               Option: Easing
-	            *******************/
-
-	            opts.easing = getEasing(opts.easing, opts.duration);
-
-	            /**********************
-	               Option: Callbacks
-	            **********************/
-
-	            /* Callbacks must functions. Otherwise, default to null. */
-	            if (opts.begin && !Type.isFunction(opts.begin)) {
-	                opts.begin = null;
-	            }
-
-	            if (opts.progress && !Type.isFunction(opts.progress)) {
-	                opts.progress = null;
-	            }
-
-	            if (opts.complete && !Type.isFunction(opts.complete)) {
-	                opts.complete = null;
-	            }
-
-	            /*********************************
-	               Option: Display & Visibility
-	            *********************************/
-
-	            /* Refer to Velocity's documentation (VelocityJS.org/#displayAndVisibility) for a description of the display and visibility options' behavior. */
-	            /* Note: We strictly check for undefined instead of falsiness because display accepts an empty string value. */
-	            if (opts.display !== undefined && opts.display !== null) {
-	                opts.display = opts.display.toString().toLowerCase();
-
-	                /* Users can pass in a special "auto" value to instruct Velocity to set the element to its default display value. */
-	                if (opts.display === "auto") {
-	                    opts.display = Velocity.CSS.Values.getDisplayType(element);
-	                }
-	            }
-
-	            if (opts.visibility !== undefined && opts.visibility !== null) {
-	                opts.visibility = opts.visibility.toString().toLowerCase();
-	            }
-
-	            /**********************
-	               Option: mobileHA
-	            **********************/
-
-	            /* When set to true, and if this is a mobile device, mobileHA automatically enables hardware acceleration (via a null transform hack)
-	               on animating elements. HA is removed from the element at the completion of its animation. */
-	            /* Note: Android Gingerbread doesn't support HA. If a null transform hack (mobileHA) is in fact set, it will prevent other tranform subproperties from taking effect. */
-	            /* Note: You can read more about the use of mobileHA in Velocity's documentation: VelocityJS.org/#mobileHA. */
-	            opts.mobileHA = (opts.mobileHA && Velocity.State.isMobile && !Velocity.State.isGingerbread);
-
-	            /***********************
-	               Part II: Queueing
-	            ***********************/
-
-	            /* When a set of elements is targeted by a Velocity call, the set is broken up and each element has the current Velocity call individually queued onto it.
-	               In this way, each element's existing queue is respected; some elements may already be animating and accordingly should not have this current Velocity call triggered immediately. */
-	            /* In each queue, tween data is processed for each animating property then pushed onto the call-wide calls array. When the last element in the set has had its tweens processed,
-	               the call array is pushed to Velocity.State.calls for live processing by the requestAnimationFrame tick. */
-	            function buildQueue (next) {
-
-	                /*******************
-	                   Option: Begin
-	                *******************/
-
-	                /* The begin callback is fired once per call -- not once per elemenet -- and is passed the full raw DOM element set as both its context and its first argument. */
-	                if (opts.begin && elementsIndex === 0) {
-	                    /* We throw callbacks in a setTimeout so that thrown errors don't halt the execution of Velocity itself. */
-	                    try {
-	                        opts.begin.call(elements, elements);
-	                    } catch (error) {
-	                        setTimeout(function() { throw error; }, 1);
-	                    }
-	                }
-
-	                /*****************************************
-	                   Tween Data Construction (for Scroll)
-	                *****************************************/
-
-	                /* Note: In order to be subjected to chaining and animation options, scroll's tweening is routed through Velocity as if it were a standard CSS property animation. */
-	                if (action === "scroll") {
-	                    /* The scroll action uniquely takes an optional "offset" option -- specified in pixels -- that offsets the targeted scroll position. */
-	                    var scrollDirection = (/^x$/i.test(opts.axis) ? "Left" : "Top"),
-	                        scrollOffset = parseFloat(opts.offset) || 0,
-	                        scrollPositionCurrent,
-	                        scrollPositionCurrentAlternate,
-	                        scrollPositionEnd;
-
-	                    /* Scroll also uniquely takes an optional "container" option, which indicates the parent element that should be scrolled --
-	                       as opposed to the browser window itself. This is useful for scrolling toward an element that's inside an overflowing parent element. */
-	                    if (opts.container) {
-	                        /* Ensure that either a jQuery object or a raw DOM element was passed in. */
-	                        if (Type.isWrapped(opts.container) || Type.isNode(opts.container)) {
-	                            /* Extract the raw DOM element from the jQuery wrapper. */
-	                            opts.container = opts.container[0] || opts.container;
-	                            /* Note: Unlike other properties in Velocity, the browser's scroll position is never cached since it so frequently changes
-	                               (due to the user's natural interaction with the page). */
-	                            scrollPositionCurrent = opts.container["scroll" + scrollDirection]; /* GET */
-
-	                            /* $.position() values are relative to the container's currently viewable area (without taking into account the container's true dimensions
-	                               -- say, for example, if the container was not overflowing). Thus, the scroll end value is the sum of the child element's position *and*
-	                               the scroll container's current scroll position. */
-	                            scrollPositionEnd = (scrollPositionCurrent + $(element).position()[scrollDirection.toLowerCase()]) + scrollOffset; /* GET */
-	                        /* If a value other than a jQuery object or a raw DOM element was passed in, default to null so that this option is ignored. */
-	                        } else {
-	                            opts.container = null;
-	                        }
-	                    } else {
-	                        /* If the window itself is being scrolled -- not a containing element -- perform a live scroll position lookup using
-	                           the appropriate cached property names (which differ based on browser type). */
-	                        scrollPositionCurrent = Velocity.State.scrollAnchor[Velocity.State["scrollProperty" + scrollDirection]]; /* GET */
-	                        /* When scrolling the browser window, cache the alternate axis's current value since window.scrollTo() doesn't let us change only one value at a time. */
-	                        scrollPositionCurrentAlternate = Velocity.State.scrollAnchor[Velocity.State["scrollProperty" + (scrollDirection === "Left" ? "Top" : "Left")]]; /* GET */
-
-	                        /* Unlike $.position(), $.offset() values are relative to the browser window's true dimensions -- not merely its currently viewable area --
-	                           and therefore end values do not need to be compounded onto current values. */
-	                        scrollPositionEnd = $(element).offset()[scrollDirection.toLowerCase()] + scrollOffset; /* GET */
-	                    }
-
-	                    /* Since there's only one format that scroll's associated tweensContainer can take, we create it manually. */
-	                    tweensContainer = {
-	                        scroll: {
-	                            rootPropertyValue: false,
-	                            startValue: scrollPositionCurrent,
-	                            currentValue: scrollPositionCurrent,
-	                            endValue: scrollPositionEnd,
-	                            unitType: "",
-	                            easing: opts.easing,
-	                            scrollData: {
-	                                container: opts.container,
-	                                direction: scrollDirection,
-	                                alternateValue: scrollPositionCurrentAlternate
-	                            }
-	                        },
-	                        element: element
-	                    };
-
-	                    if (Velocity.debug) console.log("tweensContainer (scroll): ", tweensContainer.scroll, element);
-
-	                /******************************************
-	                   Tween Data Construction (for Reverse)
-	                ******************************************/
-
-	                /* Reverse acts like a "start" action in that a property map is animated toward. The only difference is
-	                   that the property map used for reverse is the inverse of the map used in the previous call. Thus, we manipulate
-	                   the previous call to construct our new map: use the previous map's end values as our new map's start values. Copy over all other data. */
-	                /* Note: Reverse can be directly called via the "reverse" parameter, or it can be indirectly triggered via the loop option. (Loops are composed of multiple reverses.) */
-	                /* Note: Reverse calls do not need to be consecutively chained onto a currently-animating element in order to operate on cached values;
-	                   there is no harm to reverse being called on a potentially stale data cache since reverse's behavior is simply defined
-	                   as reverting to the element's values as they were prior to the previous *Velocity* call. */
-	                } else if (action === "reverse") {
-	                    /* Abort if there is no prior animation data to reverse to. */
-	                    if (!Data(element).tweensContainer) {
-	                        /* Dequeue the element so that this queue entry releases itself immediately, allowing subsequent queue entries to run. */
-	                        $.dequeue(element, opts.queue);
-
-	                        return;
-	                    } else {
-	                        /*********************
-	                           Options Parsing
-	                        *********************/
-
-	                        /* If the element was hidden via the display option in the previous call,
-	                           revert display to "auto" prior to reversal so that the element is visible again. */
-	                        if (Data(element).opts.display === "none") {
-	                            Data(element).opts.display = "auto";
-	                        }
-
-	                        if (Data(element).opts.visibility === "hidden") {
-	                            Data(element).opts.visibility = "visible";
-	                        }
-
-	                        /* If the loop option was set in the previous call, disable it so that "reverse" calls aren't recursively generated.
-	                           Further, remove the previous call's callback options; typically, users do not want these to be refired. */
-	                        Data(element).opts.loop = false;
-	                        Data(element).opts.begin = null;
-	                        Data(element).opts.complete = null;
-
-	                        /* Since we're extending an opts object that has already been extended with the defaults options object,
-	                           we remove non-explicitly-defined properties that are auto-assigned values. */
-	                        if (!options.easing) {
-	                            delete opts.easing;
-	                        }
-
-	                        if (!options.duration) {
-	                            delete opts.duration;
-	                        }
-
-	                        /* The opts object used for reversal is an extension of the options object optionally passed into this
-	                           reverse call plus the options used in the previous Velocity call. */
-	                        opts = $.extend({}, Data(element).opts, opts);
-
-	                        /*************************************
-	                           Tweens Container Reconstruction
-	                        *************************************/
-
-	                        /* Create a deepy copy (indicated via the true flag) of the previous call's tweensContainer. */
-	                        var lastTweensContainer = $.extend(true, {}, Data(element).tweensContainer);
-
-	                        /* Manipulate the previous tweensContainer by replacing its end values and currentValues with its start values. */
-	                        for (var lastTween in lastTweensContainer) {
-	                            /* In addition to tween data, tweensContainers contain an element property that we ignore here. */
-	                            if (lastTween !== "element") {
-	                                var lastStartValue = lastTweensContainer[lastTween].startValue;
-
-	                                lastTweensContainer[lastTween].startValue = lastTweensContainer[lastTween].currentValue = lastTweensContainer[lastTween].endValue;
-	                                lastTweensContainer[lastTween].endValue = lastStartValue;
-
-	                                /* Easing is the only option that embeds into the individual tween data (since it can be defined on a per-property basis).
-	                                   Accordingly, every property's easing value must be updated when an options object is passed in with a reverse call.
-	                                   The side effect of this extensibility is that all per-property easing values are forcefully reset to the new value. */
-	                                if (!Type.isEmptyObject(options)) {
-	                                    lastTweensContainer[lastTween].easing = opts.easing;
-	                                }
-
-	                                if (Velocity.debug) console.log("reverse tweensContainer (" + lastTween + "): " + JSON.stringify(lastTweensContainer[lastTween]), element);
-	                            }
-	                        }
-
-	                        tweensContainer = lastTweensContainer;
-	                    }
-
-	                /*****************************************
-	                   Tween Data Construction (for Start)
-	                *****************************************/
-
-	                } else if (action === "start") {
-
-	                    /*************************
-	                        Value Transferring
-	                    *************************/
-
-	                    /* If this queue entry follows a previous Velocity-initiated queue entry *and* if this entry was created
-	                       while the element was in the process of being animated by Velocity, then this current call is safe to use
-	                       the end values from the prior call as its start values. Velocity attempts to perform this value transfer
-	                       process whenever possible in order to avoid requerying the DOM. */
-	                    /* If values aren't transferred from a prior call and start values were not forcefed by the user (more on this below),
-	                       then the DOM is queried for the element's current values as a last resort. */
-	                    /* Note: Conversely, animation reversal (and looping) *always* perform inter-call value transfers; they never requery the DOM. */
-	                    var lastTweensContainer;
-
-	                    /* The per-element isAnimating flag is used to indicate whether it's safe (i.e. the data isn't stale)
-	                       to transfer over end values to use as start values. If it's set to true and there is a previous
-	                       Velocity call to pull values from, do so. */
-	                    if (Data(element).tweensContainer && Data(element).isAnimating === true) {
-	                        lastTweensContainer = Data(element).tweensContainer;
-	                    }
-
-	                    /***************************
-	                       Tween Data Calculation
-	                    ***************************/
-
-	                    /* This function parses property data and defaults endValue, easing, and startValue as appropriate. */
-	                    /* Property map values can either take the form of 1) a single value representing the end value,
-	                       or 2) an array in the form of [ endValue, [, easing] [, startValue] ].
-	                       The optional third parameter is a forcefed startValue to be used instead of querying the DOM for
-	                       the element's current value. Read Velocity's docmentation to learn more about forcefeeding: VelocityJS.org/#forcefeeding */
-	                    function parsePropertyValue (valueData, skipResolvingEasing) {
-	                        var endValue = undefined,
-	                            easing = undefined,
-	                            startValue = undefined;
-
-	                        /* Handle the array format, which can be structured as one of three potential overloads:
-	                           A) [ endValue, easing, startValue ], B) [ endValue, easing ], or C) [ endValue, startValue ] */
-	                        if (Type.isArray(valueData)) {
-	                            /* endValue is always the first item in the array. Don't bother validating endValue's value now
-	                               since the ensuing property cycling logic does that. */
-	                            endValue = valueData[0];
-
-	                            /* Two-item array format: If the second item is a number, function, or hex string, treat it as a
-	                               start value since easings can only be non-hex strings or arrays. */
-	                            if ((!Type.isArray(valueData[1]) && /^[\d-]/.test(valueData[1])) || Type.isFunction(valueData[1]) || CSS.RegEx.isHex.test(valueData[1])) {
-	                                startValue = valueData[1];
-	                            /* Two or three-item array: If the second item is a non-hex string or an array, treat it as an easing. */
-	                            } else if ((Type.isString(valueData[1]) && !CSS.RegEx.isHex.test(valueData[1])) || Type.isArray(valueData[1])) {
-	                                easing = skipResolvingEasing ? valueData[1] : getEasing(valueData[1], opts.duration);
-
-	                                /* Don't bother validating startValue's value now since the ensuing property cycling logic inherently does that. */
-	                                if (valueData[2] !== undefined) {
-	                                    startValue = valueData[2];
-	                                }
-	                            }
-	                        /* Handle the single-value format. */
-	                        } else {
-	                            endValue = valueData;
-	                        }
-
-	                        /* Default to the call's easing if a per-property easing type was not defined. */
-	                        if (!skipResolvingEasing) {
-	                            easing = easing || opts.easing;
-	                        }
-
-	                        /* If functions were passed in as values, pass the function the current element as its context,
-	                           plus the element's index and the element set's size as arguments. Then, assign the returned value. */
-	                        if (Type.isFunction(endValue)) {
-	                            endValue = endValue.call(element, elementsIndex, elementsLength);
-	                        }
-
-	                        if (Type.isFunction(startValue)) {
-	                            startValue = startValue.call(element, elementsIndex, elementsLength);
-	                        }
-
-	                        /* Allow startValue to be left as undefined to indicate to the ensuing code that its value was not forcefed. */
-	                        return [ endValue || 0, easing, startValue ];
-	                    }
-
-	                    /* Cycle through each property in the map, looking for shorthand color properties (e.g. "color" as opposed to "colorRed"). Inject the corresponding
-	                       colorRed, colorGreen, and colorBlue RGB component tweens into the propertiesMap (which Velocity understands) and remove the shorthand property. */
-	                    $.each(propertiesMap, function(property, value) {
-	                        /* Find shorthand color properties that have been passed a hex string. */
-	                        if (RegExp("^" + CSS.Lists.colors.join("$|^") + "$").test(property)) {
-	                            /* Parse the value data for each shorthand. */
-	                            var valueData = parsePropertyValue(value, true),
-	                                endValue = valueData[0],
-	                                easing = valueData[1],
-	                                startValue = valueData[2];
-
-	                            if (CSS.RegEx.isHex.test(endValue)) {
-	                                /* Convert the hex strings into their RGB component arrays. */
-	                                var colorComponents = [ "Red", "Green", "Blue" ],
-	                                    endValueRGB = CSS.Values.hexToRgb(endValue),
-	                                    startValueRGB = startValue ? CSS.Values.hexToRgb(startValue) : undefined;
-
-	                                /* Inject the RGB component tweens into propertiesMap. */
-	                                for (var i = 0; i < colorComponents.length; i++) {
-	                                    var dataArray = [ endValueRGB[i] ];
-
-	                                    if (easing) {
-	                                        dataArray.push(easing);
-	                                    }
-
-	                                    if (startValueRGB !== undefined) {
-	                                        dataArray.push(startValueRGB[i]);
-	                                    }
-
-	                                    propertiesMap[property + colorComponents[i]] = dataArray;
-	                                }
-
-	                                /* Remove the intermediary shorthand property entry now that we've processed it. */
-	                                delete propertiesMap[property];
-	                            }
-	                        }
-	                    });
-
-	                    /* Create a tween out of each property, and append its associated data to tweensContainer. */
-	                    for (var property in propertiesMap) {
-
-	                        /**************************
-	                           Start Value Sourcing
-	                        **************************/
-
-	                        /* Parse out endValue, easing, and startValue from the property's data. */
-	                        var valueData = parsePropertyValue(propertiesMap[property]),
-	                            endValue = valueData[0],
-	                            easing = valueData[1],
-	                            startValue = valueData[2];
-
-	                        /* Now that the original property name's format has been used for the parsePropertyValue() lookup above,
-	                           we force the property to its camelCase styling to normalize it for manipulation. */
-	                        property = CSS.Names.camelCase(property);
-
-	                        /* In case this property is a hook, there are circumstances where we will intend to work on the hook's root property and not the hooked subproperty. */
-	                        var rootProperty = CSS.Hooks.getRoot(property),
-	                            rootPropertyValue = false;
-
-	                        /* Other than for the dummy tween property, properties that are not supported by the browser (and do not have an associated normalization) will
-	                           inherently produce no style changes when set, so they are skipped in order to decrease animation tick overhead.
-	                           Property support is determined via prefixCheck(), which returns a false flag when no supported is detected. */
-	                        /* Note: Since SVG elements have some of their properties directly applied as HTML attributes,
-	                           there is no way to check for their explicit browser support, and so we skip skip this check for them. */
-	                        if (!Data(element).isSVG && rootProperty !== "tween" && CSS.Names.prefixCheck(rootProperty)[1] === false && CSS.Normalizations.registered[rootProperty] === undefined) {
-	                            if (Velocity.debug) console.log("Skipping [" + rootProperty + "] due to a lack of browser support.");
-
-	                            continue;
-	                        }
-
-	                        /* If the display option is being set to a non-"none" (e.g. "block") and opacity (filter on IE<=8) is being
-	                           animated to an endValue of non-zero, the user's intention is to fade in from invisible, thus we forcefeed opacity
-	                           a startValue of 0 if its startValue hasn't already been sourced by value transferring or prior forcefeeding. */
-	                        if (((opts.display !== undefined && opts.display !== null && opts.display !== "none") || (opts.visibility !== undefined && opts.visibility !== "hidden")) && /opacity|filter/.test(property) && !startValue && endValue !== 0) {
-	                            startValue = 0;
-	                        }
-
-	                        /* If values have been transferred from the previous Velocity call, extract the endValue and rootPropertyValue
-	                           for all of the current call's properties that were *also* animated in the previous call. */
-	                        /* Note: Value transferring can optionally be disabled by the user via the _cacheValues option. */
-	                        if (opts._cacheValues && lastTweensContainer && lastTweensContainer[property]) {
-	                            if (startValue === undefined) {
-	                                startValue = lastTweensContainer[property].endValue + lastTweensContainer[property].unitType;
-	                            }
-
-	                            /* The previous call's rootPropertyValue is extracted from the element's data cache since that's the
-	                               instance of rootPropertyValue that gets freshly updated by the tweening process, whereas the rootPropertyValue
-	                               attached to the incoming lastTweensContainer is equal to the root property's value prior to any tweening. */
-	                            rootPropertyValue = Data(element).rootPropertyValueCache[rootProperty];
-	                        /* If values were not transferred from a previous Velocity call, query the DOM as needed. */
-	                        } else {
-	                            /* Handle hooked properties. */
-	                            if (CSS.Hooks.registered[property]) {
-	                               if (startValue === undefined) {
-	                                    rootPropertyValue = CSS.getPropertyValue(element, rootProperty); /* GET */
-	                                    /* Note: The following getPropertyValue() call does not actually trigger a DOM query;
-	                                       getPropertyValue() will extract the hook from rootPropertyValue. */
-	                                    startValue = CSS.getPropertyValue(element, property, rootPropertyValue);
-	                                /* If startValue is already defined via forcefeeding, do not query the DOM for the root property's value;
-	                                   just grab rootProperty's zero-value template from CSS.Hooks. This overwrites the element's actual
-	                                   root property value (if one is set), but this is acceptable since the primary reason users forcefeed is
-	                                   to avoid DOM queries, and thus we likewise avoid querying the DOM for the root property's value. */
-	                                } else {
-	                                    /* Grab this hook's zero-value template, e.g. "0px 0px 0px black". */
-	                                    rootPropertyValue = CSS.Hooks.templates[rootProperty][1];
-	                                }
-	                            /* Handle non-hooked properties that haven't already been defined via forcefeeding. */
-	                            } else if (startValue === undefined) {
-	                                startValue = CSS.getPropertyValue(element, property); /* GET */
-	                            }
-	                        }
-
-	                        /**************************
-	                           Value Data Extraction
-	                        **************************/
-
-	                        var separatedValue,
-	                            endValueUnitType,
-	                            startValueUnitType,
-	                            operator = false;
-
-	                        /* Separates a property value into its numeric value and its unit type. */
-	                        function separateValue (property, value) {
-	                            var unitType,
-	                                numericValue;
-
-	                            numericValue = (value || "0")
-	                                .toString()
-	                                .toLowerCase()
-	                                /* Match the unit type at the end of the value. */
-	                                .replace(/[%A-z]+$/, function(match) {
-	                                    /* Grab the unit type. */
-	                                    unitType = match;
-
-	                                    /* Strip the unit type off of value. */
-	                                    return "";
-	                                });
-
-	                            /* If no unit type was supplied, assign one that is appropriate for this property (e.g. "deg" for rotateZ or "px" for width). */
-	                            if (!unitType) {
-	                                unitType = CSS.Values.getUnitType(property);
-	                            }
-
-	                            return [ numericValue, unitType ];
-	                        }
-
-	                        /* Separate startValue. */
-	                        separatedValue = separateValue(property, startValue);
-	                        startValue = separatedValue[0];
-	                        startValueUnitType = separatedValue[1];
-
-	                        /* Separate endValue, and extract a value operator (e.g. "+=", "-=") if one exists. */
-	                        separatedValue = separateValue(property, endValue);
-	                        endValue = separatedValue[0].replace(/^([+-\/*])=/, function(match, subMatch) {
-	                            operator = subMatch;
-
-	                            /* Strip the operator off of the value. */
-	                            return "";
-	                        });
-	                        endValueUnitType = separatedValue[1];
-
-	                        /* Parse float values from endValue and startValue. Default to 0 if NaN is returned. */
-	                        startValue = parseFloat(startValue) || 0;
-	                        endValue = parseFloat(endValue) || 0;
-
-	                        /***************************************
-	                           Property-Specific Value Conversion
-	                        ***************************************/
-
-	                        /* Custom support for properties that don't actually accept the % unit type, but where pollyfilling is trivial and relatively foolproof. */
-	                        if (endValueUnitType === "%") {
-	                            /* A %-value fontSize/lineHeight is relative to the parent's fontSize (as opposed to the parent's dimensions),
-	                               which is identical to the em unit's behavior, so we piggyback off of that. */
-	                            if (/^(fontSize|lineHeight)$/.test(property)) {
-	                                /* Convert % into an em decimal value. */
-	                                endValue = endValue / 100;
-	                                endValueUnitType = "em";
-	                            /* For scaleX and scaleY, convert the value into its decimal format and strip off the unit type. */
-	                            } else if (/^scale/.test(property)) {
-	                                endValue = endValue / 100;
-	                                endValueUnitType = "";
-	                            /* For RGB components, take the defined percentage of 255 and strip off the unit type. */
-	                            } else if (/(Red|Green|Blue)$/i.test(property)) {
-	                                endValue = (endValue / 100) * 255;
-	                                endValueUnitType = "";
-	                            }
-	                        }
-
-	                        /***************************
-	                           Unit Ratio Calculation
-	                        ***************************/
-
-	                        /* When queried, the browser returns (most) CSS property values in pixels. Therefore, if an endValue with a unit type of
-	                           %, em, or rem is animated toward, startValue must be converted from pixels into the same unit type as endValue in order
-	                           for value manipulation logic (increment/decrement) to proceed. Further, if the startValue was forcefed or transferred
-	                           from a previous call, startValue may also not be in pixels. Unit conversion logic therefore consists of two steps:
-	                           1) Calculating the ratio of %/em/rem/vh/vw relative to pixels
-	                           2) Converting startValue into the same unit of measurement as endValue based on these ratios. */
-	                        /* Unit conversion ratios are calculated by inserting a sibling node next to the target node, copying over its position property,
-	                           setting values with the target unit type then comparing the returned pixel value. */
-	                        /* Note: Even if only one of these unit types is being animated, all unit ratios are calculated at once since the overhead
-	                           of batching the SETs and GETs together upfront outweights the potential overhead
-	                           of layout thrashing caused by re-querying for uncalculated ratios for subsequently-processed properties. */
-	                        /* Todo: Shift this logic into the calls' first tick instance so that it's synced with RAF. */
-	                        function calculateUnitRatios () {
-
-	                            /************************
-	                                Same Ratio Checks
-	                            ************************/
-
-	                            /* The properties below are used to determine whether the element differs sufficiently from this call's
-	                               previously iterated element to also differ in its unit conversion ratios. If the properties match up with those
-	                               of the prior element, the prior element's conversion ratios are used. Like most optimizations in Velocity,
-	                               this is done to minimize DOM querying. */
-	                            var sameRatioIndicators = {
-	                                    myParent: element.parentNode || document.body, /* GET */
-	                                    position: CSS.getPropertyValue(element, "position"), /* GET */
-	                                    fontSize: CSS.getPropertyValue(element, "fontSize") /* GET */
-	                                },
-	                                /* Determine if the same % ratio can be used. % is based on the element's position value and its parent's width and height dimensions. */
-	                                samePercentRatio = ((sameRatioIndicators.position === callUnitConversionData.lastPosition) && (sameRatioIndicators.myParent === callUnitConversionData.lastParent)),
-	                                /* Determine if the same em ratio can be used. em is relative to the element's fontSize. */
-	                                sameEmRatio = (sameRatioIndicators.fontSize === callUnitConversionData.lastFontSize);
-
-	                            /* Store these ratio indicators call-wide for the next element to compare against. */
-	                            callUnitConversionData.lastParent = sameRatioIndicators.myParent;
-	                            callUnitConversionData.lastPosition = sameRatioIndicators.position;
-	                            callUnitConversionData.lastFontSize = sameRatioIndicators.fontSize;
-
-	                            /***************************
-	                               Element-Specific Units
-	                            ***************************/
-
-	                            /* Note: IE8 rounds to the nearest pixel when returning CSS values, thus we perform conversions using a measurement
-	                               of 100 (instead of 1) to give our ratios a precision of at least 2 decimal values. */
-	                            var measurement = 100,
-	                                unitRatios = {};
-
-	                            if (!sameEmRatio || !samePercentRatio) {
-	                                var dummy = Data(element).isSVG ? document.createElementNS("http://www.w3.org/2000/svg", "rect") : document.createElement("div");
-
-	                                Velocity.init(dummy);
-	                                sameRatioIndicators.myParent.appendChild(dummy);
-
-	                                /* To accurately and consistently calculate conversion ratios, the element's cascaded overflow and box-sizing are stripped.
-	                                   Similarly, since width/height can be artificially constrained by their min-/max- equivalents, these are controlled for as well. */
-	                                /* Note: Overflow must be also be controlled for per-axis since the overflow property overwrites its per-axis values. */
-	                                $.each([ "overflow", "overflowX", "overflowY" ], function(i, property) {
-	                                    Velocity.CSS.setPropertyValue(dummy, property, "hidden");
-	                                });
-	                                Velocity.CSS.setPropertyValue(dummy, "position", sameRatioIndicators.position);
-	                                Velocity.CSS.setPropertyValue(dummy, "fontSize", sameRatioIndicators.fontSize);
-	                                Velocity.CSS.setPropertyValue(dummy, "boxSizing", "content-box");
-
-	                                /* width and height act as our proxy properties for measuring the horizontal and vertical % ratios. */
-	                                $.each([ "minWidth", "maxWidth", "width", "minHeight", "maxHeight", "height" ], function(i, property) {
-	                                    Velocity.CSS.setPropertyValue(dummy, property, measurement + "%");
-	                                });
-	                                /* paddingLeft arbitrarily acts as our proxy property for the em ratio. */
-	                                Velocity.CSS.setPropertyValue(dummy, "paddingLeft", measurement + "em");
-
-	                                /* Divide the returned value by the measurement to get the ratio between 1% and 1px. Default to 1 since working with 0 can produce Infinite. */
-	                                unitRatios.percentToPxWidth = callUnitConversionData.lastPercentToPxWidth = (parseFloat(CSS.getPropertyValue(dummy, "width", null, true)) || 1) / measurement; /* GET */
-	                                unitRatios.percentToPxHeight = callUnitConversionData.lastPercentToPxHeight = (parseFloat(CSS.getPropertyValue(dummy, "height", null, true)) || 1) / measurement; /* GET */
-	                                unitRatios.emToPx = callUnitConversionData.lastEmToPx = (parseFloat(CSS.getPropertyValue(dummy, "paddingLeft")) || 1) / measurement; /* GET */
-
-	                                sameRatioIndicators.myParent.removeChild(dummy);
-	                            } else {
-	                                unitRatios.emToPx = callUnitConversionData.lastEmToPx;
-	                                unitRatios.percentToPxWidth = callUnitConversionData.lastPercentToPxWidth;
-	                                unitRatios.percentToPxHeight = callUnitConversionData.lastPercentToPxHeight;
-	                            }
-
-	                            /***************************
-	                               Element-Agnostic Units
-	                            ***************************/
-
-	                            /* Whereas % and em ratios are determined on a per-element basis, the rem unit only needs to be checked
-	                               once per call since it's exclusively dependant upon document.body's fontSize. If this is the first time
-	                               that calculateUnitRatios() is being run during this call, remToPx will still be set to its default value of null,
-	                               so we calculate it now. */
-	                            if (callUnitConversionData.remToPx === null) {
-	                                /* Default to browsers' default fontSize of 16px in the case of 0. */
-	                                callUnitConversionData.remToPx = parseFloat(CSS.getPropertyValue(document.body, "fontSize")) || 16; /* GET */
-	                            }
-
-	                            /* Similarly, viewport units are %-relative to the window's inner dimensions. */
-	                            if (callUnitConversionData.vwToPx === null) {
-	                                callUnitConversionData.vwToPx = parseFloat(window.innerWidth) / 100; /* GET */
-	                                callUnitConversionData.vhToPx = parseFloat(window.innerHeight) / 100; /* GET */
-	                            }
-
-	                            unitRatios.remToPx = callUnitConversionData.remToPx;
-	                            unitRatios.vwToPx = callUnitConversionData.vwToPx;
-	                            unitRatios.vhToPx = callUnitConversionData.vhToPx;
-
-	                            if (Velocity.debug >= 1) console.log("Unit ratios: " + JSON.stringify(unitRatios), element);
-
-	                            return unitRatios;
-	                        }
-
-	                        /********************
-	                           Unit Conversion
-	                        ********************/
-
-	                        /* The * and / operators, which are not passed in with an associated unit, inherently use startValue's unit. Skip value and unit conversion. */
-	                        if (/[\/*]/.test(operator)) {
-	                            endValueUnitType = startValueUnitType;
-	                        /* If startValue and endValue differ in unit type, convert startValue into the same unit type as endValue so that if endValueUnitType
-	                           is a relative unit (%, em, rem), the values set during tweening will continue to be accurately relative even if the metrics they depend
-	                           on are dynamically changing during the course of the animation. Conversely, if we always normalized into px and used px for setting values, the px ratio
-	                           would become stale if the original unit being animated toward was relative and the underlying metrics change during the animation. */
-	                        /* Since 0 is 0 in any unit type, no conversion is necessary when startValue is 0 -- we just start at 0 with endValueUnitType. */
-	                        } else if ((startValueUnitType !== endValueUnitType) && startValue !== 0) {
-	                            /* Unit conversion is also skipped when endValue is 0, but *startValueUnitType* must be used for tween values to remain accurate. */
-	                            /* Note: Skipping unit conversion here means that if endValueUnitType was originally a relative unit, the animation won't relatively
-	                               match the underlying metrics if they change, but this is acceptable since we're animating toward invisibility instead of toward visibility,
-	                               which remains past the point of the animation's completion. */
-	                            if (endValue === 0) {
-	                                endValueUnitType = startValueUnitType;
-	                            } else {
-	                                /* By this point, we cannot avoid unit conversion (it's undesirable since it causes layout thrashing).
-	                                   If we haven't already, we trigger calculateUnitRatios(), which runs once per element per call. */
-	                                elementUnitConversionData = elementUnitConversionData || calculateUnitRatios();
-
-	                                /* The following RegEx matches CSS properties that have their % values measured relative to the x-axis. */
-	                                /* Note: W3C spec mandates that all of margin and padding's properties (even top and bottom) are %-relative to the *width* of the parent element. */
-	                                var axis = (/margin|padding|left|right|width|text|word|letter/i.test(property) || /X$/.test(property) || property === "x") ? "x" : "y";
-
-	                                /* In order to avoid generating n^2 bespoke conversion functions, unit conversion is a two-step process:
-	                                   1) Convert startValue into pixels. 2) Convert this new pixel value into endValue's unit type. */
-	                                switch (startValueUnitType) {
-	                                    case "%":
-	                                        /* Note: translateX and translateY are the only properties that are %-relative to an element's own dimensions -- not its parent's dimensions.
-	                                           Velocity does not include a special conversion process to account for this behavior. Therefore, animating translateX/Y from a % value
-	                                           to a non-% value will produce an incorrect start value. Fortunately, this sort of cross-unit conversion is rarely done by users in practice. */
-	                                        startValue *= (axis === "x" ? elementUnitConversionData.percentToPxWidth : elementUnitConversionData.percentToPxHeight);
-	                                        break;
-
-	                                    case "px":
-	                                        /* px acts as our midpoint in the unit conversion process; do nothing. */
-	                                        break;
-
-	                                    default:
-	                                        startValue *= elementUnitConversionData[startValueUnitType + "ToPx"];
-	                                }
-
-	                                /* Invert the px ratios to convert into to the target unit. */
-	                                switch (endValueUnitType) {
-	                                    case "%":
-	                                        startValue *= 1 / (axis === "x" ? elementUnitConversionData.percentToPxWidth : elementUnitConversionData.percentToPxHeight);
-	                                        break;
-
-	                                    case "px":
-	                                        /* startValue is already in px, do nothing; we're done. */
-	                                        break;
-
-	                                    default:
-	                                        startValue *= 1 / elementUnitConversionData[endValueUnitType + "ToPx"];
-	                                }
-	                            }
-	                        }
-
-	                        /*********************
-	                           Relative Values
-	                        *********************/
-
-	                        /* Operator logic must be performed last since it requires unit-normalized start and end values. */
-	                        /* Note: Relative *percent values* do not behave how most people think; while one would expect "+=50%"
-	                           to increase the property 1.5x its current value, it in fact increases the percent units in absolute terms:
-	                           50 points is added on top of the current % value. */
-	                        switch (operator) {
-	                            case "+":
-	                                endValue = startValue + endValue;
-	                                break;
-
-	                            case "-":
-	                                endValue = startValue - endValue;
-	                                break;
-
-	                            case "*":
-	                                endValue = startValue * endValue;
-	                                break;
-
-	                            case "/":
-	                                endValue = startValue / endValue;
-	                                break;
-	                        }
-
-	                        /**************************
-	                           tweensContainer Push
-	                        **************************/
-
-	                        /* Construct the per-property tween object, and push it to the element's tweensContainer. */
-	                        tweensContainer[property] = {
-	                            rootPropertyValue: rootPropertyValue,
-	                            startValue: startValue,
-	                            currentValue: startValue,
-	                            endValue: endValue,
-	                            unitType: endValueUnitType,
-	                            easing: easing
-	                        };
-
-	                        if (Velocity.debug) console.log("tweensContainer (" + property + "): " + JSON.stringify(tweensContainer[property]), element);
-	                    }
-
-	                    /* Along with its property data, store a reference to the element itself onto tweensContainer. */
-	                    tweensContainer.element = element;
-	                }
-
-	                /*****************
-	                    Call Push
-	                *****************/
-
-	                /* Note: tweensContainer can be empty if all of the properties in this call's property map were skipped due to not
-	                   being supported by the browser. The element property is used for checking that the tweensContainer has been appended to. */
-	                if (tweensContainer.element) {
-	                    /* Apply the "velocity-animating" indicator class. */
-	                    CSS.Values.addClass(element, "velocity-animating");
-
-	                    /* The call array houses the tweensContainers for each element being animated in the current call. */
-	                    call.push(tweensContainer);
-
-	                    /* Store the tweensContainer and options if we're working on the default effects queue, so that they can be used by the reverse command. */
-	                    if (opts.queue === "") {
-	                        Data(element).tweensContainer = tweensContainer;
-	                        Data(element).opts = opts;
-	                    }
-
-	                    /* Switch on the element's animating flag. */
-	                    Data(element).isAnimating = true;
-
-	                    /* Once the final element in this call's element set has been processed, push the call array onto
-	                       Velocity.State.calls for the animation tick to immediately begin processing. */
-	                    if (elementsIndex === elementsLength - 1) {
-	                        /* Add the current call plus its associated metadata (the element set and the call's options) onto the global call container.
-	                           Anything on this call container is subjected to tick() processing. */
-	                        Velocity.State.calls.push([ call, elements, opts, null, promiseData.resolver ]);
-
-	                        /* If the animation tick isn't running, start it. (Velocity shuts it off when there are no active calls to process.) */
-	                        if (Velocity.State.isTicking === false) {
-	                            Velocity.State.isTicking = true;
-
-	                            /* Start the tick loop. */
-	                            tick();
-	                        }
-	                    } else {
-	                        elementsIndex++;
-	                    }
-	                }
-	            }
-
-	            /* When the queue option is set to false, the call skips the element's queue and fires immediately. */
-	            if (opts.queue === false) {
-	                /* Since this buildQueue call doesn't respect the element's existing queue (which is where a delay option would have been appended),
-	                   we manually inject the delay property here with an explicit setTimeout. */
-	                if (opts.delay) {
-	                    setTimeout(buildQueue, opts.delay);
-	                } else {
-	                    buildQueue();
-	                }
-	            /* Otherwise, the call undergoes element queueing as normal. */
-	            /* Note: To interoperate with jQuery, Velocity uses jQuery's own $.queue() stack for queuing logic. */
-	            } else {
-	                $.queue(element, opts.queue, function(next, clearQueue) {
-	                    /* If the clearQueue flag was passed in by the stop command, resolve this call's promise. (Promises can only be resolved once,
-	                       so it's fine if this is repeatedly triggered for each element in the associated call.) */
-	                    if (clearQueue === true) {
-	                        if (promiseData.promise) {
-	                            promiseData.resolver(elements);
-	                        }
-
-	                        /* Do not continue with animation queueing. */
-	                        return true;
-	                    }
-
-	                    /* This flag indicates to the upcoming completeCall() function that this queue entry was initiated by Velocity.
-	                       See completeCall() for further details. */
-	                    Velocity.velocityQueueEntryFlag = true;
-
-	                    buildQueue(next);
-	                });
-	            }
-
-	            /*********************
-	                Auto-Dequeuing
-	            *********************/
-
-	            /* As per jQuery's $.queue() behavior, to fire the first non-custom-queue entry on an element, the element
-	               must be dequeued if its queue stack consists *solely* of the current call. (This can be determined by checking
-	               for the "inprogress" item that jQuery prepends to active queue stack arrays.) Regardless, whenever the element's
-	               queue is further appended with additional items -- including $.delay()'s or even $.animate() calls, the queue's
-	               first entry is automatically fired. This behavior contrasts that of custom queues, which never auto-fire. */
-	            /* Note: When an element set is being subjected to a non-parallel Velocity call, the animation will not begin until
-	               each one of the elements in the set has reached the end of its individually pre-existing queue chain. */
-	            /* Note: Unfortunately, most people don't fully grasp jQuery's powerful, yet quirky, $.queue() function.
-	               Lean more here: http://stackoverflow.com/questions/1058158/can-somebody-explain-jquery-queue-to-me */
-	            if ((opts.queue === "" || opts.queue === "fx") && $.queue(element)[0] !== "inprogress") {
-	                $.dequeue(element);
-	            }
-	        }
-
-	        /**************************
-	           Element Set Iteration
-	        **************************/
-
-	        /* If the "nodeType" property exists on the elements variable, we're animating a single element.
-	           Place it in an array so that $.each() can iterate over it. */
-	        $.each(elements, function(i, element) {
-	            /* Ensure each element in a set has a nodeType (is a real element) to avoid throwing errors. */
-	            if (Type.isNode(element)) {
-	                processElement.call(element);
-	            }
-	        });
-
-	        /******************
-	           Option: Loop
-	        ******************/
-
-	        /* The loop option accepts an integer indicating how many times the element should loop between the values in the
-	           current call's properties map and the element's property values prior to this call. */
-	        /* Note: The loop option's logic is performed here -- after element processing -- because the current call needs
-	           to undergo its queue insertion prior to the loop option generating its series of constituent "reverse" calls,
-	           which chain after the current call. Two reverse calls (two "alternations") constitute one loop. */
-	        var opts = $.extend({}, Velocity.defaults, options),
-	            reverseCallsCount;
-
-	        opts.loop = parseInt(opts.loop);
-	        reverseCallsCount = (opts.loop * 2) - 1;
-
-	        if (opts.loop) {
-	            /* Double the loop count to convert it into its appropriate number of "reverse" calls.
-	               Subtract 1 from the resulting value since the current call is included in the total alternation count. */
-	            for (var x = 0; x < reverseCallsCount; x++) {
-	                /* Since the logic for the reverse action occurs inside Queueing and therefore this call's options object
-	                   isn't parsed until then as well, the current call's delay option must be explicitly passed into the reverse
-	                   call so that the delay logic that occurs inside *Pre-Queueing* can process it. */
-	                var reverseOptions = {
-	                    delay: opts.delay,
-	                    progress: opts.progress
-	                };
-
-	                /* If a complete callback was passed into this call, transfer it to the loop redirect's final "reverse" call
-	                   so that it's triggered when the entire redirect is complete (and not when the very first animation is complete). */
-	                if (x === reverseCallsCount - 1) {
-	                    reverseOptions.display = opts.display;
-	                    reverseOptions.visibility = opts.visibility;
-	                    reverseOptions.complete = opts.complete;
-	                }
-
-	                animate(elements, "reverse", reverseOptions);
-	            }
-	        }
-
-	        /***************
-	            Chaining
-	        ***************/
-
-	        /* Return the elements back to the call chain, with wrapped elements taking precedence in case Velocity was called via the $.fn. extension. */
-	        return getChain();
-	    };
-
-	    /* Turn Velocity into the animation function, extended with the pre-existing Velocity object. */
-	    Velocity = $.extend(animate, Velocity);
-	    /* For legacy support, also expose the literal animate method. */
-	    Velocity.animate = animate;
-
-	    /**************
-	        Timing
-	    **************/
-
-	    /* Ticker function. */
-	    var ticker = window.requestAnimationFrame || rAFShim;
-
-	    /* Inactive browser tabs pause rAF, which results in all active animations immediately sprinting to their completion states when the tab refocuses.
-	       To get around this, we dynamically switch rAF to setTimeout (which the browser *doesn't* pause) when the tab loses focus. We skip this for mobile
-	       devices to avoid wasting battery power on inactive tabs. */
-	    /* Note: Tab focus detection doesn't work on older versions of IE, but that's okay since they don't support rAF to begin with. */
-	    if (!Velocity.State.isMobile && document.hidden !== undefined) {
-	        document.addEventListener("visibilitychange", function() {
-	            /* Reassign the rAF function (which the global tick() function uses) based on the tab's focus state. */
-	            if (document.hidden) {
-	                ticker = function(callback) {
-	                    /* The tick function needs a truthy first argument in order to pass its internal timestamp check. */
-	                    return setTimeout(function() { callback(true) }, 16);
-	                };
-
-	                /* The rAF loop has been paused by the browser, so we manually restart the tick. */
-	                tick();
-	            } else {
-	                ticker = window.requestAnimationFrame || rAFShim;
-	            }
-	        });
-	    }
-
-	    /************
-	        Tick
-	    ************/
-
-	    /* Note: All calls to Velocity are pushed to the Velocity.State.calls array, which is fully iterated through upon each tick. */
-	    function tick (timestamp) {
-	        /* An empty timestamp argument indicates that this is the first tick occurence since ticking was turned on.
-	           We leverage this metadata to fully ignore the first tick pass since RAF's initial pass is fired whenever
-	           the browser's next tick sync time occurs, which results in the first elements subjected to Velocity
-	           calls being animated out of sync with any elements animated immediately thereafter. In short, we ignore
-	           the first RAF tick pass so that elements being immediately consecutively animated -- instead of simultaneously animated
-	           by the same Velocity call -- are properly batched into the same initial RAF tick and consequently remain in sync thereafter. */
-	        if (timestamp) {
-	            /* We ignore RAF's high resolution timestamp since it can be significantly offset when the browser is
-	               under high stress; we opt for choppiness over allowing the browser to drop huge chunks of frames. */
-	            var timeCurrent = (new Date).getTime();
-
-	            /********************
-	               Call Iteration
-	            ********************/
-
-	            var callsLength = Velocity.State.calls.length;
-
-	            /* To speed up iterating over this array, it is compacted (falsey items -- calls that have completed -- are removed)
-	               when its length has ballooned to a point that can impact tick performance. This only becomes necessary when animation
-	               has been continuous with many elements over a long period of time; whenever all active calls are completed, completeCall() clears Velocity.State.calls. */
-	            if (callsLength > 10000) {
-	                Velocity.State.calls = compactSparseArray(Velocity.State.calls);
-	            }
-
-	            /* Iterate through each active call. */
-	            for (var i = 0; i < callsLength; i++) {
-	                /* When a Velocity call is completed, its Velocity.State.calls entry is set to false. Continue on to the next call. */
-	                if (!Velocity.State.calls[i]) {
-	                    continue;
-	                }
-
-	                /************************
-	                   Call-Wide Variables
-	                ************************/
-
-	                var callContainer = Velocity.State.calls[i],
-	                    call = callContainer[0],
-	                    opts = callContainer[2],
-	                    timeStart = callContainer[3],
-	                    firstTick = !!timeStart,
-	                    tweenDummyValue = null;
-
-	                /* If timeStart is undefined, then this is the first time that this call has been processed by tick().
-	                   We assign timeStart now so that its value is as close to the real animation start time as possible.
-	                   (Conversely, had timeStart been defined when this call was added to Velocity.State.calls, the delay
-	                   between that time and now would cause the first few frames of the tween to be skipped since
-	                   percentComplete is calculated relative to timeStart.) */
-	                /* Further, subtract 16ms (the approximate resolution of RAF) from the current time value so that the
-	                   first tick iteration isn't wasted by animating at 0% tween completion, which would produce the
-	                   same style value as the element's current value. */
-	                if (!timeStart) {
-	                    timeStart = Velocity.State.calls[i][3] = timeCurrent - 16;
-	                }
-
-	                /* The tween's completion percentage is relative to the tween's start time, not the tween's start value
-	                   (which would result in unpredictable tween durations since JavaScript's timers are not particularly accurate).
-	                   Accordingly, we ensure that percentComplete does not exceed 1. */
-	                var percentComplete = Math.min((timeCurrent - timeStart) / opts.duration, 1);
-
-	                /**********************
-	                   Element Iteration
-	                **********************/
-
-	                /* For every call, iterate through each of the elements in its set. */
-	                for (var j = 0, callLength = call.length; j < callLength; j++) {
-	                    var tweensContainer = call[j],
-	                        element = tweensContainer.element;
-
-	                    /* Check to see if this element has been deleted midway through the animation by checking for the
-	                       continued existence of its data cache. If it's gone, skip animating this element. */
-	                    if (!Data(element)) {
-	                        continue;
-	                    }
-
-	                    var transformPropertyExists = false;
-
-	                    /**********************************
-	                       Display & Visibility Toggling
-	                    **********************************/
-
-	                    /* If the display option is set to non-"none", set it upfront so that the element can become visible before tweening begins.
-	                       (Otherwise, display's "none" value is set in completeCall() once the animation has completed.) */
-	                    if (opts.display !== undefined && opts.display !== null && opts.display !== "none") {
-	                        if (opts.display === "flex") {
-	                            var flexValues = [ "-webkit-box", "-moz-box", "-ms-flexbox", "-webkit-flex" ];
-
-	                            $.each(flexValues, function(i, flexValue) {
-	                                CSS.setPropertyValue(element, "display", flexValue);
-	                            });
-	                        }
-
-	                        CSS.setPropertyValue(element, "display", opts.display);
-	                    }
-
-	                    /* Same goes with the visibility option, but its "none" equivalent is "hidden". */
-	                    if (opts.visibility !== undefined && opts.visibility !== "hidden") {
-	                        CSS.setPropertyValue(element, "visibility", opts.visibility);
-	                    }
-
-	                    /************************
-	                       Property Iteration
-	                    ************************/
-
-	                    /* For every element, iterate through each property. */
-	                    for (var property in tweensContainer) {
-	                        /* Note: In addition to property tween data, tweensContainer contains a reference to its associated element. */
-	                        if (property !== "element") {
-	                            var tween = tweensContainer[property],
-	                                currentValue,
-	                                /* Easing can either be a pre-genereated function or a string that references a pre-registered easing
-	                                   on the Velocity.Easings object. In either case, return the appropriate easing *function*. */
-	                                easing = Type.isString(tween.easing) ? Velocity.Easings[tween.easing] : tween.easing;
-
-	                            /******************************
-	                               Current Value Calculation
-	                            ******************************/
-
-	                            /* If this is the last tick pass (if we've reached 100% completion for this tween),
-	                               ensure that currentValue is explicitly set to its target endValue so that it's not subjected to any rounding. */
-	                            if (percentComplete === 1) {
-	                                currentValue = tween.endValue;
-	                            /* Otherwise, calculate currentValue based on the current delta from startValue. */
-	                            } else {
-	                                var tweenDelta = tween.endValue - tween.startValue;
-	                                currentValue = tween.startValue + (tweenDelta * easing(percentComplete, opts, tweenDelta));
-
-	                                /* If no value change is occurring, don't proceed with DOM updating. */
-	                                if (!firstTick && (currentValue === tween.currentValue)) {
-	                                    continue;
-	                                }
-	                            }
-
-	                            tween.currentValue = currentValue;
-
-	                            /* If we're tweening a fake 'tween' property in order to log transition values, update the one-per-call variable so that
-	                               it can be passed into the progress callback. */ 
-	                            if (property === "tween") {
-	                                tweenDummyValue = currentValue;
-	                            } else {
-	                                /******************
-	                                   Hooks: Part I
-	                                ******************/
-
-	                                /* For hooked properties, the newly-updated rootPropertyValueCache is cached onto the element so that it can be used
-	                                   for subsequent hooks in this call that are associated with the same root property. If we didn't cache the updated
-	                                   rootPropertyValue, each subsequent update to the root property in this tick pass would reset the previous hook's
-	                                   updates to rootPropertyValue prior to injection. A nice performance byproduct of rootPropertyValue caching is that
-	                                   subsequently chained animations using the same hookRoot but a different hook can use this cached rootPropertyValue. */
-	                                if (CSS.Hooks.registered[property]) {
-	                                    var hookRoot = CSS.Hooks.getRoot(property),
-	                                        rootPropertyValueCache = Data(element).rootPropertyValueCache[hookRoot];
-
-	                                    if (rootPropertyValueCache) {
-	                                        tween.rootPropertyValue = rootPropertyValueCache;
-	                                    }
-	                                }
-
-	                                /*****************
-	                                    DOM Update
-	                                *****************/
-
-	                                /* setPropertyValue() returns an array of the property name and property value post any normalization that may have been performed. */
-	                                /* Note: To solve an IE<=8 positioning bug, the unit type is dropped when setting a property value of 0. */
-	                                var adjustedSetData = CSS.setPropertyValue(element, /* SET */
-	                                                                           property,
-	                                                                           tween.currentValue + (parseFloat(currentValue) === 0 ? "" : tween.unitType),
-	                                                                           tween.rootPropertyValue,
-	                                                                           tween.scrollData);
-
-	                                /*******************
-	                                   Hooks: Part II
-	                                *******************/
-
-	                                /* Now that we have the hook's updated rootPropertyValue (the post-processed value provided by adjustedSetData), cache it onto the element. */
-	                                if (CSS.Hooks.registered[property]) {
-	                                    /* Since adjustedSetData contains normalized data ready for DOM updating, the rootPropertyValue needs to be re-extracted from its normalized form. ?? */
-	                                    if (CSS.Normalizations.registered[hookRoot]) {
-	                                        Data(element).rootPropertyValueCache[hookRoot] = CSS.Normalizations.registered[hookRoot]("extract", null, adjustedSetData[1]);
-	                                    } else {
-	                                        Data(element).rootPropertyValueCache[hookRoot] = adjustedSetData[1];
-	                                    }
-	                                }
-
-	                                /***************
-	                                   Transforms
-	                                ***************/
-
-	                                /* Flag whether a transform property is being animated so that flushTransformCache() can be triggered once this tick pass is complete. */
-	                                if (adjustedSetData[0] === "transform") {
-	                                    transformPropertyExists = true;
-	                                }
-
-	                            }
-	                        }
-	                    }
-
-	                    /****************
-	                        mobileHA
-	                    ****************/
-
-	                    /* If mobileHA is enabled, set the translate3d transform to null to force hardware acceleration.
-	                       It's safe to override this property since Velocity doesn't actually support its animation (hooks are used in its place). */
-	                    if (opts.mobileHA) {
-	                        /* Don't set the null transform hack if we've already done so. */
-	                        if (Data(element).transformCache.translate3d === undefined) {
-	                            /* All entries on the transformCache object are later concatenated into a single transform string via flushTransformCache(). */
-	                            Data(element).transformCache.translate3d = "(0px, 0px, 0px)";
-
-	                            transformPropertyExists = true;
-	                        }
-	                    }
-
-	                    if (transformPropertyExists) {
-	                        CSS.flushTransformCache(element);
-	                    }
-	                }
-
-	                /* The non-"none" display value is only applied to an element once -- when its associated call is first ticked through.
-	                   Accordingly, it's set to false so that it isn't re-processed by this call in the next tick. */
-	                if (opts.display !== undefined && opts.display !== "none") {
-	                    Velocity.State.calls[i][2].display = false;
-	                }
-	                if (opts.visibility !== undefined && opts.visibility !== "hidden") {
-	                    Velocity.State.calls[i][2].visibility = false;
-	                }
-
-	                /* Pass the elements and the timing data (percentComplete, msRemaining, timeStart, tweenDummyValue) into the progress callback. */
-	                if (opts.progress) {
-	                    opts.progress.call(callContainer[1],
-	                                       callContainer[1],
-	                                       percentComplete,
-	                                       Math.max(0, (timeStart + opts.duration) - timeCurrent),
-	                                       timeStart,
-	                                       tweenDummyValue);
-	                }
-
-	                /* If this call has finished tweening, pass its index to completeCall() to handle call cleanup. */
-	                if (percentComplete === 1) {
-	                    completeCall(i);
-	                }
-	            }
-	        }
-
-	        /* Note: completeCall() sets the isTicking flag to false when the last call on Velocity.State.calls has completed. */
-	        if (Velocity.State.isTicking) {
-	            ticker(tick);
-	        }
-	    }
-
-	    /**********************
-	        Call Completion
-	    **********************/
-
-	    /* Note: Unlike tick(), which processes all active calls at once, call completion is handled on a per-call basis. */
-	    function completeCall (callIndex, isStopped) {
-	        /* Ensure the call exists. */
-	        if (!Velocity.State.calls[callIndex]) {
-	            return false;
-	        }
-
-	        /* Pull the metadata from the call. */
-	        var call = Velocity.State.calls[callIndex][0],
-	            elements = Velocity.State.calls[callIndex][1],
-	            opts = Velocity.State.calls[callIndex][2],
-	            resolver = Velocity.State.calls[callIndex][4];
-
-	        var remainingCallsExist = false;
-
-	        /*************************
-	           Element Finalization
-	        *************************/
-
-	        for (var i = 0, callLength = call.length; i < callLength; i++) {
-	            var element = call[i].element;
-
-	            /* If the user set display to "none" (intending to hide the element), set it now that the animation has completed. */
-	            /* Note: display:none isn't set when calls are manually stopped (via Velocity("stop"). */
-	            /* Note: Display gets ignored with "reverse" calls and infinite loops, since this behavior would be undesirable. */
-	            if (!isStopped && !opts.loop) {
-	                if (opts.display === "none") {
-	                    CSS.setPropertyValue(element, "display", opts.display);
-	                }
-
-	                if (opts.visibility === "hidden") {
-	                    CSS.setPropertyValue(element, "visibility", opts.visibility);
-	                }
-	            }
-
-	            /* If the element's queue is empty (if only the "inprogress" item is left at position 0) or if its queue is about to run
-	               a non-Velocity-initiated entry, turn off the isAnimating flag. A non-Velocity-initiatied queue entry's logic might alter
-	               an element's CSS values and thereby cause Velocity's cached value data to go stale. To detect if a queue entry was initiated by Velocity,
-	               we check for the existence of our special Velocity.queueEntryFlag declaration, which minifiers won't rename since the flag
-	               is assigned to jQuery's global $ object and thus exists out of Velocity's own scope. */
-	            if (opts.loop !== true && ($.queue(element)[1] === undefined || !/\.velocityQueueEntryFlag/i.test($.queue(element)[1]))) {
-	                /* The element may have been deleted. Ensure that its data cache still exists before acting on it. */
-	                if (Data(element)) {
-	                    Data(element).isAnimating = false;
-	                    /* Clear the element's rootPropertyValueCache, which will become stale. */
-	                    Data(element).rootPropertyValueCache = {};
-
-	                    var transformHAPropertyExists = false;
-	                    /* If any 3D transform subproperty is at its default value (regardless of unit type), remove it. */
-	                    $.each(CSS.Lists.transforms3D, function(i, transformName) {
-	                        var defaultValue = /^scale/.test(transformName) ? 1 : 0,
-	                            currentValue = Data(element).transformCache[transformName];
-
-	                        if (Data(element).transformCache[transformName] !== undefined && new RegExp("^\\(" + defaultValue + "[^.]").test(currentValue)) {
-	                            transformHAPropertyExists = true;
-
-	                            delete Data(element).transformCache[transformName];
-	                        }
-	                    });
-
-	                    /* Mobile devices have hardware acceleration removed at the end of the animation in order to avoid hogging the GPU's memory. */
-	                    if (opts.mobileHA) {
-	                        transformHAPropertyExists = true;
-	                        delete Data(element).transformCache.translate3d;
-	                    }
-
-	                    /* Flush the subproperty removals to the DOM. */
-	                    if (transformHAPropertyExists) {
-	                        CSS.flushTransformCache(element);
-	                    }
-
-	                    /* Remove the "velocity-animating" indicator class. */
-	                    CSS.Values.removeClass(element, "velocity-animating");
-	                }
-	            }
-
-	            /*********************
-	               Option: Complete
-	            *********************/
-
-	            /* Complete is fired once per call (not once per element) and is passed the full raw DOM element set as both its context and its first argument. */
-	            /* Note: Callbacks aren't fired when calls are manually stopped (via Velocity("stop"). */
-	            if (!isStopped && opts.complete && !opts.loop && (i === callLength - 1)) {
-	                /* We throw callbacks in a setTimeout so that thrown errors don't halt the execution of Velocity itself. */
-	                try {
-	                    opts.complete.call(elements, elements);
-	                } catch (error) {
-	                    setTimeout(function() { throw error; }, 1);
-	                }
-	            }
-
-	            /**********************
-	               Promise Resolving
-	            **********************/
-
-	            /* Note: Infinite loops don't return promises. */
-	            if (resolver && opts.loop !== true) {
-	                resolver(elements);
-	            }
-
-	            /****************************
-	               Option: Loop (Infinite)
-	            ****************************/
-
-	            if (Data(element) && opts.loop === true && !isStopped) {
-	                /* If a rotateX/Y/Z property is being animated to 360 deg with loop:true, swap tween start/end values to enable
-	                   continuous iterative rotation looping. (Otherise, the element would just rotate back and forth.) */
-	                $.each(Data(element).tweensContainer, function(propertyName, tweenContainer) {
-	                    if (/^rotate/.test(propertyName) && parseFloat(tweenContainer.endValue) === 360) {
-	                        tweenContainer.endValue = 0;
-	                        tweenContainer.startValue = 360;
-	                    }
-
-	                    if (/^backgroundPosition/.test(propertyName) && parseFloat(tweenContainer.endValue) === 100 && tweenContainer.unitType === "%") {
-	                        tweenContainer.endValue = 0;
-	                        tweenContainer.startValue = 100;
-	                    }
-	                });
-
-	                Velocity(element, "reverse", { loop: true, delay: opts.delay });
-	            }
-
-	            /***************
-	               Dequeueing
-	            ***************/
-
-	            /* Fire the next call in the queue so long as this call's queue wasn't set to false (to trigger a parallel animation),
-	               which would have already caused the next call to fire. Note: Even if the end of the animation queue has been reached,
-	               $.dequeue() must still be called in order to completely clear jQuery's animation queue. */
-	            if (opts.queue !== false) {
-	                $.dequeue(element, opts.queue);
-	            }
-	        }
-
-	        /************************
-	           Calls Array Cleanup
-	        ************************/
-
-	        /* Since this call is complete, set it to false so that the rAF tick skips it. This array is later compacted via compactSparseArray().
-	          (For performance reasons, the call is set to false instead of being deleted from the array: http://www.html5rocks.com/en/tutorials/speed/v8/) */
-	        Velocity.State.calls[callIndex] = false;
-
-	        /* Iterate through the calls array to determine if this was the final in-progress animation.
-	           If so, set a flag to end ticking and clear the calls array. */
-	        for (var j = 0, callsLength = Velocity.State.calls.length; j < callsLength; j++) {
-	            if (Velocity.State.calls[j] !== false) {
-	                remainingCallsExist = true;
-
-	                break;
-	            }
-	        }
-
-	        if (remainingCallsExist === false) {
-	            /* tick() will detect this flag upon its next iteration and subsequently turn itself off. */
-	            Velocity.State.isTicking = false;
-
-	            /* Clear the calls array so that its length is reset. */
-	            delete Velocity.State.calls;
-	            Velocity.State.calls = [];
-	        }
-	    }
-
-	    /******************
-	        Frameworks
-	    ******************/
-
-	    /* Both jQuery and Zepto allow their $.fn object to be extended to allow wrapped elements to be subjected to plugin calls.
-	       If either framework is loaded, register a "velocity" extension pointing to Velocity's core animate() method.  Velocity
-	       also registers itself onto a global container (window.jQuery || window.Zepto || window) so that certain features are
-	       accessible beyond just a per-element scope. This master object contains an .animate() method, which is later assigned to $.fn
-	       (if jQuery or Zepto are present). Accordingly, Velocity can both act on wrapped DOM elements and stand alone for targeting raw DOM elements. */
-	    global.Velocity = Velocity;
-
-	    if (global !== window) {
-	        /* Assign the element function to Velocity's core animate() method. */
-	        global.fn.velocity = animate;
-	        /* Assign the object function's defaults to Velocity's global defaults object. */
-	        global.fn.velocity.defaults = Velocity.defaults;
-	    }
-
-	    /***********************
-	       Packaged Redirects
-	    ***********************/
-
-	    /* slideUp, slideDown */
-	    $.each([ "Down", "Up" ], function(i, direction) {
-	        Velocity.Redirects["slide" + direction] = function (element, options, elementsIndex, elementsSize, elements, promiseData) {
-	            var opts = $.extend({}, options),
-	                begin = opts.begin,
-	                complete = opts.complete,
-	                computedValues = { height: "", marginTop: "", marginBottom: "", paddingTop: "", paddingBottom: "" },
-	                inlineValues = {};
-
-	            if (opts.display === undefined) {
-	                /* Show the element before slideDown begins and hide the element after slideUp completes. */
-	                /* Note: Inline elements cannot have dimensions animated, so they're reverted to inline-block. */
-	                opts.display = (direction === "Down" ? (Velocity.CSS.Values.getDisplayType(element) === "inline" ? "inline-block" : "block") : "none");
-	            }
-
-	            opts.begin = function() {
-	                /* If the user passed in a begin callback, fire it now. */
-	                begin && begin.call(elements, elements);
-
-	                /* Cache the elements' original vertical dimensional property values so that we can animate back to them. */
-	                for (var property in computedValues) {
-	                    inlineValues[property] = element.style[property];
-
-	                    /* For slideDown, use forcefeeding to animate all vertical properties from 0. For slideUp,
-	                       use forcefeeding to start from computed values and animate down to 0. */
-	                    var propertyValue = Velocity.CSS.getPropertyValue(element, property);
-	                    computedValues[property] = (direction === "Down") ? [ propertyValue, 0 ] : [ 0, propertyValue ];
-	                }
-
-	                /* Force vertical overflow content to clip so that sliding works as expected. */
-	                inlineValues.overflow = element.style.overflow;
-	                element.style.overflow = "hidden";
-	            }
-
-	            opts.complete = function() {
-	                /* Reset element to its pre-slide inline values once its slide animation is complete. */
-	                for (var property in inlineValues) {
-	                    element.style[property] = inlineValues[property];
-	                }
-
-	                /* If the user passed in a complete callback, fire it now. */
-	                complete && complete.call(elements, elements);
-	                promiseData && promiseData.resolver(elements);
-	            };
-
-	            Velocity(element, computedValues, opts);
-	        };
-	    });
-
-	    /* fadeIn, fadeOut */
-	    $.each([ "In", "Out" ], function(i, direction) {
-	        Velocity.Redirects["fade" + direction] = function (element, options, elementsIndex, elementsSize, elements, promiseData) {
-	            var opts = $.extend({}, options),
-	                propertiesMap = { opacity: (direction === "In") ? 1 : 0 },
-	                originalComplete = opts.complete;
-
-	            /* Since redirects are triggered individually for each element in the animated set, avoid repeatedly triggering
-	               callbacks by firing them only when the final element has been reached. */
-	            if (elementsIndex !== elementsSize - 1) {
-	                opts.complete = opts.begin = null;
-	            } else {
-	                opts.complete = function() {
-	                    if (originalComplete) {
-	                        originalComplete.call(elements, elements);
-	                    }
-
-	                    promiseData && promiseData.resolver(elements);
-	                }
-	            }
-
-	            /* If a display was passed in, use it. Otherwise, default to "none" for fadeOut or the element-specific default for fadeIn. */
-	            /* Note: We allow users to pass in "null" to skip display setting altogether. */
-	            if (opts.display === undefined) {
-	                opts.display = (direction === "In" ? "auto" : "none");
-	            }
-
-	            Velocity(this, propertiesMap, opts);
-	        };
-	    });
-
-	    return Velocity;
-	}((window.jQuery || window.Zepto || window), window, document);
-	}));
-
-	/******************
-	   Known Issues
-	******************/
-
-	/* The CSS spec mandates that the translateX/Y/Z transforms are %-relative to the element itself -- not its parent.
-	Velocity, however, doesn't make this distinction. Thus, converting to or from the % unit with these subproperties
-	will produce an inaccurate conversion value. The same issue exists with the cx/cy attributes of SVG circles and ellipses. */
+	module.exports = require("fs");
 
 /***/ },
-/* 190 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(1);
-	var _ = __webpack_require__(2);
-	var classnames = __webpack_require__(4);
-	var Funcs = __webpack_require__(191);
-	var ChartLayerMixin = __webpack_require__(9);
+	var _ = __webpack_require__(19);
+	var classnames = __webpack_require__(21);
+	var Funcs = __webpack_require__(208);
+	var ChartLayerMixin = __webpack_require__(26);
 
 	var FuncLayer = React.createClass({
 		displayName: "FuncLayer",
@@ -38942,7 +35306,7 @@ module.exports =
 	module.exports = FuncLayer;
 
 /***/ },
-/* 191 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38959,11 +35323,11 @@ module.exports =
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-	var _lodash = __webpack_require__(2);
+	var _lodash = __webpack_require__(19);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _SVGLayer2 = __webpack_require__(7);
+	var _SVGLayer2 = __webpack_require__(24);
 
 	var _SVGLayer3 = _interopRequireDefault(_SVGLayer2);
 
@@ -38995,6 +35359,12491 @@ module.exports =
 
 	exports["default"] = Funcs;
 	module.exports = exports["default"];
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 210 */,
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _srcJsPlotypusJsx = __webpack_require__(18);
+
+	var ApiDocs = (function (_React$Component) {
+		function ApiDocs() {
+			_classCallCheck(this, ApiDocs);
+
+			if (_React$Component != null) {
+				_React$Component.apply(this, arguments);
+			}
+		}
+
+		_inherits(ApiDocs, _React$Component);
+
+		_createClass(ApiDocs, [{
+			key: "genData",
+			value: function genData(count, values, cats, series) {
+				/*
+	     count (Number):           How many datapoints you want.
+	     values (Array(Number)):   Must be of length 2. Min and Max.
+	     cats (Array(String)):     Set of all possible categories.
+	     series (Array(String)):   Set of all possible series.
+	   */
+				return _.times(count, function (n) {
+					return {
+						value: (values[1] - values[0]) * Math.random(),
+						category: _.sample(cats),
+						series: _.sample(series)
+					};
+				});
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
+				return _react2["default"].createElement(
+					"div",
+					null,
+					"Under Construction"
+				);
+			}
+		}]);
+
+		return ApiDocs;
+	})(_react2["default"].Component);
+
+	exports["default"] = ApiDocs;
+	module.exports = exports["default"];
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactInlinesvg = __webpack_require__(206);
+
+	var _reactInlinesvg2 = _interopRequireDefault(_reactInlinesvg);
+
+	var Home = (function (_React$Component) {
+		function Home() {
+			_classCallCheck(this, Home);
+
+			if (_React$Component != null) {
+				_React$Component.apply(this, arguments);
+			}
+		}
+
+		_inherits(Home, _React$Component);
+
+		_createClass(Home, [{
+			key: "render",
+			value: function render() {
+				return _react2["default"].createElement(
+					"div",
+					{ className: "Home" },
+					_react2["default"].createElement(
+						"div",
+						{ id: "hero" },
+						_react2["default"].createElement(
+							"div",
+							{ id: "logo" },
+							_react2["default"].createElement(
+								_reactInlinesvg2["default"],
+								{ src: "docs/svg-icons/SVG/plotypus.svg" },
+								"Error: Logo did not load."
+							)
+						),
+						_react2["default"].createElement(
+							"div",
+							null,
+							_react2["default"].createElement(
+								"h1",
+								null,
+								"Plotypus"
+							),
+							_react2["default"].createElement(
+								"h2",
+								null,
+								"An out of the box way of thinking inside the box. Of charts."
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Home;
+	})(_react2["default"].Component);
+
+	exports["default"] = Home;
+	module.exports = exports["default"];
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Highlight = __webpack_require__(214);
+
+	var _Highlight2 = _interopRequireDefault(_Highlight);
+
+	var _GuidePages = __webpack_require__(342);
+
+	var _srcJsPlotypusJsx = __webpack_require__(18);
+
+	var Guide = (function (_React$Component) {
+	  function Guide() {
+	    _classCallCheck(this, Guide);
+
+	    if (_React$Component != null) {
+	      _React$Component.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(Guide, _React$Component);
+
+	  _createClass(Guide, [{
+	    key: "genData",
+	    value: function genData(count, values, cats, series) {
+	      /*
+	        count (Number):           How many datapoints you want.
+	        values (Array(Number)):   Must be of length 2. Min and Max.
+	        cats (Array(String)):     Set of all possible categories.
+	        series (Array(String)):   Set of all possible series.
+	      */
+	      return _.times(count, function (n) {
+	        return {
+	          value: (values[1] - values[0]) * Math.random(),
+	          category: _.sample(cats),
+	          series: _.sample(series)
+	        };
+	      });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var data = this.genData(12, [0, 10], ["wat", "derp", "honk"], ["eh"]);
+	      return _react2["default"].createElement(
+	        "div",
+	        { className: "Guide split-pane" },
+	        _react2["default"].createElement(
+	          "div",
+	          { className: "sidebar table-of-contents" },
+	          _react2["default"].createElement(
+	            "div",
+	            null,
+	            _react2["default"].createElement(
+	              "h4",
+	              null,
+	              _react2["default"].createElement(
+	                "a",
+	                { href: "#Structure" },
+	                "Structure"
+	              )
+	            ),
+	            _react2["default"].createElement(
+	              "ul",
+	              null,
+	              _react2["default"].createElement(
+	                "li",
+	                null,
+	                _react2["default"].createElement(
+	                  "a",
+	                  { href: "#PlotsAndLayers" },
+	                  "Plots and Layers"
+	                )
+	              ),
+	              _react2["default"].createElement(
+	                "li",
+	                null,
+	                _react2["default"].createElement(
+	                  "a",
+	                  { href: "#Composition" },
+	                  "Composition"
+	                )
+	              )
+	            )
+	          ),
+	          _react2["default"].createElement(
+	            "div",
+	            null,
+	            _react2["default"].createElement(
+	              "h4",
+	              null,
+	              _react2["default"].createElement(
+	                "a",
+	                { href: "#Data" },
+	                "Data"
+	              )
+	            ),
+	            _react2["default"].createElement(
+	              "ul",
+	              null,
+	              _react2["default"].createElement(
+	                "li",
+	                null,
+	                _react2["default"].createElement(
+	                  "a",
+	                  { href: "#DataFormat" },
+	                  "Format"
+	                )
+	              ),
+	              _react2["default"].createElement(
+	                "li",
+	                null,
+	                _react2["default"].createElement(
+	                  "a",
+	                  { href: "#ArbitraryKeys" },
+	                  "Arbitrary Keys"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2["default"].createElement(
+	          "div",
+	          { className: "main" },
+	          _react2["default"].createElement(
+	            "article",
+	            { id: "Structure" },
+	            _react2["default"].createElement(
+	              "section",
+	              null,
+	              _react2["default"].createElement(
+	                "h1",
+	                null,
+	                "Structure"
+	              ),
+	              _react2["default"].createElement(
+	                "p",
+	                null,
+	                "There are two things you need to know about the structure of Plotypus charts. First, ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "Plot"
+	                ),
+	                "s are layered, and second, they can be composed with other Plotypus components like ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "Axis"
+	                ),
+	                " and ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "AxisLabel"
+	                ),
+	                ", and even other ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "Plot"
+	                ),
+	                "s, by way of a tabular layouting system."
+	              ),
+	              _react2["default"].createElement(
+	                "aside",
+	                null,
+	                "Note: because we are using react, all comments that would have used the HTML comment, ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "<!-- -->"
+	                ),
+	                ", will instead use the react comment, ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "{/* */}"
+	                ),
+	                "."
+	              )
+	            ),
+	            _react2["default"].createElement(_GuidePages.PlotsAndLayers, null),
+	            _react2["default"].createElement(_GuidePages.Composition, null)
+	          ),
+	          _react2["default"].createElement(
+	            "article",
+	            { id: "Data" },
+	            _react2["default"].createElement(
+	              "section",
+	              null,
+	              _react2["default"].createElement(
+	                "h1",
+	                null,
+	                "Data"
+	              ),
+	              _react2["default"].createElement(
+	                "p",
+	                null,
+	                "There are a number of things to consider when supplying Plotypus ",
+	                _react2["default"].createElement(
+	                  "code",
+	                  null,
+	                  "Plot"
+	                ),
+	                " layers data."
+	              ),
+	              _react2["default"].createElement(
+	                "p",
+	                null,
+	                "Plotypus likes thinking about data as a set of points in n-dimensional space. ",
+	                _react2["default"].createElement(
+	                  "em",
+	                  null,
+	                  "Whoa, n-dimensional space? How did we get here?"
+	                ),
+	                " Relax, young padawan. It isn't as complicated as it sounds."
+	              )
+	            ),
+	            _react2["default"].createElement(_GuidePages.DataFormat, null),
+	            _react2["default"].createElement(_GuidePages.ArbitraryKeys, null)
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Guide;
+	})(_react2["default"].Component);
+
+	exports["default"] = Guide;
+	module.exports = exports["default"];
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _highlightJs = __webpack_require__(215);
+
+	var _highlightJs2 = _interopRequireDefault(_highlightJs);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _lodash = __webpack_require__(19);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var Highlight = (function (_React$Component) {
+	  function Highlight(props) {
+	    _classCallCheck(this, Highlight);
+
+	    _get(Object.getPrototypeOf(Highlight.prototype), "constructor", this).call(this, props);
+	    this.defaultProps = {
+	      innerHTML: false
+	    };
+	  }
+
+	  _inherits(Highlight, _React$Component);
+
+	  _createClass(Highlight, [{
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
+	      this.highlightCode();
+	    }
+	  }, {
+	    key: "componentDidUpdate",
+	    value: function componentDidUpdate() {
+	      this.highlightCode();
+	    }
+	  }, {
+	    key: "highlightCode",
+	    value: function highlightCode() {
+	      var nodes = _react2["default"].findDOMNode(this).querySelectorAll("pre code");
+	      _lodash2["default"].forEach(nodes, function (node) {
+	        return _highlightJs2["default"].highlightBlock(node);
+	      });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      if (this.props.innerHTML) {
+	        return _react2["default"].createElement("div", { dangerouslySetInnerHTML: { __html: this.props.children }, className: this.props.className || null });
+	      } else {
+	        return _react2["default"].createElement(
+	          "pre",
+	          null,
+	          _react2["default"].createElement(
+	            "code",
+	            { className: this.props.className },
+	            this.props.children
+	          )
+	        );
+	      }
+	    }
+	  }]);
+
+	  return Highlight;
+	})(_react2["default"].Component);
+
+	exports["default"] = Highlight;
+	module.exports = exports["default"];
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var hljs = __webpack_require__(217);
+
+	hljs.registerLanguage('1c', __webpack_require__(218));
+	hljs.registerLanguage('actionscript', __webpack_require__(219));
+	hljs.registerLanguage('apache', __webpack_require__(220));
+	hljs.registerLanguage('applescript', __webpack_require__(221));
+	hljs.registerLanguage('armasm', __webpack_require__(222));
+	hljs.registerLanguage('xml', __webpack_require__(223));
+	hljs.registerLanguage('asciidoc', __webpack_require__(224));
+	hljs.registerLanguage('aspectj', __webpack_require__(225));
+	hljs.registerLanguage('autohotkey', __webpack_require__(226));
+	hljs.registerLanguage('avrasm', __webpack_require__(227));
+	hljs.registerLanguage('axapta', __webpack_require__(228));
+	hljs.registerLanguage('bash', __webpack_require__(229));
+	hljs.registerLanguage('brainfuck', __webpack_require__(230));
+	hljs.registerLanguage('cal', __webpack_require__(231));
+	hljs.registerLanguage('capnproto', __webpack_require__(232));
+	hljs.registerLanguage('ceylon', __webpack_require__(233));
+	hljs.registerLanguage('clojure', __webpack_require__(234));
+	hljs.registerLanguage('clojure-repl', __webpack_require__(235));
+	hljs.registerLanguage('cmake', __webpack_require__(236));
+	hljs.registerLanguage('coffeescript', __webpack_require__(237));
+	hljs.registerLanguage('cpp', __webpack_require__(238));
+	hljs.registerLanguage('cs', __webpack_require__(239));
+	hljs.registerLanguage('css', __webpack_require__(240));
+	hljs.registerLanguage('d', __webpack_require__(241));
+	hljs.registerLanguage('markdown', __webpack_require__(242));
+	hljs.registerLanguage('dart', __webpack_require__(243));
+	hljs.registerLanguage('delphi', __webpack_require__(244));
+	hljs.registerLanguage('diff', __webpack_require__(245));
+	hljs.registerLanguage('django', __webpack_require__(246));
+	hljs.registerLanguage('dns', __webpack_require__(247));
+	hljs.registerLanguage('dockerfile', __webpack_require__(248));
+	hljs.registerLanguage('dos', __webpack_require__(249));
+	hljs.registerLanguage('dust', __webpack_require__(250));
+	hljs.registerLanguage('elixir', __webpack_require__(251));
+	hljs.registerLanguage('ruby', __webpack_require__(252));
+	hljs.registerLanguage('erb', __webpack_require__(253));
+	hljs.registerLanguage('erlang-repl', __webpack_require__(254));
+	hljs.registerLanguage('erlang', __webpack_require__(255));
+	hljs.registerLanguage('fix', __webpack_require__(256));
+	hljs.registerLanguage('fortran', __webpack_require__(257));
+	hljs.registerLanguage('fsharp', __webpack_require__(258));
+	hljs.registerLanguage('gcode', __webpack_require__(259));
+	hljs.registerLanguage('gherkin', __webpack_require__(260));
+	hljs.registerLanguage('glsl', __webpack_require__(261));
+	hljs.registerLanguage('go', __webpack_require__(262));
+	hljs.registerLanguage('gradle', __webpack_require__(263));
+	hljs.registerLanguage('groovy', __webpack_require__(264));
+	hljs.registerLanguage('haml', __webpack_require__(265));
+	hljs.registerLanguage('handlebars', __webpack_require__(266));
+	hljs.registerLanguage('haskell', __webpack_require__(267));
+	hljs.registerLanguage('haxe', __webpack_require__(268));
+	hljs.registerLanguage('http', __webpack_require__(269));
+	hljs.registerLanguage('inform7', __webpack_require__(270));
+	hljs.registerLanguage('ini', __webpack_require__(271));
+	hljs.registerLanguage('java', __webpack_require__(272));
+	hljs.registerLanguage('javascript', __webpack_require__(273));
+	hljs.registerLanguage('json', __webpack_require__(274));
+	hljs.registerLanguage('julia', __webpack_require__(275));
+	hljs.registerLanguage('kotlin', __webpack_require__(276));
+	hljs.registerLanguage('lasso', __webpack_require__(277));
+	hljs.registerLanguage('less', __webpack_require__(278));
+	hljs.registerLanguage('lisp', __webpack_require__(279));
+	hljs.registerLanguage('livecodeserver', __webpack_require__(216));
+	hljs.registerLanguage('livescript', __webpack_require__(280));
+	hljs.registerLanguage('lua', __webpack_require__(281));
+	hljs.registerLanguage('makefile', __webpack_require__(282));
+	hljs.registerLanguage('mathematica', __webpack_require__(283));
+	hljs.registerLanguage('matlab', __webpack_require__(284));
+	hljs.registerLanguage('mel', __webpack_require__(285));
+	hljs.registerLanguage('mercury', __webpack_require__(286));
+	hljs.registerLanguage('mizar', __webpack_require__(287));
+	hljs.registerLanguage('monkey', __webpack_require__(288));
+	hljs.registerLanguage('nginx', __webpack_require__(289));
+	hljs.registerLanguage('nimrod', __webpack_require__(290));
+	hljs.registerLanguage('nix', __webpack_require__(291));
+	hljs.registerLanguage('nsis', __webpack_require__(292));
+	hljs.registerLanguage('objectivec', __webpack_require__(293));
+	hljs.registerLanguage('ocaml', __webpack_require__(294));
+	hljs.registerLanguage('openscad', __webpack_require__(295));
+	hljs.registerLanguage('oxygene', __webpack_require__(296));
+	hljs.registerLanguage('parser3', __webpack_require__(297));
+	hljs.registerLanguage('perl', __webpack_require__(298));
+	hljs.registerLanguage('pf', __webpack_require__(299));
+	hljs.registerLanguage('php', __webpack_require__(300));
+	hljs.registerLanguage('powershell', __webpack_require__(301));
+	hljs.registerLanguage('processing', __webpack_require__(302));
+	hljs.registerLanguage('profile', __webpack_require__(303));
+	hljs.registerLanguage('prolog', __webpack_require__(304));
+	hljs.registerLanguage('protobuf', __webpack_require__(305));
+	hljs.registerLanguage('puppet', __webpack_require__(306));
+	hljs.registerLanguage('python', __webpack_require__(307));
+	hljs.registerLanguage('q', __webpack_require__(308));
+	hljs.registerLanguage('r', __webpack_require__(309));
+	hljs.registerLanguage('rib', __webpack_require__(310));
+	hljs.registerLanguage('roboconf', __webpack_require__(311));
+	hljs.registerLanguage('rsl', __webpack_require__(312));
+	hljs.registerLanguage('ruleslanguage', __webpack_require__(313));
+	hljs.registerLanguage('rust', __webpack_require__(314));
+	hljs.registerLanguage('scala', __webpack_require__(315));
+	hljs.registerLanguage('scheme', __webpack_require__(316));
+	hljs.registerLanguage('scilab', __webpack_require__(317));
+	hljs.registerLanguage('scss', __webpack_require__(318));
+	hljs.registerLanguage('smali', __webpack_require__(319));
+	hljs.registerLanguage('smalltalk', __webpack_require__(320));
+	hljs.registerLanguage('sml', __webpack_require__(321));
+	hljs.registerLanguage('sql', __webpack_require__(322));
+	hljs.registerLanguage('stata', __webpack_require__(323));
+	hljs.registerLanguage('step21', __webpack_require__(324));
+	hljs.registerLanguage('stylus', __webpack_require__(325));
+	hljs.registerLanguage('swift', __webpack_require__(326));
+	hljs.registerLanguage('tcl', __webpack_require__(327));
+	hljs.registerLanguage('tex', __webpack_require__(328));
+	hljs.registerLanguage('thrift', __webpack_require__(329));
+	hljs.registerLanguage('tp', __webpack_require__(330));
+	hljs.registerLanguage('twig', __webpack_require__(331));
+	hljs.registerLanguage('typescript', __webpack_require__(332));
+	hljs.registerLanguage('vala', __webpack_require__(333));
+	hljs.registerLanguage('vbnet', __webpack_require__(334));
+	hljs.registerLanguage('vbscript', __webpack_require__(335));
+	hljs.registerLanguage('vbscript-html', __webpack_require__(336));
+	hljs.registerLanguage('verilog', __webpack_require__(337));
+	hljs.registerLanguage('vhdl', __webpack_require__(338));
+	hljs.registerLanguage('vim', __webpack_require__(339));
+	hljs.registerLanguage('x86asm', __webpack_require__(340));
+	hljs.registerLanguage('xl', __webpack_require__(341));
+
+	module.exports = hljs;
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var VARIABLE = {
+	    className: 'variable', begin: '\\b[gtps][A-Z]+[A-Za-z0-9_\\-]*\\b|\\$_[A-Z]+',
+	    relevance: 0
+	  };
+	  var COMMENT_MODES = [
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    hljs.HASH_COMMENT_MODE,
+	    hljs.COMMENT('--', '$'),
+	    hljs.COMMENT('[^:]//', '$')
+	  ];
+	  var TITLE1 = hljs.inherit(hljs.TITLE_MODE, {
+	    variants: [
+	      {begin: '\\b_*rig[A-Z]+[A-Za-z0-9_\\-]*'},
+	      {begin: '\\b_[a-z0-9\\-]+'}
+	    ]
+	  });
+	  var TITLE2 = hljs.inherit(hljs.TITLE_MODE, {begin: '\\b([A-Za-z0-9_\\-]+)\\b'});
+	  return {
+	    case_insensitive: false,
+	    keywords: {
+	      keyword:
+	        '$_COOKIE $_FILES $_GET $_GET_BINARY $_GET_RAW $_POST $_POST_BINARY $_POST_RAW $_SESSION $_SERVER ' +
+	        'codepoint codepoints segment segments codeunit codeunits sentence sentences trueWord trueWords paragraph ' +
+	        'after byte bytes english the until http forever descending using line real8 with seventh ' +
+	        'for stdout finally element word words fourth before black ninth sixth characters chars stderr ' +
+	        'uInt1 uInt1s uInt2 uInt2s stdin string lines relative rel any fifth items from middle mid ' +
+	        'at else of catch then third it file milliseconds seconds second secs sec int1 int1s int4 ' +
+	        'int4s internet int2 int2s normal text item last long detailed effective uInt4 uInt4s repeat ' +
+	        'end repeat URL in try into switch to words https token binfile each tenth as ticks tick ' +
+	        'system real4 by dateItems without char character ascending eighth whole dateTime numeric short ' +
+	        'first ftp integer abbreviated abbr abbrev private case while if',
+	      constant:
+	        'SIX TEN FORMFEED NINE ZERO NONE SPACE FOUR FALSE COLON CRLF PI COMMA ENDOFFILE EOF EIGHT FIVE ' +
+	        'QUOTE EMPTY ONE TRUE RETURN CR LINEFEED RIGHT BACKSLASH NULL SEVEN TAB THREE TWO ' +
+	        'six ten formfeed nine zero none space four false colon crlf pi comma endoffile eof eight five ' +
+	        'quote empty one true return cr linefeed right backslash null seven tab three two ' +
+	        'RIVERSION RISTATE FILE_READ_MODE FILE_WRITE_MODE FILE_WRITE_MODE DIR_WRITE_MODE FILE_READ_UMASK ' +
+	        'FILE_WRITE_UMASK DIR_READ_UMASK DIR_WRITE_UMASK',
+	      operator:
+	        'div mod wrap and or bitAnd bitNot bitOr bitXor among not in a an within ' +
+	        'contains ends with begins the keys of keys',
+	      built_in:
+	        'put abs acos aliasReference annuity arrayDecode arrayEncode asin atan atan2 average avg avgDev base64Decode ' +
+	        'base64Encode baseConvert binaryDecode binaryEncode byteOffset byteToNum cachedURL cachedURLs charToNum ' +
+	        'cipherNames codepointOffset codepointProperty codepointToNum codeunitOffset commandNames compound compress ' +
+	        'constantNames cos date dateFormat decompress directories ' +
+	        'diskSpace DNSServers exp exp1 exp2 exp10 extents files flushEvents folders format functionNames geometricMean global ' +
+	        'globals hasMemory harmonicMean hostAddress hostAddressToName hostName hostNameToAddress isNumber ISOToMac itemOffset ' +
+	        'keys len length libURLErrorData libUrlFormData libURLftpCommand libURLLastHTTPHeaders libURLLastRHHeaders ' +
+	        'libUrlMultipartFormAddPart libUrlMultipartFormData libURLVersion lineOffset ln ln1 localNames log log2 log10 ' +
+	        'longFilePath lower macToISO matchChunk matchText matrixMultiply max md5Digest median merge millisec ' +
+	        'millisecs millisecond milliseconds min monthNames nativeCharToNum normalizeText num number numToByte numToChar ' +
+	        'numToCodepoint numToNativeChar offset open openfiles openProcesses openProcessIDs openSockets ' +
+	        'paragraphOffset paramCount param params peerAddress pendingMessages platform popStdDev populationStandardDeviation ' +
+	        'populationVariance popVariance processID random randomBytes replaceText result revCreateXMLTree revCreateXMLTreeFromFile ' +
+	        'revCurrentRecord revCurrentRecordIsFirst revCurrentRecordIsLast revDatabaseColumnCount revDatabaseColumnIsNull ' +
+	        'revDatabaseColumnLengths revDatabaseColumnNames revDatabaseColumnNamed revDatabaseColumnNumbered ' +
+	        'revDatabaseColumnTypes revDatabaseConnectResult revDatabaseCursors revDatabaseID revDatabaseTableNames ' +
+	        'revDatabaseType revDataFromQuery revdb_closeCursor revdb_columnbynumber revdb_columncount revdb_columnisnull ' +
+	        'revdb_columnlengths revdb_columnnames revdb_columntypes revdb_commit revdb_connect revdb_connections ' +
+	        'revdb_connectionerr revdb_currentrecord revdb_cursorconnection revdb_cursorerr revdb_cursors revdb_dbtype ' +
+	        'revdb_disconnect revdb_execute revdb_iseof revdb_isbof revdb_movefirst revdb_movelast revdb_movenext ' +
+	        'revdb_moveprev revdb_query revdb_querylist revdb_recordcount revdb_rollback revdb_tablenames ' +
+	        'revGetDatabaseDriverPath revNumberOfRecords revOpenDatabase revOpenDatabases revQueryDatabase ' +
+	        'revQueryDatabaseBlob revQueryResult revQueryIsAtStart revQueryIsAtEnd revUnixFromMacPath revXMLAttribute ' +
+	        'revXMLAttributes revXMLAttributeValues revXMLChildContents revXMLChildNames revXMLCreateTreeFromFileWithNamespaces ' +
+	        'revXMLCreateTreeWithNamespaces revXMLDataFromXPathQuery revXMLEvaluateXPath revXMLFirstChild revXMLMatchingNode ' +
+	        'revXMLNextSibling revXMLNodeContents revXMLNumberOfChildren revXMLParent revXMLPreviousSibling ' +
+	        'revXMLRootNode revXMLRPC_CreateRequest revXMLRPC_Documents revXMLRPC_Error ' +
+	        'revXMLRPC_GetHost revXMLRPC_GetMethod revXMLRPC_GetParam revXMLText revXMLRPC_Execute ' +
+	        'revXMLRPC_GetParamCount revXMLRPC_GetParamNode revXMLRPC_GetParamType revXMLRPC_GetPath revXMLRPC_GetPort ' +
+	        'revXMLRPC_GetProtocol revXMLRPC_GetRequest revXMLRPC_GetResponse revXMLRPC_GetSocket revXMLTree ' +
+	        'revXMLTrees revXMLValidateDTD revZipDescribeItem revZipEnumerateItems revZipOpenArchives round sampVariance ' +
+	        'sec secs seconds sentenceOffset sha1Digest shell shortFilePath sin specialFolderPath sqrt standardDeviation statRound ' +
+	        'stdDev sum sysError systemVersion tan tempName textDecode textEncode tick ticks time to tokenOffset toLower toUpper ' +
+	        'transpose truewordOffset trunc uniDecode uniEncode upper URLDecode URLEncode URLStatus uuid value variableNames ' +
+	        'variance version waitDepth weekdayNames wordOffset xsltApplyStylesheet xsltApplyStylesheetFromFile xsltLoadStylesheet ' +
+	        'xsltLoadStylesheetFromFile add breakpoint cancel clear local variable file word line folder directory URL close socket process ' +
+	        'combine constant convert create new alias folder directory decrypt delete variable word line folder ' +
+	        'directory URL dispatch divide do encrypt filter get include intersect kill libURLDownloadToFile ' +
+	        'libURLFollowHttpRedirects libURLftpUpload libURLftpUploadFile libURLresetAll libUrlSetAuthCallback ' +
+	        'libURLSetCustomHTTPHeaders libUrlSetExpect100 libURLSetFTPListCommand libURLSetFTPMode libURLSetFTPStopTime ' +
+	        'libURLSetStatusCallback load multiply socket prepare process post seek rel relative read from process rename ' +
+	        'replace require resetAll resolve revAddXMLNode revAppendXML revCloseCursor revCloseDatabase revCommitDatabase ' +
+	        'revCopyFile revCopyFolder revCopyXMLNode revDeleteFolder revDeleteXMLNode revDeleteAllXMLTrees ' +
+	        'revDeleteXMLTree revExecuteSQL revGoURL revInsertXMLNode revMoveFolder revMoveToFirstRecord revMoveToLastRecord ' +
+	        'revMoveToNextRecord revMoveToPreviousRecord revMoveToRecord revMoveXMLNode revPutIntoXMLNode revRollBackDatabase ' +
+	        'revSetDatabaseDriverPath revSetXMLAttribute revXMLRPC_AddParam revXMLRPC_DeleteAllDocuments revXMLAddDTD ' +
+	        'revXMLRPC_Free revXMLRPC_FreeAll revXMLRPC_DeleteDocument revXMLRPC_DeleteParam revXMLRPC_SetHost ' +
+	        'revXMLRPC_SetMethod revXMLRPC_SetPort revXMLRPC_SetProtocol revXMLRPC_SetSocket revZipAddItemWithData ' +
+	        'revZipAddItemWithFile revZipAddUncompressedItemWithData revZipAddUncompressedItemWithFile revZipCancel ' +
+	        'revZipCloseArchive revZipDeleteItem revZipExtractItemToFile revZipExtractItemToVariable revZipSetProgressCallback ' +
+	        'revZipRenameItem revZipReplaceItemWithData revZipReplaceItemWithFile revZipOpenArchive send set sort split start stop ' +
+	        'subtract union unload wait write'
+	    },
+	    contains: [
+	      VARIABLE,
+	      {
+	        className: 'keyword',
+	        begin: '\\bend\\sif\\b'
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: '$',
+	        contains: [
+	          VARIABLE,
+	          TITLE2,
+	          hljs.APOS_STRING_MODE,
+	          hljs.QUOTE_STRING_MODE,
+	          hljs.BINARY_NUMBER_MODE,
+	          hljs.C_NUMBER_MODE,
+	          TITLE1
+	        ]
+	      },
+	      {
+	        className: 'function',
+	        begin: '\\bend\\s+', end: '$',
+	        keywords: 'end',
+	        contains: [
+	          TITLE2,
+	          TITLE1
+	        ]
+	      },
+	      {
+	        className: 'command',
+	        beginKeywords: 'command on', end: '$',
+	        contains: [
+	          VARIABLE,
+	          TITLE2,
+	          hljs.APOS_STRING_MODE,
+	          hljs.QUOTE_STRING_MODE,
+	          hljs.BINARY_NUMBER_MODE,
+	          hljs.C_NUMBER_MODE,
+	          TITLE1
+	        ]
+	      },
+	      {
+	        className: 'preprocessor',
+	        variants: [
+	          {
+	            begin: '<\\?(rev|lc|livecode)',
+	            relevance: 10
+	          },
+	          { begin: '<\\?' },
+	          { begin: '\\?>' }
+	        ]
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.BINARY_NUMBER_MODE,
+	      hljs.C_NUMBER_MODE,
+	      TITLE1
+	    ].concat(COMMENT_MODES),
+	    illegal: ';$|^\\[|^='
+	  };
+	};
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+	Syntax highlighting with language autodetection.
+	https://highlightjs.org/
+	*/
+
+	(function(factory) {
+
+	  // Setup highlight.js for different environments. First is Node.js or
+	  // CommonJS.
+	  if(true) {
+	    factory(exports);
+	  } else {
+	    // Export hljs globally even when using AMD for cases when this script
+	    // is loaded with others that may still expect a global hljs.
+	    window.hljs = factory({});
+
+	    // Finally register the global hljs with AMD.
+	    if(typeof define === 'function' && define.amd) {
+	      define('hljs', [], function() {
+	        return window.hljs;
+	      });
+	    }
+	  }
+
+	}(function(hljs) {
+
+	  /* Utility functions */
+
+	  function escape(value) {
+	    return value.replace(/&/gm, '&amp;').replace(/</gm, '&lt;').replace(/>/gm, '&gt;');
+	  }
+
+	  function tag(node) {
+	    return node.nodeName.toLowerCase();
+	  }
+
+	  function testRe(re, lexeme) {
+	    var match = re && re.exec(lexeme);
+	    return match && match.index == 0;
+	  }
+
+	  function isNotHighlighted(language) {
+	    return /no-?highlight|plain|text/.test(language);
+	  }
+
+	  function blockLanguage(block) {
+	    var i, match, length,
+	        classes = block.className + ' ';
+
+	    classes += block.parentNode ? block.parentNode.className : '';
+
+	    // language-* takes precedence over non-prefixed class names and
+	    match = /\blang(?:uage)?-([\w-]+)\b/.exec(classes);
+	    if (match) {
+	      return getLanguage(match[1]) ? match[1] : 'no-highlight';
+	    }
+
+	    classes = classes.split(/\s+/);
+	    for(i = 0, length = classes.length; i < length; i++) {
+	      if(getLanguage(classes[i]) || isNotHighlighted(classes[i])) {
+	        return classes[i];
+	      }
+	    }
+
+	  }
+
+	  function inherit(parent, obj) {
+	    var result = {}, key;
+	    for (key in parent)
+	      result[key] = parent[key];
+	    if (obj)
+	      for (key in obj)
+	        result[key] = obj[key];
+	    return result;
+	  }
+
+	  /* Stream merging */
+
+	  function nodeStream(node) {
+	    var result = [];
+	    (function _nodeStream(node, offset) {
+	      for (var child = node.firstChild; child; child = child.nextSibling) {
+	        if (child.nodeType == 3)
+	          offset += child.nodeValue.length;
+	        else if (child.nodeType == 1) {
+	          result.push({
+	            event: 'start',
+	            offset: offset,
+	            node: child
+	          });
+	          offset = _nodeStream(child, offset);
+	          // Prevent void elements from having an end tag that would actually
+	          // double them in the output. There are more void elements in HTML
+	          // but we list only those realistically expected in code display.
+	          if (!tag(child).match(/br|hr|img|input/)) {
+	            result.push({
+	              event: 'stop',
+	              offset: offset,
+	              node: child
+	            });
+	          }
+	        }
+	      }
+	      return offset;
+	    })(node, 0);
+	    return result;
+	  }
+
+	  function mergeStreams(original, highlighted, value) {
+	    var processed = 0;
+	    var result = '';
+	    var nodeStack = [];
+
+	    function selectStream() {
+	      if (!original.length || !highlighted.length) {
+	        return original.length ? original : highlighted;
+	      }
+	      if (original[0].offset != highlighted[0].offset) {
+	        return (original[0].offset < highlighted[0].offset) ? original : highlighted;
+	      }
+
+	      /*
+	      To avoid starting the stream just before it should stop the order is
+	      ensured that original always starts first and closes last:
+
+	      if (event1 == 'start' && event2 == 'start')
+	        return original;
+	      if (event1 == 'start' && event2 == 'stop')
+	        return highlighted;
+	      if (event1 == 'stop' && event2 == 'start')
+	        return original;
+	      if (event1 == 'stop' && event2 == 'stop')
+	        return highlighted;
+
+	      ... which is collapsed to:
+	      */
+	      return highlighted[0].event == 'start' ? original : highlighted;
+	    }
+
+	    function open(node) {
+	      function attr_str(a) {return ' ' + a.nodeName + '="' + escape(a.value) + '"';}
+	      result += '<' + tag(node) + Array.prototype.map.call(node.attributes, attr_str).join('') + '>';
+	    }
+
+	    function close(node) {
+	      result += '</' + tag(node) + '>';
+	    }
+
+	    function render(event) {
+	      (event.event == 'start' ? open : close)(event.node);
+	    }
+
+	    while (original.length || highlighted.length) {
+	      var stream = selectStream();
+	      result += escape(value.substr(processed, stream[0].offset - processed));
+	      processed = stream[0].offset;
+	      if (stream == original) {
+	        /*
+	        On any opening or closing tag of the original markup we first close
+	        the entire highlighted node stack, then render the original tag along
+	        with all the following original tags at the same offset and then
+	        reopen all the tags on the highlighted stack.
+	        */
+	        nodeStack.reverse().forEach(close);
+	        do {
+	          render(stream.splice(0, 1)[0]);
+	          stream = selectStream();
+	        } while (stream == original && stream.length && stream[0].offset == processed);
+	        nodeStack.reverse().forEach(open);
+	      } else {
+	        if (stream[0].event == 'start') {
+	          nodeStack.push(stream[0].node);
+	        } else {
+	          nodeStack.pop();
+	        }
+	        render(stream.splice(0, 1)[0]);
+	      }
+	    }
+	    return result + escape(value.substr(processed));
+	  }
+
+	  /* Initialization */
+
+	  function compileLanguage(language) {
+
+	    function reStr(re) {
+	        return (re && re.source) || re;
+	    }
+
+	    function langRe(value, global) {
+	      return new RegExp(
+	        reStr(value),
+	        'm' + (language.case_insensitive ? 'i' : '') + (global ? 'g' : '')
+	      );
+	    }
+
+	    function compileMode(mode, parent) {
+	      if (mode.compiled)
+	        return;
+	      mode.compiled = true;
+
+	      mode.keywords = mode.keywords || mode.beginKeywords;
+	      if (mode.keywords) {
+	        var compiled_keywords = {};
+
+	        var flatten = function(className, str) {
+	          if (language.case_insensitive) {
+	            str = str.toLowerCase();
+	          }
+	          str.split(' ').forEach(function(kw) {
+	            var pair = kw.split('|');
+	            compiled_keywords[pair[0]] = [className, pair[1] ? Number(pair[1]) : 1];
+	          });
+	        };
+
+	        if (typeof mode.keywords == 'string') { // string
+	          flatten('keyword', mode.keywords);
+	        } else {
+	          Object.keys(mode.keywords).forEach(function (className) {
+	            flatten(className, mode.keywords[className]);
+	          });
+	        }
+	        mode.keywords = compiled_keywords;
+	      }
+	      mode.lexemesRe = langRe(mode.lexemes || /\b\w+\b/, true);
+
+	      if (parent) {
+	        if (mode.beginKeywords) {
+	          mode.begin = '\\b(' + mode.beginKeywords.split(' ').join('|') + ')\\b';
+	        }
+	        if (!mode.begin)
+	          mode.begin = /\B|\b/;
+	        mode.beginRe = langRe(mode.begin);
+	        if (!mode.end && !mode.endsWithParent)
+	          mode.end = /\B|\b/;
+	        if (mode.end)
+	          mode.endRe = langRe(mode.end);
+	        mode.terminator_end = reStr(mode.end) || '';
+	        if (mode.endsWithParent && parent.terminator_end)
+	          mode.terminator_end += (mode.end ? '|' : '') + parent.terminator_end;
+	      }
+	      if (mode.illegal)
+	        mode.illegalRe = langRe(mode.illegal);
+	      if (mode.relevance === undefined)
+	        mode.relevance = 1;
+	      if (!mode.contains) {
+	        mode.contains = [];
+	      }
+	      var expanded_contains = [];
+	      mode.contains.forEach(function(c) {
+	        if (c.variants) {
+	          c.variants.forEach(function(v) {expanded_contains.push(inherit(c, v));});
+	        } else {
+	          expanded_contains.push(c == 'self' ? mode : c);
+	        }
+	      });
+	      mode.contains = expanded_contains;
+	      mode.contains.forEach(function(c) {compileMode(c, mode);});
+
+	      if (mode.starts) {
+	        compileMode(mode.starts, parent);
+	      }
+
+	      var terminators =
+	        mode.contains.map(function(c) {
+	          return c.beginKeywords ? '\\.?(' + c.begin + ')\\.?' : c.begin;
+	        })
+	        .concat([mode.terminator_end, mode.illegal])
+	        .map(reStr)
+	        .filter(Boolean);
+	      mode.terminators = terminators.length ? langRe(terminators.join('|'), true) : {exec: function(/*s*/) {return null;}};
+	    }
+
+	    compileMode(language);
+	  }
+
+	  /*
+	  Core highlighting function. Accepts a language name, or an alias, and a
+	  string with the code to highlight. Returns an object with the following
+	  properties:
+
+	  - relevance (int)
+	  - value (an HTML string with highlighting markup)
+
+	  */
+	  function highlight(name, value, ignore_illegals, continuation) {
+
+	    function subMode(lexeme, mode) {
+	      for (var i = 0; i < mode.contains.length; i++) {
+	        if (testRe(mode.contains[i].beginRe, lexeme)) {
+	          return mode.contains[i];
+	        }
+	      }
+	    }
+
+	    function endOfMode(mode, lexeme) {
+	      if (testRe(mode.endRe, lexeme)) {
+	        while (mode.endsParent && mode.parent) {
+	          mode = mode.parent;
+	        }
+	        return mode;
+	      }
+	      if (mode.endsWithParent) {
+	        return endOfMode(mode.parent, lexeme);
+	      }
+	    }
+
+	    function isIllegal(lexeme, mode) {
+	      return !ignore_illegals && testRe(mode.illegalRe, lexeme);
+	    }
+
+	    function keywordMatch(mode, match) {
+	      var match_str = language.case_insensitive ? match[0].toLowerCase() : match[0];
+	      return mode.keywords.hasOwnProperty(match_str) && mode.keywords[match_str];
+	    }
+
+	    function buildSpan(classname, insideSpan, leaveOpen, noPrefix) {
+	      var classPrefix = noPrefix ? '' : options.classPrefix,
+	          openSpan    = '<span class="' + classPrefix,
+	          closeSpan   = leaveOpen ? '' : '</span>';
+
+	      openSpan += classname + '">';
+
+	      return openSpan + insideSpan + closeSpan;
+	    }
+
+	    function processKeywords() {
+	      if (!top.keywords)
+	        return escape(mode_buffer);
+	      var result = '';
+	      var last_index = 0;
+	      top.lexemesRe.lastIndex = 0;
+	      var match = top.lexemesRe.exec(mode_buffer);
+	      while (match) {
+	        result += escape(mode_buffer.substr(last_index, match.index - last_index));
+	        var keyword_match = keywordMatch(top, match);
+	        if (keyword_match) {
+	          relevance += keyword_match[1];
+	          result += buildSpan(keyword_match[0], escape(match[0]));
+	        } else {
+	          result += escape(match[0]);
+	        }
+	        last_index = top.lexemesRe.lastIndex;
+	        match = top.lexemesRe.exec(mode_buffer);
+	      }
+	      return result + escape(mode_buffer.substr(last_index));
+	    }
+
+	    function processSubLanguage() {
+	      if (top.subLanguage && !languages[top.subLanguage]) {
+	        return escape(mode_buffer);
+	      }
+	      var result = top.subLanguage ? highlight(top.subLanguage, mode_buffer, true, continuations[top.subLanguage]) : highlightAuto(mode_buffer);
+	      // Counting embedded language score towards the host language may be disabled
+	      // with zeroing the containing mode relevance. Usecase in point is Markdown that
+	      // allows XML everywhere and makes every XML snippet to have a much larger Markdown
+	      // score.
+	      if (top.relevance > 0) {
+	        relevance += result.relevance;
+	      }
+	      if (top.subLanguageMode == 'continuous') {
+	        continuations[top.subLanguage] = result.top;
+	      }
+	      return buildSpan(result.language, result.value, false, true);
+	    }
+
+	    function processBuffer() {
+	      return top.subLanguage !== undefined ? processSubLanguage() : processKeywords();
+	    }
+
+	    function startNewMode(mode, lexeme) {
+	      var markup = mode.className? buildSpan(mode.className, '', true): '';
+	      if (mode.returnBegin) {
+	        result += markup;
+	        mode_buffer = '';
+	      } else if (mode.excludeBegin) {
+	        result += escape(lexeme) + markup;
+	        mode_buffer = '';
+	      } else {
+	        result += markup;
+	        mode_buffer = lexeme;
+	      }
+	      top = Object.create(mode, {parent: {value: top}});
+	    }
+
+	    function processLexeme(buffer, lexeme) {
+
+	      mode_buffer += buffer;
+	      if (lexeme === undefined) {
+	        result += processBuffer();
+	        return 0;
+	      }
+
+	      var new_mode = subMode(lexeme, top);
+	      if (new_mode) {
+	        result += processBuffer();
+	        startNewMode(new_mode, lexeme);
+	        return new_mode.returnBegin ? 0 : lexeme.length;
+	      }
+
+	      var end_mode = endOfMode(top, lexeme);
+	      if (end_mode) {
+	        var origin = top;
+	        if (!(origin.returnEnd || origin.excludeEnd)) {
+	          mode_buffer += lexeme;
+	        }
+	        result += processBuffer();
+	        do {
+	          if (top.className) {
+	            result += '</span>';
+	          }
+	          relevance += top.relevance;
+	          top = top.parent;
+	        } while (top != end_mode.parent);
+	        if (origin.excludeEnd) {
+	          result += escape(lexeme);
+	        }
+	        mode_buffer = '';
+	        if (end_mode.starts) {
+	          startNewMode(end_mode.starts, '');
+	        }
+	        return origin.returnEnd ? 0 : lexeme.length;
+	      }
+
+	      if (isIllegal(lexeme, top))
+	        throw new Error('Illegal lexeme "' + lexeme + '" for mode "' + (top.className || '<unnamed>') + '"');
+
+	      /*
+	      Parser should not reach this point as all types of lexemes should be caught
+	      earlier, but if it does due to some bug make sure it advances at least one
+	      character forward to prevent infinite looping.
+	      */
+	      mode_buffer += lexeme;
+	      return lexeme.length || 1;
+	    }
+
+	    var language = getLanguage(name);
+	    if (!language) {
+	      throw new Error('Unknown language: "' + name + '"');
+	    }
+
+	    compileLanguage(language);
+	    var top = continuation || language;
+	    var continuations = {}; // keep continuations for sub-languages
+	    var result = '', current;
+	    for(current = top; current != language; current = current.parent) {
+	      if (current.className) {
+	        result = buildSpan(current.className, '', true) + result;
+	      }
+	    }
+	    var mode_buffer = '';
+	    var relevance = 0;
+	    try {
+	      var match, count, index = 0;
+	      while (true) {
+	        top.terminators.lastIndex = index;
+	        match = top.terminators.exec(value);
+	        if (!match)
+	          break;
+	        count = processLexeme(value.substr(index, match.index - index), match[0]);
+	        index = match.index + count;
+	      }
+	      processLexeme(value.substr(index));
+	      for(current = top; current.parent; current = current.parent) { // close dangling modes
+	        if (current.className) {
+	          result += '</span>';
+	        }
+	      }
+	      return {
+	        relevance: relevance,
+	        value: result,
+	        language: name,
+	        top: top
+	      };
+	    } catch (e) {
+	      if (e.message.indexOf('Illegal') != -1) {
+	        return {
+	          relevance: 0,
+	          value: escape(value)
+	        };
+	      } else {
+	        throw e;
+	      }
+	    }
+	  }
+
+	  /*
+	  Highlighting with language detection. Accepts a string with the code to
+	  highlight. Returns an object with the following properties:
+
+	  - language (detected language)
+	  - relevance (int)
+	  - value (an HTML string with highlighting markup)
+	  - second_best (object with the same structure for second-best heuristically
+	    detected language, may be absent)
+
+	  */
+	  function highlightAuto(text, languageSubset) {
+	    languageSubset = languageSubset || options.languages || Object.keys(languages);
+	    var result = {
+	      relevance: 0,
+	      value: escape(text)
+	    };
+	    var second_best = result;
+	    languageSubset.forEach(function(name) {
+	      if (!getLanguage(name)) {
+	        return;
+	      }
+	      var current = highlight(name, text, false);
+	      current.language = name;
+	      if (current.relevance > second_best.relevance) {
+	        second_best = current;
+	      }
+	      if (current.relevance > result.relevance) {
+	        second_best = result;
+	        result = current;
+	      }
+	    });
+	    if (second_best.language) {
+	      result.second_best = second_best;
+	    }
+	    return result;
+	  }
+
+	  /*
+	  Post-processing of the highlighted markup:
+
+	  - replace TABs with something more useful
+	  - replace real line-breaks with '<br>' for non-pre containers
+
+	  */
+	  function fixMarkup(value) {
+	    if (options.tabReplace) {
+	      value = value.replace(/^((<[^>]+>|\t)+)/gm, function(match, p1 /*..., offset, s*/) {
+	        return p1.replace(/\t/g, options.tabReplace);
+	      });
+	    }
+	    if (options.useBR) {
+	      value = value.replace(/\n/g, '<br>');
+	    }
+	    return value;
+	  }
+
+	  function buildClassName(prevClassName, currentLang, resultLang) {
+	    var language = currentLang ? aliases[currentLang] : resultLang,
+	        result   = [prevClassName.trim()];
+
+	    if (!prevClassName.match(/\bhljs\b/)) {
+	      result.push('hljs');
+	    }
+
+	    if (prevClassName.indexOf(language) === -1) {
+	      result.push(language);
+	    }
+
+	    return result.join(' ').trim();
+	  }
+
+	  /*
+	  Applies highlighting to a DOM node containing code. Accepts a DOM node and
+	  two optional parameters for fixMarkup.
+	  */
+	  function highlightBlock(block) {
+	    var language = blockLanguage(block);
+	    if (isNotHighlighted(language))
+	        return;
+
+	    var node;
+	    if (options.useBR) {
+	      node = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+	      node.innerHTML = block.innerHTML.replace(/\n/g, '').replace(/<br[ \/]*>/g, '\n');
+	    } else {
+	      node = block;
+	    }
+	    var text = node.textContent;
+	    var result = language ? highlight(language, text, true) : highlightAuto(text);
+
+	    var originalStream = nodeStream(node);
+	    if (originalStream.length) {
+	      var resultNode = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+	      resultNode.innerHTML = result.value;
+	      result.value = mergeStreams(originalStream, nodeStream(resultNode), text);
+	    }
+	    result.value = fixMarkup(result.value);
+
+	    block.innerHTML = result.value;
+	    block.className = buildClassName(block.className, language, result.language);
+	    block.result = {
+	      language: result.language,
+	      re: result.relevance
+	    };
+	    if (result.second_best) {
+	      block.second_best = {
+	        language: result.second_best.language,
+	        re: result.second_best.relevance
+	      };
+	    }
+	  }
+
+	  var options = {
+	    classPrefix: 'hljs-',
+	    tabReplace: null,
+	    useBR: false,
+	    languages: undefined
+	  };
+
+	  /*
+	  Updates highlight.js global options with values passed in the form of an object
+	  */
+	  function configure(user_options) {
+	    options = inherit(options, user_options);
+	  }
+
+	  /*
+	  Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+	  */
+	  function initHighlighting() {
+	    if (initHighlighting.called)
+	      return;
+	    initHighlighting.called = true;
+
+	    var blocks = document.querySelectorAll('pre code');
+	    Array.prototype.forEach.call(blocks, highlightBlock);
+	  }
+
+	  /*
+	  Attaches highlighting to the page load event.
+	  */
+	  function initHighlightingOnLoad() {
+	    addEventListener('DOMContentLoaded', initHighlighting, false);
+	    addEventListener('load', initHighlighting, false);
+	  }
+
+	  var languages = {};
+	  var aliases = {};
+
+	  function registerLanguage(name, language) {
+	    var lang = languages[name] = language(hljs);
+	    if (lang.aliases) {
+	      lang.aliases.forEach(function(alias) {aliases[alias] = name;});
+	    }
+	  }
+
+	  function listLanguages() {
+	    return Object.keys(languages);
+	  }
+
+	  function getLanguage(name) {
+	    return languages[name] || languages[aliases[name]];
+	  }
+
+	  /* Interface definition */
+
+	  hljs.highlight = highlight;
+	  hljs.highlightAuto = highlightAuto;
+	  hljs.fixMarkup = fixMarkup;
+	  hljs.highlightBlock = highlightBlock;
+	  hljs.configure = configure;
+	  hljs.initHighlighting = initHighlighting;
+	  hljs.initHighlightingOnLoad = initHighlightingOnLoad;
+	  hljs.registerLanguage = registerLanguage;
+	  hljs.listLanguages = listLanguages;
+	  hljs.getLanguage = getLanguage;
+	  hljs.inherit = inherit;
+
+	  // Common regexps
+	  hljs.IDENT_RE = '[a-zA-Z]\\w*';
+	  hljs.UNDERSCORE_IDENT_RE = '[a-zA-Z_]\\w*';
+	  hljs.NUMBER_RE = '\\b\\d+(\\.\\d+)?';
+	  hljs.C_NUMBER_RE = '\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)'; // 0x..., 0..., decimal, float
+	  hljs.BINARY_NUMBER_RE = '\\b(0b[01]+)'; // 0b...
+	  hljs.RE_STARTERS_RE = '!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~';
+
+	  // Common modes
+	  hljs.BACKSLASH_ESCAPE = {
+	    begin: '\\\\[\\s\\S]', relevance: 0
+	  };
+	  hljs.APOS_STRING_MODE = {
+	    className: 'string',
+	    begin: '\'', end: '\'',
+	    illegal: '\\n',
+	    contains: [hljs.BACKSLASH_ESCAPE]
+	  };
+	  hljs.QUOTE_STRING_MODE = {
+	    className: 'string',
+	    begin: '"', end: '"',
+	    illegal: '\\n',
+	    contains: [hljs.BACKSLASH_ESCAPE]
+	  };
+	  hljs.PHRASAL_WORDS_MODE = {
+	    begin: /\b(a|an|the|are|I|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such)\b/
+	  };
+	  hljs.COMMENT = function (begin, end, inherits) {
+	    var mode = hljs.inherit(
+	      {
+	        className: 'comment',
+	        begin: begin, end: end,
+	        contains: []
+	      },
+	      inherits || {}
+	    );
+	    mode.contains.push(hljs.PHRASAL_WORDS_MODE);
+	    mode.contains.push({
+	      className: 'doctag',
+	      beginKeywords: "TODO FIXME NOTE BUG XXX",
+	      relevance: 0
+	    });
+	    return mode;
+	  };
+	  hljs.C_LINE_COMMENT_MODE = hljs.COMMENT('//', '$');
+	  hljs.C_BLOCK_COMMENT_MODE = hljs.COMMENT('/\\*', '\\*/');
+	  hljs.HASH_COMMENT_MODE = hljs.COMMENT('#', '$');
+	  hljs.NUMBER_MODE = {
+	    className: 'number',
+	    begin: hljs.NUMBER_RE,
+	    relevance: 0
+	  };
+	  hljs.C_NUMBER_MODE = {
+	    className: 'number',
+	    begin: hljs.C_NUMBER_RE,
+	    relevance: 0
+	  };
+	  hljs.BINARY_NUMBER_MODE = {
+	    className: 'number',
+	    begin: hljs.BINARY_NUMBER_RE,
+	    relevance: 0
+	  };
+	  hljs.CSS_NUMBER_MODE = {
+	    className: 'number',
+	    begin: hljs.NUMBER_RE + '(' +
+	      '%|em|ex|ch|rem'  +
+	      '|vw|vh|vmin|vmax' +
+	      '|cm|mm|in|pt|pc|px' +
+	      '|deg|grad|rad|turn' +
+	      '|s|ms' +
+	      '|Hz|kHz' +
+	      '|dpi|dpcm|dppx' +
+	      ')?',
+	    relevance: 0
+	  };
+	  hljs.REGEXP_MODE = {
+	    className: 'regexp',
+	    begin: /\//, end: /\/[gimuy]*/,
+	    illegal: /\n/,
+	    contains: [
+	      hljs.BACKSLASH_ESCAPE,
+	      {
+	        begin: /\[/, end: /\]/,
+	        relevance: 0,
+	        contains: [hljs.BACKSLASH_ESCAPE]
+	      }
+	    ]
+	  };
+	  hljs.TITLE_MODE = {
+	    className: 'title',
+	    begin: hljs.IDENT_RE,
+	    relevance: 0
+	  };
+	  hljs.UNDERSCORE_TITLE_MODE = {
+	    className: 'title',
+	    begin: hljs.UNDERSCORE_IDENT_RE,
+	    relevance: 0
+	  };
+
+	  return hljs;
+	}));
+
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs){
+	  var IDENT_RE_RU = '[a-zA-Zа-яА-Я][a-zA-Z0-9_а-яА-Я]*';
+	  var OneS_KEYWORDS = 'возврат дата для если и или иначе иначеесли исключение конецесли ' +
+	    'конецпопытки конецпроцедуры конецфункции конеццикла константа не перейти перем ' +
+	    'перечисление по пока попытка прервать продолжить процедура строка тогда фс функция цикл ' +
+	    'число экспорт';
+	  var OneS_BUILT_IN = 'ansitooem oemtoansi ввестивидсубконто ввестидату ввестизначение ' +
+	    'ввестиперечисление ввестипериод ввестиплансчетов ввестистроку ввестичисло вопрос ' +
+	    'восстановитьзначение врег выбранныйплансчетов вызватьисключение датагод датамесяц ' +
+	    'датачисло добавитьмесяц завершитьработусистемы заголовоксистемы записьжурналарегистрации ' +
+	    'запуститьприложение зафиксироватьтранзакцию значениевстроку значениевстрокувнутр ' +
+	    'значениевфайл значениеизстроки значениеизстрокивнутр значениеизфайла имякомпьютера ' +
+	    'имяпользователя каталогвременныхфайлов каталогиб каталогпользователя каталогпрограммы ' +
+	    'кодсимв командасистемы конгода конецпериодаби конецрассчитанногопериодаби ' +
+	    'конецстандартногоинтервала конквартала конмесяца коннедели лев лог лог10 макс ' +
+	    'максимальноеколичествосубконто мин монопольныйрежим названиеинтерфейса названиенабораправ ' +
+	    'назначитьвид назначитьсчет найти найтипомеченныенаудаление найтиссылки началопериодаби ' +
+	    'началостандартногоинтервала начатьтранзакцию начгода начквартала начмесяца начнедели ' +
+	    'номерднягода номерднянедели номернеделигода нрег обработкаожидания окр описаниеошибки ' +
+	    'основнойжурналрасчетов основнойплансчетов основнойязык открытьформу открытьформумодально ' +
+	    'отменитьтранзакцию очиститьокносообщений периодстр полноеимяпользователя получитьвремята ' +
+	    'получитьдатута получитьдокументта получитьзначенияотбора получитьпозициюта ' +
+	    'получитьпустоезначение получитьта прав праводоступа предупреждение префиксавтонумерации ' +
+	    'пустаястрока пустоезначение рабочаядаттьпустоезначение рабочаядата разделительстраниц ' +
+	    'разделительстрок разм разобратьпозициюдокумента рассчитатьрегистрына ' +
+	    'рассчитатьрегистрыпо сигнал симв символтабуляции создатьобъект сокрл сокрлп сокрп ' +
+	    'сообщить состояние сохранитьзначение сред статусвозврата стрдлина стрзаменить ' +
+	    'стрколичествострок стрполучитьстроку  стрчисловхождений сформироватьпозициюдокумента ' +
+	    'счетпокоду текущаядата текущеевремя типзначения типзначениястр удалитьобъекты ' +
+	    'установитьтана установитьтапо фиксшаблон формат цел шаблон';
+	  var DQUOTE =  {className: 'dquote',  begin: '""'};
+	  var STR_START = {
+	      className: 'string',
+	      begin: '"', end: '"|$',
+	      contains: [DQUOTE]
+	    };
+	  var STR_CONT = {
+	    className: 'string',
+	    begin: '\\|', end: '"|$',
+	    contains: [DQUOTE]
+	  };
+
+	  return {
+	    case_insensitive: true,
+	    lexemes: IDENT_RE_RU,
+	    keywords: {keyword: OneS_KEYWORDS, built_in: OneS_BUILT_IN},
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.NUMBER_MODE,
+	      STR_START, STR_CONT,
+	      {
+	        className: 'function',
+	        begin: '(процедура|функция)', end: '$',
+	        lexemes: IDENT_RE_RU,
+	        keywords: 'процедура функция',
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {begin: IDENT_RE_RU}),
+	          {
+	            className: 'tail',
+	            endsWithParent: true,
+	            contains: [
+	              {
+	                className: 'params',
+	                begin: '\\(', end: '\\)',
+	                lexemes: IDENT_RE_RU,
+	                keywords: 'знач',
+	                contains: [STR_START, STR_CONT]
+	              },
+	              {
+	                className: 'export',
+	                begin: 'экспорт', endsWithParent: true,
+	                lexemes: IDENT_RE_RU,
+	                keywords: 'экспорт',
+	                contains: [hljs.C_LINE_COMMENT_MODE]
+	              }
+	            ]
+	          },
+	          hljs.C_LINE_COMMENT_MODE
+	        ]
+	      },
+	      {className: 'preprocessor', begin: '#', end: '$'},
+	      {className: 'date', begin: '\'\\d{2}\\.\\d{2}\\.(\\d{2}|\\d{4})\''}
+	    ]
+	  };
+	};
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var IDENT_RE = '[a-zA-Z_$][a-zA-Z0-9_$]*';
+	  var IDENT_FUNC_RETURN_TYPE_RE = '([*]|[a-zA-Z_$][a-zA-Z0-9_$]*)';
+
+	  var AS3_REST_ARG_MODE = {
+	    className: 'rest_arg',
+	    begin: '[.]{3}', end: IDENT_RE,
+	    relevance: 10
+	  };
+
+	  return {
+	    aliases: ['as'],
+	    keywords: {
+	      keyword: 'as break case catch class const continue default delete do dynamic each ' +
+	        'else extends final finally for function get if implements import in include ' +
+	        'instanceof interface internal is namespace native new override package private ' +
+	        'protected public return set static super switch this throw try typeof use var void ' +
+	        'while with',
+	      literal: 'true false null undefined'
+	    },
+	    contains: [
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'package',
+	        beginKeywords: 'package', end: '{',
+	        contains: [hljs.TITLE_MODE]
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface', end: '{', excludeEnd: true,
+	        contains: [
+	          {
+	            beginKeywords: 'extends implements'
+	          },
+	          hljs.TITLE_MODE
+	        ]
+	      },
+	      {
+	        className: 'preprocessor',
+	        beginKeywords: 'import include', end: ';'
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: '[{;]', excludeEnd: true,
+	        illegal: '\\S',
+	        contains: [
+	          hljs.TITLE_MODE,
+	          {
+	            className: 'params',
+	            begin: '\\(', end: '\\)',
+	            contains: [
+	              hljs.APOS_STRING_MODE,
+	              hljs.QUOTE_STRING_MODE,
+	              hljs.C_LINE_COMMENT_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE,
+	              AS3_REST_ARG_MODE
+	            ]
+	          },
+	          {
+	            className: 'type',
+	            begin: ':',
+	            end: IDENT_FUNC_RETURN_TYPE_RE,
+	            relevance: 10
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var NUMBER = {className: 'number', begin: '[\\$%]\\d+'};
+	  return {
+	    aliases: ['apacheconf'],
+	    case_insensitive: true,
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      {className: 'tag', begin: '</?', end: '>'},
+	      {
+	        className: 'keyword',
+	        begin: /\w+/,
+	        relevance: 0,
+	        // keywords aren’t needed for highlighting per se, they only boost relevance
+	        // for a very generally defined mode (starts with a word, ends with line-end
+	        keywords: {
+	          common:
+	            'order deny allow setenv rewriterule rewriteengine rewritecond documentroot ' +
+	            'sethandler errordocument loadmodule options header listen serverroot ' +
+	            'servername'
+	        },
+	        starts: {
+	          end: /$/,
+	          relevance: 0,
+	          keywords: {
+	            literal: 'on off all'
+	          },
+	          contains: [
+	            {
+	              className: 'sqbracket',
+	              begin: '\\s\\[', end: '\\]$'
+	            },
+	            {
+	              className: 'cbracket',
+	              begin: '[\\$%]\\{', end: '\\}',
+	              contains: ['self', NUMBER]
+	            },
+	            NUMBER,
+	            hljs.QUOTE_STRING_MODE
+	          ]
+	        }
+	      }
+	    ],
+	    illegal: /\S/
+	  };
+	};
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: ''});
+	  var PARAMS = {
+	    className: 'params',
+	    begin: '\\(', end: '\\)',
+	    contains: ['self', hljs.C_NUMBER_MODE, STRING]
+	  };
+	  var COMMENT_MODE_1 = hljs.COMMENT('--', '$');
+	  var COMMENT_MODE_2 = hljs.COMMENT(
+	    '\\(\\*',
+	    '\\*\\)',
+	    {
+	      contains: ['self', COMMENT_MODE_1] //allow nesting
+	    }
+	  );
+	  var COMMENTS = [
+	    COMMENT_MODE_1,
+	    COMMENT_MODE_2,
+	    hljs.HASH_COMMENT_MODE
+	  ];
+
+	  return {
+	    aliases: ['osascript'],
+	    keywords: {
+	      keyword:
+	        'about above after against and around as at back before beginning ' +
+	        'behind below beneath beside between but by considering ' +
+	        'contain contains continue copy div does eighth else end equal ' +
+	        'equals error every exit fifth first for fourth from front ' +
+	        'get given global if ignoring in into is it its last local me ' +
+	        'middle mod my ninth not of on onto or over prop property put ref ' +
+	        'reference repeat returning script second set seventh since ' +
+	        'sixth some tell tenth that the|0 then third through thru ' +
+	        'timeout times to transaction try until where while whose with ' +
+	        'without',
+	      constant:
+	        'AppleScript false linefeed return pi quote result space tab true',
+	      type:
+	        'alias application boolean class constant date file integer list ' +
+	        'number real record string text',
+	      command:
+	        'activate beep count delay launch log offset read round ' +
+	        'run say summarize write',
+	      property:
+	        'character characters contents day frontmost id item length ' +
+	        'month name paragraph paragraphs rest reverse running time version ' +
+	        'weekday word words year'
+	    },
+	    contains: [
+	      STRING,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'type',
+	        begin: '\\bPOSIX file\\b'
+	      },
+	      {
+	        className: 'command',
+	        begin:
+	          '\\b(clipboard info|the clipboard|info for|list (disks|folder)|' +
+	          'mount volume|path to|(close|open for) access|(get|set) eof|' +
+	          'current date|do shell script|get volume settings|random number|' +
+	          'set volume|system attribute|system info|time to GMT|' +
+	          '(load|run|store) script|scripting components|' +
+	          'ASCII (character|number)|localized string|' +
+	          'choose (application|color|file|file name|' +
+	          'folder|from list|remote application|URL)|' +
+	          'display (alert|dialog))\\b|^\\s*return\\b'
+	      },
+	      {
+	        className: 'constant',
+	        begin:
+	          '\\b(text item delimiters|current application|missing value)\\b'
+	      },
+	      {
+	        className: 'keyword',
+	        begin:
+	          '\\b(apart from|aside from|instead of|out of|greater than|' +
+	          "isn't|(doesn't|does not) (equal|come before|come after|contain)|" +
+	          '(greater|less) than( or equal)?|(starts?|ends|begins?) with|' +
+	          'contained by|comes (before|after)|a (ref|reference))\\b'
+	      },
+	      {
+	        className: 'property',
+	        begin:
+	          '\\b(POSIX path|(date|time) string|quoted form)\\b'
+	      },
+	      {
+	        className: 'function_start',
+	        beginKeywords: 'on',
+	        illegal: '[${=;\\n]',
+	        contains: [hljs.UNDERSCORE_TITLE_MODE, PARAMS]
+	      }
+	    ].concat(COMMENTS),
+	    illegal: '//|->|=>'
+	  };
+	};
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	    //local labels: %?[FB]?[AT]?\d{1,2}\w+
+	  return {
+	    case_insensitive: true,
+	    aliases: ['arm'],
+	    lexemes: '\\.?' + hljs.IDENT_RE,
+	    keywords: {
+	      literal:
+	        'r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r15 '+ //standard registers
+	        'pc lr sp ip sl sb fp '+ //typical regs plus backward compatibility
+	        'a1 a2 a3 a4 v1 v2 v3 v4 v5 v6 v7 v8 f0 f1 f2 f3 f4 f5 f6 f7 '+ //more regs and fp
+	        'p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 '+ //coprocessor regs
+	        'c0 c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 c12 c13 c14 c15 '+ //more coproc
+	        'q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 '+ //advanced SIMD NEON regs
+
+	        //program status registers
+	        'cpsr_c cpsr_x cpsr_s cpsr_f cpsr_cx cpsr_cxs cpsr_xs cpsr_xsf cpsr_sf cpsr_cxsf '+
+	        'spsr_c spsr_x spsr_s spsr_f spsr_cx spsr_cxs spsr_xs spsr_xsf spsr_sf spsr_cxsf '+
+
+	        //NEON and VFP registers
+	        's0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 '+
+	        's16 s17 s18 s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 '+
+	        'd0 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11 d12 d13 d14 d15 '+
+	        'd16 d17 d18 d19 d20 d21 d22 d23 d24 d25 d26 d27 d28 d29 d30 d31 ',
+	    preprocessor:
+	        //GNU preprocs
+	        '.2byte .4byte .align .ascii .asciz .balign .byte .code .data .else .end .endif .endm .endr .equ .err .exitm .extern .global .hword .if .ifdef .ifndef .include .irp .long .macro .rept .req .section .set .skip .space .text .word .arm .thumb .code16 .code32 .force_thumb .thumb_func .ltorg '+
+	        //ARM directives
+	        'ALIAS ALIGN ARM AREA ASSERT ATTR CN CODE CODE16 CODE32 COMMON CP DATA DCB DCD DCDU DCDO DCFD DCFDU DCI DCQ DCQU DCW DCWU DN ELIF ELSE END ENDFUNC ENDIF ENDP ENTRY EQU EXPORT EXPORTAS EXTERN FIELD FILL FUNCTION GBLA GBLL GBLS GET GLOBAL IF IMPORT INCBIN INCLUDE INFO KEEP LCLA LCLL LCLS LTORG MACRO MAP MEND MEXIT NOFP OPT PRESERVE8 PROC QN READONLY RELOC REQUIRE REQUIRE8 RLIST FN ROUT SETA SETL SETS SN SPACE SUBT THUMB THUMBX TTL WHILE WEND ',
+	    built_in:
+	        '{PC} {VAR} {TRUE} {FALSE} {OPT} {CONFIG} {ENDIAN} {CODESIZE} {CPU} {FPU} {ARCHITECTURE} {PCSTOREOFFSET} {ARMASM_VERSION} {INTER} {ROPI} {RWPI} {SWST} {NOSWST} . @ '
+	    },
+	    contains: [
+	      {
+	        className: 'keyword',
+	        begin: '\\b('+     //mnemonics
+	            'adc|'+
+	            '(qd?|sh?|u[qh]?)?add(8|16)?|usada?8|(q|sh?|u[qh]?)?(as|sa)x|'+
+	            'and|adrl?|sbc|rs[bc]|asr|b[lx]?|blx|bxj|cbn?z|tb[bh]|bic|'+
+	            'bfc|bfi|[su]bfx|bkpt|cdp2?|clz|clrex|cmp|cmn|cpsi[ed]|cps|'+
+	            'setend|dbg|dmb|dsb|eor|isb|it[te]{0,3}|lsl|lsr|ror|rrx|'+
+	            'ldm(([id][ab])|f[ds])?|ldr((s|ex)?[bhd])?|movt?|mvn|mra|mar|'+
+	            'mul|[us]mull|smul[bwt][bt]|smu[as]d|smmul|smmla|'+
+	            'mla|umlaal|smlal?([wbt][bt]|d)|mls|smlsl?[ds]|smc|svc|sev|'+
+	            'mia([bt]{2}|ph)?|mrr?c2?|mcrr2?|mrs|msr|orr|orn|pkh(tb|bt)|rbit|'+
+	            'rev(16|sh)?|sel|[su]sat(16)?|nop|pop|push|rfe([id][ab])?|'+
+	            'stm([id][ab])?|str(ex)?[bhd]?|(qd?)?sub|(sh?|q|u[qh]?)?sub(8|16)|'+
+	            '[su]xt(a?h|a?b(16)?)|srs([id][ab])?|swpb?|swi|smi|tst|teq|'+
+	            'wfe|wfi|yield'+
+	        ')'+
+	        '(eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al|hs|lo)?'+ //condition codes
+	        '[sptrx]?' ,                                             //legal postfixes
+	        end: '\\s'
+	      },
+	      hljs.COMMENT('[;@]', '$', {relevance: 0}),
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'string',
+	        begin: '\'',
+	        end: '[^\\\\]\'',
+	        relevance: 0
+	      },
+	      {
+	        className: 'title',
+	        begin: '\\|', end: '\\|',
+	        illegal: '\\n',
+	        relevance: 0
+	      },
+	      {
+	        className: 'number',
+	        variants: [
+	            {begin: '[#$=]?0x[0-9a-f]+'}, //hex
+	            {begin: '[#$=]?0b[01]+'},     //bin
+	            {begin: '[#$=]\\d+'},        //literal
+	            {begin: '\\b\\d+'}           //bare number
+	        ],
+	        relevance: 0
+	      },
+	      {
+	        className: 'label',
+	        variants: [
+	            {begin: '^[a-z_\\.\\$][a-z0-9_\\.\\$]+'}, //ARM syntax
+	            {begin: '^\\s*[a-z_\\.\\$][a-z0-9_\\.\\$]+:'}, //GNU ARM syntax
+	            {begin: '[=#]\\w+' }  //label reference
+	        ],
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var XML_IDENT_RE = '[A-Za-z0-9\\._:-]+';
+	  var PHP = {
+	    begin: /<\?(php)?(?!\w)/, end: /\?>/,
+	    subLanguage: 'php', subLanguageMode: 'continuous'
+	  };
+	  var TAG_INTERNALS = {
+	    endsWithParent: true,
+	    illegal: /</,
+	    relevance: 0,
+	    contains: [
+	      PHP,
+	      {
+	        className: 'attribute',
+	        begin: XML_IDENT_RE,
+	        relevance: 0
+	      },
+	      {
+	        begin: '=',
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'value',
+	            contains: [PHP],
+	            variants: [
+	              {begin: /"/, end: /"/},
+	              {begin: /'/, end: /'/},
+	              {begin: /[^\s\/>]+/}
+	            ]
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	  return {
+	    aliases: ['html', 'xhtml', 'rss', 'atom', 'xsl', 'plist'],
+	    case_insensitive: true,
+	    contains: [
+	      {
+	        className: 'doctype',
+	        begin: '<!DOCTYPE', end: '>',
+	        relevance: 10,
+	        contains: [{begin: '\\[', end: '\\]'}]
+	      },
+	      hljs.COMMENT(
+	        '<!--',
+	        '-->',
+	        {
+	          relevance: 10
+	        }
+	      ),
+	      {
+	        className: 'cdata',
+	        begin: '<\\!\\[CDATA\\[', end: '\\]\\]>',
+	        relevance: 10
+	      },
+	      {
+	        className: 'tag',
+	        /*
+	        The lookahead pattern (?=...) ensures that 'begin' only matches
+	        '<style' as a single word, followed by a whitespace or an
+	        ending braket. The '$' is needed for the lexeme to be recognized
+	        by hljs.subMode() that tests lexemes outside the stream.
+	        */
+	        begin: '<style(?=\\s|>|$)', end: '>',
+	        keywords: {title: 'style'},
+	        contains: [TAG_INTERNALS],
+	        starts: {
+	          end: '</style>', returnEnd: true,
+	          subLanguage: 'css'
+	        }
+	      },
+	      {
+	        className: 'tag',
+	        // See the comment in the <style tag about the lookahead pattern
+	        begin: '<script(?=\\s|>|$)', end: '>',
+	        keywords: {title: 'script'},
+	        contains: [TAG_INTERNALS],
+	        starts: {
+	          end: '\<\/script\>', returnEnd: true,
+	          subLanguage: ''
+	        }
+	      },
+	      PHP,
+	      {
+	        className: 'pi',
+	        begin: /<\?\w+/, end: /\?>/,
+	        relevance: 10
+	      },
+	      {
+	        className: 'tag',
+	        begin: '</?', end: '/?>',
+	        contains: [
+	          {
+	            className: 'title', begin: /[^ \/><\n\t]+/, relevance: 0
+	          },
+	          TAG_INTERNALS
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['adoc'],
+	    contains: [
+	      // block comment
+	      hljs.COMMENT(
+	        '^/{4,}\\n',
+	        '\\n/{4,}$',
+	        // can also be done as...
+	        //'^/{4,}$',
+	        //'^/{4,}$',
+	        {
+	          relevance: 10
+	        }
+	      ),
+	      // line comment
+	      hljs.COMMENT(
+	        '^//',
+	        '$',
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      // title
+	      {
+	        className: 'title',
+	        begin: '^\\.\\w.*$'
+	      },
+	      // example, admonition & sidebar blocks
+	      {
+	        begin: '^[=\\*]{4,}\\n',
+	        end: '\\n^[=\\*]{4,}$',
+	        relevance: 10
+	      },
+	      // headings
+	      {
+	        className: 'header',
+	        begin: '^(={1,5}) .+?( \\1)?$',
+	        relevance: 10
+	      },
+	      {
+	        className: 'header',
+	        begin: '^[^\\[\\]\\n]+?\\n[=\\-~\\^\\+]{2,}$',
+	        relevance: 10
+	      },
+	      // document attributes
+	      {
+	        className: 'attribute',
+	        begin: '^:.+?:',
+	        end: '\\s',
+	        excludeEnd: true,
+	        relevance: 10
+	      },
+	      // block attributes
+	      {
+	        className: 'attribute',
+	        begin: '^\\[.+?\\]$',
+	        relevance: 0
+	      },
+	      // quoteblocks
+	      {
+	        className: 'blockquote',
+	        begin: '^_{4,}\\n',
+	        end: '\\n_{4,}$',
+	        relevance: 10
+	      },
+	      // listing and literal blocks
+	      {
+	        className: 'code',
+	        begin: '^[\\-\\.]{4,}\\n',
+	        end: '\\n[\\-\\.]{4,}$',
+	        relevance: 10
+	      },
+	      // passthrough blocks
+	      {
+	        begin: '^\\+{4,}\\n',
+	        end: '\\n\\+{4,}$',
+	        contains: [
+	          {
+	            begin: '<', end: '>',
+	            subLanguage: 'xml',
+	            relevance: 0
+	          }
+	        ],
+	        relevance: 10
+	      },
+	      // lists (can only capture indicators)
+	      {
+	        className: 'bullet',
+	        begin: '^(\\*+|\\-+|\\.+|[^\\n]+?::)\\s+'
+	      },
+	      // admonition
+	      {
+	        className: 'label',
+	        begin: '^(NOTE|TIP|IMPORTANT|WARNING|CAUTION):\\s+',
+	        relevance: 10
+	      },
+	      // inline strong
+	      {
+	        className: 'strong',
+	        // must not follow a word character or be followed by an asterisk or space
+	        begin: '\\B\\*(?![\\*\\s])',
+	        end: '(\\n{2}|\\*)',
+	        // allow escaped asterisk followed by word char
+	        contains: [
+	          {
+	            begin: '\\\\*\\w',
+	            relevance: 0
+	          }
+	        ]
+	      },
+	      // inline emphasis
+	      {
+	        className: 'emphasis',
+	        // must not follow a word character or be followed by a single quote or space
+	        begin: '\\B\'(?![\'\\s])',
+	        end: '(\\n{2}|\')',
+	        // allow escaped single quote followed by word char
+	        contains: [
+	          {
+	            begin: '\\\\\'\\w',
+	            relevance: 0
+	          }
+	        ],
+	        relevance: 0
+	      },
+	      // inline emphasis (alt)
+	      {
+	        className: 'emphasis',
+	        // must not follow a word character or be followed by an underline or space
+	        begin: '_(?![_\\s])',
+	        end: '(\\n{2}|_)',
+	        relevance: 0
+	      },
+	      // inline smart quotes
+	      {
+	        className: 'smartquote',
+	        variants: [
+	          {begin: "``.+?''"},
+	          {begin: "`.+?'"}
+	        ]
+	      },
+	      // inline code snippets (TODO should get same treatment as strong and emphasis)
+	      {
+	        className: 'code',
+	        begin: '(`.+?`|\\+.+?\\+)',
+	        relevance: 0
+	      },
+	      // indented literal block
+	      {
+	        className: 'code',
+	        begin: '^[ \\t]',
+	        end: '$',
+	        relevance: 0
+	      },
+	      // horizontal rules
+	      {
+	        className: 'horizontal_rule',
+	        begin: '^\'{3,}[ \\t]*$',
+	        relevance: 10
+	      },
+	      // images and links
+	      {
+	        begin: '(link:)?(http|https|ftp|file|irc|image:?):\\S+\\[.*?\\]',
+	        returnBegin: true,
+	        contains: [
+	          {
+	            //className: 'macro',
+	            begin: '(link|image:?):',
+	            relevance: 0
+	          },
+	          {
+	            className: 'link_url',
+	            begin: '\\w',
+	            end: '[^\\[]+',
+	            relevance: 0
+	          },
+	          {
+	            className: 'link_label',
+	            begin: '\\[',
+	            end: '\\]',
+	            excludeBegin: true,
+	            excludeEnd: true,
+	            relevance: 0
+	          }
+	        ],
+	        relevance: 10
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function (hljs) {
+	  var KEYWORDS =
+	    'false synchronized int abstract float private char boolean static null if const ' +
+	    'for true while long throw strictfp finally protected import native final return void ' +
+	    'enum else extends implements break transient new catch instanceof byte super volatile case ' +
+	    'assert short package default double public try this switch continue throws privileged ' +
+	    'aspectOf adviceexecution proceed cflowbelow cflow initialization preinitialization ' +
+	    'staticinitialization withincode target within execution getWithinTypeName handler ' +
+	    'thisJoinPoint thisJoinPointStaticPart thisEnclosingJoinPointStaticPart declare parents '+
+	    'warning error soft precedence thisAspectInstance';
+	  var SHORTKEYS = 'get set args call';
+	  return {
+	    keywords : KEYWORDS,
+	    illegal : /<\//,
+	    contains : [
+	      hljs.COMMENT(
+	        '/\\*\\*',
+	        '\\*/',
+	        {
+	          relevance : 0,
+	          contains : [{
+	            className : 'doctag',
+	            begin : '@[A-Za-z]+'
+	          }]
+	        }
+	      ),
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className : 'aspect',
+	        beginKeywords : 'aspect',
+	        end : /[{;=]/,
+	        excludeEnd : true,
+	        illegal : /[:;"\[\]]/,
+	        contains : [
+	          {
+	            beginKeywords : 'extends implements pertypewithin perthis pertarget percflowbelow percflow issingleton'
+	          },
+	          hljs.UNDERSCORE_TITLE_MODE,
+	          {
+	            begin : /\([^\)]*/,
+	            end : /[)]+/,
+	            keywords : KEYWORDS + ' ' + SHORTKEYS,
+	            excludeEnd : false
+	          }
+	        ]
+	      },
+	      {
+	        className : 'class',
+	        beginKeywords : 'class interface',
+	        end : /[{;=]/,
+	        excludeEnd : true,
+	        relevance: 0,
+	        keywords : 'class interface',
+	        illegal : /[:"\[\]]/,
+	        contains : [
+	          {beginKeywords : 'extends implements'},
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      {
+	        // AspectJ Constructs
+	        beginKeywords : 'pointcut after before around throwing returning',
+	        end : /[)]/,
+	        excludeEnd : false,
+	        illegal : /["\[\]]/,
+	        contains : [
+	          {
+	            begin : hljs.UNDERSCORE_IDENT_RE + '\\s*\\(',
+	            returnBegin : true,
+	            contains : [hljs.UNDERSCORE_TITLE_MODE]
+	          }
+	        ]
+	      },
+	      {
+	        begin : /[:]/,
+	        returnBegin : true,
+	        end : /[{;]/,
+	        relevance: 0,
+	        excludeEnd : false,
+	        keywords : KEYWORDS,
+	        illegal : /["\[\]]/,
+	        contains : [
+	          {
+	            begin : hljs.UNDERSCORE_IDENT_RE + '\\s*\\(',
+	            keywords : KEYWORDS + ' ' + SHORTKEYS
+	          },
+	          hljs.QUOTE_STRING_MODE
+	        ]
+	      },
+	      {
+	        // this prevents 'new Name(...), or throw ...' from being recognized as a function definition
+	        beginKeywords : 'new throw',
+	        relevance : 0
+	      },
+	      {
+	        // the function class is a bit different for AspectJ compared to the Java language
+	        className : 'function',
+	        begin : /\w+ +\w+(\.)?\w+\s*\([^\)]*\)\s*((throws)[\w\s,]+)?[\{;]/,
+	        returnBegin : true,
+	        end : /[{;=]/,
+	        keywords : KEYWORDS,
+	        excludeEnd : true,
+	        contains : [
+	          {
+	            begin : hljs.UNDERSCORE_IDENT_RE + '\\s*\\(',
+	            returnBegin : true,
+	            relevance: 0,
+	            contains : [hljs.UNDERSCORE_TITLE_MODE]
+	          },
+	          {
+	            className : 'params',
+	            begin : /\(/, end : /\)/,
+	            relevance: 0,
+	            keywords : KEYWORDS,
+	            contains : [
+	              hljs.APOS_STRING_MODE,
+	              hljs.QUOTE_STRING_MODE,
+	              hljs.C_NUMBER_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE
+	            ]
+	          },
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	      },
+	      hljs.C_NUMBER_MODE,
+	      {
+	        // annotation is also used in this language
+	        className : 'annotation',
+	        begin : '@[A-Za-z]+'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var BACKTICK_ESCAPE = {
+	    className: 'escape',
+	    begin: '`[\\s\\S]'
+	  };
+	  var COMMENTS = hljs.COMMENT(
+	    ';',
+	    '$',
+	    {
+	      relevance: 0
+	    }
+	  );
+	  var BUILT_IN = [
+	    {
+	      className: 'built_in',
+	      begin: 'A_[a-zA-Z0-9]+'
+	    },
+	    {
+	      className: 'built_in',
+	      beginKeywords: 'ComSpec Clipboard ClipboardAll ErrorLevel'
+	    }
+	  ];
+
+	  return {
+	    case_insensitive: true,
+	    keywords: {
+	      keyword: 'Break Continue Else Gosub If Loop Return While',
+	      literal: 'A true false NOT AND OR'
+	    },
+	    contains: BUILT_IN.concat([
+	      BACKTICK_ESCAPE,
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {contains: [BACKTICK_ESCAPE]}),
+	      COMMENTS,
+	      {
+	        className: 'number',
+	        begin: hljs.NUMBER_RE,
+	        relevance: 0
+	      },
+	      {
+	        className: 'var_expand', // FIXME
+	        begin: '%', end: '%',
+	        illegal: '\\n',
+	        contains: [BACKTICK_ESCAPE]
+	      },
+	      {
+	        className: 'label',
+	        contains: [BACKTICK_ESCAPE],
+	        variants: [
+	          {begin: '^[^\\n";]+::(?!=)'},
+	          {begin: '^[^\\n";]+:(?!=)', relevance: 0} // zero relevance as it catches a lot of things
+	                                                    // followed by a single ':' in many languages
+	        ]
+	      },
+	      {
+	        // consecutive commas, not for highlighting but just for relevance
+	        begin: ',\\s*,',
+	        relevance: 10
+	      }
+	    ])
+	  }
+	};
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    case_insensitive: true,
+	    lexemes: '\\.?' + hljs.IDENT_RE,
+	    keywords: {
+	      keyword:
+	        /* mnemonic */
+	        'adc add adiw and andi asr bclr bld brbc brbs brcc brcs break breq brge brhc brhs ' +
+	        'brid brie brlo brlt brmi brne brpl brsh brtc brts brvc brvs bset bst call cbi cbr ' +
+	        'clc clh cli cln clr cls clt clv clz com cp cpc cpi cpse dec eicall eijmp elpm eor ' +
+	        'fmul fmuls fmulsu icall ijmp in inc jmp ld ldd ldi lds lpm lsl lsr mov movw mul ' +
+	        'muls mulsu neg nop or ori out pop push rcall ret reti rjmp rol ror sbc sbr sbrc sbrs ' +
+	        'sec seh sbi sbci sbic sbis sbiw sei sen ser ses set sev sez sleep spm st std sts sub ' +
+	        'subi swap tst wdr',
+	      built_in:
+	        /* general purpose registers */
+	        'r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r15 r16 r17 r18 r19 r20 r21 r22 ' +
+	        'r23 r24 r25 r26 r27 r28 r29 r30 r31 x|0 xh xl y|0 yh yl z|0 zh zl ' +
+	        /* IO Registers (ATMega128) */
+	        'ucsr1c udr1 ucsr1a ucsr1b ubrr1l ubrr1h ucsr0c ubrr0h tccr3c tccr3a tccr3b tcnt3h ' +
+	        'tcnt3l ocr3ah ocr3al ocr3bh ocr3bl ocr3ch ocr3cl icr3h icr3l etimsk etifr tccr1c ' +
+	        'ocr1ch ocr1cl twcr twdr twar twsr twbr osccal xmcra xmcrb eicra spmcsr spmcr portg ' +
+	        'ddrg ping portf ddrf sreg sph spl xdiv rampz eicrb eimsk gimsk gicr eifr gifr timsk ' +
+	        'tifr mcucr mcucsr tccr0 tcnt0 ocr0 assr tccr1a tccr1b tcnt1h tcnt1l ocr1ah ocr1al ' +
+	        'ocr1bh ocr1bl icr1h icr1l tccr2 tcnt2 ocr2 ocdr wdtcr sfior eearh eearl eedr eecr ' +
+	        'porta ddra pina portb ddrb pinb portc ddrc pinc portd ddrd pind spdr spsr spcr udr0 ' +
+	        'ucsr0a ucsr0b ubrr0l acsr admux adcsr adch adcl porte ddre pine pinf',
+	      preprocessor:
+	        '.byte .cseg .db .def .device .dseg .dw .endmacro .equ .eseg .exit .include .list ' +
+	        '.listmac .macro .nolist .org .set'
+	    },
+	    contains: [
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.COMMENT(
+	        ';',
+	        '$',
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      hljs.C_NUMBER_MODE, // 0x..., decimal, float
+	      hljs.BINARY_NUMBER_MODE, // 0b...
+	      {
+	        className: 'number',
+	        begin: '\\b(\\$[a-zA-Z0-9]+|0o[0-7]+)' // $..., 0o...
+	      },
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'string',
+	        begin: '\'', end: '[^\\\\]\'',
+	        illegal: '[^\\\\][^\']'
+	      },
+	      {className: 'label',  begin: '^[A-Za-z0-9_.$]+:'},
+	      {className: 'preprocessor', begin: '#', end: '$'},
+	      {  // подстановка в «.macro»
+	        className: 'localvars',
+	        begin: '@[0-9]+'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: 'false int abstract private char boolean static null if for true ' +
+	      'while long throw finally protected final return void enum else ' +
+	      'break new catch byte super case short default double public try this switch ' +
+	      'continue reverse firstfast firstonly forupdate nofetch sum avg minof maxof count ' +
+	      'order group by asc desc index hint like dispaly edit client server ttsbegin ' +
+	      'ttscommit str real date container anytype common div mod',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'preprocessor',
+	        begin: '#', end: '$'
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface', end: '{', excludeEnd: true,
+	        illegal: ':',
+	        contains: [
+	          {beginKeywords: 'extends implements'},
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var VAR = {
+	    className: 'variable',
+	    variants: [
+	      {begin: /\$[\w\d#@][\w\d_]*/},
+	      {begin: /\$\{(.*?)}/}
+	    ]
+	  };
+	  var QUOTE_STRING = {
+	    className: 'string',
+	    begin: /"/, end: /"/,
+	    contains: [
+	      hljs.BACKSLASH_ESCAPE,
+	      VAR,
+	      {
+	        className: 'variable',
+	        begin: /\$\(/, end: /\)/,
+	        contains: [hljs.BACKSLASH_ESCAPE]
+	      }
+	    ]
+	  };
+	  var APOS_STRING = {
+	    className: 'string',
+	    begin: /'/, end: /'/
+	  };
+
+	  return {
+	    aliases: ['sh', 'zsh'],
+	    lexemes: /-?[a-z\.]+/,
+	    keywords: {
+	      keyword:
+	        'if then else elif fi for while in do done case esac function',
+	      literal:
+	        'true false',
+	      built_in:
+	        // Shell built-ins
+	        // http://www.gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html
+	        'break cd continue eval exec exit export getopts hash pwd readonly return shift test times ' +
+	        'trap umask unset ' +
+	        // Bash built-ins
+	        'alias bind builtin caller command declare echo enable help let local logout mapfile printf ' +
+	        'read readarray source type typeset ulimit unalias ' +
+	        // Shell modifiers
+	        'set shopt ' +
+	        // Zsh built-ins
+	        'autoload bg bindkey bye cap chdir clone comparguments compcall compctl compdescribe compfiles ' +
+	        'compgroups compquote comptags comptry compvalues dirs disable disown echotc echoti emulate ' +
+	        'fc fg float functions getcap getln history integer jobs kill limit log noglob popd print ' +
+	        'pushd pushln rehash sched setcap setopt stat suspend ttyctl unfunction unhash unlimit ' +
+	        'unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof ' +
+	        'zpty zregexparse zsocket zstyle ztcp',
+	      operator:
+	        '-ne -eq -lt -gt -f -d -e -s -l -a' // relevance booster
+	    },
+	    contains: [
+	      {
+	        className: 'shebang',
+	        begin: /^#![^\n]+sh\s*$/,
+	        relevance: 10
+	      },
+	      {
+	        className: 'function',
+	        begin: /\w[\w\d_]*\s*\(\s*\)\s*\{/,
+	        returnBegin: true,
+	        contains: [hljs.inherit(hljs.TITLE_MODE, {begin: /\w[\w\d_]*/})],
+	        relevance: 0
+	      },
+	      hljs.HASH_COMMENT_MODE,
+	      hljs.NUMBER_MODE,
+	      QUOTE_STRING,
+	      APOS_STRING,
+	      VAR
+	    ]
+	  };
+	};
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs){
+	  var LITERAL = {
+	    className: 'literal',
+	    begin: '[\\+\\-]',
+	    relevance: 0
+	  };
+	  return {
+	    aliases: ['bf'],
+	    contains: [
+	      hljs.COMMENT(
+	        '[^\\[\\]\\.,\\+\\-<> \r\n]',
+	        '[\\[\\]\\.,\\+\\-<> \r\n]',
+	        {
+	          returnEnd: true,
+	          relevance: 0
+	        }
+	      ),
+	      {
+	        className: 'title',
+	        begin: '[\\[\\]]',
+	        relevance: 0
+	      },
+	      {
+	        className: 'string',
+	        begin: '[\\.,]',
+	        relevance: 0
+	      },
+	      {
+	        // this mode works as the only relevance counter
+	        begin: /\+\+|\-\-/, returnBegin: true,
+	        contains: [LITERAL]
+	      },
+	      LITERAL
+	    ]
+	  };
+	};
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var KEYWORDS =
+	    'div mod in and or not xor asserterror begin case do downto else end exit for if of repeat then to ' +
+	    'until while with var';
+	  var LITERALS = 'false true';
+	  var COMMENT_MODES = [
+	    hljs.C_LINE_COMMENT_MODE,
+	    hljs.COMMENT(
+	      /\{/,
+	      /\}/,
+	      {
+	        relevance: 0
+	      }
+	    ),
+	    hljs.COMMENT(
+	      /\(\*/,
+	      /\*\)/,
+	      {
+	        relevance: 10
+	      }
+	    )
+	  ];
+	  var STRING = {
+	    className: 'string',
+	    begin: /'/, end: /'/,
+	    contains: [{begin: /''/}]
+	  };
+	  var CHAR_STRING = {
+	    className: 'string', begin: /(#\d+)+/
+	  };
+	  var DATE = {
+	      className: 'date',
+	      begin: '\\b\\d+(\\.\\d+)?(DT|D|T)',
+	      relevance: 0
+	  };
+	  var DBL_QUOTED_VARIABLE = {
+	      className: 'variable',
+	      begin: '"',
+	      end: '"'
+	  };
+
+	  var PROCEDURE = {
+	    className: 'function',
+	    beginKeywords: 'procedure', end: /[:;]/,
+	    keywords: 'procedure|10',
+	    contains: [
+	      hljs.TITLE_MODE,
+	      {
+	        className: 'params',
+	        begin: /\(/, end: /\)/,
+	        keywords: KEYWORDS,
+	        contains: [STRING, CHAR_STRING]
+	      }
+	    ].concat(COMMENT_MODES)
+	  };
+
+	  var OBJECT = {
+	    className: 'class',
+	    begin: 'OBJECT (Table|Form|Report|Dataport|Codeunit|XMLport|MenuSuite|Page|Query) (\\d+) ([^\\r\\n]+)',
+	    returnBegin: true,
+	    contains: [
+	      hljs.TITLE_MODE,
+	        PROCEDURE
+	    ]
+	  };
+	    
+	  return {
+	    case_insensitive: true,
+	    keywords: { keyword: KEYWORDS, literal: LITERALS },
+	    contains: [
+	      STRING, CHAR_STRING,
+	      DATE, DBL_QUOTED_VARIABLE,
+	      hljs.NUMBER_MODE,
+	      OBJECT,
+	      PROCEDURE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['capnp'],
+	    keywords: {
+	      keyword:
+	        'struct enum interface union group import using const annotation extends in of on as with from fixed',
+	      built_in:
+	        'Void Bool Int8 Int16 Int32 Int64 UInt8 UInt16 UInt32 UInt64 Float32 Float64 ' +
+	        'Text Data AnyPointer AnyStruct Capability List',
+	      literal:
+	        'true false'
+	    },
+	    contains: [
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.NUMBER_MODE,
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        className: 'shebang',
+	        begin: /@0x[\w\d]{16};/,
+	        illegal: /\n/
+	      },
+	      {
+	        className: 'number',
+	        begin: /@\d+\b/
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'struct enum', end: /\{/,
+	        illegal: /\n/,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {
+	            starts: {endsWithParent: true, excludeEnd: true} // hack: eating everything after the first title
+	          })
+	        ]
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'interface', end: /\{/,
+	        illegal: /\n/,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {
+	            starts: {endsWithParent: true, excludeEnd: true} // hack: eating everything after the first title
+	          })
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  // 2.3. Identifiers and keywords
+	  var KEYWORDS =
+	    'assembly module package import alias class interface object given value ' +
+	    'assign void function new of extends satisfies abstracts in out return ' +
+	    'break continue throw assert dynamic if else switch case for while try ' +
+	    'catch finally then let this outer super is exists nonempty';
+	  // 7.4.1 Declaration Modifiers
+	  var DECLARATION_MODIFIERS =
+	    'shared abstract formal default actual variable late native deprecated' +
+	    'final sealed annotation suppressWarnings small';
+	  // 7.4.2 Documentation
+	  var DOCUMENTATION =
+	    'doc by license see throws tagged';
+	  var LANGUAGE_ANNOTATIONS = DECLARATION_MODIFIERS + ' ' + DOCUMENTATION;
+	  var SUBST = {
+	    className: 'subst', excludeBegin: true, excludeEnd: true,
+	    begin: /``/, end: /``/,
+	    keywords: KEYWORDS,
+	    relevance: 10
+	  };
+	  var EXPRESSIONS = [
+	    {
+	      // verbatim string
+	      className: 'string',
+	      begin: '"""',
+	      end: '"""',
+	      relevance: 10
+	    },
+	    {
+	      // string literal or template
+	      className: 'string',
+	      begin: '"', end: '"',
+	      contains: [SUBST]
+	    },
+	    {
+	      // character literal
+	      className: 'string',
+	      begin: "'",
+	      end: "'",
+	    },
+	    {
+	      // numeric literal
+	      className: 'number',
+	      begin: '#[0-9a-fA-F_]+|\\$[01_]+|[0-9_]+(?:\\.[0-9_](?:[eE][+-]?\\d+)?)?[kMGTPmunpf]?',
+	      relevance: 0
+	    }
+	  ];
+	  SUBST.contains = EXPRESSIONS;
+
+	  return {
+	    keywords: {
+	      keyword: KEYWORDS,
+	      annotation: LANGUAGE_ANNOTATIONS
+	    },
+	    illegal: '\\$[^01]|#[^0-9a-fA-F]',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.COMMENT('/\\*', '\\*/', {contains: ['self']}),
+	      {
+	        // compiler annotation
+	        className: 'annotation',
+	        begin: '@[a-z]\\w*(?:\\:\"[^\"]*\")?'
+	      }
+	    ].concat(EXPRESSIONS)
+	  };
+	};
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var keywords = {
+	    built_in:
+	      // Clojure keywords
+	      'def cond apply if-not if-let if not not= = < > <= >= == + / * - rem '+
+	      'quot neg? pos? delay? symbol? keyword? true? false? integer? empty? coll? list? '+
+	      'set? ifn? fn? associative? sequential? sorted? counted? reversible? number? decimal? '+
+	      'class? distinct? isa? float? rational? reduced? ratio? odd? even? char? seq? vector? '+
+	      'string? map? nil? contains? zero? instance? not-every? not-any? libspec? -> ->> .. . '+
+	      'inc compare do dotimes mapcat take remove take-while drop letfn drop-last take-last '+
+	      'drop-while while intern condp case reduced cycle split-at split-with repeat replicate '+
+	      'iterate range merge zipmap declare line-seq sort comparator sort-by dorun doall nthnext '+
+	      'nthrest partition eval doseq await await-for let agent atom send send-off release-pending-sends '+
+	      'add-watch mapv filterv remove-watch agent-error restart-agent set-error-handler error-handler '+
+	      'set-error-mode! error-mode shutdown-agents quote var fn loop recur throw try monitor-enter '+
+	      'monitor-exit defmacro defn defn- macroexpand macroexpand-1 for dosync and or '+
+	      'when when-not when-let comp juxt partial sequence memoize constantly complement identity assert '+
+	      'peek pop doto proxy defstruct first rest cons defprotocol cast coll deftype defrecord last butlast '+
+	      'sigs reify second ffirst fnext nfirst nnext defmulti defmethod meta with-meta ns in-ns create-ns import '+
+	      'refer keys select-keys vals key val rseq name namespace promise into transient persistent! conj! '+
+	      'assoc! dissoc! pop! disj! use class type num float double short byte boolean bigint biginteger '+
+	      'bigdec print-method print-dup throw-if printf format load compile get-in update-in pr pr-on newline '+
+	      'flush read slurp read-line subvec with-open memfn time re-find re-groups rand-int rand mod locking '+
+	      'assert-valid-fdecl alias resolve ref deref refset swap! reset! set-validator! compare-and-set! alter-meta! '+
+	      'reset-meta! commute get-validator alter ref-set ref-history-count ref-min-history ref-max-history ensure sync io! '+
+	      'new next conj set! to-array future future-call into-array aset gen-class reduce map filter find empty '+
+	      'hash-map hash-set sorted-map sorted-map-by sorted-set sorted-set-by vec vector seq flatten reverse assoc dissoc list '+
+	      'disj get union difference intersection extend extend-type extend-protocol int nth delay count concat chunk chunk-buffer '+
+	      'chunk-append chunk-first chunk-rest max min dec unchecked-inc-int unchecked-inc unchecked-dec-inc unchecked-dec unchecked-negate '+
+	      'unchecked-add-int unchecked-add unchecked-subtract-int unchecked-subtract chunk-next chunk-cons chunked-seq? prn vary-meta '+
+	      'lazy-seq spread list* str find-keyword keyword symbol gensym force rationalize'
+	   };
+
+	  var SYMBOLSTART = 'a-zA-Z_\\-!.?+*=<>&#\'';
+	  var SYMBOL_RE = '[' + SYMBOLSTART + '][' + SYMBOLSTART + '0-9/;:]*';
+	  var SIMPLE_NUMBER_RE = '[-+]?\\d+(\\.\\d+)?';
+
+	  var SYMBOL = {
+	    begin: SYMBOL_RE,
+	    relevance: 0
+	  };
+	  var NUMBER = {
+	    className: 'number', begin: SIMPLE_NUMBER_RE,
+	    relevance: 0
+	  };
+	  var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null});
+	  var COMMENT = hljs.COMMENT(
+	    ';',
+	    '$',
+	    {
+	      relevance: 0
+	    }
+	  );
+	  var LITERAL = {
+	    className: 'literal',
+	    begin: /\b(true|false|nil)\b/
+	  };
+	  var COLLECTION = {
+	    className: 'collection',
+	    begin: '[\\[\\{]', end: '[\\]\\}]'
+	  };
+	  var HINT = {
+	    className: 'comment',
+	    begin: '\\^' + SYMBOL_RE
+	  };
+	  var HINT_COL = hljs.COMMENT('\\^\\{', '\\}');
+	  var KEY = {
+	    className: 'attribute',
+	    begin: '[:]' + SYMBOL_RE
+	  };
+	  var LIST = {
+	    className: 'list',
+	    begin: '\\(', end: '\\)'
+	  };
+	  var BODY = {
+	    endsWithParent: true,
+	    relevance: 0
+	  };
+	  var NAME = {
+	    keywords: keywords,
+	    lexemes: SYMBOL_RE,
+	    className: 'keyword', begin: SYMBOL_RE,
+	    starts: BODY
+	  };
+	  var DEFAULT_CONTAINS = [LIST, STRING, HINT, HINT_COL, COMMENT, KEY, COLLECTION, NUMBER, LITERAL, SYMBOL];
+
+	  LIST.contains = [hljs.COMMENT('comment', ''), NAME, BODY];
+	  BODY.contains = DEFAULT_CONTAINS;
+	  COLLECTION.contains = DEFAULT_CONTAINS;
+
+	  return {
+	    aliases: ['clj'],
+	    illegal: /\S/,
+	    contains: [LIST, STRING, HINT, HINT_COL, COMMENT, KEY, COLLECTION, NUMBER, LITERAL]
+	  }
+	};
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    contains: [
+	      {
+	        className: 'prompt',
+	        begin: /^([\w.-]+|\s*#_)=>/,
+	        starts: {
+	          end: /$/,
+	          subLanguage: 'clojure', subLanguageMode: 'continuous'
+	        }
+	      }
+	    ]
+	  }
+	};
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['cmake.in'],
+	    case_insensitive: true,
+	    keywords: {
+	      keyword:
+	        'add_custom_command add_custom_target add_definitions add_dependencies ' +
+	        'add_executable add_library add_subdirectory add_test aux_source_directory ' +
+	        'break build_command cmake_minimum_required cmake_policy configure_file ' +
+	        'create_test_sourcelist define_property else elseif enable_language enable_testing ' +
+	        'endforeach endfunction endif endmacro endwhile execute_process export find_file ' +
+	        'find_library find_package find_path find_program fltk_wrap_ui foreach function ' +
+	        'get_cmake_property get_directory_property get_filename_component get_property ' +
+	        'get_source_file_property get_target_property get_test_property if include ' +
+	        'include_directories include_external_msproject include_regular_expression install ' +
+	        'link_directories load_cache load_command macro mark_as_advanced message option ' +
+	        'output_required_files project qt_wrap_cpp qt_wrap_ui remove_definitions return ' +
+	        'separate_arguments set set_directory_properties set_property ' +
+	        'set_source_files_properties set_target_properties set_tests_properties site_name ' +
+	        'source_group string target_link_libraries try_compile try_run unset variable_watch ' +
+	        'while build_name exec_program export_library_dependencies install_files ' +
+	        'install_programs install_targets link_libraries make_directory remove subdir_depends ' +
+	        'subdirs use_mangled_mesa utility_source variable_requires write_file ' +
+	        'qt5_use_modules qt5_use_package qt5_wrap_cpp on off true false and or',
+	      operator:
+	        'equal less greater strless strgreater strequal matches'
+	    },
+	    contains: [
+	      {
+	        className: 'envvar',
+	        begin: '\\${', end: '}'
+	      },
+	      hljs.HASH_COMMENT_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var KEYWORDS = {
+	    keyword:
+	      // JS keywords
+	      'in if for while finally new do return else break catch instanceof throw try this ' +
+	      'switch continue typeof delete debugger super ' +
+	      // Coffee keywords
+	      'then unless until loop of by when and or is isnt not',
+	    literal:
+	      // JS literals
+	      'true false null undefined ' +
+	      // Coffee literals
+	      'yes no on off',
+	    reserved:
+	      'case default function var void with const let enum export import native ' +
+	      '__hasProp __extends __slice __bind __indexOf',
+	    built_in:
+	      'npm require console print module global window document'
+	  };
+	  var JS_IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
+	  var SUBST = {
+	    className: 'subst',
+	    begin: /#\{/, end: /}/,
+	    keywords: KEYWORDS
+	  };
+	  var EXPRESSIONS = [
+	    hljs.BINARY_NUMBER_MODE,
+	    hljs.inherit(hljs.C_NUMBER_MODE, {starts: {end: '(\\s*/)?', relevance: 0}}), // a number tries to eat the following slash to prevent treating it as a regexp
+	    {
+	      className: 'string',
+	      variants: [
+	        {
+	          begin: /'''/, end: /'''/,
+	          contains: [hljs.BACKSLASH_ESCAPE]
+	        },
+	        {
+	          begin: /'/, end: /'/,
+	          contains: [hljs.BACKSLASH_ESCAPE]
+	        },
+	        {
+	          begin: /"""/, end: /"""/,
+	          contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	        },
+	        {
+	          begin: /"/, end: /"/,
+	          contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	        }
+	      ]
+	    },
+	    {
+	      className: 'regexp',
+	      variants: [
+	        {
+	          begin: '///', end: '///',
+	          contains: [SUBST, hljs.HASH_COMMENT_MODE]
+	        },
+	        {
+	          begin: '//[gim]*',
+	          relevance: 0
+	        },
+	        {
+	          // regex can't start with space to parse x / 2 / 3 as two divisions
+	          // regex can't start with *, and it supports an "illegal" in the main mode
+	          begin: /\/(?![ *])(\\\/|.)*?\/[gim]*(?=\W|$)/
+	        }
+	      ]
+	    },
+	    {
+	      className: 'property',
+	      begin: '@' + JS_IDENT_RE
+	    },
+	    {
+	      begin: '`', end: '`',
+	      excludeBegin: true, excludeEnd: true,
+	      subLanguage: 'javascript'
+	    }
+	  ];
+	  SUBST.contains = EXPRESSIONS;
+
+	  var TITLE = hljs.inherit(hljs.TITLE_MODE, {begin: JS_IDENT_RE});
+	  var PARAMS_RE = '(\\(.*\\))?\\s*\\B[-=]>';
+	  var PARAMS = {
+	    className: 'params',
+	    begin: '\\([^\\(]', returnBegin: true,
+	    /* We need another contained nameless mode to not have every nested
+	    pair of parens to be called "params" */
+	    contains: [{
+	      begin: /\(/, end: /\)/,
+	      keywords: KEYWORDS,
+	      contains: ['self'].concat(EXPRESSIONS)
+	    }]
+	  };
+
+	  return {
+	    aliases: ['coffee', 'cson', 'iced'],
+	    keywords: KEYWORDS,
+	    illegal: /\/\*/,
+	    contains: EXPRESSIONS.concat([
+	      hljs.COMMENT('###', '###'),
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        className: 'function',
+	        begin: '^\\s*' + JS_IDENT_RE + '\\s*=\\s*' + PARAMS_RE, end: '[-=]>',
+	        returnBegin: true,
+	        contains: [TITLE, PARAMS]
+	      },
+	      {
+	        // anonymous function start
+	        begin: /[:\(,=]\s*/,
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'function',
+	            begin: PARAMS_RE, end: '[-=]>',
+	            returnBegin: true,
+	            contains: [PARAMS]
+	          }
+	        ]
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'class',
+	        end: '$',
+	        illegal: /[:="\[\]]/,
+	        contains: [
+	          {
+	            beginKeywords: 'extends',
+	            endsWithParent: true,
+	            illegal: /[:="\[\]]/,
+	            contains: [TITLE]
+	          },
+	          TITLE
+	        ]
+	      },
+	      {
+	        className: 'attribute',
+	        begin: JS_IDENT_RE + ':', end: ':',
+	        returnBegin: true, returnEnd: true,
+	        relevance: 0
+	      }
+	    ])
+	  };
+	};
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var CPP_PRIMATIVE_TYPES = {
+	    className: 'keyword',
+	    begin: '[a-z\\d_]*_t'
+	  };
+
+	  var CPP_KEYWORDS = {
+	    keyword: 'false int float while private char catch export virtual operator sizeof ' +
+	      'dynamic_cast|10 typedef const_cast|10 const struct for static_cast|10 union namespace ' +
+	      'unsigned long volatile static protected bool template mutable if public friend ' +
+	      'do goto auto void enum else break extern using true class asm case typeid ' +
+	      'short reinterpret_cast|10 default double register explicit signed typename try this ' +
+	      'switch continue inline delete alignof constexpr decltype ' +
+	      'noexcept nullptr static_assert thread_local restrict _Bool complex _Complex _Imaginary ' +
+	      'atomic_bool atomic_char atomic_schar ' +
+	      'atomic_uchar atomic_short atomic_ushort atomic_int atomic_uint atomic_long atomic_ulong atomic_llong ' +
+	      'atomic_ullong',
+	    built_in: 'std string cin cout cerr clog stringstream istringstream ostringstream ' +
+	      'auto_ptr deque list queue stack vector map set bitset multiset multimap unordered_set ' +
+	      'unordered_map unordered_multiset unordered_multimap array shared_ptr abort abs acos ' +
+	      'asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp ' +
+	      'fscanf isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper ' +
+	      'isxdigit tolower toupper labs ldexp log10 log malloc memchr memcmp memcpy memset modf pow ' +
+	      'printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp ' +
+	      'strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan ' +
+	      'vfprintf vprintf vsprintf'
+	  };
+	  return {
+	    aliases: ['c', 'cc', 'h', 'c++', 'h++', 'hpp'],
+	    keywords: CPP_KEYWORDS,
+	    illegal: '</',
+	    contains: [
+	      CPP_PRIMATIVE_TYPES,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'string',
+	        variants: [
+	          hljs.inherit(hljs.QUOTE_STRING_MODE, { begin: '((u8?|U)|L)?"' }),
+	          {
+	            begin: '(u8?|U)?R"', end: '"',
+	            contains: [hljs.BACKSLASH_ESCAPE]
+	          },
+	          {
+	            begin: '\'\\\\?.', end: '\'',
+	            illegal: '.'
+	          }
+	        ]
+	      },
+	      {
+	        className: 'number',
+	        begin: '\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)'
+	      },
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'preprocessor',
+	        begin: '#', end: '$',
+	        keywords: 'if else elif endif define undef warning error line pragma',
+	        contains: [
+	          {
+	            begin: /\\\n/, relevance: 0
+	          },
+	          {
+	            begin: 'include\\s*[<"]', end: '[>"]',
+	            keywords: 'include',
+	            illegal: '\\n'
+	          },
+	          hljs.C_LINE_COMMENT_MODE
+	        ]
+	      },
+	      {
+	        begin: '\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<', end: '>',
+	        keywords: CPP_KEYWORDS,
+	        contains: ['self', CPP_PRIMATIVE_TYPES]
+	      },
+	      {
+	        begin: hljs.IDENT_RE + '::',
+	        keywords: CPP_KEYWORDS
+	      },
+	      {
+	        // Expression keywords prevent 'keyword Name(...) or else if(...)' from
+	        // being recognized as a function definition
+	        beginKeywords: 'new throw return else',
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        begin: '(' + hljs.IDENT_RE + '\\s+)+' + hljs.IDENT_RE + '\\s*\\(', returnBegin: true, end: /[{;=]/,
+	        excludeEnd: true,
+	        keywords: CPP_KEYWORDS,
+	        contains: [
+	          {
+	            begin: hljs.IDENT_RE + '\\s*\\(', returnBegin: true,
+	            contains: [hljs.TITLE_MODE],
+	            relevance: 0
+	          },
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/,
+	            keywords: CPP_KEYWORDS,
+	            relevance: 0,
+	            contains: [
+	              hljs.C_BLOCK_COMMENT_MODE
+	            ]
+	          },
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var KEYWORDS =
+	    // Normal keywords.
+	    'abstract as base bool break byte case catch char checked const continue decimal dynamic ' +
+	    'default delegate do double else enum event explicit extern false finally fixed float ' +
+	    'for foreach goto if implicit in int interface internal is lock long null when ' +
+	    'object operator out override params private protected public readonly ref sbyte ' +
+	    'sealed short sizeof stackalloc static string struct switch this true try typeof ' +
+	    'uint ulong unchecked unsafe ushort using virtual volatile void while async ' +
+	    'protected public private internal ' +
+	    // Contextual keywords.
+	    'ascending descending from get group into join let orderby partial select set value var ' +
+	    'where yield';
+	  var GENERIC_IDENT_RE = hljs.IDENT_RE + '(<' + hljs.IDENT_RE + '>)?';
+	  return {
+	    aliases: ['csharp'],
+	    keywords: KEYWORDS,
+	    illegal: /::/,
+	    contains: [
+	      hljs.COMMENT(
+	        '///',
+	        '$',
+	        {
+	          returnBegin: true,
+	          contains: [
+	            {
+	              className: 'xmlDocTag',
+	              variants: [
+	                {
+	                  begin: '///', relevance: 0
+	                },
+	                {
+	                  begin: '<!--|-->'
+	                },
+	                {
+	                  begin: '</?', end: '>'
+	                }
+	              ]
+	            }
+	          ]
+	        }
+	      ),
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'preprocessor',
+	        begin: '#', end: '$',
+	        keywords: 'if else elif endif define undef warning error line region endregion pragma checksum'
+	      },
+	      {
+	        className: 'string',
+	        begin: '@"', end: '"',
+	        contains: [{begin: '""'}]
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        beginKeywords: 'class interface', end: /[{;=]/,
+	        illegal: /[^\s:]/,
+	        contains: [
+	          hljs.TITLE_MODE,
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	      },
+	      {
+	        beginKeywords: 'namespace', end: /[{;=]/,
+	        illegal: /[^\s:]/,
+	        contains: [
+	          {
+	            // Customization of hljs.TITLE_MODE that allows '.'
+	            className: 'title',
+	            begin: '[a-zA-Z](\\.?\\w)*',
+	            relevance: 0
+	          },
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	      },
+	      {
+	        // Expression keywords prevent 'keyword Name(...)' from being
+	        // recognized as a function definition
+	        beginKeywords: 'new return throw await',
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        begin: '(' + GENERIC_IDENT_RE + '\\s+)+' + hljs.IDENT_RE + '\\s*\\(', returnBegin: true, end: /[{;=]/,
+	        excludeEnd: true,
+	        keywords: KEYWORDS,
+	        contains: [
+	          {
+	            begin: hljs.IDENT_RE + '\\s*\\(', returnBegin: true,
+	            contains: [hljs.TITLE_MODE],
+	            relevance: 0
+	          },
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/,
+	            excludeBegin: true,
+	            excludeEnd: true,
+	            keywords: KEYWORDS,
+	            relevance: 0,
+	            contains: [
+	              hljs.APOS_STRING_MODE,
+	              hljs.QUOTE_STRING_MODE,
+	              hljs.C_NUMBER_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE
+	            ]
+	          },
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var IDENT_RE = '[a-zA-Z-][a-zA-Z0-9_-]*';
+	  var FUNCTION = {
+	    className: 'function',
+	    begin: IDENT_RE + '\\(',
+	    returnBegin: true,
+	    excludeEnd: true,
+	    end: '\\('
+	  };
+	  var RULE = {
+	    className: 'rule',
+	    begin: /[A-Z\_\.\-]+\s*:/, returnBegin: true, end: ';', endsWithParent: true,
+	    contains: [
+	      {
+	        className: 'attribute',
+	        begin: /\S/, end: ':', excludeEnd: true,
+	        starts: {
+	          className: 'value',
+	          endsWithParent: true, excludeEnd: true,
+	          contains: [
+	            FUNCTION,
+	            hljs.CSS_NUMBER_MODE,
+	            hljs.QUOTE_STRING_MODE,
+	            hljs.APOS_STRING_MODE,
+	            hljs.C_BLOCK_COMMENT_MODE,
+	            {
+	              className: 'hexcolor', begin: '#[0-9A-Fa-f]+'
+	            },
+	            {
+	              className: 'important', begin: '!important'
+	            }
+	          ]
+	        }
+	      }
+	    ]
+	  };
+
+	  return {
+	    case_insensitive: true,
+	    illegal: /[=\/|'\$]/,
+	    contains: [
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      RULE,
+	      {
+	        className: 'id', begin: /\#[A-Za-z0-9_-]+/
+	      },
+	      {
+	        className: 'class', begin: /\.[A-Za-z0-9_-]+/
+	      },
+	      {
+	        className: 'attr_selector',
+	        begin: /\[/, end: /\]/,
+	        illegal: '$'
+	      },
+	      {
+	        className: 'pseudo',
+	        begin: /:(:)?[a-zA-Z0-9\_\-\+\(\)"']+/
+	      },
+	      {
+	        className: 'at_rule',
+	        begin: '@(font-face|page)',
+	        lexemes: '[a-z-]+',
+	        keywords: 'font-face page'
+	      },
+	      {
+	        className: 'at_rule',
+	        begin: '@', end: '[{;]', // at_rule eating first "{" is a good thing
+	                                 // because it doesn’t let it to be parsed as
+	                                 // a rule set but instead drops parser into
+	                                 // the default mode which is how it should be.
+	        contains: [
+	          {
+	            className: 'keyword',
+	            begin: /\S+/
+	          },
+	          {
+	            begin: /\s/, endsWithParent: true, excludeEnd: true,
+	            relevance: 0,
+	            contains: [
+	              FUNCTION,
+	              hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE,
+	              hljs.CSS_NUMBER_MODE
+	            ]
+	          }
+	        ]
+	      },
+	      {
+	        className: 'tag', begin: IDENT_RE,
+	        relevance: 0
+	      },
+	      {
+	        className: 'rules',
+	        begin: '{', end: '}',
+	        illegal: /\S/,
+	        contains: [
+	          hljs.C_BLOCK_COMMENT_MODE,
+	          RULE,
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = /**
+	 * Known issues:
+	 *
+	 * - invalid hex string literals will be recognized as a double quoted strings
+	 *   but 'x' at the beginning of string will not be matched
+	 *
+	 * - delimited string literals are not checked for matching end delimiter
+	 *   (not possible to do with js regexp)
+	 *
+	 * - content of token string is colored as a string (i.e. no keyword coloring inside a token string)
+	 *   also, content of token string is not validated to contain only valid D tokens
+	 *
+	 * - special token sequence rule is not strictly following D grammar (anything following #line
+	 *   up to the end of line is matched as special token sequence)
+	 */
+
+	function(hljs) {
+	  /**
+	   * Language keywords
+	   *
+	   * @type {Object}
+	   */
+	  var D_KEYWORDS = {
+	    keyword:
+	      'abstract alias align asm assert auto body break byte case cast catch class ' +
+	      'const continue debug default delete deprecated do else enum export extern final ' +
+	      'finally for foreach foreach_reverse|10 goto if immutable import in inout int ' +
+	      'interface invariant is lazy macro mixin module new nothrow out override package ' +
+	      'pragma private protected public pure ref return scope shared static struct ' +
+	      'super switch synchronized template this throw try typedef typeid typeof union ' +
+	      'unittest version void volatile while with __FILE__ __LINE__ __gshared|10 ' +
+	      '__thread __traits __DATE__ __EOF__ __TIME__ __TIMESTAMP__ __VENDOR__ __VERSION__',
+	    built_in:
+	      'bool cdouble cent cfloat char creal dchar delegate double dstring float function ' +
+	      'idouble ifloat ireal long real short string ubyte ucent uint ulong ushort wchar ' +
+	      'wstring',
+	    literal:
+	      'false null true'
+	  };
+
+	  /**
+	   * Number literal regexps
+	   *
+	   * @type {String}
+	   */
+	  var decimal_integer_re = '(0|[1-9][\\d_]*)',
+	    decimal_integer_nosus_re = '(0|[1-9][\\d_]*|\\d[\\d_]*|[\\d_]+?\\d)',
+	    binary_integer_re = '0[bB][01_]+',
+	    hexadecimal_digits_re = '([\\da-fA-F][\\da-fA-F_]*|_[\\da-fA-F][\\da-fA-F_]*)',
+	    hexadecimal_integer_re = '0[xX]' + hexadecimal_digits_re,
+
+	    decimal_exponent_re = '([eE][+-]?' + decimal_integer_nosus_re + ')',
+	    decimal_float_re = '(' + decimal_integer_nosus_re + '(\\.\\d*|' + decimal_exponent_re + ')|' +
+	                '\\d+\\.' + decimal_integer_nosus_re + decimal_integer_nosus_re + '|' +
+	                '\\.' + decimal_integer_re + decimal_exponent_re + '?' +
+	              ')',
+	    hexadecimal_float_re = '(0[xX](' +
+	                  hexadecimal_digits_re + '\\.' + hexadecimal_digits_re + '|'+
+	                  '\\.?' + hexadecimal_digits_re +
+	                 ')[pP][+-]?' + decimal_integer_nosus_re + ')',
+
+	    integer_re = '(' +
+	      decimal_integer_re + '|' +
+	      binary_integer_re  + '|' +
+	       hexadecimal_integer_re   +
+	    ')',
+
+	    float_re = '(' +
+	      hexadecimal_float_re + '|' +
+	      decimal_float_re  +
+	    ')';
+
+	  /**
+	   * Escape sequence supported in D string and character literals
+	   *
+	   * @type {String}
+	   */
+	  var escape_sequence_re = '\\\\(' +
+	              '[\'"\\?\\\\abfnrtv]|' +  // common escapes
+	              'u[\\dA-Fa-f]{4}|' +     // four hex digit unicode codepoint
+	              '[0-7]{1,3}|' +       // one to three octal digit ascii char code
+	              'x[\\dA-Fa-f]{2}|' +    // two hex digit ascii char code
+	              'U[\\dA-Fa-f]{8}' +      // eight hex digit unicode codepoint
+	              ')|' +
+	              '&[a-zA-Z\\d]{2,};';      // named character entity
+
+	  /**
+	   * D integer number literals
+	   *
+	   * @type {Object}
+	   */
+	  var D_INTEGER_MODE = {
+	    className: 'number',
+	      begin: '\\b' + integer_re + '(L|u|U|Lu|LU|uL|UL)?',
+	      relevance: 0
+	  };
+
+	  /**
+	   * [D_FLOAT_MODE description]
+	   * @type {Object}
+	   */
+	  var D_FLOAT_MODE = {
+	    className: 'number',
+	    begin: '\\b(' +
+	        float_re + '([fF]|L|i|[fF]i|Li)?|' +
+	        integer_re + '(i|[fF]i|Li)' +
+	      ')',
+	    relevance: 0
+	  };
+
+	  /**
+	   * D character literal
+	   *
+	   * @type {Object}
+	   */
+	  var D_CHARACTER_MODE = {
+	    className: 'string',
+	    begin: '\'(' + escape_sequence_re + '|.)', end: '\'',
+	    illegal: '.'
+	  };
+
+	  /**
+	   * D string escape sequence
+	   *
+	   * @type {Object}
+	   */
+	  var D_ESCAPE_SEQUENCE = {
+	    begin: escape_sequence_re,
+	    relevance: 0
+	  };
+
+	  /**
+	   * D double quoted string literal
+	   *
+	   * @type {Object}
+	   */
+	  var D_STRING_MODE = {
+	    className: 'string',
+	    begin: '"',
+	    contains: [D_ESCAPE_SEQUENCE],
+	    end: '"[cwd]?'
+	  };
+
+	  /**
+	   * D wysiwyg and delimited string literals
+	   *
+	   * @type {Object}
+	   */
+	  var D_WYSIWYG_DELIMITED_STRING_MODE = {
+	    className: 'string',
+	    begin: '[rq]"',
+	    end: '"[cwd]?',
+	    relevance: 5
+	  };
+
+	  /**
+	   * D alternate wysiwyg string literal
+	   *
+	   * @type {Object}
+	   */
+	  var D_ALTERNATE_WYSIWYG_STRING_MODE = {
+	    className: 'string',
+	    begin: '`',
+	    end: '`[cwd]?'
+	  };
+
+	  /**
+	   * D hexadecimal string literal
+	   *
+	   * @type {Object}
+	   */
+	  var D_HEX_STRING_MODE = {
+	    className: 'string',
+	    begin: 'x"[\\da-fA-F\\s\\n\\r]*"[cwd]?',
+	    relevance: 10
+	  };
+
+	  /**
+	   * D delimited string literal
+	   *
+	   * @type {Object}
+	   */
+	  var D_TOKEN_STRING_MODE = {
+	    className: 'string',
+	    begin: 'q"\\{',
+	    end: '\\}"'
+	  };
+
+	  /**
+	   * Hashbang support
+	   *
+	   * @type {Object}
+	   */
+	  var D_HASHBANG_MODE = {
+	    className: 'shebang',
+	    begin: '^#!',
+	    end: '$',
+	    relevance: 5
+	  };
+
+	  /**
+	   * D special token sequence
+	   *
+	   * @type {Object}
+	   */
+	  var D_SPECIAL_TOKEN_SEQUENCE_MODE = {
+	    className: 'preprocessor',
+	    begin: '#(line)',
+	    end: '$',
+	    relevance: 5
+	  };
+
+	  /**
+	   * D attributes
+	   *
+	   * @type {Object}
+	   */
+	  var D_ATTRIBUTE_MODE = {
+	    className: 'keyword',
+	    begin: '@[a-zA-Z_][a-zA-Z_\\d]*'
+	  };
+
+	  /**
+	   * D nesting comment
+	   *
+	   * @type {Object}
+	   */
+	  var D_NESTING_COMMENT_MODE = hljs.COMMENT(
+	    '\\/\\+',
+	    '\\+\\/',
+	    {
+	      contains: ['self'],
+	      relevance: 10
+	    }
+	  );
+
+	  return {
+	    lexemes: hljs.UNDERSCORE_IDENT_RE,
+	    keywords: D_KEYWORDS,
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	        hljs.C_BLOCK_COMMENT_MODE,
+	        D_NESTING_COMMENT_MODE,
+	        D_HEX_STRING_MODE,
+	        D_STRING_MODE,
+	        D_WYSIWYG_DELIMITED_STRING_MODE,
+	        D_ALTERNATE_WYSIWYG_STRING_MODE,
+	        D_TOKEN_STRING_MODE,
+	        D_FLOAT_MODE,
+	        D_INTEGER_MODE,
+	        D_CHARACTER_MODE,
+	        D_HASHBANG_MODE,
+	        D_SPECIAL_TOKEN_SEQUENCE_MODE,
+	        D_ATTRIBUTE_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['md', 'mkdown', 'mkd'],
+	    contains: [
+	      // highlight headers
+	      {
+	        className: 'header',
+	        variants: [
+	          { begin: '^#{1,6}', end: '$' },
+	          { begin: '^.+?\\n[=-]{2,}$' }
+	        ]
+	      },
+	      // inline html
+	      {
+	        begin: '<', end: '>',
+	        subLanguage: 'xml',
+	        relevance: 0
+	      },
+	      // lists (indicators only)
+	      {
+	        className: 'bullet',
+	        begin: '^([*+-]|(\\d+\\.))\\s+'
+	      },
+	      // strong segments
+	      {
+	        className: 'strong',
+	        begin: '[*_]{2}.+?[*_]{2}'
+	      },
+	      // emphasis segments
+	      {
+	        className: 'emphasis',
+	        variants: [
+	          { begin: '\\*.+?\\*' },
+	          { begin: '_.+?_'
+	          , relevance: 0
+	          }
+	        ]
+	      },
+	      // blockquotes
+	      {
+	        className: 'blockquote',
+	        begin: '^>\\s+', end: '$'
+	      },
+	      // code snippets
+	      {
+	        className: 'code',
+	        variants: [
+	          { begin: '`.+?`' },
+	          { begin: '^( {4}|\t)', end: '$'
+	          , relevance: 0
+	          }
+	        ]
+	      },
+	      // horizontal rules
+	      {
+	        className: 'horizontal_rule',
+	        begin: '^[-\\*]{3,}', end: '$'
+	      },
+	      // using links - title and link
+	      {
+	        begin: '\\[.+?\\][\\(\\[].*?[\\)\\]]',
+	        returnBegin: true,
+	        contains: [
+	          {
+	            className: 'link_label',
+	            begin: '\\[', end: '\\]',
+	            excludeBegin: true,
+	            returnEnd: true,
+	            relevance: 0
+	          },
+	          {
+	            className: 'link_url',
+	            begin: '\\]\\(', end: '\\)',
+	            excludeBegin: true, excludeEnd: true
+	          },
+	          {
+	            className: 'link_reference',
+	            begin: '\\]\\[', end: '\\]',
+	            excludeBegin: true, excludeEnd: true
+	          }
+	        ],
+	        relevance: 10
+	      },
+	      {
+	        begin: '^\\[\.+\\]:',
+	        returnBegin: true,
+	        contains: [
+	          {
+	            className: 'link_reference',
+	            begin: '\\[', end: '\\]:',
+	            excludeBegin: true, excludeEnd: true,
+	            starts: {
+	              className: 'link_url',
+	              end: '$'
+	            }
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function (hljs) {
+	  var SUBST = {
+	    className: 'subst',
+	    begin: '\\$\\{', end: '}',
+	    keywords: 'true false null this is new super'
+	  };
+
+	  var STRING = {
+	    className: 'string',
+	    variants: [
+	      {
+	        begin: 'r\'\'\'', end: '\'\'\''
+	      },
+	      {
+	        begin: 'r"""', end: '"""'
+	      },
+	      {
+	        begin: 'r\'', end: '\'',
+	        illegal: '\\n'
+	      },
+	      {
+	        begin: 'r"', end: '"',
+	        illegal: '\\n'
+	      },
+	      {
+	        begin: '\'\'\'', end: '\'\'\'',
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	      },
+	      {
+	        begin: '"""', end: '"""',
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	      },
+	      {
+	        begin: '\'', end: '\'',
+	        illegal: '\\n',
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	      },
+	      {
+	        begin: '"', end: '"',
+	        illegal: '\\n',
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	      }
+	    ]
+	  };
+	  SUBST.contains = [
+	    hljs.C_NUMBER_MODE, STRING
+	  ];
+
+	  var KEYWORDS = {
+	    keyword: 'assert break case catch class const continue default do else enum extends false final finally for if ' +
+	      'in is new null rethrow return super switch this throw true try var void while with',
+	    literal: 'abstract as dynamic export external factory get implements import library operator part set static typedef',
+	    built_in:
+	      // dart:core
+	      'print Comparable DateTime Duration Function Iterable Iterator List Map Match Null Object Pattern RegExp Set ' +
+	      'Stopwatch String StringBuffer StringSink Symbol Type Uri bool double int num ' +
+	      // dart:html
+	      'document window querySelector querySelectorAll Element ElementList'
+	  };
+
+	  return {
+	    keywords: KEYWORDS,
+	    contains: [
+	      STRING,
+	      hljs.COMMENT(
+	        '/\\*\\*',
+	        '\\*/',
+	        {
+	          subLanguage: 'markdown',
+	          subLanguageMode: 'continuous'
+	        }
+	      ),
+	      hljs.COMMENT(
+	        '///',
+	        '$',
+	        {
+	          subLanguage: 'markdown',
+	          subLanguageMode: 'continuous'
+	        }
+	      ),
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface', end: '{', excludeEnd: true,
+	        contains: [
+	          {
+	            beginKeywords: 'extends implements'
+	          },
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'annotation', begin: '@[A-Za-z]+'
+	      },
+	      {
+	        begin: '=>' // No markup, just a relevance booster
+	      }
+	    ]
+	  }
+	};
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var KEYWORDS =
+	    'exports register file shl array record property for mod while set ally label uses raise not ' +
+	    'stored class safecall var interface or private static exit index inherited to else stdcall ' +
+	    'override shr asm far resourcestring finalization packed virtual out and protected library do ' +
+	    'xorwrite goto near function end div overload object unit begin string on inline repeat until ' +
+	    'destructor write message program with read initialization except default nil if case cdecl in ' +
+	    'downto threadvar of try pascal const external constructor type public then implementation ' +
+	    'finally published procedure';
+	  var COMMENT_MODES = [
+	    hljs.C_LINE_COMMENT_MODE,
+	    hljs.COMMENT(
+	      /\{/,
+	      /\}/,
+	      {
+	        relevance: 0
+	      }
+	    ),
+	    hljs.COMMENT(
+	      /\(\*/,
+	      /\*\)/,
+	      {
+	        relevance: 10
+	      }
+	    )
+	  ];
+	  var STRING = {
+	    className: 'string',
+	    begin: /'/, end: /'/,
+	    contains: [{begin: /''/}]
+	  };
+	  var CHAR_STRING = {
+	    className: 'string', begin: /(#\d+)+/
+	  };
+	  var CLASS = {
+	    begin: hljs.IDENT_RE + '\\s*=\\s*class\\s*\\(', returnBegin: true,
+	    contains: [
+	      hljs.TITLE_MODE
+	    ]
+	  };
+	  var FUNCTION = {
+	    className: 'function',
+	    beginKeywords: 'function constructor destructor procedure', end: /[:;]/,
+	    keywords: 'function constructor|10 destructor|10 procedure|10',
+	    contains: [
+	      hljs.TITLE_MODE,
+	      {
+	        className: 'params',
+	        begin: /\(/, end: /\)/,
+	        keywords: KEYWORDS,
+	        contains: [STRING, CHAR_STRING]
+	      }
+	    ].concat(COMMENT_MODES)
+	  };
+	  return {
+	    case_insensitive: true,
+	    keywords: KEYWORDS,
+	    illegal: /"|\$[G-Zg-z]|\/\*|<\/|\|/,
+	    contains: [
+	      STRING, CHAR_STRING,
+	      hljs.NUMBER_MODE,
+	      CLASS,
+	      FUNCTION
+	    ].concat(COMMENT_MODES)
+	  };
+	};
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['patch'],
+	    contains: [
+	      {
+	        className: 'chunk',
+	        relevance: 10,
+	        variants: [
+	          {begin: /^@@ +\-\d+,\d+ +\+\d+,\d+ +@@$/},
+	          {begin: /^\*\*\* +\d+,\d+ +\*\*\*\*$/},
+	          {begin: /^\-\-\- +\d+,\d+ +\-\-\-\-$/}
+	        ]
+	      },
+	      {
+	        className: 'header',
+	        variants: [
+	          {begin: /Index: /, end: /$/},
+	          {begin: /=====/, end: /=====$/},
+	          {begin: /^\-\-\-/, end: /$/},
+	          {begin: /^\*{3} /, end: /$/},
+	          {begin: /^\+\+\+/, end: /$/},
+	          {begin: /\*{5}/, end: /\*{5}$/}
+	        ]
+	      },
+	      {
+	        className: 'addition',
+	        begin: '^\\+', end: '$'
+	      },
+	      {
+	        className: 'deletion',
+	        begin: '^\\-', end: '$'
+	      },
+	      {
+	        className: 'change',
+	        begin: '^\\!', end: '$'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var FILTER = {
+	    className: 'filter',
+	    begin: /\|[A-Za-z]+:?/,
+	    keywords:
+	      'truncatewords removetags linebreaksbr yesno get_digit timesince random striptags ' +
+	      'filesizeformat escape linebreaks length_is ljust rjust cut urlize fix_ampersands ' +
+	      'title floatformat capfirst pprint divisibleby add make_list unordered_list urlencode ' +
+	      'timeuntil urlizetrunc wordcount stringformat linenumbers slice date dictsort ' +
+	      'dictsortreversed default_if_none pluralize lower join center default ' +
+	      'truncatewords_html upper length phone2numeric wordwrap time addslashes slugify first ' +
+	      'escapejs force_escape iriencode last safe safeseq truncatechars localize unlocalize ' +
+	      'localtime utc timezone',
+	    contains: [
+	      {className: 'argument', begin: /"/, end: /"/},
+	      {className: 'argument', begin: /'/, end: /'/}
+	    ]
+	  };
+
+	  return {
+	    aliases: ['jinja'],
+	    case_insensitive: true,
+	    subLanguage: 'xml', subLanguageMode: 'continuous',
+	    contains: [
+	      hljs.COMMENT(/\{%\s*comment\s*%}/, /\{%\s*endcomment\s*%}/),
+	      hljs.COMMENT(/\{#/, /#}/),
+	      {
+	        className: 'template_tag',
+	        begin: /\{%/, end: /%}/,
+	        keywords:
+	          'comment endcomment load templatetag ifchanged endifchanged if endif firstof for ' +
+	          'endfor in ifnotequal endifnotequal widthratio extends include spaceless ' +
+	          'endspaceless regroup by as ifequal endifequal ssi now with cycle url filter ' +
+	          'endfilter debug block endblock else autoescape endautoescape csrf_token empty elif ' +
+	          'endwith static trans blocktrans endblocktrans get_static_prefix get_media_prefix ' +
+	          'plural get_current_language language get_available_languages ' +
+	          'get_current_language_bidi get_language_info get_language_info_list localize ' +
+	          'endlocalize localtime endlocaltime timezone endtimezone get_current_timezone ' +
+	          'verbatim',
+	        contains: [FILTER]
+	      },
+	      {
+	        className: 'variable',
+	        begin: /\{\{/, end: /}}/,
+	        contains: [FILTER]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['bind', 'zone'],
+	    keywords: {
+	      keyword:
+	        'IN A AAAA AFSDB APL CAA CDNSKEY CDS CERT CNAME DHCID DLV DNAME DNSKEY DS HIP IPSECKEY KEY KX ' +
+	        'LOC MX NAPTR NS NSEC NSEC3 NSEC3PARAM PTR RRSIG RP SIG SOA SRV SSHFP TA TKEY TLSA TSIG TXT'
+	    },
+	    contains: [
+	      hljs.COMMENT(';', '$'),
+	      {
+	        className: 'operator',
+	        beginKeywords: '$TTL $GENERATE $INCLUDE $ORIGIN'
+	      },
+	      // IPv6
+	      {
+	        className: 'number',
+	        begin: '((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))'
+	      },
+	      // IPv4
+	      {
+	        className: 'number',
+	        begin: '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['docker'],
+	    case_insensitive: true,
+	    keywords: {
+	      built_ins: 'from maintainer cmd expose add copy entrypoint volume user workdir onbuild run env'
+	    },
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        keywords : {
+	          built_in: 'run cmd entrypoint volume add copy workdir onbuild'
+	        },
+	        begin: /^ *(onbuild +)?(run|cmd|entrypoint|volume|add|copy|workdir) +/,
+	        starts: {
+	          end: /[^\\]\n/,
+	          subLanguage: 'bash', subLanguageMode: 'continuous'
+	        }
+	      },
+	      {
+	        keywords: {
+	          built_in: 'from maintainer expose env user onbuild'
+	        },
+	        begin: /^ *(onbuild +)?(from|maintainer|expose|env|user|onbuild) +/, end: /[^\\]\n/,
+	        contains: [
+	          hljs.APOS_STRING_MODE,
+	          hljs.QUOTE_STRING_MODE,
+	          hljs.NUMBER_MODE,
+	          hljs.HASH_COMMENT_MODE
+	        ]
+	      }
+	    ]
+	  }
+	};
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var COMMENT = hljs.COMMENT(
+	    /@?rem\b/, /$/,
+	    {
+	      relevance: 10
+	    }
+	  );
+	  var LABEL = {
+	    className: 'label',
+	    begin: '^\\s*[A-Za-z._?][A-Za-z0-9_$#@~.?]*(:|\\s+label)',
+	    relevance: 0
+	  };
+	  return {
+	    aliases: ['bat', 'cmd'],
+	    case_insensitive: true,
+	    keywords: {
+	      flow: 'if else goto for in do call exit not exist errorlevel defined',
+	      operator: 'equ neq lss leq gtr geq',
+	      keyword: 'shift cd dir echo setlocal endlocal set pause copy',
+	      stream: 'prn nul lpt3 lpt2 lpt1 con com4 com3 com2 com1 aux',
+	      winutils: 'ping net ipconfig taskkill xcopy ren del',
+	      built_in: 'append assoc at attrib break cacls cd chcp chdir chkdsk chkntfs cls cmd color ' +
+	        'comp compact convert date dir diskcomp diskcopy doskey erase fs ' +
+	        'find findstr format ftype graftabl help keyb label md mkdir mode more move path ' +
+	        'pause print popd pushd promt rd recover rem rename replace restore rmdir shift' +
+	        'sort start subst time title tree type ver verify vol'
+	    },
+	    contains: [
+	      {
+	        className: 'envvar', begin: /%%[^ ]|%[^ ]+?%|![^ ]+?!/
+	      },
+	      {
+	        className: 'function',
+	        begin: LABEL.begin, end: 'goto:eof',
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {begin: '([_a-zA-Z]\\w*\\.)*([_a-zA-Z]\\w*:)?[_a-zA-Z]\\w*'}),
+	          COMMENT
+	        ]
+	      },
+	      {
+	        className: 'number', begin: '\\b\\d+',
+	        relevance: 0
+	      },
+	      COMMENT
+	    ]
+	  };
+	};
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var EXPRESSION_KEYWORDS = 'if eq ne lt lte gt gte select default math sep';
+	  return {
+	    aliases: ['dst'],
+	    case_insensitive: true,
+	    subLanguage: 'xml', subLanguageMode: 'continuous',
+	    contains: [
+	      {
+	        className: 'expression',
+	        begin: '{', end: '}',
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'begin-block', begin: '\#[a-zA-Z\-\ \.]+',
+	            keywords: EXPRESSION_KEYWORDS
+	          },
+	          {
+	            className: 'string',
+	            begin: '"', end: '"'
+	          },
+	          {
+	            className: 'end-block', begin: '\\\/[a-zA-Z\-\ \.]+',
+	            keywords: EXPRESSION_KEYWORDS
+	          },
+	          {
+	            className: 'variable', begin: '[a-zA-Z\-\.]+',
+	            keywords: EXPRESSION_KEYWORDS,
+	            relevance: 0
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var ELIXIR_IDENT_RE = '[a-zA-Z_][a-zA-Z0-9_]*(\\!|\\?)?';
+	  var ELIXIR_METHOD_RE = '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?';
+	  var ELIXIR_KEYWORDS =
+	    'and false then defined module in return redo retry end for true self when ' +
+	    'next until do begin unless nil break not case cond alias while ensure or ' +
+	    'include use alias fn quote';
+	  var SUBST = {
+	    className: 'subst',
+	    begin: '#\\{', end: '}',
+	    lexemes: ELIXIR_IDENT_RE,
+	    keywords: ELIXIR_KEYWORDS
+	  };
+	  var STRING = {
+	    className: 'string',
+	    contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+	    variants: [
+	      {
+	        begin: /'/, end: /'/
+	      },
+	      {
+	        begin: /"/, end: /"/
+	      }
+	    ]
+	  };
+	  var FUNCTION = {
+	    className: 'function',
+	    beginKeywords: 'def defp defmacro', end: /\B\b/, // the mode is ended by the title
+	    contains: [
+	      hljs.inherit(hljs.TITLE_MODE, {
+	        begin: ELIXIR_IDENT_RE,
+	        endsParent: true
+	      })
+	    ]
+	  };
+	  var CLASS = hljs.inherit(FUNCTION, {
+	    className: 'class',
+	    beginKeywords: 'defmodule defrecord', end: /\bdo\b|$|;/
+	  });
+	  var ELIXIR_DEFAULT_CONTAINS = [
+	    STRING,
+	    hljs.HASH_COMMENT_MODE,
+	    CLASS,
+	    FUNCTION,
+	    {
+	      className: 'constant',
+	      begin: '(\\b[A-Z_]\\w*(.)?)+',
+	      relevance: 0
+	    },
+	    {
+	      className: 'symbol',
+	      begin: ':',
+	      contains: [STRING, {begin: ELIXIR_METHOD_RE}],
+	      relevance: 0
+	    },
+	    {
+	      className: 'symbol',
+	      begin: ELIXIR_IDENT_RE + ':',
+	      relevance: 0
+	    },
+	    {
+	      className: 'number',
+	      begin: '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
+	      relevance: 0
+	    },
+	    {
+	      className: 'variable',
+	      begin: '(\\$\\W)|((\\$|\\@\\@?)(\\w+))'
+	    },
+	    {
+	      begin: '->'
+	    },
+	    { // regexp container
+	      begin: '(' + hljs.RE_STARTERS_RE + ')\\s*',
+	      contains: [
+	        hljs.HASH_COMMENT_MODE,
+	        {
+	          className: 'regexp',
+	          illegal: '\\n',
+	          contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+	          variants: [
+	            {
+	              begin: '/', end: '/[a-z]*'
+	            },
+	            {
+	              begin: '%r\\[', end: '\\][a-z]*'
+	            }
+	          ]
+	        }
+	      ],
+	      relevance: 0
+	    }
+	  ];
+	  SUBST.contains = ELIXIR_DEFAULT_CONTAINS;
+
+	  return {
+	    lexemes: ELIXIR_IDENT_RE,
+	    keywords: ELIXIR_KEYWORDS,
+	    contains: ELIXIR_DEFAULT_CONTAINS
+	  };
+	};
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var RUBY_METHOD_RE = '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?';
+	  var RUBY_KEYWORDS =
+	    'and false then defined module in return redo if BEGIN retry end for true self when ' +
+	    'next until do begin unless END rescue nil else break undef not super class case ' +
+	    'require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor';
+	  var YARDOCTAG = {
+	    className: 'doctag',
+	    begin: '@[A-Za-z]+'
+	  };
+	  var IRB_OBJECT = {
+	    className: 'value',
+	    begin: '#<', end: '>'
+	  };
+	  var COMMENT_MODES = [
+	    hljs.COMMENT(
+	      '#',
+	      '$',
+	      {
+	        contains: [YARDOCTAG]
+	      }
+	    ),
+	    hljs.COMMENT(
+	      '^\\=begin',
+	      '^\\=end',
+	      {
+	        contains: [YARDOCTAG],
+	        relevance: 10
+	      }
+	    ),
+	    hljs.COMMENT('^__END__', '\\n$')
+	  ];
+	  var SUBST = {
+	    className: 'subst',
+	    begin: '#\\{', end: '}',
+	    keywords: RUBY_KEYWORDS
+	  };
+	  var STRING = {
+	    className: 'string',
+	    contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+	    variants: [
+	      {begin: /'/, end: /'/},
+	      {begin: /"/, end: /"/},
+	      {begin: /`/, end: /`/},
+	      {begin: '%[qQwWx]?\\(', end: '\\)'},
+	      {begin: '%[qQwWx]?\\[', end: '\\]'},
+	      {begin: '%[qQwWx]?{', end: '}'},
+	      {begin: '%[qQwWx]?<', end: '>'},
+	      {begin: '%[qQwWx]?/', end: '/'},
+	      {begin: '%[qQwWx]?%', end: '%'},
+	      {begin: '%[qQwWx]?-', end: '-'},
+	      {begin: '%[qQwWx]?\\|', end: '\\|'},
+	      {
+	        // \B in the beginning suppresses recognition of ?-sequences where ?
+	        // is the last character of a preceding identifier, as in: `func?4`
+	        begin: /\B\?(\\\d{1,3}|\\x[A-Fa-f0-9]{1,2}|\\u[A-Fa-f0-9]{4}|\\?\S)\b/
+	      }
+	    ]
+	  };
+	  var PARAMS = {
+	    className: 'params',
+	    begin: '\\(', end: '\\)',
+	    keywords: RUBY_KEYWORDS
+	  };
+
+	  var RUBY_DEFAULT_CONTAINS = [
+	    STRING,
+	    IRB_OBJECT,
+	    {
+	      className: 'class',
+	      beginKeywords: 'class module', end: '$|;',
+	      illegal: /=/,
+	      contains: [
+	        hljs.inherit(hljs.TITLE_MODE, {begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?'}),
+	        {
+	          className: 'inheritance',
+	          begin: '<\\s*',
+	          contains: [{
+	            className: 'parent',
+	            begin: '(' + hljs.IDENT_RE + '::)?' + hljs.IDENT_RE
+	          }]
+	        }
+	      ].concat(COMMENT_MODES)
+	    },
+	    {
+	      className: 'function',
+	      beginKeywords: 'def', end: ' |$|;',
+	      relevance: 0,
+	      contains: [
+	        hljs.inherit(hljs.TITLE_MODE, {begin: RUBY_METHOD_RE}),
+	        PARAMS
+	      ].concat(COMMENT_MODES)
+	    },
+	    {
+	      className: 'constant',
+	      begin: '(::)?(\\b[A-Z]\\w*(::)?)+',
+	      relevance: 0
+	    },
+	    {
+	      className: 'symbol',
+	      begin: hljs.UNDERSCORE_IDENT_RE + '(\\!|\\?)?:',
+	      relevance: 0
+	    },
+	    {
+	      className: 'symbol',
+	      begin: ':',
+	      contains: [STRING, {begin: RUBY_METHOD_RE}],
+	      relevance: 0
+	    },
+	    {
+	      className: 'number',
+	      begin: '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
+	      relevance: 0
+	    },
+	    {
+	      className: 'variable',
+	      begin: '(\\$\\W)|((\\$|\\@\\@?)(\\w+))'
+	    },
+	    { // regexp container
+	      begin: '(' + hljs.RE_STARTERS_RE + ')\\s*',
+	      contains: [
+	        IRB_OBJECT,
+	        {
+	          className: 'regexp',
+	          contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+	          illegal: /\n/,
+	          variants: [
+	            {begin: '/', end: '/[a-z]*'},
+	            {begin: '%r{', end: '}[a-z]*'},
+	            {begin: '%r\\(', end: '\\)[a-z]*'},
+	            {begin: '%r!', end: '![a-z]*'},
+	            {begin: '%r\\[', end: '\\][a-z]*'}
+	          ]
+	        }
+	      ].concat(COMMENT_MODES),
+	      relevance: 0
+	    }
+	  ].concat(COMMENT_MODES);
+
+	  SUBST.contains = RUBY_DEFAULT_CONTAINS;
+	  PARAMS.contains = RUBY_DEFAULT_CONTAINS;
+
+	  var SIMPLE_PROMPT = "[>?]>";
+	  var DEFAULT_PROMPT = "[\\w#]+\\(\\w+\\):\\d+:\\d+>";
+	  var RVM_PROMPT = "(\\w+-)?\\d+\\.\\d+\\.\\d(p\\d+)?[^>]+>";
+
+	  var IRB_DEFAULT = [
+	    {
+	      begin: /^\s*=>/,
+	      className: 'status',
+	      starts: {
+	        end: '$', contains: RUBY_DEFAULT_CONTAINS
+	      }
+	    },
+	    {
+	      className: 'prompt',
+	      begin: '^('+SIMPLE_PROMPT+"|"+DEFAULT_PROMPT+'|'+RVM_PROMPT+')',
+	      starts: {
+	        end: '$', contains: RUBY_DEFAULT_CONTAINS
+	      }
+	    }
+	  ];
+
+	  return {
+	    aliases: ['rb', 'gemspec', 'podspec', 'thor', 'irb'],
+	    keywords: RUBY_KEYWORDS,
+	    contains: COMMENT_MODES.concat(IRB_DEFAULT).concat(RUBY_DEFAULT_CONTAINS)
+	  };
+	};
+
+/***/ },
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    subLanguage: 'xml', subLanguageMode: 'continuous',
+	    contains: [
+	      hljs.COMMENT('<%#', '%>'),
+	      {
+	        begin: '<%[%=-]?', end: '[%-]?%>',
+	        subLanguage: 'ruby',
+	        excludeBegin: true,
+	        excludeEnd: true
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: {
+	      special_functions:
+	        'spawn spawn_link self',
+	      reserved:
+	        'after and andalso|10 band begin bnot bor bsl bsr bxor case catch cond div end fun if ' +
+	        'let not of or orelse|10 query receive rem try when xor'
+	    },
+	    contains: [
+	      {
+	        className: 'prompt', begin: '^[0-9]+> ',
+	        relevance: 10
+	      },
+	      hljs.COMMENT('%', '$'),
+	      {
+	        className: 'number',
+	        begin: '\\b(\\d+#[a-fA-F0-9]+|\\d+(\\.\\d+)?([eE][-+]?\\d+)?)',
+	        relevance: 0
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'constant', begin: '\\?(::)?([A-Z]\\w*(::)?)+'
+	      },
+	      {
+	        className: 'arrow', begin: '->'
+	      },
+	      {
+	        className: 'ok', begin: 'ok'
+	      },
+	      {
+	        className: 'exclamation_mark', begin: '!'
+	      },
+	      {
+	        className: 'function_or_atom',
+	        begin: '(\\b[a-z\'][a-zA-Z0-9_\']*:[a-z\'][a-zA-Z0-9_\']*)|(\\b[a-z\'][a-zA-Z0-9_\']*)',
+	        relevance: 0
+	      },
+	      {
+	        className: 'variable',
+	        begin: '[A-Z][a-zA-Z0-9_\']*',
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var BASIC_ATOM_RE = '[a-z\'][a-zA-Z0-9_\']*';
+	  var FUNCTION_NAME_RE = '(' + BASIC_ATOM_RE + ':' + BASIC_ATOM_RE + '|' + BASIC_ATOM_RE + ')';
+	  var ERLANG_RESERVED = {
+	    keyword:
+	      'after and andalso|10 band begin bnot bor bsl bzr bxor case catch cond div end fun if ' +
+	      'let not of orelse|10 query receive rem try when xor',
+	    literal:
+	      'false true'
+	  };
+
+	  var COMMENT = hljs.COMMENT('%', '$');
+	  var NUMBER = {
+	    className: 'number',
+	    begin: '\\b(\\d+#[a-fA-F0-9]+|\\d+(\\.\\d+)?([eE][-+]?\\d+)?)',
+	    relevance: 0
+	  };
+	  var NAMED_FUN = {
+	    begin: 'fun\\s+' + BASIC_ATOM_RE + '/\\d+'
+	  };
+	  var FUNCTION_CALL = {
+	    begin: FUNCTION_NAME_RE + '\\(', end: '\\)',
+	    returnBegin: true,
+	    relevance: 0,
+	    contains: [
+	      {
+	        className: 'function_name', begin: FUNCTION_NAME_RE,
+	        relevance: 0
+	      },
+	      {
+	        begin: '\\(', end: '\\)', endsWithParent: true,
+	        returnEnd: true,
+	        relevance: 0
+	        // "contains" defined later
+	      }
+	    ]
+	  };
+	  var TUPLE = {
+	    className: 'tuple',
+	    begin: '{', end: '}',
+	    relevance: 0
+	    // "contains" defined later
+	  };
+	  var VAR1 = {
+	    className: 'variable',
+	    begin: '\\b_([A-Z][A-Za-z0-9_]*)?',
+	    relevance: 0
+	  };
+	  var VAR2 = {
+	    className: 'variable',
+	    begin: '[A-Z][a-zA-Z0-9_]*',
+	    relevance: 0
+	  };
+	  var RECORD_ACCESS = {
+	    begin: '#' + hljs.UNDERSCORE_IDENT_RE,
+	    relevance: 0,
+	    returnBegin: true,
+	    contains: [
+	      {
+	        className: 'record_name',
+	        begin: '#' + hljs.UNDERSCORE_IDENT_RE,
+	        relevance: 0
+	      },
+	      {
+	        begin: '{', end: '}',
+	        relevance: 0
+	        // "contains" defined later
+	      }
+	    ]
+	  };
+
+	  var BLOCK_STATEMENTS = {
+	    beginKeywords: 'fun receive if try case', end: 'end',
+	    keywords: ERLANG_RESERVED
+	  };
+	  BLOCK_STATEMENTS.contains = [
+	    COMMENT,
+	    NAMED_FUN,
+	    hljs.inherit(hljs.APOS_STRING_MODE, {className: ''}),
+	    BLOCK_STATEMENTS,
+	    FUNCTION_CALL,
+	    hljs.QUOTE_STRING_MODE,
+	    NUMBER,
+	    TUPLE,
+	    VAR1, VAR2,
+	    RECORD_ACCESS
+	  ];
+
+	  var BASIC_MODES = [
+	    COMMENT,
+	    NAMED_FUN,
+	    BLOCK_STATEMENTS,
+	    FUNCTION_CALL,
+	    hljs.QUOTE_STRING_MODE,
+	    NUMBER,
+	    TUPLE,
+	    VAR1, VAR2,
+	    RECORD_ACCESS
+	  ];
+	  FUNCTION_CALL.contains[1].contains = BASIC_MODES;
+	  TUPLE.contains = BASIC_MODES;
+	  RECORD_ACCESS.contains[1].contains = BASIC_MODES;
+
+	  var PARAMS = {
+	    className: 'params',
+	    begin: '\\(', end: '\\)',
+	    contains: BASIC_MODES
+	  };
+	  return {
+	    aliases: ['erl'],
+	    keywords: ERLANG_RESERVED,
+	    illegal: '(</|\\*=|\\+=|-=|/\\*|\\*/|\\(\\*|\\*\\))',
+	    contains: [
+	      {
+	        className: 'function',
+	        begin: '^' + BASIC_ATOM_RE + '\\s*\\(', end: '->',
+	        returnBegin: true,
+	        illegal: '\\(|#|//|/\\*|\\\\|:|;',
+	        contains: [
+	          PARAMS,
+	          hljs.inherit(hljs.TITLE_MODE, {begin: BASIC_ATOM_RE})
+	        ],
+	        starts: {
+	          end: ';|\\.',
+	          keywords: ERLANG_RESERVED,
+	          contains: BASIC_MODES
+	        }
+	      },
+	      COMMENT,
+	      {
+	        className: 'pp',
+	        begin: '^-', end: '\\.',
+	        relevance: 0,
+	        excludeEnd: true,
+	        returnBegin: true,
+	        lexemes: '-' + hljs.IDENT_RE,
+	        keywords:
+	          '-module -record -undef -export -ifdef -ifndef -author -copyright -doc -vsn ' +
+	          '-import -include -include_lib -compile -define -else -endif -file -behaviour ' +
+	          '-behavior -spec',
+	        contains: [PARAMS]
+	      },
+	      NUMBER,
+	      hljs.QUOTE_STRING_MODE,
+	      RECORD_ACCESS,
+	      VAR1, VAR2,
+	      TUPLE,
+	      {begin: /\.$/} // relevance booster
+	    ]
+	  };
+	};
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    contains: [
+	    {
+	      begin: /[^\u2401\u0001]+/,
+	      end: /[\u2401\u0001]/,
+	      excludeEnd: true,
+	      returnBegin: true,
+	      returnEnd: false,
+	      contains: [
+	      {
+	        begin: /([^\u2401\u0001=]+)/,
+	        end: /=([^\u2401\u0001=]+)/,
+	        returnEnd: true,
+	        returnBegin: false,
+	        className: 'attribute'
+	      },
+	      {
+	        begin: /=/,
+	        end: /([\u2401\u0001])/,
+	        excludeEnd: true,
+	        excludeBegin: true,
+	        className: 'string'
+	      }]
+	    }],
+	    case_insensitive: true
+	  };
+	};
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var PARAMS = {
+	    className: 'params',
+	    begin: '\\(', end: '\\)'
+	  };
+
+	  var F_KEYWORDS = {
+	    constant: '.False. .True.',
+	    type: 'integer real character complex logical dimension allocatable|10 parameter ' +
+	      'external implicit|10 none double precision assign intent optional pointer ' +
+	      'target in out common equivalence data',
+	    keyword: 'kind do while private call intrinsic where elsewhere ' +
+	      'type endtype endmodule endselect endinterface end enddo endif if forall endforall only contains default return stop then ' +
+	      'public subroutine|10 function program .and. .or. .not. .le. .eq. .ge. .gt. .lt. ' +
+	      'goto save else use module select case ' +
+	      'access blank direct exist file fmt form formatted iostat name named nextrec number opened rec recl sequential status unformatted unit ' +
+	      'continue format pause cycle exit ' +
+	      'c_null_char c_alert c_backspace c_form_feed flush wait decimal round iomsg ' +
+	      'synchronous nopass non_overridable pass protected volatile abstract extends import ' +
+	      'non_intrinsic value deferred generic final enumerator class associate bind enum ' +
+	      'c_int c_short c_long c_long_long c_signed_char c_size_t c_int8_t c_int16_t c_int32_t c_int64_t c_int_least8_t c_int_least16_t ' +
+	      'c_int_least32_t c_int_least64_t c_int_fast8_t c_int_fast16_t c_int_fast32_t c_int_fast64_t c_intmax_t C_intptr_t c_float c_double ' +
+	      'c_long_double c_float_complex c_double_complex c_long_double_complex c_bool c_char c_null_ptr c_null_funptr ' +
+	      'c_new_line c_carriage_return c_horizontal_tab c_vertical_tab iso_c_binding c_loc c_funloc c_associated  c_f_pointer ' +
+	      'c_ptr c_funptr iso_fortran_env character_storage_size error_unit file_storage_size input_unit iostat_end iostat_eor ' +
+	      'numeric_storage_size output_unit c_f_procpointer ieee_arithmetic ieee_support_underflow_control ' +
+	      'ieee_get_underflow_mode ieee_set_underflow_mode newunit contiguous ' +
+	      'pad position action delim readwrite eor advance nml interface procedure namelist include sequence elemental pure',
+	    built_in: 'alog alog10 amax0 amax1 amin0 amin1 amod cabs ccos cexp clog csin csqrt dabs dacos dasin datan datan2 dcos dcosh ddim dexp dint ' +
+	      'dlog dlog10 dmax1 dmin1 dmod dnint dsign dsin dsinh dsqrt dtan dtanh float iabs idim idint idnint ifix isign max0 max1 min0 min1 sngl ' +
+	      'algama cdabs cdcos cdexp cdlog cdsin cdsqrt cqabs cqcos cqexp cqlog cqsin cqsqrt dcmplx dconjg derf derfc dfloat dgamma dimag dlgama ' +
+	      'iqint qabs qacos qasin qatan qatan2 qcmplx qconjg qcos qcosh qdim qerf qerfc qexp qgamma qimag qlgama qlog qlog10 qmax1 qmin1 qmod ' +
+	      'qnint qsign qsin qsinh qsqrt qtan qtanh abs acos aimag aint anint asin atan atan2 char cmplx conjg cos cosh exp ichar index int log ' +
+	      'log10 max min nint sign sin sinh sqrt tan tanh print write dim lge lgt lle llt mod nullify allocate deallocate ' +
+	      'adjustl adjustr all allocated any associated bit_size btest ceiling count cshift date_and_time digits dot_product ' +
+	      'eoshift epsilon exponent floor fraction huge iand ibclr ibits ibset ieor ior ishft ishftc lbound len_trim matmul ' +
+	      'maxexponent maxloc maxval merge minexponent minloc minval modulo mvbits nearest pack present product ' +
+	      'radix random_number random_seed range repeat reshape rrspacing scale scan selected_int_kind selected_real_kind ' +
+	      'set_exponent shape size spacing spread sum system_clock tiny transpose trim ubound unpack verify achar iachar transfer ' +
+	      'dble entry dprod cpu_time command_argument_count get_command get_command_argument get_environment_variable is_iostat_end ' +
+	      'ieee_arithmetic ieee_support_underflow_control ieee_get_underflow_mode ieee_set_underflow_mode ' +
+	      'is_iostat_eor move_alloc new_line selected_char_kind same_type_as extends_type_of'  +
+	      'acosh asinh atanh bessel_j0 bessel_j1 bessel_jn bessel_y0 bessel_y1 bessel_yn erf erfc erfc_scaled gamma log_gamma hypot norm2 ' +
+	      'atomic_define atomic_ref execute_command_line leadz trailz storage_size merge_bits ' +
+	      'bge bgt ble blt dshiftl dshiftr findloc iall iany iparity image_index lcobound ucobound maskl maskr ' +
+	      'num_images parity popcnt poppar shifta shiftl shiftr this_image'
+	  };
+	  return {
+	    case_insensitive: true,
+	    aliases: ['f90', 'f95'],
+	    keywords: F_KEYWORDS,
+	    contains: [
+	      hljs.inherit(hljs.APOS_STRING_MODE, {className: 'string', relevance: 0}),
+	      hljs.inherit(hljs.QUOTE_STRING_MODE,{className: 'string', relevance: 0}),
+	      {
+	        className: 'function',
+	        beginKeywords: 'subroutine function program',
+	        illegal: '[${=\\n]',
+	        contains: [hljs.UNDERSCORE_TITLE_MODE, PARAMS]
+	      },
+	      hljs.COMMENT('!', '$', {relevance: 0}),
+	      {
+	        className: 'number',
+	        begin: '(?=\\b|\\+|\\-|\\.)(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*)(?:[de][+-]?\\d+)?\\b\\.?',
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var TYPEPARAM = {
+	    begin: '<', end: '>',
+	    contains: [
+	      hljs.inherit(hljs.TITLE_MODE, {begin: /'[a-zA-Z0-9_]+/})
+	    ]
+	  };
+
+	  return {
+	    aliases: ['fs'],
+	    keywords:
+	      // monad builder keywords (at top, matches before non-bang kws)
+	      'yield! return! let! do!' +
+	      // regular keywords
+	      'abstract and as assert base begin class default delegate do done ' +
+	      'downcast downto elif else end exception extern false finally for ' +
+	      'fun function global if in inherit inline interface internal lazy let ' +
+	      'match member module mutable namespace new null of open or ' +
+	      'override private public rec return sig static struct then to ' +
+	      'true try type upcast use val void when while with yield',
+	    contains: [
+	      {
+	        className: 'string',
+	        begin: '@"', end: '"',
+	        contains: [{begin: '""'}]
+	      },
+	      {
+	        className: 'string',
+	        begin: '"""', end: '"""'
+	      },
+	      hljs.COMMENT('\\(\\*', '\\*\\)'),
+	      {
+	        className: 'class',
+	        beginKeywords: 'type', end: '\\(|=|$', excludeEnd: true,
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE,
+	          TYPEPARAM
+	        ]
+	      },
+	      {
+	        className: 'annotation',
+	        begin: '\\[<', end: '>\\]',
+	        relevance: 10
+	      },
+	      {
+	        className: 'attribute',
+	        begin: '\\B(\'[A-Za-z])\\b',
+	        contains: [hljs.BACKSLASH_ESCAPE]
+	      },
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+	      hljs.C_NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	    var GCODE_IDENT_RE = '[A-Z_][A-Z0-9_.]*';
+	    var GCODE_CLOSE_RE = '\\%';
+	    var GCODE_KEYWORDS = {
+	        literal:
+	            '',
+	        built_in:
+	            '',
+	        keyword:
+	            'IF DO WHILE ENDWHILE CALL ENDIF SUB ENDSUB GOTO REPEAT ENDREPEAT ' +
+	            'EQ LT GT NE GE LE OR XOR'
+	    };
+	    var GCODE_START = {
+	        className: 'preprocessor',
+	        begin: '([O])([0-9]+)'
+	    };
+	    var GCODE_CODE = [
+	        hljs.C_LINE_COMMENT_MODE,
+	        hljs.C_BLOCK_COMMENT_MODE,
+	        hljs.COMMENT(/\(/, /\)/),
+	        hljs.inherit(hljs.C_NUMBER_MODE, {begin: '([-+]?([0-9]*\\.?[0-9]+\\.?))|' + hljs.C_NUMBER_RE}),
+	        hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
+	        hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+	        {
+	            className: 'keyword',
+	            begin: '([G])([0-9]+\\.?[0-9]?)'
+	        },
+	        {
+	            className: 'title',
+	            begin: '([M])([0-9]+\\.?[0-9]?)'
+	        },
+	        {
+	            className: 'title',
+	            begin: '(VC|VS|#)',
+	            end: '(\\d+)'
+	        },
+	        {
+	            className: 'title',
+	            begin: '(VZOFX|VZOFY|VZOFZ)'
+	        },
+	        {
+	            className: 'built_in',
+	            begin: '(ATAN|ABS|ACOS|ASIN|SIN|COS|EXP|FIX|FUP|ROUND|LN|TAN)(\\[)',
+	            end: '([-+]?([0-9]*\\.?[0-9]+\\.?))(\\])'
+	        },
+	        {
+	            className: 'label',
+	            variants: [
+	                {
+	                    begin: 'N', end: '\\d+',
+	                    illegal: '\\W'
+	                }
+	            ]
+	        }
+	    ];
+
+	    return {
+	        aliases: ['nc'],
+	        // Some implementations (CNC controls) of G-code are interoperable with uppercase and lowercase letters seamlessly.
+	        // However, most prefer all uppercase and uppercase is customary.
+	        case_insensitive: true,
+	        lexemes: GCODE_IDENT_RE,
+	        keywords: GCODE_KEYWORDS,
+	        contains: [
+	            {
+	                className: 'preprocessor',
+	                begin: GCODE_CLOSE_RE
+	            },
+	            GCODE_START
+	        ].concat(GCODE_CODE)
+	    };
+	};
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function (hljs) {
+	  return {
+	    aliases: ['feature'],
+	    keywords: 'Feature Background Ability Business\ Need Scenario Scenarios Scenario\ Outline Scenario\ Template Examples Given And Then But When',
+	    contains: [
+	      {
+	        className: 'keyword',
+	        begin: '\\*'
+	      },
+	      hljs.COMMENT('@[^@\r\n\t ]+', '$'),
+	      {
+	        begin: '\\|', end: '\\|\\w*$',
+	        contains: [
+	          {
+	            className: 'string',
+	            begin: '[^|]+'
+	          }
+	        ]
+	      },
+	      {
+	        className: 'variable',
+	        begin: '<', end: '>'
+	      },
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        className: 'string',
+	        begin: '"""', end: '"""'
+	      },
+	      hljs.QUOTE_STRING_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: {
+	      keyword:
+	        'atomic_uint attribute bool break bvec2 bvec3 bvec4 case centroid coherent const continue default ' +
+	        'discard dmat2 dmat2x2 dmat2x3 dmat2x4 dmat3 dmat3x2 dmat3x3 dmat3x4 dmat4 dmat4x2 dmat4x3 ' +
+	        'dmat4x4 do double dvec2 dvec3 dvec4 else flat float for highp if iimage1D iimage1DArray ' +
+	        'iimage2D iimage2DArray iimage2DMS iimage2DMSArray iimage2DRect iimage3D iimageBuffer iimageCube ' +
+	        'iimageCubeArray image1D image1DArray image2D image2DArray image2DMS image2DMSArray image2DRect ' +
+	        'image3D imageBuffer imageCube imageCubeArray in inout int invariant isampler1D isampler1DArray ' +
+	        'isampler2D isampler2DArray isampler2DMS isampler2DMSArray isampler2DRect isampler3D isamplerBuffer ' +
+	        'isamplerCube isamplerCubeArray ivec2 ivec3 ivec4 layout lowp mat2 mat2x2 mat2x3 mat2x4 mat3 mat3x2 ' +
+	        'mat3x3 mat3x4 mat4 mat4x2 mat4x3 mat4x4 mediump noperspective out patch precision readonly restrict ' +
+	        'return sample sampler1D sampler1DArray sampler1DArrayShadow sampler1DShadow sampler2D sampler2DArray ' +
+	        'sampler2DArrayShadow sampler2DMS sampler2DMSArray sampler2DRect sampler2DRectShadow sampler2DShadow ' +
+	        'sampler3D samplerBuffer samplerCube samplerCubeArray samplerCubeArrayShadow samplerCubeShadow smooth ' +
+	        'struct subroutine switch uimage1D uimage1DArray uimage2D uimage2DArray uimage2DMS uimage2DMSArray ' +
+	        'uimage2DRect uimage3D uimageBuffer uimageCube uimageCubeArray uint uniform usampler1D usampler1DArray ' +
+	        'usampler2D usampler2DArray usampler2DMS usampler2DMSArray usampler2DRect usampler3D usamplerBuffer ' +
+	        'usamplerCube usamplerCubeArray uvec2 uvec3 uvec4 varying vec2 vec3 vec4 void volatile while writeonly',
+	      built_in:
+	        'gl_BackColor gl_BackLightModelProduct gl_BackLightProduct gl_BackMaterial ' +
+	        'gl_BackSecondaryColor gl_ClipDistance gl_ClipPlane gl_ClipVertex gl_Color ' +
+	        'gl_DepthRange gl_EyePlaneQ gl_EyePlaneR gl_EyePlaneS gl_EyePlaneT gl_Fog gl_FogCoord ' +
+	        'gl_FogFragCoord gl_FragColor gl_FragCoord gl_FragData gl_FragDepth gl_FrontColor ' +
+	        'gl_FrontFacing gl_FrontLightModelProduct gl_FrontLightProduct gl_FrontMaterial ' +
+	        'gl_FrontSecondaryColor gl_InstanceID gl_InvocationID gl_Layer gl_LightModel ' +
+	        'gl_LightSource gl_MaxAtomicCounterBindings gl_MaxAtomicCounterBufferSize ' +
+	        'gl_MaxClipDistances gl_MaxClipPlanes gl_MaxCombinedAtomicCounterBuffers ' +
+	        'gl_MaxCombinedAtomicCounters gl_MaxCombinedImageUniforms gl_MaxCombinedImageUnitsAndFragmentOutputs ' +
+	        'gl_MaxCombinedTextureImageUnits gl_MaxDrawBuffers gl_MaxFragmentAtomicCounterBuffers ' +
+	        'gl_MaxFragmentAtomicCounters gl_MaxFragmentImageUniforms gl_MaxFragmentInputComponents ' +
+	        'gl_MaxFragmentUniformComponents gl_MaxFragmentUniformVectors gl_MaxGeometryAtomicCounterBuffers ' +
+	        'gl_MaxGeometryAtomicCounters gl_MaxGeometryImageUniforms gl_MaxGeometryInputComponents ' +
+	        'gl_MaxGeometryOutputComponents gl_MaxGeometryOutputVertices gl_MaxGeometryTextureImageUnits ' +
+	        'gl_MaxGeometryTotalOutputComponents gl_MaxGeometryUniformComponents gl_MaxGeometryVaryingComponents ' +
+	        'gl_MaxImageSamples gl_MaxImageUnits gl_MaxLights gl_MaxPatchVertices gl_MaxProgramTexelOffset ' +
+	        'gl_MaxTessControlAtomicCounterBuffers gl_MaxTessControlAtomicCounters gl_MaxTessControlImageUniforms ' +
+	        'gl_MaxTessControlInputComponents gl_MaxTessControlOutputComponents gl_MaxTessControlTextureImageUnits ' +
+	        'gl_MaxTessControlTotalOutputComponents gl_MaxTessControlUniformComponents ' +
+	        'gl_MaxTessEvaluationAtomicCounterBuffers gl_MaxTessEvaluationAtomicCounters ' +
+	        'gl_MaxTessEvaluationImageUniforms gl_MaxTessEvaluationInputComponents gl_MaxTessEvaluationOutputComponents ' +
+	        'gl_MaxTessEvaluationTextureImageUnits gl_MaxTessEvaluationUniformComponents ' +
+	        'gl_MaxTessGenLevel gl_MaxTessPatchComponents gl_MaxTextureCoords gl_MaxTextureImageUnits ' +
+	        'gl_MaxTextureUnits gl_MaxVaryingComponents gl_MaxVaryingFloats gl_MaxVaryingVectors ' +
+	        'gl_MaxVertexAtomicCounterBuffers gl_MaxVertexAtomicCounters gl_MaxVertexAttribs ' +
+	        'gl_MaxVertexImageUniforms gl_MaxVertexOutputComponents gl_MaxVertexTextureImageUnits ' +
+	        'gl_MaxVertexUniformComponents gl_MaxVertexUniformVectors gl_MaxViewports gl_MinProgramTexelOffset'+
+	        'gl_ModelViewMatrix gl_ModelViewMatrixInverse gl_ModelViewMatrixInverseTranspose ' +
+	        'gl_ModelViewMatrixTranspose gl_ModelViewProjectionMatrix gl_ModelViewProjectionMatrixInverse ' +
+	        'gl_ModelViewProjectionMatrixInverseTranspose gl_ModelViewProjectionMatrixTranspose ' +
+	        'gl_MultiTexCoord0 gl_MultiTexCoord1 gl_MultiTexCoord2 gl_MultiTexCoord3 gl_MultiTexCoord4 ' +
+	        'gl_MultiTexCoord5 gl_MultiTexCoord6 gl_MultiTexCoord7 gl_Normal gl_NormalMatrix ' +
+	        'gl_NormalScale gl_ObjectPlaneQ gl_ObjectPlaneR gl_ObjectPlaneS gl_ObjectPlaneT gl_PatchVerticesIn ' +
+	        'gl_PerVertex gl_Point gl_PointCoord gl_PointSize gl_Position gl_PrimitiveID gl_PrimitiveIDIn ' +
+	        'gl_ProjectionMatrix gl_ProjectionMatrixInverse gl_ProjectionMatrixInverseTranspose ' +
+	        'gl_ProjectionMatrixTranspose gl_SampleID gl_SampleMask gl_SampleMaskIn gl_SamplePosition ' +
+	        'gl_SecondaryColor gl_TessCoord gl_TessLevelInner gl_TessLevelOuter gl_TexCoord gl_TextureEnvColor ' +
+	        'gl_TextureMatrixInverseTranspose gl_TextureMatrixTranspose gl_Vertex gl_VertexID ' +
+	        'gl_ViewportIndex gl_in gl_out EmitStreamVertex EmitVertex EndPrimitive EndStreamPrimitive ' +
+	        'abs acos acosh all any asin asinh atan atanh atomicCounter atomicCounterDecrement ' +
+	        'atomicCounterIncrement barrier bitCount bitfieldExtract bitfieldInsert bitfieldReverse ' +
+	        'ceil clamp cos cosh cross dFdx dFdy degrees determinant distance dot equal exp exp2 faceforward ' +
+	        'findLSB findMSB floatBitsToInt floatBitsToUint floor fma fract frexp ftransform fwidth greaterThan ' +
+	        'greaterThanEqual imageAtomicAdd imageAtomicAnd imageAtomicCompSwap imageAtomicExchange ' +
+	        'imageAtomicMax imageAtomicMin imageAtomicOr imageAtomicXor imageLoad imageStore imulExtended ' +
+	        'intBitsToFloat interpolateAtCentroid interpolateAtOffset interpolateAtSample inverse inversesqrt ' +
+	        'isinf isnan ldexp length lessThan lessThanEqual log log2 matrixCompMult max memoryBarrier ' +
+	        'min mix mod modf noise1 noise2 noise3 noise4 normalize not notEqual outerProduct packDouble2x32 ' +
+	        'packHalf2x16 packSnorm2x16 packSnorm4x8 packUnorm2x16 packUnorm4x8 pow radians reflect refract ' +
+	        'round roundEven shadow1D shadow1DLod shadow1DProj shadow1DProjLod shadow2D shadow2DLod shadow2DProj ' +
+	        'shadow2DProjLod sign sin sinh smoothstep sqrt step tan tanh texelFetch texelFetchOffset texture ' +
+	        'texture1D texture1DLod texture1DProj texture1DProjLod texture2D texture2DLod texture2DProj ' +
+	        'texture2DProjLod texture3D texture3DLod texture3DProj texture3DProjLod textureCube textureCubeLod ' +
+	        'textureGather textureGatherOffset textureGatherOffsets textureGrad textureGradOffset textureLod ' +
+	        'textureLodOffset textureOffset textureProj textureProjGrad textureProjGradOffset textureProjLod ' +
+	        'textureProjLodOffset textureProjOffset textureQueryLod textureSize transpose trunc uaddCarry ' +
+	        'uintBitsToFloat umulExtended unpackDouble2x32 unpackHalf2x16 unpackSnorm2x16 unpackSnorm4x8 ' +
+	        'unpackUnorm2x16 unpackUnorm4x8 usubBorrow gl_TextureMatrix gl_TextureMatrixInverse',
+	      literal: 'true false'
+	    },
+	    illegal: '"',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'preprocessor',
+	        begin: '#', end: '$'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var GO_KEYWORDS = {
+	    keyword:
+	      'break default func interface select case map struct chan else goto package switch ' +
+	      'const fallthrough if range type continue for import return var go defer',
+	    constant:
+	       'true false iota nil',
+	    typename:
+	      'bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 ' +
+	      'uint16 uint32 uint64 int uint uintptr rune',
+	    built_in:
+	      'append cap close complex copy imag len make new panic print println real recover delete'
+	  };
+	  return {
+	    aliases: ["golang"],
+	    keywords: GO_KEYWORDS,
+	    illegal: '</',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'string',
+	        begin: '\'', end: '[^\\\\]\''
+	      },
+	      {
+	        className: 'string',
+	        begin: '`', end: '`'
+	      },
+	      {
+	        className: 'number',
+	        begin: hljs.C_NUMBER_RE + '[dflsi]?',
+	        relevance: 0
+	      },
+	      hljs.C_NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    case_insensitive: true,
+	    keywords: {
+	      keyword:
+	        'task project allprojects subprojects artifacts buildscript configurations ' +
+	        'dependencies repositories sourceSets description delete from into include ' +
+	        'exclude source classpath destinationDir includes options sourceCompatibility ' +
+	        'targetCompatibility group flatDir doLast doFirst flatten todir fromdir ant ' +
+	        'def abstract break case catch continue default do else extends final finally ' +
+	        'for if implements instanceof native new private protected public return static ' +
+	        'switch synchronized throw throws transient try volatile while strictfp package ' +
+	        'import false null super this true antlrtask checkstyle codenarc copy boolean ' +
+	        'byte char class double float int interface long short void compile runTime ' +
+	        'file fileTree abs any append asList asWritable call collect compareTo count ' +
+	        'div dump each eachByte eachFile eachLine every find findAll flatten getAt ' +
+	        'getErr getIn getOut getText grep immutable inject inspect intersect invokeMethods ' +
+	        'isCase join leftShift minus multiply newInputStream newOutputStream newPrintWriter ' +
+	        'newReader newWriter next plus pop power previous print println push putAt read ' +
+	        'readBytes readLines reverse reverseEach round size sort splitEachLine step subMap ' +
+	        'times toInteger toList tokenize upto waitForOrKill withPrintWriter withReader ' +
+	        'withStream withWriter withWriterAppend write writeLine'
+	    },
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.NUMBER_MODE,
+	      hljs.REGEXP_MODE
+
+	    ]
+	  }
+	};
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	    return {
+	        keywords: {
+	            typename: 'byte short char int long boolean float double void',
+	            literal : 'true false null',
+	            keyword:
+	            // groovy specific keywords
+	            'def as in assert trait ' +
+	            // common keywords with Java
+	            'super this abstract static volatile transient public private protected synchronized final ' +
+	            'class interface enum if else for while switch case break default continue ' +
+	            'throw throws try catch finally implements extends new import package return instanceof'
+	        },
+
+	        contains: [
+	            hljs.COMMENT(
+	                '/\\*\\*',
+	                '\\*/',
+	                {
+	                    relevance : 0,
+	                    contains : [{
+	                        className : 'doctag',
+	                        begin : '@[A-Za-z]+'
+	                    }]
+	                }
+	            ),
+	            hljs.C_LINE_COMMENT_MODE,
+	            hljs.C_BLOCK_COMMENT_MODE,
+	            {
+	                className: 'string',
+	                begin: '"""', end: '"""'
+	            },
+	            {
+	                className: 'string',
+	                begin: "'''", end: "'''"
+	            },
+	            {
+	                className: 'string',
+	                begin: "\\$/", end: "/\\$",
+	                relevance: 10
+	            },
+	            hljs.APOS_STRING_MODE,
+	            {
+	                className: 'regexp',
+	                begin: /~?\/[^\/\n]+\//,
+	                contains: [
+	                    hljs.BACKSLASH_ESCAPE
+	                ]
+	            },
+	            hljs.QUOTE_STRING_MODE,
+	            {
+	                className: 'shebang',
+	                begin: "^#!/usr/bin/env", end: '$',
+	                illegal: '\n'
+	            },
+	            hljs.BINARY_NUMBER_MODE,
+	            {
+	                className: 'class',
+	                beginKeywords: 'class interface trait enum', end: '{',
+	                illegal: ':',
+	                contains: [
+	                    {beginKeywords: 'extends implements'},
+	                    hljs.UNDERSCORE_TITLE_MODE,
+	                ]
+	            },
+	            hljs.C_NUMBER_MODE,
+	            {
+	                className: 'annotation', begin: '@[A-Za-z]+'
+	            },
+	            {
+	                // highlight map keys and named parameters as strings
+	                className: 'string', begin: /[^\?]{0}[A-Za-z0-9_$]+ *:/
+	            },
+	            {
+	                // catch middle element of the ternary operator
+	                // to avoid highlight it as a label, named parameter, or map key
+	                begin: /\?/, end: /\:/
+	            },
+	            {
+	                // highlight labeled statements
+	                className: 'label', begin: '^\\s*[A-Za-z0-9_$]+:',
+	                relevance: 0
+	            },
+	        ]
+	    }
+	};
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = // TODO support filter tags like :javascript, support inline HTML
+	function(hljs) {
+	  return {
+	    case_insensitive: true,
+	    contains: [
+	      {
+	        className: 'doctype',
+	        begin: '^!!!( (5|1\\.1|Strict|Frameset|Basic|Mobile|RDFa|XML\\b.*))?$',
+	        relevance: 10
+	      },
+	      // FIXME these comments should be allowed to span indented lines
+	      hljs.COMMENT(
+	        '^\\s*(!=#|=#|-#|/).*$',
+	        false,
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      {
+	        begin: '^\\s*(-|=|!=)(?!#)',
+	        starts: {
+	          end: '\\n',
+	          subLanguage: 'ruby'
+	        }
+	      },
+	      {
+	        className: 'tag',
+	        begin: '^\\s*%',
+	        contains: [
+	          {
+	            className: 'title',
+	            begin: '\\w+'
+	          },
+	          {
+	            className: 'value',
+	            begin: '[#\\.][\\w-]+'
+	          },
+	          {
+	            begin: '{\\s*',
+	            end: '\\s*}',
+	            excludeEnd: true,
+	            contains: [
+	              {
+	                //className: 'attribute',
+	                begin: ':\\w+\\s*=>',
+	                end: ',\\s+',
+	                returnBegin: true,
+	                endsWithParent: true,
+	                contains: [
+	                  {
+	                    className: 'symbol',
+	                    begin: ':\\w+'
+	                  },
+	                  hljs.APOS_STRING_MODE,
+	                  hljs.QUOTE_STRING_MODE,
+	                  {
+	                    begin: '\\w+',
+	                    relevance: 0
+	                  }
+	                ]
+	              }
+	            ]
+	          },
+	          {
+	            begin: '\\(\\s*',
+	            end: '\\s*\\)',
+	            excludeEnd: true,
+	            contains: [
+	              {
+	                //className: 'attribute',
+	                begin: '\\w+\\s*=',
+	                end: '\\s+',
+	                returnBegin: true,
+	                endsWithParent: true,
+	                contains: [
+	                  {
+	                    className: 'attribute',
+	                    begin: '\\w+',
+	                    relevance: 0
+	                  },
+	                  hljs.APOS_STRING_MODE,
+	                  hljs.QUOTE_STRING_MODE,
+	                  {
+	                    begin: '\\w+',
+	                    relevance: 0
+	                  }
+	                ]
+	              }
+	            ]
+	          }
+	        ]
+	      },
+	      {
+	        className: 'bullet',
+	        begin: '^\\s*[=~]\\s*',
+	        relevance: 0
+	      },
+	      {
+	        begin: '#{',
+	        starts: {
+	          end: '}',
+	          subLanguage: 'ruby'
+	        }
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var EXPRESSION_KEYWORDS = 'each in with if else unless bindattr action collection debugger log outlet template unbound view yield';
+	  return {
+	    aliases: ['hbs', 'html.hbs', 'html.handlebars'],
+	    case_insensitive: true,
+	    subLanguage: 'xml', subLanguageMode: 'continuous',
+	    contains: [
+	      {
+	        className: 'expression',
+	        begin: '{{', end: '}}',
+	        contains: [
+	          {
+	            className: 'begin-block', begin: '\#[a-zA-Z\-\ \.]+',
+	            keywords: EXPRESSION_KEYWORDS
+	          },
+	          {
+	            className: 'string',
+	            begin: '"', end: '"'
+	          },
+	          {
+	            className: 'end-block', begin: '\\\/[a-zA-Z\-\ \.]+',
+	            keywords: EXPRESSION_KEYWORDS
+	          },
+	          {
+	            className: 'variable', begin: '[a-zA-Z\-\.]+',
+	            keywords: EXPRESSION_KEYWORDS
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var COMMENT_MODES = [
+	    hljs.COMMENT('--', '$'),
+	    hljs.COMMENT(
+	      '{-',
+	      '-}',
+	      {
+	        contains: ['self']
+	      }
+	    )
+	  ];
+
+	  var PRAGMA = {
+	    className: 'pragma',
+	    begin: '{-#', end: '#-}'
+	  };
+
+	  var PREPROCESSOR = {
+	    className: 'preprocessor',
+	    begin: '^#', end: '$'
+	  };
+
+	  var CONSTRUCTOR = {
+	    className: 'type',
+	    begin: '\\b[A-Z][\\w\']*', // TODO: other constructors (build-in, infix).
+	    relevance: 0
+	  };
+
+	  var LIST = {
+	    className: 'container',
+	    begin: '\\(', end: '\\)',
+	    illegal: '"',
+	    contains: [
+	      PRAGMA,
+	      PREPROCESSOR,
+	      {className: 'type', begin: '\\b[A-Z][\\w]*(\\((\\.\\.|,|\\w+)\\))?'},
+	      hljs.inherit(hljs.TITLE_MODE, {begin: '[_a-z][\\w\']*'})
+	    ].concat(COMMENT_MODES)
+	  };
+
+	  var RECORD = {
+	    className: 'container',
+	    begin: '{', end: '}',
+	    contains: LIST.contains
+	  };
+
+	  return {
+	    aliases: ['hs'],
+	    keywords:
+	      'let in if then else case of where do module import hiding ' +
+	      'qualified type data newtype deriving class instance as default ' +
+	      'infix infixl infixr foreign export ccall stdcall cplusplus ' +
+	      'jvm dotnet safe unsafe family forall mdo proc rec',
+	    contains: [
+
+	      // Top-level constructions.
+
+	      {
+	        className: 'module',
+	        begin: '\\bmodule\\b', end: 'where',
+	        keywords: 'module where',
+	        contains: [LIST].concat(COMMENT_MODES),
+	        illegal: '\\W\\.|;'
+	      },
+	      {
+	        className: 'import',
+	        begin: '\\bimport\\b', end: '$',
+	        keywords: 'import|0 qualified as hiding',
+	        contains: [LIST].concat(COMMENT_MODES),
+	        illegal: '\\W\\.|;'
+	      },
+
+	      {
+	        className: 'class',
+	        begin: '^(\\s*)?(class|instance)\\b', end: 'where',
+	        keywords: 'class family instance where',
+	        contains: [CONSTRUCTOR, LIST].concat(COMMENT_MODES)
+	      },
+	      {
+	        className: 'typedef',
+	        begin: '\\b(data|(new)?type)\\b', end: '$',
+	        keywords: 'data family type newtype deriving',
+	        contains: [PRAGMA, CONSTRUCTOR, LIST, RECORD].concat(COMMENT_MODES)
+	      },
+	      {
+	        className: 'default',
+	        beginKeywords: 'default', end: '$',
+	        contains: [CONSTRUCTOR, LIST].concat(COMMENT_MODES)
+	      },
+	      {
+	        className: 'infix',
+	        beginKeywords: 'infix infixl infixr', end: '$',
+	        contains: [hljs.C_NUMBER_MODE].concat(COMMENT_MODES)
+	      },
+	      {
+	        className: 'foreign',
+	        begin: '\\bforeign\\b', end: '$',
+	        keywords: 'foreign import export ccall stdcall cplusplus jvm ' +
+	                  'dotnet safe unsafe',
+	        contains: [CONSTRUCTOR, hljs.QUOTE_STRING_MODE].concat(COMMENT_MODES)
+	      },
+	      {
+	        className: 'shebang',
+	        begin: '#!\\/usr\\/bin\\/env\ runhaskell', end: '$'
+	      },
+
+	      // "Whitespaces".
+
+	      PRAGMA,
+	      PREPROCESSOR,
+
+	      // Literals and names.
+
+	      // TODO: characters.
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE,
+	      CONSTRUCTOR,
+	      hljs.inherit(hljs.TITLE_MODE, {begin: '^[_a-z][\\w\']*'}),
+
+	      {begin: '->|<-'} // No markup, relevance booster
+	    ].concat(COMMENT_MODES)
+	  };
+	};
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var IDENT_RE = '[a-zA-Z_$][a-zA-Z0-9_$]*';
+	  var IDENT_FUNC_RETURN_TYPE_RE = '([*]|[a-zA-Z_$][a-zA-Z0-9_$]*)';
+
+	  return {
+	    aliases: ['hx'],
+	    keywords: {
+	      keyword: 'break callback case cast catch class continue default do dynamic else enum extends extern ' +
+	    'for function here if implements import in inline interface never new override package private ' +
+	    'public return static super switch this throw trace try typedef untyped using var while',
+	      literal: 'true false null'
+	    },
+	    contains: [
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface', end: '{', excludeEnd: true,
+	        contains: [
+	          {
+	            beginKeywords: 'extends implements'
+	          },
+	          hljs.TITLE_MODE
+	        ]
+	      },
+	      {
+	        className: 'preprocessor',
+	        begin: '#', end: '$',
+	        keywords: 'if else elseif end error'
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: '[{;]', excludeEnd: true,
+	        illegal: '\\S',
+	        contains: [
+	          hljs.TITLE_MODE,
+	          {
+	            className: 'params',
+	            begin: '\\(', end: '\\)',
+	            contains: [
+	              hljs.APOS_STRING_MODE,
+	              hljs.QUOTE_STRING_MODE,
+	              hljs.C_LINE_COMMENT_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE
+	            ]
+	          },
+	          {
+	            className: 'type',
+	            begin: ':',
+	            end: IDENT_FUNC_RETURN_TYPE_RE,
+	            relevance: 10
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['https'],
+	    illegal: '\\S',
+	    contains: [
+	      {
+	        className: 'status',
+	        begin: '^HTTP/[0-9\\.]+', end: '$',
+	        contains: [{className: 'number', begin: '\\b\\d{3}\\b'}]
+	      },
+	      {
+	        className: 'request',
+	        begin: '^[A-Z]+ (.*?) HTTP/[0-9\\.]+$', returnBegin: true, end: '$',
+	        contains: [
+	          {
+	            className: 'string',
+	            begin: ' ', end: ' ',
+	            excludeBegin: true, excludeEnd: true
+	          }
+	        ]
+	      },
+	      {
+	        className: 'attribute',
+	        begin: '^\\w', end: ': ', excludeEnd: true,
+	        illegal: '\\n|\\s|=',
+	        starts: {className: 'string', end: '$'}
+	      },
+	      {
+	        begin: '\\n\\n',
+	        starts: {subLanguage: '', endsWithParent: true}
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var START_BRACKET = '\\[';
+	  var END_BRACKET = '\\]';
+	  return {
+	    aliases: ['i7'],
+	    case_insensitive: true,
+	    keywords: {
+	      // Some keywords more or less unique to I7, for relevance.
+	      keyword:
+	        // kind:
+	        'thing|10 room|10 person|10 man|10 woman|10 animal|10 container ' +
+	        'supporter|10 backdrop|10 door|10 ' +
+	        // characteristic:
+	        'scenery|10 open closed|10 locked|10 inside|10 gender|10 ' +
+	        // verb:
+	        'is are say|10 understand|10 ' +
+	        // misc keyword:
+	        'kind|10 of rule|10'
+	    },
+	    contains: [
+	      {
+	        className: 'string',
+	        begin: '"', end: '"',
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'subst',
+	            begin: START_BRACKET, end: END_BRACKET
+	          }
+	        ]
+	      },
+	      {
+	        className: 'title',
+	        beginKeywords: '^Volume ^Book ^Part ^Chapter ^Section',
+	        end: '$',
+	        relevance: 10
+	      },
+	      {
+	        // Table
+	        className: 'title',
+	        beginKeywords: '^Table',
+	        end: '$',
+	        relevance: 10
+	      },
+	      {
+	        // Rule definition
+	        // This is here for relevance.
+	        begin: '^\\b(Check|Carry out|Report|Instead of|To|Rule|When|Before|After)',
+	        end: ':',
+	        contains: [
+	          {
+	            //Rule name
+	            begin: '\\b\\(This',
+	            end: '\\)',
+	            relevance: 10
+	          }
+	        ],
+	        relevance: 10
+	      },
+	      {
+	        className: 'comment',
+	        begin: START_BRACKET, end: END_BRACKET,
+	        contains: ['self']
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    case_insensitive: true,
+	    illegal: /\S/,
+	    contains: [
+	      hljs.COMMENT(';', '$'),
+	      {
+	        className: 'title',
+	        begin: '^\\[', end: '\\]'
+	      },
+	      {
+	        className: 'setting',
+	        begin: '^[a-z0-9\\[\\]_-]+[ \\t]*=[ \\t]*', end: '$',
+	        contains: [
+	          {
+	            className: 'value',
+	            endsWithParent: true,
+	            keywords: 'on off true false yes no',
+	            contains: [hljs.QUOTE_STRING_MODE, hljs.NUMBER_MODE],
+	            relevance: 0
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 272 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var GENERIC_IDENT_RE = hljs.UNDERSCORE_IDENT_RE + '(<' + hljs.UNDERSCORE_IDENT_RE + '>)?';
+	  var KEYWORDS =
+	    'false synchronized int abstract float private char boolean static null if const ' +
+	    'for true while long strictfp finally protected import native final void ' +
+	    'enum else break transient catch instanceof byte super volatile case assert short ' +
+	    'package default double public try this switch continue throws protected public private';
+
+	  // https://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html
+	  var JAVA_NUMBER_RE = '\\b' +
+	    '(' +
+	      '0[bB]([01]+[01_]+[01]+|[01]+)' + // 0b...
+	      '|' +
+	      '0[xX]([a-fA-F0-9]+[a-fA-F0-9_]+[a-fA-F0-9]+|[a-fA-F0-9]+)' + // 0x...
+	      '|' +
+	      '(' +
+	        '([\\d]+[\\d_]+[\\d]+|[\\d]+)(\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))?' +
+	        '|' +
+	        '\\.([\\d]+[\\d_]+[\\d]+|[\\d]+)' +
+	      ')' +
+	      '([eE][-+]?\\d+)?' + // octal, decimal, float
+	    ')' +
+	    '[lLfF]?';
+	  var JAVA_NUMBER_MODE = {
+	    className: 'number',
+	    begin: JAVA_NUMBER_RE,
+	    relevance: 0
+	  };
+
+	  return {
+	    aliases: ['jsp'],
+	    keywords: KEYWORDS,
+	    illegal: /<\//,
+	    contains: [
+	      hljs.COMMENT(
+	        '/\\*\\*',
+	        '\\*/',
+	        {
+	          relevance : 0,
+	          contains : [{
+	            className : 'doctag',
+	            begin : '@[A-Za-z]+'
+	          }]
+	        }
+	      ),
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface', end: /[{;=]/, excludeEnd: true,
+	        keywords: 'class interface',
+	        illegal: /[:"\[\]]/,
+	        contains: [
+	          {beginKeywords: 'extends implements'},
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      {
+	        // Expression keywords prevent 'keyword Name(...)' from being
+	        // recognized as a function definition
+	        beginKeywords: 'new throw return else',
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        begin: '(' + GENERIC_IDENT_RE + '\\s+)+' + hljs.UNDERSCORE_IDENT_RE + '\\s*\\(', returnBegin: true, end: /[{;=]/,
+	        excludeEnd: true,
+	        keywords: KEYWORDS,
+	        contains: [
+	          {
+	            begin: hljs.UNDERSCORE_IDENT_RE + '\\s*\\(', returnBegin: true,
+	            relevance: 0,
+	            contains: [hljs.UNDERSCORE_TITLE_MODE]
+	          },
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/,
+	            keywords: KEYWORDS,
+	            relevance: 0,
+	            contains: [
+	              hljs.APOS_STRING_MODE,
+	              hljs.QUOTE_STRING_MODE,
+	              hljs.C_NUMBER_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE
+	            ]
+	          },
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	      },
+	      JAVA_NUMBER_MODE,
+	      {
+	        className: 'annotation', begin: '@[A-Za-z]+'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['js'],
+	    keywords: {
+	      keyword:
+	        'in of if for while finally var new function do return void else break catch ' +
+	        'instanceof with throw case default try this switch continue typeof delete ' +
+	        'let yield const export super debugger as async await',
+	      literal:
+	        'true false null undefined NaN Infinity',
+	      built_in:
+	        'eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent ' +
+	        'encodeURI encodeURIComponent escape unescape Object Function Boolean Error ' +
+	        'EvalError InternalError RangeError ReferenceError StopIteration SyntaxError ' +
+	        'TypeError URIError Number Math Date String RegExp Array Float32Array ' +
+	        'Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array ' +
+	        'Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require ' +
+	        'module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect ' +
+	        'Promise'
+	    },
+	    contains: [
+	      {
+	        className: 'pi',
+	        relevance: 10,
+	        begin: /^\s*['"]use (strict|asm)['"]/
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      { // template string
+	        className: 'string',
+	        begin: '`', end: '`',
+	        contains: [
+	          hljs.BACKSLASH_ESCAPE,
+	          {
+	            className: 'subst',
+	            begin: '\\$\\{', end: '\\}'
+	          }
+	        ]
+	      },
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'number',
+	        variants: [
+	          { begin: '\\b(0[bB][01]+)' },
+	          { begin: '\\b(0[oO][0-7]+)' },
+	          { begin: hljs.C_NUMBER_RE }
+	        ],
+	        relevance: 0
+	      },
+	      { // "value" container
+	        begin: '(' + hljs.RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
+	        keywords: 'return throw case',
+	        contains: [
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE,
+	          hljs.REGEXP_MODE,
+	          { // E4X / JSX
+	            begin: /</, end: />\s*[);\]]/,
+	            relevance: 0,
+	            subLanguage: 'xml'
+	          }
+	        ],
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: /\{/, excludeEnd: true,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {begin: /[A-Za-z$_][0-9A-Za-z$_]*/}),
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/,
+	            excludeBegin: true,
+	            excludeEnd: true,
+	            contains: [
+	              hljs.C_LINE_COMMENT_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE
+	            ],
+	            illegal: /["'\(]/
+	          }
+	        ],
+	        illegal: /\[|%/
+	      },
+	      {
+	        begin: /\$[(.]/ // relevance booster for a pattern common to JS libs: `$(something)` and `$.something`
+	      },
+	      {
+	        begin: '\\.' + hljs.IDENT_RE, relevance: 0 // hack: prevents detection of keywords after dots
+	      },
+	      // ECMAScript 6 modules import
+	      {
+	        beginKeywords: 'import', end: '[;$]',
+	        keywords: 'import from as',
+	        contains: [
+	          hljs.APOS_STRING_MODE,
+	          hljs.QUOTE_STRING_MODE
+	        ]
+	      },
+	      { // ES6 class
+	        className: 'class',
+	        beginKeywords: 'class', end: /[{;=]/, excludeEnd: true,
+	        illegal: /[:"\[\]]/,
+	        contains: [
+	          {beginKeywords: 'extends'},
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var LITERALS = {literal: 'true false null'};
+	  var TYPES = [
+	    hljs.QUOTE_STRING_MODE,
+	    hljs.C_NUMBER_MODE
+	  ];
+	  var VALUE_CONTAINER = {
+	    className: 'value',
+	    end: ',', endsWithParent: true, excludeEnd: true,
+	    contains: TYPES,
+	    keywords: LITERALS
+	  };
+	  var OBJECT = {
+	    begin: '{', end: '}',
+	    contains: [
+	      {
+	        className: 'attribute',
+	        begin: '\\s*"', end: '"\\s*:\\s*', excludeBegin: true, excludeEnd: true,
+	        contains: [hljs.BACKSLASH_ESCAPE],
+	        illegal: '\\n',
+	        starts: VALUE_CONTAINER
+	      }
+	    ],
+	    illegal: '\\S'
+	  };
+	  var ARRAY = {
+	    begin: '\\[', end: '\\]',
+	    contains: [hljs.inherit(VALUE_CONTAINER, {className: null})], // inherit is also a workaround for a bug that makes shared modes with endsWithParent compile only the ending of one of the parents
+	    illegal: '\\S'
+	  };
+	  TYPES.splice(TYPES.length, 0, OBJECT, ARRAY);
+	  return {
+	    contains: TYPES,
+	    keywords: LITERALS,
+	    illegal: '\\S'
+	  };
+	};
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  // Since there are numerous special names in Julia, it is too much trouble
+	  // to maintain them by hand. Hence these names (i.e. keywords, literals and
+	  // built-ins) are automatically generated from Julia (v0.3.0) itself through
+	  // following scripts for each.
+
+	  var KEYWORDS = {
+	    // # keyword generator
+	    // println("\"in\",")
+	    // for kw in Base.REPLCompletions.complete_keyword("")
+	    //     println("\"$kw\",")
+	    // end
+	    keyword:
+	      'in abstract baremodule begin bitstype break catch ccall const continue do else elseif end export ' +
+	      'finally for function global if immutable import importall let local macro module quote return try type ' +
+	      'typealias using while',
+
+	    // # literal generator
+	    // println("\"true\",\n\"false\"")
+	    // for name in Base.REPLCompletions.completions("", 0)[1]
+	    //     try
+	    //         s = symbol(name)
+	    //         v = eval(s)
+	    //         if !isa(v, Function) &&
+	    //            !isa(v, DataType) &&
+	    //            !issubtype(typeof(v), Tuple) &&
+	    //            !isa(v, UnionType) &&
+	    //            !isa(v, Module) &&
+	    //            !isa(v, TypeConstructor) &&
+	    //            !isa(v, Colon)
+	    //             println("\"$name\",")
+	    //         end
+	    //     end
+	    // end
+	    literal:
+	      'true false ANY ARGS CPU_CORES C_NULL DL_LOAD_PATH DevNull ENDIAN_BOM ENV I|0 Inf Inf16 Inf32 ' +
+	      'InsertionSort JULIA_HOME LOAD_PATH MS_ASYNC MS_INVALIDATE MS_SYNC MergeSort NaN NaN16 NaN32 OS_NAME QuickSort ' +
+	      'RTLD_DEEPBIND RTLD_FIRST RTLD_GLOBAL RTLD_LAZY RTLD_LOCAL RTLD_NODELETE RTLD_NOLOAD RTLD_NOW RoundDown ' +
+	      'RoundFromZero RoundNearest RoundToZero RoundUp STDERR STDIN STDOUT VERSION WORD_SIZE catalan cglobal e eu ' +
+	      'eulergamma golden im nothing pi γ π φ',
+
+	    // # built_in generator:
+	    // for name in Base.REPLCompletions.completions("", 0)[1]
+	    //     try
+	    //         v = eval(symbol(name))
+	    //         if isa(v, DataType)
+	    //             println("\"$name\",")
+	    //         end
+	    //     end
+	    // end
+	    built_in:
+	      'ASCIIString AbstractArray AbstractRNG AbstractSparseArray Any ArgumentError Array Associative Base64Pipe ' +
+	      'Bidiagonal BigFloat BigInt BitArray BitMatrix BitVector Bool BoundsError Box CFILE Cchar Cdouble Cfloat Char ' +
+	      'CharString Cint Clong Clonglong ClusterManager Cmd Coff_t Colon Complex Complex128 Complex32 Complex64 ' +
+	      'Condition Cptrdiff_t Cshort Csize_t Cssize_t Cuchar Cuint Culong Culonglong Cushort Cwchar_t DArray DataType ' +
+	      'DenseArray Diagonal Dict DimensionMismatch DirectIndexString Display DivideError DomainError EOFError ' +
+	      'EachLine Enumerate ErrorException Exception Expr Factorization FileMonitor FileOffset Filter Float16 Float32 ' +
+	      'Float64 FloatRange FloatingPoint Function GetfieldNode GotoNode Hermitian IO IOBuffer IOStream IPv4 IPv6 ' +
+	      'InexactError Int Int128 Int16 Int32 Int64 Int8 IntSet Integer InterruptException IntrinsicFunction KeyError ' +
+	      'LabelNode LambdaStaticData LineNumberNode LoadError LocalProcess MIME MathConst MemoryError MersenneTwister ' +
+	      'Method MethodError MethodTable Module NTuple NewvarNode Nothing Number ObjectIdDict OrdinalRange ' +
+	      'OverflowError ParseError PollingFileWatcher ProcessExitedException ProcessGroup Ptr QuoteNode Range Range1 ' +
+	      'Ranges Rational RawFD Real Regex RegexMatch RemoteRef RepString RevString RopeString RoundingMode Set ' +
+	      'SharedArray Signed SparseMatrixCSC StackOverflowError Stat StatStruct StepRange String SubArray SubString ' +
+	      'SymTridiagonal Symbol SymbolNode Symmetric SystemError Task TextDisplay Timer TmStruct TopNode Triangular ' +
+	      'Tridiagonal Type TypeConstructor TypeError TypeName TypeVar UTF16String UTF32String UTF8String UdpSocket ' +
+	      'Uint Uint128 Uint16 Uint32 Uint64 Uint8 UndefRefError UndefVarError UniformScaling UnionType UnitRange ' +
+	      'Unsigned Vararg VersionNumber WString WeakKeyDict WeakRef Woodbury Zip'
+	  };
+
+	  // ref: http://julia.readthedocs.org/en/latest/manual/variables/#allowed-variable-names
+	  var VARIABLE_NAME_RE = "[A-Za-z_\\u00A1-\\uFFFF][A-Za-z_0-9\\u00A1-\\uFFFF]*";
+
+	  // placeholder for recursive self-reference
+	  var DEFAULT = { lexemes: VARIABLE_NAME_RE, keywords: KEYWORDS };
+
+	  var TYPE_ANNOTATION = {
+	    className: "type-annotation",
+	    begin: /::/
+	  };
+
+	  var SUBTYPE = {
+	    className: "subtype",
+	    begin: /<:/
+	  };
+
+	  // ref: http://julia.readthedocs.org/en/latest/manual/integers-and-floating-point-numbers/
+	  var NUMBER = {
+	    className: "number",
+	    // supported numeric literals:
+	    //  * binary literal (e.g. 0x10)
+	    //  * octal literal (e.g. 0o76543210)
+	    //  * hexadecimal literal (e.g. 0xfedcba876543210)
+	    //  * hexadecimal floating point literal (e.g. 0x1p0, 0x1.2p2)
+	    //  * decimal literal (e.g. 9876543210, 100_000_000)
+	    //  * floating pointe literal (e.g. 1.2, 1.2f, .2, 1., 1.2e10, 1.2e-10)
+	    begin: /(\b0x[\d_]*(\.[\d_]*)?|0x\.\d[\d_]*)p[-+]?\d+|\b0[box][a-fA-F0-9][a-fA-F0-9_]*|(\b\d[\d_]*(\.[\d_]*)?|\.\d[\d_]*)([eEfF][-+]?\d+)?/,
+	    relevance: 0
+	  };
+
+	  var CHAR = {
+	    className: "char",
+	    begin: /'(.|\\[xXuU][a-zA-Z0-9]+)'/
+	  };
+
+	  var INTERPOLATION = {
+	    className: 'subst',
+	    begin: /\$\(/, end: /\)/,
+	    keywords: KEYWORDS
+	  };
+
+	  var INTERPOLATED_VARIABLE = {
+	    className: 'variable',
+	    begin: "\\$" + VARIABLE_NAME_RE
+	  };
+
+	  // TODO: neatly escape normal code in string literal
+	  var STRING = {
+	    className: "string",
+	    contains: [hljs.BACKSLASH_ESCAPE, INTERPOLATION, INTERPOLATED_VARIABLE],
+	    variants: [
+	      { begin: /\w*"/, end: /"\w*/ },
+	      { begin: /\w*"""/, end: /"""\w*/ }
+	    ]
+	  };
+
+	  var COMMAND = {
+	    className: "string",
+	    contains: [hljs.BACKSLASH_ESCAPE, INTERPOLATION, INTERPOLATED_VARIABLE],
+	    begin: '`', end: '`'
+	  };
+
+	  var MACROCALL = {
+	    className: "macrocall",
+	    begin: "@" + VARIABLE_NAME_RE
+	  };
+
+	  var COMMENT = {
+	    className: "comment",
+	    variants: [
+	      { begin: "#=", end: "=#", relevance: 10 },
+	      { begin: '#', end: '$' }
+	    ]
+	  };
+
+	  DEFAULT.contains = [
+	    NUMBER,
+	    CHAR,
+	    TYPE_ANNOTATION,
+	    SUBTYPE,
+	    STRING,
+	    COMMAND,
+	    MACROCALL,
+	    COMMENT,
+	    hljs.HASH_COMMENT_MODE
+	  ];
+	  INTERPOLATION.contains = DEFAULT.contains;
+
+	  return DEFAULT;
+	};
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function (hljs) {
+	  var KEYWORDS = 'val var get set class trait object public open private protected ' +
+	    'final enum if else do while for when break continue throw try catch finally ' +
+	    'import package is as in return fun override default companion reified inline volatile transient native';
+
+	  return {
+	    keywords: {
+	      typename: 'Byte Short Char Int Long Boolean Float Double Void Unit Nothing',
+	      literal: 'true false null',
+	      keyword: KEYWORDS
+	    },
+	    contains : [
+	      hljs.COMMENT(
+	        '/\\*\\*',
+	        '\\*/',
+	        {
+	          relevance : 0,
+	          contains : [{
+	            className : 'doctag',
+	            begin : '@[A-Za-z]+'
+	          }]
+	        }
+	      ),
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'type',
+	        begin: /</, end: />/,
+	        returnBegin: true,
+	        excludeEnd: false,
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'fun', end: '[(]|$',
+	        returnBegin: true,
+	        excludeEnd: true,
+	        keywords: KEYWORDS,
+	        illegal: /fun\s+(<.*>)?[^\s\(]+(\s+[^\s\(]+)\s*=/,
+	        relevance: 5,
+	        contains: [
+	          {
+	            begin: hljs.UNDERSCORE_IDENT_RE + '\\s*\\(', returnBegin: true,
+	            relevance: 0,
+	            contains: [hljs.UNDERSCORE_TITLE_MODE]
+	          },
+	          {
+	            className: 'type',
+	            begin: /</, end: />/, keywords: 'reified',
+	            relevance: 0
+	          },
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/,
+	            keywords: KEYWORDS,
+	            relevance: 0,
+	            illegal: /\([^\(,\s:]+,/,
+	            contains: [
+	              {
+	                className: 'typename',
+	                begin: /:\s*/, end: /\s*[=\)]/, excludeBegin: true, returnEnd: true,
+	                relevance: 0
+	              }
+	            ]
+	          },
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'class trait', end: /[:\{(]|$/,
+	        excludeEnd: true,
+	        illegal: 'extends implements',
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE,
+	          {
+	            className: 'type',
+	            begin: /</, end: />/, excludeBegin: true, excludeEnd: true,
+	            relevance: 0
+	          },
+	          {
+	            className: 'typename',
+	            begin: /[,:]\s*/, end: /[<\(,]|$/, excludeBegin: true, returnEnd: true
+	          }
+	        ]
+	      },
+	      {
+	        className: 'variable', beginKeywords: 'var val', end: /\s*[=:$]/, excludeEnd: true
+	      },
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'shebang',
+	        begin: "^#!/usr/bin/env", end: '$',
+	        illegal: '\n'
+	      },
+	      hljs.C_NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var LASSO_IDENT_RE = '[a-zA-Z_][a-zA-Z0-9_.]*';
+	  var LASSO_ANGLE_RE = '<\\?(lasso(script)?|=)';
+	  var LASSO_CLOSE_RE = '\\]|\\?>';
+	  var LASSO_KEYWORDS = {
+	    literal:
+	      'true false none minimal full all void and or not ' +
+	      'bw nbw ew new cn ncn lt lte gt gte eq neq rx nrx ft',
+	    built_in:
+	      'array date decimal duration integer map pair string tag xml null ' +
+	      'boolean bytes keyword list locale queue set stack staticarray ' +
+	      'local var variable global data self inherited',
+	    keyword:
+	      'error_code error_msg error_pop error_push error_reset cache ' +
+	      'database_names database_schemanames database_tablenames define_tag ' +
+	      'define_type email_batch encode_set html_comment handle handle_error ' +
+	      'header if inline iterate ljax_target link link_currentaction ' +
+	      'link_currentgroup link_currentrecord link_detail link_firstgroup ' +
+	      'link_firstrecord link_lastgroup link_lastrecord link_nextgroup ' +
+	      'link_nextrecord link_prevgroup link_prevrecord log loop ' +
+	      'namespace_using output_none portal private protect records referer ' +
+	      'referrer repeating resultset rows search_args search_arguments ' +
+	      'select sort_args sort_arguments thread_atomic value_list while ' +
+	      'abort case else if_empty if_false if_null if_true loop_abort ' +
+	      'loop_continue loop_count params params_up return return_value ' +
+	      'run_children soap_definetag soap_lastrequest soap_lastresponse ' +
+	      'tag_name ascending average by define descending do equals ' +
+	      'frozen group handle_failure import in into join let match max ' +
+	      'min on order parent protected provide public require returnhome ' +
+	      'skip split_thread sum take thread to trait type where with ' +
+	      'yield yieldhome'
+	  };
+	  var HTML_COMMENT = hljs.COMMENT(
+	    '<!--',
+	    '-->',
+	    {
+	      relevance: 0
+	    }
+	  );
+	  var LASSO_NOPROCESS = {
+	    className: 'preprocessor',
+	    begin: '\\[noprocess\\]',
+	    starts: {
+	      className: 'markup',
+	      end: '\\[/noprocess\\]',
+	      returnEnd: true,
+	      contains: [HTML_COMMENT]
+	    }
+	  };
+	  var LASSO_START = {
+	    className: 'preprocessor',
+	    begin: '\\[/noprocess|' + LASSO_ANGLE_RE
+	  };
+	  var LASSO_DATAMEMBER = {
+	    className: 'variable',
+	    begin: '\'' + LASSO_IDENT_RE + '\''
+	  };
+	  var LASSO_CODE = [
+	    hljs.COMMENT(
+	      '/\\*\\*!',
+	      '\\*/'
+	    ),
+	    hljs.C_LINE_COMMENT_MODE,
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    hljs.inherit(hljs.C_NUMBER_MODE, {begin: hljs.C_NUMBER_RE + '|(-?infinity|nan)\\b'}),
+	    hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
+	    hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+	    {
+	      className: 'string',
+	      begin: '`', end: '`'
+	    },
+	    {
+	      className: 'variable',
+	      variants: [
+	        {
+	          begin: '[#$]' + LASSO_IDENT_RE
+	        },
+	        {
+	          begin: '#', end: '\\d+',
+	          illegal: '\\W'
+	        }
+	      ]
+	    },
+	    {
+	      className: 'tag',
+	      begin: '::\\s*', end: LASSO_IDENT_RE,
+	      illegal: '\\W'
+	    },
+	    {
+	      className: 'attribute',
+	      variants: [
+	        {
+	          begin: '-' + hljs.UNDERSCORE_IDENT_RE,
+	          relevance: 0
+	        },
+	        {
+	          begin: '(\\.\\.\\.)'
+	        }
+	      ]
+	    },
+	    {
+	      className: 'subst',
+	      variants: [
+	        {
+	          begin: '->\\s*',
+	          contains: [LASSO_DATAMEMBER]
+	        },
+	        {
+	          begin: ':=|/(?!\\w)=?|[-+*%=<>&|!?\\\\]+',
+	          relevance: 0
+	        }
+	      ]
+	    },
+	    {
+	      className: 'built_in',
+	      begin: '\\.\\.?\\s*',
+	      relevance: 0,
+	      contains: [LASSO_DATAMEMBER]
+	    },
+	    {
+	      className: 'class',
+	      beginKeywords: 'define',
+	      returnEnd: true, end: '\\(|=>',
+	      contains: [
+	        hljs.inherit(hljs.TITLE_MODE, {begin: hljs.UNDERSCORE_IDENT_RE + '(=(?!>))?'})
+	      ]
+	    }
+	  ];
+	  return {
+	    aliases: ['ls', 'lassoscript'],
+	    case_insensitive: true,
+	    lexemes: LASSO_IDENT_RE + '|&[lg]t;',
+	    keywords: LASSO_KEYWORDS,
+	    contains: [
+	      {
+	        className: 'preprocessor',
+	        begin: LASSO_CLOSE_RE,
+	        relevance: 0,
+	        starts: {
+	          className: 'markup',
+	          end: '\\[|' + LASSO_ANGLE_RE,
+	          returnEnd: true,
+	          relevance: 0,
+	          contains: [HTML_COMMENT]
+	        }
+	      },
+	      LASSO_NOPROCESS,
+	      LASSO_START,
+	      {
+	        className: 'preprocessor',
+	        begin: '\\[no_square_brackets',
+	        starts: {
+	          end: '\\[/no_square_brackets\\]', // not implemented in the language
+	          lexemes: LASSO_IDENT_RE + '|&[lg]t;',
+	          keywords: LASSO_KEYWORDS,
+	          contains: [
+	            {
+	              className: 'preprocessor',
+	              begin: LASSO_CLOSE_RE,
+	              relevance: 0,
+	              starts: {
+	                className: 'markup',
+	                end: '\\[noprocess\\]|' + LASSO_ANGLE_RE,
+	                returnEnd: true,
+	                contains: [HTML_COMMENT]
+	              }
+	            },
+	            LASSO_NOPROCESS,
+	            LASSO_START
+	          ].concat(LASSO_CODE)
+	        }
+	      },
+	      {
+	        className: 'preprocessor',
+	        begin: '\\[',
+	        relevance: 0
+	      },
+	      {
+	        className: 'shebang',
+	        begin: '^#!.+lasso9\\b',
+	        relevance: 10
+	      }
+	    ].concat(LASSO_CODE)
+	  };
+	};
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var IDENT_RE        = '[\\w-]+'; // yes, Less identifiers may begin with a digit
+	  var INTERP_IDENT_RE = '(' + IDENT_RE + '|@{' + IDENT_RE + '})';
+
+	  /* Generic Modes */
+
+	  var RULES = [], VALUE = []; // forward def. for recursive modes
+
+	  var STRING_MODE = function(c) { return {
+	    // Less strings are not multiline (also include '~' for more consistent coloring of "escaped" strings)
+	    className: 'string', begin: '~?' + c + '.*?' + c
+	  };};
+
+	  var IDENT_MODE = function(name, begin, relevance) { return {
+	    className: name, begin: begin, relevance: relevance
+	  };};
+
+	  var FUNCT_MODE = function(name, ident, obj) {
+	    return hljs.inherit({
+	        className: name, begin: ident + '\\(', end: '\\(',
+	        returnBegin: true, excludeEnd: true, relevance: 0
+	    }, obj);
+	  };
+
+	  var PARENS_MODE = {
+	    // used only to properly balance nested parens inside mixin call, def. arg list
+	    begin: '\\(', end: '\\)', contains: VALUE, relevance: 0
+	  };
+
+	  // generic Less highlighter (used almost everywhere except selectors):
+	  VALUE.push(
+	    hljs.C_LINE_COMMENT_MODE,
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    STRING_MODE("'"),
+	    STRING_MODE('"'),
+	    hljs.CSS_NUMBER_MODE, // fixme: it does not include dot for numbers like .5em :(
+	    IDENT_MODE('hexcolor', '#[0-9A-Fa-f]+\\b'),
+	    FUNCT_MODE('function', '(url|data-uri)', {
+	      starts: {className: 'string', end: '[\\)\\n]', excludeEnd: true}
+	    }),
+	    FUNCT_MODE('function', IDENT_RE),
+	    PARENS_MODE,
+	    IDENT_MODE('variable', '@@?' + IDENT_RE, 10),
+	    IDENT_MODE('variable', '@{'  + IDENT_RE + '}'),
+	    IDENT_MODE('built_in', '~?`[^`]*?`'), // inline javascript (or whatever host language) *multiline* string
+	    { // @media features (it’s here to not duplicate things in AT_RULE_MODE with extra PARENS_MODE overriding):
+	      className: 'attribute', begin: IDENT_RE + '\\s*:', end: ':', returnBegin: true, excludeEnd: true
+	    }
+	  );
+
+	  var VALUE_WITH_RULESETS = VALUE.concat({
+	    begin: '{', end: '}', contains: RULES
+	  });
+
+	  var MIXIN_GUARD_MODE = {
+	    beginKeywords: 'when', endsWithParent: true,
+	    contains: [{beginKeywords: 'and not'}].concat(VALUE) // using this form to override VALUE’s 'function' match
+	  };
+
+	  /* Rule-Level Modes */
+
+	  var RULE_MODE = {
+	    className: 'attribute',
+	    begin: INTERP_IDENT_RE, end: ':', excludeEnd: true,
+	    contains: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE],
+	    illegal: /\S/,
+	    starts: {end: '[;}]', returnEnd: true, contains: VALUE, illegal: '[<=$]'}
+	  };
+
+	  var AT_RULE_MODE = {
+	    className: 'at_rule', // highlight only at-rule keyword
+	    begin: '@(import|media|charset|font-face|(-[a-z]+-)?keyframes|supports|document|namespace|page|viewport|host)\\b',
+	    starts: {end: '[;{}]', returnEnd: true, contains: VALUE, relevance: 0}
+	  };
+
+	  // variable definitions and calls
+	  var VAR_RULE_MODE = {
+	    className: 'variable',
+	    variants: [
+	      // using more strict pattern for higher relevance to increase chances of Less detection.
+	      // this is *the only* Less specific statement used in most of the sources, so...
+	      // (we’ll still often loose to the css-parser unless there's '//' comment,
+	      // simply because 1 variable just can't beat 99 properties :)
+	      {begin: '@' + IDENT_RE + '\\s*:', relevance: 15},
+	      {begin: '@' + IDENT_RE}
+	    ],
+	    starts: {end: '[;}]', returnEnd: true, contains: VALUE_WITH_RULESETS}
+	  };
+
+	  var SELECTOR_MODE = {
+	    // first parse unambiguous selectors (i.e. those not starting with tag)
+	    // then fall into the scary lookahead-discriminator variant.
+	    // this mode also handles mixin definitions and calls
+	    variants: [{
+	      begin: '[\\.#:&\\[]', end: '[;{}]'  // mixin calls end with ';'
+	      }, {
+	      begin: INTERP_IDENT_RE + '[^;]*{',
+	      end: '{'
+	    }],
+	    returnBegin: true,
+	    returnEnd:   true,
+	    illegal: '[<=\'$"]',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      MIXIN_GUARD_MODE,
+	      IDENT_MODE('keyword',  'all\\b'),
+	      IDENT_MODE('variable', '@{'  + IDENT_RE + '}'),     // otherwise it’s identified as tag
+	      IDENT_MODE('tag',       INTERP_IDENT_RE + '%?', 0), // '%' for more consistent coloring of @keyframes "tags"
+	      IDENT_MODE('id',       '#'   + INTERP_IDENT_RE),
+	      IDENT_MODE('class',    '\\.' + INTERP_IDENT_RE, 0),
+	      IDENT_MODE('keyword',  '&', 0),
+	      FUNCT_MODE('pseudo',   ':not'),
+	      FUNCT_MODE('keyword',  ':extend'),
+	      IDENT_MODE('pseudo',   '::?' + INTERP_IDENT_RE),
+	      {className: 'attr_selector', begin: '\\[', end: '\\]'},
+	      {begin: '\\(', end: '\\)', contains: VALUE_WITH_RULESETS}, // argument list of parametric mixins
+	      {begin: '!important'} // eat !important after mixin call or it will be colored as tag
+	    ]
+	  };
+
+	  RULES.push(
+	    hljs.C_LINE_COMMENT_MODE,
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    AT_RULE_MODE,
+	    VAR_RULE_MODE,
+	    SELECTOR_MODE,
+	    RULE_MODE
+	  );
+
+	  return {
+	    case_insensitive: true,
+	    illegal: '[=>\'/<($"]',
+	    contains: RULES
+	  };
+	};
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var LISP_IDENT_RE = '[a-zA-Z_\\-\\+\\*\\/\\<\\=\\>\\&\\#][a-zA-Z0-9_\\-\\+\\*\\/\\<\\=\\>\\&\\#!]*';
+	  var MEC_RE = '\\|[^]*?\\|';
+	  var LISP_SIMPLE_NUMBER_RE = '(\\-|\\+)?\\d+(\\.\\d+|\\/\\d+)?((d|e|f|l|s|D|E|F|L|S)(\\+|\\-)?\\d+)?';
+	  var SHEBANG = {
+	    className: 'shebang',
+	    begin: '^#!', end: '$'
+	  };
+	  var LITERAL = {
+	    className: 'literal',
+	    begin: '\\b(t{1}|nil)\\b'
+	  };
+	  var NUMBER = {
+	    className: 'number',
+	    variants: [
+	      {begin: LISP_SIMPLE_NUMBER_RE, relevance: 0},
+	      {begin: '#(b|B)[0-1]+(/[0-1]+)?'},
+	      {begin: '#(o|O)[0-7]+(/[0-7]+)?'},
+	      {begin: '#(x|X)[0-9a-fA-F]+(/[0-9a-fA-F]+)?'},
+	      {begin: '#(c|C)\\(' + LISP_SIMPLE_NUMBER_RE + ' +' + LISP_SIMPLE_NUMBER_RE, end: '\\)'}
+	    ]
+	  };
+	  var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null});
+	  var COMMENT = hljs.COMMENT(
+	    ';', '$',
+	    {
+	      relevance: 0
+	    }
+	  );
+	  var VARIABLE = {
+	    className: 'variable',
+	    begin: '\\*', end: '\\*'
+	  };
+	  var KEYWORD = {
+	    className: 'keyword',
+	    begin: '[:&]' + LISP_IDENT_RE
+	  };
+	  var IDENT = {
+	    begin: LISP_IDENT_RE,
+	    relevance: 0
+	  };
+	  var MEC = {
+	    begin: MEC_RE
+	  };
+	  var QUOTED_LIST = {
+	    begin: '\\(', end: '\\)',
+	    contains: ['self', LITERAL, STRING, NUMBER, IDENT]
+	  };
+	  var QUOTED = {
+	    className: 'quoted',
+	    contains: [NUMBER, STRING, VARIABLE, KEYWORD, QUOTED_LIST, IDENT],
+	    variants: [
+	      {
+	        begin: '[\'`]\\(', end: '\\)'
+	      },
+	      {
+	        begin: '\\(quote ', end: '\\)',
+	        keywords: 'quote'
+	      },
+	      {
+	        begin: '\'' + MEC_RE
+	      }
+	    ]
+	  };
+	  var QUOTED_ATOM = {
+	    className: 'quoted',
+	    variants: [
+	      {begin: '\'' + LISP_IDENT_RE},
+	      {begin: '#\'' + LISP_IDENT_RE + '(::' + LISP_IDENT_RE + ')*'}
+	    ]
+	  };
+	  var LIST = {
+	    className: 'list',
+	    begin: '\\(\\s*', end: '\\)'
+	  };
+	  var BODY = {
+	    endsWithParent: true,
+	    relevance: 0
+	  };
+	  LIST.contains = [
+	    {
+	      className: 'keyword',
+	      variants: [
+	        {begin: LISP_IDENT_RE},
+	        {begin: MEC_RE}
+	      ]
+	    },
+	    BODY
+	  ];
+	  BODY.contains = [QUOTED, QUOTED_ATOM, LIST, LITERAL, NUMBER, STRING, COMMENT, VARIABLE, KEYWORD, MEC, IDENT];
+
+	  return {
+	    illegal: /\S/,
+	    contains: [
+	      NUMBER,
+	      SHEBANG,
+	      LITERAL,
+	      STRING,
+	      COMMENT,
+	      QUOTED,
+	      QUOTED_ATOM,
+	      LIST,
+	      IDENT
+	    ]
+	  };
+	};
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var KEYWORDS = {
+	    keyword:
+	      // JS keywords
+	      'in if for while finally new do return else break catch instanceof throw try this ' +
+	      'switch continue typeof delete debugger case default function var with ' +
+	      // LiveScript keywords
+	      'then unless until loop of by when and or is isnt not it that otherwise from to til fallthrough super ' +
+	      'case default function var void const let enum export import native ' +
+	      '__hasProp __extends __slice __bind __indexOf',
+	    literal:
+	      // JS literals
+	      'true false null undefined ' +
+	      // LiveScript literals
+	      'yes no on off it that void',
+	    built_in:
+	      'npm require console print module global window document'
+	  };
+	  var JS_IDENT_RE = '[A-Za-z$_](?:\-[0-9A-Za-z$_]|[0-9A-Za-z$_])*';
+	  var TITLE = hljs.inherit(hljs.TITLE_MODE, {begin: JS_IDENT_RE});
+	  var SUBST = {
+	    className: 'subst',
+	    begin: /#\{/, end: /}/,
+	    keywords: KEYWORDS
+	  };
+	  var SUBST_SIMPLE = {
+	    className: 'subst',
+	    begin: /#[A-Za-z$_]/, end: /(?:\-[0-9A-Za-z$_]|[0-9A-Za-z$_])*/,
+	    keywords: KEYWORDS
+	  };
+	  var EXPRESSIONS = [
+	    hljs.BINARY_NUMBER_MODE,
+	    {
+	      className: 'number',
+	      begin: '(\\b0[xX][a-fA-F0-9_]+)|(\\b\\d(\\d|_\\d)*(\\.(\\d(\\d|_\\d)*)?)?(_*[eE]([-+]\\d(_\\d|\\d)*)?)?[_a-z]*)',
+	      relevance: 0,
+	      starts: {end: '(\\s*/)?', relevance: 0} // a number tries to eat the following slash to prevent treating it as a regexp
+	    },
+	    {
+	      className: 'string',
+	      variants: [
+	        {
+	          begin: /'''/, end: /'''/,
+	          contains: [hljs.BACKSLASH_ESCAPE]
+	        },
+	        {
+	          begin: /'/, end: /'/,
+	          contains: [hljs.BACKSLASH_ESCAPE]
+	        },
+	        {
+	          begin: /"""/, end: /"""/,
+	          contains: [hljs.BACKSLASH_ESCAPE, SUBST, SUBST_SIMPLE]
+	        },
+	        {
+	          begin: /"/, end: /"/,
+	          contains: [hljs.BACKSLASH_ESCAPE, SUBST, SUBST_SIMPLE]
+	        },
+	        {
+	          begin: /\\/, end: /(\s|$)/,
+	          excludeEnd: true
+	        }
+	      ]
+	    },
+	    {
+	      className: 'pi',
+	      variants: [
+	        {
+	          begin: '//', end: '//[gim]*',
+	          contains: [SUBST, hljs.HASH_COMMENT_MODE]
+	        },
+	        {
+	          // regex can't start with space to parse x / 2 / 3 as two divisions
+	          // regex can't start with *, and it supports an "illegal" in the main mode
+	          begin: /\/(?![ *])(\\\/|.)*?\/[gim]*(?=\W|$)/
+	        }
+	      ]
+	    },
+	    {
+	      className: 'property',
+	      begin: '@' + JS_IDENT_RE
+	    },
+	    {
+	      begin: '``', end: '``',
+	      excludeBegin: true, excludeEnd: true,
+	      subLanguage: 'javascript'
+	    }
+	  ];
+	  SUBST.contains = EXPRESSIONS;
+
+	  var PARAMS = {
+	    className: 'params',
+	    begin: '\\(', returnBegin: true,
+	    /* We need another contained nameless mode to not have every nested
+	    pair of parens to be called "params" */
+	    contains: [
+	      {
+	        begin: /\(/, end: /\)/,
+	        keywords: KEYWORDS,
+	        contains: ['self'].concat(EXPRESSIONS)
+	      }
+	    ]
+	  };
+
+	  return {
+	    aliases: ['ls'],
+	    keywords: KEYWORDS,
+	    illegal: /\/\*/,
+	    contains: EXPRESSIONS.concat([
+	      hljs.COMMENT('\\/\\*', '\\*\\/'),
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        className: 'function',
+	        contains: [TITLE, PARAMS],
+	        returnBegin: true,
+	        variants: [
+	          {
+	            begin: '(' + JS_IDENT_RE + '\\s*(?:=|:=)\\s*)?(\\(.*\\))?\\s*\\B\\->\\*?', end: '\\->\\*?'
+	          },
+	          {
+	            begin: '(' + JS_IDENT_RE + '\\s*(?:=|:=)\\s*)?!?(\\(.*\\))?\\s*\\B[-~]{1,2}>\\*?', end: '[-~]{1,2}>\\*?'
+	          },
+	          {
+	            begin: '(' + JS_IDENT_RE + '\\s*(?:=|:=)\\s*)?(\\(.*\\))?\\s*\\B!?[-~]{1,2}>\\*?', end: '!?[-~]{1,2}>\\*?'
+	          }
+	        ]
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'class',
+	        end: '$',
+	        illegal: /[:="\[\]]/,
+	        contains: [
+	          {
+	            beginKeywords: 'extends',
+	            endsWithParent: true,
+	            illegal: /[:="\[\]]/,
+	            contains: [TITLE]
+	          },
+	          TITLE
+	        ]
+	      },
+	      {
+	        className: 'attribute',
+	        begin: JS_IDENT_RE + ':', end: ':',
+	        returnBegin: true, returnEnd: true,
+	        relevance: 0
+	      }
+	    ])
+	  };
+	};
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var OPENING_LONG_BRACKET = '\\[=*\\[';
+	  var CLOSING_LONG_BRACKET = '\\]=*\\]';
+	  var LONG_BRACKETS = {
+	    begin: OPENING_LONG_BRACKET, end: CLOSING_LONG_BRACKET,
+	    contains: ['self']
+	  };
+	  var COMMENTS = [
+	    hljs.COMMENT('--(?!' + OPENING_LONG_BRACKET + ')', '$'),
+	    hljs.COMMENT(
+	      '--' + OPENING_LONG_BRACKET,
+	      CLOSING_LONG_BRACKET,
+	      {
+	        contains: [LONG_BRACKETS],
+	        relevance: 10
+	      }
+	    )
+	  ];
+	  return {
+	    lexemes: hljs.UNDERSCORE_IDENT_RE,
+	    keywords: {
+	      keyword:
+	        'and break do else elseif end false for if in local nil not or repeat return then ' +
+	        'true until while',
+	      built_in:
+	        '_G _VERSION assert collectgarbage dofile error getfenv getmetatable ipairs load ' +
+	        'loadfile loadstring module next pairs pcall print rawequal rawget rawset require ' +
+	        'select setfenv setmetatable tonumber tostring type unpack xpcall coroutine debug ' +
+	        'io math os package string table'
+	    },
+	    contains: COMMENTS.concat([
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: '\\)',
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {begin: '([_a-zA-Z]\\w*\\.)*([_a-zA-Z]\\w*:)?[_a-zA-Z]\\w*'}),
+	          {
+	            className: 'params',
+	            begin: '\\(', endsWithParent: true,
+	            contains: COMMENTS
+	          }
+	        ].concat(COMMENTS)
+	      },
+	      hljs.C_NUMBER_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'string',
+	        begin: OPENING_LONG_BRACKET, end: CLOSING_LONG_BRACKET,
+	        contains: [LONG_BRACKETS],
+	        relevance: 5
+	      }
+	    ])
+	  };
+	};
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var VARIABLE = {
+	    className: 'variable',
+	    begin: /\$\(/, end: /\)/,
+	    contains: [hljs.BACKSLASH_ESCAPE]
+	  };
+	  return {
+	    aliases: ['mk', 'mak'],
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        begin: /^\w+\s*\W*=/, returnBegin: true,
+	        relevance: 0,
+	        starts: {
+	          className: 'constant',
+	          end: /\s*\W*=/, excludeEnd: true,
+	          starts: {
+	            end: /$/,
+	            relevance: 0,
+	            contains: [
+	              VARIABLE
+	            ]
+	          }
+	        }
+	      },
+	      {
+	        className: 'title',
+	        begin: /^[\w]+:\s*$/
+	      },
+	      {
+	        className: 'phony',
+	        begin: /^\.PHONY:/, end: /$/,
+	        keywords: '.PHONY', lexemes: /[\.\w]+/
+	      },
+	      {
+	        begin: /^\t+/, end: /$/,
+	        relevance: 0,
+	        contains: [
+	          hljs.QUOTE_STRING_MODE,
+	          VARIABLE
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 283 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['mma'],
+	    lexemes: '(\\$|\\b)' + hljs.IDENT_RE + '\\b',
+	    keywords: 'AbelianGroup Abort AbortKernels AbortProtect Above Abs Absolute AbsoluteCorrelation AbsoluteCorrelationFunction AbsoluteCurrentValue AbsoluteDashing AbsoluteFileName AbsoluteOptions AbsolutePointSize AbsoluteThickness AbsoluteTime AbsoluteTiming AccountingForm Accumulate Accuracy AccuracyGoal ActionDelay ActionMenu ActionMenuBox ActionMenuBoxOptions Active ActiveItem ActiveStyle AcyclicGraphQ AddOnHelpPath AddTo AdjacencyGraph AdjacencyList AdjacencyMatrix AdjustmentBox AdjustmentBoxOptions AdjustTimeSeriesForecast AffineTransform After AiryAi AiryAiPrime AiryAiZero AiryBi AiryBiPrime AiryBiZero AlgebraicIntegerQ AlgebraicNumber AlgebraicNumberDenominator AlgebraicNumberNorm AlgebraicNumberPolynomial AlgebraicNumberTrace AlgebraicRules AlgebraicRulesData Algebraics AlgebraicUnitQ Alignment AlignmentMarker AlignmentPoint All AllowedDimensions AllowGroupClose AllowInlineCells AllowKernelInitialization AllowReverseGroupClose AllowScriptLevelChange AlphaChannel AlternatingGroup AlternativeHypothesis Alternatives AmbientLight Analytic AnchoredSearch And AndersonDarlingTest AngerJ AngleBracket AngularGauge Animate AnimationCycleOffset AnimationCycleRepetitions AnimationDirection AnimationDisplayTime AnimationRate AnimationRepetitions AnimationRunning Animator AnimatorBox AnimatorBoxOptions AnimatorElements Annotation Annuity AnnuityDue Antialiasing Antisymmetric Apart ApartSquareFree Appearance AppearanceElements AppellF1 Append AppendTo Apply ArcCos ArcCosh ArcCot ArcCoth ArcCsc ArcCsch ArcSec ArcSech ArcSin ArcSinDistribution ArcSinh ArcTan ArcTanh Arg ArgMax ArgMin ArgumentCountQ ARIMAProcess ArithmeticGeometricMean ARMAProcess ARProcess Array ArrayComponents ArrayDepth ArrayFlatten ArrayPad ArrayPlot ArrayQ ArrayReshape ArrayRules Arrays Arrow Arrow3DBox ArrowBox Arrowheads AspectRatio AspectRatioFixed Assert Assuming Assumptions AstronomicalData Asynchronous AsynchronousTaskObject AsynchronousTasks AtomQ Attributes AugmentedSymmetricPolynomial AutoAction AutoDelete AutoEvaluateEvents AutoGeneratedPackage AutoIndent AutoIndentSpacings AutoItalicWords AutoloadPath AutoMatch Automatic AutomaticImageSize AutoMultiplicationSymbol AutoNumberFormatting AutoOpenNotebooks AutoOpenPalettes AutorunSequencing AutoScaling AutoScroll AutoSpacing AutoStyleOptions AutoStyleWords Axes AxesEdge AxesLabel AxesOrigin AxesStyle Axis ' +
+	      'BabyMonsterGroupB Back Background BackgroundTasksSettings Backslash Backsubstitution Backward Band BandpassFilter BandstopFilter BarabasiAlbertGraphDistribution BarChart BarChart3D BarLegend BarlowProschanImportance BarnesG BarOrigin BarSpacing BartlettHannWindow BartlettWindow BaseForm Baseline BaselinePosition BaseStyle BatesDistribution BattleLemarieWavelet Because BeckmannDistribution Beep Before Begin BeginDialogPacket BeginFrontEndInteractionPacket BeginPackage BellB BellY Below BenfordDistribution BeniniDistribution BenktanderGibratDistribution BenktanderWeibullDistribution BernoulliB BernoulliDistribution BernoulliGraphDistribution BernoulliProcess BernsteinBasis BesselFilterModel BesselI BesselJ BesselJZero BesselK BesselY BesselYZero Beta BetaBinomialDistribution BetaDistribution BetaNegativeBinomialDistribution BetaPrimeDistribution BetaRegularized BetweennessCentrality BezierCurve BezierCurve3DBox BezierCurve3DBoxOptions BezierCurveBox BezierCurveBoxOptions BezierFunction BilateralFilter Binarize BinaryFormat BinaryImageQ BinaryRead BinaryReadList BinaryWrite BinCounts BinLists Binomial BinomialDistribution BinomialProcess BinormalDistribution BiorthogonalSplineWavelet BipartiteGraphQ BirnbaumImportance BirnbaumSaundersDistribution BitAnd BitClear BitGet BitLength BitNot BitOr BitSet BitShiftLeft BitShiftRight BitXor Black BlackmanHarrisWindow BlackmanNuttallWindow BlackmanWindow Blank BlankForm BlankNullSequence BlankSequence Blend Block BlockRandom BlomqvistBeta BlomqvistBetaTest Blue Blur BodePlot BohmanWindow Bold Bookmarks Boole BooleanConsecutiveFunction BooleanConvert BooleanCountingFunction BooleanFunction BooleanGraph BooleanMaxterms BooleanMinimize BooleanMinterms Booleans BooleanTable BooleanVariables BorderDimensions BorelTannerDistribution Bottom BottomHatTransform BoundaryStyle Bounds Box BoxBaselineShift BoxData BoxDimensions Boxed Boxes BoxForm BoxFormFormatTypes BoxFrame BoxID BoxMargins BoxMatrix BoxRatios BoxRotation BoxRotationPoint BoxStyle BoxWhiskerChart Bra BracketingBar BraKet BrayCurtisDistance BreadthFirstScan Break Brown BrownForsytheTest BrownianBridgeProcess BrowserCategory BSplineBasis BSplineCurve BSplineCurve3DBox BSplineCurveBox BSplineCurveBoxOptions BSplineFunction BSplineSurface BSplineSurface3DBox BubbleChart BubbleChart3D BubbleScale BubbleSizes BulletGauge BusinessDayQ ButterflyGraph ButterworthFilterModel Button ButtonBar ButtonBox ButtonBoxOptions ButtonCell ButtonContents ButtonData ButtonEvaluator ButtonExpandable ButtonFrame ButtonFunction ButtonMargins ButtonMinHeight ButtonNote ButtonNotebook ButtonSource ButtonStyle ButtonStyleMenuListing Byte ByteCount ByteOrdering ' +
+	      'C CachedValue CacheGraphics CalendarData CalendarType CallPacket CanberraDistance Cancel CancelButton CandlestickChart Cap CapForm CapitalDifferentialD CardinalBSplineBasis CarmichaelLambda Cases Cashflow Casoratian Catalan CatalanNumber Catch CauchyDistribution CauchyWindow CayleyGraph CDF CDFDeploy CDFInformation CDFWavelet Ceiling Cell CellAutoOverwrite CellBaseline CellBoundingBox CellBracketOptions CellChangeTimes CellContents CellContext CellDingbat CellDynamicExpression CellEditDuplicate CellElementsBoundingBox CellElementSpacings CellEpilog CellEvaluationDuplicate CellEvaluationFunction CellEventActions CellFrame CellFrameColor CellFrameLabelMargins CellFrameLabels CellFrameMargins CellGroup CellGroupData CellGrouping CellGroupingRules CellHorizontalScrolling CellID CellLabel CellLabelAutoDelete CellLabelMargins CellLabelPositioning CellMargins CellObject CellOpen CellPrint CellProlog Cells CellSize CellStyle CellTags CellularAutomaton CensoredDistribution Censoring Center CenterDot CentralMoment CentralMomentGeneratingFunction CForm ChampernowneNumber ChanVeseBinarize Character CharacterEncoding CharacterEncodingsPath CharacteristicFunction CharacteristicPolynomial CharacterRange Characters ChartBaseStyle ChartElementData ChartElementDataFunction ChartElementFunction ChartElements ChartLabels ChartLayout ChartLegends ChartStyle Chebyshev1FilterModel Chebyshev2FilterModel ChebyshevDistance ChebyshevT ChebyshevU Check CheckAbort CheckAll Checkbox CheckboxBar CheckboxBox CheckboxBoxOptions ChemicalData ChessboardDistance ChiDistribution ChineseRemainder ChiSquareDistribution ChoiceButtons ChoiceDialog CholeskyDecomposition Chop Circle CircleBox CircleDot CircleMinus CirclePlus CircleTimes CirculantGraph CityData Clear ClearAll ClearAttributes ClearSystemCache ClebschGordan ClickPane Clip ClipboardNotebook ClipFill ClippingStyle ClipPlanes ClipRange Clock ClockGauge ClockwiseContourIntegral Close Closed CloseKernels ClosenessCentrality Closing ClosingAutoSave ClosingEvent ClusteringComponents CMYKColor Coarse Coefficient CoefficientArrays CoefficientDomain CoefficientList CoefficientRules CoifletWavelet Collect Colon ColonForm ColorCombine ColorConvert ColorData ColorDataFunction ColorFunction ColorFunctionScaling Colorize ColorNegate ColorOutput ColorProfileData ColorQuantize ColorReplace ColorRules ColorSelectorSettings ColorSeparate ColorSetter ColorSetterBox ColorSetterBoxOptions ColorSlider ColorSpace Column ColumnAlignments ColumnBackgrounds ColumnForm ColumnLines ColumnsEqual ColumnSpacings ColumnWidths CommonDefaultFormatTypes Commonest CommonestFilter CommonUnits CommunityBoundaryStyle CommunityGraphPlot CommunityLabels CommunityRegionStyle CompatibleUnitQ CompilationOptions CompilationTarget Compile Compiled CompiledFunction Complement CompleteGraph CompleteGraphQ CompleteKaryTree CompletionsListPacket Complex Complexes ComplexExpand ComplexInfinity ComplexityFunction ComponentMeasurements ' +
+	      'ComponentwiseContextMenu Compose ComposeList ComposeSeries Composition CompoundExpression CompoundPoissonDistribution CompoundPoissonProcess CompoundRenewalProcess Compress CompressedData Condition ConditionalExpression Conditioned Cone ConeBox ConfidenceLevel ConfidenceRange ConfidenceTransform ConfigurationPath Congruent Conjugate ConjugateTranspose Conjunction Connect ConnectedComponents ConnectedGraphQ ConnesWindow ConoverTest ConsoleMessage ConsoleMessagePacket ConsolePrint Constant ConstantArray Constants ConstrainedMax ConstrainedMin ContentPadding ContentsBoundingBox ContentSelectable ContentSize Context ContextMenu Contexts ContextToFilename ContextToFileName Continuation Continue ContinuedFraction ContinuedFractionK ContinuousAction ContinuousMarkovProcess ContinuousTimeModelQ ContinuousWaveletData ContinuousWaveletTransform ContourDetect ContourGraphics ContourIntegral ContourLabels ContourLines ContourPlot ContourPlot3D Contours ContourShading ContourSmoothing ContourStyle ContraharmonicMean Control ControlActive ControlAlignment ControllabilityGramian ControllabilityMatrix ControllableDecomposition ControllableModelQ ControllerDuration ControllerInformation ControllerInformationData ControllerLinking ControllerManipulate ControllerMethod ControllerPath ControllerState ControlPlacement ControlsRendering ControlType Convergents ConversionOptions ConversionRules ConvertToBitmapPacket ConvertToPostScript ConvertToPostScriptPacket Convolve ConwayGroupCo1 ConwayGroupCo2 ConwayGroupCo3 CoordinateChartData CoordinatesToolOptions CoordinateTransform CoordinateTransformData CoprimeQ Coproduct CopulaDistribution Copyable CopyDirectory CopyFile CopyTag CopyToClipboard CornerFilter CornerNeighbors Correlation CorrelationDistance CorrelationFunction CorrelationTest Cos Cosh CoshIntegral CosineDistance CosineWindow CosIntegral Cot Coth Count CounterAssignments CounterBox CounterBoxOptions CounterClockwiseContourIntegral CounterEvaluator CounterFunction CounterIncrements CounterStyle CounterStyleMenuListing CountRoots CountryData Covariance CovarianceEstimatorFunction CovarianceFunction CoxianDistribution CoxIngersollRossProcess CoxModel CoxModelFit CramerVonMisesTest CreateArchive CreateDialog CreateDirectory CreateDocument CreateIntermediateDirectories CreatePalette CreatePalettePacket CreateScheduledTask CreateTemporary CreateWindow CriticalityFailureImportance CriticalitySuccessImportance CriticalSection Cross CrossingDetect CrossMatrix Csc Csch CubeRoot Cubics Cuboid CuboidBox Cumulant CumulantGeneratingFunction Cup CupCap Curl CurlyDoubleQuote CurlyQuote CurrentImage CurrentlySpeakingPacket CurrentValue CurvatureFlowFilter CurveClosed Cyan CycleGraph CycleIndexPolynomial Cycles CyclicGroup Cyclotomic Cylinder CylinderBox CylindricalDecomposition ' +
+	      'D DagumDistribution DamerauLevenshteinDistance DampingFactor Darker Dashed Dashing DataCompression DataDistribution DataRange DataReversed Date DateDelimiters DateDifference DateFunction DateList DateListLogPlot DateListPlot DatePattern DatePlus DateRange DateString DateTicksFormat DaubechiesWavelet DavisDistribution DawsonF DayCount DayCountConvention DayMatchQ DayName DayPlus DayRange DayRound DeBruijnGraph Debug DebugTag Decimal DeclareKnownSymbols DeclarePackage Decompose Decrement DedekindEta Default DefaultAxesStyle DefaultBaseStyle DefaultBoxStyle DefaultButton DefaultColor DefaultControlPlacement DefaultDuplicateCellStyle DefaultDuration DefaultElement DefaultFaceGridsStyle DefaultFieldHintStyle DefaultFont DefaultFontProperties DefaultFormatType DefaultFormatTypeForStyle DefaultFrameStyle DefaultFrameTicksStyle DefaultGridLinesStyle DefaultInlineFormatType DefaultInputFormatType DefaultLabelStyle DefaultMenuStyle DefaultNaturalLanguage DefaultNewCellStyle DefaultNewInlineCellStyle DefaultNotebook DefaultOptions DefaultOutputFormatType DefaultStyle DefaultStyleDefinitions DefaultTextFormatType DefaultTextInlineFormatType DefaultTicksStyle DefaultTooltipStyle DefaultValues Defer DefineExternal DefineInputStreamMethod DefineOutputStreamMethod Definition Degree DegreeCentrality DegreeGraphDistribution DegreeLexicographic DegreeReverseLexicographic Deinitialization Del Deletable Delete DeleteBorderComponents DeleteCases DeleteContents DeleteDirectory DeleteDuplicates DeleteFile DeleteSmallComponents DeleteWithContents DeletionWarning Delimiter DelimiterFlashTime DelimiterMatching Delimiters Denominator DensityGraphics DensityHistogram DensityPlot DependentVariables Deploy Deployed Depth DepthFirstScan Derivative DerivativeFilter DescriptorStateSpace DesignMatrix Det DGaussianWavelet DiacriticalPositioning Diagonal DiagonalMatrix Dialog DialogIndent DialogInput DialogLevel DialogNotebook DialogProlog DialogReturn DialogSymbols Diamond DiamondMatrix DiceDissimilarity DictionaryLookup DifferenceDelta DifferenceOrder DifferenceRoot DifferenceRootReduce Differences DifferentialD DifferentialRoot DifferentialRootReduce DifferentiatorFilter DigitBlock DigitBlockMinimum DigitCharacter DigitCount DigitQ DihedralGroup Dilation Dimensions DiracComb DiracDelta DirectedEdge DirectedEdges DirectedGraph DirectedGraphQ DirectedInfinity Direction Directive Directory DirectoryName DirectoryQ DirectoryStack DirichletCharacter DirichletConvolve DirichletDistribution DirichletL DirichletTransform DirichletWindow DisableConsolePrintPacket DiscreteChirpZTransform DiscreteConvolve DiscreteDelta DiscreteHadamardTransform DiscreteIndicator DiscreteLQEstimatorGains DiscreteLQRegulatorGains DiscreteLyapunovSolve DiscreteMarkovProcess DiscretePlot DiscretePlot3D DiscreteRatio DiscreteRiccatiSolve DiscreteShift DiscreteTimeModelQ DiscreteUniformDistribution DiscreteVariables DiscreteWaveletData DiscreteWaveletPacketTransform ' +
+	      'DiscreteWaveletTransform Discriminant Disjunction Disk DiskBox DiskMatrix Dispatch DispersionEstimatorFunction Display DisplayAllSteps DisplayEndPacket DisplayFlushImagePacket DisplayForm DisplayFunction DisplayPacket DisplayRules DisplaySetSizePacket DisplayString DisplayTemporary DisplayWith DisplayWithRef DisplayWithVariable DistanceFunction DistanceTransform Distribute Distributed DistributedContexts DistributeDefinitions DistributionChart DistributionDomain DistributionFitTest DistributionParameterAssumptions DistributionParameterQ Dithering Div Divergence Divide DivideBy Dividers Divisible Divisors DivisorSigma DivisorSum DMSList DMSString Do DockedCells DocumentNotebook DominantColors DOSTextFormat Dot DotDashed DotEqual Dotted DoubleBracketingBar DoubleContourIntegral DoubleDownArrow DoubleLeftArrow DoubleLeftRightArrow DoubleLeftTee DoubleLongLeftArrow DoubleLongLeftRightArrow DoubleLongRightArrow DoubleRightArrow DoubleRightTee DoubleUpArrow DoubleUpDownArrow DoubleVerticalBar DoublyInfinite Down DownArrow DownArrowBar DownArrowUpArrow DownLeftRightVector DownLeftTeeVector DownLeftVector DownLeftVectorBar DownRightTeeVector DownRightVector DownRightVectorBar Downsample DownTee DownTeeArrow DownValues DragAndDrop DrawEdges DrawFrontFaces DrawHighlighted Drop DSolve Dt DualLinearProgramming DualSystemsModel DumpGet DumpSave DuplicateFreeQ Dynamic DynamicBox DynamicBoxOptions DynamicEvaluationTimeout DynamicLocation DynamicModule DynamicModuleBox DynamicModuleBoxOptions DynamicModuleParent DynamicModuleValues DynamicName DynamicNamespace DynamicReference DynamicSetting DynamicUpdating DynamicWrapper DynamicWrapperBox DynamicWrapperBoxOptions ' +
+	      'E EccentricityCentrality EdgeAdd EdgeBetweennessCentrality EdgeCapacity EdgeCapForm EdgeColor EdgeConnectivity EdgeCost EdgeCount EdgeCoverQ EdgeDashing EdgeDelete EdgeDetect EdgeForm EdgeIndex EdgeJoinForm EdgeLabeling EdgeLabels EdgeLabelStyle EdgeList EdgeOpacity EdgeQ EdgeRenderingFunction EdgeRules EdgeShapeFunction EdgeStyle EdgeThickness EdgeWeight Editable EditButtonSettings EditCellTagsSettings EditDistance EffectiveInterest Eigensystem Eigenvalues EigenvectorCentrality Eigenvectors Element ElementData Eliminate EliminationOrder EllipticE EllipticExp EllipticExpPrime EllipticF EllipticFilterModel EllipticK EllipticLog EllipticNomeQ EllipticPi EllipticReducedHalfPeriods EllipticTheta EllipticThetaPrime EmitSound EmphasizeSyntaxErrors EmpiricalDistribution Empty EmptyGraphQ EnableConsolePrintPacket Enabled Encode End EndAdd EndDialogPacket EndFrontEndInteractionPacket EndOfFile EndOfLine EndOfString EndPackage EngineeringForm Enter EnterExpressionPacket EnterTextPacket Entropy EntropyFilter Environment Epilog Equal EqualColumns EqualRows EqualTilde EquatedTo Equilibrium EquirippleFilterKernel Equivalent Erf Erfc Erfi ErlangB ErlangC ErlangDistribution Erosion ErrorBox ErrorBoxOptions ErrorNorm ErrorPacket ErrorsDialogSettings EstimatedDistribution EstimatedProcess EstimatorGains EstimatorRegulator EuclideanDistance EulerE EulerGamma EulerianGraphQ EulerPhi Evaluatable Evaluate Evaluated EvaluatePacket EvaluationCell EvaluationCompletionAction EvaluationElements EvaluationMode EvaluationMonitor EvaluationNotebook EvaluationObject EvaluationOrder Evaluator EvaluatorNames EvenQ EventData EventEvaluator EventHandler EventHandlerTag EventLabels ExactBlackmanWindow ExactNumberQ ExactRootIsolation ExampleData Except ExcludedForms ExcludePods Exclusions ExclusionsStyle Exists Exit ExitDialog Exp Expand ExpandAll ExpandDenominator ExpandFileName ExpandNumerator Expectation ExpectationE ExpectedValue ExpGammaDistribution ExpIntegralE ExpIntegralEi Exponent ExponentFunction ExponentialDistribution ExponentialFamily ExponentialGeneratingFunction ExponentialMovingAverage ExponentialPowerDistribution ExponentPosition ExponentStep Export ExportAutoReplacements ExportPacket ExportString Expression ExpressionCell ExpressionPacket ExpToTrig ExtendedGCD Extension ExtentElementFunction ExtentMarkers ExtentSize ExternalCall ExternalDataCharacterEncoding Extract ExtractArchive ExtremeValueDistribution ' +
+	      'FaceForm FaceGrids FaceGridsStyle Factor FactorComplete Factorial Factorial2 FactorialMoment FactorialMomentGeneratingFunction FactorialPower FactorInteger FactorList FactorSquareFree FactorSquareFreeList FactorTerms FactorTermsList Fail FailureDistribution False FARIMAProcess FEDisableConsolePrintPacket FeedbackSector FeedbackSectorStyle FeedbackType FEEnableConsolePrintPacket Fibonacci FieldHint FieldHintStyle FieldMasked FieldSize File FileBaseName FileByteCount FileDate FileExistsQ FileExtension FileFormat FileHash FileInformation FileName FileNameDepth FileNameDialogSettings FileNameDrop FileNameJoin FileNames FileNameSetter FileNameSplit FileNameTake FilePrint FileType FilledCurve FilledCurveBox Filling FillingStyle FillingTransform FilterRules FinancialBond FinancialData FinancialDerivative FinancialIndicator Find FindArgMax FindArgMin FindClique FindClusters FindCurvePath FindDistributionParameters FindDivisions FindEdgeCover FindEdgeCut FindEulerianCycle FindFaces FindFile FindFit FindGeneratingFunction FindGeoLocation FindGeometricTransform FindGraphCommunities FindGraphIsomorphism FindGraphPartition FindHamiltonianCycle FindIndependentEdgeSet FindIndependentVertexSet FindInstance FindIntegerNullVector FindKClan FindKClique FindKClub FindKPlex FindLibrary FindLinearRecurrence FindList FindMaximum FindMaximumFlow FindMaxValue FindMinimum FindMinimumCostFlow FindMinimumCut FindMinValue FindPermutation FindPostmanTour FindProcessParameters FindRoot FindSequenceFunction FindSettings FindShortestPath FindShortestTour FindThreshold FindVertexCover FindVertexCut Fine FinishDynamic FiniteAbelianGroupCount FiniteGroupCount FiniteGroupData First FirstPassageTimeDistribution FischerGroupFi22 FischerGroupFi23 FischerGroupFi24Prime FisherHypergeometricDistribution FisherRatioTest FisherZDistribution Fit FitAll FittedModel FixedPoint FixedPointList FlashSelection Flat Flatten FlattenAt FlatTopWindow FlipView Floor FlushPrintOutputPacket Fold FoldList Font FontColor FontFamily FontForm FontName FontOpacity FontPostScriptName FontProperties FontReencoding FontSize FontSlant FontSubstitutions FontTracking FontVariations FontWeight For ForAll Format FormatRules FormatType FormatTypeAutoConvert FormatValues FormBox FormBoxOptions FortranForm Forward ForwardBackward Fourier FourierCoefficient FourierCosCoefficient FourierCosSeries FourierCosTransform FourierDCT FourierDCTFilter FourierDCTMatrix FourierDST FourierDSTMatrix FourierMatrix FourierParameters FourierSequenceTransform FourierSeries FourierSinCoefficient FourierSinSeries FourierSinTransform FourierTransform FourierTrigSeries FractionalBrownianMotionProcess FractionalPart FractionBox FractionBoxOptions FractionLine Frame FrameBox FrameBoxOptions Framed FrameInset FrameLabel Frameless FrameMargins FrameStyle FrameTicks FrameTicksStyle FRatioDistribution FrechetDistribution FreeQ FrequencySamplingFilterKernel FresnelC FresnelS Friday FrobeniusNumber FrobeniusSolve ' +
+	      'FromCharacterCode FromCoefficientRules FromContinuedFraction FromDate FromDigits FromDMS Front FrontEndDynamicExpression FrontEndEventActions FrontEndExecute FrontEndObject FrontEndResource FrontEndResourceString FrontEndStackSize FrontEndToken FrontEndTokenExecute FrontEndValueCache FrontEndVersion FrontFaceColor FrontFaceOpacity Full FullAxes FullDefinition FullForm FullGraphics FullOptions FullSimplify Function FunctionExpand FunctionInterpolation FunctionSpace FussellVeselyImportance ' +
+	      'GaborFilter GaborMatrix GaborWavelet GainMargins GainPhaseMargins Gamma GammaDistribution GammaRegularized GapPenalty Gather GatherBy GaugeFaceElementFunction GaugeFaceStyle GaugeFrameElementFunction GaugeFrameSize GaugeFrameStyle GaugeLabels GaugeMarkers GaugeStyle GaussianFilter GaussianIntegers GaussianMatrix GaussianWindow GCD GegenbauerC General GeneralizedLinearModelFit GenerateConditions GeneratedCell GeneratedParameters GeneratingFunction Generic GenericCylindricalDecomposition GenomeData GenomeLookup GeodesicClosing GeodesicDilation GeodesicErosion GeodesicOpening GeoDestination GeodesyData GeoDirection GeoDistance GeoGridPosition GeometricBrownianMotionProcess GeometricDistribution GeometricMean GeometricMeanFilter GeometricTransformation GeometricTransformation3DBox GeometricTransformation3DBoxOptions GeometricTransformationBox GeometricTransformationBoxOptions GeoPosition GeoPositionENU GeoPositionXYZ GeoProjectionData GestureHandler GestureHandlerTag Get GetBoundingBoxSizePacket GetContext GetEnvironment GetFileName GetFrontEndOptionsDataPacket GetLinebreakInformationPacket GetMenusPacket GetPageBreakInformationPacket Glaisher GlobalClusteringCoefficient GlobalPreferences GlobalSession Glow GoldenRatio GompertzMakehamDistribution GoodmanKruskalGamma GoodmanKruskalGammaTest Goto Grad Gradient GradientFilter GradientOrientationFilter Graph GraphAssortativity GraphCenter GraphComplement GraphData GraphDensity GraphDiameter GraphDifference GraphDisjointUnion ' +
+	      'GraphDistance GraphDistanceMatrix GraphElementData GraphEmbedding GraphHighlight GraphHighlightStyle GraphHub Graphics Graphics3D Graphics3DBox Graphics3DBoxOptions GraphicsArray GraphicsBaseline GraphicsBox GraphicsBoxOptions GraphicsColor GraphicsColumn GraphicsComplex GraphicsComplex3DBox GraphicsComplex3DBoxOptions GraphicsComplexBox GraphicsComplexBoxOptions GraphicsContents GraphicsData GraphicsGrid GraphicsGridBox GraphicsGroup GraphicsGroup3DBox GraphicsGroup3DBoxOptions GraphicsGroupBox GraphicsGroupBoxOptions GraphicsGrouping GraphicsHighlightColor GraphicsRow GraphicsSpacing GraphicsStyle GraphIntersection GraphLayout GraphLinkEfficiency GraphPeriphery GraphPlot GraphPlot3D GraphPower GraphPropertyDistribution GraphQ GraphRadius GraphReciprocity GraphRoot GraphStyle GraphUnion Gray GrayLevel GreatCircleDistance Greater GreaterEqual GreaterEqualLess GreaterFullEqual GreaterGreater GreaterLess GreaterSlantEqual GreaterTilde Green Grid GridBaseline GridBox GridBoxAlignment GridBoxBackground GridBoxDividers GridBoxFrame GridBoxItemSize GridBoxItemStyle GridBoxOptions GridBoxSpacings GridCreationSettings GridDefaultElement GridElementStyleOptions GridFrame GridFrameMargins GridGraph GridLines GridLinesStyle GroebnerBasis GroupActionBase GroupCentralizer GroupElementFromWord GroupElementPosition GroupElementQ GroupElements GroupElementToWord GroupGenerators GroupMultiplicationTable GroupOrbits GroupOrder GroupPageBreakWithin GroupSetwiseStabilizer GroupStabilizer GroupStabilizerChain Gudermannian GumbelDistribution ' +
+	      'HaarWavelet HadamardMatrix HalfNormalDistribution HamiltonianGraphQ HammingDistance HammingWindow HankelH1 HankelH2 HankelMatrix HannPoissonWindow HannWindow HaradaNortonGroupHN HararyGraph HarmonicMean HarmonicMeanFilter HarmonicNumber Hash HashTable Haversine HazardFunction Head HeadCompose Heads HeavisideLambda HeavisidePi HeavisideTheta HeldGroupHe HeldPart HelpBrowserLookup HelpBrowserNotebook HelpBrowserSettings HermiteDecomposition HermiteH HermitianMatrixQ HessenbergDecomposition Hessian HexadecimalCharacter Hexahedron HexahedronBox HexahedronBoxOptions HiddenSurface HighlightGraph HighlightImage HighpassFilter HigmanSimsGroupHS HilbertFilter HilbertMatrix Histogram Histogram3D HistogramDistribution HistogramList HistogramTransform HistogramTransformInterpolation HitMissTransform HITSCentrality HodgeDual HoeffdingD HoeffdingDTest Hold HoldAll HoldAllComplete HoldComplete HoldFirst HoldForm HoldPattern HoldRest HolidayCalendar HomeDirectory HomePage Horizontal HorizontalForm HorizontalGauge HorizontalScrollPosition HornerForm HotellingTSquareDistribution HoytDistribution HTMLSave Hue HumpDownHump HumpEqual HurwitzLerchPhi HurwitzZeta HyperbolicDistribution HypercubeGraph HyperexponentialDistribution Hyperfactorial Hypergeometric0F1 Hypergeometric0F1Regularized Hypergeometric1F1 Hypergeometric1F1Regularized Hypergeometric2F1 Hypergeometric2F1Regularized HypergeometricDistribution HypergeometricPFQ HypergeometricPFQRegularized HypergeometricU Hyperlink HyperlinkCreationSettings Hyphenation HyphenationOptions HypoexponentialDistribution HypothesisTestData ' +
+	      'I Identity IdentityMatrix If IgnoreCase Im Image Image3D Image3DSlices ImageAccumulate ImageAdd ImageAdjust ImageAlign ImageApply ImageAspectRatio ImageAssemble ImageCache ImageCacheValid ImageCapture ImageChannels ImageClip ImageColorSpace ImageCompose ImageConvolve ImageCooccurrence ImageCorners ImageCorrelate ImageCorrespondingPoints ImageCrop ImageData ImageDataPacket ImageDeconvolve ImageDemosaic ImageDifference ImageDimensions ImageDistance ImageEffect ImageFeatureTrack ImageFileApply ImageFileFilter ImageFileScan ImageFilter ImageForestingComponents ImageForwardTransformation ImageHistogram ImageKeypoints ImageLevels ImageLines ImageMargins ImageMarkers ImageMeasurements ImageMultiply ImageOffset ImagePad ImagePadding ImagePartition ImagePeriodogram ImagePerspectiveTransformation ImageQ ImageRangeCache ImageReflect ImageRegion ImageResize ImageResolution ImageRotate ImageRotated ImageScaled ImageScan ImageSize ImageSizeAction ImageSizeCache ImageSizeMultipliers ImageSizeRaw ImageSubtract ImageTake ImageTransformation ImageTrim ImageType ImageValue ImageValuePositions Implies Import ImportAutoReplacements ImportString ImprovementImportance In IncidenceGraph IncidenceList IncidenceMatrix IncludeConstantBasis IncludeFileExtension IncludePods IncludeSingularTerm Increment Indent IndentingNewlineSpacings IndentMaxFraction IndependenceTest IndependentEdgeSetQ IndependentUnit IndependentVertexSetQ Indeterminate IndexCreationOptions Indexed IndexGraph IndexTag Inequality InexactNumberQ InexactNumbers Infinity Infix Information Inherited InheritScope Initialization InitializationCell InitializationCellEvaluation InitializationCellWarning InlineCounterAssignments InlineCounterIncrements InlineRules Inner Inpaint Input InputAliases InputAssumptions InputAutoReplacements InputField InputFieldBox InputFieldBoxOptions InputForm InputGrouping InputNamePacket InputNotebook InputPacket InputSettings InputStream InputString InputStringPacket InputToBoxFormPacket Insert InsertionPointObject InsertResults Inset Inset3DBox Inset3DBoxOptions InsetBox InsetBoxOptions Install InstallService InString Integer IntegerDigits IntegerExponent IntegerLength IntegerPart IntegerPartitions IntegerQ Integers IntegerString Integral Integrate Interactive InteractiveTradingChart Interlaced Interleaving InternallyBalancedDecomposition InterpolatingFunction InterpolatingPolynomial Interpolation InterpolationOrder InterpolationPoints InterpolationPrecision Interpretation InterpretationBox InterpretationBoxOptions InterpretationFunction ' +
+	      'InterpretTemplate InterquartileRange Interrupt InterruptSettings Intersection Interval IntervalIntersection IntervalMemberQ IntervalUnion Inverse InverseBetaRegularized InverseCDF InverseChiSquareDistribution InverseContinuousWaveletTransform InverseDistanceTransform InverseEllipticNomeQ InverseErf InverseErfc InverseFourier InverseFourierCosTransform InverseFourierSequenceTransform InverseFourierSinTransform InverseFourierTransform InverseFunction InverseFunctions InverseGammaDistribution InverseGammaRegularized InverseGaussianDistribution InverseGudermannian InverseHaversine InverseJacobiCD InverseJacobiCN InverseJacobiCS InverseJacobiDC InverseJacobiDN InverseJacobiDS InverseJacobiNC InverseJacobiND InverseJacobiNS InverseJacobiSC InverseJacobiSD InverseJacobiSN InverseLaplaceTransform InversePermutation InverseRadon InverseSeries InverseSurvivalFunction InverseWaveletTransform InverseWeierstrassP InverseZTransform Invisible InvisibleApplication InvisibleTimes IrreduciblePolynomialQ IsolatingInterval IsomorphicGraphQ IsotopeData Italic Item ItemBox ItemBoxOptions ItemSize ItemStyle ItoProcess ' +
+	      'JaccardDissimilarity JacobiAmplitude Jacobian JacobiCD JacobiCN JacobiCS JacobiDC JacobiDN JacobiDS JacobiNC JacobiND JacobiNS JacobiP JacobiSC JacobiSD JacobiSN JacobiSymbol JacobiZeta JankoGroupJ1 JankoGroupJ2 JankoGroupJ3 JankoGroupJ4 JarqueBeraALMTest JohnsonDistribution Join Joined JoinedCurve JoinedCurveBox JoinForm JordanDecomposition JordanModelDecomposition ' +
+	      'K KagiChart KaiserBesselWindow KaiserWindow KalmanEstimator KalmanFilter KarhunenLoeveDecomposition KaryTree KatzCentrality KCoreComponents KDistribution KelvinBei KelvinBer KelvinKei KelvinKer KendallTau KendallTauTest KernelExecute KernelMixtureDistribution KernelObject Kernels Ket Khinchin KirchhoffGraph KirchhoffMatrix KleinInvariantJ KnightTourGraph KnotData KnownUnitQ KolmogorovSmirnovTest KroneckerDelta KroneckerModelDecomposition KroneckerProduct KroneckerSymbol KuiperTest KumaraswamyDistribution Kurtosis KuwaharaFilter ' +
+	      'Label Labeled LabeledSlider LabelingFunction LabelStyle LaguerreL LambdaComponents LambertW LanczosWindow LandauDistribution Language LanguageCategory LaplaceDistribution LaplaceTransform Laplacian LaplacianFilter LaplacianGaussianFilter Large Larger Last Latitude LatitudeLongitude LatticeData LatticeReduce Launch LaunchKernels LayeredGraphPlot LayerSizeFunction LayoutInformation LCM LeafCount LeapYearQ LeastSquares LeastSquaresFilterKernel Left LeftArrow LeftArrowBar LeftArrowRightArrow LeftDownTeeVector LeftDownVector LeftDownVectorBar LeftRightArrow LeftRightVector LeftTee LeftTeeArrow LeftTeeVector LeftTriangle LeftTriangleBar LeftTriangleEqual LeftUpDownVector LeftUpTeeVector LeftUpVector LeftUpVectorBar LeftVector LeftVectorBar LegendAppearance Legended LegendFunction LegendLabel LegendLayout LegendMargins LegendMarkers LegendMarkerSize LegendreP LegendreQ LegendreType Length LengthWhile LerchPhi Less LessEqual LessEqualGreater LessFullEqual LessGreater LessLess LessSlantEqual LessTilde LetterCharacter LetterQ Level LeveneTest LeviCivitaTensor LevyDistribution Lexicographic LibraryFunction LibraryFunctionError LibraryFunctionInformation LibraryFunctionLoad LibraryFunctionUnload LibraryLoad LibraryUnload LicenseID LiftingFilterData LiftingWaveletTransform LightBlue LightBrown LightCyan Lighter LightGray LightGreen Lighting LightingAngle LightMagenta LightOrange LightPink LightPurple LightRed LightSources LightYellow Likelihood Limit LimitsPositioning LimitsPositioningTokens LindleyDistribution Line Line3DBox LinearFilter LinearFractionalTransform LinearModelFit LinearOffsetFunction LinearProgramming LinearRecurrence LinearSolve LinearSolveFunction LineBox LineBreak LinebreakAdjustments LineBreakChart LineBreakWithin LineColor LineForm LineGraph LineIndent LineIndentMaxFraction LineIntegralConvolutionPlot LineIntegralConvolutionScale LineLegend LineOpacity LineSpacing LineWrapParts LinkActivate LinkClose LinkConnect LinkConnectedQ LinkCreate LinkError LinkFlush LinkFunction LinkHost LinkInterrupt LinkLaunch LinkMode LinkObject LinkOpen LinkOptions LinkPatterns LinkProtocol LinkRead LinkReadHeld LinkReadyQ Links LinkWrite LinkWriteHeld LiouvilleLambda List Listable ListAnimate ListContourPlot ListContourPlot3D ListConvolve ListCorrelate ListCurvePathPlot ListDeconvolve ListDensityPlot Listen ListFourierSequenceTransform ListInterpolation ListLineIntegralConvolutionPlot ListLinePlot ListLogLinearPlot ListLogLogPlot ListLogPlot ListPicker ListPickerBox ListPickerBoxBackground ListPickerBoxOptions ListPlay ListPlot ListPlot3D ListPointPlot3D ListPolarPlot ListQ ListStreamDensityPlot ListStreamPlot ListSurfacePlot3D ListVectorDensityPlot ListVectorPlot ListVectorPlot3D ListZTransform Literal LiteralSearch LocalClusteringCoefficient LocalizeVariables LocationEquivalenceTest LocationTest Locator LocatorAutoCreate LocatorBox LocatorBoxOptions LocatorCentering LocatorPane LocatorPaneBox LocatorPaneBoxOptions ' +
+	      'LocatorRegion Locked Log Log10 Log2 LogBarnesG LogGamma LogGammaDistribution LogicalExpand LogIntegral LogisticDistribution LogitModelFit LogLikelihood LogLinearPlot LogLogisticDistribution LogLogPlot LogMultinormalDistribution LogNormalDistribution LogPlot LogRankTest LogSeriesDistribution LongEqual Longest LongestAscendingSequence LongestCommonSequence LongestCommonSequencePositions LongestCommonSubsequence LongestCommonSubsequencePositions LongestMatch LongForm Longitude LongLeftArrow LongLeftRightArrow LongRightArrow Loopback LoopFreeGraphQ LowerCaseQ LowerLeftArrow LowerRightArrow LowerTriangularize LowpassFilter LQEstimatorGains LQGRegulator LQOutputRegulatorGains LQRegulatorGains LUBackSubstitution LucasL LuccioSamiComponents LUDecomposition LyapunovSolve LyonsGroupLy ' +
+	      'MachineID MachineName MachineNumberQ MachinePrecision MacintoshSystemPageSetup Magenta Magnification Magnify MainSolve MaintainDynamicCaches Majority MakeBoxes MakeExpression MakeRules MangoldtLambda ManhattanDistance Manipulate Manipulator MannWhitneyTest MantissaExponent Manual Map MapAll MapAt MapIndexed MAProcess MapThread MarcumQ MardiaCombinedTest MardiaKurtosisTest MardiaSkewnessTest MarginalDistribution MarkovProcessProperties Masking MatchingDissimilarity MatchLocalNameQ MatchLocalNames MatchQ Material MathematicaNotation MathieuC MathieuCharacteristicA MathieuCharacteristicB MathieuCharacteristicExponent MathieuCPrime MathieuGroupM11 MathieuGroupM12 MathieuGroupM22 MathieuGroupM23 MathieuGroupM24 MathieuS MathieuSPrime MathMLForm MathMLText Matrices MatrixExp MatrixForm MatrixFunction MatrixLog MatrixPlot MatrixPower MatrixQ MatrixRank Max MaxBend MaxDetect MaxExtraBandwidths MaxExtraConditions MaxFeatures MaxFilter Maximize MaxIterations MaxMemoryUsed MaxMixtureKernels MaxPlotPoints MaxPoints MaxRecursion MaxStableDistribution MaxStepFraction MaxSteps MaxStepSize MaxValue MaxwellDistribution McLaughlinGroupMcL Mean MeanClusteringCoefficient MeanDegreeConnectivity MeanDeviation MeanFilter MeanGraphDistance MeanNeighborDegree MeanShift MeanShiftFilter Median MedianDeviation MedianFilter Medium MeijerG MeixnerDistribution MemberQ MemoryConstrained MemoryInUse Menu MenuAppearance MenuCommandKey MenuEvaluator MenuItem MenuPacket MenuSortingValue MenuStyle MenuView MergeDifferences Mesh MeshFunctions MeshRange MeshShading MeshStyle Message MessageDialog MessageList MessageName MessageOptions MessagePacket Messages MessagesNotebook MetaCharacters MetaInformation Method MethodOptions MexicanHatWavelet MeyerWavelet Min MinDetect MinFilter MinimalPolynomial MinimalStateSpaceModel Minimize Minors MinRecursion MinSize MinStableDistribution Minus MinusPlus MinValue Missing MissingDataMethod MittagLefflerE MixedRadix MixedRadixQuantity MixtureDistribution Mod Modal Mode Modular ModularLambda Module Modulus MoebiusMu Moment Momentary MomentConvert MomentEvaluate MomentGeneratingFunction Monday Monitor MonomialList MonomialOrder MonsterGroupM MorletWavelet MorphologicalBinarize MorphologicalBranchPoints MorphologicalComponents MorphologicalEulerNumber MorphologicalGraph MorphologicalPerimeter MorphologicalTransform Most MouseAnnotation MouseAppearance MouseAppearanceTag MouseButtons Mouseover MousePointerNote MousePosition MovingAverage MovingMedian MoyalDistribution MultiedgeStyle MultilaunchWarning MultiLetterItalics MultiLetterStyle MultilineFunction Multinomial MultinomialDistribution MultinormalDistribution MultiplicativeOrder Multiplicity Multiselection MultivariateHypergeometricDistribution MultivariatePoissonDistribution MultivariateTDistribution ' +
+	      'N NakagamiDistribution NameQ Names NamespaceBox Nand NArgMax NArgMin NBernoulliB NCache NDSolve NDSolveValue Nearest NearestFunction NeedCurrentFrontEndPackagePacket NeedCurrentFrontEndSymbolsPacket NeedlemanWunschSimilarity Needs Negative NegativeBinomialDistribution NegativeMultinomialDistribution NeighborhoodGraph Nest NestedGreaterGreater NestedLessLess NestedScriptRules NestList NestWhile NestWhileList NevilleThetaC NevilleThetaD NevilleThetaN NevilleThetaS NewPrimitiveStyle NExpectation Next NextPrime NHoldAll NHoldFirst NHoldRest NicholsGridLines NicholsPlot NIntegrate NMaximize NMaxValue NMinimize NMinValue NominalVariables NonAssociative NoncentralBetaDistribution NoncentralChiSquareDistribution NoncentralFRatioDistribution NoncentralStudentTDistribution NonCommutativeMultiply NonConstants None NonlinearModelFit NonlocalMeansFilter NonNegative NonPositive Nor NorlundB Norm Normal NormalDistribution NormalGrouping Normalize NormalizedSquaredEuclideanDistance NormalsFunction NormFunction Not NotCongruent NotCupCap NotDoubleVerticalBar Notebook NotebookApply NotebookAutoSave NotebookClose NotebookConvertSettings NotebookCreate NotebookCreateReturnObject NotebookDefault NotebookDelete NotebookDirectory NotebookDynamicExpression NotebookEvaluate NotebookEventActions NotebookFileName NotebookFind NotebookFindReturnObject NotebookGet NotebookGetLayoutInformationPacket NotebookGetMisspellingsPacket NotebookInformation NotebookInterfaceObject NotebookLocate NotebookObject NotebookOpen NotebookOpenReturnObject NotebookPath NotebookPrint NotebookPut NotebookPutReturnObject NotebookRead NotebookResetGeneratedCells Notebooks NotebookSave NotebookSaveAs NotebookSelection NotebookSetupLayoutInformationPacket NotebooksMenu NotebookWrite NotElement NotEqualTilde NotExists NotGreater NotGreaterEqual NotGreaterFullEqual NotGreaterGreater NotGreaterLess NotGreaterSlantEqual NotGreaterTilde NotHumpDownHump NotHumpEqual NotLeftTriangle NotLeftTriangleBar NotLeftTriangleEqual NotLess NotLessEqual NotLessFullEqual NotLessGreater NotLessLess NotLessSlantEqual NotLessTilde NotNestedGreaterGreater NotNestedLessLess NotPrecedes NotPrecedesEqual NotPrecedesSlantEqual NotPrecedesTilde NotReverseElement NotRightTriangle NotRightTriangleBar NotRightTriangleEqual NotSquareSubset NotSquareSubsetEqual NotSquareSuperset NotSquareSupersetEqual NotSubset NotSubsetEqual NotSucceeds NotSucceedsEqual NotSucceedsSlantEqual NotSucceedsTilde NotSuperset NotSupersetEqual NotTilde NotTildeEqual NotTildeFullEqual NotTildeTilde NotVerticalBar NProbability NProduct NProductFactors NRoots NSolve NSum NSumTerms Null NullRecords NullSpace NullWords Number NumberFieldClassNumber NumberFieldDiscriminant NumberFieldFundamentalUnits NumberFieldIntegralBasis NumberFieldNormRepresentatives NumberFieldRegulator NumberFieldRootsOfUnity NumberFieldSignature NumberForm NumberFormat NumberMarks NumberMultiplier NumberPadding NumberPoint NumberQ NumberSeparator ' +
+	      'NumberSigns NumberString Numerator NumericFunction NumericQ NuttallWindow NValues NyquistGridLines NyquistPlot ' +
+	      'O ObservabilityGramian ObservabilityMatrix ObservableDecomposition ObservableModelQ OddQ Off Offset OLEData On ONanGroupON OneIdentity Opacity Open OpenAppend Opener OpenerBox OpenerBoxOptions OpenerView OpenFunctionInspectorPacket Opening OpenRead OpenSpecialOptions OpenTemporary OpenWrite Operate OperatingSystem OptimumFlowData Optional OptionInspectorSettings OptionQ Options OptionsPacket OptionsPattern OptionValue OptionValueBox OptionValueBoxOptions Or Orange Order OrderDistribution OrderedQ Ordering Orderless OrnsteinUhlenbeckProcess Orthogonalize Out Outer OutputAutoOverwrite OutputControllabilityMatrix OutputControllableModelQ OutputForm OutputFormData OutputGrouping OutputMathEditExpression OutputNamePacket OutputResponse OutputSizeLimit OutputStream Over OverBar OverDot Overflow OverHat Overlaps Overlay OverlayBox OverlayBoxOptions Overscript OverscriptBox OverscriptBoxOptions OverTilde OverVector OwenT OwnValues ' +
+	      'PackingMethod PaddedForm Padding PadeApproximant PadLeft PadRight PageBreakAbove PageBreakBelow PageBreakWithin PageFooterLines PageFooters PageHeaderLines PageHeaders PageHeight PageRankCentrality PageWidth PairedBarChart PairedHistogram PairedSmoothHistogram PairedTTest PairedZTest PaletteNotebook PalettePath Pane PaneBox PaneBoxOptions Panel PanelBox PanelBoxOptions Paneled PaneSelector PaneSelectorBox PaneSelectorBoxOptions PaperWidth ParabolicCylinderD ParagraphIndent ParagraphSpacing ParallelArray ParallelCombine ParallelDo ParallelEvaluate Parallelization Parallelize ParallelMap ParallelNeeds ParallelProduct ParallelSubmit ParallelSum ParallelTable ParallelTry Parameter ParameterEstimator ParameterMixtureDistribution ParameterVariables ParametricFunction ParametricNDSolve ParametricNDSolveValue ParametricPlot ParametricPlot3D ParentConnect ParentDirectory ParentForm Parenthesize ParentList ParetoDistribution Part PartialCorrelationFunction PartialD ParticleData Partition PartitionsP PartitionsQ ParzenWindow PascalDistribution PassEventsDown PassEventsUp Paste PasteBoxFormInlineCells PasteButton Path PathGraph PathGraphQ Pattern PatternSequence PatternTest PauliMatrix PaulWavelet Pause PausedTime PDF PearsonChiSquareTest PearsonCorrelationTest PearsonDistribution PerformanceGoal PeriodicInterpolation Periodogram PeriodogramArray PermutationCycles PermutationCyclesQ PermutationGroup PermutationLength PermutationList PermutationListQ PermutationMax PermutationMin PermutationOrder PermutationPower PermutationProduct PermutationReplace Permutations PermutationSupport Permute PeronaMalikFilter Perpendicular PERTDistribution PetersenGraph PhaseMargins Pi Pick PIDData PIDDerivativeFilter PIDFeedforward PIDTune Piecewise PiecewiseExpand PieChart PieChart3D PillaiTrace PillaiTraceTest Pink Pivoting PixelConstrained PixelValue PixelValuePositions Placed Placeholder PlaceholderReplace Plain PlanarGraphQ Play PlayRange Plot Plot3D Plot3Matrix PlotDivision PlotJoined PlotLabel PlotLayout PlotLegends PlotMarkers PlotPoints PlotRange PlotRangeClipping PlotRangePadding PlotRegion PlotStyle Plus PlusMinus Pochhammer PodStates PodWidth Point Point3DBox PointBox PointFigureChart PointForm PointLegend PointSize PoissonConsulDistribution PoissonDistribution PoissonProcess PoissonWindow PolarAxes PolarAxesOrigin PolarGridLines PolarPlot PolarTicks PoleZeroMarkers PolyaAeppliDistribution PolyGamma Polygon Polygon3DBox Polygon3DBoxOptions PolygonBox PolygonBoxOptions PolygonHoleScale PolygonIntersections PolygonScale PolyhedronData PolyLog PolynomialExtendedGCD PolynomialForm PolynomialGCD PolynomialLCM PolynomialMod PolynomialQ PolynomialQuotient PolynomialQuotientRemainder PolynomialReduce PolynomialRemainder Polynomials PopupMenu PopupMenuBox PopupMenuBoxOptions PopupView PopupWindow Position Positive PositiveDefiniteMatrixQ PossibleZeroQ Postfix PostScript Power PowerDistribution PowerExpand PowerMod PowerModList ' +
+	      'PowerSpectralDensity PowersRepresentations PowerSymmetricPolynomial Precedence PrecedenceForm Precedes PrecedesEqual PrecedesSlantEqual PrecedesTilde Precision PrecisionGoal PreDecrement PredictionRoot PreemptProtect PreferencesPath Prefix PreIncrement Prepend PrependTo PreserveImageOptions Previous PriceGraphDistribution PrimaryPlaceholder Prime PrimeNu PrimeOmega PrimePi PrimePowerQ PrimeQ Primes PrimeZetaP PrimitiveRoot PrincipalComponents PrincipalValue Print PrintAction PrintForm PrintingCopies PrintingOptions PrintingPageRange PrintingStartingPageNumber PrintingStyleEnvironment PrintPrecision PrintTemporary Prism PrismBox PrismBoxOptions PrivateCellOptions PrivateEvaluationOptions PrivateFontOptions PrivateFrontEndOptions PrivateNotebookOptions PrivatePaths Probability ProbabilityDistribution ProbabilityPlot ProbabilityPr ProbabilityScalePlot ProbitModelFit ProcessEstimator ProcessParameterAssumptions ProcessParameterQ ProcessStateDomain ProcessTimeDomain Product ProductDistribution ProductLog ProgressIndicator ProgressIndicatorBox ProgressIndicatorBoxOptions Projection Prolog PromptForm Properties Property PropertyList PropertyValue Proportion Proportional Protect Protected ProteinData Pruning PseudoInverse Purple Put PutAppend Pyramid PyramidBox PyramidBoxOptions ' +
+	      'QBinomial QFactorial QGamma QHypergeometricPFQ QPochhammer QPolyGamma QRDecomposition QuadraticIrrationalQ Quantile QuantilePlot Quantity QuantityForm QuantityMagnitude QuantityQ QuantityUnit Quartics QuartileDeviation Quartiles QuartileSkewness QueueingNetworkProcess QueueingProcess QueueProperties Quiet Quit Quotient QuotientRemainder ' +
+	      'RadialityCentrality RadicalBox RadicalBoxOptions RadioButton RadioButtonBar RadioButtonBox RadioButtonBoxOptions Radon RamanujanTau RamanujanTauL RamanujanTauTheta RamanujanTauZ Random RandomChoice RandomComplex RandomFunction RandomGraph RandomImage RandomInteger RandomPermutation RandomPrime RandomReal RandomSample RandomSeed RandomVariate RandomWalkProcess Range RangeFilter RangeSpecification RankedMax RankedMin Raster Raster3D Raster3DBox Raster3DBoxOptions RasterArray RasterBox RasterBoxOptions Rasterize RasterSize Rational RationalFunctions Rationalize Rationals Ratios Raw RawArray RawBoxes RawData RawMedium RayleighDistribution Re Read ReadList ReadProtected Real RealBlockDiagonalForm RealDigits RealExponent Reals Reap Record RecordLists RecordSeparators Rectangle RectangleBox RectangleBoxOptions RectangleChart RectangleChart3D RecurrenceFilter RecurrenceTable RecurringDigitsForm Red Reduce RefBox ReferenceLineStyle ReferenceMarkers ReferenceMarkerStyle Refine ReflectionMatrix ReflectionTransform Refresh RefreshRate RegionBinarize RegionFunction RegionPlot RegionPlot3D RegularExpression Regularization Reinstall Release ReleaseHold ReliabilityDistribution ReliefImage ReliefPlot Remove RemoveAlphaChannel RemoveAsynchronousTask Removed RemoveInputStreamMethod RemoveOutputStreamMethod RemoveProperty RemoveScheduledTask RenameDirectory RenameFile RenderAll RenderingOptions RenewalProcess RenkoChart Repeated RepeatedNull RepeatedString Replace ReplaceAll ReplaceHeldPart ReplaceImageValue ReplaceList ReplacePart ReplacePixelValue ReplaceRepeated Resampling Rescale RescalingTransform ResetDirectory ResetMenusPacket ResetScheduledTask Residue Resolve Rest Resultant ResumePacket Return ReturnExpressionPacket ReturnInputFormPacket ReturnPacket ReturnTextPacket Reverse ReverseBiorthogonalSplineWavelet ReverseElement ReverseEquilibrium ReverseGraph ReverseUpEquilibrium RevolutionAxis RevolutionPlot3D RGBColor RiccatiSolve RiceDistribution RidgeFilter RiemannR RiemannSiegelTheta RiemannSiegelZ Riffle Right RightArrow RightArrowBar RightArrowLeftArrow RightCosetRepresentative RightDownTeeVector RightDownVector RightDownVectorBar RightTee RightTeeArrow RightTeeVector RightTriangle RightTriangleBar RightTriangleEqual RightUpDownVector RightUpTeeVector RightUpVector RightUpVectorBar RightVector RightVectorBar RiskAchievementImportance RiskReductionImportance RogersTanimotoDissimilarity Root RootApproximant RootIntervals RootLocusPlot RootMeanSquare RootOfUnityQ RootReduce Roots RootSum Rotate RotateLabel RotateLeft RotateRight RotationAction RotationBox RotationBoxOptions RotationMatrix RotationTransform Round RoundImplies RoundingRadius Row RowAlignments RowBackgrounds RowBox RowHeights RowLines RowMinHeight RowReduce RowsEqual RowSpacings RSolve RudvalisGroupRu Rule RuleCondition RuleDelayed RuleForm RulerUnits Run RunScheduledTask RunThrough RuntimeAttributes RuntimeOptions RussellRaoDissimilarity ' +
+	      'SameQ SameTest SampleDepth SampledSoundFunction SampledSoundList SampleRate SamplingPeriod SARIMAProcess SARMAProcess SatisfiabilityCount SatisfiabilityInstances SatisfiableQ Saturday Save Saveable SaveAutoDelete SaveDefinitions SawtoothWave Scale Scaled ScaleDivisions ScaledMousePosition ScaleOrigin ScalePadding ScaleRanges ScaleRangeStyle ScalingFunctions ScalingMatrix ScalingTransform Scan ScheduledTaskActiveQ ScheduledTaskData ScheduledTaskObject ScheduledTasks SchurDecomposition ScientificForm ScreenRectangle ScreenStyleEnvironment ScriptBaselineShifts ScriptLevel ScriptMinSize ScriptRules ScriptSizeMultipliers Scrollbars ScrollingOptions ScrollPosition Sec Sech SechDistribution SectionGrouping SectorChart SectorChart3D SectorOrigin SectorSpacing SeedRandom Select Selectable SelectComponents SelectedCells SelectedNotebook Selection SelectionAnimate SelectionCell SelectionCellCreateCell SelectionCellDefaultStyle SelectionCellParentStyle SelectionCreateCell SelectionDebuggerTag SelectionDuplicateCell SelectionEvaluate SelectionEvaluateCreateCell SelectionMove SelectionPlaceholder SelectionSetStyle SelectWithContents SelfLoops SelfLoopStyle SemialgebraicComponentInstances SendMail Sequence SequenceAlignment SequenceForm SequenceHold SequenceLimit Series SeriesCoefficient SeriesData SessionTime Set SetAccuracy SetAlphaChannel SetAttributes Setbacks SetBoxFormNamesPacket SetDelayed SetDirectory SetEnvironment SetEvaluationNotebook SetFileDate SetFileLoadingContext SetNotebookStatusLine SetOptions SetOptionsPacket SetPrecision SetProperty SetSelectedNotebook SetSharedFunction SetSharedVariable SetSpeechParametersPacket SetStreamPosition SetSystemOptions Setter SetterBar SetterBox SetterBoxOptions Setting SetValue Shading Shallow ShannonWavelet ShapiroWilkTest Share Sharpen ShearingMatrix ShearingTransform ShenCastanMatrix Short ShortDownArrow Shortest ShortestMatch ShortestPathFunction ShortLeftArrow ShortRightArrow ShortUpArrow Show ShowAutoStyles ShowCellBracket ShowCellLabel ShowCellTags ShowClosedCellArea ShowContents ShowControls ShowCursorTracker ShowGroupOpenCloseIcon ShowGroupOpener ShowInvisibleCharacters ShowPageBreaks ShowPredictiveInterface ShowSelection ShowShortBoxForm ShowSpecialCharacters ShowStringCharacters ShowSyntaxStyles ShrinkingDelay ShrinkWrapBoundingBox SiegelTheta SiegelTukeyTest Sign Signature SignedRankTest SignificanceLevel SignPadding SignTest SimilarityRules SimpleGraph SimpleGraphQ Simplify Sin Sinc SinghMaddalaDistribution SingleEvaluation SingleLetterItalics SingleLetterStyle SingularValueDecomposition SingularValueList SingularValuePlot SingularValues Sinh SinhIntegral SinIntegral SixJSymbol Skeleton SkeletonTransform SkellamDistribution Skewness SkewNormalDistribution Skip SliceDistribution Slider Slider2D Slider2DBox Slider2DBoxOptions SliderBox SliderBoxOptions SlideView Slot SlotSequence Small SmallCircle Smaller SmithDelayCompensator SmithWatermanSimilarity ' +
+	      'SmoothDensityHistogram SmoothHistogram SmoothHistogram3D SmoothKernelDistribution SocialMediaData Socket SokalSneathDissimilarity Solve SolveAlways SolveDelayed Sort SortBy Sound SoundAndGraphics SoundNote SoundVolume Sow Space SpaceForm Spacer Spacings Span SpanAdjustments SpanCharacterRounding SpanFromAbove SpanFromBoth SpanFromLeft SpanLineThickness SpanMaxSize SpanMinSize SpanningCharacters SpanSymmetric SparseArray SpatialGraphDistribution Speak SpeakTextPacket SpearmanRankTest SpearmanRho Spectrogram SpectrogramArray Specularity SpellingCorrection SpellingDictionaries SpellingDictionariesPath SpellingOptions SpellingSuggestionsPacket Sphere SphereBox SphericalBesselJ SphericalBesselY SphericalHankelH1 SphericalHankelH2 SphericalHarmonicY SphericalPlot3D SphericalRegion SpheroidalEigenvalue SpheroidalJoiningFactor SpheroidalPS SpheroidalPSPrime SpheroidalQS SpheroidalQSPrime SpheroidalRadialFactor SpheroidalS1 SpheroidalS1Prime SpheroidalS2 SpheroidalS2Prime Splice SplicedDistribution SplineClosed SplineDegree SplineKnots SplineWeights Split SplitBy SpokenString Sqrt SqrtBox SqrtBoxOptions Square SquaredEuclideanDistance SquareFreeQ SquareIntersection SquaresR SquareSubset SquareSubsetEqual SquareSuperset SquareSupersetEqual SquareUnion SquareWave StabilityMargins StabilityMarginsStyle StableDistribution Stack StackBegin StackComplete StackInhibit StandardDeviation StandardDeviationFilter StandardForm Standardize StandbyDistribution Star StarGraph StartAsynchronousTask StartingStepSize StartOfLine StartOfString StartScheduledTask StartupSound StateDimensions StateFeedbackGains StateOutputEstimator StateResponse StateSpaceModel StateSpaceRealization StateSpaceTransform StationaryDistribution StationaryWaveletPacketTransform StationaryWaveletTransform StatusArea StatusCentrality StepMonitor StieltjesGamma StirlingS1 StirlingS2 StopAsynchronousTask StopScheduledTask StrataVariables StratonovichProcess StreamColorFunction StreamColorFunctionScaling StreamDensityPlot StreamPlot StreamPoints StreamPosition Streams StreamScale StreamStyle String StringBreak StringByteCount StringCases StringCount StringDrop StringExpression StringForm StringFormat StringFreeQ StringInsert StringJoin StringLength StringMatchQ StringPosition StringQ StringReplace StringReplaceList StringReplacePart StringReverse StringRotateLeft StringRotateRight StringSkeleton StringSplit StringTake StringToStream StringTrim StripBoxes StripOnInput StripWrapperBoxes StrokeForm StructuralImportance StructuredArray StructuredSelection StruveH StruveL Stub StudentTDistribution Style StyleBox StyleBoxAutoDelete StyleBoxOptions StyleData StyleDefinitions StyleForm StyleKeyMapping StyleMenuListing StyleNameDialogSettings StyleNames StylePrint StyleSheetPath Subfactorial Subgraph SubMinus SubPlus SubresultantPolynomialRemainders ' +
+	      'SubresultantPolynomials Subresultants Subscript SubscriptBox SubscriptBoxOptions Subscripted Subset SubsetEqual Subsets SubStar Subsuperscript SubsuperscriptBox SubsuperscriptBoxOptions Subtract SubtractFrom SubValues Succeeds SucceedsEqual SucceedsSlantEqual SucceedsTilde SuchThat Sum SumConvergence Sunday SuperDagger SuperMinus SuperPlus Superscript SuperscriptBox SuperscriptBoxOptions Superset SupersetEqual SuperStar Surd SurdForm SurfaceColor SurfaceGraphics SurvivalDistribution SurvivalFunction SurvivalModel SurvivalModelFit SuspendPacket SuzukiDistribution SuzukiGroupSuz SwatchLegend Switch Symbol SymbolName SymletWavelet Symmetric SymmetricGroup SymmetricMatrixQ SymmetricPolynomial SymmetricReduction Symmetrize SymmetrizedArray SymmetrizedArrayRules SymmetrizedDependentComponents SymmetrizedIndependentComponents SymmetrizedReplacePart SynchronousInitialization SynchronousUpdating Syntax SyntaxForm SyntaxInformation SyntaxLength SyntaxPacket SyntaxQ SystemDialogInput SystemException SystemHelpPath SystemInformation SystemInformationData SystemOpen SystemOptions SystemsModelDelay SystemsModelDelayApproximate SystemsModelDelete SystemsModelDimensions SystemsModelExtract SystemsModelFeedbackConnect SystemsModelLabels SystemsModelOrder SystemsModelParallelConnect SystemsModelSeriesConnect SystemsModelStateFeedbackConnect SystemStub ' +
+	      'Tab TabFilling Table TableAlignments TableDepth TableDirections TableForm TableHeadings TableSpacing TableView TableViewBox TabSpacings TabView TabViewBox TabViewBoxOptions TagBox TagBoxNote TagBoxOptions TaggingRules TagSet TagSetDelayed TagStyle TagUnset Take TakeWhile Tally Tan Tanh TargetFunctions TargetUnits TautologyQ TelegraphProcess TemplateBox TemplateBoxOptions TemplateSlotSequence TemporalData Temporary TemporaryVariable TensorContract TensorDimensions TensorExpand TensorProduct TensorQ TensorRank TensorReduce TensorSymmetry TensorTranspose TensorWedge Tetrahedron TetrahedronBox TetrahedronBoxOptions TeXForm TeXSave Text Text3DBox Text3DBoxOptions TextAlignment TextBand TextBoundingBox TextBox TextCell TextClipboardType TextData TextForm TextJustification TextLine TextPacket TextParagraph TextRecognize TextRendering TextStyle Texture TextureCoordinateFunction TextureCoordinateScaling Therefore ThermometerGauge Thick Thickness Thin Thinning ThisLink ThompsonGroupTh Thread ThreeJSymbol Threshold Through Throw Thumbnail Thursday Ticks TicksStyle Tilde TildeEqual TildeFullEqual TildeTilde TimeConstrained TimeConstraint Times TimesBy TimeSeriesForecast TimeSeriesInvertibility TimeUsed TimeValue TimeZone Timing Tiny TitleGrouping TitsGroupT ToBoxes ToCharacterCode ToColor ToContinuousTimeModel ToDate ToDiscreteTimeModel ToeplitzMatrix ToExpression ToFileName Together Toggle ToggleFalse Toggler TogglerBar TogglerBox TogglerBoxOptions ToHeldExpression ToInvertibleTimeSeries TokenWords Tolerance ToLowerCase ToNumberField TooBig Tooltip TooltipBox TooltipBoxOptions TooltipDelay TooltipStyle Top TopHatTransform TopologicalSort ToRadicals ToRules ToString Total TotalHeight TotalVariationFilter TotalWidth TouchscreenAutoZoom TouchscreenControlPlacement ToUpperCase Tr Trace TraceAbove TraceAction TraceBackward TraceDepth TraceDialog TraceForward TraceInternal TraceLevel TraceOff TraceOn TraceOriginal TracePrint TraceScan TrackedSymbols TradingChart TraditionalForm TraditionalFunctionNotation TraditionalNotation TraditionalOrder TransferFunctionCancel TransferFunctionExpand TransferFunctionFactor TransferFunctionModel TransferFunctionPoles TransferFunctionTransform TransferFunctionZeros TransformationFunction TransformationFunctions TransformationMatrix TransformedDistribution TransformedField Translate TranslationTransform TransparentColor Transpose TreeForm TreeGraph TreeGraphQ TreePlot TrendStyle TriangleWave TriangularDistribution Trig TrigExpand TrigFactor TrigFactorList Trigger TrigReduce TrigToExp TrimmedMean True TrueQ TruncatedDistribution TsallisQExponentialDistribution TsallisQGaussianDistribution TTest Tube TubeBezierCurveBox TubeBezierCurveBoxOptions TubeBox TubeBSplineCurveBox TubeBSplineCurveBoxOptions Tuesday TukeyLambdaDistribution TukeyWindow Tuples TuranGraph TuringMachine ' +
+	      'Transparent ' +
+	      'UnateQ Uncompress Undefined UnderBar Underflow Underlined Underoverscript UnderoverscriptBox UnderoverscriptBoxOptions Underscript UnderscriptBox UnderscriptBoxOptions UndirectedEdge UndirectedGraph UndirectedGraphQ UndocumentedTestFEParserPacket UndocumentedTestGetSelectionPacket Unequal Unevaluated UniformDistribution UniformGraphDistribution UniformSumDistribution Uninstall Union UnionPlus Unique UnitBox UnitConvert UnitDimensions Unitize UnitRootTest UnitSimplify UnitStep UnitTriangle UnitVector Unprotect UnsameQ UnsavedVariables Unset UnsetShared UntrackedVariables Up UpArrow UpArrowBar UpArrowDownArrow Update UpdateDynamicObjects UpdateDynamicObjectsSynchronous UpdateInterval UpDownArrow UpEquilibrium UpperCaseQ UpperLeftArrow UpperRightArrow UpperTriangularize Upsample UpSet UpSetDelayed UpTee UpTeeArrow UpValues URL URLFetch URLFetchAsynchronous URLSave URLSaveAsynchronous UseGraphicsRange Using UsingFrontEnd ' +
+	      'V2Get ValidationLength Value ValueBox ValueBoxOptions ValueForm ValueQ ValuesData Variables Variance VarianceEquivalenceTest VarianceEstimatorFunction VarianceGammaDistribution VarianceTest VectorAngle VectorColorFunction VectorColorFunctionScaling VectorDensityPlot VectorGlyphData VectorPlot VectorPlot3D VectorPoints VectorQ Vectors VectorScale VectorStyle Vee Verbatim Verbose VerboseConvertToPostScriptPacket VerifyConvergence VerifySolutions VerifyTestAssumptions Version VersionNumber VertexAdd VertexCapacity VertexColors VertexComponent VertexConnectivity VertexCoordinateRules VertexCoordinates VertexCorrelationSimilarity VertexCosineSimilarity VertexCount VertexCoverQ VertexDataCoordinates VertexDegree VertexDelete VertexDiceSimilarity VertexEccentricity VertexInComponent VertexInDegree VertexIndex VertexJaccardSimilarity VertexLabeling VertexLabels VertexLabelStyle VertexList VertexNormals VertexOutComponent VertexOutDegree VertexQ VertexRenderingFunction VertexReplace VertexShape VertexShapeFunction VertexSize VertexStyle VertexTextureCoordinates VertexWeight Vertical VerticalBar VerticalForm VerticalGauge VerticalSeparator VerticalSlider VerticalTilde ViewAngle ViewCenter ViewMatrix ViewPoint ViewPointSelectorSettings ViewPort ViewRange ViewVector ViewVertical VirtualGroupData Visible VisibleCell VoigtDistribution VonMisesDistribution ' +
+	      'WaitAll WaitAsynchronousTask WaitNext WaitUntil WakebyDistribution WalleniusHypergeometricDistribution WaringYuleDistribution WatershedComponents WatsonUSquareTest WattsStrogatzGraphDistribution WaveletBestBasis WaveletFilterCoefficients WaveletImagePlot WaveletListPlot WaveletMapIndexed WaveletMatrixPlot WaveletPhi WaveletPsi WaveletScale WaveletScalogram WaveletThreshold WeaklyConnectedComponents WeaklyConnectedGraphQ WeakStationarity WeatherData WeberE Wedge Wednesday WeibullDistribution WeierstrassHalfPeriods WeierstrassInvariants WeierstrassP WeierstrassPPrime WeierstrassSigma WeierstrassZeta WeightedAdjacencyGraph WeightedAdjacencyMatrix WeightedData WeightedGraphQ Weights WelchWindow WheelGraph WhenEvent Which While White Whitespace WhitespaceCharacter WhittakerM WhittakerW WienerFilter WienerProcess WignerD WignerSemicircleDistribution WilksW WilksWTest WindowClickSelect WindowElements WindowFloating WindowFrame WindowFrameElements WindowMargins WindowMovable WindowOpacity WindowSelected WindowSize WindowStatusArea WindowTitle WindowToolbars WindowWidth With WolframAlpha WolframAlphaDate WolframAlphaQuantity WolframAlphaResult Word WordBoundary WordCharacter WordData WordSearch WordSeparators WorkingPrecision Write WriteString Wronskian ' +
+	      'XMLElement XMLObject Xnor Xor ' +
+	      'Yellow YuleDissimilarity ' +
+	      'ZernikeR ZeroSymmetric ZeroTest ZeroWidthTimes Zeta ZetaZero ZipfDistribution ZTest ZTransform ' +
+	      '$Aborted $ActivationGroupID $ActivationKey $ActivationUserRegistered $AddOnsDirectory $AssertFunction $Assumptions $AsynchronousTask $BaseDirectory $BatchInput $BatchOutput $BoxForms $ByteOrdering $Canceled $CharacterEncoding $CharacterEncodings $CommandLine $CompilationTarget $ConditionHold $ConfiguredKernels $Context $ContextPath $ControlActiveSetting $CreationDate $CurrentLink $DateStringFormat $DefaultFont $DefaultFrontEnd $DefaultImagingDevice $DefaultPath $Display $DisplayFunction $DistributedContexts $DynamicEvaluation $Echo $Epilog $ExportFormats $Failed $FinancialDataSource $FormatType $FrontEnd $FrontEndSession $GeoLocation $HistoryLength $HomeDirectory $HTTPCookies $IgnoreEOF $ImagingDevices $ImportFormats $InitialDirectory $Input $InputFileName $InputStreamMethods $Inspector $InstallationDate $InstallationDirectory $InterfaceEnvironment $IterationLimit $KernelCount $KernelID $Language $LaunchDirectory $LibraryPath $LicenseExpirationDate $LicenseID $LicenseProcesses $LicenseServer $LicenseSubprocesses $LicenseType $Line $Linked $LinkSupported $LoadedFiles $MachineAddresses $MachineDomain $MachineDomains $MachineEpsilon $MachineID $MachineName $MachinePrecision $MachineType $MaxExtraPrecision $MaxLicenseProcesses $MaxLicenseSubprocesses $MaxMachineNumber $MaxNumber $MaxPiecewiseCases $MaxPrecision $MaxRootDegree $MessageGroups $MessageList $MessagePrePrint $Messages $MinMachineNumber $MinNumber $MinorReleaseNumber $MinPrecision $ModuleNumber $NetworkLicense $NewMessage $NewSymbol $Notebooks $NumberMarks $Off $OperatingSystem $Output $OutputForms $OutputSizeLimit $OutputStreamMethods $Packages $ParentLink $ParentProcessID $PasswordFile $PatchLevelID $Path $PathnameSeparator $PerformanceGoal $PipeSupported $Post $Pre $PreferencesDirectory $PrePrint $PreRead $PrintForms $PrintLiteral $ProcessID $ProcessorCount $ProcessorType $ProductInformation $ProgramName $RandomState $RecursionLimit $ReleaseNumber $RootDirectory $ScheduledTask $ScriptCommandLine $SessionID $SetParentLink $SharedFunctions $SharedVariables $SoundDisplay $SoundDisplayFunction $SuppressInputFormHeads $SynchronousEvaluation $SyntaxHandler $System $SystemCharacterEncoding $SystemID $SystemWordLength $TemporaryDirectory $TemporaryPrefix $TextStyle $TimedOut $TimeUnit $TimeZone $TopDirectory $TraceOff $TraceOn $TracePattern $TracePostAction $TracePreAction $Urgent $UserAddOnsDirectory $UserBaseDirectory $UserDocumentsDirectory $UserName $Version $VersionNumber',
+	    contains: [
+	      {
+	        className: "comment",
+	        begin: /\(\*/, end: /\*\)/
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'list',
+	        begin: /\{/, end: /\}/,
+	        illegal: /:/
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var COMMON_CONTAINS = [
+	    hljs.C_NUMBER_MODE,
+	    {
+	      className: 'string',
+	      begin: '\'', end: '\'',
+	      contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}]
+	    }
+	  ];
+	  var TRANSPOSE = {
+	    relevance: 0,
+	    contains: [
+	      {
+	        className: 'operator', begin: /'['\.]*/
+	      }
+	    ]
+	  };
+
+	  return {
+	    keywords: {
+	      keyword:
+	        'break case catch classdef continue else elseif end enumerated events for function ' +
+	        'global if methods otherwise parfor persistent properties return spmd switch try while',
+	      built_in:
+	        'sin sind sinh asin asind asinh cos cosd cosh acos acosd acosh tan tand tanh atan ' +
+	        'atand atan2 atanh sec secd sech asec asecd asech csc cscd csch acsc acscd acsch cot ' +
+	        'cotd coth acot acotd acoth hypot exp expm1 log log1p log10 log2 pow2 realpow reallog ' +
+	        'realsqrt sqrt nthroot nextpow2 abs angle complex conj imag real unwrap isreal ' +
+	        'cplxpair fix floor ceil round mod rem sign airy besselj bessely besselh besseli ' +
+	        'besselk beta betainc betaln ellipj ellipke erf erfc erfcx erfinv expint gamma ' +
+	        'gammainc gammaln psi legendre cross dot factor isprime primes gcd lcm rat rats perms ' +
+	        'nchoosek factorial cart2sph cart2pol pol2cart sph2cart hsv2rgb rgb2hsv zeros ones ' +
+	        'eye repmat rand randn linspace logspace freqspace meshgrid accumarray size length ' +
+	        'ndims numel disp isempty isequal isequalwithequalnans cat reshape diag blkdiag tril ' +
+	        'triu fliplr flipud flipdim rot90 find sub2ind ind2sub bsxfun ndgrid permute ipermute ' +
+	        'shiftdim circshift squeeze isscalar isvector ans eps realmax realmin pi i inf nan ' +
+	        'isnan isinf isfinite j why compan gallery hadamard hankel hilb invhilb magic pascal ' +
+	        'rosser toeplitz vander wilkinson'
+	    },
+	    illegal: '(//|"|#|/\\*|\\s+/\\w+)',
+	    contains: [
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: '$',
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE,
+	          {
+	              className: 'params',
+	              begin: '\\(', end: '\\)'
+	          },
+	          {
+	              className: 'params',
+	              begin: '\\[', end: '\\]'
+	          }
+	        ]
+	      },
+	      {
+	        begin: /[a-zA-Z_][a-zA-Z_0-9]*'['\.]*/,
+	        returnBegin: true,
+	        relevance: 0,
+	        contains: [
+	          {begin: /[a-zA-Z_][a-zA-Z_0-9]*/, relevance: 0},
+	          TRANSPOSE.contains[0]
+	        ]
+	      },
+	      {
+	        className: 'matrix',
+	        begin: '\\[', end: '\\]',
+	        contains: COMMON_CONTAINS,
+	        relevance: 0,
+	        starts: TRANSPOSE
+	      },
+	      {
+	        className: 'cell',
+	        begin: '\\{', end: /}/,
+	        contains: COMMON_CONTAINS,
+	        relevance: 0,
+	        starts: TRANSPOSE
+	      },
+	      {
+	        // transpose operators at the end of a function call
+	        begin: /\)/,
+	        relevance: 0,
+	        starts: TRANSPOSE
+	      },
+	      hljs.COMMENT('^\\s*\\%\\{\\s*$', '^\\s*\\%\\}\\s*$'),
+	      hljs.COMMENT('\\%', '$')
+	    ].concat(COMMON_CONTAINS)
+	  };
+	};
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords:
+	      'int float string vector matrix if else switch case default while do for in break ' +
+	      'continue global proc return about abs addAttr addAttributeEditorNodeHelp addDynamic ' +
+	      'addNewShelfTab addPP addPanelCategory addPrefixToName advanceToNextDrivenKey ' +
+	      'affectedNet affects aimConstraint air alias aliasAttr align alignCtx alignCurve ' +
+	      'alignSurface allViewFit ambientLight angle angleBetween animCone animCurveEditor ' +
+	      'animDisplay animView annotate appendStringArray applicationName applyAttrPreset ' +
+	      'applyTake arcLenDimContext arcLengthDimension arclen arrayMapper art3dPaintCtx ' +
+	      'artAttrCtx artAttrPaintVertexCtx artAttrSkinPaintCtx artAttrTool artBuildPaintMenu ' +
+	      'artFluidAttrCtx artPuttyCtx artSelectCtx artSetPaintCtx artUserPaintCtx assignCommand ' +
+	      'assignInputDevice assignViewportFactories attachCurve attachDeviceAttr attachSurface ' +
+	      'attrColorSliderGrp attrCompatibility attrControlGrp attrEnumOptionMenu ' +
+	      'attrEnumOptionMenuGrp attrFieldGrp attrFieldSliderGrp attrNavigationControlGrp ' +
+	      'attrPresetEditWin attributeExists attributeInfo attributeMenu attributeQuery ' +
+	      'autoKeyframe autoPlace bakeClip bakeFluidShading bakePartialHistory bakeResults ' +
+	      'bakeSimulation basename basenameEx batchRender bessel bevel bevelPlus binMembership ' +
+	      'bindSkin blend2 blendShape blendShapeEditor blendShapePanel blendTwoAttr blindDataType ' +
+	      'boneLattice boundary boxDollyCtx boxZoomCtx bufferCurve buildBookmarkMenu ' +
+	      'buildKeyframeMenu button buttonManip CBG cacheFile cacheFileCombine cacheFileMerge ' +
+	      'cacheFileTrack camera cameraView canCreateManip canvas capitalizeString catch ' +
+	      'catchQuiet ceil changeSubdivComponentDisplayLevel changeSubdivRegion channelBox ' +
+	      'character characterMap characterOutlineEditor characterize chdir checkBox checkBoxGrp ' +
+	      'checkDefaultRenderGlobals choice circle circularFillet clamp clear clearCache clip ' +
+	      'clipEditor clipEditorCurrentTimeCtx clipSchedule clipSchedulerOutliner clipTrimBefore ' +
+	      'closeCurve closeSurface cluster cmdFileOutput cmdScrollFieldExecuter ' +
+	      'cmdScrollFieldReporter cmdShell coarsenSubdivSelectionList collision color ' +
+	      'colorAtPoint colorEditor colorIndex colorIndexSliderGrp colorSliderButtonGrp ' +
+	      'colorSliderGrp columnLayout commandEcho commandLine commandPort compactHairSystem ' +
+	      'componentEditor compositingInterop computePolysetVolume condition cone confirmDialog ' +
+	      'connectAttr connectControl connectDynamic connectJoint connectionInfo constrain ' +
+	      'constrainValue constructionHistory container containsMultibyte contextInfo control ' +
+	      'convertFromOldLayers convertIffToPsd convertLightmap convertSolidTx convertTessellation ' +
+	      'convertUnit copyArray copyFlexor copyKey copySkinWeights cos cpButton cpCache ' +
+	      'cpClothSet cpCollision cpConstraint cpConvClothToMesh cpForces cpGetSolverAttr cpPanel ' +
+	      'cpProperty cpRigidCollisionFilter cpSeam cpSetEdit cpSetSolverAttr cpSolver ' +
+	      'cpSolverTypes cpTool cpUpdateClothUVs createDisplayLayer createDrawCtx createEditor ' +
+	      'createLayeredPsdFile createMotionField createNewShelf createNode createRenderLayer ' +
+	      'createSubdivRegion cross crossProduct ctxAbort ctxCompletion ctxEditMode ctxTraverse ' +
+	      'currentCtx currentTime currentTimeCtx currentUnit curve curveAddPtCtx ' +
+	      'curveCVCtx curveEPCtx curveEditorCtx curveIntersect curveMoveEPCtx curveOnSurface ' +
+	      'curveSketchCtx cutKey cycleCheck cylinder dagPose date defaultLightListCheckBox ' +
+	      'defaultNavigation defineDataServer defineVirtualDevice deformer deg_to_rad delete ' +
+	      'deleteAttr deleteShadingGroupsAndMaterials deleteShelfTab deleteUI deleteUnusedBrushes ' +
+	      'delrandstr detachCurve detachDeviceAttr detachSurface deviceEditor devicePanel dgInfo ' +
+	      'dgdirty dgeval dgtimer dimWhen directKeyCtx directionalLight dirmap dirname disable ' +
+	      'disconnectAttr disconnectJoint diskCache displacementToPoly displayAffected ' +
+	      'displayColor displayCull displayLevelOfDetail displayPref displayRGBColor ' +
+	      'displaySmoothness displayStats displayString displaySurface distanceDimContext ' +
+	      'distanceDimension doBlur dolly dollyCtx dopeSheetEditor dot dotProduct ' +
+	      'doubleProfileBirailSurface drag dragAttrContext draggerContext dropoffLocator ' +
+	      'duplicate duplicateCurve duplicateSurface dynCache dynControl dynExport dynExpression ' +
+	      'dynGlobals dynPaintEditor dynParticleCtx dynPref dynRelEdPanel dynRelEditor ' +
+	      'dynamicLoad editAttrLimits editDisplayLayerGlobals editDisplayLayerMembers ' +
+	      'editRenderLayerAdjustment editRenderLayerGlobals editRenderLayerMembers editor ' +
+	      'editorTemplate effector emit emitter enableDevice encodeString endString endsWith env ' +
+	      'equivalent equivalentTol erf error eval evalDeferred evalEcho event ' +
+	      'exactWorldBoundingBox exclusiveLightCheckBox exec executeForEachObject exists exp ' +
+	      'expression expressionEditorListen extendCurve extendSurface extrude fcheck fclose feof ' +
+	      'fflush fgetline fgetword file fileBrowserDialog fileDialog fileExtension fileInfo ' +
+	      'filetest filletCurve filter filterCurve filterExpand filterStudioImport ' +
+	      'findAllIntersections findAnimCurves findKeyframe findMenuItem findRelatedSkinCluster ' +
+	      'finder firstParentOf fitBspline flexor floatEq floatField floatFieldGrp floatScrollBar ' +
+	      'floatSlider floatSlider2 floatSliderButtonGrp floatSliderGrp floor flow fluidCacheInfo ' +
+	      'fluidEmitter fluidVoxelInfo flushUndo fmod fontDialog fopen formLayout format fprint ' +
+	      'frameLayout fread freeFormFillet frewind fromNativePath fwrite gamma gauss ' +
+	      'geometryConstraint getApplicationVersionAsFloat getAttr getClassification ' +
+	      'getDefaultBrush getFileList getFluidAttr getInputDeviceRange getMayaPanelTypes ' +
+	      'getModifiers getPanel getParticleAttr getPluginResource getenv getpid glRender ' +
+	      'glRenderEditor globalStitch gmatch goal gotoBindPose grabColor gradientControl ' +
+	      'gradientControlNoAttr graphDollyCtx graphSelectContext graphTrackCtx gravity grid ' +
+	      'gridLayout group groupObjectsByName HfAddAttractorToAS HfAssignAS HfBuildEqualMap ' +
+	      'HfBuildFurFiles HfBuildFurImages HfCancelAFR HfConnectASToHF HfCreateAttractor ' +
+	      'HfDeleteAS HfEditAS HfPerformCreateAS HfRemoveAttractorFromAS HfSelectAttached ' +
+	      'HfSelectAttractors HfUnAssignAS hardenPointCurve hardware hardwareRenderPanel ' +
+	      'headsUpDisplay headsUpMessage help helpLine hermite hide hilite hitTest hotBox hotkey ' +
+	      'hotkeyCheck hsv_to_rgb hudButton hudSlider hudSliderButton hwReflectionMap hwRender ' +
+	      'hwRenderLoad hyperGraph hyperPanel hyperShade hypot iconTextButton iconTextCheckBox ' +
+	      'iconTextRadioButton iconTextRadioCollection iconTextScrollList iconTextStaticLabel ' +
+	      'ikHandle ikHandleCtx ikHandleDisplayScale ikSolver ikSplineHandleCtx ikSystem ' +
+	      'ikSystemInfo ikfkDisplayMethod illustratorCurves image imfPlugins inheritTransform ' +
+	      'insertJoint insertJointCtx insertKeyCtx insertKnotCurve insertKnotSurface instance ' +
+	      'instanceable instancer intField intFieldGrp intScrollBar intSlider intSliderGrp ' +
+	      'interToUI internalVar intersect iprEngine isAnimCurve isConnected isDirty isParentOf ' +
+	      'isSameObject isTrue isValidObjectName isValidString isValidUiName isolateSelect ' +
+	      'itemFilter itemFilterAttr itemFilterRender itemFilterType joint jointCluster jointCtx ' +
+	      'jointDisplayScale jointLattice keyTangent keyframe keyframeOutliner ' +
+	      'keyframeRegionCurrentTimeCtx keyframeRegionDirectKeyCtx keyframeRegionDollyCtx ' +
+	      'keyframeRegionInsertKeyCtx keyframeRegionMoveKeyCtx keyframeRegionScaleKeyCtx ' +
+	      'keyframeRegionSelectKeyCtx keyframeRegionSetKeyCtx keyframeRegionTrackCtx ' +
+	      'keyframeStats lassoContext lattice latticeDeformKeyCtx launch launchImageEditor ' +
+	      'layerButton layeredShaderPort layeredTexturePort layout layoutDialog lightList ' +
+	      'lightListEditor lightListPanel lightlink lineIntersection linearPrecision linstep ' +
+	      'listAnimatable listAttr listCameras listConnections listDeviceAttachments listHistory ' +
+	      'listInputDeviceAxes listInputDeviceButtons listInputDevices listMenuAnnotation ' +
+	      'listNodeTypes listPanelCategories listRelatives listSets listTransforms ' +
+	      'listUnselected listerEditor loadFluid loadNewShelf loadPlugin ' +
+	      'loadPluginLanguageResources loadPrefObjects localizedPanelLabel lockNode loft log ' +
+	      'longNameOf lookThru ls lsThroughFilter lsType lsUI Mayatomr mag makeIdentity makeLive ' +
+	      'makePaintable makeRoll makeSingleSurface makeTubeOn makebot manipMoveContext ' +
+	      'manipMoveLimitsCtx manipOptions manipRotateContext manipRotateLimitsCtx ' +
+	      'manipScaleContext manipScaleLimitsCtx marker match max memory menu menuBarLayout ' +
+	      'menuEditor menuItem menuItemToShelf menuSet menuSetPref messageLine min minimizeApp ' +
+	      'mirrorJoint modelCurrentTimeCtx modelEditor modelPanel mouse movIn movOut move ' +
+	      'moveIKtoFK moveKeyCtx moveVertexAlongDirection multiProfileBirailSurface mute ' +
+	      'nParticle nameCommand nameField namespace namespaceInfo newPanelItems newton nodeCast ' +
+	      'nodeIconButton nodeOutliner nodePreset nodeType noise nonLinear normalConstraint ' +
+	      'normalize nurbsBoolean nurbsCopyUVSet nurbsCube nurbsEditUV nurbsPlane nurbsSelect ' +
+	      'nurbsSquare nurbsToPoly nurbsToPolygonsPref nurbsToSubdiv nurbsToSubdivPref ' +
+	      'nurbsUVSet nurbsViewDirectionVector objExists objectCenter objectLayer objectType ' +
+	      'objectTypeUI obsoleteProc oceanNurbsPreviewPlane offsetCurve offsetCurveOnSurface ' +
+	      'offsetSurface openGLExtension openMayaPref optionMenu optionMenuGrp optionVar orbit ' +
+	      'orbitCtx orientConstraint outlinerEditor outlinerPanel overrideModifier ' +
+	      'paintEffectsDisplay pairBlend palettePort paneLayout panel panelConfiguration ' +
+	      'panelHistory paramDimContext paramDimension paramLocator parent parentConstraint ' +
+	      'particle particleExists particleInstancer particleRenderInfo partition pasteKey ' +
+	      'pathAnimation pause pclose percent performanceOptions pfxstrokes pickWalk picture ' +
+	      'pixelMove planarSrf plane play playbackOptions playblast plugAttr plugNode pluginInfo ' +
+	      'pluginResourceUtil pointConstraint pointCurveConstraint pointLight pointMatrixMult ' +
+	      'pointOnCurve pointOnSurface pointPosition poleVectorConstraint polyAppend ' +
+	      'polyAppendFacetCtx polyAppendVertex polyAutoProjection polyAverageNormal ' +
+	      'polyAverageVertex polyBevel polyBlendColor polyBlindData polyBoolOp polyBridgeEdge ' +
+	      'polyCacheMonitor polyCheck polyChipOff polyClipboard polyCloseBorder polyCollapseEdge ' +
+	      'polyCollapseFacet polyColorBlindData polyColorDel polyColorPerVertex polyColorSet ' +
+	      'polyCompare polyCone polyCopyUV polyCrease polyCreaseCtx polyCreateFacet ' +
+	      'polyCreateFacetCtx polyCube polyCut polyCutCtx polyCylinder polyCylindricalProjection ' +
+	      'polyDelEdge polyDelFacet polyDelVertex polyDuplicateAndConnect polyDuplicateEdge ' +
+	      'polyEditUV polyEditUVShell polyEvaluate polyExtrudeEdge polyExtrudeFacet ' +
+	      'polyExtrudeVertex polyFlipEdge polyFlipUV polyForceUV polyGeoSampler polyHelix ' +
+	      'polyInfo polyInstallAction polyLayoutUV polyListComponentConversion polyMapCut ' +
+	      'polyMapDel polyMapSew polyMapSewMove polyMergeEdge polyMergeEdgeCtx polyMergeFacet ' +
+	      'polyMergeFacetCtx polyMergeUV polyMergeVertex polyMirrorFace polyMoveEdge ' +
+	      'polyMoveFacet polyMoveFacetUV polyMoveUV polyMoveVertex polyNormal polyNormalPerVertex ' +
+	      'polyNormalizeUV polyOptUvs polyOptions polyOutput polyPipe polyPlanarProjection ' +
+	      'polyPlane polyPlatonicSolid polyPoke polyPrimitive polyPrism polyProjection ' +
+	      'polyPyramid polyQuad polyQueryBlindData polyReduce polySelect polySelectConstraint ' +
+	      'polySelectConstraintMonitor polySelectCtx polySelectEditCtx polySeparate ' +
+	      'polySetToFaceNormal polySewEdge polyShortestPathCtx polySmooth polySoftEdge ' +
+	      'polySphere polySphericalProjection polySplit polySplitCtx polySplitEdge polySplitRing ' +
+	      'polySplitVertex polyStraightenUVBorder polySubdivideEdge polySubdivideFacet ' +
+	      'polyToSubdiv polyTorus polyTransfer polyTriangulate polyUVSet polyUnite polyWedgeFace ' +
+	      'popen popupMenu pose pow preloadRefEd print progressBar progressWindow projFileViewer ' +
+	      'projectCurve projectTangent projectionContext projectionManip promptDialog propModCtx ' +
+	      'propMove psdChannelOutliner psdEditTextureFile psdExport psdTextureFile putenv pwd ' +
+	      'python querySubdiv quit rad_to_deg radial radioButton radioButtonGrp radioCollection ' +
+	      'radioMenuItemCollection rampColorPort rand randomizeFollicles randstate rangeControl ' +
+	      'readTake rebuildCurve rebuildSurface recordAttr recordDevice redo reference ' +
+	      'referenceEdit referenceQuery refineSubdivSelectionList refresh refreshAE ' +
+	      'registerPluginResource rehash reloadImage removeJoint removeMultiInstance ' +
+	      'removePanelCategory rename renameAttr renameSelectionList renameUI render ' +
+	      'renderGlobalsNode renderInfo renderLayerButton renderLayerParent ' +
+	      'renderLayerPostProcess renderLayerUnparent renderManip renderPartition ' +
+	      'renderQualityNode renderSettings renderThumbnailUpdate renderWindowEditor ' +
+	      'renderWindowSelectContext renderer reorder reorderDeformers requires reroot ' +
+	      'resampleFluid resetAE resetPfxToPolyCamera resetTool resolutionNode retarget ' +
+	      'reverseCurve reverseSurface revolve rgb_to_hsv rigidBody rigidSolver roll rollCtx ' +
+	      'rootOf rot rotate rotationInterpolation roundConstantRadius rowColumnLayout rowLayout ' +
+	      'runTimeCommand runup sampleImage saveAllShelves saveAttrPreset saveFluid saveImage ' +
+	      'saveInitialState saveMenu savePrefObjects savePrefs saveShelf saveToolSettings scale ' +
+	      'scaleBrushBrightness scaleComponents scaleConstraint scaleKey scaleKeyCtx sceneEditor ' +
+	      'sceneUIReplacement scmh scriptCtx scriptEditorInfo scriptJob scriptNode scriptTable ' +
+	      'scriptToShelf scriptedPanel scriptedPanelType scrollField scrollLayout sculpt ' +
+	      'searchPathArray seed selLoadSettings select selectContext selectCurveCV selectKey ' +
+	      'selectKeyCtx selectKeyframeRegionCtx selectMode selectPref selectPriority selectType ' +
+	      'selectedNodes selectionConnection separator setAttr setAttrEnumResource ' +
+	      'setAttrMapping setAttrNiceNameResource setConstraintRestPosition ' +
+	      'setDefaultShadingGroup setDrivenKeyframe setDynamic setEditCtx setEditor setFluidAttr ' +
+	      'setFocus setInfinity setInputDeviceMapping setKeyCtx setKeyPath setKeyframe ' +
+	      'setKeyframeBlendshapeTargetWts setMenuMode setNodeNiceNameResource setNodeTypeFlag ' +
+	      'setParent setParticleAttr setPfxToPolyCamera setPluginResource setProject ' +
+	      'setStampDensity setStartupMessage setState setToolTo setUITemplate setXformManip sets ' +
+	      'shadingConnection shadingGeometryRelCtx shadingLightRelCtx shadingNetworkCompare ' +
+	      'shadingNode shapeCompare shelfButton shelfLayout shelfTabLayout shellField ' +
+	      'shortNameOf showHelp showHidden showManipCtx showSelectionInTitle ' +
+	      'showShadingGroupAttrEditor showWindow sign simplify sin singleProfileBirailSurface ' +
+	      'size sizeBytes skinCluster skinPercent smoothCurve smoothTangentSurface smoothstep ' +
+	      'snap2to2 snapKey snapMode snapTogetherCtx snapshot soft softMod softModCtx sort sound ' +
+	      'soundControl source spaceLocator sphere sphrand spotLight spotLightPreviewPort ' +
+	      'spreadSheetEditor spring sqrt squareSurface srtContext stackTrace startString ' +
+	      'startsWith stitchAndExplodeShell stitchSurface stitchSurfacePoints strcmp ' +
+	      'stringArrayCatenate stringArrayContains stringArrayCount stringArrayInsertAtIndex ' +
+	      'stringArrayIntersector stringArrayRemove stringArrayRemoveAtIndex ' +
+	      'stringArrayRemoveDuplicates stringArrayRemoveExact stringArrayToString ' +
+	      'stringToStringArray strip stripPrefixFromName stroke subdAutoProjection ' +
+	      'subdCleanTopology subdCollapse subdDuplicateAndConnect subdEditUV ' +
+	      'subdListComponentConversion subdMapCut subdMapSewMove subdMatchTopology subdMirror ' +
+	      'subdToBlind subdToPoly subdTransferUVsToCache subdiv subdivCrease ' +
+	      'subdivDisplaySmoothness substitute substituteAllString substituteGeometry substring ' +
+	      'surface surfaceSampler surfaceShaderList swatchDisplayPort switchTable symbolButton ' +
+	      'symbolCheckBox sysFile system tabLayout tan tangentConstraint texLatticeDeformContext ' +
+	      'texManipContext texMoveContext texMoveUVShellContext texRotateContext texScaleContext ' +
+	      'texSelectContext texSelectShortestPathCtx texSmudgeUVContext texWinToolCtx text ' +
+	      'textCurves textField textFieldButtonGrp textFieldGrp textManip textScrollList ' +
+	      'textToShelf textureDisplacePlane textureHairColor texturePlacementContext ' +
+	      'textureWindow threadCount threePointArcCtx timeControl timePort timerX toNativePath ' +
+	      'toggle toggleAxis toggleWindowVisibility tokenize tokenizeList tolerance tolower ' +
+	      'toolButton toolCollection toolDropped toolHasOptions toolPropertyWindow torus toupper ' +
+	      'trace track trackCtx transferAttributes transformCompare transformLimits translator ' +
+	      'trim trunc truncateFluidCache truncateHairCache tumble tumbleCtx turbulence ' +
+	      'twoPointArcCtx uiRes uiTemplate unassignInputDevice undo undoInfo ungroup uniform unit ' +
+	      'unloadPlugin untangleUV untitledFileName untrim upAxis updateAE userCtx uvLink ' +
+	      'uvSnapshot validateShelfName vectorize view2dToolCtx viewCamera viewClipPlane ' +
+	      'viewFit viewHeadOn viewLookAt viewManip viewPlace viewSet visor volumeAxis vortex ' +
+	      'waitCursor warning webBrowser webBrowserPrefs whatIs window windowPref wire ' +
+	      'wireContext workspace wrinkle wrinkleContext writeTake xbmLangPathList xform',
+	    illegal: '</',
+	    contains: [
+	      hljs.C_NUMBER_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'string',
+	        begin: '`', end: '`',
+	        contains: [hljs.BACKSLASH_ESCAPE]
+	      },
+	      {
+	        className: 'variable',
+	        variants: [
+	          {begin: '\\$\\d'},
+	          {begin: '[\\$\\%\\@](\\^\\w\\b|#\\w+|[^\\s\\w{]|{\\w+}|\\w+)'},
+	          {begin: '\\*(\\^\\w\\b|#\\w+|[^\\s\\w{]|{\\w+}|\\w+)', relevance: 0}
+	        ]
+	      },
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var KEYWORDS = {
+	    keyword:
+	      'module use_module import_module include_module end_module initialise ' +
+	      'mutable initialize finalize finalise interface implementation pred ' +
+	      'mode func type inst solver any_pred any_func is semidet det nondet ' +
+	      'multi erroneous failure cc_nondet cc_multi typeclass instance where ' +
+	      'pragma promise external trace atomic or_else require_complete_switch ' +
+	      'require_det require_semidet require_multi require_nondet ' +
+	      'require_cc_multi require_cc_nondet require_erroneous require_failure',
+	    pragma:
+	      'inline no_inline type_spec source_file fact_table obsolete memo ' +
+	      'loop_check minimal_model terminates does_not_terminate ' +
+	      'check_termination promise_equivalent_clauses',
+	    preprocessor:
+	      'foreign_proc foreign_decl foreign_code foreign_type ' +
+	      'foreign_import_module foreign_export_enum foreign_export ' +
+	      'foreign_enum may_call_mercury will_not_call_mercury thread_safe ' +
+	      'not_thread_safe maybe_thread_safe promise_pure promise_semipure ' +
+	      'tabled_for_io local untrailed trailed attach_to_io_state ' +
+	      'can_pass_as_mercury_type stable will_not_throw_exception ' +
+	      'may_modify_trail will_not_modify_trail may_duplicate ' +
+	      'may_not_duplicate affects_liveness does_not_affect_liveness ' +
+	      'doesnt_affect_liveness no_sharing unknown_sharing sharing',
+	    built_in:
+	      'some all not if then else true fail false try catch catch_any ' +
+	      'semidet_true semidet_false semidet_fail impure_true impure semipure'
+	  };
+
+	  var TODO = {
+	    className: 'label',
+	    begin: 'XXX', end: '$', endsWithParent: true,
+	    relevance: 0
+	  };
+	  var COMMENT = hljs.inherit(hljs.C_LINE_COMMENT_MODE, {begin: '%'});
+	  var CCOMMENT = hljs.inherit(hljs.C_BLOCK_COMMENT_MODE, {relevance: 0});
+	  COMMENT.contains.push(TODO);
+	  CCOMMENT.contains.push(TODO);
+
+	  var NUMCODE = {
+	    className: 'number',
+	    begin: "0'.\\|0[box][0-9a-fA-F]*"
+	  };
+
+	  var ATOM = hljs.inherit(hljs.APOS_STRING_MODE, {relevance: 0});
+	  var STRING = hljs.inherit(hljs.QUOTE_STRING_MODE, {relevance: 0});
+	  var STRING_FMT = {
+	    className: 'constant',
+	    begin: '\\\\[abfnrtv]\\|\\\\x[0-9a-fA-F]*\\\\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]',
+	    relevance: 0
+	  };
+	  STRING.contains.push(STRING_FMT);
+
+	  var IMPLICATION = {
+	    className: 'built_in',
+	    variants: [
+	      {begin: '<=>'},
+	      {begin: '<=', relevance: 0},
+	      {begin: '=>', relevance: 0},
+	      {begin: '/\\\\'},
+	      {begin: '\\\\/'}
+	    ]
+	  };
+
+	  var HEAD_BODY_CONJUNCTION = {
+	    className: 'built_in',
+	    variants: [
+	      {begin: ':-\\|-->'},
+	      {begin: '=', relevance: 0}
+	    ]
+	  };
+
+	  return {
+	    aliases: ['m', 'moo'],
+	    keywords: KEYWORDS,
+	    contains: [
+	      IMPLICATION,
+	      HEAD_BODY_CONJUNCTION,
+	      COMMENT,
+	      CCOMMENT,
+	      NUMCODE,
+	      hljs.NUMBER_MODE,
+	      ATOM,
+	      STRING,
+	      {begin: /:-/} // relevance booster
+	    ]
+	  };
+	};
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords:
+	      'environ vocabularies notations constructors definitions ' +
+	      'registrations theorems schemes requirements begin end definition ' +
+	      'registration cluster existence pred func defpred deffunc theorem ' +
+	      'proof let take assume then thus hence ex for st holds consider ' +
+	      'reconsider such that and in provided of as from be being by means ' +
+	      'equals implies iff redefine define now not or attr is mode ' +
+	      'suppose per cases set thesis contradiction scheme reserve struct ' +
+	      'correctness compatibility coherence symmetry assymetry ' +
+	      'reflexivity irreflexivity connectedness uniqueness commutativity ' +
+	      'idempotence involutiveness projectivity',
+	    contains: [
+	      hljs.COMMENT('::', '$')
+	    ]
+	  };
+	};
+
+/***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var NUMBER = {
+	    className: 'number', relevance: 0,
+	    variants: [
+	      {
+	        begin: '[$][a-fA-F0-9]+'
+	      },
+	      hljs.NUMBER_MODE
+	    ]
+	  };
+
+	  return {
+	    case_insensitive: true,
+	    keywords: {
+	      keyword: 'public private property continue exit extern new try catch ' +
+	        'eachin not abstract final select case default const local global field ' +
+	        'end if then else elseif endif while wend repeat until forever for to step next return module inline throw',
+
+	      built_in: 'DebugLog DebugStop Error Print ACos ACosr ASin ASinr ATan ATan2 ATan2r ATanr Abs Abs Ceil ' +
+	        'Clamp Clamp Cos Cosr Exp Floor Log Max Max Min Min Pow Sgn Sgn Sin Sinr Sqrt Tan Tanr Seed PI HALFPI TWOPI',
+
+	      literal: 'true false null and or shl shr mod'
+	    },
+	    contains: [
+	      hljs.COMMENT('#rem', '#end'),
+	      hljs.COMMENT(
+	        "'",
+	        '$',
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      {
+	        className: 'function',
+	        beginKeywords: 'function method', end: '[(=:]|$',
+	        illegal: /\n/,
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface', end: '$',
+	        contains: [
+	          {
+	            beginKeywords: 'extends implements'
+	          },
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      {
+	        className: 'variable',
+	        begin: '\\b(self|super)\\b'
+	      },
+	      {
+	        className: 'preprocessor',
+	        beginKeywords: 'import',
+	        end: '$'
+	      },
+	      {
+	        className: 'preprocessor',
+	        begin: '\\s*#', end: '$',
+	        keywords: 'if else elseif endif end then'
+	      },
+	      {
+	        className: 'pi',
+	        begin: '^\\s*strict\\b'
+	      },
+	      {
+	        beginKeywords: 'alias', end: '=',
+	        contains: [hljs.UNDERSCORE_TITLE_MODE]
+	      },
+	      hljs.QUOTE_STRING_MODE,
+	      NUMBER
+	    ]
+	  }
+	};
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var VAR = {
+	    className: 'variable',
+	    variants: [
+	      {begin: /\$\d+/},
+	      {begin: /\$\{/, end: /}/},
+	      {begin: '[\\$\\@]' + hljs.UNDERSCORE_IDENT_RE}
+	    ]
+	  };
+	  var DEFAULT = {
+	    endsWithParent: true,
+	    lexemes: '[a-z/_]+',
+	    keywords: {
+	      built_in:
+	        'on off yes no true false none blocked debug info notice warn error crit ' +
+	        'select break last permanent redirect kqueue rtsig epoll poll /dev/poll'
+	    },
+	    relevance: 0,
+	    illegal: '=>',
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        className: 'string',
+	        contains: [hljs.BACKSLASH_ESCAPE, VAR],
+	        variants: [
+	          {begin: /"/, end: /"/},
+	          {begin: /'/, end: /'/}
+	        ]
+	      },
+	      {
+	        className: 'url',
+	        begin: '([a-z]+):/', end: '\\s', endsWithParent: true, excludeEnd: true,
+	        contains: [VAR]
+	      },
+	      {
+	        className: 'regexp',
+	        contains: [hljs.BACKSLASH_ESCAPE, VAR],
+	        variants: [
+	          {begin: "\\s\\^", end: "\\s|{|;", returnEnd: true},
+	          // regexp locations (~, ~*)
+	          {begin: "~\\*?\\s+", end: "\\s|{|;", returnEnd: true},
+	          // *.example.com
+	          {begin: "\\*(\\.[a-z\\-]+)+"},
+	          // sub.example.*
+	          {begin: "([a-z\\-]+\\.)+\\*"}
+	        ]
+	      },
+	      // IP
+	      {
+	        className: 'number',
+	        begin: '\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(:\\d{1,5})?\\b'
+	      },
+	      // units
+	      {
+	        className: 'number',
+	        begin: '\\b\\d+[kKmMgGdshdwy]*\\b',
+	        relevance: 0
+	      },
+	      VAR
+	    ]
+	  };
+
+	  return {
+	    aliases: ['nginxconf'],
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        begin: hljs.UNDERSCORE_IDENT_RE + '\\s', end: ';|{', returnBegin: true,
+	        contains: [
+	          {
+	            className: 'title',
+	            begin: hljs.UNDERSCORE_IDENT_RE,
+	            starts: DEFAULT
+	          }
+	        ],
+	        relevance: 0
+	      }
+	    ],
+	    illegal: '[^\\s\\}]'
+	  };
+	};
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['nim'],
+	    keywords: {
+	      keyword: 'addr and as asm bind block break|0 case|0 cast const|0 continue|0 converter discard distinct|10 div do elif else|0 end|0 enum|0 except export finally for from generic if|0 import|0 in include|0 interface is isnot|10 iterator|10 let|0 macro method|10 mixin mod nil not notin|10 object|0 of or out proc|10 ptr raise ref|10 return shl shr static template|10 try|0 tuple type|0 using|0 var|0 when while|0 with without xor yield',
+	      literal: 'shared guarded stdin stdout stderr result|10 true false'
+	    },
+	    contains: [ {
+	        className: 'decorator', // Actually pragma
+	        begin: /{\./,
+	        end: /\.}/,
+	        relevance: 10
+	      }, {
+	        className: 'string',
+	        begin: /[a-zA-Z]\w*"/,
+	        end: /"/,
+	        contains: [{begin: /""/}]
+	      }, {
+	        className: 'string',
+	        begin: /([a-zA-Z]\w*)?"""/,
+	        end: /"""/
+	      },
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'type',
+	        begin: /\b[A-Z]\w+\b/,
+	        relevance: 0
+	      }, {
+	        className: 'type',
+	        begin: /\b(int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|float|float32|float64|bool|char|string|cstring|pointer|expr|stmt|void|auto|any|range|array|openarray|varargs|seq|set|clong|culong|cchar|cschar|cshort|cint|csize|clonglong|cfloat|cdouble|clongdouble|cuchar|cushort|cuint|culonglong|cstringarray|semistatic)\b/
+	      }, {
+	        className: 'number',
+	        begin: /\b(0[xX][0-9a-fA-F][_0-9a-fA-F]*)('?[iIuU](8|16|32|64))?/,
+	        relevance: 0
+	      }, {
+	        className: 'number',
+	        begin: /\b(0o[0-7][_0-7]*)('?[iIuUfF](8|16|32|64))?/,
+	        relevance: 0
+	      }, {
+	        className: 'number',
+	        begin: /\b(0(b|B)[01][_01]*)('?[iIuUfF](8|16|32|64))?/,
+	        relevance: 0
+	      }, {
+	        className: 'number',
+	        begin: /\b(\d[_\d]*)('?[iIuUfF](8|16|32|64))?/,
+	        relevance: 0
+	      },
+	      hljs.HASH_COMMENT_MODE
+	    ]
+	  }
+	};
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var NIX_KEYWORDS = {
+	    keyword: 'rec with let in inherit assert if else then',
+	    constant: 'true false or and null',
+	    built_in:
+	      'import abort baseNameOf dirOf isNull builtins map removeAttrs throw toString derivation'
+	  };
+	  var ANTIQUOTE = {
+	    className: 'subst',
+	    begin: /\$\{/,
+	    end: /}/,
+	    keywords: NIX_KEYWORDS
+	  };
+	  var ATTRS = {
+	    className: 'variable',
+	    // TODO: we have to figure out a way how to exclude \s*=
+	    begin: /[a-zA-Z0-9-_]+(\s*=)/
+	  };
+	  var SINGLE_QUOTE = {
+	    className: 'string',
+	    begin: "''",
+	    end: "''",
+	    contains: [
+	      ANTIQUOTE
+	    ]
+	  };
+	  var DOUBLE_QUOTE = {
+	    className: 'string',
+	    begin: '"',
+	    end: '"',
+	    contains: [
+	      ANTIQUOTE
+	    ]
+	  };
+	  var EXPRESSIONS = [
+	    hljs.NUMBER_MODE,
+	    hljs.HASH_COMMENT_MODE,
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    SINGLE_QUOTE,
+	    DOUBLE_QUOTE,
+	    ATTRS
+	  ];
+	  ANTIQUOTE.contains = EXPRESSIONS;
+	  return {
+	    aliases: ["nixos"],
+	    keywords: NIX_KEYWORDS,
+	    contains: EXPRESSIONS
+	  };
+	};
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var CONSTANTS = {
+	    className: 'symbol',
+	    begin: '\\$(ADMINTOOLS|APPDATA|CDBURN_AREA|CMDLINE|COMMONFILES32|COMMONFILES64|COMMONFILES|COOKIES|DESKTOP|DOCUMENTS|EXEDIR|EXEFILE|EXEPATH|FAVORITES|FONTS|HISTORY|HWNDPARENT|INSTDIR|INTERNET_CACHE|LANGUAGE|LOCALAPPDATA|MUSIC|NETHOOD|OUTDIR|PICTURES|PLUGINSDIR|PRINTHOOD|PROFILE|PROGRAMFILES32|PROGRAMFILES64|PROGRAMFILES|QUICKLAUNCH|RECENT|RESOURCES_LOCALIZED|RESOURCES|SENDTO|SMPROGRAMS|SMSTARTUP|STARTMENU|SYSDIR|TEMP|TEMPLATES|VIDEOS|WINDIR)'
+	  };
+
+	  var DEFINES = {
+	    // ${defines}
+	    className: 'constant',
+	    begin: '\\$+{[a-zA-Z0-9_]+}'
+	  };
+
+	  var VARIABLES = {
+	    // $variables
+	    className: 'variable',
+	    begin: '\\$+[a-zA-Z0-9_]+',
+	    illegal: '\\(\\){}'
+	  };
+
+	  var LANGUAGES = {
+	    // $(language_strings)
+	    className: 'constant',
+	    begin: '\\$+\\([a-zA-Z0-9_]+\\)'
+	  };
+
+	  var PARAMETERS = {
+	    // command parameters
+	    className: 'params',
+	    begin: '(ARCHIVE|FILE_ATTRIBUTE_ARCHIVE|FILE_ATTRIBUTE_NORMAL|FILE_ATTRIBUTE_OFFLINE|FILE_ATTRIBUTE_READONLY|FILE_ATTRIBUTE_SYSTEM|FILE_ATTRIBUTE_TEMPORARY|HKCR|HKCU|HKDD|HKEY_CLASSES_ROOT|HKEY_CURRENT_CONFIG|HKEY_CURRENT_USER|HKEY_DYN_DATA|HKEY_LOCAL_MACHINE|HKEY_PERFORMANCE_DATA|HKEY_USERS|HKLM|HKPD|HKU|IDABORT|IDCANCEL|IDIGNORE|IDNO|IDOK|IDRETRY|IDYES|MB_ABORTRETRYIGNORE|MB_DEFBUTTON1|MB_DEFBUTTON2|MB_DEFBUTTON3|MB_DEFBUTTON4|MB_ICONEXCLAMATION|MB_ICONINFORMATION|MB_ICONQUESTION|MB_ICONSTOP|MB_OK|MB_OKCANCEL|MB_RETRYCANCEL|MB_RIGHT|MB_RTLREADING|MB_SETFOREGROUND|MB_TOPMOST|MB_USERICON|MB_YESNO|NORMAL|OFFLINE|READONLY|SHCTX|SHELL_CONTEXT|SYSTEM|TEMPORARY)'
+	  };
+
+	  var COMPILER ={
+	    // !compiler_flags
+	    className: 'constant',
+	    begin: '\\!(addincludedir|addplugindir|appendfile|cd|define|delfile|echo|else|endif|error|execute|finalize|getdllversionsystem|ifdef|ifmacrodef|ifmacrondef|ifndef|if|include|insertmacro|macroend|macro|makensis|packhdr|searchparse|searchreplace|tempfile|undef|verbose|warning)'
+	  };
+
+	  return {
+	    case_insensitive: false,
+	    keywords: {
+	      keyword:
+	      'Abort AddBrandingImage AddSize AllowRootDirInstall AllowSkipFiles AutoCloseWindow BGFont BGGradient BrandingText BringToFront Call CallInstDLL Caption ChangeUI CheckBitmap ClearErrors CompletedText ComponentText CopyFiles CRCCheck CreateDirectory CreateFont CreateShortCut Delete DeleteINISec DeleteINIStr DeleteRegKey DeleteRegValue DetailPrint DetailsButtonText DirText DirVar DirVerify EnableWindow EnumRegKey EnumRegValue Exch Exec ExecShell ExecWait ExpandEnvStrings File FileBufSize FileClose FileErrorText FileOpen FileRead FileReadByte FileReadUTF16LE FileReadWord FileSeek FileWrite FileWriteByte FileWriteUTF16LE FileWriteWord FindClose FindFirst FindNext FindWindow FlushINI FunctionEnd GetCurInstType GetCurrentAddress GetDlgItem GetDLLVersion GetDLLVersionLocal GetErrorLevel GetFileTime GetFileTimeLocal GetFullPathName GetFunctionAddress GetInstDirError GetLabelAddress GetTempFileName Goto HideWindow Icon IfAbort IfErrors IfFileExists IfRebootFlag IfSilent InitPluginsDir InstallButtonText InstallColors InstallDir InstallDirRegKey InstProgressFlags InstType InstTypeGetText InstTypeSetText IntCmp IntCmpU IntFmt IntOp IsWindow LangString LicenseBkColor LicenseData LicenseForceSelection LicenseLangString LicenseText LoadLanguageFile LockWindow LogSet LogText ManifestDPIAware ManifestSupportedOS MessageBox MiscButtonText Name Nop OutFile Page PageCallbacks PageExEnd Pop Push Quit ReadEnvStr ReadINIStr ReadRegDWORD ReadRegStr Reboot RegDLL Rename RequestExecutionLevel ReserveFile Return RMDir SearchPath SectionEnd SectionGetFlags SectionGetInstTypes SectionGetSize SectionGetText SectionGroupEnd SectionIn SectionSetFlags SectionSetInstTypes SectionSetSize SectionSetText SendMessage SetAutoClose SetBrandingImage SetCompress SetCompressor SetCompressorDictSize SetCtlColors SetCurInstType SetDatablockOptimize SetDateSave SetDetailsPrint SetDetailsView SetErrorLevel SetErrors SetFileAttributes SetFont SetOutPath SetOverwrite SetPluginUnload SetRebootFlag SetRegView SetShellVarContext SetSilent ShowInstDetails ShowUninstDetails ShowWindow SilentInstall SilentUnInstall Sleep SpaceTexts StrCmp StrCmpS StrCpy StrLen SubCaption SubSectionEnd Unicode UninstallButtonText UninstallCaption UninstallIcon UninstallSubCaption UninstallText UninstPage UnRegDLL Var VIAddVersionKey VIFileVersion VIProductVersion WindowIcon WriteINIStr WriteRegBin WriteRegDWORD WriteRegExpandStr WriteRegStr WriteUninstaller XPStyle',
+	      literal:
+	      'admin all auto both colored current false force hide highest lastused leave listonly none normal notset off on open print show silent silentlog smooth textonly true user '
+	    },
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'string',
+	        begin: '"', end: '"',
+	        illegal: '\\n',
+	        contains: [
+	          { // $\n, $\r, $\t, $$
+	            className: 'symbol',
+	            begin: '\\$(\\\\(n|r|t)|\\$)'
+	          },
+	          CONSTANTS,
+	          DEFINES,
+	          VARIABLES,
+	          LANGUAGES
+	        ]
+	      },
+	      hljs.COMMENT(
+	        ';',
+	        '$',
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      {
+	        className: 'function',
+	        beginKeywords: 'Function PageEx Section SectionGroup SubSection', end: '$'
+	      },
+	      COMPILER,
+	      DEFINES,
+	      VARIABLES,
+	      LANGUAGES,
+	      PARAMETERS,
+	      hljs.NUMBER_MODE,
+	      { // plug::ins
+	        className: 'literal',
+	        begin: hljs.IDENT_RE + '::' + hljs.IDENT_RE
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var API_CLASS = {
+	    className: 'built_in',
+	    begin: '(AV|CA|CF|CG|CI|MK|MP|NS|UI)\\w+',
+	  };
+	  var OBJC_KEYWORDS = {
+	    keyword:
+	      'int float while char export sizeof typedef const struct for union ' +
+	      'unsigned long volatile static bool mutable if do return goto void ' +
+	      'enum else break extern asm case short default double register explicit ' +
+	      'signed typename this switch continue wchar_t inline readonly assign ' +
+	      'readwrite self @synchronized id typeof ' +
+	      'nonatomic super unichar IBOutlet IBAction strong weak copy ' +
+	      'in out inout bycopy byref oneway __strong __weak __block __autoreleasing ' +
+	      '@private @protected @public @try @property @end @throw @catch @finally ' +
+	      '@autoreleasepool @synthesize @dynamic @selector @optional @required',
+	    literal:
+	      'false true FALSE TRUE nil YES NO NULL',
+	    built_in:
+	      'BOOL dispatch_once_t dispatch_queue_t dispatch_sync dispatch_async dispatch_once'
+	  };
+	  var LEXEMES = /[a-zA-Z@][a-zA-Z0-9_]*/;
+	  var CLASS_KEYWORDS = '@interface @class @protocol @implementation';
+	  return {
+	    aliases: ['mm', 'objc', 'obj-c'],
+	    keywords: OBJC_KEYWORDS,
+	    lexemes: LEXEMES,
+	    illegal: '</',
+	    contains: [
+	      API_CLASS,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.C_NUMBER_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'string',
+	        variants: [
+	          {
+	            begin: '@"', end: '"',
+	            illegal: '\\n',
+	            contains: [hljs.BACKSLASH_ESCAPE]
+	          },
+	          {
+	            begin: '\'', end: '[^\\\\]\'',
+	            illegal: '[^\\\\][^\']'
+	          }
+	        ]
+	      },
+	      {
+	        className: 'preprocessor',
+	        begin: '#',
+	        end: '$',
+	        contains: [
+	          {
+	            className: 'title',
+	            variants: [
+	              { begin: '\"', end: '\"' },
+	              { begin: '<', end: '>' }
+	            ]
+	          }
+	        ]
+	      },
+	      {
+	        className: 'class',
+	        begin: '(' + CLASS_KEYWORDS.split(' ').join('|') + ')\\b', end: '({|$)', excludeEnd: true,
+	        keywords: CLASS_KEYWORDS, lexemes: LEXEMES,
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      {
+	        className: 'variable',
+	        begin: '\\.'+hljs.UNDERSCORE_IDENT_RE,
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  /* missing support for heredoc-like string (OCaml 4.0.2+) */
+	  return {
+	    aliases: ['ml'],
+	    keywords: {
+	      keyword:
+	        'and as assert asr begin class constraint do done downto else end ' +
+	        'exception external for fun function functor if in include ' +
+	        'inherit! inherit initializer land lazy let lor lsl lsr lxor match method!|10 method ' +
+	        'mod module mutable new object of open! open or private rec sig struct ' +
+	        'then to try type val! val virtual when while with ' +
+	        /* camlp4 */
+	        'parser value',
+	      built_in:
+	        /* built-in types */
+	        'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 string unit ' +
+	        /* (some) types in Pervasives */
+	        'in_channel out_channel ref',
+	      literal:
+	        'true false'
+	    },
+	    illegal: /\/\/|>>/,
+	    lexemes: '[a-z_]\\w*!?',
+	    contains: [
+	      {
+	        className: 'literal',
+	        begin: '\\[(\\|\\|)?\\]|\\(\\)'
+	      },
+	      hljs.COMMENT(
+	        '\\(\\*',
+	        '\\*\\)',
+	        {
+	          contains: ['self']
+	        }
+	      ),
+	      { /* type variable */
+	        className: 'symbol',
+	        begin: '\'[A-Za-z_](?!\')[\\w\']*'
+	        /* the grammar is ambiguous on how 'a'b should be interpreted but not the compiler */
+	      },
+	      { /* polymorphic variant */
+	        className: 'tag',
+	        begin: '`[A-Z][\\w\']*'
+	      },
+	      { /* module or constructor */
+	        className: 'type',
+	        begin: '\\b[A-Z][\\w\']*',
+	        relevance: 0
+	      },
+	      { /* don't color identifiers, but safely catch all identifiers with '*/
+	        begin: '[a-z_]\\w*\'[\\w\']*'
+	      },
+	      hljs.inherit(hljs.APOS_STRING_MODE, {className: 'char', relevance: 0}),
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+	      {
+	        className: 'number',
+	        begin:
+	          '\\b(0[xX][a-fA-F0-9_]+[Lln]?|' +
+	          '0[oO][0-7_]+[Lln]?|' +
+	          '0[bB][01_]+[Lln]?|' +
+	          '[0-9][0-9_]*([Lln]|(\\.[0-9_]*)?([eE][-+]?[0-9_]+)?)?)',
+	        relevance: 0
+	      },
+	      {
+	        begin: /[-=]>/ // relevance booster
+	      }
+	    ]
+	  }
+	};
+
+/***/ },
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+		var SPECIAL_VARS = {
+			className: 'keyword',
+			begin: '\\$(f[asn]|t|vp[rtd]|children)'
+		},
+		LITERALS = {
+			className: 'literal',
+			begin: 'false|true|PI|undef'
+		},
+		NUMBERS = {
+			className: 'number',
+			begin: '\\b\\d+(\\.\\d+)?(e-?\\d+)?', //adds 1e5, 1e-10
+			relevance: 0
+		},
+		STRING = hljs.inherit(hljs.QUOTE_STRING_MODE,{illegal: null}),
+		PREPRO = {
+			className: 'preprocessor',
+			keywords: 'include use',
+			begin: 'include|use <',
+			end: '>'
+		},
+		PARAMS = {
+			className: 'params',
+			begin: '\\(', end: '\\)',
+			contains: ['self', NUMBERS, STRING, SPECIAL_VARS, LITERALS]
+		},
+		MODIFIERS = {
+			className: 'built_in',
+			begin: '[*!#%]',
+			relevance: 0
+		},
+		FUNCTIONS = {
+			className: 'function',
+			beginKeywords: 'module function',
+			end: '\\=|\\{',
+			contains: [PARAMS, hljs.UNDERSCORE_TITLE_MODE]
+		};
+
+		return {
+			aliases: ['scad'],
+			keywords: {
+				keyword: 'function module include use for intersection_for if else \\%',
+				literal: 'false true PI undef',
+				built_in: 'circle square polygon text sphere cube cylinder polyhedron translate rotate scale resize mirror multmatrix color offset hull minkowski union difference intersection abs sign sin cos tan acos asin atan atan2 floor round ceil ln log pow sqrt exp rands min max concat lookup str chr search version version_num norm cross parent_module echo import import_dxf dxf_linear_extrude linear_extrude rotate_extrude surface projection render children dxf_cross dxf_dim let assign'
+			},
+			contains: [
+				hljs.C_LINE_COMMENT_MODE,
+				hljs.C_BLOCK_COMMENT_MODE,
+				NUMBERS,
+				PREPRO,
+				STRING,
+				PARAMS,
+				SPECIAL_VARS,
+				MODIFIERS,
+				FUNCTIONS
+			]
+		}
+	};
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var OXYGENE_KEYWORDS = 'abstract add and array as asc aspect assembly async begin break block by case class concat const copy constructor continue '+
+	    'create default delegate desc distinct div do downto dynamic each else empty end ensure enum equals event except exit extension external false '+
+	    'final finalize finalizer finally flags for forward from function future global group has if implementation implements implies in index inherited '+
+	    'inline interface into invariants is iterator join locked locking loop matching method mod module namespace nested new nil not notify nullable of '+
+	    'old on operator or order out override parallel params partial pinned private procedure property protected public queryable raise read readonly '+
+	    'record reintroduce remove repeat require result reverse sealed select self sequence set shl shr skip static step soft take then to true try tuple '+
+	    'type union unit unsafe until uses using var virtual raises volatile where while with write xor yield await mapped deprecated stdcall cdecl pascal '+
+	    'register safecall overload library platform reference packed strict published autoreleasepool selector strong weak unretained';
+	  var CURLY_COMMENT =  hljs.COMMENT(
+	    '{',
+	    '}',
+	    {
+	      relevance: 0
+	    }
+	  );
+	  var PAREN_COMMENT = hljs.COMMENT(
+	    '\\(\\*',
+	    '\\*\\)',
+	    {
+	      relevance: 10
+	    }
+	  );
+	  var STRING = {
+	    className: 'string',
+	    begin: '\'', end: '\'',
+	    contains: [{begin: '\'\''}]
+	  };
+	  var CHAR_STRING = {
+	    className: 'string', begin: '(#\\d+)+'
+	  };
+	  var FUNCTION = {
+	    className: 'function',
+	    beginKeywords: 'function constructor destructor procedure method', end: '[:;]',
+	    keywords: 'function constructor|10 destructor|10 procedure|10 method|10',
+	    contains: [
+	      hljs.TITLE_MODE,
+	      {
+	        className: 'params',
+	        begin: '\\(', end: '\\)',
+	        keywords: OXYGENE_KEYWORDS,
+	        contains: [STRING, CHAR_STRING]
+	      },
+	      CURLY_COMMENT, PAREN_COMMENT
+	    ]
+	  };
+	  return {
+	    case_insensitive: true,
+	    keywords: OXYGENE_KEYWORDS,
+	    illegal: '("|\\$[G-Zg-z]|\\/\\*|</|=>|->)',
+	    contains: [
+	      CURLY_COMMENT, PAREN_COMMENT, hljs.C_LINE_COMMENT_MODE,
+	      STRING, CHAR_STRING,
+	      hljs.NUMBER_MODE,
+	      FUNCTION,
+	      {
+	        className: 'class',
+	        begin: '=\\bclass\\b', end: 'end;',
+	        keywords: OXYGENE_KEYWORDS,
+	        contains: [
+	          STRING, CHAR_STRING,
+	          CURLY_COMMENT, PAREN_COMMENT, hljs.C_LINE_COMMENT_MODE,
+	          FUNCTION
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var CURLY_SUBCOMMENT = hljs.COMMENT(
+	    '{',
+	    '}',
+	    {
+	      contains: ['self']
+	    }
+	  );
+	  return {
+	    subLanguage: 'xml', relevance: 0,
+	    contains: [
+	      hljs.COMMENT('^#', '$'),
+	      hljs.COMMENT(
+	        '\\^rem{',
+	        '}',
+	        {
+	          relevance: 10,
+	          contains: [
+	            CURLY_SUBCOMMENT
+	          ]
+	        }
+	      ),
+	      {
+	        className: 'preprocessor',
+	        begin: '^@(?:BASE|USE|CLASS|OPTIONS)$',
+	        relevance: 10
+	      },
+	      {
+	        className: 'title',
+	        begin: '@[\\w\\-]+\\[[\\w^;\\-]*\\](?:\\[[\\w^;\\-]*\\])?(?:.*)$'
+	      },
+	      {
+	        className: 'variable',
+	        begin: '\\$\\{?[\\w\\-\\.\\:]+\\}?'
+	      },
+	      {
+	        className: 'keyword',
+	        begin: '\\^[\\w\\-\\.\\:]+'
+	      },
+	      {
+	        className: 'number',
+	        begin: '\\^#[0-9a-fA-F]+'
+	      },
+	      hljs.C_NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var PERL_KEYWORDS = 'getpwent getservent quotemeta msgrcv scalar kill dbmclose undef lc ' +
+	    'ma syswrite tr send umask sysopen shmwrite vec qx utime local oct semctl localtime ' +
+	    'readpipe do return format read sprintf dbmopen pop getpgrp not getpwnam rewinddir qq' +
+	    'fileno qw endprotoent wait sethostent bless s|0 opendir continue each sleep endgrent ' +
+	    'shutdown dump chomp connect getsockname die socketpair close flock exists index shmget' +
+	    'sub for endpwent redo lstat msgctl setpgrp abs exit select print ref gethostbyaddr ' +
+	    'unshift fcntl syscall goto getnetbyaddr join gmtime symlink semget splice x|0 ' +
+	    'getpeername recv log setsockopt cos last reverse gethostbyname getgrnam study formline ' +
+	    'endhostent times chop length gethostent getnetent pack getprotoent getservbyname rand ' +
+	    'mkdir pos chmod y|0 substr endnetent printf next open msgsnd readdir use unlink ' +
+	    'getsockopt getpriority rindex wantarray hex system getservbyport endservent int chr ' +
+	    'untie rmdir prototype tell listen fork shmread ucfirst setprotoent else sysseek link ' +
+	    'getgrgid shmctl waitpid unpack getnetbyname reset chdir grep split require caller ' +
+	    'lcfirst until warn while values shift telldir getpwuid my getprotobynumber delete and ' +
+	    'sort uc defined srand accept package seekdir getprotobyname semop our rename seek if q|0 ' +
+	    'chroot sysread setpwent no crypt getc chown sqrt write setnetent setpriority foreach ' +
+	    'tie sin msgget map stat getlogin unless elsif truncate exec keys glob tied closedir' +
+	    'ioctl socket readlink eval xor readline binmode setservent eof ord bind alarm pipe ' +
+	    'atan2 getgrent exp time push setgrent gt lt or ne m|0 break given say state when';
+	  var SUBST = {
+	    className: 'subst',
+	    begin: '[$@]\\{', end: '\\}',
+	    keywords: PERL_KEYWORDS
+	  };
+	  var METHOD = {
+	    begin: '->{', end: '}'
+	    // contains defined later
+	  };
+	  var VAR = {
+	    className: 'variable',
+	    variants: [
+	      {begin: /\$\d/},
+	      {begin: /[\$%@](\^\w\b|#\w+(::\w+)*|{\w+}|\w+(::\w*)*)/},
+	      {begin: /[\$%@][^\s\w{]/, relevance: 0}
+	    ]
+	  };
+	  var COMMENT = hljs.COMMENT(
+	    '^(__END__|__DATA__)',
+	    '\\n$',
+	    {
+	      relevance: 5
+	    }
+	  );
+	  var STRING_CONTAINS = [hljs.BACKSLASH_ESCAPE, SUBST, VAR];
+	  var PERL_DEFAULT_CONTAINS = [
+	    VAR,
+	    hljs.HASH_COMMENT_MODE,
+	    COMMENT,
+	    hljs.COMMENT(
+	      '^\\=\\w',
+	      '\\=cut',
+	      {
+	        endsWithParent: true
+	      }
+	    ),
+	    METHOD,
+	    {
+	      className: 'string',
+	      contains: STRING_CONTAINS,
+	      variants: [
+	        {
+	          begin: 'q[qwxr]?\\s*\\(', end: '\\)',
+	          relevance: 5
+	        },
+	        {
+	          begin: 'q[qwxr]?\\s*\\[', end: '\\]',
+	          relevance: 5
+	        },
+	        {
+	          begin: 'q[qwxr]?\\s*\\{', end: '\\}',
+	          relevance: 5
+	        },
+	        {
+	          begin: 'q[qwxr]?\\s*\\|', end: '\\|',
+	          relevance: 5
+	        },
+	        {
+	          begin: 'q[qwxr]?\\s*\\<', end: '\\>',
+	          relevance: 5
+	        },
+	        {
+	          begin: 'qw\\s+q', end: 'q',
+	          relevance: 5
+	        },
+	        {
+	          begin: '\'', end: '\'',
+	          contains: [hljs.BACKSLASH_ESCAPE]
+	        },
+	        {
+	          begin: '"', end: '"'
+	        },
+	        {
+	          begin: '`', end: '`',
+	          contains: [hljs.BACKSLASH_ESCAPE]
+	        },
+	        {
+	          begin: '{\\w+}',
+	          contains: [],
+	          relevance: 0
+	        },
+	        {
+	          begin: '\-?\\w+\\s*\\=\\>',
+	          contains: [],
+	          relevance: 0
+	        }
+	      ]
+	    },
+	    {
+	      className: 'number',
+	      begin: '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
+	      relevance: 0
+	    },
+	    { // regexp container
+	      begin: '(\\/\\/|' + hljs.RE_STARTERS_RE + '|\\b(split|return|print|reverse|grep)\\b)\\s*',
+	      keywords: 'split return print reverse grep',
+	      relevance: 0,
+	      contains: [
+	        hljs.HASH_COMMENT_MODE,
+	        COMMENT,
+	        {
+	          className: 'regexp',
+	          begin: '(s|tr|y)/(\\\\.|[^/])*/(\\\\.|[^/])*/[a-z]*',
+	          relevance: 10
+	        },
+	        {
+	          className: 'regexp',
+	          begin: '(m|qr)?/', end: '/[a-z]*',
+	          contains: [hljs.BACKSLASH_ESCAPE],
+	          relevance: 0 // allows empty "//" which is a common comment delimiter in other languages
+	        }
+	      ]
+	    },
+	    {
+	      className: 'sub',
+	      beginKeywords: 'sub', end: '(\\s*\\(.*?\\))?[;{]',
+	      relevance: 5
+	    },
+	    {
+	      className: 'operator',
+	      begin: '-\\w\\b',
+	      relevance: 0
+	    }
+	  ];
+	  SUBST.contains = PERL_DEFAULT_CONTAINS;
+	  METHOD.contains = PERL_DEFAULT_CONTAINS;
+
+	  return {
+	    aliases: ['pl'],
+	    keywords: PERL_KEYWORDS,
+	    contains: PERL_DEFAULT_CONTAINS
+	  };
+	};
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var MACRO = {
+	    className: 'variable',
+	    begin: /\$[\w\d#@][\w\d_]*/
+	  };
+	  var TABLE = {
+	    className: 'variable',
+	    begin: /</, end: />/
+	  };
+	  var QUOTE_STRING = {
+	    className: 'string',
+	    begin: /"/, end: /"/
+	  };
+
+	  return {
+	    aliases: ['pf.conf'],
+	    lexemes: /[a-z0-9_<>-]+/,
+	    keywords: {
+	      built_in: /* block match pass are "actions" in pf.conf(5), the rest are
+	                 * lexically similar top-level commands.
+	                 */
+	        'block match pass load anchor|5 antispoof|10 set table',
+	      keyword:
+	        'in out log quick on rdomain inet inet6 proto from port os to route' +
+	        'allow-opts divert-packet divert-reply divert-to flags group icmp-type' +
+	        'icmp6-type label once probability recieved-on rtable prio queue' +
+	        'tos tag tagged user keep fragment for os drop' +
+	        'af-to|10 binat-to|10 nat-to|10 rdr-to|10 bitmask least-stats random round-robin' +
+	        'source-hash static-port' +
+	        'dup-to reply-to route-to' +
+	        'parent bandwidth default min max qlimit' +
+	        'block-policy debug fingerprints hostid limit loginterface optimization' +
+	        'reassemble ruleset-optimization basic none profile skip state-defaults' +
+	        'state-policy timeout' +
+	        'const counters persist' +
+	        'no modulate synproxy state|5 floating if-bound no-sync pflow|10 sloppy' +
+	        'source-track global rule max-src-nodes max-src-states max-src-conn' +
+	        'max-src-conn-rate overload flush' +
+	        'scrub|5 max-mss min-ttl no-df|10 random-id',
+	      literal:
+	        'all any no-route self urpf-failed egress|5 unknown',
+	    },
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      hljs.NUMBER_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      MACRO,
+	      TABLE,
+	    ]
+	  };
+	};
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var VARIABLE = {
+	    className: 'variable', begin: '\\$+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*'
+	  };
+	  var PREPROCESSOR = {
+	    className: 'preprocessor', begin: /<\?(php)?|\?>/
+	  };
+	  var STRING = {
+	    className: 'string',
+	    contains: [hljs.BACKSLASH_ESCAPE, PREPROCESSOR],
+	    variants: [
+	      {
+	        begin: 'b"', end: '"'
+	      },
+	      {
+	        begin: 'b\'', end: '\''
+	      },
+	      hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null})
+	    ]
+	  };
+	  var NUMBER = {variants: [hljs.BINARY_NUMBER_MODE, hljs.C_NUMBER_MODE]};
+	  return {
+	    aliases: ['php3', 'php4', 'php5', 'php6'],
+	    case_insensitive: true,
+	    keywords:
+	      'and include_once list abstract global private echo interface as static endswitch ' +
+	      'array null if endwhile or const for endforeach self var while isset public ' +
+	      'protected exit foreach throw elseif include __FILE__ empty require_once do xor ' +
+	      'return parent clone use __CLASS__ __LINE__ else break print eval new ' +
+	      'catch __METHOD__ case exception default die require __FUNCTION__ ' +
+	      'enddeclare final try switch continue endfor endif declare unset true false ' +
+	      'trait goto instanceof insteadof __DIR__ __NAMESPACE__ ' +
+	      'yield finally',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.HASH_COMMENT_MODE,
+	      hljs.COMMENT(
+	        '/\\*',
+	        '\\*/',
+	        {
+	          contains: [
+	            {
+	              className: 'doctag',
+	              begin: '@[A-Za-z]+'
+	            },
+	            PREPROCESSOR
+	          ]
+	        }
+	      ),
+	      hljs.COMMENT(
+	        '__halt_compiler.+?;',
+	        false,
+	        {
+	          endsWithParent: true,
+	          keywords: '__halt_compiler',
+	          lexemes: hljs.UNDERSCORE_IDENT_RE
+	        }
+	      ),
+	      {
+	        className: 'string',
+	        begin: '<<<[\'"]?\\w+[\'"]?$', end: '^\\w+;',
+	        contains: [hljs.BACKSLASH_ESCAPE]
+	      },
+	      PREPROCESSOR,
+	      VARIABLE,
+	      {
+	        // swallow composed identifiers to avoid parsing them as keywords
+	        begin: /(::|->)+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: /[;{]/, excludeEnd: true,
+	        illegal: '\\$|\\[|%',
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE,
+	          {
+	            className: 'params',
+	            begin: '\\(', end: '\\)',
+	            contains: [
+	              'self',
+	              VARIABLE,
+	              hljs.C_BLOCK_COMMENT_MODE,
+	              STRING,
+	              NUMBER
+	            ]
+	          }
+	        ]
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface', end: '{', excludeEnd: true,
+	        illegal: /[:\(\$"]/,
+	        contains: [
+	          {beginKeywords: 'extends implements'},
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      {
+	        beginKeywords: 'namespace', end: ';',
+	        illegal: /[\.']/,
+	        contains: [hljs.UNDERSCORE_TITLE_MODE]
+	      },
+	      {
+	        beginKeywords: 'use', end: ';',
+	        contains: [hljs.UNDERSCORE_TITLE_MODE]
+	      },
+	      {
+	        begin: '=>' // No markup, just a relevance booster
+	      },
+	      STRING,
+	      NUMBER
+	    ]
+	  };
+	};
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var backtickEscape = {
+	    begin: '`[\\s\\S]',
+	    relevance: 0
+	  };
+	  var dollarEscape = {
+	    begin: '\\$\\$[\\s\\S]',
+	    relevance: 0
+	  };
+	  var VAR = {
+	    className: 'variable',
+	    variants: [
+	      {begin: /\$[\w\d][\w\d_:]*/}
+	    ]
+	  };
+	  var QUOTE_STRING = {
+	    className: 'string',
+	    begin: /"/, end: /"/,
+	    contains: [
+	      backtickEscape,
+	      VAR,
+	      {
+	        className: 'variable',
+	        begin: /\$[A-z]/, end: /[^A-z]/
+	      }
+	    ]
+	  };
+	  var APOS_STRING = {
+	    className: 'string',
+	    begin: /'/, end: /'/
+	  };
+
+	  return {
+	    aliases: ['ps'],
+	    lexemes: /-?[A-z\.\-]+/,
+	    case_insensitive: true,
+	    keywords: {
+	      keyword: 'if else foreach return function do while until elseif begin for trap data dynamicparam end break throw param continue finally in switch exit filter try process catch',
+	      literal: '$null $true $false',
+	      built_in: 'Add-Content Add-History Add-Member Add-PSSnapin Clear-Content Clear-Item Clear-Item Property Clear-Variable Compare-Object ConvertFrom-SecureString Convert-Path ConvertTo-Html ConvertTo-SecureString Copy-Item Copy-ItemProperty Export-Alias Export-Clixml Export-Console Export-Csv ForEach-Object Format-Custom Format-List Format-Table Format-Wide Get-Acl Get-Alias Get-AuthenticodeSignature Get-ChildItem Get-Command Get-Content Get-Credential Get-Culture Get-Date Get-EventLog Get-ExecutionPolicy Get-Help Get-History Get-Host Get-Item Get-ItemProperty Get-Location Get-Member Get-PfxCertificate Get-Process Get-PSDrive Get-PSProvider Get-PSSnapin Get-Service Get-TraceSource Get-UICulture Get-Unique Get-Variable Get-WmiObject Group-Object Import-Alias Import-Clixml Import-Csv Invoke-Expression Invoke-History Invoke-Item Join-Path Measure-Command Measure-Object Move-Item Move-ItemProperty New-Alias New-Item New-ItemProperty New-Object New-PSDrive New-Service New-TimeSpan New-Variable Out-Default Out-File Out-Host Out-Null Out-Printer Out-String Pop-Location Push-Location Read-Host Remove-Item Remove-ItemProperty Remove-PSDrive Remove-PSSnapin Remove-Variable Rename-Item Rename-ItemProperty Resolve-Path Restart-Service Resume-Service Select-Object Select-String Set-Acl Set-Alias Set-AuthenticodeSignature Set-Content Set-Date Set-ExecutionPolicy Set-Item Set-ItemProperty Set-Location Set-PSDebug Set-Service Set-TraceSource Set-Variable Sort-Object Split-Path Start-Service Start-Sleep Start-Transcript Stop-Process Stop-Service Stop-Transcript Suspend-Service Tee-Object Test-Path Trace-Command Update-FormatData Update-TypeData Where-Object Write-Debug Write-Error Write-Host Write-Output Write-Progress Write-Verbose Write-Warning',
+	      operator: '-ne -eq -lt -gt -ge -le -not -like -notlike -match -notmatch -contains -notcontains -in -notin -replace'
+	    },
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      hljs.NUMBER_MODE,
+	      QUOTE_STRING,
+	      APOS_STRING,
+	      VAR
+	    ]
+	  };
+	};
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: {
+	      keyword: 'BufferedReader PVector PFont PImage PGraphics HashMap boolean byte char color ' +
+	        'double float int long String Array FloatDict FloatList IntDict IntList JSONArray JSONObject ' +
+	        'Object StringDict StringList Table TableRow XML ' +
+	        // Java keywords
+	        'false synchronized int abstract float private char boolean static null if const ' +
+	        'for true while long throw strictfp finally protected import native final return void ' +
+	        'enum else break transient new catch instanceof byte super volatile case assert short ' +
+	        'package default double public try this switch continue throws protected public private',
+	      constant: 'P2D P3D HALF_PI PI QUARTER_PI TAU TWO_PI',
+	      variable: 'displayHeight displayWidth mouseY mouseX mousePressed pmouseX pmouseY key ' +
+	        'keyCode pixels focused frameCount frameRate height width',
+	      title: 'setup draw',
+	      built_in: 'size createGraphics beginDraw createShape loadShape PShape arc ellipse line point ' +
+	        'quad rect triangle bezier bezierDetail bezierPoint bezierTangent curve curveDetail curvePoint ' +
+	        'curveTangent curveTightness shape shapeMode beginContour beginShape bezierVertex curveVertex ' +
+	        'endContour endShape quadraticVertex vertex ellipseMode noSmooth rectMode smooth strokeCap ' +
+	        'strokeJoin strokeWeight mouseClicked mouseDragged mouseMoved mousePressed mouseReleased ' +
+	        'mouseWheel keyPressed keyPressedkeyReleased keyTyped print println save saveFrame day hour ' +
+	        'millis minute month second year background clear colorMode fill noFill noStroke stroke alpha ' +
+	        'blue brightness color green hue lerpColor red saturation modelX modelY modelZ screenX screenY ' +
+	        'screenZ ambient emissive shininess specular add createImage beginCamera camera endCamera frustum ' +
+	        'ortho perspective printCamera printProjection cursor frameRate noCursor exit loop noLoop popStyle ' +
+	        'pushStyle redraw binary boolean byte char float hex int str unbinary unhex join match matchAll nf ' +
+	        'nfc nfp nfs split splitTokens trim append arrayCopy concat expand reverse shorten sort splice subset ' +
+	        'box sphere sphereDetail createInput createReader loadBytes loadJSONArray loadJSONObject loadStrings ' +
+	        'loadTable loadXML open parseXML saveTable selectFolder selectInput beginRaw beginRecord createOutput ' +
+	        'createWriter endRaw endRecord PrintWritersaveBytes saveJSONArray saveJSONObject saveStream saveStrings ' +
+	        'saveXML selectOutput popMatrix printMatrix pushMatrix resetMatrix rotate rotateX rotateY rotateZ scale ' +
+	        'shearX shearY translate ambientLight directionalLight lightFalloff lights lightSpecular noLights normal ' +
+	        'pointLight spotLight image imageMode loadImage noTint requestImage tint texture textureMode textureWrap ' +
+	        'blend copy filter get loadPixels set updatePixels blendMode loadShader PShaderresetShader shader createFont ' +
+	        'loadFont text textFont textAlign textLeading textMode textSize textWidth textAscent textDescent abs ceil ' +
+	        'constrain dist exp floor lerp log mag map max min norm pow round sq sqrt acos asin atan atan2 cos degrees ' +
+	        'radians sin tan noise noiseDetail noiseSeed random randomGaussian randomSeed'
+	    },
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    contains: [
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'built_in',
+	        begin: '{', end: '}$',
+	        excludeBegin: true, excludeEnd: true,
+	        contains: [hljs.APOS_STRING_MODE, hljs.QUOTE_STRING_MODE],
+	        relevance: 0
+	      },
+	      {
+	        className: 'filename',
+	        begin: '[a-zA-Z_][\\da-zA-Z_]+\\.[\\da-zA-Z_]{1,3}', end: ':',
+	        excludeEnd: true
+	      },
+	      {
+	        className: 'header',
+	        begin: '(ncalls|tottime|cumtime)', end: '$',
+	        keywords: 'ncalls tottime|10 cumtime|10 filename',
+	        relevance: 10
+	      },
+	      {
+	        className: 'summary',
+	        begin: 'function calls', end: '$',
+	        contains: [hljs.C_NUMBER_MODE],
+	        relevance: 10
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'function',
+	        begin: '\\(', end: '\\)$',
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ],
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+
+	  var ATOM = {
+
+	    className: 'atom',
+	    begin: /[a-z][A-Za-z0-9_]*/,
+	    relevance: 0
+	  };
+
+	  var VAR = {
+
+	    className: 'name',
+	    variants: [
+	      {begin: /[A-Z][a-zA-Z0-9_]*/},
+	      {begin: /_[A-Za-z0-9_]*/},
+	    ],
+	    relevance: 0
+	  };
+
+	  var PARENTED = {
+
+	    begin: /\(/,
+	    end: /\)/,
+	    relevance: 0
+	  };
+
+	  var LIST = {
+
+	    begin: /\[/,
+	    end: /\]/
+	  };
+
+	  var LINE_COMMENT = {
+
+	    className: 'comment',
+	    begin: /%/, end: /$/,
+	    contains: [hljs.PHRASAL_WORDS_MODE]
+	  };
+
+	  var BACKTICK_STRING = {
+
+	    className: 'string',
+	    begin: /`/, end: /`/,
+	    contains: [hljs.BACKSLASH_ESCAPE]
+	  };
+
+	  var CHAR_CODE = {
+
+	    className: 'string', // 0'a etc.
+	    begin: /0\'(\\\'|.)/
+	  };
+
+	  var SPACE_CODE = {
+
+	    className: 'string',
+	    begin: /0\'\\s/ // 0'\s
+	  };
+
+	  var PRED_OP = { // relevance booster
+	    begin: /:-/
+	  };
+
+	  var inner = [
+
+	    ATOM,
+	    VAR,
+	    PARENTED,
+	    PRED_OP,
+	    LIST,
+	    LINE_COMMENT,
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    hljs.QUOTE_STRING_MODE,
+	    hljs.APOS_STRING_MODE,
+	    BACKTICK_STRING,
+	    CHAR_CODE,
+	    SPACE_CODE,
+	    hljs.C_NUMBER_MODE
+	  ];
+
+	  PARENTED.contains = inner;
+	  LIST.contains = inner;
+
+	  return {
+	    contains: inner.concat([
+	      {begin: /\.$/} // relevance booster
+	    ])
+	  };
+	};
+
+/***/ },
+/* 305 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: {
+	      keyword: 'package import option optional required repeated group',
+	      built_in: 'double float int32 int64 uint32 uint64 sint32 sint64 ' +
+	        'fixed32 fixed64 sfixed32 sfixed64 bool string bytes',
+	      literal: 'true false'
+	    },
+	    contains: [
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.NUMBER_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      {
+	        className: 'class',
+	        beginKeywords: 'message enum service', end: /\{/,
+	        illegal: /\n/,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {
+	            starts: {endsWithParent: true, excludeEnd: true} // hack: eating everything after the first title
+	          })
+	        ]
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'rpc',
+	        end: /;/, excludeEnd: true,
+	        keywords: 'rpc returns'
+	      },
+	      {
+	        className: 'constant',
+	        begin: /^\s*[A-Z_]+/,
+	        end: /\s*=/, excludeEnd: true
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var PUPPET_TYPE_REFERENCE =
+	      'augeas computer cron exec file filebucket host interface k5login macauthorization mailalias maillist mcx mount nagios_command ' +
+	      'nagios_contact nagios_contactgroup nagios_host nagios_hostdependency nagios_hostescalation nagios_hostextinfo nagios_hostgroup nagios_service firewall ' +
+	      'nagios_servicedependency nagios_serviceescalation nagios_serviceextinfo nagios_servicegroup nagios_timeperiod notify package resources ' +
+	      'router schedule scheduled_task selboolean selmodule service ssh_authorized_key sshkey stage tidy user vlan yumrepo zfs zone zpool';
+
+	  var PUPPET_ATTRIBUTES =
+	    /* metaparameters */
+	      'alias audit before loglevel noop require subscribe tag ' +
+	    /* normal attributes */
+	      'owner ensure group mode name|0 changes context force incl lens load_path onlyif provider returns root show_diff type_check ' +
+	      'en_address ip_address realname command environment hour monute month monthday special target weekday '+
+	      'creates cwd ogoutput refresh refreshonly tries try_sleep umask backup checksum content ctime force ignore ' +
+	      'links mtime purge recurse recurselimit replace selinux_ignore_defaults selrange selrole seltype seluser source ' +
+	      'souirce_permissions sourceselect validate_cmd validate_replacement allowdupe attribute_membership auth_membership forcelocal gid '+
+	      'ia_load_module members system host_aliases ip allowed_trunk_vlans description device_url duplex encapsulation etherchannel ' +
+	      'native_vlan speed principals allow_root auth_class auth_type authenticate_user k_of_n mechanisms rule session_owner shared options ' +
+	      'device fstype enable hasrestart directory present absent link atboot blockdevice device dump pass remounts poller_tag use ' +
+	      'message withpath adminfile allow_virtual allowcdrom category configfiles flavor install_options instance package_settings platform ' +
+	      'responsefile status uninstall_options vendor unless_system_user unless_uid binary control flags hasstatus manifest pattern restart running ' +
+	      'start stop allowdupe auths expiry gid groups home iterations key_membership keys managehome membership password password_max_age ' +
+	      'password_min_age profile_membership profiles project purge_ssh_keys role_membership roles salt shell uid baseurl cost descr enabled ' +
+	      'enablegroups exclude failovermethod gpgcheck gpgkey http_caching include includepkgs keepalive metadata_expire metalink mirrorlist ' +
+	      'priority protect proxy proxy_password proxy_username repo_gpgcheck s3_enabled skip_if_unavailable sslcacert sslclientcert sslclientkey ' +
+	      'sslverify mounted';
+
+	  var PUPPET_KEYWORDS =
+	  {
+	  keyword:
+	    /* language keywords */
+	      'and case class default define else elsif false if in import enherits node or true undef unless main settings $string ' + PUPPET_TYPE_REFERENCE,
+	  literal:
+	      PUPPET_ATTRIBUTES,
+
+	  built_in:
+	    /* core facts */
+	      'architecture augeasversion blockdevices boardmanufacturer boardproductname boardserialnumber cfkey dhcp_servers ' +
+	      'domain ec2_ ec2_userdata facterversion filesystems ldom fqdn gid hardwareisa hardwaremodel hostname id|0 interfaces '+
+	      'ipaddress ipaddress_ ipaddress6 ipaddress6_ iphostnumber is_virtual kernel kernelmajversion kernelrelease kernelversion ' +
+	      'kernelrelease kernelversion lsbdistcodename lsbdistdescription lsbdistid lsbdistrelease lsbmajdistrelease lsbminordistrelease ' +
+	      'lsbrelease macaddress macaddress_ macosx_buildversion macosx_productname macosx_productversion macosx_productverson_major ' +
+	      'macosx_productversion_minor manufacturer memoryfree memorysize netmask metmask_ network_ operatingsystem operatingsystemmajrelease '+
+	      'operatingsystemrelease osfamily partitions path physicalprocessorcount processor processorcount productname ps puppetversion '+
+	      'rubysitedir rubyversion selinux selinux_config_mode selinux_config_policy selinux_current_mode selinux_current_mode selinux_enforced '+
+	      'selinux_policyversion serialnumber sp_ sshdsakey sshecdsakey sshrsakey swapencrypted swapfree swapsize timezone type uniqueid uptime '+
+	      'uptime_days uptime_hours uptime_seconds uuid virtual vlans xendomains zfs_version zonenae zones zpool_version'
+	  };
+
+	  var COMMENT = hljs.COMMENT('#', '$');
+
+	  var STRING = {
+	    className: 'string',
+	    contains: [hljs.BACKSLASH_ESCAPE],
+	    variants: [
+	      {begin: /'/, end: /'/},
+	      {begin: /"/, end: /"/}
+	    ]
+	  };
+
+	  var PUPPET_DEFAULT_CONTAINS = [
+	    STRING,
+	    COMMENT,
+	    {
+	      className: 'keyword',
+	      beginKeywords: 'class', end: '$|;',
+	      illegal: /=/,
+	      contains: [
+	        hljs.inherit(hljs.TITLE_MODE, {begin: '(::)?[A-Za-z_]\\w*(::\\w+)*'}),
+	        COMMENT,
+	        STRING
+	      ]
+	    },
+	    {
+	      className: 'keyword',
+	      begin: '([a-zA-Z_(::)]+ *\\{)',
+	      contains:[STRING, COMMENT],
+	      relevance: 0
+	    },
+	    {
+	      className: 'keyword',
+	      begin: '(\\}|\\{)',
+	      relevance: 0
+	    },
+	    {
+	      className: 'function',
+	      begin:'[a-zA-Z_]+\\s*=>'
+	    },
+	    {
+	      className: 'constant',
+	      begin: '(::)?(\\b[A-Z][a-z_]*(::)?)+',
+	      relevance: 0
+	    },
+	    {
+	      className: 'number',
+	      begin: '(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b',
+	      relevance: 0
+	    }
+	  ];
+
+	  return {
+	    aliases: ['pp'],
+	    keywords: PUPPET_KEYWORDS,
+	    contains: PUPPET_DEFAULT_CONTAINS
+	  }
+	};
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var PROMPT = {
+	    className: 'prompt',  begin: /^(>>>|\.\.\.) /
+	  };
+	  var STRING = {
+	    className: 'string',
+	    contains: [hljs.BACKSLASH_ESCAPE],
+	    variants: [
+	      {
+	        begin: /(u|b)?r?'''/, end: /'''/,
+	        contains: [PROMPT],
+	        relevance: 10
+	      },
+	      {
+	        begin: /(u|b)?r?"""/, end: /"""/,
+	        contains: [PROMPT],
+	        relevance: 10
+	      },
+	      {
+	        begin: /(u|r|ur)'/, end: /'/,
+	        relevance: 10
+	      },
+	      {
+	        begin: /(u|r|ur)"/, end: /"/,
+	        relevance: 10
+	      },
+	      {
+	        begin: /(b|br)'/, end: /'/
+	      },
+	      {
+	        begin: /(b|br)"/, end: /"/
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE
+	    ]
+	  };
+	  var NUMBER = {
+	    className: 'number', relevance: 0,
+	    variants: [
+	      {begin: hljs.BINARY_NUMBER_RE + '[lLjJ]?'},
+	      {begin: '\\b(0o[0-7]+)[lLjJ]?'},
+	      {begin: hljs.C_NUMBER_RE + '[lLjJ]?'}
+	    ]
+	  };
+	  var PARAMS = {
+	    className: 'params',
+	    begin: /\(/, end: /\)/,
+	    contains: ['self', PROMPT, NUMBER, STRING]
+	  };
+	  return {
+	    aliases: ['py', 'gyp'],
+	    keywords: {
+	      keyword:
+	        'and elif is global as in if from raise for except finally print import pass return ' +
+	        'exec else break not with class assert yield try while continue del or def lambda ' +
+	        'nonlocal|10 None True False',
+	      built_in:
+	        'Ellipsis NotImplemented'
+	    },
+	    illegal: /(<\/|->|\?)/,
+	    contains: [
+	      PROMPT,
+	      NUMBER,
+	      STRING,
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        variants: [
+	          {className: 'function', beginKeywords: 'def', relevance: 10},
+	          {className: 'class', beginKeywords: 'class'}
+	        ],
+	        end: /:/,
+	        illegal: /[${=;\n,]/,
+	        contains: [hljs.UNDERSCORE_TITLE_MODE, PARAMS]
+	      },
+	      {
+	        className: 'decorator',
+	        begin: /@/, end: /$/
+	      },
+	      {
+	        begin: /\b(print|exec)\(/ // don’t highlight keywords-turned-functions in Python 3
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 308 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var Q_KEYWORDS = {
+	  keyword:
+	    'do while select delete by update from',
+	  constant:
+	    '0b 1b',
+	  built_in:
+	    'neg not null string reciprocal floor ceiling signum mod xbar xlog and or each scan over prior mmu lsq inv md5 ltime gtime count first var dev med cov cor all any rand sums prds mins maxs fills deltas ratios avgs differ prev next rank reverse iasc idesc asc desc msum mcount mavg mdev xrank mmin mmax xprev rotate distinct group where flip type key til get value attr cut set upsert raze union inter except cross sv vs sublist enlist read0 read1 hopen hclose hdel hsym hcount peach system ltrim rtrim trim lower upper ssr view tables views cols xcols keys xkey xcol xasc xdesc fkeys meta lj aj aj0 ij pj asof uj ww wj wj1 fby xgroup ungroup ej save load rsave rload show csv parse eval min max avg wavg wsum sin cos tan sum',
+	  typename:
+	    '`float `double int `timestamp `timespan `datetime `time `boolean `symbol `char `byte `short `long `real `month `date `minute `second `guid'
+	  };
+	  return {
+	  aliases:['k', 'kdb'],
+	  keywords: Q_KEYWORDS,
+	  lexemes: /\b(`?)[A-Za-z0-9_]+\b/,
+	  contains: [
+	  hljs.C_LINE_COMMENT_MODE,
+	    hljs.QUOTE_STRING_MODE,
+	    hljs.C_NUMBER_MODE
+	     ]
+	  };
+	};
+
+/***/ },
+/* 309 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var IDENT_RE = '([a-zA-Z]|\\.[a-zA-Z.])[a-zA-Z0-9._]*';
+
+	  return {
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      {
+	        begin: IDENT_RE,
+	        lexemes: IDENT_RE,
+	        keywords: {
+	          keyword:
+	            'function if in break next repeat else for return switch while try tryCatch ' +
+	            'stop warning require library attach detach source setMethod setGeneric ' +
+	            'setGroupGeneric setClass ...',
+	          literal:
+	            'NULL NA TRUE FALSE T F Inf NaN NA_integer_|10 NA_real_|10 NA_character_|10 ' +
+	            'NA_complex_|10'
+	        },
+	        relevance: 0
+	      },
+	      {
+	        // hex value
+	        className: 'number',
+	        begin: "0[xX][0-9a-fA-F]+[Li]?\\b",
+	        relevance: 0
+	      },
+	      {
+	        // explicit integer
+	        className: 'number',
+	        begin: "\\d+(?:[eE][+\\-]?\\d*)?L\\b",
+	        relevance: 0
+	      },
+	      {
+	        // number with trailing decimal
+	        className: 'number',
+	        begin: "\\d+\\.(?!\\d)(?:i\\b)?",
+	        relevance: 0
+	      },
+	      {
+	        // number
+	        className: 'number',
+	        begin: "\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",
+	        relevance: 0
+	      },
+	      {
+	        // number with leading decimal
+	        className: 'number',
+	        begin: "\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",
+	        relevance: 0
+	      },
+
+	      {
+	        // escaped identifier
+	        begin: '`',
+	        end: '`',
+	        relevance: 0
+	      },
+
+	      {
+	        className: 'string',
+	        contains: [hljs.BACKSLASH_ESCAPE],
+	        variants: [
+	          {begin: '"', end: '"'},
+	          {begin: "'", end: "'"}
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 310 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords:
+	      'ArchiveRecord AreaLightSource Atmosphere Attribute AttributeBegin AttributeEnd Basis ' +
+	      'Begin Blobby Bound Clipping ClippingPlane Color ColorSamples ConcatTransform Cone ' +
+	      'CoordinateSystem CoordSysTransform CropWindow Curves Cylinder DepthOfField Detail ' +
+	      'DetailRange Disk Displacement Display End ErrorHandler Exposure Exterior Format ' +
+	      'FrameAspectRatio FrameBegin FrameEnd GeneralPolygon GeometricApproximation Geometry ' +
+	      'Hider Hyperboloid Identity Illuminate Imager Interior LightSource ' +
+	      'MakeCubeFaceEnvironment MakeLatLongEnvironment MakeShadow MakeTexture Matte ' +
+	      'MotionBegin MotionEnd NuPatch ObjectBegin ObjectEnd ObjectInstance Opacity Option ' +
+	      'Orientation Paraboloid Patch PatchMesh Perspective PixelFilter PixelSamples ' +
+	      'PixelVariance Points PointsGeneralPolygons PointsPolygons Polygon Procedural Projection ' +
+	      'Quantize ReadArchive RelativeDetail ReverseOrientation Rotate Scale ScreenWindow ' +
+	      'ShadingInterpolation ShadingRate Shutter Sides Skew SolidBegin SolidEnd Sphere ' +
+	      'SubdivisionMesh Surface TextureCoordinates Torus Transform TransformBegin TransformEnd ' +
+	      'TransformPoints Translate TrimCurve WorldBegin WorldEnd',
+	    illegal: '</',
+	    contains: [
+	      hljs.HASH_COMMENT_MODE,
+	      hljs.C_NUMBER_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 311 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var IDENTIFIER = '[a-zA-Z-_][^\n{\r\n]+\\{';
+
+	  return {
+	    aliases: ['graph', 'instances'],
+	    case_insensitive: true,
+	    keywords: 'import',
+	    contains: [
+	      // Facet sections
+	      {
+	        className: 'facet',
+	        begin: '^facet ' + IDENTIFIER,
+	        end: '}',
+	        keywords: 'facet installer exports children extends',
+	        contains: [
+	          hljs.HASH_COMMENT_MODE
+	        ]
+	      },
+
+	      // Instance sections
+	      {
+	        className: 'instance-of',
+	        begin: '^instance of ' + IDENTIFIER,
+	        end: '}',
+	        keywords: 'name count channels instance-data instance-state instance of',
+	        contains: [
+	          // Instance overridden properties
+	          {
+	            className: 'keyword',
+	            begin: '[a-zA-Z-_]+( |\t)*:'
+	          },
+	          hljs.HASH_COMMENT_MODE
+	        ]
+	      },
+
+	      // Component sections
+	      {
+	        className: 'component',
+	        begin: '^' + IDENTIFIER,
+	        end: '}',
+	        lexemes: '\\(?[a-zA-Z]+\\)?',
+	        keywords: 'installer exports children extends imports facets alias (optional)',
+	        contains: [
+	          // Imported component variables
+	          {
+	            className: 'string',
+	            begin: '\\.[a-zA-Z-_]+',
+	            end: '\\s|,|;',
+	            excludeEnd: true
+	          },
+	          hljs.HASH_COMMENT_MODE
+	        ]
+	      },
+
+	      // Comments
+	      hljs.HASH_COMMENT_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 312 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: {
+	      keyword:
+	        'float color point normal vector matrix while for if do return else break extern continue',
+	      built_in:
+	        'abs acos ambient area asin atan atmosphere attribute calculatenormal ceil cellnoise ' +
+	        'clamp comp concat cos degrees depth Deriv diffuse distance Du Dv environment exp ' +
+	        'faceforward filterstep floor format fresnel incident length lightsource log match ' +
+	        'max min mod noise normalize ntransform opposite option phong pnoise pow printf ' +
+	        'ptlined radians random reflect refract renderinfo round setcomp setxcomp setycomp ' +
+	        'setzcomp shadow sign sin smoothstep specular specularbrdf spline sqrt step tan ' +
+	        'texture textureinfo trace transform vtransform xcomp ycomp zcomp'
+	    },
+	    illegal: '</',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'preprocessor',
+	        begin: '#', end: '$'
+	      },
+	      {
+	        className: 'shader',
+	        beginKeywords: 'surface displacement light volume imager', end: '\\('
+	      },
+	      {
+	        className: 'shading',
+	        beginKeywords: 'illuminate illuminance gather', end: '\\('
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: {
+	       keyword: 'BILL_PERIOD BILL_START BILL_STOP RS_EFFECTIVE_START RS_EFFECTIVE_STOP RS_JURIS_CODE RS_OPCO_CODE ' +
+	         'INTDADDATTRIBUTE|5 INTDADDVMSG|5 INTDBLOCKOP|5 INTDBLOCKOPNA|5 INTDCLOSE|5 INTDCOUNT|5 ' +
+	         'INTDCOUNTSTATUSCODE|5 INTDCREATEMASK|5 INTDCREATEDAYMASK|5 INTDCREATEFACTORMASK|5 ' +
+	         'INTDCREATEHANDLE|5 INTDCREATEOVERRIDEDAYMASK|5 INTDCREATEOVERRIDEMASK|5 ' +
+	         'INTDCREATESTATUSCODEMASK|5 INTDCREATETOUPERIOD|5 INTDDELETE|5 INTDDIPTEST|5 INTDEXPORT|5 ' +
+	         'INTDGETERRORCODE|5 INTDGETERRORMESSAGE|5 INTDISEQUAL|5 INTDJOIN|5 INTDLOAD|5 INTDLOADACTUALCUT|5 ' +
+	         'INTDLOADDATES|5 INTDLOADHIST|5 INTDLOADLIST|5 INTDLOADLISTDATES|5 INTDLOADLISTENERGY|5 ' +
+	         'INTDLOADLISTHIST|5 INTDLOADRELATEDCHANNEL|5 INTDLOADSP|5 INTDLOADSTAGING|5 INTDLOADUOM|5 ' +
+	         'INTDLOADUOMDATES|5 INTDLOADUOMHIST|5 INTDLOADVERSION|5 INTDOPEN|5 INTDREADFIRST|5 INTDREADNEXT|5 ' +
+	         'INTDRECCOUNT|5 INTDRELEASE|5 INTDREPLACE|5 INTDROLLAVG|5 INTDROLLPEAK|5 INTDSCALAROP|5 INTDSCALE|5 ' +
+	         'INTDSETATTRIBUTE|5 INTDSETDSTPARTICIPANT|5 INTDSETSTRING|5 INTDSETVALUE|5 INTDSETVALUESTATUS|5 ' +
+	         'INTDSHIFTSTARTTIME|5 INTDSMOOTH|5 INTDSORT|5 INTDSPIKETEST|5 INTDSUBSET|5 INTDTOU|5 ' +
+	         'INTDTOURELEASE|5 INTDTOUVALUE|5 INTDUPDATESTATS|5 INTDVALUE|5 STDEV INTDDELETEEX|5 ' +
+	         'INTDLOADEXACTUAL|5 INTDLOADEXCUT|5 INTDLOADEXDATES|5 INTDLOADEX|5 INTDLOADEXRELATEDCHANNEL|5 ' +
+	         'INTDSAVEEX|5 MVLOAD|5 MVLOADACCT|5 MVLOADACCTDATES|5 MVLOADACCTHIST|5 MVLOADDATES|5 MVLOADHIST|5 ' +
+	         'MVLOADLIST|5 MVLOADLISTDATES|5 MVLOADLISTHIST|5 IF FOR NEXT DONE SELECT END CALL ABORT CLEAR CHANNEL FACTOR LIST NUMBER ' +
+	         'OVERRIDE SET WEEK DISTRIBUTIONNODE ELSE WHEN THEN OTHERWISE IENUM CSV INCLUDE LEAVE RIDER SAVE DELETE ' +
+	         'NOVALUE SECTION WARN SAVE_UPDATE DETERMINANT LABEL REPORT REVENUE EACH ' +
+	         'IN FROM TOTAL CHARGE BLOCK AND OR CSV_FILE RATE_CODE AUXILIARY_DEMAND ' +
+	         'UIDACCOUNT RS BILL_PERIOD_SELECT HOURS_PER_MONTH INTD_ERROR_STOP SEASON_SCHEDULE_NAME ' +
+	         'ACCOUNTFACTOR ARRAYUPPERBOUND CALLSTOREDPROC GETADOCONNECTION GETCONNECT GETDATASOURCE ' +
+	         'GETQUALIFIER GETUSERID HASVALUE LISTCOUNT LISTOP LISTUPDATE LISTVALUE PRORATEFACTOR RSPRORATE ' +
+	         'SETBINPATH SETDBMONITOR WQ_OPEN BILLINGHOURS DATE DATEFROMFLOAT DATETIMEFROMSTRING ' +
+	         'DATETIMETOSTRING DATETOFLOAT DAY DAYDIFF DAYNAME DBDATETIME HOUR MINUTE MONTH MONTHDIFF ' +
+	         'MONTHHOURS MONTHNAME ROUNDDATE SAMEWEEKDAYLASTYEAR SECOND WEEKDAY WEEKDIFF YEAR YEARDAY ' +
+	         'YEARSTR COMPSUM HISTCOUNT HISTMAX HISTMIN HISTMINNZ HISTVALUE MAXNRANGE MAXRANGE MINRANGE ' +
+	         'COMPIKVA COMPKVA COMPKVARFROMKQKW COMPLF IDATTR FLAG LF2KW LF2KWH MAXKW POWERFACTOR ' +
+	         'READING2USAGE AVGSEASON MAXSEASON MONTHLYMERGE SEASONVALUE SUMSEASON ACCTREADDATES ' +
+	         'ACCTTABLELOAD CONFIGADD CONFIGGET CREATEOBJECT CREATEREPORT EMAILCLIENT EXPBLKMDMUSAGE ' +
+	         'EXPMDMUSAGE EXPORT_USAGE FACTORINEFFECT GETUSERSPECIFIEDSTOP INEFFECT ISHOLIDAY RUNRATE ' +
+	         'SAVE_PROFILE SETREPORTTITLE USEREXIT WATFORRUNRATE TO TABLE ACOS ASIN ATAN ATAN2 BITAND CEIL ' +
+	         'COS COSECANT COSH COTANGENT DIVQUOT DIVREM EXP FABS FLOOR FMOD FREPM FREXPN LOG LOG10 MAX MAXN ' +
+	         'MIN MINNZ MODF POW ROUND ROUND2VALUE ROUNDINT SECANT SIN SINH SQROOT TAN TANH FLOAT2STRING ' +
+	         'FLOAT2STRINGNC INSTR LEFT LEN LTRIM MID RIGHT RTRIM STRING STRINGNC TOLOWER TOUPPER TRIM ' +
+	         'NUMDAYS READ_DATE STAGING',
+	       built_in: 'IDENTIFIER OPTIONS XML_ELEMENT XML_OP XML_ELEMENT_OF DOMDOCCREATE DOMDOCLOADFILE DOMDOCLOADXML ' +
+	         'DOMDOCSAVEFILE DOMDOCGETROOT DOMDOCADDPI DOMNODEGETNAME DOMNODEGETTYPE DOMNODEGETVALUE DOMNODEGETCHILDCT ' +
+	         'DOMNODEGETFIRSTCHILD DOMNODEGETSIBLING DOMNODECREATECHILDELEMENT DOMNODESETATTRIBUTE ' +
+	         'DOMNODEGETCHILDELEMENTCT DOMNODEGETFIRSTCHILDELEMENT DOMNODEGETSIBLINGELEMENT DOMNODEGETATTRIBUTECT ' +
+	         'DOMNODEGETATTRIBUTEI DOMNODEGETATTRIBUTEBYNAME DOMNODEGETBYNAME'
+	    },
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE,
+	      { className: 'array',
+	        begin: '\#[a-zA-Z\ \.]+'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 314 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var NUM_SUFFIX = '([uif](8|16|32|64|size))\?';
+	  var BLOCK_COMMENT = hljs.inherit(hljs.C_BLOCK_COMMENT_MODE);
+	  BLOCK_COMMENT.contains.push('self');
+	  return {
+	    aliases: ['rs'],
+	    keywords: {
+	      keyword:
+	        'alignof as be box break const continue crate do else enum extern ' +
+	        'false fn for if impl in let loop match mod mut offsetof once priv ' +
+	        'proc pub pure ref return self sizeof static struct super trait true ' +
+	        'type typeof unsafe unsized use virtual while yield ' +
+	        'int i8 i16 i32 i64 ' +
+	        'uint u8 u32 u64 ' +
+	        'float f32 f64 ' +
+	        'str char bool',
+	      built_in:
+	        'assert! assert_eq! bitflags! bytes! cfg! col! concat! concat_idents! ' +
+	        'debug_assert! debug_assert_eq! env! panic! file! format! format_args! ' +
+	        'include_bin! include_str! line! local_data_key! module_path! ' +
+	        'option_env! print! println! select! stringify! try! unimplemented! ' +
+	        'unreachable! vec! write! writeln!'
+	    },
+	    lexemes: hljs.IDENT_RE + '!?',
+	    illegal: '</',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      BLOCK_COMMENT,
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+	      {
+	        className: 'string',
+	        variants: [
+	           { begin: /r(#*)".*?"\1(?!#)/ },
+	           { begin: /'\\?(x\w{2}|u\w{4}|U\w{8}|.)'/ },
+	           { begin: /'[a-zA-Z_][a-zA-Z0-9_]*/ }
+	        ]
+	      },
+	      {
+	        className: 'number',
+	        variants: [
+	          { begin: '\\b0b([01_]+)' + NUM_SUFFIX },
+	          { begin: '\\b0o([0-7_]+)' + NUM_SUFFIX },
+	          { begin: '\\b0x([A-Fa-f0-9_]+)' + NUM_SUFFIX },
+	          { begin: '\\b(\\d[\\d_]*(\\.[0-9_]+)?([eE][+-]?[0-9_]+)?)' +
+	                   NUM_SUFFIX
+	          }
+	        ],
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'fn', end: '(\\(|<)', excludeEnd: true,
+	        contains: [hljs.UNDERSCORE_TITLE_MODE]
+	      },
+	      {
+	        className: 'preprocessor',
+	        begin: '#\\!?\\[', end: '\\]'
+	      },
+	      {
+	        beginKeywords: 'type', end: '(=|<)',
+	        contains: [hljs.UNDERSCORE_TITLE_MODE],
+	        illegal: '\\S'
+	      },
+	      {
+	        beginKeywords: 'trait enum', end: '({|<)',
+	        contains: [hljs.UNDERSCORE_TITLE_MODE],
+	        illegal: '\\S'
+	      },
+	      {
+	        begin: hljs.IDENT_RE + '::'
+	      },
+	      {
+	        begin: '->'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+
+	  var ANNOTATION = {
+	    className: 'annotation', begin: '@[A-Za-z]+'
+	  };
+
+	  var STRING = {
+	    className: 'string',
+	    begin: 'u?r?"""', end: '"""',
+	    relevance: 10
+	  };
+
+	  var SYMBOL = {
+	    className: 'symbol',
+	    begin: '\'\\w[\\w\\d_]*(?!\')'
+	  };
+
+	  var TYPE = {
+	    className: 'type',
+	    begin: '\\b[A-Z][A-Za-z0-9_]*',
+	    relevance: 0
+	  };
+
+	  var NAME = {
+	    className: 'title',
+	    begin: /[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]/,
+	    relevance: 0
+	  };
+
+	  var CLASS = {
+	    className: 'class',
+	    beginKeywords: 'class object trait type',
+	    end: /[:={\[(\n;]/,
+	    contains: [{className: 'keyword', beginKeywords: 'extends with', relevance: 10}, NAME]
+	  };
+
+	  var METHOD = {
+	    className: 'function',
+	    beginKeywords: 'def val',
+	    end: /[:={\[(\n;]/,
+	    contains: [NAME]
+	  };
+
+	  return {
+	    keywords: {
+	      literal: 'true false null',
+	      keyword: 'type yield lazy override def with val var sealed abstract private trait object if forSome for while throw finally protected extends import final return else break new catch super class case package default try this match continue throws implicit'
+	    },
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      STRING,
+	      hljs.QUOTE_STRING_MODE,
+	      SYMBOL,
+	      TYPE,
+	      METHOD,
+	      CLASS,
+	      hljs.C_NUMBER_MODE,
+	      ANNOTATION
+	    ]
+	  };
+	};
+
+/***/ },
+/* 316 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var SCHEME_IDENT_RE = '[^\\(\\)\\[\\]\\{\\}",\'`;#|\\\\\\s]+';
+	  var SCHEME_SIMPLE_NUMBER_RE = '(\\-|\\+)?\\d+([./]\\d+)?';
+	  var SCHEME_COMPLEX_NUMBER_RE = SCHEME_SIMPLE_NUMBER_RE + '[+\\-]' + SCHEME_SIMPLE_NUMBER_RE + 'i';
+	  var BUILTINS = {
+	    built_in:
+	      'case-lambda call/cc class define-class exit-handler field import ' +
+	      'inherit init-field interface let*-values let-values let/ec mixin ' +
+	      'opt-lambda override protect provide public rename require ' +
+	      'require-for-syntax syntax syntax-case syntax-error unit/sig unless ' +
+	      'when with-syntax and begin call-with-current-continuation ' +
+	      'call-with-input-file call-with-output-file case cond define ' +
+	      'define-syntax delay do dynamic-wind else for-each if lambda let let* ' +
+	      'let-syntax letrec letrec-syntax map or syntax-rules \' * + , ,@ - ... / ' +
+	      '; < <= = => > >= ` abs acos angle append apply asin assoc assq assv atan ' +
+	      'boolean? caar cadr call-with-input-file call-with-output-file ' +
+	      'call-with-values car cdddar cddddr cdr ceiling char->integer ' +
+	      'char-alphabetic? char-ci<=? char-ci<? char-ci=? char-ci>=? char-ci>? ' +
+	      'char-downcase char-lower-case? char-numeric? char-ready? char-upcase ' +
+	      'char-upper-case? char-whitespace? char<=? char<? char=? char>=? char>? ' +
+	      'char? close-input-port close-output-port complex? cons cos ' +
+	      'current-input-port current-output-port denominator display eof-object? ' +
+	      'eq? equal? eqv? eval even? exact->inexact exact? exp expt floor ' +
+	      'force gcd imag-part inexact->exact inexact? input-port? integer->char ' +
+	      'integer? interaction-environment lcm length list list->string ' +
+	      'list->vector list-ref list-tail list? load log magnitude make-polar ' +
+	      'make-rectangular make-string make-vector max member memq memv min ' +
+	      'modulo negative? newline not null-environment null? number->string ' +
+	      'number? numerator odd? open-input-file open-output-file output-port? ' +
+	      'pair? peek-char port? positive? procedure? quasiquote quote quotient ' +
+	      'rational? rationalize read read-char real-part real? remainder reverse ' +
+	      'round scheme-report-environment set! set-car! set-cdr! sin sqrt string ' +
+	      'string->list string->number string->symbol string-append string-ci<=? ' +
+	      'string-ci<? string-ci=? string-ci>=? string-ci>? string-copy ' +
+	      'string-fill! string-length string-ref string-set! string<=? string<? ' +
+	      'string=? string>=? string>? string? substring symbol->string symbol? ' +
+	      'tan transcript-off transcript-on truncate values vector ' +
+	      'vector->list vector-fill! vector-length vector-ref vector-set! ' +
+	      'with-input-from-file with-output-to-file write write-char zero?'
+	  };
+
+	  var SHEBANG = {
+	    className: 'shebang',
+	    begin: '^#!',
+	    end: '$'
+	  };
+
+	  var LITERAL = {
+	    className: 'literal',
+	    begin: '(#t|#f|#\\\\' + SCHEME_IDENT_RE + '|#\\\\.)'
+	  };
+
+	  var NUMBER = {
+	    className: 'number',
+	    variants: [
+	      { begin: SCHEME_SIMPLE_NUMBER_RE, relevance: 0 },
+	      { begin: SCHEME_COMPLEX_NUMBER_RE, relevance: 0 },
+	      { begin: '#b[0-1]+(/[0-1]+)?' },
+	      { begin: '#o[0-7]+(/[0-7]+)?' },
+	      { begin: '#x[0-9a-f]+(/[0-9a-f]+)?' }
+	    ]
+	  };
+
+	  var STRING = hljs.QUOTE_STRING_MODE;
+
+	  var REGULAR_EXPRESSION = {
+	    className: 'regexp',
+	    begin: '#[pr]x"',
+	    end: '[^\\\\]"'
+	  };
+
+	  var COMMENT_MODES = [
+	    hljs.COMMENT(
+	      ';',
+	      '$',
+	      {
+	        relevance: 0
+	      }
+	    ),
+	    hljs.COMMENT('#\\|', '\\|#')
+	  ];
+
+	  var IDENT = {
+	    begin: SCHEME_IDENT_RE,
+	    relevance: 0
+	  };
+
+	  var QUOTED_IDENT = {
+	    className: 'variable',
+	    begin: '\'' + SCHEME_IDENT_RE
+	  };
+
+	  var BODY = {
+	    endsWithParent: true,
+	    relevance: 0
+	  };
+
+	  var LIST = {
+	    className: 'list',
+	    variants: [
+	      { begin: '\\(', end: '\\)' },
+	      { begin: '\\[', end: '\\]' }
+	    ],
+	    contains: [
+	      {
+	        className: 'keyword',
+	        begin: SCHEME_IDENT_RE,
+	        lexemes: SCHEME_IDENT_RE,
+	        keywords: BUILTINS
+	      },
+	      BODY
+	    ]
+	  };
+
+	  BODY.contains = [LITERAL, NUMBER, STRING, IDENT, QUOTED_IDENT, LIST].concat(COMMENT_MODES);
+
+	  return {
+	    illegal: /\S/,
+	    contains: [SHEBANG, NUMBER, STRING, QUOTED_IDENT, LIST].concat(COMMENT_MODES)
+	  };
+	};
+
+/***/ },
+/* 317 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+
+	  var COMMON_CONTAINS = [
+	    hljs.C_NUMBER_MODE,
+	    {
+	      className: 'string',
+	      begin: '\'|\"', end: '\'|\"',
+	      contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}]
+	    }
+	  ];
+
+	  return {
+	    aliases: ['sci'],
+	    keywords: {
+	      keyword: 'abort break case clear catch continue do elseif else endfunction end for function'+
+	        'global if pause return resume select try then while'+
+	        '%f %F %t %T %pi %eps %inf %nan %e %i %z %s',
+	      built_in: // Scilab has more than 2000 functions. Just list the most commons
+	       'abs and acos asin atan ceil cd chdir clearglobal cosh cos cumprod deff disp error'+
+	       'exec execstr exists exp eye gettext floor fprintf fread fsolve imag isdef isempty'+
+	       'isinfisnan isvector lasterror length load linspace list listfiles log10 log2 log'+
+	       'max min msprintf mclose mopen ones or pathconvert poly printf prod pwd rand real'+
+	       'round sinh sin size gsort sprintf sqrt strcat strcmps tring sum system tanh tan'+
+	       'type typename warning zeros matrix'
+	    },
+	    illegal: '("|#|/\\*|\\s+/\\w+)',
+	    contains: [
+	      {
+	        className: 'function',
+	        beginKeywords: 'function endfunction', end: '$',
+	        keywords: 'function endfunction|10',
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE,
+	          {
+	            className: 'params',
+	            begin: '\\(', end: '\\)'
+	          }
+	        ]
+	      },
+	      {
+	        className: 'transposed_variable',
+	        begin: '[a-zA-Z_][a-zA-Z_0-9]*(\'+[\\.\']*|[\\.\']+)', end: '',
+	        relevance: 0
+	      },
+	      {
+	        className: 'matrix',
+	        begin: '\\[', end: '\\]\'*[\\.\']*',
+	        relevance: 0,
+	        contains: COMMON_CONTAINS
+	      },
+	      hljs.COMMENT('//', '$')
+	    ].concat(COMMON_CONTAINS)
+	  };
+	};
+
+/***/ },
+/* 318 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var IDENT_RE = '[a-zA-Z-][a-zA-Z0-9_-]*';
+	  var VARIABLE = {
+	    className: 'variable',
+	    begin: '(\\$' + IDENT_RE + ')\\b'
+	  };
+	  var FUNCTION = {
+	    className: 'function',
+	    begin: IDENT_RE + '\\(',
+	    returnBegin: true,
+	    excludeEnd: true,
+	    end: '\\('
+	  };
+	  var HEXCOLOR = {
+	    className: 'hexcolor', begin: '#[0-9A-Fa-f]+'
+	  };
+	  var DEF_INTERNALS = {
+	    className: 'attribute',
+	    begin: '[A-Z\\_\\.\\-]+', end: ':',
+	    excludeEnd: true,
+	    illegal: '[^\\s]',
+	    starts: {
+	      className: 'value',
+	      endsWithParent: true, excludeEnd: true,
+	      contains: [
+	        FUNCTION,
+	        HEXCOLOR,
+	        hljs.CSS_NUMBER_MODE,
+	        hljs.QUOTE_STRING_MODE,
+	        hljs.APOS_STRING_MODE,
+	        hljs.C_BLOCK_COMMENT_MODE,
+	        {
+	          className: 'important', begin: '!important'
+	        }
+	      ]
+	    }
+	  };
+	  return {
+	    case_insensitive: true,
+	    illegal: '[=/|\']',
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      FUNCTION,
+	      {
+	        className: 'id', begin: '\\#[A-Za-z0-9_-]+',
+	        relevance: 0
+	      },
+	      {
+	        className: 'class', begin: '\\.[A-Za-z0-9_-]+',
+	        relevance: 0
+	      },
+	      {
+	        className: 'attr_selector',
+	        begin: '\\[', end: '\\]',
+	        illegal: '$'
+	      },
+	      {
+	        className: 'tag', // begin: IDENT_RE, end: '[,|\\s]'
+	        begin: '\\b(a|abbr|acronym|address|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|map|mark|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|samp|script|section|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video)\\b',
+	        relevance: 0
+	      },
+	      {
+	        className: 'pseudo',
+	        begin: ':(visited|valid|root|right|required|read-write|read-only|out-range|optional|only-of-type|only-child|nth-of-type|nth-last-of-type|nth-last-child|nth-child|not|link|left|last-of-type|last-child|lang|invalid|indeterminate|in-range|hover|focus|first-of-type|first-line|first-letter|first-child|first|enabled|empty|disabled|default|checked|before|after|active)'
+	      },
+	      {
+	        className: 'pseudo',
+	        begin: '::(after|before|choices|first-letter|first-line|repeat-index|repeat-item|selection|value)'
+	      },
+	      VARIABLE,
+	      {
+	        className: 'attribute',
+	        begin: '\\b(z-index|word-wrap|word-spacing|word-break|width|widows|white-space|visibility|vertical-align|unicode-bidi|transition-timing-function|transition-property|transition-duration|transition-delay|transition|transform-style|transform-origin|transform|top|text-underline-position|text-transform|text-shadow|text-rendering|text-overflow|text-indent|text-decoration-style|text-decoration-line|text-decoration-color|text-decoration|text-align-last|text-align|tab-size|table-layout|right|resize|quotes|position|pointer-events|perspective-origin|perspective|page-break-inside|page-break-before|page-break-after|padding-top|padding-right|padding-left|padding-bottom|padding|overflow-y|overflow-x|overflow-wrap|overflow|outline-width|outline-style|outline-offset|outline-color|outline|orphans|order|opacity|object-position|object-fit|normal|none|nav-up|nav-right|nav-left|nav-index|nav-down|min-width|min-height|max-width|max-height|mask|marks|margin-top|margin-right|margin-left|margin-bottom|margin|list-style-type|list-style-position|list-style-image|list-style|line-height|letter-spacing|left|justify-content|initial|inherit|ime-mode|image-orientation|image-resolution|image-rendering|icon|hyphens|height|font-weight|font-variant-ligatures|font-variant|font-style|font-stretch|font-size-adjust|font-size|font-language-override|font-kerning|font-feature-settings|font-family|font|float|flex-wrap|flex-shrink|flex-grow|flex-flow|flex-direction|flex-basis|flex|filter|empty-cells|display|direction|cursor|counter-reset|counter-increment|content|column-width|column-span|column-rule-width|column-rule-style|column-rule-color|column-rule|column-gap|column-fill|column-count|columns|color|clip-path|clip|clear|caption-side|break-inside|break-before|break-after|box-sizing|box-shadow|box-decoration-break|bottom|border-width|border-top-width|border-top-style|border-top-right-radius|border-top-left-radius|border-top-color|border-top|border-style|border-spacing|border-right-width|border-right-style|border-right-color|border-right|border-radius|border-left-width|border-left-style|border-left-color|border-left|border-image-width|border-image-source|border-image-slice|border-image-repeat|border-image-outset|border-image|border-color|border-collapse|border-bottom-width|border-bottom-style|border-bottom-right-radius|border-bottom-left-radius|border-bottom-color|border-bottom|border|background-size|background-repeat|background-position|background-origin|background-image|background-color|background-clip|background-attachment|background-blend-mode|background|backface-visibility|auto|animation-timing-function|animation-play-state|animation-name|animation-iteration-count|animation-fill-mode|animation-duration|animation-direction|animation-delay|animation|align-self|align-items|align-content)\\b',
+	        illegal: '[^\\s]'
+	      },
+	      {
+	        className: 'value',
+	        begin: '\\b(whitespace|wait|w-resize|visible|vertical-text|vertical-ideographic|uppercase|upper-roman|upper-alpha|underline|transparent|top|thin|thick|text|text-top|text-bottom|tb-rl|table-header-group|table-footer-group|sw-resize|super|strict|static|square|solid|small-caps|separate|se-resize|scroll|s-resize|rtl|row-resize|ridge|right|repeat|repeat-y|repeat-x|relative|progress|pointer|overline|outside|outset|oblique|nowrap|not-allowed|normal|none|nw-resize|no-repeat|no-drop|newspaper|ne-resize|n-resize|move|middle|medium|ltr|lr-tb|lowercase|lower-roman|lower-alpha|loose|list-item|line|line-through|line-edge|lighter|left|keep-all|justify|italic|inter-word|inter-ideograph|inside|inset|inline|inline-block|inherit|inactive|ideograph-space|ideograph-parenthesis|ideograph-numeric|ideograph-alpha|horizontal|hidden|help|hand|groove|fixed|ellipsis|e-resize|double|dotted|distribute|distribute-space|distribute-letter|distribute-all-lines|disc|disabled|default|decimal|dashed|crosshair|collapse|col-resize|circle|char|center|capitalize|break-word|break-all|bottom|both|bolder|bold|block|bidi-override|below|baseline|auto|always|all-scroll|absolute|table|table-cell)\\b'
+	      },
+	      {
+	        className: 'value',
+	        begin: ':', end: ';',
+	        contains: [
+	          FUNCTION,
+	          VARIABLE,
+	          HEXCOLOR,
+	          hljs.CSS_NUMBER_MODE,
+	          hljs.QUOTE_STRING_MODE,
+	          hljs.APOS_STRING_MODE,
+	          {
+	            className: 'important', begin: '!important'
+	          }
+	        ]
+	      },
+	      {
+	        className: 'at_rule',
+	        begin: '@', end: '[{;]',
+	        keywords: 'mixin include extend for if else each while charset import debug media page content font-face namespace warn',
+	        contains: [
+	          FUNCTION,
+	          VARIABLE,
+	          hljs.QUOTE_STRING_MODE,
+	          hljs.APOS_STRING_MODE,
+	          HEXCOLOR,
+	          hljs.CSS_NUMBER_MODE,
+	          {
+	            className: 'preprocessor',
+	            begin: '\\s[A-Za-z0-9_.-]+',
+	            relevance: 0
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var smali_instr_low_prio = ['add', 'and', 'cmp', 'cmpg', 'cmpl', 'const', 'div', 'double', 'float', 'goto', 'if', 'int', 'long', 'move', 'mul', 'neg', 'new', 'nop', 'not', 'or', 'rem', 'return', 'shl', 'shr', 'sput', 'sub', 'throw', 'ushr', 'xor'];
+	  var smali_instr_high_prio = ['aget', 'aput', 'array', 'check', 'execute', 'fill', 'filled', 'goto/16', 'goto/32', 'iget', 'instance', 'invoke', 'iput', 'monitor', 'packed', 'sget', 'sparse'];
+	  var smali_keywords = ['transient', 'constructor', 'abstract', 'final', 'synthetic', 'public', 'private', 'protected', 'static', 'bridge', 'system'];
+	  return {
+	    aliases: ['smali'],
+	    contains: [
+	      {
+	        className: 'string',
+	        begin: '"', end: '"',
+	        relevance: 0
+	      },
+	      hljs.COMMENT(
+	        '#',
+	        '$',
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      {
+	        className: 'keyword',
+	        begin: '\\s*\\.end\\s[a-zA-Z0-9]*',
+	        relevance: 1
+	      },
+	      {
+	        className: 'keyword',
+	        begin: '^[ ]*\\.[a-zA-Z]*',
+	        relevance: 0
+	      },
+	      {
+	        className: 'keyword',
+	        begin: '\\s:[a-zA-Z_0-9]*',
+	        relevance: 0
+	      },
+	      {
+	        className: 'keyword',
+	        begin: '\\s('+smali_keywords.join('|')+')',
+	        relevance: 1
+	      },
+	      {
+	        className: 'keyword',
+	        begin: '\\[',
+	        relevance: 0
+	      },
+	      {
+	        className: 'instruction',
+	        begin: '\\s('+smali_instr_low_prio.join('|')+')\\s',
+	        relevance: 1
+	      },
+	      {
+	        className: 'instruction',
+	        begin: '\\s('+smali_instr_low_prio.join('|')+')((\\-|/)[a-zA-Z0-9]+)+\\s',
+	        relevance: 10
+	      },
+	      {
+	        className: 'instruction',
+	        begin: '\\s('+smali_instr_high_prio.join('|')+')((\\-|/)[a-zA-Z0-9]+)*\\s',
+	        relevance: 10
+	      },
+	      {
+	        className: 'class',
+	        begin: 'L[^\(;:\n]*;',
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        begin: '( |->)[^(\n ;"]*\\(',
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        begin: '\\)',
+	        relevance: 0
+	      },
+	      {
+	        className: 'variable',
+	        begin: '[vp][0-9]+',
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 320 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var VAR_IDENT_RE = '[a-z][a-zA-Z0-9_]*';
+	  var CHAR = {
+	    className: 'char',
+	    begin: '\\$.{1}'
+	  };
+	  var SYMBOL = {
+	    className: 'symbol',
+	    begin: '#' + hljs.UNDERSCORE_IDENT_RE
+	  };
+	  return {
+	    aliases: ['st'],
+	    keywords: 'self super nil true false thisContext', // only 6
+	    contains: [
+	      hljs.COMMENT('"', '"'),
+	      hljs.APOS_STRING_MODE,
+	      {
+	        className: 'class',
+	        begin: '\\b[A-Z][A-Za-z0-9_]*',
+	        relevance: 0
+	      },
+	      {
+	        className: 'method',
+	        begin: VAR_IDENT_RE + ':',
+	        relevance: 0
+	      },
+	      hljs.C_NUMBER_MODE,
+	      SYMBOL,
+	      CHAR,
+	      {
+	        className: 'localvars',
+	        // This looks more complicated than needed to avoid combinatorial
+	        // explosion under V8. It effectively means `| var1 var2 ... |` with
+	        // whitespace adjacent to `|` being optional.
+	        begin: '\\|[ ]*' + VAR_IDENT_RE + '([ ]+' + VAR_IDENT_RE + ')*[ ]*\\|',
+	        returnBegin: true, end: /\|/,
+	        illegal: /\S/,
+	        contains: [{begin: '(\\|[ ]*)?' + VAR_IDENT_RE}]
+	      },
+	      {
+	        className: 'array',
+	        begin: '\\#\\(', end: '\\)',
+	        contains: [
+	          hljs.APOS_STRING_MODE,
+	          CHAR,
+	          hljs.C_NUMBER_MODE,
+	          SYMBOL
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 321 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['ml'],
+	    keywords: {
+	      keyword:
+	        /* according to Definition of Standard ML 97  */
+	        'abstype and andalso as case datatype do else end eqtype ' +
+	        'exception fn fun functor handle if in include infix infixr ' +
+	        'let local nonfix of op open orelse raise rec sharing sig ' +
+	        'signature struct structure then type val with withtype where while',
+	      built_in:
+	        /* built-in types according to basis library */
+	        'array bool char exn int list option order real ref string substring vector unit word',
+	      literal:
+	        'true false NONE SOME LESS EQUAL GREATER nil'
+	    },
+	    illegal: /\/\/|>>/,
+	    lexemes: '[a-z_]\\w*!?',
+	    contains: [
+	      {
+	        className: 'literal',
+	        begin: '\\[(\\|\\|)?\\]|\\(\\)'
+	      },
+	      hljs.COMMENT(
+	        '\\(\\*',
+	        '\\*\\)',
+	        {
+	          contains: ['self']
+	        }
+	      ),
+	      { /* type variable */
+	        className: 'symbol',
+	        begin: '\'[A-Za-z_](?!\')[\\w\']*'
+	        /* the grammar is ambiguous on how 'a'b should be interpreted but not the compiler */
+	      },
+	      { /* polymorphic variant */
+	        className: 'tag',
+	        begin: '`[A-Z][\\w\']*'
+	      },
+	      { /* module or constructor */
+	        className: 'type',
+	        begin: '\\b[A-Z][\\w\']*',
+	        relevance: 0
+	      },
+	      { /* don't color identifiers, but safely catch all identifiers with '*/
+	        begin: '[a-z_]\\w*\'[\\w\']*'
+	      },
+	      hljs.inherit(hljs.APOS_STRING_MODE, {className: 'char', relevance: 0}),
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+	      {
+	        className: 'number',
+	        begin:
+	          '\\b(0[xX][a-fA-F0-9_]+[Lln]?|' +
+	          '0[oO][0-7_]+[Lln]?|' +
+	          '0[bB][01_]+[Lln]?|' +
+	          '[0-9][0-9_]*([Lln]|(\\.[0-9_]*)?([eE][-+]?[0-9_]+)?)?)',
+	        relevance: 0
+	      },
+	      {
+	        begin: /[-=]>/ // relevance booster
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 322 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var COMMENT_MODE = hljs.COMMENT('--', '$');
+	  return {
+	    case_insensitive: true,
+	    illegal: /[<>]/,
+	    contains: [
+	      {
+	        className: 'operator',
+	        beginKeywords:
+	          'begin end start commit rollback savepoint lock alter create drop rename call '+
+	          'delete do handler insert load replace select truncate update set show pragma grant '+
+	          'merge describe use explain help declare prepare execute deallocate savepoint release '+
+	          'unlock purge reset change stop analyze cache flush optimize repair kill '+
+	          'install uninstall checksum restore check backup revoke',
+	        end: /;/, endsWithParent: true,
+	        keywords: {
+	          keyword:
+	            'abs absolute acos action add adddate addtime aes_decrypt aes_encrypt after aggregate all allocate alter ' +
+	            'analyze and any are as asc ascii asin assertion at atan atan2 atn2 authorization authors avg backup ' +
+	            'before begin benchmark between bin binlog bit_and bit_count bit_length bit_or bit_xor both by ' +
+	            'cache call cascade cascaded case cast catalog ceil ceiling chain change changed char_length ' +
+	            'character_length charindex charset check checksum checksum_agg choose close coalesce ' +
+	            'coercibility collate collation collationproperty column columns columns_updated commit compress concat ' +
+	            'concat_ws concurrent connect connection connection_id consistent constraint constraints continue ' +
+	            'contributors conv convert convert_tz corresponding cos cot count count_big crc32 create cross cume_dist ' +
+	            'curdate current current_date current_time current_timestamp current_user cursor curtime data database ' +
+	            'databases datalength date_add date_format date_sub dateadd datediff datefromparts datename ' +
+	            'datepart datetime2fromparts datetimeoffsetfromparts day dayname dayofmonth dayofweek dayofyear ' +
+	            'deallocate declare decode default deferrable deferred degrees delayed delete des_decrypt ' +
+	            'des_encrypt des_key_file desc describe descriptor diagnostics difference disconnect distinct ' +
+	            'distinctrow div do domain double drop dumpfile each else elt enclosed encode encrypt end end-exec ' +
+	            'engine engines eomonth errors escape escaped event eventdata events except exception exec execute ' +
+	            'exists exp explain export_set extended external extract fast fetch field fields find_in_set ' +
+	            'first first_value floor flush for force foreign format found found_rows from from_base64 ' +
+	            'from_days from_unixtime full function get get_format get_lock getdate getutcdate global go goto grant ' +
+	            'grants greatest group group_concat grouping grouping_id gtid_subset gtid_subtract handler having help ' +
+	            'hex high_priority hosts hour ident_current ident_incr ident_seed identified identity if ifnull ignore ' +
+	            'iif ilike immediate in index indicator inet6_aton inet6_ntoa inet_aton inet_ntoa infile initially inner ' +
+	            'innodb input insert install instr intersect into is is_free_lock is_ipv4 ' +
+	            'is_ipv4_compat is_ipv4_mapped is_not is_not_null is_used_lock isdate isnull isolation join key kill ' +
+	            'language last last_day last_insert_id last_value lcase lead leading least leaves left len lenght level ' +
+	            'like limit lines ln load load_file local localtime localtimestamp locate lock log log10 log2 logfile ' +
+	            'logs low_priority lower lpad ltrim make_set makedate maketime master master_pos_wait match matched max ' +
+	            'md5 medium merge microsecond mid min minute mod mode module month monthname mutex name_const names ' +
+	            'national natural nchar next no no_write_to_binlog not now nullif nvarchar oct ' +
+	            'octet_length of old_password on only open optimize option optionally or ord order outer outfile output ' +
+	            'pad parse partial partition password patindex percent_rank percentile_cont percentile_disc period_add ' +
+	            'period_diff pi plugin position pow power pragma precision prepare preserve primary prior privileges ' +
+	            'procedure procedure_analyze processlist profile profiles public publishingservername purge quarter ' +
+	            'query quick quote quotename radians rand read references regexp relative relaylog release ' +
+	            'release_lock rename repair repeat replace replicate reset restore restrict return returns reverse ' +
+	            'revoke right rlike rollback rollup round row row_count rows rpad rtrim savepoint schema scroll ' +
+	            'sec_to_time second section select serializable server session session_user set sha sha1 sha2 share ' +
+	            'show sign sin size slave sleep smalldatetimefromparts snapshot some soname soundex ' +
+	            'sounds_like space sql sql_big_result sql_buffer_result sql_cache sql_calc_found_rows sql_no_cache ' +
+	            'sql_small_result sql_variant_property sqlstate sqrt square start starting status std ' +
+	            'stddev stddev_pop stddev_samp stdev stdevp stop str str_to_date straight_join strcmp string stuff ' +
+	            'subdate substr substring subtime subtring_index sum switchoffset sysdate sysdatetime sysdatetimeoffset ' +
+	            'system_user sysutcdatetime table tables tablespace tan temporary terminated tertiary_weights then time ' +
+	            'time_format time_to_sec timediff timefromparts timestamp timestampadd timestampdiff timezone_hour ' +
+	            'timezone_minute to to_base64 to_days to_seconds todatetimeoffset trailing transaction translation ' +
+	            'trigger trigger_nestlevel triggers trim truncate try_cast try_convert try_parse ucase uncompress ' +
+	            'uncompressed_length unhex unicode uninstall union unique unix_timestamp unknown unlock update upgrade ' +
+	            'upped upper usage use user user_resources using utc_date utc_time utc_timestamp uuid uuid_short ' +
+	            'validate_password_strength value values var var_pop var_samp variables variance varp ' +
+	            'version view warnings week weekday weekofyear weight_string when whenever where with work write xml ' +
+	            'xor year yearweek zon',
+	          literal:
+	            'true false null',
+	          built_in:
+	            'array bigint binary bit blob boolean char character date dec decimal float int integer interval number ' +
+	            'numeric real serial smallint varchar varying int8 serial8 text'
+	        },
+	        contains: [
+	          {
+	            className: 'string',
+	            begin: '\'', end: '\'',
+	            contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}]
+	          },
+	          {
+	            className: 'string',
+	            begin: '"', end: '"',
+	            contains: [hljs.BACKSLASH_ESCAPE, {begin: '""'}]
+	          },
+	          {
+	            className: 'string',
+	            begin: '`', end: '`',
+	            contains: [hljs.BACKSLASH_ESCAPE]
+	          },
+	          hljs.C_NUMBER_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE,
+	          COMMENT_MODE
+	        ]
+	      },
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      COMMENT_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 323 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['do', 'ado'],
+	    case_insensitive: true,
+	    keywords: 'if else in foreach for forv forva forval forvalu forvalue forvalues by bys bysort xi quietly qui capture about ac ac_7 acprplot acprplot_7 adjust ado adopath adoupdate alpha ameans an ano anov anova anova_estat anova_terms anovadef aorder ap app appe appen append arch arch_dr arch_estat arch_p archlm areg areg_p args arima arima_dr arima_estat arima_p as asmprobit asmprobit_estat asmprobit_lf asmprobit_mfx__dlg asmprobit_p ass asse asser assert avplot avplot_7 avplots avplots_7 bcskew0 bgodfrey binreg bip0_lf biplot bipp_lf bipr_lf bipr_p biprobit bitest bitesti bitowt blogit bmemsize boot bootsamp bootstrap bootstrap_8 boxco_l boxco_p boxcox boxcox_6 boxcox_p bprobit br break brier bro brow brows browse brr brrstat bs bs_7 bsampl_w bsample bsample_7 bsqreg bstat bstat_7 bstat_8 bstrap bstrap_7 ca ca_estat ca_p cabiplot camat canon canon_8 canon_8_p canon_estat canon_p cap caprojection capt captu captur capture cat cc cchart cchart_7 cci cd censobs_table centile cf char chdir checkdlgfiles checkestimationsample checkhlpfiles checksum chelp ci cii cl class classutil clear cli clis clist clo clog clog_lf clog_p clogi clogi_sw clogit clogit_lf clogit_p clogitp clogl_sw cloglog clonevar clslistarray cluster cluster_measures cluster_stop cluster_tree cluster_tree_8 clustermat cmdlog cnr cnre cnreg cnreg_p cnreg_sw cnsreg codebook collaps4 collapse colormult_nb colormult_nw compare compress conf confi confir confirm conren cons const constr constra constrai constrain constraint continue contract copy copyright copysource cor corc corr corr2data corr_anti corr_kmo corr_smc corre correl correla correlat correlate corrgram cou coun count cox cox_p cox_sw coxbase coxhaz coxvar cprplot cprplot_7 crc cret cretu cretur creturn cross cs cscript cscript_log csi ct ct_is ctset ctst_5 ctst_st cttost cumsp cumsp_7 cumul cusum cusum_7 cutil d datasig datasign datasigna datasignat datasignatu datasignatur datasignature datetof db dbeta de dec deco decod decode deff des desc descr descri describ describe destring dfbeta dfgls dfuller di di_g dir dirstats dis discard disp disp_res disp_s displ displa display distinct do doe doed doedi doedit dotplot dotplot_7 dprobit drawnorm drop ds ds_util dstdize duplicates durbina dwstat dydx e ed edi edit egen eivreg emdef en enc enco encod encode eq erase ereg ereg_lf ereg_p ereg_sw ereghet ereghet_glf ereghet_glf_sh ereghet_gp ereghet_ilf ereghet_ilf_sh ereghet_ip eret eretu eretur ereturn err erro error est est_cfexist est_cfname est_clickable est_expand est_hold est_table est_unhold est_unholdok estat estat_default estat_summ estat_vce_only esti estimates etodow etof etomdy ex exi exit expand expandcl fac fact facto factor factor_estat factor_p factor_pca_rotated factor_rotate factormat fcast fcast_compute fcast_graph fdades fdadesc fdadescr fdadescri fdadescrib fdadescribe fdasav fdasave fdause fh_st file open file read file close file filefilter fillin find_hlp_file findfile findit findit_7 fit fl fli flis flist for5_0 form forma format fpredict frac_154 frac_adj frac_chk frac_cox frac_ddp frac_dis frac_dv frac_in frac_mun frac_pp frac_pq frac_pv frac_wgt frac_xo fracgen fracplot fracplot_7 fracpoly fracpred fron_ex fron_hn fron_p fron_tn fron_tn2 frontier ftodate ftoe ftomdy ftowdate g gamhet_glf gamhet_gp gamhet_ilf gamhet_ip gamma gamma_d2 gamma_p gamma_sw gammahet gdi_hexagon gdi_spokes ge gen gene gener genera generat generate genrank genstd genvmean gettoken gl gladder gladder_7 glim_l01 glim_l02 glim_l03 glim_l04 glim_l05 glim_l06 glim_l07 glim_l08 glim_l09 glim_l10 glim_l11 glim_l12 glim_lf glim_mu glim_nw1 glim_nw2 glim_nw3 glim_p glim_v1 glim_v2 glim_v3 glim_v4 glim_v5 glim_v6 glim_v7 glm glm_6 glm_p glm_sw glmpred glo glob globa global glogit glogit_8 glogit_p gmeans gnbre_lf gnbreg gnbreg_5 gnbreg_p gomp_lf gompe_sw gomper_p gompertz gompertzhet gomphet_glf gomphet_glf_sh gomphet_gp gomphet_ilf gomphet_ilf_sh gomphet_ip gphdot gphpen gphprint gprefs gprobi_p gprobit gprobit_8 gr gr7 gr_copy gr_current gr_db gr_describe gr_dir gr_draw gr_draw_replay gr_drop gr_edit gr_editviewopts gr_example gr_example2 gr_export gr_print gr_qscheme gr_query gr_read gr_rename gr_replay gr_save gr_set gr_setscheme gr_table gr_undo gr_use graph graph7 grebar greigen greigen_7 greigen_8 grmeanby grmeanby_7 gs_fileinfo gs_filetype gs_graphinfo gs_stat gsort gwood h hadimvo hareg hausman haver he heck_d2 heckma_p heckman heckp_lf heckpr_p heckprob hel help hereg hetpr_lf hetpr_p hetprob hettest hexdump hilite hist hist_7 histogram hlogit hlu hmeans hotel hotelling hprobit hreg hsearch icd9 icd9_ff icd9p iis impute imtest inbase include inf infi infil infile infix inp inpu input ins insheet insp inspe inspec inspect integ inten intreg intreg_7 intreg_p intrg2_ll intrg_ll intrg_ll2 ipolate iqreg ir irf irf_create irfm iri is_svy is_svysum isid istdize ivprob_1_lf ivprob_lf ivprobit ivprobit_p ivreg ivreg_footnote ivtob_1_lf ivtob_lf ivtobit ivtobit_p jackknife jacknife jknife jknife_6 jknife_8 jkstat joinby kalarma1 kap kap_3 kapmeier kappa kapwgt kdensity kdensity_7 keep ksm ksmirnov ktau kwallis l la lab labe label labelbook ladder levels levelsof leverage lfit lfit_p li lincom line linktest lis list lloghet_glf lloghet_glf_sh lloghet_gp lloghet_ilf lloghet_ilf_sh lloghet_ip llogi_sw llogis_p llogist llogistic llogistichet lnorm_lf lnorm_sw lnorma_p lnormal lnormalhet lnormhet_glf lnormhet_glf_sh lnormhet_gp lnormhet_ilf lnormhet_ilf_sh lnormhet_ip lnskew0 loadingplot loc loca local log logi logis_lf logistic logistic_p logit logit_estat logit_p loglogs logrank loneway lookfor lookup lowess lowess_7 lpredict lrecomp lroc lroc_7 lrtest ls lsens lsens_7 lsens_x lstat ltable ltable_7 ltriang lv lvr2plot lvr2plot_7 m ma mac macr macro makecns man manova manova_estat manova_p manovatest mantel mark markin markout marksample mat mat_capp mat_order mat_put_rr mat_rapp mata mata_clear mata_describe mata_drop mata_matdescribe mata_matsave mata_matuse mata_memory mata_mlib mata_mosave mata_rename mata_which matalabel matcproc matlist matname matr matri matrix matrix_input__dlg matstrik mcc mcci md0_ md1_ md1debug_ md2_ md2debug_ mds mds_estat mds_p mdsconfig mdslong mdsmat mdsshepard mdytoe mdytof me_derd mean means median memory memsize meqparse mer merg merge mfp mfx mhelp mhodds minbound mixed_ll mixed_ll_reparm mkassert mkdir mkmat mkspline ml ml_5 ml_adjs ml_bhhhs ml_c_d ml_check ml_clear ml_cnt ml_debug ml_defd ml_e0 ml_e0_bfgs ml_e0_cycle ml_e0_dfp ml_e0i ml_e1 ml_e1_bfgs ml_e1_bhhh ml_e1_cycle ml_e1_dfp ml_e2 ml_e2_cycle ml_ebfg0 ml_ebfr0 ml_ebfr1 ml_ebh0q ml_ebhh0 ml_ebhr0 ml_ebr0i ml_ecr0i ml_edfp0 ml_edfr0 ml_edfr1 ml_edr0i ml_eds ml_eer0i ml_egr0i ml_elf ml_elf_bfgs ml_elf_bhhh ml_elf_cycle ml_elf_dfp ml_elfi ml_elfs ml_enr0i ml_enrr0 ml_erdu0 ml_erdu0_bfgs ml_erdu0_bhhh ml_erdu0_bhhhq ml_erdu0_cycle ml_erdu0_dfp ml_erdu0_nrbfgs ml_exde ml_footnote ml_geqnr ml_grad0 ml_graph ml_hbhhh ml_hd0 ml_hold ml_init ml_inv ml_log ml_max ml_mlout ml_mlout_8 ml_model ml_nb0 ml_opt ml_p ml_plot ml_query ml_rdgrd ml_repor ml_s_e ml_score ml_searc ml_technique ml_unhold mleval mlf_ mlmatbysum mlmatsum mlog mlogi mlogit mlogit_footnote mlogit_p mlopts mlsum mlvecsum mnl0_ mor more mov move mprobit mprobit_lf mprobit_p mrdu0_ mrdu1_ mvdecode mvencode mvreg mvreg_estat n nbreg nbreg_al nbreg_lf nbreg_p nbreg_sw nestreg net newey newey_7 newey_p news nl nl_7 nl_9 nl_9_p nl_p nl_p_7 nlcom nlcom_p nlexp2 nlexp2_7 nlexp2a nlexp2a_7 nlexp3 nlexp3_7 nlgom3 nlgom3_7 nlgom4 nlgom4_7 nlinit nllog3 nllog3_7 nllog4 nllog4_7 nlog_rd nlogit nlogit_p nlogitgen nlogittree nlpred no nobreak noi nois noisi noisil noisily note notes notes_dlg nptrend numlabel numlist odbc old_ver olo olog ologi ologi_sw ologit ologit_p ologitp on one onew onewa oneway op_colnm op_comp op_diff op_inv op_str opr opro oprob oprob_sw oprobi oprobi_p oprobit oprobitp opts_exclusive order orthog orthpoly ou out outf outfi outfil outfile outs outsh outshe outshee outsheet ovtest pac pac_7 palette parse parse_dissim pause pca pca_8 pca_display pca_estat pca_p pca_rotate pcamat pchart pchart_7 pchi pchi_7 pcorr pctile pentium pergram pergram_7 permute permute_8 personal peto_st pkcollapse pkcross pkequiv pkexamine pkexamine_7 pkshape pksumm pksumm_7 pl plo plot plugin pnorm pnorm_7 poisgof poiss_lf poiss_sw poisso_p poisson poisson_estat post postclose postfile postutil pperron pr prais prais_e prais_e2 prais_p predict predictnl preserve print pro prob probi probit probit_estat probit_p proc_time procoverlay procrustes procrustes_estat procrustes_p profiler prog progr progra program prop proportion prtest prtesti pwcorr pwd q\\s qby qbys qchi qchi_7 qladder qladder_7 qnorm qnorm_7 qqplot qqplot_7 qreg qreg_c qreg_p qreg_sw qu quadchk quantile quantile_7 que quer query range ranksum ratio rchart rchart_7 rcof recast reclink recode reg reg3 reg3_p regdw regr regre regre_p2 regres regres_p regress regress_estat regriv_p remap ren rena renam rename renpfix repeat replace report reshape restore ret retu retur return rm rmdir robvar roccomp roccomp_7 roccomp_8 rocf_lf rocfit rocfit_8 rocgold rocplot rocplot_7 roctab roctab_7 rolling rologit rologit_p rot rota rotat rotate rotatemat rreg rreg_p ru run runtest rvfplot rvfplot_7 rvpplot rvpplot_7 sa safesum sample sampsi sav save savedresults saveold sc sca scal scala scalar scatter scm_mine sco scob_lf scob_p scobi_sw scobit scor score scoreplot scoreplot_help scree screeplot screeplot_help sdtest sdtesti se search separate seperate serrbar serrbar_7 serset set set_defaults sfrancia sh she shel shell shewhart shewhart_7 signestimationsample signrank signtest simul simul_7 simulate simulate_8 sktest sleep slogit slogit_d2 slogit_p smooth snapspan so sor sort spearman spikeplot spikeplot_7 spikeplt spline_x split sqreg sqreg_p sret sretu sretur sreturn ssc st st_ct st_hc st_hcd st_hcd_sh st_is st_issys st_note st_promo st_set st_show st_smpl st_subid stack statsby statsby_8 stbase stci stci_7 stcox stcox_estat stcox_fr stcox_fr_ll stcox_p stcox_sw stcoxkm stcoxkm_7 stcstat stcurv stcurve stcurve_7 stdes stem stepwise stereg stfill stgen stir stjoin stmc stmh stphplot stphplot_7 stphtest stphtest_7 stptime strate strate_7 streg streg_sw streset sts sts_7 stset stsplit stsum sttocc sttoct stvary stweib su suest suest_8 sum summ summa summar summari summariz summarize sunflower sureg survcurv survsum svar svar_p svmat svy svy_disp svy_dreg svy_est svy_est_7 svy_estat svy_get svy_gnbreg_p svy_head svy_header svy_heckman_p svy_heckprob_p svy_intreg_p svy_ivreg_p svy_logistic_p svy_logit_p svy_mlogit_p svy_nbreg_p svy_ologit_p svy_oprobit_p svy_poisson_p svy_probit_p svy_regress_p svy_sub svy_sub_7 svy_x svy_x_7 svy_x_p svydes svydes_8 svygen svygnbreg svyheckman svyheckprob svyintreg svyintreg_7 svyintrg svyivreg svylc svylog_p svylogit svymarkout svymarkout_8 svymean svymlog svymlogit svynbreg svyolog svyologit svyoprob svyoprobit svyopts svypois svypois_7 svypoisson svyprobit svyprobt svyprop svyprop_7 svyratio svyreg svyreg_p svyregress svyset svyset_7 svyset_8 svytab svytab_7 svytest svytotal sw sw_8 swcnreg swcox swereg swilk swlogis swlogit swologit swoprbt swpois swprobit swqreg swtobit swweib symmetry symmi symplot symplot_7 syntax sysdescribe sysdir sysuse szroeter ta tab tab1 tab2 tab_or tabd tabdi tabdis tabdisp tabi table tabodds tabodds_7 tabstat tabu tabul tabula tabulat tabulate te tempfile tempname tempvar tes test testnl testparm teststd tetrachoric time_it timer tis tob tobi tobit tobit_p tobit_sw token tokeni tokeniz tokenize tostring total translate translator transmap treat_ll treatr_p treatreg trim trnb_cons trnb_mean trpoiss_d2 trunc_ll truncr_p truncreg tsappend tset tsfill tsline tsline_ex tsreport tsrevar tsrline tsset tssmooth tsunab ttest ttesti tut_chk tut_wait tutorial tw tware_st two twoway twoway__fpfit_serset twoway__function_gen twoway__histogram_gen twoway__ipoint_serset twoway__ipoints_serset twoway__kdensity_gen twoway__lfit_serset twoway__normgen_gen twoway__pci_serset twoway__qfit_serset twoway__scatteri_serset twoway__sunflower_gen twoway_ksm_serset ty typ type typeof u unab unabbrev unabcmd update us use uselabel var var_mkcompanion var_p varbasic varfcast vargranger varirf varirf_add varirf_cgraph varirf_create varirf_ctable varirf_describe varirf_dir varirf_drop varirf_erase varirf_graph varirf_ograph varirf_rename varirf_set varirf_table varlist varlmar varnorm varsoc varstable varstable_w varstable_w2 varwle vce vec vec_fevd vec_mkphi vec_p vec_p_w vecirf_create veclmar veclmar_w vecnorm vecnorm_w vecrank vecstable verinst vers versi versio version view viewsource vif vwls wdatetof webdescribe webseek webuse weib1_lf weib2_lf weib_lf weib_lf0 weibhet_glf weibhet_glf_sh weibhet_glfa weibhet_glfa_sh weibhet_gp weibhet_ilf weibhet_ilf_sh weibhet_ilfa weibhet_ilfa_sh weibhet_ip weibu_sw weibul_p weibull weibull_c weibull_s weibullhet wh whelp whi which whil while wilc_st wilcoxon win wind windo window winexec wntestb wntestb_7 wntestq xchart xchart_7 xcorr xcorr_7 xi xi_6 xmlsav xmlsave xmluse xpose xsh xshe xshel xshell xt_iis xt_tis xtab_p xtabond xtbin_p xtclog xtcloglog xtcloglog_8 xtcloglog_d2 xtcloglog_pa_p xtcloglog_re_p xtcnt_p xtcorr xtdata xtdes xtfront_p xtfrontier xtgee xtgee_elink xtgee_estat xtgee_makeivar xtgee_p xtgee_plink xtgls xtgls_p xthaus xthausman xtht_p xthtaylor xtile xtint_p xtintreg xtintreg_8 xtintreg_d2 xtintreg_p xtivp_1 xtivp_2 xtivreg xtline xtline_ex xtlogit xtlogit_8 xtlogit_d2 xtlogit_fe_p xtlogit_pa_p xtlogit_re_p xtmixed xtmixed_estat xtmixed_p xtnb_fe xtnb_lf xtnbreg xtnbreg_pa_p xtnbreg_refe_p xtpcse xtpcse_p xtpois xtpoisson xtpoisson_d2 xtpoisson_pa_p xtpoisson_refe_p xtpred xtprobit xtprobit_8 xtprobit_d2 xtprobit_re_p xtps_fe xtps_lf xtps_ren xtps_ren_8 xtrar_p xtrc xtrc_p xtrchh xtrefe_p xtreg xtreg_be xtreg_fe xtreg_ml xtreg_pa_p xtreg_re xtregar xtrere_p xtset xtsf_ll xtsf_llti xtsum xttab xttest0 xttobit xttobit_8 xttobit_p xttrans yx yxview__barlike_draw yxview_area_draw yxview_bar_draw yxview_dot_draw yxview_dropline_draw yxview_function_draw yxview_iarrow_draw yxview_ilabels_draw yxview_normal_draw yxview_pcarrow_draw yxview_pcbarrow_draw yxview_pccapsym_draw yxview_pcscatter_draw yxview_pcspike_draw yxview_rarea_draw yxview_rbar_draw yxview_rbarm_draw yxview_rcap_draw yxview_rcapsym_draw yxview_rconnected_draw yxview_rline_draw yxview_rscatter_draw yxview_rspike_draw yxview_spike_draw yxview_sunflower_draw zap_s zinb zinb_llf zinb_plf zip zip_llf zip_p zip_plf zt_ct_5 zt_hc_5 zt_hcd_5 zt_is_5 zt_iss_5 zt_sho_5 zt_smp_5 ztbase_5 ztcox_5 ztdes_5 ztereg_5 ztfill_5 ztgen_5 ztir_5 ztjoin_5 ztnb ztnb_p ztp ztp_p zts_5 ztset_5 ztspli_5 ztsum_5 zttoct_5 ztvary_5 ztweib_5',
+	        contains: [
+	      {
+	        className: 'label',
+	        variants: [
+	          {begin: "\\$\\{?[a-zA-Z0-9_]+\\}?"},
+	          {begin: "`[a-zA-Z0-9_]+'"}
+
+	        ]
+	      },
+	      {
+	        className: 'string',
+	        variants: [
+	          {begin: '`"[^\r\n]*?"\''},
+	          {begin: '"[^\r\n"]*"'}
+	        ]
+	      },
+
+	      {
+	        className: 'literal',
+	        variants: [
+	          {
+	            begin: '\\b(abs|acos|asin|atan|atan2|atanh|ceil|cloglog|comb|cos|digamma|exp|floor|invcloglog|invlogit|ln|lnfact|lnfactorial|lngamma|log|log10|max|min|mod|reldif|round|sign|sin|sqrt|sum|tan|tanh|trigamma|trunc|betaden|Binomial|binorm|binormal|chi2|chi2tail|dgammapda|dgammapdada|dgammapdadx|dgammapdx|dgammapdxdx|F|Fden|Ftail|gammaden|gammap|ibeta|invbinomial|invchi2|invchi2tail|invF|invFtail|invgammap|invibeta|invnchi2|invnFtail|invnibeta|invnorm|invnormal|invttail|nbetaden|nchi2|nFden|nFtail|nibeta|norm|normal|normalden|normd|npnchi2|tden|ttail|uniform|abbrev|char|index|indexnot|length|lower|ltrim|match|plural|proper|real|regexm|regexr|regexs|reverse|rtrim|string|strlen|strlower|strltrim|strmatch|strofreal|strpos|strproper|strreverse|strrtrim|strtrim|strupper|subinstr|subinword|substr|trim|upper|word|wordcount|_caller|autocode|byteorder|chop|clip|cond|e|epsdouble|epsfloat|group|inlist|inrange|irecode|matrix|maxbyte|maxdouble|maxfloat|maxint|maxlong|mi|minbyte|mindouble|minfloat|minint|minlong|missing|r|recode|replay|return|s|scalar|d|date|day|dow|doy|halfyear|mdy|month|quarter|week|year|d|daily|dofd|dofh|dofm|dofq|dofw|dofy|h|halfyearly|hofd|m|mofd|monthly|q|qofd|quarterly|tin|twithin|w|weekly|wofd|y|yearly|yh|ym|yofd|yq|yw|cholesky|colnumb|colsof|corr|det|diag|diag0cnt|el|get|hadamard|I|inv|invsym|issym|issymmetric|J|matmissing|matuniform|mreldif|nullmat|rownumb|rowsof|sweep|syminv|trace|vec|vecdiag)(?=\\(|$)'
+	          }
+	        ]
+	      },
+
+	      hljs.COMMENT('^[ \t]*\\*.*$', false),
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 324 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var STEP21_IDENT_RE = '[A-Z_][A-Z0-9_.]*';
+	  var STEP21_CLOSE_RE = 'END-ISO-10303-21;';
+	  var STEP21_KEYWORDS = {
+	    literal: '',
+	    built_in: '',
+	    keyword:
+	    'HEADER ENDSEC DATA'
+	  };
+	  var STEP21_START = {
+	    className: 'preprocessor',
+	    begin: 'ISO-10303-21;',
+	    relevance: 10
+	  };
+	  var STEP21_CODE = [
+	    hljs.C_LINE_COMMENT_MODE,
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    hljs.COMMENT('/\\*\\*!', '\\*/'),
+	    hljs.C_NUMBER_MODE,
+	    hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
+	    hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null}),
+	    {
+	      className: 'string',
+	      begin: "'", end: "'"
+	    },
+	    {
+	      className: 'label',
+	      variants: [
+	        {
+	          begin: '#', end: '\\d+',
+	          illegal: '\\W'
+	        }
+	      ]
+	    }
+	  ];
+
+	  return {
+	    aliases: ['p21', 'step', 'stp'],
+	    case_insensitive: true, // STEP 21 is case insensitive in theory, in practice all non-comments are capitalized.
+	    lexemes: STEP21_IDENT_RE,
+	    keywords: STEP21_KEYWORDS,
+	    contains: [
+	      {
+	        className: 'preprocessor',
+	        begin: STEP21_CLOSE_RE,
+	        relevance: 10
+	      },
+	      STEP21_START
+	    ].concat(STEP21_CODE)
+	  };
+	};
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+
+	  var VARIABLE = {
+	    className: 'variable',
+	    begin: '\\$' + hljs.IDENT_RE
+	  };
+
+	  var HEX_COLOR = {
+	    className: 'hexcolor',
+	    begin: '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})',
+	    relevance: 10
+	  };
+
+	  var AT_KEYWORDS = [
+	    'charset',
+	    'css',
+	    'debug',
+	    'extend',
+	    'font-face',
+	    'for',
+	    'import',
+	    'include',
+	    'media',
+	    'mixin',
+	    'page',
+	    'warn',
+	    'while'
+	  ];
+
+	  var PSEUDO_SELECTORS = [
+	    'after',
+	    'before',
+	    'first-letter',
+	    'first-line',
+	    'active',
+	    'first-child',
+	    'focus',
+	    'hover',
+	    'lang',
+	    'link',
+	    'visited'
+	  ];
+
+	  var TAGS = [
+	    'a',
+	    'abbr',
+	    'address',
+	    'article',
+	    'aside',
+	    'audio',
+	    'b',
+	    'blockquote',
+	    'body',
+	    'button',
+	    'canvas',
+	    'caption',
+	    'cite',
+	    'code',
+	    'dd',
+	    'del',
+	    'details',
+	    'dfn',
+	    'div',
+	    'dl',
+	    'dt',
+	    'em',
+	    'fieldset',
+	    'figcaption',
+	    'figure',
+	    'footer',
+	    'form',
+	    'h1',
+	    'h2',
+	    'h3',
+	    'h4',
+	    'h5',
+	    'h6',
+	    'header',
+	    'hgroup',
+	    'html',
+	    'i',
+	    'iframe',
+	    'img',
+	    'input',
+	    'ins',
+	    'kbd',
+	    'label',
+	    'legend',
+	    'li',
+	    'mark',
+	    'menu',
+	    'nav',
+	    'object',
+	    'ol',
+	    'p',
+	    'q',
+	    'quote',
+	    'samp',
+	    'section',
+	    'span',
+	    'strong',
+	    'summary',
+	    'sup',
+	    'table',
+	    'tbody',
+	    'td',
+	    'textarea',
+	    'tfoot',
+	    'th',
+	    'thead',
+	    'time',
+	    'tr',
+	    'ul',
+	    'var',
+	    'video'
+	  ];
+
+	  var TAG_END = '[\\.\\s\\n\\[\\:,]';
+
+	  var ATTRIBUTES = [
+	    'align-content',
+	    'align-items',
+	    'align-self',
+	    'animation',
+	    'animation-delay',
+	    'animation-direction',
+	    'animation-duration',
+	    'animation-fill-mode',
+	    'animation-iteration-count',
+	    'animation-name',
+	    'animation-play-state',
+	    'animation-timing-function',
+	    'auto',
+	    'backface-visibility',
+	    'background',
+	    'background-attachment',
+	    'background-clip',
+	    'background-color',
+	    'background-image',
+	    'background-origin',
+	    'background-position',
+	    'background-repeat',
+	    'background-size',
+	    'border',
+	    'border-bottom',
+	    'border-bottom-color',
+	    'border-bottom-left-radius',
+	    'border-bottom-right-radius',
+	    'border-bottom-style',
+	    'border-bottom-width',
+	    'border-collapse',
+	    'border-color',
+	    'border-image',
+	    'border-image-outset',
+	    'border-image-repeat',
+	    'border-image-slice',
+	    'border-image-source',
+	    'border-image-width',
+	    'border-left',
+	    'border-left-color',
+	    'border-left-style',
+	    'border-left-width',
+	    'border-radius',
+	    'border-right',
+	    'border-right-color',
+	    'border-right-style',
+	    'border-right-width',
+	    'border-spacing',
+	    'border-style',
+	    'border-top',
+	    'border-top-color',
+	    'border-top-left-radius',
+	    'border-top-right-radius',
+	    'border-top-style',
+	    'border-top-width',
+	    'border-width',
+	    'bottom',
+	    'box-decoration-break',
+	    'box-shadow',
+	    'box-sizing',
+	    'break-after',
+	    'break-before',
+	    'break-inside',
+	    'caption-side',
+	    'clear',
+	    'clip',
+	    'clip-path',
+	    'color',
+	    'column-count',
+	    'column-fill',
+	    'column-gap',
+	    'column-rule',
+	    'column-rule-color',
+	    'column-rule-style',
+	    'column-rule-width',
+	    'column-span',
+	    'column-width',
+	    'columns',
+	    'content',
+	    'counter-increment',
+	    'counter-reset',
+	    'cursor',
+	    'direction',
+	    'display',
+	    'empty-cells',
+	    'filter',
+	    'flex',
+	    'flex-basis',
+	    'flex-direction',
+	    'flex-flow',
+	    'flex-grow',
+	    'flex-shrink',
+	    'flex-wrap',
+	    'float',
+	    'font',
+	    'font-family',
+	    'font-feature-settings',
+	    'font-kerning',
+	    'font-language-override',
+	    'font-size',
+	    'font-size-adjust',
+	    'font-stretch',
+	    'font-style',
+	    'font-variant',
+	    'font-variant-ligatures',
+	    'font-weight',
+	    'height',
+	    'hyphens',
+	    'icon',
+	    'image-orientation',
+	    'image-rendering',
+	    'image-resolution',
+	    'ime-mode',
+	    'inherit',
+	    'initial',
+	    'justify-content',
+	    'left',
+	    'letter-spacing',
+	    'line-height',
+	    'list-style',
+	    'list-style-image',
+	    'list-style-position',
+	    'list-style-type',
+	    'margin',
+	    'margin-bottom',
+	    'margin-left',
+	    'margin-right',
+	    'margin-top',
+	    'marks',
+	    'mask',
+	    'max-height',
+	    'max-width',
+	    'min-height',
+	    'min-width',
+	    'nav-down',
+	    'nav-index',
+	    'nav-left',
+	    'nav-right',
+	    'nav-up',
+	    'none',
+	    'normal',
+	    'object-fit',
+	    'object-position',
+	    'opacity',
+	    'order',
+	    'orphans',
+	    'outline',
+	    'outline-color',
+	    'outline-offset',
+	    'outline-style',
+	    'outline-width',
+	    'overflow',
+	    'overflow-wrap',
+	    'overflow-x',
+	    'overflow-y',
+	    'padding',
+	    'padding-bottom',
+	    'padding-left',
+	    'padding-right',
+	    'padding-top',
+	    'page-break-after',
+	    'page-break-before',
+	    'page-break-inside',
+	    'perspective',
+	    'perspective-origin',
+	    'pointer-events',
+	    'position',
+	    'quotes',
+	    'resize',
+	    'right',
+	    'tab-size',
+	    'table-layout',
+	    'text-align',
+	    'text-align-last',
+	    'text-decoration',
+	    'text-decoration-color',
+	    'text-decoration-line',
+	    'text-decoration-style',
+	    'text-indent',
+	    'text-overflow',
+	    'text-rendering',
+	    'text-shadow',
+	    'text-transform',
+	    'text-underline-position',
+	    'top',
+	    'transform',
+	    'transform-origin',
+	    'transform-style',
+	    'transition',
+	    'transition-delay',
+	    'transition-duration',
+	    'transition-property',
+	    'transition-timing-function',
+	    'unicode-bidi',
+	    'vertical-align',
+	    'visibility',
+	    'white-space',
+	    'widows',
+	    'width',
+	    'word-break',
+	    'word-spacing',
+	    'word-wrap',
+	    'z-index'
+	  ];
+
+	  // illegals
+	  var ILLEGAL = [
+	    '\\{',
+	    '\\}',
+	    '\\?',
+	    '(\\bReturn\\b)', // monkey
+	    '(\\bEnd\\b)', // monkey
+	    '(\\bend\\b)', // vbscript
+	    ';', // sql
+	    '#\\s', // markdown
+	    '\\*\\s', // markdown
+	    '===\\s', // markdown
+	    '\\|',
+	    '%', // prolog
+	  ];
+
+	  return {
+	    aliases: ['styl'],
+	    case_insensitive: false,
+	    illegal: '(' + ILLEGAL.join('|') + ')',
+	    keywords: 'if else for in',
+	    contains: [
+
+	      // strings
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.APOS_STRING_MODE,
+
+	      // comments
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+
+	      // hex colors
+	      HEX_COLOR,
+
+	      // class tag
+	      {
+	        begin: '\\.[a-zA-Z][a-zA-Z0-9_-]*' + TAG_END,
+	        returnBegin: true,
+	        contains: [
+	          {className: 'class', begin: '\\.[a-zA-Z][a-zA-Z0-9_-]*'}
+	        ]
+	      },
+
+	      // id tag
+	      {
+	        begin: '\\#[a-zA-Z][a-zA-Z0-9_-]*' + TAG_END,
+	        returnBegin: true,
+	        contains: [
+	          {className: 'id', begin: '\\#[a-zA-Z][a-zA-Z0-9_-]*'}
+	        ]
+	      },
+
+	      // tags
+	      {
+	        begin: '\\b(' + TAGS.join('|') + ')' + TAG_END,
+	        returnBegin: true,
+	        contains: [
+	          {className: 'tag', begin: '\\b[a-zA-Z][a-zA-Z0-9_-]*'}
+	        ]
+	      },
+
+	      // psuedo selectors
+	      {
+	        className: 'pseudo',
+	        begin: '&?:?:\\b(' + PSEUDO_SELECTORS.join('|') + ')' + TAG_END
+	      },
+
+	      // @ keywords
+	      {
+	        className: 'at_rule',
+	        begin: '\@(' + AT_KEYWORDS.join('|') + ')\\b'
+	      },
+
+	      // variables
+	      VARIABLE,
+
+	      // dimension
+	      hljs.CSS_NUMBER_MODE,
+
+	      // number
+	      hljs.NUMBER_MODE,
+
+	      // functions
+	      //  - only from beginning of line + whitespace
+	      {
+	        className: 'function',
+	        begin: '\\b[a-zA-Z][a-zA-Z0-9_\-]*\\(.*\\)',
+	        illegal: '[\\n]',
+	        returnBegin: true,
+	        contains: [
+	          {className: 'title', begin: '\\b[a-zA-Z][a-zA-Z0-9_\-]*'},
+	          {
+	            className: 'params',
+	            begin: /\(/,
+	            end: /\)/,
+	            contains: [
+	              HEX_COLOR,
+	              VARIABLE,
+	              hljs.APOS_STRING_MODE,
+	              hljs.CSS_NUMBER_MODE,
+	              hljs.NUMBER_MODE,
+	              hljs.QUOTE_STRING_MODE
+	            ]
+	          }
+	        ]
+	      },
+
+	      // attributes
+	      //  - only from beginning of line + whitespace
+	      //  - must have whitespace after it
+	      {
+	        className: 'attribute',
+	        begin: '\\b(' + ATTRIBUTES.reverse().join('|') + ')\\b'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 326 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var SWIFT_KEYWORDS = {
+	      keyword: 'class deinit enum extension func import init let protocol static ' +
+	        'struct subscript typealias var break case continue default do ' +
+	        'else fallthrough if in for return switch where while as dynamicType ' +
+	        'is new super self Self Type __COLUMN__ __FILE__ __FUNCTION__ ' +
+	        '__LINE__ associativity didSet get infix inout left mutating none ' +
+	        'nonmutating operator override postfix precedence prefix right set '+
+	        'unowned unowned safe unsafe weak willSet',
+	      literal: 'true false nil',
+	      built_in: 'abs advance alignof alignofValue assert bridgeFromObjectiveC ' +
+	        'bridgeFromObjectiveCUnconditional bridgeToObjectiveC ' +
+	        'bridgeToObjectiveCUnconditional c contains count countElements ' +
+	        'countLeadingZeros debugPrint debugPrintln distance dropFirst dropLast dump ' +
+	        'encodeBitsAsWords enumerate equal filter find getBridgedObjectiveCType ' +
+	        'getVaList indices insertionSort isBridgedToObjectiveC ' +
+	        'isBridgedVerbatimToObjectiveC isUniquelyReferenced join ' +
+	        'lexicographicalCompare map max maxElement min minElement numericCast ' +
+	        'partition posix print println quickSort reduce reflect reinterpretCast ' +
+	        'reverse roundUpToAlignment sizeof sizeofValue sort split startsWith strideof ' +
+	        'strideofValue swap swift toString transcode underestimateCount ' +
+	        'unsafeReflect withExtendedLifetime withObjectAtPlusZero withUnsafePointer ' +
+	        'withUnsafePointerToObject withUnsafePointers withVaList'
+	    };
+
+	  var TYPE = {
+	    className: 'type',
+	    begin: '\\b[A-Z][\\w\']*',
+	    relevance: 0
+	  };
+	  var BLOCK_COMMENT = hljs.COMMENT(
+	    '/\\*',
+	    '\\*/',
+	    {
+	      contains: ['self']
+	    }
+	  );
+	  var SUBST = {
+	    className: 'subst',
+	    begin: /\\\(/, end: '\\)',
+	    keywords: SWIFT_KEYWORDS,
+	    contains: [] // assigned later
+	  };
+	  var NUMBERS = {
+	      className: 'number',
+	      begin: '\\b([\\d_]+(\\.[\\deE_]+)?|0x[a-fA-F0-9_]+(\\.[a-fA-F0-9p_]+)?|0b[01_]+|0o[0-7_]+)\\b',
+	      relevance: 0
+	  };
+	  var QUOTE_STRING_MODE = hljs.inherit(hljs.QUOTE_STRING_MODE, {
+	    contains: [SUBST, hljs.BACKSLASH_ESCAPE]
+	  });
+	  SUBST.contains = [NUMBERS];
+
+	  return {
+	    keywords: SWIFT_KEYWORDS,
+	    contains: [
+	      QUOTE_STRING_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      BLOCK_COMMENT,
+	      TYPE,
+	      NUMBERS,
+	      {
+	        className: 'func',
+	        beginKeywords: 'func', end: '{', excludeEnd: true,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {
+	            begin: /[A-Za-z$_][0-9A-Za-z$_]*/,
+	            illegal: /\(/
+	          }),
+	          {
+	            className: 'generics',
+	            begin: /</, end: />/,
+	            illegal: />/
+	          },
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/, endsParent: true,
+	            keywords: SWIFT_KEYWORDS,
+	            contains: [
+	              'self',
+	              NUMBERS,
+	              QUOTE_STRING_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE,
+	              {begin: ':'} // relevance booster
+	            ],
+	            illegal: /["']/
+	          }
+	        ],
+	        illegal: /\[|%/
+	      },
+	      {
+	        className: 'class',
+	        beginKeywords: 'struct protocol class extension enum',
+	        keywords: SWIFT_KEYWORDS,
+	        end: '\\{',
+	        excludeEnd: true,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {begin: /[A-Za-z$_][0-9A-Za-z$_]*/})
+	        ]
+	      },
+	      {
+	        className: 'preprocessor', // @attributes
+	        begin: '(@assignment|@class_protocol|@exported|@final|@lazy|@noreturn|' +
+	                  '@NSCopying|@NSManaged|@objc|@optional|@required|@auto_closure|' +
+	                  '@noreturn|@IBAction|@IBDesignable|@IBInspectable|@IBOutlet|' +
+	                  '@infix|@prefix|@postfix)'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['tk'],
+	    keywords: 'after append apply array auto_execok auto_import auto_load auto_mkindex ' +
+	      'auto_mkindex_old auto_qualify auto_reset bgerror binary break catch cd chan clock ' +
+	      'close concat continue dde dict encoding eof error eval exec exit expr fblocked ' +
+	      'fconfigure fcopy file fileevent filename flush for foreach format gets glob global ' +
+	      'history http if incr info interp join lappend|10 lassign|10 lindex|10 linsert|10 list ' +
+	      'llength|10 load lrange|10 lrepeat|10 lreplace|10 lreverse|10 lsearch|10 lset|10 lsort|10 '+
+	      'mathfunc mathop memory msgcat namespace open package parray pid pkg::create pkg_mkIndex '+
+	      'platform platform::shell proc puts pwd read refchan regexp registry regsub|10 rename '+
+	      'return safe scan seek set socket source split string subst switch tcl_endOfWord '+
+	      'tcl_findLibrary tcl_startOfNextWord tcl_startOfPreviousWord tcl_wordBreakAfter '+
+	      'tcl_wordBreakBefore tcltest tclvars tell time tm trace unknown unload unset update '+
+	      'uplevel upvar variable vwait while',
+	    contains: [
+	      hljs.COMMENT(';[ \\t]*#', '$'),
+	      hljs.COMMENT('^[ \\t]*#', '$'),
+	      {
+	        beginKeywords: 'proc',
+	        end: '[\\{]',
+	        excludeEnd: true,
+	        contains: [
+	          {
+	            className: 'symbol',
+	            begin: '[ \\t\\n\\r]+(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*',
+	            end: '[ \\t\\n\\r]',
+	            endsWithParent: true,
+	            excludeEnd: true
+	          }
+	        ]
+	      },
+	      {
+	        className: 'variable',
+	        excludeEnd: true,
+	        variants: [
+	          {
+	            begin: '\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*\\(([a-zA-Z0-9_])*\\)',
+	            end: '[^a-zA-Z0-9_\\}\\$]'
+	          },
+	          {
+	            begin: '\\$(\\{)?(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*',
+	            end: '(\\))?[^a-zA-Z0-9_\\}\\$]'
+	          }
+	        ]
+	      },
+	      {
+	        className: 'string',
+	        contains: [hljs.BACKSLASH_ESCAPE],
+	        variants: [
+	          hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
+	          hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null})
+	        ]
+	      },
+	      {
+	        className: 'number',
+	        variants: [hljs.BINARY_NUMBER_MODE, hljs.C_NUMBER_MODE]
+	      }
+	    ]
+	  }
+	};
+
+/***/ },
+/* 328 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var COMMAND1 = {
+	    className: 'command',
+	    begin: '\\\\[a-zA-Zа-яА-я]+[\\*]?'
+	  };
+	  var COMMAND2 = {
+	    className: 'command',
+	    begin: '\\\\[^a-zA-Zа-яА-я0-9]'
+	  };
+	  var SPECIAL = {
+	    className: 'special',
+	    begin: '[{}\\[\\]\\&#~]',
+	    relevance: 0
+	  };
+
+	  return {
+	    contains: [
+	      { // parameter
+	        begin: '\\\\[a-zA-Zа-яА-я]+[\\*]? *= *-?\\d*\\.?\\d+(pt|pc|mm|cm|in|dd|cc|ex|em)?',
+	        returnBegin: true,
+	        contains: [
+	          COMMAND1, COMMAND2,
+	          {
+	            className: 'number',
+	            begin: ' *=', end: '-?\\d*\\.?\\d+(pt|pc|mm|cm|in|dd|cc|ex|em)?',
+	            excludeBegin: true
+	          }
+	        ],
+	        relevance: 10
+	      },
+	      COMMAND1, COMMAND2,
+	      SPECIAL,
+	      {
+	        className: 'formula',
+	        begin: '\\$\\$', end: '\\$\\$',
+	        contains: [COMMAND1, COMMAND2, SPECIAL],
+	        relevance: 0
+	      },
+	      {
+	        className: 'formula',
+	        begin: '\\$', end: '\\$',
+	        contains: [COMMAND1, COMMAND2, SPECIAL],
+	        relevance: 0
+	      },
+	      hljs.COMMENT(
+	        '%',
+	        '$',
+	        {
+	          relevance: 0
+	        }
+	      )
+	    ]
+	  };
+	};
+
+/***/ },
+/* 329 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var BUILT_IN_TYPES = 'bool byte i16 i32 i64 double string binary';
+	  return {
+	    keywords: {
+	      keyword:
+	        'namespace const typedef struct enum service exception void oneway set list map required optional',
+	      built_in:
+	        BUILT_IN_TYPES,
+	      literal:
+	        'true false'
+	    },
+	    contains: [
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.NUMBER_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'class',
+	        beginKeywords: 'struct enum service exception', end: /\{/,
+	        illegal: /\n/,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {
+	            starts: {endsWithParent: true, excludeEnd: true} // hack: eating everything after the first title
+	          })
+	        ]
+	      },
+	      {
+	        begin: '\\b(set|list|map)\\s*<', end: '>',
+	        keywords: BUILT_IN_TYPES,
+	        contains: ['self']
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 330 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var TPID = {
+	    className: 'number',
+	    begin: '[1-9][0-9]*', /* no leading zeros */
+	    relevance: 0
+	  }
+	  var TPLABEL = {
+	    className: 'comment',
+	    begin: ':[^\\]]+'
+	  }
+	  var TPDATA = {
+	    className: 'built_in',
+	    begin: '(AR|P|PAYLOAD|PR|R|SR|RSR|LBL|VR|UALM|MESSAGE|UTOOL|UFRAME|TIMER|\
+	    TIMER_OVERFLOW|JOINT_MAX_SPEED|RESUME_PROG|DIAG_REC)\\[', end: '\\]',
+	    contains: [
+	      'self',
+	      TPID,
+	      TPLABEL
+	    ]
+	  };
+	  var TPIO = {
+	    className: 'built_in',
+	    begin: '(AI|AO|DI|DO|F|RI|RO|UI|UO|GI|GO|SI|SO)\\[', end: '\\]',
+	    contains: [
+	      'self',
+	      TPID,
+	      hljs.QUOTE_STRING_MODE, /* for pos section at bottom */
+	      TPLABEL
+	    ]
+	  };
+
+	  return {
+	    keywords: {
+	      keyword:
+	        'ABORT ACC ADJUST AND AP_LD BREAK CALL CNT COL CONDITION CONFIG DA DB ' +
+	        'DIV DETECT ELSE END ENDFOR ERR_NUM ERROR_PROG FINE FOR GP GUARD INC ' +
+	        'IF JMP LINEAR_MAX_SPEED LOCK MOD MONITOR OFFSET Offset OR OVERRIDE ' +
+	        'PAUSE PREG PTH RT_LD RUN SELECT SKIP Skip TA TB TO TOOL_OFFSET ' +
+	        'Tool_Offset UF UT UFRAME_NUM UTOOL_NUM UNLOCK WAIT X Y Z W P R STRLEN ' +
+	        'SUBSTR FINDSTR VOFFSET',
+	      constant:
+	        'ON OFF max_speed LPOS JPOS ENABLE DISABLE START STOP RESET',
+	    },
+	    contains: [
+	      TPDATA,
+	      TPIO,
+	      {
+	        className: 'keyword',
+	        begin: '/(PROG|ATTR|MN|POS|END)\\b'
+	      },
+	      {
+	        /* this is for cases like ,CALL */
+	        className: 'keyword',
+	        begin: '(CALL|RUN|POINT_LOGIC|LBL)\\b'
+	      },
+	      {
+	        /* this is for cases like CNT100 where the default lexemes do not
+	         * separate the keyword and the number */
+	        className: 'keyword',
+	        begin: '\\b(ACC|CNT|Skip|Offset|PSPD|RT_LD|AP_LD|Tool_Offset)'
+	      },
+	      {
+	        /* to catch numbers that do not have a word boundary on the left */
+	        className: 'number',
+	        begin: '\\d+(sec|msec|mm/sec|cm/min|inch/min|deg/sec|mm|in|cm)?\\b',
+	        relevance: 0
+	      },
+	      hljs.COMMENT('//', '[;$]'),
+	      hljs.COMMENT('!', '[;$]'),
+	      hljs.COMMENT('--eg:', '$'),
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'string',
+	        begin: '\'', end: '\''
+	      },
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'variable',
+	        begin: '\\$[A-Za-z0-9_]+'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 331 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var PARAMS = {
+	    className: 'params',
+	    begin: '\\(', end: '\\)'
+	  };
+
+	  var FUNCTION_NAMES = 'attribute block constant cycle date dump include ' +
+	                  'max min parent random range source template_from_string';
+
+	  var FUNCTIONS = {
+	    className: 'function',
+	    beginKeywords: FUNCTION_NAMES,
+	    relevance: 0,
+	    contains: [
+	      PARAMS
+	    ]
+	  };
+
+	  var FILTER = {
+	    className: 'filter',
+	    begin: /\|[A-Za-z_]+:?/,
+	    keywords:
+	      'abs batch capitalize convert_encoding date date_modify default ' +
+	      'escape first format join json_encode keys last length lower ' +
+	      'merge nl2br number_format raw replace reverse round slice sort split ' +
+	      'striptags title trim upper url_encode',
+	    contains: [
+	      FUNCTIONS
+	    ]
+	  };
+
+	  var TAGS = 'autoescape block do embed extends filter flush for ' +
+	    'if import include macro sandbox set spaceless use verbatim';
+
+	  TAGS = TAGS + ' ' + TAGS.split(' ').map(function(t){return 'end' + t}).join(' ');
+
+	  return {
+	    aliases: ['craftcms'],
+	    case_insensitive: true,
+	    subLanguage: 'xml', subLanguageMode: 'continuous',
+	    contains: [
+	      hljs.COMMENT(/\{#/, /#}/),
+	      {
+	        className: 'template_tag',
+	        begin: /\{%/, end: /%}/,
+	        keywords: TAGS,
+	        contains: [FILTER, FUNCTIONS]
+	      },
+	      {
+	        className: 'variable',
+	        begin: /\{\{/, end: /}}/,
+	        contains: [FILTER, FUNCTIONS]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var KEYWORDS = {
+	    keyword:
+	      'in if for while finally var new function|0 do return void else break catch ' +
+	      'instanceof with throw case default try this switch continue typeof delete ' +
+	      'let yield const class public private get set super interface extends' +
+	      'static constructor implements enum export import declare type protected',
+	    literal:
+	      'true false null undefined NaN Infinity',
+	    built_in:
+	      'eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent ' +
+	      'encodeURI encodeURIComponent escape unescape Object Function Boolean Error ' +
+	      'EvalError InternalError RangeError ReferenceError StopIteration SyntaxError ' +
+	      'TypeError URIError Number Math Date String RegExp Array Float32Array ' +
+	      'Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array ' +
+	      'Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require ' +
+	      'module console window document any number boolean string void'
+	  }
+
+	  return {
+	    aliases: ['ts'],
+	    keywords: KEYWORDS,
+	    contains: [
+	      {
+	        className: 'pi',
+	        begin: /^\s*['"]use strict['"]/,
+	        relevance: 0
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'number',
+	        variants: [
+	          { begin: '\\b(0[bB][01]+)' },
+	          { begin: '\\b(0[oO][0-7]+)' },
+	          { begin: hljs.C_NUMBER_RE }
+	        ],
+	        relevance: 0
+	      },
+	      { // "value" container
+	        begin: '(' + hljs.RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
+	        keywords: 'return throw case',
+	        contains: [
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE,
+	          hljs.REGEXP_MODE,
+	          { // E4X
+	            begin: /</, end: />;/,
+	            relevance: 0,
+	            subLanguage: 'xml'
+	          }
+	        ],
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        begin: 'function', end: /[\{;]/, excludeEnd: true,
+	        keywords: KEYWORDS,
+	        contains: [
+	          'self',
+	          hljs.inherit(hljs.TITLE_MODE, {begin: /[A-Za-z$_][0-9A-Za-z$_]*/}),
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/,
+	            excludeBegin: true,
+	            excludeEnd: true,
+	            keywords: KEYWORDS,
+	            contains: [
+	              hljs.C_LINE_COMMENT_MODE,
+	              hljs.C_BLOCK_COMMENT_MODE
+	            ],
+	            illegal: /["'\(]/
+	          }
+	        ],
+	        illegal: /\[|%/,
+	        relevance: 0 // () => {} is more typical in TypeScript
+	      },
+	      {
+	        className: 'constructor',
+	        begin: 'constructor', end: /\{/, excludeEnd: true,
+	        keywords: KEYWORDS,
+	        relevance: 10
+	      },
+	      {
+	        className: 'module',
+	        beginKeywords: 'module', end: /\{/, excludeEnd: true
+	      },
+	      {
+	        className: 'interface',
+	        beginKeywords: 'interface', end: /\{/, excludeEnd: true
+	      },
+	      {
+	        begin: /\$[(.]/ // relevance booster for a pattern common to JS libs: `$(something)` and `$.something`
+	      },
+	      {
+	        begin: '\\.' + hljs.IDENT_RE, relevance: 0 // hack: prevents detection of keywords after dots
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 333 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    keywords: {
+	      keyword:
+	        // Value types
+	        'char uchar unichar int uint long ulong short ushort int8 int16 int32 int64 uint8 ' +
+	        'uint16 uint32 uint64 float double bool struct enum string void ' +
+	        // Reference types
+	        'weak unowned owned ' +
+	        // Modifiers
+	        'async signal static abstract interface override ' +
+	        // Control Structures
+	        'while do for foreach else switch case break default return try catch ' +
+	        // Visibility
+	        'public private protected internal ' +
+	        // Other
+	        'using new this get set const stdout stdin stderr var',
+	      built_in:
+	        'DBus GLib CCode Gee Object',
+	      literal:
+	        'false true null'
+	    },
+	    contains: [
+	      {
+	        className: 'class',
+	        beginKeywords: 'class interface delegate namespace', end: '{', excludeEnd: true,
+	        illegal: '[^,:\\n\\s\\.]',
+	        contains: [
+	          hljs.UNDERSCORE_TITLE_MODE
+	        ]
+	      },
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      {
+	        className: 'string',
+	        begin: '"""', end: '"""',
+	        relevance: 5
+	      },
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'preprocessor',
+	        begin: '^#', end: '$',
+	        relevance: 2
+	      },
+	      {
+	        className: 'constant',
+	        begin: ' [A-Z_]+ ',
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 334 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['vb'],
+	    case_insensitive: true,
+	    keywords: {
+	      keyword:
+	        'addhandler addressof alias and andalso aggregate ansi as assembly auto binary by byref byval ' + /* a-b */
+	        'call case catch class compare const continue custom declare default delegate dim distinct do ' + /* c-d */
+	        'each equals else elseif end enum erase error event exit explicit finally for friend from function ' + /* e-f */
+	        'get global goto group handles if implements imports in inherits interface into is isfalse isnot istrue ' + /* g-i */
+	        'join key let lib like loop me mid mod module mustinherit mustoverride mybase myclass ' + /* j-m */
+	        'namespace narrowing new next not notinheritable notoverridable ' + /* n */
+	        'of off on operator option optional or order orelse overloads overridable overrides ' + /* o */
+	        'paramarray partial preserve private property protected public ' + /* p */
+	        'raiseevent readonly redim rem removehandler resume return ' + /* r */
+	        'select set shadows shared skip static step stop structure strict sub synclock ' + /* s */
+	        'take text then throw to try unicode until using when where while widening with withevents writeonly xor', /* t-x */
+	      built_in:
+	        'boolean byte cbool cbyte cchar cdate cdec cdbl char cint clng cobj csbyte cshort csng cstr ctype ' +  /* b-c */
+	        'date decimal directcast double gettype getxmlnamespace iif integer long object ' + /* d-o */
+	        'sbyte short single string trycast typeof uinteger ulong ushort', /* s-u */
+	      literal:
+	        'true false nothing'
+	    },
+	    illegal: '//|{|}|endif|gosub|variant|wend', /* reserved deprecated keywords */
+	    contains: [
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {contains: [{begin: '""'}]}),
+	      hljs.COMMENT(
+	        '\'',
+	        '$',
+	        {
+	          returnBegin: true,
+	          contains: [
+	            {
+	              className: 'xmlDocTag',
+	              begin: '\'\'\'|<!--|-->',
+	              contains: [hljs.PHRASAL_WORDS_MODE]
+	            },
+	            {
+	              className: 'xmlDocTag',
+	              begin: '</?', end: '>',
+	              contains: [hljs.PHRASAL_WORDS_MODE]
+	            }
+	          ]
+	        }
+	      ),
+	      hljs.C_NUMBER_MODE,
+	      {
+	        className: 'preprocessor',
+	        begin: '#', end: '$',
+	        keywords: 'if else elseif end region externalsource'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 335 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['vbs'],
+	    case_insensitive: true,
+	    keywords: {
+	      keyword:
+	        'call class const dim do loop erase execute executeglobal exit for each next function ' +
+	        'if then else on error option explicit new private property let get public randomize ' +
+	        'redim rem select case set stop sub while wend with end to elseif is or xor and not ' +
+	        'class_initialize class_terminate default preserve in me byval byref step resume goto',
+	      built_in:
+	        'lcase month vartype instrrev ubound setlocale getobject rgb getref string ' +
+	        'weekdayname rnd dateadd monthname now day minute isarray cbool round formatcurrency ' +
+	        'conversions csng timevalue second year space abs clng timeserial fixs len asc ' +
+	        'isempty maths dateserial atn timer isobject filter weekday datevalue ccur isdate ' +
+	        'instr datediff formatdatetime replace isnull right sgn array snumeric log cdbl hex ' +
+	        'chr lbound msgbox ucase getlocale cos cdate cbyte rtrim join hour oct typename trim ' +
+	        'strcomp int createobject loadpicture tan formatnumber mid scriptenginebuildversion ' +
+	        'scriptengine split scriptengineminorversion cint sin datepart ltrim sqr ' +
+	        'scriptenginemajorversion time derived eval date formatpercent exp inputbox left ascw ' +
+	        'chrw regexp server response request cstr err',
+	      literal:
+	        'true false null nothing empty'
+	    },
+	    illegal: '//',
+	    contains: [
+	      hljs.inherit(hljs.QUOTE_STRING_MODE, {contains: [{begin: '""'}]}),
+	      hljs.COMMENT(
+	        /'/,
+	        /$/,
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      hljs.C_NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 336 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    subLanguage: 'xml', subLanguageMode: 'continuous',
+	    contains: [
+	      {
+	        begin: '<%', end: '%>',
+	        subLanguage: 'vbscript'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 337 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    aliases: ['v'],
+	    case_insensitive: true,
+	    keywords: {
+	      keyword:
+	        'always and assign begin buf bufif0 bufif1 case casex casez cmos deassign ' +
+	        'default defparam disable edge else end endcase endfunction endmodule ' +
+	        'endprimitive endspecify endtable endtask event for force forever fork ' +
+	        'function if ifnone initial inout input join macromodule module nand ' +
+	        'negedge nmos nor not notif0 notif1 or output parameter pmos posedge ' +
+	        'primitive pulldown pullup rcmos release repeat rnmos rpmos rtran ' +
+	        'rtranif0 rtranif1 specify specparam table task timescale tran ' +
+	        'tranif0 tranif1 wait while xnor xor',
+	      typename:
+	        'highz0 highz1 integer large medium pull0 pull1 real realtime reg ' +
+	        'scalared signed small strong0 strong1 supply0 supply0 supply1 supply1 ' +
+	        'time tri tri0 tri1 triand trior trireg vectored wand weak0 weak1 wire wor'
+	    },
+	    contains: [
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'number',
+	        begin: '\\b(\\d+\'(b|h|o|d|B|H|O|D))?[0-9xzXZ]+',
+	        contains: [hljs.BACKSLASH_ESCAPE],
+	        relevance: 0
+	      },
+	      /* ports in instances */
+	      {
+	        className: 'typename',
+	        begin: '\\.\\w+',
+	        relevance: 0
+	      },
+	      /* parameters to instances */
+	      {
+	        className: 'value',
+	        begin: '#\\((?!parameter).+\\)'
+	      },
+	      /* operators */
+	      {
+	        className: 'keyword',
+	        begin: '\\+|-|\\*|/|%|<|>|=|#|`|\\!|&|\\||@|:|\\^|~|\\{|\\}',
+	        relevance: 0
+	      }
+	    ]
+	  }; // return
+	};
+
+/***/ },
+/* 338 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  // Regular expression for VHDL numeric literals.
+
+	  // Decimal literal:
+	  var INTEGER_RE = '\\d(_|\\d)*';
+	  var EXPONENT_RE = '[eE][-+]?' + INTEGER_RE;
+	  var DECIMAL_LITERAL_RE = INTEGER_RE + '(\\.' + INTEGER_RE + ')?' + '(' + EXPONENT_RE + ')?';
+	  // Based literal:
+	  var BASED_INTEGER_RE = '\\w+';
+	  var BASED_LITERAL_RE = INTEGER_RE + '#' + BASED_INTEGER_RE + '(\\.' + BASED_INTEGER_RE + ')?' + '#' + '(' + EXPONENT_RE + ')?';
+
+	  var NUMBER_RE = '\\b(' + BASED_LITERAL_RE + '|' + DECIMAL_LITERAL_RE + ')';
+
+	  return {
+	    case_insensitive: true,
+	    keywords: {
+	      keyword:
+	        'abs access after alias all and architecture array assert attribute begin block ' +
+	        'body buffer bus case component configuration constant context cover disconnect ' +
+	        'downto default else elsif end entity exit fairness file for force function generate ' +
+	        'generic group guarded if impure in inertial inout is label library linkage literal ' +
+	        'loop map mod nand new next nor not null of on open or others out package port ' +
+	        'postponed procedure process property protected pure range record register reject ' +
+	        'release rem report restrict restrict_guarantee return rol ror select sequence ' +
+	        'severity shared signal sla sll sra srl strong subtype then to transport type ' +
+	        'unaffected units until use variable vmode vprop vunit wait when while with xnor xor',
+	      typename:
+	        'boolean bit character severity_level integer time delay_length natural positive ' +
+	        'string bit_vector file_open_kind file_open_status std_ulogic std_ulogic_vector ' +
+	        'std_logic std_logic_vector unsigned signed boolean_vector integer_vector ' +
+	        'real_vector time_vector'
+	    },
+	    illegal: '{',
+	    contains: [
+	      hljs.C_BLOCK_COMMENT_MODE,        // VHDL-2008 block commenting.
+	      hljs.COMMENT('--', '$'),
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'number',
+	        begin: NUMBER_RE,
+	        relevance: 0
+	      },
+	      {
+	        className: 'literal',
+	        begin: '\'(U|X|0|1|Z|W|L|H|-)\'',
+	        contains: [hljs.BACKSLASH_ESCAPE]
+	      },
+	      {
+	        className: 'attribute',
+	        begin: '\'[A-Za-z](_?[A-Za-z0-9])*',
+	        contains: [hljs.BACKSLASH_ESCAPE]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 339 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    lexemes: /[!#@\w]+/,
+	    keywords: {
+	      keyword: //ex command
+	        // express version except: ! & * < = > !! # @ @@
+	        'N|0 P|0 X|0 a|0 ab abc abo al am an|0 ar arga argd arge argdo argg argl argu as au aug aun b|0 bN ba bad bd be bel bf bl bm bn bo bp br brea breaka breakd breakl bro bufdo buffers bun bw c|0 cN cNf ca cabc caddb cad caddf cal cat cb cc ccl cd ce cex cf cfir cgetb cgete cg changes chd che checkt cl cla clo cm cmapc cme cn cnew cnf cno cnorea cnoreme co col colo com comc comp con conf cope '+
+	        'cp cpf cq cr cs cst cu cuna cunme cw d|0 delm deb debugg delc delf dif diffg diffo diffp diffpu diffs diffthis dig di dl dell dj dli do doautoa dp dr ds dsp e|0 ea ec echoe echoh echom echon el elsei em en endfo endf endt endw ene ex exe exi exu f|0 files filet fin fina fini fir fix fo foldc foldd folddoc foldo for fu g|0 go gr grepa gu gv ha h|0 helpf helpg helpt hi hid his i|0 ia iabc if ij il im imapc '+
+	        'ime ino inorea inoreme int is isp iu iuna iunme j|0 ju k|0 keepa kee keepj lN lNf l|0 lad laddb laddf la lan lat lb lc lch lcl lcs le lefta let lex lf lfir lgetb lgete lg lgr lgrepa lh ll lla lli lmak lm lmapc lne lnew lnf ln loadk lo loc lockv lol lope lp lpf lr ls lt lu lua luad luaf lv lvimgrepa lw m|0 ma mak map mapc marks mat me menut mes mk mks mksp mkv mkvie mod mz mzf nbc nb nbs n|0 new nm nmapc nme nn nnoreme noa no noh norea noreme norm nu nun nunme ol o|0 om omapc ome on ono onoreme opt ou ounme ow p|0 '+
+	        'profd prof pro promptr pc ped pe perld po popu pp pre prev ps pt ptN ptf ptj ptl ptn ptp ptr pts pu pw py3 python3 py3d py3f py pyd pyf q|0 quita qa r|0 rec red redi redr redraws reg res ret retu rew ri rightb rub rubyd rubyf rund ru rv s|0 sN san sa sal sav sb sbN sba sbf sbl sbm sbn sbp sbr scrip scripte scs se setf setg setl sf sfir sh sim sig sil sl sla sm smap smapc sme sn sni sno snor snoreme sor '+
+	        'so spelld spe spelli spellr spellu spellw sp spr sre st sta startg startr star stopi stj sts sun sunm sunme sus sv sw sy synti sync t|0 tN tabN tabc tabdo tabe tabf tabfir tabl tabm tabnew '+
+	        'tabn tabo tabp tabr tabs tab ta tags tc tcld tclf te tf th tj tl tm tn to tp tr try ts tu u|0 undoj undol una unh unl unlo unm unme uns up v|0 ve verb vert vim vimgrepa vi viu vie vm vmapc vme vne vn vnoreme vs vu vunme windo w|0 wN wa wh wi winc winp wn wp wq wqa ws wu wv x|0 xa xmapc xm xme xn xnoreme xu xunme y|0 z|0 ~ '+
+	        // full version
+	        'Next Print append abbreviate abclear aboveleft all amenu anoremenu args argadd argdelete argedit argglobal arglocal argument ascii autocmd augroup aunmenu buffer bNext ball badd bdelete behave belowright bfirst blast bmodified bnext botright bprevious brewind break breakadd breakdel breaklist browse bunload '+
+	        'bwipeout change cNext cNfile cabbrev cabclear caddbuffer caddexpr caddfile call catch cbuffer cclose center cexpr cfile cfirst cgetbuffer cgetexpr cgetfile chdir checkpath checktime clist clast close cmap cmapclear cmenu cnext cnewer cnfile cnoremap cnoreabbrev cnoremenu copy colder colorscheme command comclear compiler continue confirm copen cprevious cpfile cquit crewind cscope cstag cunmap '+
+	        'cunabbrev cunmenu cwindow delete delmarks debug debuggreedy delcommand delfunction diffupdate diffget diffoff diffpatch diffput diffsplit digraphs display deletel djump dlist doautocmd doautoall deletep drop dsearch dsplit edit earlier echo echoerr echohl echomsg else elseif emenu endif endfor '+
+	        'endfunction endtry endwhile enew execute exit exusage file filetype find finally finish first fixdel fold foldclose folddoopen folddoclosed foldopen function global goto grep grepadd gui gvim hardcopy help helpfind helpgrep helptags highlight hide history insert iabbrev iabclear ijump ilist imap '+
+	        'imapclear imenu inoremap inoreabbrev inoremenu intro isearch isplit iunmap iunabbrev iunmenu join jumps keepalt keepmarks keepjumps lNext lNfile list laddexpr laddbuffer laddfile last language later lbuffer lcd lchdir lclose lcscope left leftabove lexpr lfile lfirst lgetbuffer lgetexpr lgetfile lgrep lgrepadd lhelpgrep llast llist lmake lmap lmapclear lnext lnewer lnfile lnoremap loadkeymap loadview '+
+	        'lockmarks lockvar lolder lopen lprevious lpfile lrewind ltag lunmap luado luafile lvimgrep lvimgrepadd lwindow move mark make mapclear match menu menutranslate messages mkexrc mksession mkspell mkvimrc mkview mode mzscheme mzfile nbclose nbkey nbsart next nmap nmapclear nmenu nnoremap '+
+	        'nnoremenu noautocmd noremap nohlsearch noreabbrev noremenu normal number nunmap nunmenu oldfiles open omap omapclear omenu only onoremap onoremenu options ounmap ounmenu ownsyntax print profdel profile promptfind promptrepl pclose pedit perl perldo pop popup ppop preserve previous psearch ptag ptNext '+
+	        'ptfirst ptjump ptlast ptnext ptprevious ptrewind ptselect put pwd py3do py3file python pydo pyfile quit quitall qall read recover redo redir redraw redrawstatus registers resize retab return rewind right rightbelow ruby rubydo rubyfile rundo runtime rviminfo substitute sNext sandbox sargument sall saveas sbuffer sbNext sball sbfirst sblast sbmodified sbnext sbprevious sbrewind scriptnames scriptencoding '+
+	        'scscope set setfiletype setglobal setlocal sfind sfirst shell simalt sign silent sleep slast smagic smapclear smenu snext sniff snomagic snoremap snoremenu sort source spelldump spellgood spellinfo spellrepall spellundo spellwrong split sprevious srewind stop stag startgreplace startreplace '+
+	        'startinsert stopinsert stjump stselect sunhide sunmap sunmenu suspend sview swapname syntax syntime syncbind tNext tabNext tabclose tabedit tabfind tabfirst tablast tabmove tabnext tabonly tabprevious tabrewind tag tcl tcldo tclfile tearoff tfirst throw tjump tlast tmenu tnext topleft tprevious '+'trewind tselect tunmenu undo undojoin undolist unabbreviate unhide unlet unlockvar unmap unmenu unsilent update vglobal version verbose vertical vimgrep vimgrepadd visual viusage view vmap vmapclear vmenu vnew '+
+	        'vnoremap vnoremenu vsplit vunmap vunmenu write wNext wall while winsize wincmd winpos wnext wprevious wqall wsverb wundo wviminfo xit xall xmapclear xmap xmenu xnoremap xnoremenu xunmap xunmenu yank',
+	      built_in: //built in func
+	        'abs acos add and append argc argidx argv asin atan atan2 browse browsedir bufexists buflisted bufloaded bufname bufnr bufwinnr byte2line byteidx call ceil changenr char2nr cindent clearmatches col complete complete_add complete_check confirm copy cos cosh count cscope_connection cursor '+
+	        'deepcopy delete did_filetype diff_filler diff_hlID empty escape eval eventhandler executable exists exp expand extend feedkeys filereadable filewritable filter finddir findfile float2nr floor fmod fnameescape fnamemodify foldclosed foldclosedend foldlevel foldtext foldtextresult foreground function '+
+	        'garbagecollect get getbufline getbufvar getchar getcharmod getcmdline getcmdpos getcmdtype getcwd getfontname getfperm getfsize getftime getftype getline getloclist getmatches getpid getpos getqflist getreg getregtype gettabvar gettabwinvar getwinposx getwinposy getwinvar glob globpath has has_key '+
+	        'haslocaldir hasmapto histadd histdel histget histnr hlexists hlID hostname iconv indent index input inputdialog inputlist inputrestore inputsave inputsecret insert invert isdirectory islocked items join keys len libcall libcallnr line line2byte lispindent localtime log log10 luaeval map maparg mapcheck '+
+	        'match matchadd matcharg matchdelete matchend matchlist matchstr max min mkdir mode mzeval nextnonblank nr2char or pathshorten pow prevnonblank printf pumvisible py3eval pyeval range readfile reltime reltimestr remote_expr remote_foreground remote_peek remote_read remote_send remove rename repeat '+
+	        'resolve reverse round screenattr screenchar screencol screenrow search searchdecl searchpair searchpairpos searchpos server2client serverlist setbufvar setcmdpos setline setloclist setmatches setpos setqflist setreg settabvar settabwinvar setwinvar sha256 shellescape shiftwidth simplify sin '+
+	        'sinh sort soundfold spellbadword spellsuggest split sqrt str2float str2nr strchars strdisplaywidth strftime stridx string strlen strpart strridx strtrans strwidth submatch substitute synconcealed synID synIDattr '+
+	        'synIDtrans synstack system tabpagebuflist tabpagenr tabpagewinnr tagfiles taglist tan tanh tempname tolower toupper tr trunc type undofile undotree values virtcol visualmode wildmenumode winbufnr wincol winheight winline winnr winrestcmd winrestview winsaveview winwidth writefile xor'
+	    },
+	    illegal: /[{:]/,
+	    contains: [
+	      hljs.NUMBER_MODE,
+	      hljs.APOS_STRING_MODE,
+	      {
+	        className: 'string',
+	        // quote with escape, comment as quote
+	        begin: /"((\\")|[^"\n])*("|\n)/
+	      },
+	      {
+	        className: 'variable',
+	        begin: /[bwtglsav]:[\w\d_]*/
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'function function!', end: '$',
+	        relevance: 0,
+	        contains: [
+	          hljs.TITLE_MODE,
+	          {
+	            className: 'params',
+	            begin: '\\(', end: '\\)'
+	          }
+	        ]
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 340 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  return {
+	    case_insensitive: true,
+	    lexemes: '\\.?' + hljs.IDENT_RE,
+	    keywords: {
+	      keyword:
+	        'lock rep repe repz repne repnz xaquire xrelease bnd nobnd ' +
+	        'aaa aad aam aas adc add and arpl bb0_reset bb1_reset bound bsf bsr bswap bt btc btr bts call cbw cdq cdqe clc cld cli clts cmc cmp cmpsb cmpsd cmpsq cmpsw cmpxchg cmpxchg486 cmpxchg8b cmpxchg16b cpuid cpu_read cpu_write cqo cwd cwde daa das dec div dmint emms enter equ f2xm1 fabs fadd faddp fbld fbstp fchs fclex fcmovb fcmovbe fcmove fcmovnb fcmovnbe fcmovne fcmovnu fcmovu fcom fcomi fcomip fcomp fcompp fcos fdecstp fdisi fdiv fdivp fdivr fdivrp femms feni ffree ffreep fiadd ficom ficomp fidiv fidivr fild fimul fincstp finit fist fistp fisttp fisub fisubr fld fld1 fldcw fldenv fldl2e fldl2t fldlg2 fldln2 fldpi fldz fmul fmulp fnclex fndisi fneni fninit fnop fnsave fnstcw fnstenv fnstsw fpatan fprem fprem1 fptan frndint frstor fsave fscale fsetpm fsin fsincos fsqrt fst fstcw fstenv fstp fstsw fsub fsubp fsubr fsubrp ftst fucom fucomi fucomip fucomp fucompp fxam fxch fxtract fyl2x fyl2xp1 hlt ibts icebp idiv imul in inc incbin insb insd insw int int01 int1 int03 int3 into invd invpcid invlpg invlpga iret iretd iretq iretw jcxz jecxz jrcxz jmp jmpe lahf lar lds lea leave les lfence lfs lgdt lgs lidt lldt lmsw loadall loadall286 lodsb lodsd lodsq lodsw loop loope loopne loopnz loopz lsl lss ltr mfence monitor mov movd movq movsb movsd movsq movsw movsx movsxd movzx mul mwait neg nop not or out outsb outsd outsw packssdw packsswb packuswb paddb paddd paddsb paddsiw paddsw paddusb paddusw paddw pand pandn pause paveb pavgusb pcmpeqb pcmpeqd pcmpeqw pcmpgtb pcmpgtd pcmpgtw pdistib pf2id pfacc pfadd pfcmpeq pfcmpge pfcmpgt pfmax pfmin pfmul pfrcp pfrcpit1 pfrcpit2 pfrsqit1 pfrsqrt pfsub pfsubr pi2fd pmachriw pmaddwd pmagw pmulhriw pmulhrwa pmulhrwc pmulhw pmullw pmvgezb pmvlzb pmvnzb pmvzb pop popa popad popaw popf popfd popfq popfw por prefetch prefetchw pslld psllq psllw psrad psraw psrld psrlq psrlw psubb psubd psubsb psubsiw psubsw psubusb psubusw psubw punpckhbw punpckhdq punpckhwd punpcklbw punpckldq punpcklwd push pusha pushad pushaw pushf pushfd pushfq pushfw pxor rcl rcr rdshr rdmsr rdpmc rdtsc rdtscp ret retf retn rol ror rdm rsdc rsldt rsm rsts sahf sal salc sar sbb scasb scasd scasq scasw sfence sgdt shl shld shr shrd sidt sldt skinit smi smint smintold smsw stc std sti stosb stosd stosq stosw str sub svdc svldt svts swapgs syscall sysenter sysexit sysret test ud0 ud1 ud2b ud2 ud2a umov verr verw fwait wbinvd wrshr wrmsr xadd xbts xchg xlatb xlat xor cmove cmovz cmovne cmovnz cmova cmovnbe cmovae cmovnb cmovb cmovnae cmovbe cmovna cmovg cmovnle cmovge cmovnl cmovl cmovnge cmovle cmovng cmovc cmovnc cmovo cmovno cmovs cmovns cmovp cmovpe cmovnp cmovpo je jz jne jnz ja jnbe jae jnb jb jnae jbe jna jg jnle jge jnl jl jnge jle jng jc jnc jo jno js jns jpo jnp jpe jp sete setz setne setnz seta setnbe setae setnb setnc setb setnae setcset setbe setna setg setnle setge setnl setl setnge setle setng sets setns seto setno setpe setp setpo setnp addps addss andnps andps cmpeqps cmpeqss cmpleps cmpless cmpltps cmpltss cmpneqps cmpneqss cmpnleps cmpnless cmpnltps cmpnltss cmpordps cmpordss cmpunordps cmpunordss cmpps cmpss comiss cvtpi2ps cvtps2pi cvtsi2ss cvtss2si cvttps2pi cvttss2si divps divss ldmxcsr maxps maxss minps minss movaps movhps movlhps movlps movhlps movmskps movntps movss movups mulps mulss orps rcpps rcpss rsqrtps rsqrtss shufps sqrtps sqrtss stmxcsr subps subss ucomiss unpckhps unpcklps xorps fxrstor fxrstor64 fxsave fxsave64 xgetbv xsetbv xsave xsave64 xsaveopt xsaveopt64 xrstor xrstor64 prefetchnta prefetcht0 prefetcht1 prefetcht2 maskmovq movntq pavgb pavgw pextrw pinsrw pmaxsw pmaxub pminsw pminub pmovmskb pmulhuw psadbw pshufw pf2iw pfnacc pfpnacc pi2fw pswapd maskmovdqu clflush movntdq movnti movntpd movdqa movdqu movdq2q movq2dq paddq pmuludq pshufd pshufhw pshuflw pslldq psrldq psubq punpckhqdq punpcklqdq addpd addsd andnpd andpd cmpeqpd cmpeqsd cmplepd cmplesd cmpltpd cmpltsd cmpneqpd cmpneqsd cmpnlepd cmpnlesd cmpnltpd cmpnltsd cmpordpd cmpordsd cmpunordpd cmpunordsd cmppd comisd cvtdq2pd cvtdq2ps cvtpd2dq cvtpd2pi cvtpd2ps cvtpi2pd cvtps2dq cvtps2pd cvtsd2si cvtsd2ss cvtsi2sd cvtss2sd cvttpd2pi cvttpd2dq cvttps2dq cvttsd2si divpd divsd maxpd maxsd minpd minsd movapd movhpd movlpd movmskpd movupd mulpd mulsd orpd shufpd sqrtpd sqrtsd subpd subsd ucomisd unpckhpd unpcklpd xorpd addsubpd addsubps haddpd haddps hsubpd hsubps lddqu movddup movshdup movsldup clgi stgi vmcall vmclear vmfunc vmlaunch vmload vmmcall vmptrld vmptrst vmread vmresume vmrun vmsave vmwrite vmxoff vmxon invept invvpid pabsb pabsw pabsd palignr phaddw phaddd phaddsw phsubw phsubd phsubsw pmaddubsw pmulhrsw pshufb psignb psignw psignd extrq insertq movntsd movntss lzcnt blendpd blendps blendvpd blendvps dppd dpps extractps insertps movntdqa mpsadbw packusdw pblendvb pblendw pcmpeqq pextrb pextrd pextrq phminposuw pinsrb pinsrd pinsrq pmaxsb pmaxsd pmaxud pmaxuw pminsb pminsd pminud pminuw pmovsxbw pmovsxbd pmovsxbq pmovsxwd pmovsxwq pmovsxdq pmovzxbw pmovzxbd pmovzxbq pmovzxwd pmovzxwq pmovzxdq pmuldq pmulld ptest roundpd roundps roundsd roundss crc32 pcmpestri pcmpestrm pcmpistri pcmpistrm pcmpgtq popcnt getsec pfrcpv pfrsqrtv movbe aesenc aesenclast aesdec aesdeclast aesimc aeskeygenassist vaesenc vaesenclast vaesdec vaesdeclast vaesimc vaeskeygenassist vaddpd vaddps vaddsd vaddss vaddsubpd vaddsubps vandpd vandps vandnpd vandnps vblendpd vblendps vblendvpd vblendvps vbroadcastss vbroadcastsd vbroadcastf128 vcmpeq_ospd vcmpeqpd vcmplt_ospd vcmpltpd vcmple_ospd vcmplepd vcmpunord_qpd vcmpunordpd vcmpneq_uqpd vcmpneqpd vcmpnlt_uspd vcmpnltpd vcmpnle_uspd vcmpnlepd vcmpord_qpd vcmpordpd vcmpeq_uqpd vcmpnge_uspd vcmpngepd vcmpngt_uspd vcmpngtpd vcmpfalse_oqpd vcmpfalsepd vcmpneq_oqpd vcmpge_ospd vcmpgepd vcmpgt_ospd vcmpgtpd vcmptrue_uqpd vcmptruepd vcmplt_oqpd vcmple_oqpd vcmpunord_spd vcmpneq_uspd vcmpnlt_uqpd vcmpnle_uqpd vcmpord_spd vcmpeq_uspd vcmpnge_uqpd vcmpngt_uqpd vcmpfalse_ospd vcmpneq_ospd vcmpge_oqpd vcmpgt_oqpd vcmptrue_uspd vcmppd vcmpeq_osps vcmpeqps vcmplt_osps vcmpltps vcmple_osps vcmpleps vcmpunord_qps vcmpunordps vcmpneq_uqps vcmpneqps vcmpnlt_usps vcmpnltps vcmpnle_usps vcmpnleps vcmpord_qps vcmpordps vcmpeq_uqps vcmpnge_usps vcmpngeps vcmpngt_usps vcmpngtps vcmpfalse_oqps vcmpfalseps vcmpneq_oqps vcmpge_osps vcmpgeps vcmpgt_osps vcmpgtps vcmptrue_uqps vcmptrueps vcmplt_oqps vcmple_oqps vcmpunord_sps vcmpneq_usps vcmpnlt_uqps vcmpnle_uqps vcmpord_sps vcmpeq_usps vcmpnge_uqps vcmpngt_uqps vcmpfalse_osps vcmpneq_osps vcmpge_oqps vcmpgt_oqps vcmptrue_usps vcmpps vcmpeq_ossd vcmpeqsd vcmplt_ossd vcmpltsd vcmple_ossd vcmplesd vcmpunord_qsd vcmpunordsd vcmpneq_uqsd vcmpneqsd vcmpnlt_ussd vcmpnltsd vcmpnle_ussd vcmpnlesd vcmpord_qsd vcmpordsd vcmpeq_uqsd vcmpnge_ussd vcmpngesd vcmpngt_ussd vcmpngtsd vcmpfalse_oqsd vcmpfalsesd vcmpneq_oqsd vcmpge_ossd vcmpgesd vcmpgt_ossd vcmpgtsd vcmptrue_uqsd vcmptruesd vcmplt_oqsd vcmple_oqsd vcmpunord_ssd vcmpneq_ussd vcmpnlt_uqsd vcmpnle_uqsd vcmpord_ssd vcmpeq_ussd vcmpnge_uqsd vcmpngt_uqsd vcmpfalse_ossd vcmpneq_ossd vcmpge_oqsd vcmpgt_oqsd vcmptrue_ussd vcmpsd vcmpeq_osss vcmpeqss vcmplt_osss vcmpltss vcmple_osss vcmpless vcmpunord_qss vcmpunordss vcmpneq_uqss vcmpneqss vcmpnlt_usss vcmpnltss vcmpnle_usss vcmpnless vcmpord_qss vcmpordss vcmpeq_uqss vcmpnge_usss vcmpngess vcmpngt_usss vcmpngtss vcmpfalse_oqss vcmpfalsess vcmpneq_oqss vcmpge_osss vcmpgess vcmpgt_osss vcmpgtss vcmptrue_uqss vcmptruess vcmplt_oqss vcmple_oqss vcmpunord_sss vcmpneq_usss vcmpnlt_uqss vcmpnle_uqss vcmpord_sss vcmpeq_usss vcmpnge_uqss vcmpngt_uqss vcmpfalse_osss vcmpneq_osss vcmpge_oqss vcmpgt_oqss vcmptrue_usss vcmpss vcomisd vcomiss vcvtdq2pd vcvtdq2ps vcvtpd2dq vcvtpd2ps vcvtps2dq vcvtps2pd vcvtsd2si vcvtsd2ss vcvtsi2sd vcvtsi2ss vcvtss2sd vcvtss2si vcvttpd2dq vcvttps2dq vcvttsd2si vcvttss2si vdivpd vdivps vdivsd vdivss vdppd vdpps vextractf128 vextractps vhaddpd vhaddps vhsubpd vhsubps vinsertf128 vinsertps vlddqu vldqqu vldmxcsr vmaskmovdqu vmaskmovps vmaskmovpd vmaxpd vmaxps vmaxsd vmaxss vminpd vminps vminsd vminss vmovapd vmovaps vmovd vmovq vmovddup vmovdqa vmovqqa vmovdqu vmovqqu vmovhlps vmovhpd vmovhps vmovlhps vmovlpd vmovlps vmovmskpd vmovmskps vmovntdq vmovntqq vmovntdqa vmovntpd vmovntps vmovsd vmovshdup vmovsldup vmovss vmovupd vmovups vmpsadbw vmulpd vmulps vmulsd vmulss vorpd vorps vpabsb vpabsw vpabsd vpacksswb vpackssdw vpackuswb vpackusdw vpaddb vpaddw vpaddd vpaddq vpaddsb vpaddsw vpaddusb vpaddusw vpalignr vpand vpandn vpavgb vpavgw vpblendvb vpblendw vpcmpestri vpcmpestrm vpcmpistri vpcmpistrm vpcmpeqb vpcmpeqw vpcmpeqd vpcmpeqq vpcmpgtb vpcmpgtw vpcmpgtd vpcmpgtq vpermilpd vpermilps vperm2f128 vpextrb vpextrw vpextrd vpextrq vphaddw vphaddd vphaddsw vphminposuw vphsubw vphsubd vphsubsw vpinsrb vpinsrw vpinsrd vpinsrq vpmaddwd vpmaddubsw vpmaxsb vpmaxsw vpmaxsd vpmaxub vpmaxuw vpmaxud vpminsb vpminsw vpminsd vpminub vpminuw vpminud vpmovmskb vpmovsxbw vpmovsxbd vpmovsxbq vpmovsxwd vpmovsxwq vpmovsxdq vpmovzxbw vpmovzxbd vpmovzxbq vpmovzxwd vpmovzxwq vpmovzxdq vpmulhuw vpmulhrsw vpmulhw vpmullw vpmulld vpmuludq vpmuldq vpor vpsadbw vpshufb vpshufd vpshufhw vpshuflw vpsignb vpsignw vpsignd vpslldq vpsrldq vpsllw vpslld vpsllq vpsraw vpsrad vpsrlw vpsrld vpsrlq vptest vpsubb vpsubw vpsubd vpsubq vpsubsb vpsubsw vpsubusb vpsubusw vpunpckhbw vpunpckhwd vpunpckhdq vpunpckhqdq vpunpcklbw vpunpcklwd vpunpckldq vpunpcklqdq vpxor vrcpps vrcpss vrsqrtps vrsqrtss vroundpd vroundps vroundsd vroundss vshufpd vshufps vsqrtpd vsqrtps vsqrtsd vsqrtss vstmxcsr vsubpd vsubps vsubsd vsubss vtestps vtestpd vucomisd vucomiss vunpckhpd vunpckhps vunpcklpd vunpcklps vxorpd vxorps vzeroall vzeroupper pclmullqlqdq pclmulhqlqdq pclmullqhqdq pclmulhqhqdq pclmulqdq vpclmullqlqdq vpclmulhqlqdq vpclmullqhqdq vpclmulhqhqdq vpclmulqdq vfmadd132ps vfmadd132pd vfmadd312ps vfmadd312pd vfmadd213ps vfmadd213pd vfmadd123ps vfmadd123pd vfmadd231ps vfmadd231pd vfmadd321ps vfmadd321pd vfmaddsub132ps vfmaddsub132pd vfmaddsub312ps vfmaddsub312pd vfmaddsub213ps vfmaddsub213pd vfmaddsub123ps vfmaddsub123pd vfmaddsub231ps vfmaddsub231pd vfmaddsub321ps vfmaddsub321pd vfmsub132ps vfmsub132pd vfmsub312ps vfmsub312pd vfmsub213ps vfmsub213pd vfmsub123ps vfmsub123pd vfmsub231ps vfmsub231pd vfmsub321ps vfmsub321pd vfmsubadd132ps vfmsubadd132pd vfmsubadd312ps vfmsubadd312pd vfmsubadd213ps vfmsubadd213pd vfmsubadd123ps vfmsubadd123pd vfmsubadd231ps vfmsubadd231pd vfmsubadd321ps vfmsubadd321pd vfnmadd132ps vfnmadd132pd vfnmadd312ps vfnmadd312pd vfnmadd213ps vfnmadd213pd vfnmadd123ps vfnmadd123pd vfnmadd231ps vfnmadd231pd vfnmadd321ps vfnmadd321pd vfnmsub132ps vfnmsub132pd vfnmsub312ps vfnmsub312pd vfnmsub213ps vfnmsub213pd vfnmsub123ps vfnmsub123pd vfnmsub231ps vfnmsub231pd vfnmsub321ps vfnmsub321pd vfmadd132ss vfmadd132sd vfmadd312ss vfmadd312sd vfmadd213ss vfmadd213sd vfmadd123ss vfmadd123sd vfmadd231ss vfmadd231sd vfmadd321ss vfmadd321sd vfmsub132ss vfmsub132sd vfmsub312ss vfmsub312sd vfmsub213ss vfmsub213sd vfmsub123ss vfmsub123sd vfmsub231ss vfmsub231sd vfmsub321ss vfmsub321sd vfnmadd132ss vfnmadd132sd vfnmadd312ss vfnmadd312sd vfnmadd213ss vfnmadd213sd vfnmadd123ss vfnmadd123sd vfnmadd231ss vfnmadd231sd vfnmadd321ss vfnmadd321sd vfnmsub132ss vfnmsub132sd vfnmsub312ss vfnmsub312sd vfnmsub213ss vfnmsub213sd vfnmsub123ss vfnmsub123sd vfnmsub231ss vfnmsub231sd vfnmsub321ss vfnmsub321sd rdfsbase rdgsbase rdrand wrfsbase wrgsbase vcvtph2ps vcvtps2ph adcx adox rdseed clac stac xstore xcryptecb xcryptcbc xcryptctr xcryptcfb xcryptofb montmul xsha1 xsha256 llwpcb slwpcb lwpval lwpins vfmaddpd vfmaddps vfmaddsd vfmaddss vfmaddsubpd vfmaddsubps vfmsubaddpd vfmsubaddps vfmsubpd vfmsubps vfmsubsd vfmsubss vfnmaddpd vfnmaddps vfnmaddsd vfnmaddss vfnmsubpd vfnmsubps vfnmsubsd vfnmsubss vfrczpd vfrczps vfrczsd vfrczss vpcmov vpcomb vpcomd vpcomq vpcomub vpcomud vpcomuq vpcomuw vpcomw vphaddbd vphaddbq vphaddbw vphadddq vphaddubd vphaddubq vphaddubw vphaddudq vphadduwd vphadduwq vphaddwd vphaddwq vphsubbw vphsubdq vphsubwd vpmacsdd vpmacsdqh vpmacsdql vpmacssdd vpmacssdqh vpmacssdql vpmacsswd vpmacssww vpmacswd vpmacsww vpmadcsswd vpmadcswd vpperm vprotb vprotd vprotq vprotw vpshab vpshad vpshaq vpshaw vpshlb vpshld vpshlq vpshlw vbroadcasti128 vpblendd vpbroadcastb vpbroadcastw vpbroadcastd vpbroadcastq vpermd vpermpd vpermps vpermq vperm2i128 vextracti128 vinserti128 vpmaskmovd vpmaskmovq vpsllvd vpsllvq vpsravd vpsrlvd vpsrlvq vgatherdpd vgatherqpd vgatherdps vgatherqps vpgatherdd vpgatherqd vpgatherdq vpgatherqq xabort xbegin xend xtest andn bextr blci blcic blsi blsic blcfill blsfill blcmsk blsmsk blsr blcs bzhi mulx pdep pext rorx sarx shlx shrx tzcnt tzmsk t1mskc valignd valignq vblendmpd vblendmps vbroadcastf32x4 vbroadcastf64x4 vbroadcasti32x4 vbroadcasti64x4 vcompresspd vcompressps vcvtpd2udq vcvtps2udq vcvtsd2usi vcvtss2usi vcvttpd2udq vcvttps2udq vcvttsd2usi vcvttss2usi vcvtudq2pd vcvtudq2ps vcvtusi2sd vcvtusi2ss vexpandpd vexpandps vextractf32x4 vextractf64x4 vextracti32x4 vextracti64x4 vfixupimmpd vfixupimmps vfixupimmsd vfixupimmss vgetexppd vgetexpps vgetexpsd vgetexpss vgetmantpd vgetmantps vgetmantsd vgetmantss vinsertf32x4 vinsertf64x4 vinserti32x4 vinserti64x4 vmovdqa32 vmovdqa64 vmovdqu32 vmovdqu64 vpabsq vpandd vpandnd vpandnq vpandq vpblendmd vpblendmq vpcmpltd vpcmpled vpcmpneqd vpcmpnltd vpcmpnled vpcmpd vpcmpltq vpcmpleq vpcmpneqq vpcmpnltq vpcmpnleq vpcmpq vpcmpequd vpcmpltud vpcmpleud vpcmpnequd vpcmpnltud vpcmpnleud vpcmpud vpcmpequq vpcmpltuq vpcmpleuq vpcmpnequq vpcmpnltuq vpcmpnleuq vpcmpuq vpcompressd vpcompressq vpermi2d vpermi2pd vpermi2ps vpermi2q vpermt2d vpermt2pd vpermt2ps vpermt2q vpexpandd vpexpandq vpmaxsq vpmaxuq vpminsq vpminuq vpmovdb vpmovdw vpmovqb vpmovqd vpmovqw vpmovsdb vpmovsdw vpmovsqb vpmovsqd vpmovsqw vpmovusdb vpmovusdw vpmovusqb vpmovusqd vpmovusqw vpord vporq vprold vprolq vprolvd vprolvq vprord vprorq vprorvd vprorvq vpscatterdd vpscatterdq vpscatterqd vpscatterqq vpsraq vpsravq vpternlogd vpternlogq vptestmd vptestmq vptestnmd vptestnmq vpxord vpxorq vrcp14pd vrcp14ps vrcp14sd vrcp14ss vrndscalepd vrndscaleps vrndscalesd vrndscaless vrsqrt14pd vrsqrt14ps vrsqrt14sd vrsqrt14ss vscalefpd vscalefps vscalefsd vscalefss vscatterdpd vscatterdps vscatterqpd vscatterqps vshuff32x4 vshuff64x2 vshufi32x4 vshufi64x2 kandnw kandw kmovw knotw kortestw korw kshiftlw kshiftrw kunpckbw kxnorw kxorw vpbroadcastmb2q vpbroadcastmw2d vpconflictd vpconflictq vplzcntd vplzcntq vexp2pd vexp2ps vrcp28pd vrcp28ps vrcp28sd vrcp28ss vrsqrt28pd vrsqrt28ps vrsqrt28sd vrsqrt28ss vgatherpf0dpd vgatherpf0dps vgatherpf0qpd vgatherpf0qps vgatherpf1dpd vgatherpf1dps vgatherpf1qpd vgatherpf1qps vscatterpf0dpd vscatterpf0dps vscatterpf0qpd vscatterpf0qps vscatterpf1dpd vscatterpf1dps vscatterpf1qpd vscatterpf1qps prefetchwt1 bndmk bndcl bndcu bndcn bndmov bndldx bndstx sha1rnds4 sha1nexte sha1msg1 sha1msg2 sha256rnds2 sha256msg1 sha256msg2 hint_nop0 hint_nop1 hint_nop2 hint_nop3 hint_nop4 hint_nop5 hint_nop6 hint_nop7 hint_nop8 hint_nop9 hint_nop10 hint_nop11 hint_nop12 hint_nop13 hint_nop14 hint_nop15 hint_nop16 hint_nop17 hint_nop18 hint_nop19 hint_nop20 hint_nop21 hint_nop22 hint_nop23 hint_nop24 hint_nop25 hint_nop26 hint_nop27 hint_nop28 hint_nop29 hint_nop30 hint_nop31 hint_nop32 hint_nop33 hint_nop34 hint_nop35 hint_nop36 hint_nop37 hint_nop38 hint_nop39 hint_nop40 hint_nop41 hint_nop42 hint_nop43 hint_nop44 hint_nop45 hint_nop46 hint_nop47 hint_nop48 hint_nop49 hint_nop50 hint_nop51 hint_nop52 hint_nop53 hint_nop54 hint_nop55 hint_nop56 hint_nop57 hint_nop58 hint_nop59 hint_nop60 hint_nop61 hint_nop62 hint_nop63',
+	      literal:
+	        // Instruction pointer
+	        'ip eip rip ' +
+	        // 8-bit registers
+	        'al ah bl bh cl ch dl dh sil dil bpl spl r8b r9b r10b r11b r12b r13b r14b r15b ' +
+	        // 16-bit registers
+	        'ax bx cx dx si di bp sp r8w r9w r10w r11w r12w r13w r14w r15w ' +
+	        // 32-bit registers
+	        'eax ebx ecx edx esi edi ebp esp eip r8d r9d r10d r11d r12d r13d r14d r15d ' +
+	        // 64-bit registers
+	        'rax rbx rcx rdx rsi rdi rbp rsp r8 r9 r10 r11 r12 r13 r14 r15 ' +
+	        // Segment registers
+	        'cs ds es fs gs ss ' +
+	        // Floating point stack registers
+	        'st st0 st1 st2 st3 st4 st5 st6 st7 ' +
+	        // MMX Registers
+	        'mm0 mm1 mm2 mm3 mm4 mm5 mm6 mm7 ' +
+	        // SSE registers
+	        'xmm0  xmm1  xmm2  xmm3  xmm4  xmm5  xmm6  xmm7  xmm8  xmm9 xmm10  xmm11 xmm12 xmm13 xmm14 xmm15 ' +
+	        'xmm16 xmm17 xmm18 xmm19 xmm20 xmm21 xmm22 xmm23 xmm24 xmm25 xmm26 xmm27 xmm28 xmm29 xmm30 xmm31 ' +
+	        // AVX registers
+	        'ymm0  ymm1  ymm2  ymm3  ymm4  ymm5  ymm6  ymm7  ymm8  ymm9 ymm10  ymm11 ymm12 ymm13 ymm14 ymm15 ' +
+	        'ymm16 ymm17 ymm18 ymm19 ymm20 ymm21 ymm22 ymm23 ymm24 ymm25 ymm26 ymm27 ymm28 ymm29 ymm30 ymm31 ' +
+	        // AVX-512F registers
+	        'zmm0  zmm1  zmm2  zmm3  zmm4  zmm5  zmm6  zmm7  zmm8  zmm9 zmm10  zmm11 zmm12 zmm13 zmm14 zmm15 ' +
+	        'zmm16 zmm17 zmm18 zmm19 zmm20 zmm21 zmm22 zmm23 zmm24 zmm25 zmm26 zmm27 zmm28 zmm29 zmm30 zmm31 ' +
+	        // AVX-512F mask registers
+	        'k0 k1 k2 k3 k4 k5 k6 k7 ' +
+	        // Bound (MPX) register
+	        'bnd0 bnd1 bnd2 bnd3 ' +
+	        // Special register
+	        'cr0 cr1 cr2 cr3 cr4 cr8 dr0 dr1 dr2 dr3 dr8 tr3 tr4 tr5 tr6 tr7 ' +
+	        // NASM altreg package
+	        'r0 r1 r2 r3 r4 r5 r6 r7 r0b r1b r2b r3b r4b r5b r6b r7b ' +
+	        'r0w r1w r2w r3w r4w r5w r6w r7w r0d r1d r2d r3d r4d r5d r6d r7d ' +
+	        'r0h r1h r2h r3h ' +
+	        'r0l r1l r2l r3l r4l r5l r6l r7l r8l r9l r10l r11l r12l r13l r14l r15l',
+
+	      pseudo:
+	        'db dw dd dq dt ddq do dy dz ' +
+	        'resb resw resd resq rest resdq reso resy resz ' +
+	        'incbin equ times',
+
+	      preprocessor:
+	        '%define %xdefine %+ %undef %defstr %deftok %assign %strcat %strlen %substr %rotate %elif %else %endif ' +
+	        '%ifmacro %ifctx %ifidn %ifidni %ifid %ifnum %ifstr %iftoken %ifempty %ifenv %error %warning %fatal %rep ' +
+	        '%endrep %include %push %pop %repl %pathsearch %depend %use %arg %stacksize %local %line %comment %endcomment ' +
+	        '.nolist ' +
+	        'byte word dword qword nosplit rel abs seg wrt strict near far a32 ptr ' +
+	        '__FILE__ __LINE__ __SECT__  __BITS__ __OUTPUT_FORMAT__ __DATE__ __TIME__ __DATE_NUM__ __TIME_NUM__ ' +
+	        '__UTC_DATE__ __UTC_TIME__ __UTC_DATE_NUM__ __UTC_TIME_NUM__  __PASS__ struc endstruc istruc at iend ' +
+	        'align alignb sectalign daz nodaz up down zero default option assume public ',
+
+	      built_in:
+	        'bits use16 use32 use64 default section segment absolute extern global common cpu float ' +
+	        '__utf16__ __utf16le__ __utf16be__ __utf32__ __utf32le__ __utf32be__ ' +
+	        '__float8__ __float16__ __float32__ __float64__ __float80m__ __float80e__ __float128l__ __float128h__ ' +
+	        '__Infinity__ __QNaN__ __SNaN__ Inf NaN QNaN SNaN float8 float16 float32 float64 float80m float80e ' +
+	        'float128l float128h __FLOAT_DAZ__ __FLOAT_ROUND__ __FLOAT__'
+	    },
+	    contains: [
+	      hljs.COMMENT(
+	        ';',
+	        '$',
+	        {
+	          relevance: 0
+	        }
+	      ),
+	      // Float number and x87 BCD
+	      {
+	        className: 'number',
+	        begin: '\\b(?:([0-9][0-9_]*)?\\.[0-9_]*(?:[eE][+-]?[0-9_]+)?|(0[Xx])?[0-9][0-9_]*\\.?[0-9_]*(?:[pP](?:[+-]?[0-9_]+)?)?)\\b',
+	        relevance: 0
+	      },
+	      // Hex number in $
+	      {
+	        className: 'number',
+	        begin: '\\$[0-9][0-9A-Fa-f]*',
+	        relevance: 0
+	      },
+	      // Number in H,X,D,T,Q,O,B,Y suffix
+	      {
+	        className: 'number',
+	        begin: '\\b(?:[0-9A-Fa-f][0-9A-Fa-f_]*[HhXx]|[0-9][0-9_]*[DdTt]?|[0-7][0-7_]*[QqOo]|[0-1][0-1_]*[BbYy])\\b'
+	      },
+	      // Number in H,X,D,T,Q,O,B,Y prefix
+	      {
+	        className: 'number',
+	        begin: '\\b(?:0[HhXx][0-9A-Fa-f_]+|0[DdTt][0-9_]+|0[QqOo][0-7_]+|0[BbYy][0-1_]+)\\b'
+	      },
+	      // Double quote string
+	      hljs.QUOTE_STRING_MODE,
+	      // Single-quoted string
+	      {
+	        className: 'string',
+	        begin: '\'',
+	        end: '[^\\\\]\'',
+	        relevance: 0
+	      },
+	      // Backquoted string
+	      {
+	        className: 'string',
+	        begin: '`',
+	        end: '[^\\\\]`',
+	        relevance: 0
+	      },
+	      // Section name
+	      {
+	        className: 'string',
+	        begin: '\\.[A-Za-z0-9]+',
+	        relevance: 0
+	      },
+	      // Global label and local label
+	      {
+	        className: 'label',
+	        begin: '^\\s*[A-Za-z._?][A-Za-z0-9_$#@~.?]*(:|\\s+label)',
+	        relevance: 0
+	      },
+	      // Macro-local label
+	      {
+	        className: 'label',
+	        begin: '^\\s*%%[A-Za-z0-9_$#@~.?]*:',
+	        relevance: 0
+	      },
+	      // Macro parameter
+	      {
+	        className: 'argument',
+	        begin: '%[0-9]+',
+	        relevance: 0
+	      },
+	      // Macro parameter
+	      {
+	        className: 'built_in',
+	        begin: '%!\S+',
+	        relevance: 0
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 341 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(hljs) {
+	  var BUILTIN_MODULES = 'ObjectLoader Animate MovieCredits Slides Filters Shading Materials LensFlare Mapping VLCAudioVideo StereoDecoder PointCloud NetworkAccess RemoteControl RegExp ChromaKey Snowfall NodeJS Speech Charts';
+
+	  var XL_KEYWORDS = {
+	    keyword: 'if then else do while until for loop import with is as where when by data constant',
+	    literal: 'true false nil',
+	    type: 'integer real text name boolean symbol infix prefix postfix block tree',
+	    built_in: 'in mod rem and or xor not abs sign floor ceil sqrt sin cos tan asin acos atan exp expm1 log log2 log10 log1p pi at',
+	    module: BUILTIN_MODULES,
+	    id: 'text_length text_range text_find text_replace contains page slide basic_slide title_slide title subtitle fade_in fade_out fade_at clear_color color line_color line_width texture_wrap texture_transform texture scale_?x scale_?y scale_?z? translate_?x translate_?y translate_?z? rotate_?x rotate_?y rotate_?z? rectangle circle ellipse sphere path line_to move_to quad_to curve_to theme background contents locally time mouse_?x mouse_?y mouse_buttons'
+	  };
+
+	  var XL_CONSTANT = {
+	    className: 'constant',
+	    begin: '[A-Z][A-Z_0-9]+',
+	    relevance: 0
+	  };
+	  var XL_VARIABLE = {
+	    className: 'variable',
+	    begin: '([A-Z][a-z_0-9]+)+',
+	    relevance: 0
+	  };
+	  var XL_ID = {
+	    className: 'id',
+	    begin: '[a-z][a-z_0-9]+',
+	    relevance: 0
+	  };
+
+	  var DOUBLE_QUOTE_TEXT = {
+	    className: 'string',
+	    begin: '"', end: '"', illegal: '\\n'
+	  };
+	  var SINGLE_QUOTE_TEXT = {
+	    className: 'string',
+	    begin: '\'', end: '\'', illegal: '\\n'
+	  };
+	  var LONG_TEXT = {
+	    className: 'string',
+	    begin: '<<', end: '>>'
+	  };
+	  var BASED_NUMBER = {
+	    className: 'number',
+	    begin: '[0-9]+#[0-9A-Z_]+(\\.[0-9-A-Z_]+)?#?([Ee][+-]?[0-9]+)?',
+	    relevance: 10
+	  };
+	  var IMPORT = {
+	    className: 'import',
+	    beginKeywords: 'import', end: '$',
+	    keywords: {
+	      keyword: 'import',
+	      module: BUILTIN_MODULES
+	    },
+	    relevance: 0,
+	    contains: [DOUBLE_QUOTE_TEXT]
+	  };
+	  var FUNCTION_DEFINITION = {
+	    className: 'function',
+	    begin: '[a-z].*->'
+	  };
+	  return {
+	    aliases: ['tao'],
+	    lexemes: /[a-zA-Z][a-zA-Z0-9_?]*/,
+	    keywords: XL_KEYWORDS,
+	    contains: [
+	    hljs.C_LINE_COMMENT_MODE,
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    DOUBLE_QUOTE_TEXT,
+	    SINGLE_QUOTE_TEXT,
+	    LONG_TEXT,
+	    FUNCTION_DEFINITION,
+	    IMPORT,
+	    XL_CONSTANT,
+	    XL_VARIABLE,
+	    XL_ID,
+	    BASED_NUMBER,
+	    hljs.NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 342 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _HighlightJsx = __webpack_require__(214);
+
+	var _HighlightJsx2 = _interopRequireDefault(_HighlightJsx);
+
+	var _srcJsPlotypusJsx = __webpack_require__(18);
+
+	var _DataStore = __webpack_require__(343);
+
+	var PlotsAndLayers = (function (_React$Component) {
+	  function PlotsAndLayers() {
+	    _classCallCheck(this, PlotsAndLayers);
+
+	    if (_React$Component != null) {
+	      _React$Component.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(PlotsAndLayers, _React$Component);
+
+	  _createClass(PlotsAndLayers, [{
+	    key: "render",
+	    value: function render() {
+	      var singleSeries = _DataStore.data.filter(function (d) {
+	        return d.series === "a";
+	      });
+	      return _react2["default"].createElement(
+	        "section",
+	        { id: "PlotsAndLayers" },
+	        _react2["default"].createElement(
+	          "h2",
+	          null,
+	          "Plots and Layers"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "The ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plot"
+	          ),
+	          " component is the most important of the components, and structurally, they are unique in that they have ",
+	          _react2["default"].createElement(
+	            "strong",
+	            null,
+	            "layers"
+	          ),
+	          ". Layers are graphical elements that stack on top of each other and take up the same area. Currently, only Plots have layers, but over time this may change."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "We'll use ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GridLayer"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          ),
+	          ", and ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "FuncLayer"
+	          ),
+	          " to demonstrate the concept of layers."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "For now, you can ignore the properties I'm passing to each layer, as I will expound on them later on, but you can also study them now if you like."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plot,
+	          null,
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	            xMax: 8,
+	            yMax: 8 }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	            max: 8,
+	            data: singleSeries }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
+	            xMax: 8,
+	            yMax: 8,
+	            func: _DataStore.sineFunc,
+	            samples: 64 })
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          { className: "solarized_light" },
+	          "<Plot>\n  <GridLayer \n    xMax={ 8 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    data={ sineData /* data I'm generating. */}/>\n  <FuncLayer\n    xMax={ 8 }\n    yMax={ 8 }\n    func={ sineFunc /* the sine wave on which sineData is based */}\n    samples={ 64 }/>\n</Plot>"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PlotsAndLayers;
+	})(_react2["default"].Component);
+
+	exports.PlotsAndLayers = PlotsAndLayers;
+
+	var Composition = (function (_React$Component2) {
+	  function Composition() {
+	    _classCallCheck(this, Composition);
+
+	    if (_React$Component2 != null) {
+	      _React$Component2.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(Composition, _React$Component2);
+
+	  _createClass(Composition, [{
+	    key: "render",
+	    value: function render() {
+	      var singleSeries = _DataStore.data.filter(function (d) {
+	        return d.series === "a";
+	      });
+	      return _react2["default"].createElement(
+	        "section",
+	        { id: "Composition" },
+	        _react2["default"].createElement(
+	          "h2",
+	          null,
+	          "Composition"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "Composition with Plotypus is easy. All Plotypus charts can be laid out in a tabular manner: that is, you define a table, then the rows, then the cells."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "The Plotypus components that correspond to this structure are as follows: ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plotypus"
+	          ),
+	          "(table), ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "PlotypusRow"
+	          ),
+	          "(row), ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "PlotypusComponent"
+	          ),
+	          "(cell)."
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          { className: "solarized_light" },
+	          "<Plotypus>\n  <PlotypusRow>\n    {/* PlotypusComponents are containers for components. Each one can contain anything from an Axis to a Plot, to a Legend. */}\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n  <PlotypusRow>\n    <PlotypusComponent />\n    <PlotypusComponent />\n  </PlotypusRow>\n</Plotypus>"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "This makes it easy to combine any of the Plotypus components and align them properly. You can have as many ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Plot"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "Axis"
+	          ),
+	          ", and other components aligned together as you like."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "Now let's take the Plot from the previous section, place it in the tabular structure and then add axes."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plotypus,
+	          null,
+	          _react2["default"].createElement(
+	            _srcJsPlotypusJsx.PlotypusRow,
+	            null,
+	            _react2["default"].createElement(
+	              _srcJsPlotypusJsx.PlotypusComponent,
+	              null,
+	              _react2["default"].createElement(_srcJsPlotypusJsx.Axis, { max: 8 })
+	            ),
+	            _react2["default"].createElement(
+	              _srcJsPlotypusJsx.PlotypusComponent,
+	              null,
+	              _react2["default"].createElement(
+	                _srcJsPlotypusJsx.Plot,
+	                null,
+	                _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	                  xMax: 8,
+	                  yMax: 8 }),
+	                _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	                  max: 8,
+	                  data: singleSeries }),
+	                _react2["default"].createElement(_srcJsPlotypusJsx.FuncLayer, {
+	                  xMax: 8,
+	                  yMax: 8,
+	                  func: _DataStore.sineFunc,
+	                  samples: 64 })
+	              )
+	            )
+	          ),
+	          _react2["default"].createElement(
+	            _srcJsPlotypusJsx.PlotypusRow,
+	            null,
+	            _react2["default"].createElement(_srcJsPlotypusJsx.Null, null),
+	            _react2["default"].createElement(
+	              _srcJsPlotypusJsx.PlotypusComponent,
+	              null,
+	              _react2["default"].createElement(_srcJsPlotypusJsx.CategoryAxis, { categories: ["a", "b", "c", "d", "e", "f", "g", "h"], orientation: "h" })
+	            )
+	          )
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          { className: "solarized_light" },
+	          "<Plotypus>\n  <PlotypusRow>\n\n    <PlotypusComponent>\n      <Axis max={ 8 }/>\n    </PlotypusComponent>\n\n    <PlotypusComponent>\n      <Plot>\n        <GridLayer \n          xMax={ 8 }\n          yMax={ 8 }/>\n        <GroupedBarLayer \n          max={ 8 }\n          data={ sineData /* data I'm generating. */}/>\n        <FuncLayer\n          xMax={ 8 }\n          yMax={ 8 }\n          func={ sineFunc /* the sine wave on which sineData is based */}\n          samples={ 64 }/>\n      </Plot>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n  <PlotypusRow>\n    {/* The Null element simply occupies a space on the lower left corner of the tabular structure. \n    This makes sure that the axis element below is perfectly aligned with the Plot above. */}\n    <Null /> \n\n    <PlotypusComponent>\n      <Axis max={ 8 } orientation=\"h\"/>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n</Plotypus>"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Composition;
+	})(_react2["default"].Component);
+
+	exports.Composition = Composition;
+
+	var DataFormat = (function (_React$Component3) {
+	  function DataFormat() {
+	    _classCallCheck(this, DataFormat);
+
+	    if (_React$Component3 != null) {
+	      _React$Component3.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(DataFormat, _React$Component3);
+
+	  _createClass(DataFormat, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "section",
+	        { id: "DataFormat" },
+	        _react2["default"].createElement(
+	          "h2",
+	          null,
+	          "Format"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the ",
+	          _react2["default"].createElement(
+	            "em",
+	            null,
+	            "number"
+	          ),
+	          " of keys needed for the datapoints change depending on the plot. For now, let's look at ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          )
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          ),
+	          " requires the following keys: ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "series, category, value"
+	          ),
+	          ". If you only have one series, you can leave it blank."
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          null,
+	          "Everything\n" + JSON.stringify(_DataStore.data) + "\n\nThird series (colored yellow)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
+	            return d.series === "c";
+	          })) + "\n\nFourth Category (note zero indexed. so category is 3)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
+	            return d.category === 3;
+	          }))
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plot,
+	          null,
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	            xMax: 8,
+	            yMax: 8 }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	            max: 8,
+	            groupOffset: 1.3,
+	            data: _DataStore.data })
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          null,
+	          "<Plot>\n  <GridLayer \n    xMax={ 8 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    groupOffset={ 1.3 }\n    data={ data /* data I'm generating. */}/>\n</Plot>"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return DataFormat;
+	})(_react2["default"].Component);
+
+	exports.DataFormat = DataFormat;
+
+	var ArbitraryKeys = (function (_React$Component4) {
+	  function ArbitraryKeys() {
+	    _classCallCheck(this, ArbitraryKeys);
+
+	    if (_React$Component4 != null) {
+	      _React$Component4.apply(this, arguments);
+	    }
+	  }
+
+	  _inherits(ArbitraryKeys, _React$Component4);
+
+	  _createClass(ArbitraryKeys, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "section",
+	        { id: "ArbitraryKeys" },
+	        _react2["default"].createElement(
+	          "h2",
+	          null,
+	          "Arbitrary Keys"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          _react2["default"].createElement(
+	            "em",
+	            null,
+	            "But what if the data I have don't have the right property names?"
+	          ),
+	          " We got you covered. All layers that accept data have a fieldnameField prop."
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "For ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "GroupedBarLayer"
+	          ),
+	          ", it's ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "seriesField"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "categoryField"
+	          ),
+	          ", ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "valueField"
+	          )
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "For this next example, we can do something crazy and switch the series and categories of our existing data with each other. To be more specific, what we're going to do is: ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "seriesField=\"category\""
+	          ),
+	          " and ",
+	          _react2["default"].createElement(
+	            "code",
+	            null,
+	            "categoryField=\"series\""
+	          ),
+	          "."
+	        ),
+	        _react2["default"].createElement(
+	          _srcJsPlotypusJsx.Plot,
+	          null,
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, {
+	            xMax: 3,
+	            yMax: 8 }),
+	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	            max: 8,
+	            seriesField: "category",
+	            categoryField: "series",
+	            groupOffset: 1.3,
+	            data: _DataStore.data })
+	        ),
+	        _react2["default"].createElement(
+	          _HighlightJsx2["default"],
+	          null,
+	          "<Plot>\n  <GridLayer \n    xMax={ 3 }\n    yMax={ 8 }/>\n  <GroupedBarLayer \n    max={ 8 }\n    seriesField=\"category\"\n    categoryField=\"series\"\n    groupOffset={ 1.3 /* basically the spacing between series */}\n    data={ data /* data I'm generating. */}/>\n</Plot>"
+	        ),
+	        _react2["default"].createElement(
+	          "p",
+	          null,
+	          "The great thing about this system is you can share a single dataset with a large number of properties across multiple plots, and each plot can just define which of these properties to look at."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ArbitraryKeys;
+	})(_react2["default"].Component);
+
+	exports.ArbitraryKeys = ArbitraryKeys;
+	/* data I'm generating. */ /* the sine wave on which sineData is based */ /* data I'm generating. */ /* the sine wave on which sineData is based */ /* The Null element simply occupies a space on the lower left corner of the tabular structure. 
+	                                                                                                                                                    This makes sure that the axis element below is perfectly aligned with the Plot above. */ /* basically the spacing between series */ /* data I'm generating. */ /* basically the spacing between series */ /* data I'm generating. */
+
+/***/ },
+/* 343 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// not really a store. hehe.
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.sineFunc = sineFunc;
+	exports.datagen = datagen;
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _lodash = __webpack_require__(19);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	function sineFunc(x, offset) {
+		var offset = offset || 0;
+		return Math.sin(x + offset) * 4 + 4;
+	}
+
+	// export let sineData = _.times(8, function(n){
+	//   return {
+	//     value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	//     category: n,
+	//     series: null
+	//   }
+	// })
+
+	function datagen(count, cats, series) {
+		return _lodash2["default"].flatten(_lodash2["default"].times(count, function (n) {
+			return _lodash2["default"].map(series, function (serie) {
+				return {
+					value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2, //(values[1] - values[0]) * Math.random(),
+					category: n,
+					series: serie
+				};
+			});
+		}));
+	}
+
+	var data = datagen(8, _lodash2["default"].range(0, 8), ["a", "b", "c"]);
+
+	// export let data = _.flatten(
+	//   _.times(8, function(n){
+	//     return _.times(3, function(m){
+	//       return {
+	//         value: sineFunc(n, 0.5) + (Math.random() - 0.5) * 2,
+	//         category: n,
+	//         series: seriesNames[m]
+	//       }
+	//     })
+	//   })
+	// );
+	exports.data = data;
+
+/***/ },
+/* 344 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<!DOCTYPE html>\n<html>\n<head>\n\t<title>Plotypus Demo</title>\n\t<link href='http://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css'>\n\t<link href='docs/scss/solarized_light.css' rel='stylesheet' type='text/css'>\n\t<link href=\"build/bundle.css\" rel='stylesheet' type='text/css'>\n</head>\n<body>\n\t<div id=\"docs\">\n\t\tLoading\n\t</div>\n\t<script type=\"text/javascript\" src=\"build/docs.js\"></script>\n</body>\n</html>";
 
 /***/ }
 /******/ ]);

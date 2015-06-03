@@ -65,7 +65,12 @@ var baseConfig = function(options) {
       path: 'build',
       publicPath: '/build/',
       filename: '[name].js',
-      libraryTarget: options.production ? "commonjs2" : "var"
+      externals: {
+        react: "react",
+        lodash: "lodash"
+      },
+      library: "Plotypus",
+      libraryTarget: options.production || options.docs ? "commonjs2" : "var"
     },
     resolve: {
       alias: { lib: __dirname+'/js/lib' },
