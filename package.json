@@ -1,8 +1,8 @@
 {
   "name": "plotypus",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A plotting and charting library for the enterprising aquatic mammal THAT LAYS EGGS!",
-  "main": "build/lib.js",
+  "main": "src/js/Plotypus.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
