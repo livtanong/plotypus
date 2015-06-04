@@ -25,6 +25,8 @@ docs: clean deps
 	./node_modules/.bin/webpack --config webpack-docs.config.js
 	./node_modules/.bin/webpack --config webpack-prerender.config.js
 	node prerender.js
+	mkdir -p build/svg-icons/SVG
+	cp docs/svg-icons/SVG/plotypus.svg svg-icons/SVG
 	# rm build/webpack-prerender.js
 	# rm build/stats.json
 	# node inject-static-resources.js index.html build -s -c bundle.css \

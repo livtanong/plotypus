@@ -7,7 +7,7 @@ export default class Home extends React.Component {
 			<div className="Home">
 				<div id="hero">
 					<div id="logo">
-						<Isvg src="/docs/svg-icons/SVG/plotypus.svg">
+						<Isvg src="svg-icons/SVG/plotypus.svg">
 							Error: Logo did not load.
 						</Isvg>
 					</div>
