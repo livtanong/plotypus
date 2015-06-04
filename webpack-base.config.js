@@ -52,8 +52,7 @@ var baseConfig = function(options) {
     // prerendered document.
     entry = {"prerenderHtml": "./prerenderHtml"};
     externals = {
-      'velocity-animate': 'fs',
-      "react-inlinesvg": "react-inlinesvg"
+      'velocity-animate': 'fs'
     };
     output.libraryTarget = "commonjs2";
   }

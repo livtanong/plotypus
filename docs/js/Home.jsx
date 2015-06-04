@@ -1,15 +1,14 @@
 import React from "react";
-import Isvg from "react-inlinesvg";
+import PlotypusIcon from "../svg-icons/SVG/plotypus.svg";
 
+console.log(PlotypusIcon);
 export default class Home extends React.Component {
 	render() {
 		return (
 			<div className="Home">
 				<div id="hero">
 					<div id="logo">
-						<Isvg src="svg-icons/SVG/plotypus.svg">
-							Error: Logo did not load.
-						</Isvg>
+						<img src={PlotypusIcon} />
 					</div>
 					<div>
 						<h1>Plotypus</h1>
