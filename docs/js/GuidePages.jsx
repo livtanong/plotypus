@@ -340,8 +340,6 @@ export class MultiplePlots extends React.Component {
                   ref="xy"
                   xMax={ 8 }
                   yMax={ 8 }
-                  xField="x"
-                  yField="y"
                   onMouseoverDot={ this.mouseoverDot }
                   drawFunc={ this.drawFunc.bind(this, "z") }
                   data={ data } />
@@ -355,8 +353,6 @@ export class MultiplePlots extends React.Component {
                   ref="yz"
                   xMax={ 8 }
                   yMax={ 8 }
-                  xField="z"
-                  yField="y"
                   onMouseoverDot={ this.mouseoverDot }
                   drawFunc={ this.drawFunc.bind(this, "x") }
                   data={ data } />
@@ -385,8 +381,6 @@ export class MultiplePlots extends React.Component {
                   ref="xz"
                   xMax={ 8 }
                   yMax={ 8 }
-                  xField="x"
-                  yField="z"
                   onMouseoverDot={ this.mouseoverDot }
                   drawFunc={ this.drawFunc.bind(this, "y") }
                   data={ data } />
@@ -417,8 +411,6 @@ export class MultiplePlots extends React.Component {
           ref="xy"
           xMax={ 8 }
           yMax={ 8 }
-          xField="x"
-          yField="y"
           onMouseoverDot={ this.mouseoverDot }
           drawFunc={ this.drawFunc.bind(this, "z") }
           data={ data } />
@@ -432,8 +424,6 @@ export class MultiplePlots extends React.Component {
           ref="yz"
           xMax={ 8 }
           yMax={ 8 }
-          xField="z"
-          yField="y"
           onMouseoverDot={ this.mouseoverDot }
           drawFunc={ this.drawFunc.bind(this, "x") }
           data={ data } />
@@ -462,8 +452,6 @@ export class MultiplePlots extends React.Component {
           ref="xz"
           xMax={ 8 }
           yMax={ 8 }
-          xField="x"
-          yField="z"
           onMouseoverDot={ this.mouseoverDot }
           drawFunc={ this.drawFunc.bind(this, "y") }
           data={ data } />

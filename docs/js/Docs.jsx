@@ -63,7 +63,7 @@ export default class Docs extends React.Component {
       <div className="Docs">
         <div className="toolbar">
           <a id="brand" onClick={ this.changeView.bind(this, this.views.HOME) }>
-            <h1>Plotypus <small>v0.0.0.0...0.1</small></h1>
+            <h1>Plotypus <small>v0.0.16</small></h1>
           </a>
           <div className="spacer" />
           <div className="toolbar-group">
