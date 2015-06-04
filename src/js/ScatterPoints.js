@@ -1,5 +1,4 @@
 var _ = require("lodash");
-var Velocity = require("velocity-animate");
 var SVGLayer = require("./SVGLayer");
 var utils = require("./utils");
 
