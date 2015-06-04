@@ -21,7 +21,7 @@ function ScatterPoints (domNode, data, xField, yField, xMin, xMax, yMin, yMax, c
 			cx: utils.toPercent(this.fractionPosition(datapoint[xField], "x")),
 			cy: utils.toPercent(this.fractionPosition(datapoint[yField], "y")),
 			r: 4,
-			class: classFunc(datapoint, index)
+			class: _.isFunction(classFunc) ? classFunc(datapoint, index) : ""
 		};
 		var circle = this.addSVGElement(this.content, "circle", attr);
 

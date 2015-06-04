@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight from "./Highlight";
-import {PlotsAndLayers, Composition, DataFormat, ArbitraryKeys} from "./GuidePages";
+import {PlotsAndLayers, Composition, DataFormat, ArbitraryKeys, ScatterLayerSamples, MultiplePlots} from "./GuidePages";
 import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, StackedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
 
 export default class Guide extends React.Component {
@@ -42,6 +42,15 @@ export default class Guide extends React.Component {
               <li><a href="#ArbitraryKeys">Arbitrary Keys</a></li>
             </ul>
           </div>
+          <div>
+            <h4>
+              <a href="#Samples">Samples</a>
+            </h4>
+            <ul>
+              <li><a href="#ScatterLayerSamples">Scatter Layer Samples</a></li>
+              <li><a href="#MultiplePlots">Multiple Plots</a></li>
+            </ul>
+          </div>
         </div>
         <div className="main">
           <article id="Structure">
@@ -61,6 +70,14 @@ export default class Guide extends React.Component {
             </section>
             <DataFormat />
             <ArbitraryKeys />
+          </article>
+          <article id="Samples">
+            <section>
+              <h1>Samples</h1>
+              <p>Here I'll be showing a few use cases—-some sensible, others absurdly extreme.</p>
+            </section>
+            <ScatterLayerSamples />
+            <MultiplePlots />
           </article>
         </div>
       </div>
