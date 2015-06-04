@@ -23,7 +23,7 @@ export default class Docs extends React.Component {
     }
 
     this.state = {
-      currentView: this.views.GUIDE
+      currentView: this.views.HOME
     }
   }
   changeView(view) {
