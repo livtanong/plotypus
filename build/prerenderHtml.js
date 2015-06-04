@@ -47823,7 +47823,7 @@ module.exports =
 /* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<!DOCTYPE html>\n<html>\n<head>\n\t<title>Plotypus Demo</title>\n\t<link href='http://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css'>\n\t<link href='docs/scss/solarized_light.css' rel='stylesheet' type='text/css'>\n\t<link href=\"/build/bundle.css\" rel='stylesheet' type='text/css'>\n</head>\n<body>\n\t<div id=\"docs\">\n\t\tLoading\n\t</div>\n\t<script type=\"text/javascript\" src=\"/build/docs.js\"></script>\n</body>\n</html>";
+	module.exports = "<!DOCTYPE html>\n<html>\n<head>\n\t<title>Plotypus Demo</title>\n\t<link href='http://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css'>\n\t<link href='docs/scss/solarized_light.css' rel='stylesheet' type='text/css'>\n\t<link href=\"build/bundle.css\" rel='stylesheet' type='text/css'>\n</head>\n<body>\n\t<div id=\"docs\">\n\t\tLoading\n\t</div>\n\t<script type=\"text/javascript\" src=\"build/docs.js\"></script>\n</body>\n</html>";
 
 /***/ }
 /******/ ]);
