@@ -26,7 +26,7 @@ docs: clean deps
 	./node_modules/.bin/webpack --config webpack-prerender.config.js
 	node prerender.js
 
-deploy: docs
+deploy:
 	git checkout gh-pages
 	git pull
 	git merge master
