@@ -1,6 +1,19 @@
 import React from "react";
 import Highlight from "./Highlight.jsx";
-import {Plotypus, PlotypusRow, PlotypusComponent, Null, Plot, GroupedBarLayer, StackedBarLayer, GridLayer, FuncLayer, Axis, CategoryAxis} from "../../src/js/Plotypus.jsx";
+import {
+  Plotypus, 
+  PlotypusRow, 
+  PlotypusComponent, 
+  Null, 
+  Plot, 
+  GroupedBarLayer, 
+  StackedBarLayer, 
+  ScatterLayer,
+  GridLayer, 
+  FuncLayer, 
+  Axis, 
+  CategoryAxis
+} from "../../src/js/Plotypus.jsx";
 import {sineFunc, data} from "./DataStore";
 
 export class PlotsAndLayers extends React.Component {
@@ -233,6 +246,179 @@ export class ArbitraryKeys extends React.Component {
 }
         </Highlight>
         <p>The great thing about this system is you can share a single dataset with a large number of properties across multiple plots, and each plot can just define which of these properties to look at.</p>
+      </section>
+    )
+  }
+}
+
+export class ScatterLayerSamples extends React.Component {
+  render() {
+    var data = _.times(8, n => ({
+      x: Math.random() * 8,
+      y: Math.random() * 8
+    }));
+    return (
+      <section id="ScatterLayerSamples">
+        <h2>Scatter Layer</h2>
+        <Plot>
+          <GridLayer
+            xMax={ 8 }
+            yMax={ 8 } />
+          <ScatterLayer
+            xMax={ 8 }
+            yMax={ 8 }
+            data={ data } />
+        </Plot>
+        <Highlight>
+{
+`<Plot>
+  <GridLayer
+    xMax={ 8 }
+    yMax={ 8 } />
+  <ScatterLayer
+    xMax={ 8 }
+    yMax={ 8 }
+    data={ data } />
+</Plot>`  
+}
+        </Highlight>
+      </section>
+    )
+  }
+}
+
+export class MultiplePlots extends React.Component {
+  constructor() {
+    super();
+    this.mouseoverDot = this.mouseoverDot.bind(this);
+  }
+  mouseoverDot(datapoint, element){
+    let points = _.chain(["xy", "xz", "yz"])
+      .map(p => this.refs[p]._chartLayer.circles)
+      .flatten()
+      .value();
+
+    points.forEach(p => {
+      if (p.datapoint === datapoint) {
+        p.element.setAttribute("style", "fill: #d1603d");
+        // p.element.setAttribute("r", 8);
+      } else {
+        p.element.setAttribute("style", "fill: #2D142C");
+        // p.element.setAttribute("r", 4);
+      }
+    })
+  }
+  dotClassFunc(datapoint, indix) {
+    if (datapoint.selected) {
+      return "selected"
+    } else {
+      return ""
+    }
+  }
+  drawFunc(depthAxis, datapoint, element) {
+    element.setAttribute("r", depthAxis === "x" ? datapoint[depthAxis] : 9 - datapoint[depthAxis]);
+  }
+  render() {
+    var data = _.times(8, n => ({
+      x: Math.random() * 8,
+      y: Math.random() * 8,
+      z: Math.random() * 8,
+      selected: false
+    }));
+    return (
+      <section id="MultiplePlots">
+        <h2>Multiple Plots</h2>
+        <Plotypus>
+          <PlotypusRow>
+            <PlotypusComponent>
+              <h4>XY Axis</h4>
+            </PlotypusComponent>
+            <Null />
+            <PlotypusComponent>
+              <h4>YZ Axis</h4>
+            </PlotypusComponent>
+          </PlotypusRow>
+          <PlotypusRow>
+            <PlotypusComponent>
+              <Plot>
+                <GridLayer xMax={ 8 } yMax={ 8 } />
+                <ScatterLayer
+                  ref="xy"
+                  xMax={ 8 }
+                  yMax={ 8 }
+                  xField="x"
+                  yField="y"
+                  onMouseoverDot={ this.mouseoverDot }
+                  classFunc={ this.dotClassFunc }
+                  drawFunc={ this.drawFunc.bind(this, "z") }
+                  data={ data } />
+              </Plot>
+            </PlotypusComponent>
+            <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
+            <PlotypusComponent>
+              <Plot>
+                <GridLayer xMax={ 8 } yMax={ 8 } />
+                <ScatterLayer
+                  ref="yz"
+                  xMax={ 8 }
+                  yMax={ 8 }
+                  xField="z"
+                  yField="y"
+                  onMouseoverDot={ this.mouseoverDot }
+                  classFunc={ this.dotClassFunc }
+                  drawFunc={ this.drawFunc.bind(this, "x") }
+                  data={ data } />
+              </Plot>
+            </PlotypusComponent>
+          </PlotypusRow>
+          <PlotypusRow>
+            <PlotypusComponent><Axis orientation="h" max={ 8 }/></PlotypusComponent>
+            <Null />
+            <PlotypusComponent>
+              <Axis orientation="h" max={ 8 }/>
+            </PlotypusComponent>
+          </PlotypusRow>
+          <PlotypusRow>
+            <PlotypusComponent>
+              <h4>XZ Axis</h4>
+            </PlotypusComponent>
+            <Null />
+            <Null />
+          </PlotypusRow>
+          <PlotypusRow>
+            <PlotypusComponent>
+              <Plot>
+                <GridLayer xMax={ 8 } yMax={ 8 } />
+                <ScatterLayer
+                  ref="xz"
+                  xMax={ 8 }
+                  yMax={ 8 }
+                  xField="x"
+                  yField="z"
+                  onMouseoverDot={ this.mouseoverDot }
+                  classFunc={ this.dotClassFunc }
+                  drawFunc={ this.drawFunc.bind(this, "y") }
+                  data={ data } />
+              </Plot>
+            </PlotypusComponent>
+            <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
+            <Null />
+          </PlotypusRow>
+        </Plotypus>
+        
+        <Highlight>
+{
+`<Plot>
+  <GridLayer
+    xMax={ 8 }
+    yMax={ 8 } />
+  <ScatterLayer
+    xMax={ 8 }
+    yMax={ 8 }
+    data={ data } />
+</Plot>`  
+}
+        </Highlight>
       </section>
     )
   }

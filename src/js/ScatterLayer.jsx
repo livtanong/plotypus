@@ -14,9 +14,20 @@ var ScatterLayer = React.createClass({
 		yMax: React.PropTypes.number,
 		yMin: React.PropTypes.number,
 		classFunc: React.PropTypes.func,
+		drawFunc: React.PropTypes.func,
 		onClickDot: React.PropTypes.func,
 		onMouseoverDot: React.PropTypes.func,
 		onMouseoutDot: React.PropTypes.func
+	},
+	getDefaultProps: function() {
+		return {
+			xField: "x",
+			yField: "y",
+			yMin: 0,
+			xMin: 0,
+			onMouseoutDot: _.noop,
+			onMouseoverDot: _.noop
+		};
 	},
 	mixins: [ChartLayerMixin],
 	_chartLayer: undefined,
@@ -37,6 +48,7 @@ var ScatterLayer = React.createClass({
 			this.props.yMin,
 			this.props.yMax,
 			this.props.classFunc,
+			this.props.drawFunc,
 			this.props.onClickDot,
 			this.props.onMouseoverDot,
 			this.props.onMouseoutDot
