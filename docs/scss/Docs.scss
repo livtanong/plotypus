@@ -45,29 +45,43 @@
 			text-decoration: none;
 		}
 	}
-	#hero {
+	.Home {	
 		@include display(flex);
-		@include justify-content(center);
+		@include flex(1);
 		@include align-items(center);
-		height: 320px;
 		background-color: $light;
-		#logo {
-			img {
-				width: 144px;
-				height: 144px;
+		#hero {
+			@include display(flex);
+			@include justify-content(center);
+			@include align-items(flex-start);
+			@include flex-direction(row);
+			// height: 320px;
+			width: 100%;
+			#logo {
+				img {
+					width: 144px;
+					height: 144px;
+				}
+				margin-right: 24px;
 			}
-			margin-right: 24px;
+			h1 {
+				font-weight: 300;
+				font-size: 72px;
+				margin: 0px;
+			}
+			h2 {
+				margin: 0px;
+				font-size: 24px;
+				color: rgba($dark, 0.4);
+				font-weight: 300;
+			}
 		}
-		h1 {
-			font-weight: 300;
-			font-size: 72px;
-			margin: 0px;
-		}
-		h2 {
-			margin: 0px;
-			font-size: 24px;
-			color: rgba($dark, 0.4);
-			font-weight: 300;
+		.installation {
+			padding: 16px;
+			background-color: $accent;
+			color: white;
+			display: block;
+			margin-top: 16px;
 		}
 	}
 }
