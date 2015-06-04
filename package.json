@@ -42,6 +42,5 @@
     "react": "^0.13.3",
     "react-highlight": "^0.4.1",
     "url-loader": "^0.5.6",
-    "velocity-animate": "^1.2.1"
   }
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import PlotypusIcon from "../svg-icons/SVG/plotypus.svg";
 
-console.log(PlotypusIcon);
 export default class Home extends React.Component {
 	render() {
 		return (
