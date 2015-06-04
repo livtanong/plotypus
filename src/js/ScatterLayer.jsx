@@ -24,7 +24,6 @@ var ScatterLayer = React.createClass({
 			yField: "y",
 			yMin: 0,
 			xMin: 0,
-			classFunc: _.noop,
 			onMouseoutDot: _.noop,
 			onMouseoverDot: _.noop
 		};

@@ -288,11 +288,39 @@ export class ScatterLayerSamples extends React.Component {
 }
 
 export class MultiplePlots extends React.Component {
+  constructor() {
+    super();
+    this.mouseoverDot = this.mouseoverDot.bind(this);
+  }
+  mouseoverDot(datapoint, element){
+    let points = _.chain(["xy", "xz", "yz"])
+      .map(p => this.refs[p]._chartLayer.circles)
+      .flatten()
+      .value();
+
+    points.forEach(p => {
+      if (p.datapoint === datapoint) {
+        p.element.setAttribute("style", "fill: #d1603d");
+        p.element.setAttribute("r", 8);
+      } else {
+        p.element.setAttribute("style", "fill: #2D142C");
+        p.element.setAttribute("r", 4);
+      }
+    })
+  }
+  dotClassFunc(datapoint, indiex) {
+    if (datapoint.selected) {
+      return "selected"
+    } else {
+      return ""
+    }
+  }
   render() {
     var data = _.times(8, n => ({
       x: Math.random() * 8,
       y: Math.random() * 8,
-      z: Math.random() * 8
+      z: Math.random() * 8,
+      selected: false
     }));
     return (
       <section id="MultiplePlots">
@@ -303,32 +331,34 @@ export class MultiplePlots extends React.Component {
               <Plot>
                 <GridLayer xMax={ 8 } yMax={ 8 } />
                 <ScatterLayer
+                  ref="xy"
                   xMax={ 8 }
                   yMax={ 8 }
                   xField="x"
                   yField="y"
+                  onMouseoverDot={ this.mouseoverDot }
+                  classFunc={ this.dotClassFunc }
                   data={ data } />
               </Plot>
             </PlotypusComponent>
-            <PlotypusComponent>
-              <Axis max={ 8 }/>
-            </PlotypusComponent>
+            <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
             <PlotypusComponent>
               <Plot>
                 <GridLayer xMax={ 8 } yMax={ 8 } />
                 <ScatterLayer
+                  ref="yz"
                   xMax={ 8 }
                   yMax={ 8 }
                   xField="z"
                   yField="y"
+                  onMouseoverDot={ this.mouseoverDot }
+                  classFunc={ this.dotClassFunc }
                   data={ data } />
               </Plot>
             </PlotypusComponent>
           </PlotypusRow>
           <PlotypusRow>
-            <PlotypusComponent>
-              <Axis orientation="h" max={ 8 }/>
-            </PlotypusComponent>
+            <PlotypusComponent><Axis orientation="h" max={ 8 }/></PlotypusComponent>
             <Null />
             <PlotypusComponent>
               <Axis orientation="h" max={ 8 }/>
@@ -339,16 +369,17 @@ export class MultiplePlots extends React.Component {
               <Plot>
                 <GridLayer xMax={ 8 } yMax={ 8 } />
                 <ScatterLayer
+                  ref="xz"
                   xMax={ 8 }
                   yMax={ 8 }
                   xField="x"
                   yField="z"
+                  onMouseoverDot={ this.mouseoverDot }
+                  classFunc={ this.dotClassFunc }
                   data={ data } />
               </Plot>
             </PlotypusComponent>
-            <PlotypusComponent>
-              <Axis max={ 8 }/>
-            </PlotypusComponent>
+            <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
             <Null />
           </PlotypusRow>
         </Plotypus>
