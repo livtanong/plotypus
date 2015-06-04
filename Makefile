@@ -6,7 +6,7 @@ clean:
 deps:
 	@npm install
 
-development: clean deps
+development: deps
 	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --hot --content-base ./docs
 
 
