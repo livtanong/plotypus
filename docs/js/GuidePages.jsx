@@ -316,7 +316,7 @@ export class MultiplePlots extends React.Component {
     }
   }
   drawFunc(depthAxis, datapoint, element) {
-    element.setAttribute("r", 9 - datapoint[depthAxis]);
+    element.setAttribute("r", depthAxis === "x" ? datapoint[depthAxis] : 9 - datapoint[depthAxis]);
   }
   render() {
     var data = _.times(8, n => ({
