@@ -25,6 +25,13 @@ docs: clean deps
 	./node_modules/.bin/webpack --config webpack-docs.config.js
 	./node_modules/.bin/webpack --config webpack-prerender.config.js
 	node prerender.js
+
+deploy: docs
+	git checkout gh-pages
+	git pull
+	git merge master
+	git push
+	git checkout master
 	# mkdir -p build/svg-icons/SVG
 	# cp docs/svg-icons/SVG/plotypus.svg build/svg-icons/SVG
 	# rm build/webpack-prerender.js
