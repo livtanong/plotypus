@@ -39345,7 +39345,7 @@
 							{ id: "logo" },
 							_react2["default"].createElement(
 								_reactInlinesvg2["default"],
-								{ src: "/docs/svg-icons/SVG/plotypus.svg" },
+								{ src: "svg-icons/SVG/plotypus.svg" },
 								"Error: Logo did not load."
 							)
 						),
