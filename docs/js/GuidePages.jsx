@@ -301,19 +301,22 @@ export class MultiplePlots extends React.Component {
     points.forEach(p => {
       if (p.datapoint === datapoint) {
         p.element.setAttribute("style", "fill: #d1603d");
-        p.element.setAttribute("r", 8);
+        // p.element.setAttribute("r", 8);
       } else {
         p.element.setAttribute("style", "fill: #2D142C");
-        p.element.setAttribute("r", 4);
+        // p.element.setAttribute("r", 4);
       }
     })
   }
-  dotClassFunc(datapoint, indiex) {
+  dotClassFunc(datapoint, indix) {
     if (datapoint.selected) {
       return "selected"
     } else {
       return ""
     }
+  }
+  drawFunc(depthAxis, datapoint, element) {
+    element.setAttribute("r", 9 - datapoint[depthAxis]);
   }
   render() {
     var data = _.times(8, n => ({
@@ -338,6 +341,7 @@ export class MultiplePlots extends React.Component {
                   yField="y"
                   onMouseoverDot={ this.mouseoverDot }
                   classFunc={ this.dotClassFunc }
+                  drawFunc={ this.drawFunc.bind(this, "z") }
                   data={ data } />
               </Plot>
             </PlotypusComponent>
@@ -353,6 +357,7 @@ export class MultiplePlots extends React.Component {
                   yField="y"
                   onMouseoverDot={ this.mouseoverDot }
                   classFunc={ this.dotClassFunc }
+                  drawFunc={ this.drawFunc.bind(this, "x") }
                   data={ data } />
               </Plot>
             </PlotypusComponent>
@@ -376,6 +381,7 @@ export class MultiplePlots extends React.Component {
                   yField="z"
                   onMouseoverDot={ this.mouseoverDot }
                   classFunc={ this.dotClassFunc }
+                  drawFunc={ this.drawFunc.bind(this, "y") }
                   data={ data } />
               </Plot>
             </PlotypusComponent>

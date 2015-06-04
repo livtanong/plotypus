@@ -2,7 +2,7 @@ var _ = require("lodash");
 var SVGLayer = require("./SVGLayer");
 var utils = require("./utils");
 
-function ScatterPoints (domNode, data, xField, yField, xMin, xMax, yMin, yMax, classFunc, onClickDot, onMouseoverDot, onMouseoutDot) {
+function ScatterPoints (domNode, data, xField, yField, xMin, xMax, yMin, yMax, classFunc, drawFunc, onClickDot, onMouseoverDot, onMouseoutDot) {
 	SVGLayer.call(this, domNode);
 	this.xMin = xMin;
 	this.xMax = xMax;
@@ -32,6 +32,8 @@ function ScatterPoints (domNode, data, xField, yField, xMin, xMax, yMin, yMax, c
 				class: _.isFunction(classFunc) ? classFunc(datapoint, index) : ""
 			};
 			var circle = this.addSVGElement(this.content, "circle", attr);
+
+			_.isFunction(drawFunc) && drawFunc(datapoint, circle);
 
 			return {
 				element: circle,
