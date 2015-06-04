@@ -331,6 +331,15 @@ export class MultiplePlots extends React.Component {
         <Plotypus>
           <PlotypusRow>
             <PlotypusComponent>
+              <h4>XY Axis</h4>
+            </PlotypusComponent>
+            <Null />
+            <PlotypusComponent>
+              <h4>YZ Axis</h4>
+            </PlotypusComponent>
+          </PlotypusRow>
+          <PlotypusRow>
+            <PlotypusComponent>
               <Plot>
                 <GridLayer xMax={ 8 } yMax={ 8 } />
                 <ScatterLayer
@@ -368,6 +377,13 @@ export class MultiplePlots extends React.Component {
             <PlotypusComponent>
               <Axis orientation="h" max={ 8 }/>
             </PlotypusComponent>
+          </PlotypusRow>
+          <PlotypusRow>
+            <PlotypusComponent>
+              <h4>XZ Axis</h4>
+            </PlotypusComponent>
+            <Null />
+            <Null />
           </PlotypusRow>
           <PlotypusRow>
             <PlotypusComponent>
