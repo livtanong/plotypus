@@ -1,67 +1,54 @@
-var React = require("react");
-var _ = require("lodash");
-var classnames = require("classnames");
+import React from "react";
+import _ from "lodash";
+import classnames from "classnames";
+import Gridlines from "./Gridlines";
 
-var Gridlines = require("./Gridlines");
-
-var GridLayer = React.createClass({
-	propTypes: {
-		xMax: React.PropTypes.number,
-		xMin: React.PropTypes.number,
-		yMax: React.PropTypes.number,
-		yMin: React.PropTypes.number,
-		xInterval: React.PropTypes.oneOfType([
-			React.PropTypes.number,
-			React.PropTypes.func
-		]),
-		yInterval: React.PropTypes.oneOfType([
-			React.PropTypes.number,
-			React.PropTypes.func
-		])
-	},
-	getDefaultProps: function() {
-		return {
-			xMin: 0,
-			yMin: 0,
-			xInterval: 1,
-			yInterval: 1
-		};
-	},
-	_gridLayer: undefined,
-	componentDidMount: function() {
-		this.updateLines();
-	},
-	componentDidUpdate: function(prevProps, prevState) {
-		this.updateLines();
-	},
-	componentWillUnmount: function() {
-		this.destroyLines();
-	},
-	destroyLines: function(){
-		if (this._gridLayer) {
-			React.findDOMNode(this).removeChild(this._gridLayer);
-		}
-	},
-	updateLines: function(){
-		this.destroyLines();
-		var ns = "http://www.w3.org/2000/svg";
-		var container = document.createElementNS(ns, "svg");
-		this._gridLayer = new Gridlines(
-			container,
-			this.props.xMax,
-			this.props.xMin,
-			this.props.yMax,
-			this.props.yMin,
-			_.isFunction(this.props.xInterval) ? this.props.xInterval() : this.props.xInterval,
-			_.isFunction(this.props.yInterval) ? this.props.yInterval() : this.props.yInterval);
-
-		React.findDOMNode(this).appendChild(this._gridLayer);
-	},
-	render: function() {
-		return (
-			<g className="GridLayer" />
-		)
+export default class GridLayer extends React.Component {
+	constructor(props) {
+		super(props);
+		this._chartLayer = undefined;
 	}
-});
+	componentDidMount() {
+		this.updateChart();
+	}
+	componentDidUpdate() {
+		this.updateChart();
+	}
+	componentWillUnmount() {
+		this.destroyChart();
+	}
+	destroyChart() {
+		if (this._chartLayer) {
+			this._chartLayer.clear();
+		}
+	}
+	updateChart() {
+		this.destroyChart();
+		this._chartLayer = new Gridlines(
+			React.findDOMNode(this), 
+			this.props.min, 
+			this.props.max, 
+			_.isFunction(this.props.interval) ? this.props.interval() : this.props.interval,
+			this.props.orientation
+		);
+	}
+	render() {
+		return <svg className={ classnames("GridLayer", this.props.className) } />
+	}
+}
 
-module.exports = GridLayer;
+GridLayer.defaultProps = {
+	min: 0,
+	interval: 1,
+	orientation: "h"
+}
+
+GridLayer.propTypes = {
+	orientation: React.PropTypes.string,
+	max: React.PropTypes.number,
+	min: React.PropTypes.number,
+	interval: React.PropTypes.oneOfType([
+		React.PropTypes.number,
+		React.PropTypes.func
+	])
+}

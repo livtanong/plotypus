@@ -88,6 +88,15 @@ $plotypus-series-colors: (
 	}
 }
 
+.GridLayer {
+	line {
+		stroke: rgba(0,0,0,0.2);
+		stroke-width: 1;
+		stroke-dasharray: 2, 2;
+		vector-effect: non-scaling-stroke;
+	}
+}
+
 .PlotypusRow {
 	display: table-row;
 	.Plot {
