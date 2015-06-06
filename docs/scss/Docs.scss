@@ -23,6 +23,7 @@
 			}
 		}
 		circle {
+			@include transition(r, 0.2s);
 			fill: $dark;
 		}
 		// rect {
