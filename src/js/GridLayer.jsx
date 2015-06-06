@@ -18,7 +18,7 @@ export default class GridLayer extends React.Component {
 		this.destroyChart();
 	}
 	destroyChart() {
-		if (this._chartLayer) {
+		if (this._chartLayer && _.isFunction(this._chartLayer.clear)) {
 			this._chartLayer.clear();
 		}
 	}
