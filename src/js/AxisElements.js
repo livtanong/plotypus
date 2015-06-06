@@ -170,7 +170,7 @@ function AxisNumbers(domNode, max, min, interval, align, orientation, onUpdate){
 	}
 
 	this.interval = interval || this.getInterval();
-	this.intervalledMax = utils.sanify(Math.ceil(max / this.interval + 1) * this.interval, 5);
+	this.intervalledMax = utils.sanify(Math.ceil(max / this.interval) * this.interval, 5);
 	this.intervalledMin = utils.sanify(Math.floor(min / this.interval) * this.interval, 5);
 	onUpdate && onUpdate(this);
 	AxisElements.call(this, domNode, _.range(this.intervalledMin, this.intervalledMax, this.interval), align, orientation);

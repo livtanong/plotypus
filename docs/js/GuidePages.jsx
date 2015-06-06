@@ -28,13 +28,13 @@ export class PlotsAndLayers extends React.Component {
         <Plot>
           <GridLayer 
             xMax={ 8 }
-            yMax={ 8 }/>
+            yMax={ 9 }/>
           <GroupedBarLayer 
-            max={ 8 }
+            max={ 9 }
             data={ singleSeries /* data I'm generating. */}/>
           <FuncLayer
             xMax={ 8 }
-            yMax={ 8 }
+            yMax={ 9 }
             func={ sineFunc /* the sine wave on which sineData is based */}
             samples={ 64 }/>
         </Plot>
@@ -43,13 +43,13 @@ export class PlotsAndLayers extends React.Component {
 `<Plot>
   <GridLayer 
     xMax={ 8 }
-    yMax={ 8 }/>
+    yMax={ 9 }/>
   <GroupedBarLayer 
-    max={ 8 }
-    data={ sineData /* data I'm generating. */}/>
+    max={ 9 }
+    data={ singleSeries /* data I'm generating. */}/>
   <FuncLayer
-    xMax={ 8 }
-    yMax={ 8 }
+    xMax={ 9 }
+    yMax={ 9 }
     func={ sineFunc /* the sine wave on which sineData is based */}
     samples={ 64 }/>
 </Plot>`
@@ -91,20 +91,20 @@ export class Composition extends React.Component {
           <PlotypusRow>
 
             <PlotypusComponent>
-              <Axis max={ 8 }/>
+              <Axis max={ 9 }/>
             </PlotypusComponent>
 
             <PlotypusComponent>
               <Plot>
                 <GridLayer 
                   xMax={ 8 }
-                  yMax={ 8 }/>
+                  yMax={ 9 }/>
                 <GroupedBarLayer 
-                  max={ 8 }
+                  max={ 9 }
                   data={ singleSeries /* data I'm generating. */}/>
                 <FuncLayer
                   xMax={ 8 }
-                  yMax={ 8 }
+                  yMax={ 9 }
                   func={ sineFunc /* the sine wave on which sineData is based */}
                   samples={ 64 }/>
               </Plot>
@@ -128,20 +128,20 @@ export class Composition extends React.Component {
   <PlotypusRow>
 
     <PlotypusComponent>
-      <Axis max={ 8 }/>
+      <Axis max={ 9 }/>
     </PlotypusComponent>
 
     <PlotypusComponent>
       <Plot>
         <GridLayer 
           xMax={ 8 }
-          yMax={ 8 }/>
+          yMax={ 9 }/>
         <GroupedBarLayer 
-          max={ 8 }
-          data={ sineData /* data I'm generating. */}/>
+          max={ 9 }
+          data={ singleSeries /* data I'm generating. */}/>
         <FuncLayer
-          xMax={ 8 }
-          yMax={ 8 }
+          xMax={ 9 }
+          yMax={ 9 }
           func={ sineFunc /* the sine wave on which sineData is based */}
           samples={ 64 }/>
       </Plot>
@@ -154,7 +154,7 @@ export class Composition extends React.Component {
     <Null /> 
 
     <PlotypusComponent>
-      <Axis max={ 8 } orientation="h"/>
+      <CategoryAxis categories={["a", "b", "c", "d", "e", "f", "g", "h"]} orientation="h"/>
     </PlotypusComponent>
 
   </PlotypusRow>
@@ -189,9 +189,9 @@ ${JSON.stringify(data.filter(d => d.category === 3))}`
         <Plot>
           <GridLayer 
             xMax={ 8 }
-            yMax={ 8 }/>
+            yMax={ 9 }/>
           <GroupedBarLayer 
-            max={ 8 }
+            max={ 9 }
             groupOffset={ 1.3 /* basically the spacing between series */}
             data={ data /* data I'm generating. */}/>
         </Plot>
@@ -199,9 +199,9 @@ ${JSON.stringify(data.filter(d => d.category === 3))}`
 {`<Plot>
   <GridLayer 
     xMax={ 8 }
-    yMax={ 8 }/>
+    yMax={ 9 }/>
   <GroupedBarLayer 
-    max={ 8 }
+    max={ 9 }
     groupOffset={ 1.3 }
     data={ data /* data I'm generating. */}/>
 </Plot>`}
@@ -222,9 +222,9 @@ export class ArbitraryKeys extends React.Component {
         <Plot>
           <GridLayer 
             xMax={ 3 }
-            yMax={ 8 }/>
+            yMax={ 9 }/>
           <GroupedBarLayer 
-            max={ 8 }
+            max={ 9 }
             seriesField="category"
             categoryField="series"
             groupOffset={ 1.3 /* basically the spacing between series */}
@@ -235,9 +235,9 @@ export class ArbitraryKeys extends React.Component {
 `<Plot>
   <GridLayer 
     xMax={ 3 }
-    yMax={ 8 }/>
+    yMax={ 9 }/>
   <GroupedBarLayer 
-    max={ 8 }
+    max={ 9 }
     seriesField="category"
     categoryField="series"
     groupOffset={ 1.3 /* basically the spacing between series */}
@@ -263,10 +263,10 @@ export class ScatterLayerSamples extends React.Component {
         <Plot>
           <GridLayer
             xMax={ 8 }
-            yMax={ 8 } />
+            yMax={ 9 } />
           <ScatterLayer
             xMax={ 8 }
-            yMax={ 8 }
+            yMax={ 9 }
             data={ data } />
         </Plot>
         <Highlight>
@@ -274,10 +274,10 @@ export class ScatterLayerSamples extends React.Component {
 `<Plot>
   <GridLayer
     xMax={ 8 }
-    yMax={ 8 } />
+    yMax={ 9 } />
   <ScatterLayer
     xMax={ 8 }
-    yMax={ 8 }
+    yMax={ 9 }
     data={ data } />
 </Plot>`  
 }

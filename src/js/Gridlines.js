@@ -14,8 +14,8 @@ var Gridlines = function(domNode, xMax, xMin, yMax, yMin, xInterval, yInterval){
 		parent.appendChild(elem);
 	};
 
-	var xRange = _.range(xMin, xMax + xInterval, xInterval);
-	var yRange = _.range(yMin, yMax + yInterval, yInterval);
+	var xRange = _.range(xMin, xMax, xInterval);
+	var yRange = _.range(yMin, yMax, yInterval);
 
 	var vLines = xRange
 		.forEach(function(n, index){
