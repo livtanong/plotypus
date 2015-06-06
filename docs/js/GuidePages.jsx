@@ -89,7 +89,7 @@ export class Composition extends React.Component {
           <PlotypusRow>
 
             <PlotypusComponent>
-              <Axis max={ 9 }/>
+              <Axis orientation="v" max={ 0.008 }/>
             </PlotypusComponent>
 
             <PlotypusComponent>
