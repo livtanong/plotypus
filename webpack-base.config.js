@@ -14,7 +14,7 @@ var baseConfig = function(options) {
       item.loader = item.loader.join("!");
     }
 
-    if(options.docs) {
+    if(options.docs || options.lib) {
       item.loader = ExtractTextPlugin.extract('style-loader', item.loader);
     } /*else if (options.prerender) {
       item.loader = 'null';
@@ -28,7 +28,7 @@ var baseConfig = function(options) {
   // }));
 
   var cssPlugin = new ExtractTextPlugin("bundle.css");
-  var entry = {"docs": "./docs/js/index.jsx"};
+  var entry = {docs: "./docs/js/index.jsx"};
   var externals = {};
   var output = {
     path: 'build',
@@ -36,26 +36,35 @@ var baseConfig = function(options) {
     filename: '[name].js',
   }
 
-  if (options.docs) {
-    // generate docs.js, for use in populating the prerendered document
-    plugins.push(
-      cssPlugin,
-      new webpack.optimize.UglifyJsPlugin(),
-      new webpack.DefinePlugin({
-        "process.env": {
-          NODE_ENV: JSON.stringify("production")
-        }
-      })
-    );
-  }
+  if (options.docs || options.prerender) {
+    if (options.docs) {
+      // generate docs.js, for use in populating the prerendered document
+      plugins.push(
+        cssPlugin,
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.DefinePlugin({
+          "process.env": {
+            NODE_ENV: JSON.stringify("production")
+          }
+        })
+      );
+    }
 
-  if (options.prerender) {
-    // prerendered document.
-    entry = {"prerenderHtml": "./prerenderHtml"};
-    externals = {
-      'velocity-animate': 'fs'
-    };
+    if (options.prerender) {
+      // prerendered document.
+      entry = {"prerenderHtml": "./prerenderHtml"};
+      // externals = {
+      //   'velocity-animate': 'fs'
+      // };
+      output.libraryTarget = "commonjs2";
+    }
+  } else if (options.lib) {
+    entry = {Plotypus: "./src/js/Plotypus.jsx"};
+    output.path = "lib";
+    output.publicPath = "/lib/";
     output.libraryTarget = "commonjs2";
+    cssPlugin = new ExtractTextPlugin("Plotypus.css");
+    plugins.push(cssPlugin);
   }
 
   // if (options.production) {

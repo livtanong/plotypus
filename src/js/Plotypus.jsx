@@ -1,3 +1,5 @@
+import PlotypusStyles from "../scss/Plotypus.scss";
+
 var React = require("react");
 var _ = require("lodash");
 var classnames = require("classnames");
