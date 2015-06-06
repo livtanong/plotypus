@@ -63,6 +63,9 @@ var baseConfig = function(options) {
     output.path = "lib";
     output.publicPath = "/lib/";
     output.libraryTarget = "commonjs2";
+    externals = {
+      "react": "react"
+    }
     cssPlugin = new ExtractTextPlugin("Plotypus.css");
     plugins.push(cssPlugin);
   }
