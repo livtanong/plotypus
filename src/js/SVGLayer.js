@@ -1,4 +1,10 @@
-var _ = require("lodash");
+import _ from "lodash";
+
+// export default class SVGLayer {
+// 	constructor(domNode) {
+// 		this.domNode = domNode;
+// 	}
+// }
 
 function SVGLayer(domNode){
 	this.domNode = domNode;
