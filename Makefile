@@ -15,7 +15,7 @@ development: deps
 # 	node inject-static-resources.js index.html build -c bundle.css -j cordova.js
 # 	cp -R data build
 
-production: clean deps
+production: deps
 	# ./node_modules/.bin/webpack --config webpack-prod.config.js
 	# ./node_modules/.bin/webpack --config webpack-docs.config.js
 	babel src --out-dir lib
