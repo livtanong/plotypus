@@ -1,8 +1,8 @@
 {
   "name": "plotypus",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "A plotting and charting library for the enterprising aquatic mammal THAT LAYS EGGS!",
-  "main": "src/js/Plotypus.js",
+  "main": "lib/js/Plotypus.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "plot",
-    "chart"
+    "chart",
+    "react-component"
   ],
   "author": "Levi Tan Ong",
   "license": "MIT",
