@@ -60,7 +60,7 @@ var baseConfig = function(options) {
       output.libraryTarget = "commonjs2";
     }
   } else if (options.lib) {
-    entry = {Plotypus: "./src/js/Plotypus.jsx"};
+    entry = {PlotypusStyle: "./docs/js/IAmSorry.jsx"};
     output.path = "lib";
     output.publicPath = "/lib/";
     output.libraryTarget = "commonjs2";

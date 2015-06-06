@@ -2,6 +2,7 @@ import DocStyles from "../scss/Docs.scss";
 import Styles from "../scss/styles.scss";
 import IconStyles from "../icons/style.css";
 import HighlightStyles from "../scss/solarized_light.css"
+import IAmSorry from "./IAmSorry";
 
 import React from "react";
 import _ from "lodash";
