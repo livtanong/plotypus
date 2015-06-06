@@ -6,25 +6,19 @@ var Gridlines = require("./Gridlines");
 
 var GridLayer = React.createClass({
 	propTypes: {
-		xMax: React.PropTypes.number,
-		xMin: React.PropTypes.number,
-		yMax: React.PropTypes.number,
-		yMin: React.PropTypes.number,
-		xInterval: React.PropTypes.oneOfType([
+		orientation: React.PropTypes.string,
+		max: React.PropTypes.number,
+		min: React.PropTypes.number,
+		interval: React.PropTypes.oneOfType([
 			React.PropTypes.number,
 			React.PropTypes.func
 		]),
-		yInterval: React.PropTypes.oneOfType([
-			React.PropTypes.number,
-			React.PropTypes.func
-		])
 	},
 	getDefaultProps: function() {
 		return {
-			xMin: 0,
-			yMin: 0,
-			xInterval: 1,
-			yInterval: 1
+			min: 0,
+			interval: 1,
+			orientation: "h"
 		};
 	},
 	_gridLayer: undefined,
@@ -48,12 +42,10 @@ var GridLayer = React.createClass({
 		var container = document.createElementNS(ns, "svg");
 		this._gridLayer = new Gridlines(
 			container,
-			this.props.xMax,
-			this.props.xMin,
-			this.props.yMax,
-			this.props.yMin,
-			_.isFunction(this.props.xInterval) ? this.props.xInterval() : this.props.xInterval,
-			_.isFunction(this.props.yInterval) ? this.props.yInterval() : this.props.yInterval);
+			this.props.min,
+			this.props.max,
+			_.isFunction(this.props.interval) ? this.props.interval() : this.props.interval,
+			this.props.orientation);
 
 		React.findDOMNode(this).appendChild(this._gridLayer);
 	},

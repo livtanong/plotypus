@@ -26,9 +26,7 @@ export class PlotsAndLayers extends React.Component {
         <p>We'll use <code>GridLayer</code>, <code>GroupedBarLayer</code>, and <code>FuncLayer</code> to demonstrate the concept of layers.</p>
         <p>For now, you can ignore the properties I'm passing to each layer, as I will expound on them later on, but you can also study them now if you like.</p>
         <Plot>
-          <GridLayer 
-            xMax={ 8 }
-            yMax={ 9 }/>
+          <GridLayer orientation="v" max={9} />
           <GroupedBarLayer 
             max={ 9 }
             data={ singleSeries /* data I'm generating. */}/>
@@ -96,9 +94,7 @@ export class Composition extends React.Component {
 
             <PlotypusComponent>
               <Plot>
-                <GridLayer 
-                  xMax={ 8 }
-                  yMax={ 9 }/>
+                <GridLayer orientation="v" max={9} />
                 <GroupedBarLayer 
                   max={ 9 }
                   data={ singleSeries /* data I'm generating. */}/>
@@ -187,9 +183,7 @@ ${JSON.stringify(data.filter(d => d.category === 3))}`
 }
         </Highlight>
         <Plot>
-          <GridLayer 
-            xMax={ 8 }
-            yMax={ 9 }/>
+          <GridLayer orientation="v" max={9} />
           <GroupedBarLayer 
             max={ 9 }
             groupOffset={ 1.3 /* basically the spacing between series */}
@@ -220,9 +214,7 @@ export class ArbitraryKeys extends React.Component {
         <p>For <code>GroupedBarLayer</code>, it's <code>seriesField</code>, <code>categoryField</code>, <code>valueField</code></p>
         <p>For this next example, we can do something crazy and switch the series and categories of our existing data with each other. To be more specific, what we're going to do is: <code>seriesField="category"</code> and <code>categoryField="series"</code>.</p>
         <Plot>
-          <GridLayer 
-            xMax={ 3 }
-            yMax={ 9 }/>
+          <GridLayer orientation="v" max={9} />
           <GroupedBarLayer 
             max={ 9 }
             seriesField="category"
@@ -261,9 +253,8 @@ export class ScatterLayerSamples extends React.Component {
       <section id="ScatterLayerSamples">
         <h2>Scatter Layer</h2>
         <Plot>
-          <GridLayer
-            xMax={ 8 }
-            yMax={ 9 } />
+          <GridLayer orientation="v" max={9} />
+          <GridLayer orientation="h" max={8} />
           <ScatterLayer
             xMax={ 8 }
             yMax={ 9 }
@@ -335,7 +326,8 @@ export class MultiplePlots extends React.Component {
           <PlotypusRow>
             <PlotypusComponent>
               <Plot>
-                <GridLayer xMax={ 8 } yMax={ 8 } />
+                <GridLayer orientation="h" max={8} />
+                <GridLayer orientation="v" max={8} />
                 <ScatterLayer
                   ref="xy"
                   xMax={ 8 }
@@ -350,7 +342,8 @@ export class MultiplePlots extends React.Component {
             <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
             <PlotypusComponent>
               <Plot>
-                <GridLayer xMax={ 8 } yMax={ 8 } />
+                <GridLayer orientation="h" max={8} />
+                <GridLayer orientation="v" max={8} />
                 <ScatterLayer
                   ref="yz"
                   xMax={ 8 }
@@ -380,7 +373,8 @@ export class MultiplePlots extends React.Component {
           <PlotypusRow>
             <PlotypusComponent>
               <Plot>
-                <GridLayer xMax={ 8 } yMax={ 8 } />
+                <GridLayer orientation="h" max={8} />
+                <GridLayer orientation="v" max={8} />
                 <ScatterLayer
                   ref="xz"
                   xMax={ 8 }
