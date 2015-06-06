@@ -1,6 +1,6 @@
 {
   "name": "plotypus",
-  "version": "0.0.10",
+  "version": "0.0.20",
   "description": "A plotting and charting library for the enterprising aquatic mammal THAT LAYS EGGS!",
   "main": "lib/Plotypus.js",
   "scripts": {
