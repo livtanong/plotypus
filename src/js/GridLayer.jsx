@@ -23,7 +23,7 @@ export default class GridLayer extends React.Component {
 		}
 	}
 	updateChart() {
-		this.destroyChart();
+		if (this._chartLayer) this.destroyChart();
 		this._chartLayer = new Gridlines(
 			React.findDOMNode(this), 
 			this.props.min, 
@@ -31,6 +31,7 @@ export default class GridLayer extends React.Component {
 			_.isFunction(this.props.interval) ? this.props.interval() : this.props.interval,
 			this.props.orientation
 		);
+		console.log(this._chartLayer);
 	}
 	render() {
 		return <svg className={ classnames("GridLayer", this.props.className) } />

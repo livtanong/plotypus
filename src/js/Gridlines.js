@@ -21,6 +21,5 @@ export default class Gridlines extends SVGLayer {
 		})
 		domNode.setAttribute("viewBox", `0 0 ${orientation === 'h' ? (ticks.length + " " + 1) : (1 + " " + ticks.length)}`);
 		domNode.setAttribute("preserveAspectRatio", "none");
-		return domNode
 	}
 }
