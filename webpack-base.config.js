@@ -30,6 +30,7 @@ var baseConfig = function(options) {
   var cssPlugin = new ExtractTextPlugin("bundle.css");
   var entry = {docs: "./docs/js/index.jsx"};
   var externals = {};
+  var cache = true;
   var output = {
     path: 'build',
     publicPath: '/build/',
@@ -63,6 +64,7 @@ var baseConfig = function(options) {
     output.path = "lib";
     output.publicPath = "/lib/";
     output.libraryTarget = "commonjs2";
+    cache = false;
     externals = {
       "react": "react"
     }
@@ -86,6 +88,7 @@ var baseConfig = function(options) {
     },
     plugins: plugins,
     externals: externals,
+    cache: cache,
     module: {
       loaders: styleLoaders.concat([
         { test: /\.html$/, loader: 'html' },
