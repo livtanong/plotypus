@@ -1,35 +1,28 @@
-var React = require("react");
-var _ = require("lodash");
-var classnames = require("classnames");
-var ChartLayerMixin = require("./ChartLayerMixin");
+import React from "react";
+import _ from "lodash";
+import classnames from "classnames";
+import Gridlines from "./Gridlines";
 
-var Gridlines = require("./Gridlines");
-
-var GridLayer = React.createClass({
-	propTypes: {
-		orientation: React.PropTypes.string,
-		max: React.PropTypes.number,
-		min: React.PropTypes.number,
-		interval: React.PropTypes.oneOfType([
-			React.PropTypes.number,
-			React.PropTypes.func
-		]),
-	},
-	mixins: [ChartLayerMixin],
-	getDefaultProps: function() {
-		return {
-			min: 0,
-			interval: 1,
-			orientation: "h"
-		};
-	},
-	_chartLayer: undefined,
-	destroyChart: function() {
+export default class GridLayer extends React.Component {
+	constructor(props) {
+		super(props);
+		this._chartLayer = undefined;
+	}
+	componentDidMount() {
+		this.updateChart();
+	}
+	componentDidUpdate() {
+		this.updateChart();
+	}
+	componentWillUnmount() {
+		this.destroyChart();
+	}
+	destroyChart() {
 		if (this._chartLayer) {
 			this._chartLayer.clear();
 		}
-	},
-	updateChart: function() {
+	}
+	updateChart() {
 		this.destroyChart();
 		this._chartLayer = new Gridlines(
 			React.findDOMNode(this), 
@@ -38,12 +31,24 @@ var GridLayer = React.createClass({
 			_.isFunction(this.props.interval) ? this.props.interval() : this.props.interval,
 			this.props.orientation
 		);
-	},
-	render: function() {
-		return (
-			<svg className={ classnames("GridLayer", this.props.className) } />
-		)
 	}
-});
+	render() {
+		return <svg className={ classnames("GridLayer", this.props.className) } />
+	}
+}
 
-module.exports = GridLayer;
+GridLayer.defaultProps = {
+	min: 0,
+	interval: 1,
+	orientation: "h"
+}
+
+GridLayer.propTypes = {
+	orientation: React.PropTypes.string,
+	max: React.PropTypes.number,
+	min: React.PropTypes.number,
+	interval: React.PropTypes.oneOfType([
+		React.PropTypes.number,
+		React.PropTypes.func
+	])
+}
