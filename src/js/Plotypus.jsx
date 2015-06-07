@@ -11,6 +11,7 @@ import LineLayer from "./LineLayer";
 import CircleLayer from "./CircleLayer";
 import ScatterLayer from "./ScatterLayer";
 import FuncLayer from "./FuncLayer";
+import DataManager from "./DataManager";
 
 export function calcInterval(min, max, limit){
 	var range = max - min;
