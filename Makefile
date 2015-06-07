@@ -7,7 +7,7 @@ deps:
 	@npm install
 
 development: deps
-	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --hot --content-base ./docs
+	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --hot --content-base ./docs --port 8081
 
 
 # cordova: clean index.html
