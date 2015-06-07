@@ -5,38 +5,19 @@ import classnames from "classnames";
 import ChartLayerMixin from "./ChartLayerMixin";
 import {AxisNumbers, AxisCategories} from "./AxisElements";
 
-var NumberAxis = React.createClass({
-	propTypes: {
-		max: React.PropTypes.number,
-		min: React.PropTypes.number,
-		interval: React.PropTypes.number,
-		align: React.PropTypes.oneOf(["start", "middle", "end"]),
-		onUpdate: React.PropTypes.func,
-		orientation: React.PropTypes.oneOf(['v', 'h'])
-	},
-	mixins: [ChartLayerMixin],
-	getDefaultProps: function() {
-		return {
-			min: 0,
-			align: "start",
-			orientation: "v"
-		};
-	},
-	getInitialState: function() {
-		return {
-			axisHeight: undefined 
-		};
-	},
-	getInterval: function(){
-		if (this._chartLayer) {
-			return this._chartLayer.getInterval();
-		} else {
-			return 1;
-		}
-	},
-	_chartLayer: undefined,
-	updateChart: function(){
-		this.destroyChart();
+export class NumberAxis extends React.Component {
+	constructor(props) {
+		super(props);
+		this._chartLayer = undefined;
+		this.updateChart = this.updateChart.bind(this);
+	}
+	getInterval() {
+		return this._chartLayer
+			? this._chartLayer.getInterval()
+			: 1;
+	}
+	updateChart() {
+		this._chartLayer && this.destroyChart();
 		this._chartLayer = new AxisNumbers(
 			React.findDOMNode(this),
 			this.props.max,
@@ -45,17 +26,97 @@ var NumberAxis = React.createClass({
 			this.props.align,
 			this.props.orientation,
 			this.props.onUpdate
-		);
-	},
-	destroyChart: function(){
-		if (this._chartLayer && this._chartLayer.clear) {
-			this._chartLayer.clear();
-		}
-	},
-	render: function() {
+		)
+	}
+	destroyChart() {
+		this._chartLayer && this._chartLayer.clear && this._chartLayer.clear();
+	}
+	componentDidMount() {
+		this.updateChart();
+	}
+	componentDidUpdate(prevProps, prevState) {
+		this.updateChart();
+	}
+	componentWillUnmount() {
+		this.destroyChart();
+	}
+	render() {
 		return <svg className={ classnames("Axis", "NumberAxis", this.props.orientation)} />
 	}
-});
+}
+NumberAxis.propTypes = {
+	max: React.PropTypes.number,
+	min: React.PropTypes.number,
+	interval: React.PropTypes.number,
+	align: React.PropTypes.oneOf(["start", "middle", "end"]),
+	onUpdate: React.PropTypes.func,
+	orientation: React.PropTypes.oneOf(['v', 'h'])
+}
+NumberAxis.defaultProps = {
+	min: 0,
+	align: "start",
+	orientation: "v"
+}
+
+// var NumberAxis = React.createClass({
+// 	propTypes: {
+// 		max: React.PropTypes.number,
+// 		min: React.PropTypes.number,
+// 		interval: React.PropTypes.number,
+// 		align: React.PropTypes.oneOf(["start", "middle", "end"]),
+// 		onUpdate: React.PropTypes.func,
+// 		orientation: React.PropTypes.oneOf(['v', 'h'])
+// 	},
+// 	getDefaultProps: function() {
+// 		return {
+// 			min: 0,
+// 			align: "start",
+// 			orientation: "v"
+// 		};
+// 	},
+// 	getInitialState: function() {
+// 		return {
+// 			axisHeight: undefined 
+// 		};
+// 	},
+// 	getInterval: function(){
+// 		if (this._chartLayer) {
+// 			return this._chartLayer.getInterval();
+// 		} else {
+// 			return 1;
+// 		}
+// 	},
+// 	_chartLayer: undefined,
+// 	componentDidMount: function() {
+// 		this.updateChart();
+// 	},
+// 	componentDidUpdate: function(){
+// 		this.updateChart();
+// 	},
+// 	componentDidUnmount: function(){
+// 		this.destroyChart();
+// 	},
+// 	updateChart: function(){
+// 		this._chartLayer && this.destroyChart();
+// 		this._chartLayer = new AxisNumbers(
+// 			React.findDOMNode(this),
+// 			this.props.max,
+// 			this.props.min,
+// 			this.props.interval,
+// 			this.props.align,
+// 			this.props.orientation,
+// 			this.props.onUpdate
+// 		);
+// 	},
+// 	destroyChart: function(){
+// 		if (this._chartLayer && this._chartLayer.clear) {
+// 			this._chartLayer.clear();
+// 		}
+// 	},
+// 	render: function() {
+// 		return <svg className={ classnames("Axis", "NumberAxis", this.props.orientation)} />
+// 	}
+// });
 
 var CategoryAxis = React.createClass({
 	propTypes: {
