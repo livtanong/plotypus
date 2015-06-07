@@ -9,7 +9,8 @@ export class NumberAxis extends React.Component {
 	constructor(props) {
 		super(props);
 		this._chartLayer = undefined;
-		this.updateChart = this.updateChart.bind(this);
+		// this.updateChart = this.updateChart.bind(this);
+		// this.render = this.render.bind(this);
 	}
 	getInterval() {
 		return this._chartLayer
@@ -118,38 +119,40 @@ NumberAxis.defaultProps = {
 // 	}
 // });
 
-var CategoryAxis = React.createClass({
-	propTypes: {
-		categories: React.PropTypes.array,
-		align: React.PropTypes.oneOf(["start", "middle", "end"]),
-		orientation: React.PropTypes.oneOf(['v', 'h']),
-		onClickLabel: React.PropTypes.func
-	},
-	mixins: [ChartLayerMixin],
-	getDefaultProps: function() {
-		return {
-			align: "start",
-			orientation: "h"
+export class CategoryAxis extends React.Component {
+	constructor(props) {
+		super(props);
+		this.majorAxis = {
+			"v": "height",
+			"h": "width"
 		};
-	},
-	majorAxis: {
-		"v": "height",
-		"h": "width"
-	},
-	minorAxis:{
-		"v": "width",
-		"h": "height"
-	},
-	getInitialState: function() {
-		return {
+		this.minorAxis = {
+			"v": "width",
+			"h": "height"
+		};
+		this.state = {
 			rotation: 0,
 			categoryThickness: undefined,
 			textAlign: "middle"
 		};
-	},
-	_chartLayer: undefined,
-	updateChart: function(){
+		this._chartLayer = undefined;
+		// this.updateChart = this.updateChart.bind(this);
+		this.refresh = _.debounce(this.updateChart, 100);
+		// this.render = this.render.bind(this);
+	}
+	componentDidMount() {
+		window.addEventListener("resize", this.refresh);
+		this.updateChart();
+	}
+	componentDidUpdate() {
+		this.updateChart();
+	}
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.refresh);
 		this.destroyChart();
+	}
+	updateChart(){
+		this._chartLayer && this.destroyChart();
 
 		this._chartLayer = new AxisCategories(
 			React.findDOMNode(this),
@@ -160,25 +163,87 @@ var CategoryAxis = React.createClass({
 			false,
 			this.props.onUpdate
 		);
-	},
-	destroyChart: function(){
-		if (this._chartLayer && this._chartLayer.clear) {
-			this._chartLayer.clear();
-		}
-	},
-	componentDidMount: function() {
-		window.addEventListener("resize", this.refresh);
-	},
-	componentWillUnmount: function() {
-		window.removeEventListener("resize", this.refresh);
-	},
-	refresh: _.debounce(function(){
-		this.updateChart();
-	}, 100),
-	render: function() {
+	}
+	destroyChart(){
+		this._chartLayer && this._chartLayer.clear && this._chartLayer.clear();
+	}
+	render() {
 		return <svg className={ classnames("Axis", "CategoryAxis", this.props.orientation)} />
 	}
-});
+}
+
+CategoryAxis.propTypes = {
+	categories: React.PropTypes.array,
+	align: React.PropTypes.oneOf(["start", "middle", "end"]),
+	orientation: React.PropTypes.oneOf(['v', 'h']),
+	onClickLabel: React.PropTypes.func
+}
+CategoryAxis.defaultProps = {
+	align: "start",
+	orientation: "h"
+}
+
+// var CategoryAxis = React.createClass({
+// 	propTypes: {
+// 		categories: React.PropTypes.array,
+// 		align: React.PropTypes.oneOf(["start", "middle", "end"]),
+// 		orientation: React.PropTypes.oneOf(['v', 'h']),
+// 		onClickLabel: React.PropTypes.func
+// 	},
+// 	mixins: [ChartLayerMixin],
+// 	getDefaultProps: function() {
+// 		return {
+// 			align: "start",
+// 			orientation: "h"
+// 		};
+// 	},
+// 	majorAxis: {
+// 		"v": "height",
+// 		"h": "width"
+// 	},
+// 	minorAxis:{
+// 		"v": "width",
+// 		"h": "height"
+// 	},
+// 	getInitialState: function() {
+// 		return {
+// 			rotation: 0,
+// 			categoryThickness: undefined,
+// 			textAlign: "middle"
+// 		};
+// 	},
+// 	_chartLayer: undefined,
+// 	updateChart: function(){
+// 		this.destroyChart();
+
+// 		this._chartLayer = new AxisCategories(
+// 			React.findDOMNode(this),
+// 			this.props.categories,
+// 			this.props.align,
+// 			this.props.orientation,
+// 			this.props.onClickLabel,
+// 			false,
+// 			this.props.onUpdate
+// 		);
+// 	},
+// 	destroyChart: function(){
+// 		if (this._chartLayer && this._chartLayer.clear) {
+// 			this._chartLayer.clear();
+// 		}
+// 	},
+// 	componentDidMount: function() {
+// 		window.addEventListener("resize", this.refresh);
+// 	},
+// 	componentWillUnmount: function() {
+// 		window.removeEventListener("resize", this.refresh);
+// 	},
+// 	refresh: _.debounce(function(){
+// 		this.updateChart();
+// 	}, 100),
+// 	render: function() {
+// 		return <svg className={ classnames("Axis", "CategoryAxis", this.props.orientation)} />
+// 	}
+// });
 
 module.exports = {
 	NumberAxis: NumberAxis,
