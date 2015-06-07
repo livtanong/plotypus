@@ -39,14 +39,12 @@ export class PlotsAndLayers extends React.Component {
         <Highlight className="solarized_light">
 {
 `<Plot>
-  <GridLayer 
-    xMax={ 8 }
-    yMax={ 9 }/>
+  <GridLayer orientation="v" max={9} />
   <GroupedBarLayer 
     max={ 9 }
     data={ singleSeries /* data I'm generating. */}/>
   <FuncLayer
-    xMax={ 9 }
+    xMax={ 8 }
     yMax={ 9 }
     func={ sineFunc /* the sine wave on which sineData is based */}
     samples={ 64 }/>
@@ -124,19 +122,17 @@ export class Composition extends React.Component {
   <PlotypusRow>
 
     <PlotypusComponent>
-      <NumberAxis max={ 9 }/>
+      <NumberAxis orientation="v" max={ 0.008 }/>
     </PlotypusComponent>
 
     <PlotypusComponent>
       <Plot>
-        <GridLayer 
-          xMax={ 8 }
-          yMax={ 9 }/>
+        <GridLayer orientation="v" max={9} />
         <GroupedBarLayer 
           max={ 9 }
           data={ singleSeries /* data I'm generating. */}/>
         <FuncLayer
-          xMax={ 9 }
+          xMax={ 8 }
           yMax={ 9 }
           func={ sineFunc /* the sine wave on which sineData is based */}
           samples={ 64 }/>
@@ -191,12 +187,10 @@ ${JSON.stringify(data.filter(d => d.category === 3))}`
         </Plot>
         <Highlight>
 {`<Plot>
-  <GridLayer 
-    xMax={ 8 }
-    yMax={ 9 }/>
+  <GridLayer orientation="v" max={9} />
   <GroupedBarLayer 
     max={ 9 }
-    groupOffset={ 1.3 }
+    groupOffset={ 1.3 /* basically the spacing between series */}
     data={ data /* data I'm generating. */}/>
 </Plot>`}
         </Highlight>
@@ -225,9 +219,7 @@ export class ArbitraryKeys extends React.Component {
         <Highlight>
 {
 `<Plot>
-  <GridLayer 
-    xMax={ 3 }
-    yMax={ 9 }/>
+  <GridLayer orientation="v" max={9} />
   <GroupedBarLayer 
     max={ 9 }
     seriesField="category"
@@ -263,9 +255,8 @@ export class ScatterLayerSamples extends React.Component {
         <Highlight>
 {
 `<Plot>
-  <GridLayer
-    xMax={ 8 }
-    yMax={ 9 } />
+  <GridLayer orientation="v" max={9} />
+  <GridLayer orientation="h" max={8} />
   <ScatterLayer
     xMax={ 8 }
     yMax={ 9 }
@@ -406,7 +397,8 @@ export class MultiplePlots extends React.Component {
   <PlotypusRow>
     <PlotypusComponent>
       <Plot>
-        <GridLayer xMax={ 8 } yMax={ 8 } />
+        <GridLayer orientation="h" max={8} />
+        <GridLayer orientation="v" max={8} />
         <ScatterLayer
           ref="xy"
           xMax={ 8 }
@@ -421,7 +413,8 @@ export class MultiplePlots extends React.Component {
     <PlotypusComponent><NumberAxis max={ 8 }/></PlotypusComponent>
     <PlotypusComponent>
       <Plot>
-        <GridLayer xMax={ 8 } yMax={ 8 } />
+        <GridLayer orientation="h" max={8} />
+        <GridLayer orientation="v" max={8} />
         <ScatterLayer
           ref="yz"
           xMax={ 8 }
@@ -451,7 +444,8 @@ export class MultiplePlots extends React.Component {
   <PlotypusRow>
     <PlotypusComponent>
       <Plot>
-        <GridLayer xMax={ 8 } yMax={ 8 } />
+        <GridLayer orientation="h" max={8} />
+        <GridLayer orientation="v" max={8} />
         <ScatterLayer
           ref="xz"
           xMax={ 8 }
