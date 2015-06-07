@@ -2,7 +2,7 @@ import DocStyles from "../scss/Docs.scss";
 import Styles from "../scss/styles.scss";
 import IconStyles from "../icons/style.css";
 import HighlightStyles from "../scss/solarized_light.css"
-import PlotypusStyles from "../../src/scss/Plotypus.scss";
+import IAmSorry from "./IAmSorry";
 
 import React from "react";
 import _ from "lodash";
@@ -63,7 +63,7 @@ export default class Docs extends React.Component {
       <div className="Docs">
         <div className="toolbar">
           <a id="brand" onClick={ this.changeView.bind(this, this.views.HOME) }>
-            <h1>Plotypus <small>v0.0.18</small></h1>
+            <h1>Plotypus <small>v0.0.32</small></h1>
           </a>
           <div className="spacer" />
           <div className="toolbar-group">

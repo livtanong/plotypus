@@ -18,12 +18,12 @@ export default class GridLayer extends React.Component {
 		this.destroyChart();
 	}
 	destroyChart() {
-		if (this._chartLayer) {
+		if (this._chartLayer && _.isFunction(this._chartLayer.clear)) {
 			this._chartLayer.clear();
 		}
 	}
 	updateChart() {
-		this.destroyChart();
+		if (this._chartLayer) this.destroyChart();
 		this._chartLayer = new Gridlines(
 			React.findDOMNode(this), 
 			this.props.min, 

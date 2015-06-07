@@ -1,0 +1,165 @@
+.Plotypus {
+  display: table;
+  overflow: hidden;
+  table-layout: auto; }
+  .Plotypus .labels-container {
+    height: 48px; }
+  .Plotypus .labels {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .Plotypus .labels .label {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      width: 0;
+      height: 0;
+      white-space: nowrap;
+      font-size: 12px; }
+  .Plotypus .Axis text {
+    height: 100%;
+    font-size: 10px; }
+  .Plotypus .Axis.v {
+    height: 100%;
+    width: 48px; }
+  .Plotypus .Axis.h {
+    height: 48px;
+    width: 100%; }
+  .Plotypus .Axis.Category.v {
+    width: auto; }
+  .Plotypus .Axis.Category.h {
+    height: auto; }
+  .Plotypus .axis-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+    white-space: nowrap; }
+    .Plotypus .axis-label.rotate {
+      width: 24px; }
+      .Plotypus .axis-label.rotate .label {
+        position: absolute;
+        bottom: 50%;
+        left: 0px;
+        -webkit-transform: rotate(-90deg) translate(-50%);
+        -moz-transform: rotate(-90deg) translate(-50%);
+        -ms-transform: rotate(-90deg) translate(-50%);
+        -o-transform: rotate(-90deg) translate(-50%);
+        transform: rotate(-90deg) translate(-50%);
+        -webkit-transform-origin: top left;
+        -moz-transform-origin: top left;
+        -ms-transform-origin: top left;
+        -o-transform-origin: top left;
+        transform-origin: top left; }
+    .Plotypus .axis-label.x {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      box-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center; }
+
+.Plot .series-1 {
+  fill: #d70206; }
+
+.Plot .series-2 {
+  fill: #f05b4f; }
+
+.Plot .series-3 {
+  fill: #f4c63d; }
+
+.Plot .series-4 {
+  fill: #d17905; }
+
+.Plot .series-5 {
+  fill: #453d3f; }
+
+.Plot .series-6 {
+  fill: #59922b; }
+
+.Plot .series-7 {
+  fill: #0544d3; }
+
+.Plot .series-8 {
+  fill: #6b0392; }
+
+.Plot .series-9 {
+  fill: #f05b4f; }
+
+.Plot .series-10 {
+  fill: #dda458; }
+
+.Plot .series-11 {
+  fill: #eacf7d; }
+
+.Plot .series-12 {
+  fill: #86797d; }
+
+.Plot .series-13 {
+  fill: #b2c326; }
+
+.Plot .series-14 {
+  fill: #6188e2; }
+
+.Plot .series-15 {
+  fill: #a748ca; }
+
+.GridLayer line {
+  stroke: rgba(0, 0, 0, 0.2);
+  stroke-width: 1;
+  stroke-dasharray: 2, 2;
+  vector-effect: non-scaling-stroke; }
+
+.PlotypusRow {
+  display: table-row; }
+  .PlotypusRow .Plot {
+    height: 100%;
+    width: 100%; }
+  .PlotypusRow .null {
+    display: table-cell;
+    width: 0px;
+    height: 0px; }
+
+.PlotypusComponent {
+  display: table-cell; }
+  .PlotypusComponent.full {
+    height: 100%;
+    width: 100%; }
+  .PlotypusComponent > .Axis.v {
+    margin: 0px 8px; }
+  .PlotypusComponent > .Axis.h {
+    margin: 8px 0px; }
+
+.FuncLayer path {
+  stroke-dasharray: 3, 3;
+  stroke-width: 1px;
+  fill: none;
+  stroke: black;
+  vector-effect: non-scaling-stroke; }

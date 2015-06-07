@@ -1,21 +1,19 @@
-var React = require("react");
-var _ = require("lodash");
-var classnames = require("classnames");
+import React from "react";
+import _ from "lodash";
+import classnames from "classnames";
 
-var A = require("./Axis");
-var Axis = A.Axis;
-var CategoryAxis = A.Category;
-var AxisLabel = A.AxisLabel;
+import {NumberAxis, CategoryAxis} from "./Axis";
 
-var GridLayer = require("./GridLayer");
-var GroupedBarLayer = require("./GroupedBarLayer");
-var StackedBarLayer = require("./StackedBarLayer");
-var LineLayer = require("./LineLayer");
-var CircleLayer = require("./CircleLayer");
-var ScatterLayer = require("./ScatterLayer");
-var FuncLayer = require("./FuncLayer");
+import GridLayer from "./GridLayer";
+import GroupedBarLayer from "./GroupedBarLayer";
+import StackedBarLayer from "./StackedBarLayer";
+import LineLayer from "./LineLayer";
+import CircleLayer from "./CircleLayer";
+import ScatterLayer from "./ScatterLayer";
+import FuncLayer from "./FuncLayer";
+import DataManager from "./DataManager";
 
-var calcInterval = function(min, max, limit){
+export function calcInterval(min, max, limit){
 	var range = max - min;
 	var minimum = range / limit;
 
@@ -30,9 +28,8 @@ var calcInterval = function(min, max, limit){
 	}
 }
 
-var Plot = React.createClass({
-	render: function() {
-		// scale depending on the maximum value we get from children.
+export class Plot extends React.Component {
+	render() {
 		return (
 			<svg className={ classnames("Plot", this.props.className) }>
 				<g className="render-area">
@@ -41,61 +38,48 @@ var Plot = React.createClass({
 			</svg>
 		);
 	}
-});
+}
 
-var PlotypusRow = React.createClass({
-	render: function() {
+export class PlotypusRow extends React.Component {
+	render() {
 		return (
 			<div className="PlotypusRow">
 				{ this.props.children }
 			</div>
 		);
 	}
-});
+}
 
-var PlotypusComponent = React.createClass({
-	render: function() {
+export class PlotypusComponent extends React.Component {
+	render() {
 		return (
 			<div className={ classnames("PlotypusComponent", this.props.className) }>
 				{ this.props.children }
 			</div>
 		);
 	}
-});
+}
 
-var Plotypus = React.createClass({
-	render: function() {
+export class Plotypus extends React.Component {
+	render() {
 		return (
 			<div {...this.props} className={ classnames("Plotypus", this.props.className) }>
 				{ this.props.children }
 			</div>
 		);
 	}
-});
+}
 
-var Null = React.createClass({
-	render: function(){
-		return (
-			<div className="null" />
-		)
-	}
-})
+export class Null extends React.Component {
+	render() { return <div className="null" /> }
+}
 
-module.exports = {
-	Plotypus: Plotypus,
-	PlotypusRow: PlotypusRow,
-	PlotypusComponent: PlotypusComponent,
-	Null: Null,
-	Plot: Plot,
-	GroupedBarLayer: GroupedBarLayer,
-	StackedBarLayer: StackedBarLayer,
-	LineLayer: LineLayer,
-	CircleLayer: CircleLayer,
-	ScatterLayer: ScatterLayer,
-	Axis: Axis,
-	AxisLabel: AxisLabel, 
-	CategoryAxis: CategoryAxis,
-	GridLayer: GridLayer,
-	FuncLayer: FuncLayer,
-	calcInterval: calcInterval
-};
+export {NumberAxis as NumberAxis};
+export {CategoryAxis as CategoryAxis};
+export {GridLayer as GridLayer};
+export {GroupedBarLayer as GroupedBarLayer};
+export {StackedBarLayer as StackedBarLayer};
+export {LineLayer as LineLayer};
+export {CircleLayer as CircleLayer};
+export {ScatterLayer as ScatterLayer};
+export {FuncLayer as FuncLayer};

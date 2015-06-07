@@ -120,54 +120,41 @@ AxisElements.prototype = new SVGLayer();
 
 function AxisNumbers(domNode, max, min, interval, align, orientation, onUpdate){
 	this.getMinSizeFraction = function(){
-		var axisSize = domNode[{"h": "offsetWidth", "v": "offsetHeight"}[orientation]];
-		var minSize = {"h": 36, "v": 20}[orientation];
+		let axisSize = domNode[{"h": "offsetWidth", "v": "offsetHeight"}[orientation]];
+		let minSize = {"h": 36, "v": 18}[orientation];
 		return minSize / axisSize;
 	};
 	this.getInterval = function(){
-
 		if (_.isFinite(max)) {
-			var floatInterval = (max - min) * this.getMinSizeFraction();
+			let floatInterval = (max - min) * this.getMinSizeFraction();
+			// console.log(max, min, this.getMinSizeFraction(), floatInterval);
 			// if greater than or equal to 5, keep counting up to find the smallest integer divisible by 5 that is greater than or equal to floatInterval;
 			// if between 1 and 5, use 2.5.
 			// if less than 1, 1, 0.5, 0.1, 0.05, 0.01, etc...
 
-			var fives = function(n, guess){
+			let fives = (guess=5) => {
 				// find the smallest multiple of 5 greater than or equal to n
-				var guess = guess || 5;
-				if (guess >= n) {
-					// done!
-					return guess;
-				} else {
-					return fives(n, guess + 5)
-				}
+				return (guess >= floatInterval)
+					? guess
+					: fives(guess + 5);
 			}
-			var ones = function(n, guess, divisor){
+			let ones = (guess=1, divisor=2) => {
 				// find the smallest member of the pattern (1, 0.5, 0.1, 0.05, 0.01...) greater than or equal to n
-				var guess = guess || 1;
-				var divisor = divisor || 2;
-
-				if (guess / divisor < n) {
-					return guess;
-				} else {
-					return ones(
-						n,
-						guess / divisor,
-						(divisor === 2) ? 5 : 2
-					)
-				}
+				return (guess / divisor < floatInterval) 
+					? guess 
+					: ones(guess / divisor, (divisor === 2) ? 5 : 2);
 			}
 			if (floatInterval > 2.5) {
-				return fives(floatInterval);
+				return fives();
 			} else if (floatInterval > 1 && floatInterval <= 2.5) {
 				return 2.5;
 			} else {
-				return ones(floatInterval);
+				return ones();
 			}
 		} else {
 			console.log("warning, max is undefined");
 		}
-	}
+	}.bind(this);
 
 	this.interval = interval || this.getInterval();
 	this.intervalledMax = utils.sanify(Math.ceil(max / this.interval) * this.interval, 5);

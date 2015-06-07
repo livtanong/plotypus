@@ -14,7 +14,7 @@ var baseConfig = function(options) {
       item.loader = item.loader.join("!");
     }
 
-    if(options.docs) {
+    if(options.docs || options.lib) {
       item.loader = ExtractTextPlugin.extract('style-loader', item.loader);
     } /*else if (options.prerender) {
       item.loader = 'null';
@@ -28,34 +28,48 @@ var baseConfig = function(options) {
   // }));
 
   var cssPlugin = new ExtractTextPlugin("bundle.css");
-  var entry = {"docs": "./docs/js/index.jsx"};
+  var entry = {docs: "./docs/js/index.jsx"};
   var externals = {};
+  var cache = true;
   var output = {
     path: 'build',
     publicPath: '/build/',
     filename: '[name].js',
   }
 
-  if (options.docs) {
-    // generate docs.js, for use in populating the prerendered document
-    plugins.push(
-      cssPlugin,
-      new webpack.optimize.UglifyJsPlugin(),
-      new webpack.DefinePlugin({
-        "process.env": {
-          NODE_ENV: JSON.stringify("production")
-        }
-      })
-    );
-  }
+  if (options.docs || options.prerender) {
+    if (options.docs) {
+      // generate docs.js, for use in populating the prerendered document
+      plugins.push(
+        cssPlugin,
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.DefinePlugin({
+          "process.env": {
+            NODE_ENV: JSON.stringify("production")
+          }
+        })
+      );
+    }
 
-  if (options.prerender) {
-    // prerendered document.
-    entry = {"prerenderHtml": "./prerenderHtml"};
-    externals = {
-      'velocity-animate': 'fs'
-    };
+    if (options.prerender) {
+      // prerendered document.
+      entry = {"prerenderHtml": "./prerenderHtml"};
+      // externals = {
+      //   'velocity-animate': 'fs'
+      // };
+      output.libraryTarget = "commonjs2";
+    }
+  } else if (options.lib) {
+    entry = {PlotypusStyle: "./docs/js/IAmSorry.jsx"};
+    output.path = "lib";
+    output.publicPath = "/lib/";
     output.libraryTarget = "commonjs2";
+    cache = false;
+    externals = {
+      "react": "react"
+    }
+    cssPlugin = new ExtractTextPlugin("Plotypus.css");
+    plugins.push(cssPlugin);
   }
 
   // if (options.production) {
@@ -74,6 +88,7 @@ var baseConfig = function(options) {
     },
     plugins: plugins,
     externals: externals,
+    cache: cache,
     module: {
       loaders: styleLoaders.concat([
         { test: /\.html$/, loader: 'html' },

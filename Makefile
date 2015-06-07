@@ -15,10 +15,12 @@ development: deps
 # 	node inject-static-resources.js index.html build -c bundle.css -j cordova.js
 # 	cp -R data build
 
-production: deps
+lib: deps
 	# ./node_modules/.bin/webpack --config webpack-prod.config.js
 	# ./node_modules/.bin/webpack --config webpack-docs.config.js
+	./node_modules/.bin/webpack --config webpack-lib.config.js
 	babel src --out-dir lib
+	rm lib/PlotypusStyle.js
 	# node prerender.js
 
 docs: clean deps

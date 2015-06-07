@@ -9,11 +9,11 @@ export default class Gridlines extends SVGLayer {
 			switch(orientation) {
 				case "h":
 					let x = index;
-					this.addSVGElement(domNode, "line", {x1: x, x2: x, y1: 0, y2: 1});
+					this.addSVGElement(this.content, "line", {x1: x, x2: x, y1: 0, y2: 1});
 					break;
 				case "v":
 					let y = ticks.length - index;
-					this.addSVGElement(domNode, "line", {x1: 0, x2: 1, y1: y, y2: y});
+					this.addSVGElement(this.content, "line", {x1: 0, x2: 1, y1: y, y2: y});
 					break;
 				default:
 					console.log("illegal orientation");
@@ -21,6 +21,5 @@ export default class Gridlines extends SVGLayer {
 		})
 		domNode.setAttribute("viewBox", `0 0 ${orientation === 'h' ? (ticks.length + " " + 1) : (1 + " " + ticks.length)}`);
 		domNode.setAttribute("preserveAspectRatio", "none");
-		return domNode
 	}
 }
