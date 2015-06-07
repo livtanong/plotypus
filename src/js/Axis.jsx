@@ -1,13 +1,11 @@
-var React = require("react");
-var _ = require("lodash");
-var classnames = require("classnames");
+import React from "react";
+import _ from "lodash";
+import classnames from "classnames";
 
-var AxisElements = require("./AxisElements");
-var AxisNumbers = AxisElements.AxisNumbers;
-var AxisCategories = AxisElements.AxisCategories;
-var ChartLayerMixin = require("./ChartLayerMixin");
+import ChartLayerMixin from "./ChartLayerMixin";
+import {AxisNumbers, AxisCategories} from "./AxisElements";
 
-var Axis = React.createClass({
+var NumberAxis = React.createClass({
 	propTypes: {
 		max: React.PropTypes.number,
 		min: React.PropTypes.number,
@@ -55,21 +53,11 @@ var Axis = React.createClass({
 		}
 	},
 	render: function() {
-		return <svg className={ classnames("Axis", this.props.orientation)} />
+		return <svg className={ classnames("Axis", "NumberAxis", this.props.orientation)} />
 	}
 });
 
-var AxisLabel = React.createClass({
-	render: function() {
-		return (
-			<text className="AxisLabel" {...this.props}>
-				{ this.props.children }
-			</text>
-		);
-	}
-});
-
-var Category = React.createClass({
+var CategoryAxis = React.createClass({
 	propTypes: {
 		categories: React.PropTypes.array,
 		align: React.PropTypes.oneOf(["start", "middle", "end"]),
@@ -127,12 +115,11 @@ var Category = React.createClass({
 		this.updateChart();
 	}, 100),
 	render: function() {
-		return <svg className={ classnames("Axis", this.props.orientation)} />
+		return <svg className={ classnames("Axis", "CategoryAxis", this.props.orientation)} />
 	}
 });
 
 module.exports = {
-	Axis: Axis,
-	Category: Category,
-	AxisLabel: AxisLabel
+	NumberAxis: NumberAxis,
+	CategoryAxis: CategoryAxis
 };

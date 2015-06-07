@@ -3,9 +3,8 @@ var _ = require("lodash");
 var classnames = require("classnames");
 
 var A = require("./Axis");
-var Axis = A.Axis;
-var CategoryAxis = A.Category;
-var AxisLabel = A.AxisLabel;
+var NumberAxis = A.NumberAxis;
+var CategoryAxis = A.CategoryAxis;
 
 var GridLayer = require("./GridLayer");
 var GroupedBarLayer = require("./GroupedBarLayer");
@@ -92,8 +91,7 @@ module.exports = {
 	LineLayer: LineLayer,
 	CircleLayer: CircleLayer,
 	ScatterLayer: ScatterLayer,
-	Axis: Axis,
-	AxisLabel: AxisLabel, 
+	NumberAxis: NumberAxis,
 	CategoryAxis: CategoryAxis,
 	GridLayer: GridLayer,
 	FuncLayer: FuncLayer,

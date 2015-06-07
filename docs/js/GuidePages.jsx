@@ -11,7 +11,7 @@ import {
   ScatterLayer,
   GridLayer, 
   FuncLayer, 
-  Axis, 
+  NumberAxis, 
   CategoryAxis
 } from "../../src/js/Plotypus.jsx";
 import {sineFunc, data} from "./DataStore";
@@ -89,7 +89,7 @@ export class Composition extends React.Component {
           <PlotypusRow>
 
             <PlotypusComponent>
-              <Axis orientation="v" max={ 0.008 }/>
+              <NumberAxis orientation="v" max={ 0.008 }/>
             </PlotypusComponent>
 
             <PlotypusComponent>
@@ -124,7 +124,7 @@ export class Composition extends React.Component {
   <PlotypusRow>
 
     <PlotypusComponent>
-      <Axis max={ 9 }/>
+      <NumberAxis max={ 9 }/>
     </PlotypusComponent>
 
     <PlotypusComponent>
@@ -339,7 +339,7 @@ export class MultiplePlots extends React.Component {
                   data={ data } />
               </Plot>
             </PlotypusComponent>
-            <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
+            <PlotypusComponent><NumberAxis max={ 8 }/></PlotypusComponent>
             <PlotypusComponent>
               <Plot>
                 <GridLayer orientation="h" max={8} />
@@ -357,10 +357,10 @@ export class MultiplePlots extends React.Component {
             </PlotypusComponent>
           </PlotypusRow>
           <PlotypusRow>
-            <PlotypusComponent><Axis orientation="h" max={ 8 }/></PlotypusComponent>
+            <PlotypusComponent><NumberAxis orientation="h" max={ 8 }/></PlotypusComponent>
             <Null />
             <PlotypusComponent>
-              <Axis orientation="h" max={ 8 }/>
+              <NumberAxis orientation="h" max={ 8 }/>
             </PlotypusComponent>
           </PlotypusRow>
           <PlotypusRow>
@@ -386,7 +386,7 @@ export class MultiplePlots extends React.Component {
                   data={ data } />
               </Plot>
             </PlotypusComponent>
-            <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
+            <PlotypusComponent><NumberAxis max={ 8 }/></PlotypusComponent>
             <Null />
           </PlotypusRow>
         </Plotypus>
@@ -418,7 +418,7 @@ export class MultiplePlots extends React.Component {
           data={ data } />
       </Plot>
     </PlotypusComponent>
-    <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
+    <PlotypusComponent><NumberAxis max={ 8 }/></PlotypusComponent>
     <PlotypusComponent>
       <Plot>
         <GridLayer xMax={ 8 } yMax={ 8 } />
@@ -435,10 +435,10 @@ export class MultiplePlots extends React.Component {
     </PlotypusComponent>
   </PlotypusRow>
   <PlotypusRow>
-    <PlotypusComponent><Axis orientation="h" max={ 8 }/></PlotypusComponent>
+    <PlotypusComponent><NumberAxis orientation="h" max={ 8 }/></PlotypusComponent>
     <Null />
     <PlotypusComponent>
-      <Axis orientation="h" max={ 8 }/>
+      <NumberAxis orientation="h" max={ 8 }/>
     </PlotypusComponent>
   </PlotypusRow>
   <PlotypusRow>
@@ -463,7 +463,7 @@ export class MultiplePlots extends React.Component {
           data={ data } />
       </Plot>
     </PlotypusComponent>
-    <PlotypusComponent><Axis max={ 8 }/></PlotypusComponent>
+    <PlotypusComponent><NumberAxis max={ 8 }/></PlotypusComponent>
     <Null />
   </PlotypusRow>
 </Plotypus>`  
