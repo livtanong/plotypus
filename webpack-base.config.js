@@ -60,6 +60,7 @@ var baseConfig = function(options) {
     if (options.prerender) {
       // prerendered document.
       entry = {"prerenderHtml": "./prerenderHtml"};
+      pageLoaders = [];
       // externals = {
       //   'velocity-animate': 'fs'
       // };

@@ -1,8 +1,9 @@
 var React = require('react');
-var Docs = require('./docs/js/Docs');
+var Index = require('./docs/js/index');
+var IndexString = require('./docs/js/index');
 
 var indexHtml = require('./docs/index.html');
-var indexComponent = React.renderToString(React.createElement(Docs, {isPrerender: true}));
+// var IndexString = React.renderToStaticMarkup(<Index />);
 
-module.exports = indexHtml.replace('Loading', indexComponent);
+module.exports = indexHtml.replace('Loading', IndexString);
 

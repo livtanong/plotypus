@@ -45,14 +45,15 @@ let routes = (
 )
 
 let Root = Router.create({
-	routes: routes,
-	scrollBehavior: Router.ScrollToTopBehavior
+	routes: routes
 });
 
 Root.run(function(Handler) {
 	if (typeof document != "undefined") {
 		React.render(<Handler />, document.body);
 	}
-})
+});
 
-export default Root;
+// console.log();
+
+export default React.renderToStaticMarkup(<Root />);
