@@ -42,10 +42,14 @@ code {
 	height: 64px;
 	background-color: $dark;
 	color: white;
+	#brand {
+		text-decoration: none;
+	}
 	h1 {
 		font-size: 24px;
 		font-weight: 300;
 		margin: 0px 16px;
+		text-decoration: none;
 	}
 	.spacer {
 		@include flex(1);
