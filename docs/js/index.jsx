@@ -13,6 +13,10 @@ import Guide from "./Pages/Guide";
 import Toolbar from "./Toolbar";
 import Plotypus from "../../src/js/Plotypus";
 
+import StructureGuide from "./Pages/StructureGuide";
+import DataGuide from "./Pages/DataGuide";
+import SampleGuide from "./Pages/SampleGuide";
+
 
 export class Index extends React.Component {
   constructor(props) {
@@ -30,12 +34,20 @@ export class Index extends React.Component {
 
 let routes = (
 	<Route name="index" path="/" handler={ Index }>
-		<Route name="guide" path="/guide" handler={ Guide } />
+		<Route name="guide" path="/guide" handler={ Guide }>
+			<Route name="structureGuide" path="/guide/structure" handler={ StructureGuide } />
+			<Route name="dataGuide" path="/guide/data" handler={ DataGuide } />
+			<Route name="sampleGuide" path="/guide/sample" handler={ SampleGuide } />
+			<DefaultRoute handler={ StructureGuide } />
+		</Route>
 		<DefaultRoute name="home" handler={ Home }/>
 	</Route>
 )
 
-let Root = Router.create({routes :routes});
+let Root = Router.create({
+	routes: routes,
+	scrollBehavior: Router.ScrollToTopBehavior
+});
 
 Root.run(function(Handler) {
 	if (typeof document != "undefined") {
