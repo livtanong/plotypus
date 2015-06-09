@@ -8,14 +8,14 @@ import React from "react";
 import Router, {DefaultRoute, Link, Route, RouteHandler} from "react-router";
 
 
-import Home from "./Pages/Home";
-import Guide from "./Pages/Guide";
+import Home from "react-router-proxy!./Pages/Home";
+import Guide from "react-router-proxy!./Pages/Guide";
 import Toolbar from "./Toolbar";
 import Plotypus from "../../src/js/Plotypus";
 
-import StructureGuide from "./Pages/StructureGuide";
-import DataGuide from "./Pages/DataGuide";
-import SampleGuide from "./Pages/SampleGuide";
+import StructureGuide from "react-router-proxy!./Pages/StructureGuide";
+import DataGuide from "react-router-proxy!./Pages/DataGuide";
+import SampleGuide from "react-router-proxy!./Pages/SampleGuide";
 
 
 class Index extends React.Component {

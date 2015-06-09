@@ -23,8 +23,13 @@ lib: deps
 	rm lib/PlotypusStyle.js
 	# node prerender.js
 
-docs: clean deps
+docs: deps
 	./node_modules/.bin/webpack --config webpack-docs.config.js
+	# ./node_modules/.bin/webpack --config webpack-prerender.config.js
+	# node prerender.js
+
+prerender: docs
+	# ./node_modules/.bin/webpack --config webpack-docs.config.js
 	./node_modules/.bin/webpack --config webpack-prerender.config.js
 	node prerender.js
 
