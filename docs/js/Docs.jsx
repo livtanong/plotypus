@@ -55,9 +55,6 @@ export default class Docs extends React.Component {
         </a>
       )
     );
-    // var nav = _.keys(this.views).map(function(view){
-    //   return (<a onClick={ this.changeView(view) }>{ view.toLowerCase() }</a>)
-    // }, this);
 
     return (
       <div className="Docs">
@@ -67,13 +64,18 @@ export default class Docs extends React.Component {
           </a>
           <div className="spacer" />
           <div className="toolbar-group">
-            { nav }
-            <a className="toolbar-item" href="https://github.com/levitanong/plotypus">
-              Github
-            </a>
+            <ul>
+              <li><Link to="home">Home</Link></li>
+              <li><Link to="guide">Guide</Link></li>
+              <li>
+                <a className="toolbar-item" href="https://github.com/levitanong/plotypus">
+                  Github
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        { views() }
+        <RouteHandler />
       </div>
     );
   }

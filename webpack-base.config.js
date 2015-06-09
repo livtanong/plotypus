@@ -4,6 +4,12 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var baseConfig = function(options) {
   var plugins = [];
+  var pageLoaders = [
+    {
+      test: /Pages/,
+      loader: "react-router-proxy!babel-loader"
+    }
+  ]
   var styleLoaders = [
     { test: /\.css$/, loader: "css" },
     { test: /\.s(a|c)ss$/, loader: "css!sass?includePaths[]="+bourbon }
@@ -54,6 +60,7 @@ var baseConfig = function(options) {
     if (options.prerender) {
       // prerendered document.
       entry = {"prerenderHtml": "./prerenderHtml"};
+      pageLoaders = [];
       // externals = {
       //   'velocity-animate': 'fs'
       // };
@@ -101,7 +108,7 @@ var baseConfig = function(options) {
         { test: /\.png($|\?)/,    loader: "url?limit=10000&mimetype=image/png" },
         { test: /\.jpg($|\?)/,    loader: "url?limit=10000&mimetype=image/jpeg" },
         { test: /\.ico($|\?)/,    loader: "url?limit=10000&mimetype=image/x-icon" }
-      ])
+      ]).concat(pageLoaders)
     }
   }
 
