@@ -4,12 +4,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var baseConfig = function(options) {
   var plugins = [];
-  var pageLoaders = [
-    {
-      test: /Pages/,
-      loader: "react-router-proxy!babel-loader"
-    }
-  ]
+  // var pageLoaders = [
+  //   {
+  //     test: /Pages/,
+  //     loader: "react-router-proxy!babel-loader"
+  //   }
+  // ]
+  var pageLoaders = [];
   var styleLoaders = [
     { test: /\.css$/, loader: "css" },
     { test: /\.s(a|c)ss$/, loader: "css!sass?includePaths[]="+bourbon }
