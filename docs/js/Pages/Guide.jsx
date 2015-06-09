@@ -1,8 +1,6 @@
 import React from "react";
-import Highlight from "./Highlight";
-import {PlotsAndLayers, Composition, DataFormat, ArbitraryKeys, ScatterLayerSamples, MultiplePlots} from "./GuidePages";
-import {Plotypus, PlotypusRow, PlotypusComponent, Plot, GroupedBarLayer, StackedBarLayer, GridLayer, FuncLayer} from "../../src/js/Plotypus.jsx";
-
+import Highlight from "../Highlight";
+import {PlotsAndLayers, Composition, DataFormat, ArbitraryKeys, ScatterLayerSamples, MultiplePlots} from "../GuideSections";
 export default class Guide extends React.Component {
   genData(count, values, cats, series) {
     /*

@@ -1,6 +1,5 @@
 import React from "react";
-import Highlight from "./Highlight.jsx";
-import PlotypusIcon from "../svg-icons/SVG/plotypus.svg";
+import PlotypusIcon from "../../svg-icons/SVG/plotypus.svg";
 
 export default class Home extends React.Component {
 	render() {

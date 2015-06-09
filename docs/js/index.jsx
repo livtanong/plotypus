@@ -1,12 +1,18 @@
+import DocStyles from "../scss/Docs.scss";
+import Styles from "../scss/styles.scss";
+import IconStyles from "../icons/style.css";
+import HighlightStyles from "../scss/solarized_light.css"
+import IAmSorry from "./IAmSorry";
+
 import React from "react";
-import Docs from "./Docs";
-import Home from "./Home";
-import Guide from "./Guide";
+import Router, {DefaultRoute, Link, Route, RouteHandler} from "react-router";
+
+
+import Home from "./Pages/Home";
+import Guide from "./Pages/Guide";
 import Toolbar from "./Toolbar";
 import Plotypus from "../../src/js/Plotypus";
 
-
-import Router, {DefaultRoute, Link, Route, RouteHandler} from "react-router";
 
 export class Index extends React.Component {
   constructor(props) {
