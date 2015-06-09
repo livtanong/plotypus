@@ -18,7 +18,7 @@ import DataGuide from "./Pages/DataGuide";
 import SampleGuide from "./Pages/SampleGuide";
 
 
-export class Index extends React.Component {
+class Index extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -54,6 +54,5 @@ Root.run(function(Handler) {
 	}
 });
 
-// console.log();
-
-export default React.renderToStaticMarkup(<Root />);
+// let RootString = React.renderToStaticMarkup(<Root />);
+export default Root;
