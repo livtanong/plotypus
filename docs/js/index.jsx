@@ -49,10 +49,10 @@ let Root = Router.create({
 });
 
 Root.run(function(Handler) {
-	console.log("does document exist?");
+	// console.log("does document exist?");
 	if (typeof document != "undefined") {
 		React.render(<Handler />, document.body);
-		console.log("should be rendering");
+		// console.log("should be rendering");
 	}
 });
 

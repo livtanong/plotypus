@@ -49,7 +49,7 @@ var baseConfig = function(options) {
       // generate docs.js, for use in populating the prerendered document
       plugins.push(
         cssPlugin,
-        // new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
         new webpack.DefinePlugin({
           "process.env": {
             NODE_ENV: JSON.stringify("production")
