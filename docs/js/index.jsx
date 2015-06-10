@@ -54,7 +54,7 @@ Root.run(function(Handler) {
 	}
 });
 
-console.log(Root);
+console.log(<Root />);
 
 // let RootString = React.renderToStaticMarkup(<Root />);
 export default Root;
