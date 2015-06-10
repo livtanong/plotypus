@@ -210,12 +210,14 @@
 	});
 
 	Root.run(function (Handler) {
+		console.log("does document exist?");
 		if (typeof document != "undefined") {
 			_react2["default"].render(_react2["default"].createElement(Handler, null), document.body);
+			console.log("should be rendering");
 		}
 	});
 
-	console.log(_react2["default"].createElement(Root, null));
+	// console.log(React.renderToStaticMarkup(<Root />));
 
 	// let RootString = React.renderToStaticMarkup(<Root />);
 	exports["default"] = Root;
