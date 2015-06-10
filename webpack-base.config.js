@@ -40,7 +40,7 @@ var baseConfig = function(options) {
   var cache = true;
   var output = {
     path: 'build',
-    publicPath: './build/',
+    publicPath: '/build/',
     filename: '[name].js',
   }
 
@@ -60,6 +60,7 @@ var baseConfig = function(options) {
 
     if (options.prerender) {
       // prerendered document.
+      output.publicPath = "./build/"
       entry = {"prerenderHtml": "./prerenderHtml"};
       pageLoaders = [];
       // externals = {
