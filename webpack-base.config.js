@@ -44,31 +44,32 @@ var baseConfig = function(options) {
     filename: '[name].js',
   }
 
-  if (options.docs || options.prerender) {
-    if (options.docs) {
-      // generate docs.js, for use in populating the prerendered document
-      plugins.push(
-        cssPlugin,
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.DefinePlugin({
-          "process.env": {
-            NODE_ENV: JSON.stringify("production")
-          }
-        })
-      );
-    }
+  if (options.docs) {
+    plugins.push(
+      cssPlugin,
+      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.DefinePlugin({
+        "process.env": {
+          NODE_ENV: JSON.stringify("production")
+        }
+      })
+    );
+  }
 
-    if (options.prerender) {
-      // prerendered document.
-      output.publicPath = "./build/"
-      entry = {"prerenderHtml": "./prerenderHtml"};
-      pageLoaders = [];
-      // externals = {
-      //   'velocity-animate': 'fs'
-      // };
-      output.libraryTarget = "commonjs2";
-    }
-  } else if (options.lib) {
+  if (options.preprerender) {
+    entry = {"routes": "./docs/js/index.jsx"};
+    pageLoaders = [];
+    output.libraryTarget = "commonjs2";
+  }
+
+  if (options.prerender) {
+    output.publicPath = "./build/"
+    entry = {"prerenderHtml": "./prerenderHtml"};
+    pageLoaders = [];
+    output.libraryTarget = "commonjs2";
+  }
+
+  if (options.lib) {
     entry = {PlotypusStyle: "./docs/js/IAmSorry.jsx"};
     output.path = "lib";
     output.publicPath = "./lib/";
@@ -80,10 +81,6 @@ var baseConfig = function(options) {
     cssPlugin = new ExtractTextPlugin("Plotypus.css");
     plugins.push(cssPlugin);
   }
-
-  // if (options.production) {
-  //   output.library = "Plotypus";
-  // };
 
   return {
     __extra: {

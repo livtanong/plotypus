@@ -25,11 +25,11 @@ lib: deps
 
 docs: clean deps
 	./node_modules/.bin/webpack --config webpack-docs.config.js
-	# ./node_modules/.bin/webpack --config webpack-prerender.config.js
-	# node prerender.js
 
-prerender: docs
-	# ./node_modules/.bin/webpack --config webpack-docs.config.js
+preprerender: docs
+	./node_modules/.bin/webpack --config webpack-preprerender.config.js
+
+prerender: preprerender
 	./node_modules/.bin/webpack --config webpack-prerender.config.js
 	node prerender.js
 

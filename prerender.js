@@ -1,13 +1,17 @@
+var _ = require("lodash");
+var mkdirp = require("mkdirp");
+var routes = require("./build/routes"); // this is built from webpack-preprerender.config.js
+// console.log(routes.namedRoutes);
+
+_.forEach(routes.namedRoutes, function(route, routeName) {
+	console.log(routeName, route);
+	// can mkdirp, but how to set paths without cluttering shit?
+})
+
+
+
 var global = this;
 var prerendered = require('./build/prerenderHtml');
 var fs = require('fs');
 
-// var replace = function(html) {
-//     return (html
-//             .replace('bundle.css', 'bundle.'+hash+'.css')
-//             .replace('bundle.js', 'bundle.'+hash+'.js')
-//             .replace('embed.js', 'embed.'+hash+'.js')
-//     );
-// }
 fs.writeFileSync('./index.html', prerendered);
-// fs.writeFileSync('./build/embed.html', replace(prerendered.embed));
