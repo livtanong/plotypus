@@ -44,19 +44,23 @@ let routes = (
 	</Route>
 )
 
-let Root = Router.create({
-	routes: routes
-});
+// let Root = Router.create({
+// 	routes: routes
+// });
 
-Root.run(function(Handler) {
-	// console.log("does document exist?");
-	if (typeof document != "undefined") {
+if (typeof document !== "undefined") {
+	Router.run(routes, Router.HistoryLocation, function(Handler) {
 		React.render(<Handler />, document.body);
-		// console.log("should be rendering");
-	}
-});
+	})
+}
 
-// console.log(React.renderToStaticMarkup(<Root />));
-
-// let RootString = React.renderToStaticMarkup(<Root />);
-export default Root;
+// export default Root;
+export default function render(locals, callback) {
+	Router.run(routes, locals.path, function(Handler) {
+    let html = template({
+      html: React.renderToString(<Handler />),
+      assets: locals.assets,
+    });
+    callback(null, html);
+  });
+}

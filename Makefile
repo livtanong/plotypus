@@ -31,7 +31,7 @@ preprerender: docs
 
 prerender: preprerender
 	./node_modules/.bin/webpack --config webpack-prerender.config.js
-	node prerender.js
+	# node prerender.js
 
 deploy:
 	git checkout gh-pages

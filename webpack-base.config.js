@@ -1,12 +1,25 @@
+var _ = require("lodash");
+var path = require("path");
 var bourbon = require('node-bourbon').includePaths;
 var webpack = require('webpack');
+var mkdirp = require("mkdirp");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 var baseConfig = function(options) {
+
+  // if (options.prerender) {
+    
+  //   console.log(routePaths);
+  // }
+
+
   var plugins = [];
   var pageLoaders = [
     {
-      test: /Pages/,
+      include: [
+        path.resolve(__dirname, "docs/js/Pages")
+      ],
       loader: "react-router-proxy!babel-loader"
     }
   ]
@@ -63,10 +76,29 @@ var baseConfig = function(options) {
   }
 
   if (options.prerender) {
+     // this is built from webpack-preprerender.config.js
+    // _.forEach(routes.namedRoutes, function(route, routeName) {
+    //    mkdirp("." + route.path, function(err) {
+    //      if (err) console.error(err);
+    //      else {
+    //        console.log("made path for", routeName);
+    //        // create indices for each path.
+           
+    //      }
+    //    })
+    // });
+
+    // console.log(routes);
+    var routes = require("./build/routes");
+    var routePaths = _.uniq(_.pluck(routes.namedRoutes, "path"));
+
     output.publicPath = "./build/"
     entry = {"prerenderHtml": "./prerenderHtml"};
     pageLoaders = [];
     output.libraryTarget = "commonjs2";
+
+    var pathToIndex = path.resolve(__dirname, "build/routes.js");
+    plugins.push(new StaticSiteGeneratorPlugin("routes.js", routePaths));
   }
 
   if (options.lib) {
