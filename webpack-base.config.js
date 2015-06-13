@@ -36,7 +36,7 @@ var baseConfig = function(options) {
   // }));
 
   var cssPlugin = new ExtractTextPlugin("bundle.css");
-  var entry = {docs: "./docs/js/index.jsx"};
+  var entry = {docs: path.resolve(__dirname, "docs/js/index.jsx")};
   var externals = {};
   var cache = true;
   var output = {
@@ -58,14 +58,14 @@ var baseConfig = function(options) {
   }
 
   if (options.preprerender) {
-    entry = {"routes": "./docs/js/index.jsx"};
+    entry = {"routes": path.resolve(__dirname, "docs/js/index.jsx")};
     pageLoaders = [];
     output.libraryTarget = "commonjs2";
   }
 
   if (options.prerender) {
     output.publicPath = "./build/"
-    entry = {"prerenderHtml": "./prerenderHtml"};
+    entry = {"prerenderHtml": path.resolve(__dirname, "prerenderHtml")};
     pageLoaders = [];
     output.libraryTarget = "commonjs2";
   }
