@@ -1,12 +1,13 @@
 var bourbon = require('node-bourbon').includePaths;
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require("path");
 
 var baseConfig = function(options) {
   var plugins = [];
   var pageLoaders = [
     {
-      test: /Pages/,
+      test: path.resolve(__dirname, "docs/js/Pages"),
       loader: "react-router-proxy!babel-loader"
     }
   ]
