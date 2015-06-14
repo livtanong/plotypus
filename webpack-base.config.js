@@ -71,7 +71,7 @@ var baseConfig = function(options) {
   }
 
   if (options.lib) {
-    entry = {PlotypusStyle: "./docs/js/IAmSorry.jsx"};
+    entry = {PlotypusStyle: path.resolve(__dirname, "docs/js/IAmSorry.jsx")};
     output.path = "lib";
     output.publicPath = "./lib/";
     output.libraryTarget = "commonjs2";
