@@ -6,10 +6,10 @@ var path = require("path");
 var baseConfig = function(options) {
   var plugins = [];
   var pageLoaders = [
-    // {
-    //   test: path.resolve(__dirname, "docs/js/Pages"),
-    //   loader: "react-router-proxy!babel-loader"
-    // }
+    {
+      test: path.resolve(__dirname, "docs/js/Pages"),
+      loader: "react-router-proxy!babel-loader"
+    }
   ]
   // var pageLoaders = [];
   var styleLoaders = [
@@ -46,6 +46,7 @@ var baseConfig = function(options) {
   }
 
   if (options.docs) {
+    output.publicPath = "./build/"
     plugins.push(
       cssPlugin,
       new webpack.optimize.UglifyJsPlugin({
