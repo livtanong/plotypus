@@ -29,7 +29,7 @@ docs: clean deps
 preprerender: docs
 	./node_modules/.bin/webpack --config webpack-preprerender.config.js
 
-prerender: preprerender
+prerender: docs
 	./node_modules/.bin/webpack --config webpack-prerender.config.js
 	node prerender.js
 

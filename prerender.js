@@ -1,6 +1,6 @@
 var _ = require("lodash");
 var mkdirp = require("mkdirp");
-var routes = require("./build/routes"); // this is built from webpack-preprerender.config.js
+// var routes = require("./build/routes"); // this is built from webpack-preprerender.config.js
 // console.log(routes.namedRoutes);
 
 // _.forEach(routes.namedRoutes, function(route, routeName) {

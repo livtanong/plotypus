@@ -6,10 +6,10 @@ var path = require("path");
 var baseConfig = function(options) {
   var plugins = [];
   var pageLoaders = [
-    {
-      test: path.resolve(__dirname, "docs/js/Pages"),
-      loader: "react-router-proxy!babel-loader"
-    }
+    // {
+    //   test: path.resolve(__dirname, "docs/js/Pages"),
+    //   loader: "react-router-proxy!babel-loader"
+    // }
   ]
   // var pageLoaders = [];
   var styleLoaders = [
@@ -68,7 +68,7 @@ var baseConfig = function(options) {
   }
 
   if (options.prerender) {
-    output.publicPath = "build/"
+    output.publicPath = "./build/"
     entry = {"prerenderHtml": path.resolve(__dirname, "prerenderHtml")};
     pageLoaders = [];
     output.libraryTarget = "commonjs2";
