@@ -20,6 +20,7 @@ var baseConfig = function(options) {
       include: [
         path.resolve(__dirname, "docs/js/Pages")
       ],
+      // test: path.resolve(__dirname, "docs/js/Pages"),
       loader: "react-router-proxy!babel-loader"
     }
   ]
@@ -48,7 +49,7 @@ var baseConfig = function(options) {
   // }));
 
   var cssPlugin = new ExtractTextPlugin("bundle.css");
-  var entry = {docs: "./docs/js/index.jsx"};
+  var entry = {docs: path.resolve(__dirname, "docs/js/index.jsx")};
   var externals = {};
   var cache = true;
   var output = {
@@ -58,9 +59,14 @@ var baseConfig = function(options) {
   }
 
   if (options.docs) {
+    output.publicPath = "./build/"
     plugins.push(
       cssPlugin,
-      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify("production")
@@ -70,7 +76,7 @@ var baseConfig = function(options) {
   }
 
   if (options.preprerender) {
-    entry = {"routes": "./docs/js/index.jsx"};
+    entry = {"routes": path.resolve(__dirname, "docs/js/index.jsx")};
     pageLoaders = [];
     output.libraryTarget = "commonjs2";
   }
@@ -92,17 +98,17 @@ var baseConfig = function(options) {
     var routes = require("./build/routes");
     var routePaths = _.uniq(_.pluck(routes.namedRoutes, "path"));
 
+    // entry = {"prerenderHtml": path.resolve(__dirname, "prerenderHtml")};
     output.publicPath = "./build/"
-    entry = {"prerenderHtml": "./prerenderHtml"};
     pageLoaders = [];
     output.libraryTarget = "commonjs2";
 
-    var pathToIndex = path.resolve(__dirname, "build/routes.js");
-    plugins.push(new StaticSiteGeneratorPlugin("routes.js", routePaths));
+    // var pathToIndex = path.resolve(__dirname, "docs/js/index.js");
+    plugins.push(new StaticSiteGeneratorPlugin("docs.js", routePaths));
   }
 
   if (options.lib) {
-    entry = {PlotypusStyle: "./docs/js/IAmSorry.jsx"};
+    entry = {PlotypusStyle: path.resolve(__dirname, "docs/js/IAmSorry.jsx")};
     output.path = "lib";
     output.publicPath = "./lib/";
     output.libraryTarget = "commonjs2";

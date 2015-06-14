@@ -1,10 +1,11 @@
 var _ = require("lodash");
 var mkdirp = require("mkdirp");
-var routes = require("./build/routes"); // this is built from webpack-preprerender.config.js
+// var routes = require("./build/routes"); // this is built from webpack-preprerender.config.js
 // console.log(routes.namedRoutes);
 
 // _.forEach(routes.namedRoutes, function(route, routeName) {
 // 	console.log(routeName, route);
+// <<<<<<< HEAD
 // 	mkdirp("." + route.path, function(err) {
 // 		if (err) console.error(err);
 // 		else {
@@ -13,6 +14,9 @@ var routes = require("./build/routes"); // this is built from webpack-preprerend
 
 // 		}
 // 	})
+// =======
+// 	// can mkdirp, but how to set paths without cluttering shit?
+// >>>>>>> master
 // })
 
 
