@@ -48,7 +48,11 @@ var baseConfig = function(options) {
   if (options.docs) {
     plugins.push(
       cssPlugin,
-      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify("production")
@@ -64,7 +68,7 @@ var baseConfig = function(options) {
   }
 
   if (options.prerender) {
-    output.publicPath = "./build/"
+    output.publicPath = "build/"
     entry = {"prerenderHtml": path.resolve(__dirname, "prerenderHtml")};
     pageLoaders = [];
     output.libraryTarget = "commonjs2";

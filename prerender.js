@@ -3,10 +3,10 @@ var mkdirp = require("mkdirp");
 var routes = require("./build/routes"); // this is built from webpack-preprerender.config.js
 // console.log(routes.namedRoutes);
 
-_.forEach(routes.namedRoutes, function(route, routeName) {
-	console.log(routeName, route);
-	// can mkdirp, but how to set paths without cluttering shit?
-})
+// _.forEach(routes.namedRoutes, function(route, routeName) {
+// 	console.log(routeName, route);
+// 	// can mkdirp, but how to set paths without cluttering shit?
+// })
 
 
 
