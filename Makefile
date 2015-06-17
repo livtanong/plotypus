@@ -7,7 +7,7 @@ deps:
 	@npm install
 
 development: deps
-	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --hot --content-base ./docs --port 8081
+	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --progress --colors --hot --content-base ./docs --port 8081
 
 
 # cordova: clean index.html
@@ -24,13 +24,11 @@ lib: deps
 	# node prerender.js
 
 docs: clean deps
-	./node_modules/.bin/webpack --config webpack-docs.config.js
+	./node_modules/.bin/webpack --progress --colors --config webpack-docs.config.js
 
-preprerender: docs
-	./node_modules/.bin/webpack --config webpack-preprerender.config.js
-
-prerender: preprerender
-	./node_modules/.bin/webpack --config webpack-prerender.config.js
+prerender: clean deps
+	./node_modules/.bin/webpack --progress --colors --config webpack-prerender.config.js
+	./node_modules/.bin/webpack --progress --colors --config webpack-docs.config.js
 	# node prerender.js
 
 deploy:

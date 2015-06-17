@@ -8,12 +8,6 @@ var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 var baseConfig = function(options) {
 
-  // if (options.prerender) {
-    
-  //   console.log(routePaths);
-  // }
-
-
   var plugins = [];
   var pageLoaders = [
     {
@@ -49,9 +43,9 @@ var baseConfig = function(options) {
   // }));
 
   var cssPlugin = new ExtractTextPlugin("bundle.css");
-  var entry = {docs: path.resolve(__dirname, "docs/js/index.jsx")};
+  var entry = {docs: path.resolve(__dirname, "docs/js/entry.jsx")};
   var externals = {};
-  var cache = true;
+  // var cache = true;
   var output = {
     path: 'build',
     publicPath: '/build/',
@@ -60,51 +54,37 @@ var baseConfig = function(options) {
 
   if (options.docs) {
     output.publicPath = "./build/"
+    output.libraryTarget = "var";
     plugins.push(
-      cssPlugin,
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        }
-      }),
-      new webpack.DefinePlugin({
-        "process.env": {
-          NODE_ENV: JSON.stringify("production")
-        }
-      })
+      cssPlugin
+      // new webpack.optimize.UglifyJsPlugin({
+      //   compress: {
+      //     warnings: false
+      //   }
+      // }),
+      // new webpack.DefinePlugin({
+      //   "process.env": {
+      //     NODE_ENV: JSON.stringify("production")
+      //   }
+      // })
     );
   }
 
-  if (options.preprerender) {
-    entry = {"routes": path.resolve(__dirname, "docs/js/index.jsx")};
-    pageLoaders = [];
-    output.libraryTarget = "commonjs2";
-  }
-
   if (options.prerender) {
-     // this is built from webpack-preprerender.config.js
-    // _.forEach(routes.namedRoutes, function(route, routeName) {
-    //    mkdirp("." + route.path, function(err) {
-    //      if (err) console.error(err);
-    //      else {
-    //        console.log("made path for", routeName);
-    //        // create indices for each path.
-           
-    //      }
-    //    })
-    // });
-
-    // console.log(routes);
-    var routes = require("./build/routes");
-    var routePaths = _.uniq(_.pluck(routes.namedRoutes, "path"));
-
-    // entry = {"prerenderHtml": path.resolve(__dirname, "prerenderHtml")};
-    output.publicPath = "./build/"
+    var routePaths = [
+      "/",
+      "/guide",
+      "/guide/data",
+      "/guide/sample",
+      "/guide/structure"
+    ]
+    output.path = path.resolve(__dirname, "build");
+    output.publicPath = "/";
     pageLoaders = [];
     output.libraryTarget = "commonjs2";
+    // output.libraryTarget = "umd";
 
-    // var pathToIndex = path.resolve(__dirname, "docs/js/index.js");
-    plugins.push(new StaticSiteGeneratorPlugin("docs.js", routePaths));
+    plugins.push(new StaticSiteGeneratorPlugin("docs.js", routePaths));    
   }
 
   if (options.lib) {
@@ -112,7 +92,7 @@ var baseConfig = function(options) {
     output.path = "lib";
     output.publicPath = "./lib/";
     output.libraryTarget = "commonjs2";
-    cache = false;
+    // cache = false;
     externals = {
       "react": "react"
     }
@@ -132,7 +112,7 @@ var baseConfig = function(options) {
     },
     plugins: plugins,
     externals: externals,
-    cache: cache,
+    // cache: cache,
     module: {
       loaders: styleLoaders.concat([
         { test: /\.html$/, loader: 'html' },

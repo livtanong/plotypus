@@ -1,0 +1,86 @@
+<!DOCTYPE html><html data-reactid=".vmaqtjhce8" data-react-checksum="-1533088449"><head data-reactid=".vmaqtjhce8.0"><title data-reactid=".vmaqtjhce8.0.0">Plotypus Documentation</title><link href="http://fonts.googleapis.com/css?family=Roboto:300,700,400" rel="stylesheet" type="text/css" data-reactid=".vmaqtjhce8.0.1"><link href="/bundle.css" rel="stylesheet" type="text/css" data-reactid=".vmaqtjhce8.0.2"></head><body data-reactid=".vmaqtjhce8.1"><main data-reactid=".vmaqtjhce8.1.0"><header class="toolbar" data-reactid=".vmaqtjhce8.1.0.0"><a id="brand" class=" active" href="/" data-reactid=".vmaqtjhce8.1.0.0.0"><h1 data-reactid=".vmaqtjhce8.1.0.0.0.0"><span data-reactid=".vmaqtjhce8.1.0.0.0.0.0">Plotypus </span><small data-reactid=".vmaqtjhce8.1.0.0.0.0.1">v0.0.32</small></h1></a><div class="spacer" data-reactid=".vmaqtjhce8.1.0.0.1"></div><div class="toolbar-group" data-reactid=".vmaqtjhce8.1.0.0.2"><a class="toolbar-item" href="/" data-reactid=".vmaqtjhce8.1.0.0.2.0">Home</a><a class="toolbar-item active" href="/guide" data-reactid=".vmaqtjhce8.1.0.0.2.1">Guide</a><a class="toolbar-item" href="https://github.com/levitanong/plotypus" data-reactid=".vmaqtjhce8.1.0.0.2.2">Github</a></div></header><div class="Guide split-pane" data-reactid=".vmaqtjhce8.1.0.1"><div class="sidebar table-of-contents" data-reactid=".vmaqtjhce8.1.0.1.0"><div data-reactid=".vmaqtjhce8.1.0.1.0.0"><h4 data-reactid=".vmaqtjhce8.1.0.1.0.0.0"><a class="" href="/guide/structure" data-reactid=".vmaqtjhce8.1.0.1.0.0.0.0">Structure</a></h4><ul data-reactid=".vmaqtjhce8.1.0.1.0.0.1"><li data-reactid=".vmaqtjhce8.1.0.1.0.0.1.0"><a data-reactid=".vmaqtjhce8.1.0.1.0.0.1.0.0">Plots and Layers</a></li><li data-reactid=".vmaqtjhce8.1.0.1.0.0.1.1"><a data-reactid=".vmaqtjhce8.1.0.1.0.0.1.1.0">Composition</a></li></ul></div><div data-reactid=".vmaqtjhce8.1.0.1.0.1"><h4 data-reactid=".vmaqtjhce8.1.0.1.0.1.0"><a class="" href="/guide/data" data-reactid=".vmaqtjhce8.1.0.1.0.1.0.0">Data</a></h4><ul data-reactid=".vmaqtjhce8.1.0.1.0.1.1"><li data-reactid=".vmaqtjhce8.1.0.1.0.1.1.0"><a data-reactid=".vmaqtjhce8.1.0.1.0.1.1.0.0">Format</a></li><li data-reactid=".vmaqtjhce8.1.0.1.0.1.1.1"><a data-reactid=".vmaqtjhce8.1.0.1.0.1.1.1.0">Arbitrary Keys</a></li></ul></div><div data-reactid=".vmaqtjhce8.1.0.1.0.2"><h4 data-reactid=".vmaqtjhce8.1.0.1.0.2.0"><a class=" active" href="/guide/sample" data-reactid=".vmaqtjhce8.1.0.1.0.2.0.0">Samples</a></h4><ul data-reactid=".vmaqtjhce8.1.0.1.0.2.1"><li data-reactid=".vmaqtjhce8.1.0.1.0.2.1.0"><a data-reactid=".vmaqtjhce8.1.0.1.0.2.1.0.0">Scatter Layer Samples</a></li><li data-reactid=".vmaqtjhce8.1.0.1.0.2.1.1"><a data-reactid=".vmaqtjhce8.1.0.1.0.2.1.1.0">Multiple Plots</a></li></ul></div></div><div class="main" data-reactid=".vmaqtjhce8.1.0.1.1"><article id="Samples" data-reactid=".vmaqtjhce8.1.0.1.1.0"><section data-reactid=".vmaqtjhce8.1.0.1.1.0.0"><h1 data-reactid=".vmaqtjhce8.1.0.1.1.0.0.0">Samples</h1><p data-reactid=".vmaqtjhce8.1.0.1.1.0.0.1">Here I&#x27;ll be showing a few use cases—-some sensible, others absurdly extreme.</p></section><section id="ScatterLayerSamples" data-reactid=".vmaqtjhce8.1.0.1.1.0.1"><h2 data-reactid=".vmaqtjhce8.1.0.1.1.0.1.0">Scatter Layer</h2><svg class="Plot" data-reactid=".vmaqtjhce8.1.0.1.1.0.1.1"><g class="render-area" data-reactid=".vmaqtjhce8.1.0.1.1.0.1.1.0"><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.1.1.0.0"></svg><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.1.1.0.1"></svg><svg class="ScatterLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.1.1.0.2"></svg></g></svg><pre data-reactid=".vmaqtjhce8.1.0.1.1.0.1.2">
+<code data-reactid=".vmaqtjhce8.1.0.1.1.0.1.2.0">&lt;Plot&gt;
+  &lt;GridLayer orientation=&quot;v&quot; max={9} /&gt;
+  &lt;GridLayer orientation=&quot;h&quot; max={8} /&gt;
+  &lt;ScatterLayer
+    xMax={ 8 }
+    yMax={ 9 }
+    data={ data } /&gt;
+&lt;/Plot&gt;</code></pre></section><section id="MultiplePlots" data-reactid=".vmaqtjhce8.1.0.1.1.0.2"><h2 data-reactid=".vmaqtjhce8.1.0.1.1.0.2.0">Multiple Plots</h2><p data-reactid=".vmaqtjhce8.1.0.1.1.0.2.1">This will be one of the most complex charts you&#x27;ll see on the Plotypus docs. Shown below are three plots showing three different planes of a three-dimensional plot. It will be as if you were looking at the top, front, and right sides of an aquarium, looking at fish, frozen in time.</p><div class="Plotypus" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2"><div class="PlotypusRow" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.0"><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.0.0"><h4 data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.0.0.0">XY Axis</h4></div><div class="null" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.0.1"></div><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.0.2"><h4 data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.0.2.0">YZ Axis</h4></div></div><div class="PlotypusRow" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1"><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.0"><svg class="Plot" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.0.0"><g class="render-area" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.0.0.0"><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.0.0.0.0"></svg><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.0.0.0.1"></svg><svg class="ScatterLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.0.0.0.2"></svg></g></svg></div><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.1"><svg class="Axis NumberAxis v" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.1.0"></svg></div><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.2"><svg class="Plot" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.2.0"><g class="render-area" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.2.0.0"><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.2.0.0.0"></svg><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.2.0.0.1"></svg><svg class="ScatterLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.1.2.0.0.2"></svg></g></svg></div></div><div class="PlotypusRow" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.2"><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.2.0"><svg class="Axis NumberAxis h" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.2.0.0"></svg></div><div class="null" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.2.1"></div><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.2.2"><svg class="Axis NumberAxis h" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.2.2.0"></svg></div></div><div class="PlotypusRow" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.3"><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.3.0"><h4 data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.3.0.0">XZ Axis</h4></div><div class="null" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.3.1"></div><div class="null" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.3.2"></div></div><div class="PlotypusRow" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4"><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.0"><svg class="Plot" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.0.0"><g class="render-area" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.0.0.0"><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.0.0.0.0"></svg><svg class="GridLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.0.0.0.1"></svg><svg class="ScatterLayer" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.0.0.0.2"></svg></g></svg></div><div class="PlotypusComponent" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.1"><svg class="Axis NumberAxis v" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.1.0"></svg></div><div class="null" data-reactid=".vmaqtjhce8.1.0.1.1.0.2.2.4.2"></div></div></div><pre data-reactid=".vmaqtjhce8.1.0.1.1.0.2.3">
+<code data-reactid=".vmaqtjhce8.1.0.1.1.0.2.3.0">&lt;Plotypus&gt;
+  &lt;PlotypusRow&gt;
+    &lt;PlotypusComponent&gt;
+      &lt;h4&gt;XY Axis&lt;/h4&gt;
+    &lt;/PlotypusComponent&gt;
+    &lt;Null /&gt;
+    &lt;PlotypusComponent&gt;
+      &lt;h4&gt;YZ Axis&lt;/h4&gt;
+    &lt;/PlotypusComponent&gt;
+  &lt;/PlotypusRow&gt;
+  &lt;PlotypusRow&gt;
+    &lt;PlotypusComponent&gt;
+      &lt;Plot&gt;
+        &lt;GridLayer orientation=&quot;h&quot; max={8} /&gt;
+        &lt;GridLayer orientation=&quot;v&quot; max={8} /&gt;
+        &lt;ScatterLayer
+          ref=&quot;xy&quot;
+          xMax={ 8 }
+          yMax={ 8 }
+          xField=&quot;x&quot;
+          yField=&quot;y&quot;
+          onMouseoverDot={ this.mouseoverDot }
+          drawFunc={ this.drawFunc.bind(this, &quot;z&quot;) }
+          data={ data } /&gt;
+      &lt;/Plot&gt;
+    &lt;/PlotypusComponent&gt;
+    &lt;PlotypusComponent&gt;&lt;NumberAxis max={ 8 }/&gt;&lt;/PlotypusComponent&gt;
+    &lt;PlotypusComponent&gt;
+      &lt;Plot&gt;
+        &lt;GridLayer orientation=&quot;h&quot; max={8} /&gt;
+        &lt;GridLayer orientation=&quot;v&quot; max={8} /&gt;
+        &lt;ScatterLayer
+          ref=&quot;yz&quot;
+          xMax={ 8 }
+          yMax={ 8 }
+          xField=&quot;z&quot;
+          yField=&quot;y&quot;
+          onMouseoverDot={ this.mouseoverDot }
+          drawFunc={ this.drawFunc.bind(this, &quot;x&quot;) }
+          data={ data } /&gt;
+      &lt;/Plot&gt;
+    &lt;/PlotypusComponent&gt;
+  &lt;/PlotypusRow&gt;
+  &lt;PlotypusRow&gt;
+    &lt;PlotypusComponent&gt;&lt;NumberAxis orientation=&quot;h&quot; max={ 8 }/&gt;&lt;/PlotypusComponent&gt;
+    &lt;Null /&gt;
+    &lt;PlotypusComponent&gt;
+      &lt;NumberAxis orientation=&quot;h&quot; max={ 8 }/&gt;
+    &lt;/PlotypusComponent&gt;
+  &lt;/PlotypusRow&gt;
+  &lt;PlotypusRow&gt;
+    &lt;PlotypusComponent&gt;
+      &lt;h4&gt;XZ Axis&lt;/h4&gt;
+    &lt;/PlotypusComponent&gt;
+    &lt;Null /&gt;
+    &lt;Null /&gt;
+  &lt;/PlotypusRow&gt;
+  &lt;PlotypusRow&gt;
+    &lt;PlotypusComponent&gt;
+      &lt;Plot&gt;
+        &lt;GridLayer orientation=&quot;h&quot; max={8} /&gt;
+        &lt;GridLayer orientation=&quot;v&quot; max={8} /&gt;
+        &lt;ScatterLayer
+          ref=&quot;xz&quot;
+          xMax={ 8 }
+          yMax={ 8 }
+          xField=&quot;x&quot;
+          yField=&quot;z&quot;
+          onMouseoverDot={ this.mouseoverDot }
+          drawFunc={ this.drawFunc.bind(this, &quot;y&quot;) }
+          data={ data } /&gt;
+      &lt;/Plot&gt;
+    &lt;/PlotypusComponent&gt;
+    &lt;PlotypusComponent&gt;&lt;NumberAxis max={ 8 }/&gt;&lt;/PlotypusComponent&gt;
+    &lt;Null /&gt;
+  &lt;/PlotypusRow&gt;
+&lt;/Plotypus&gt;</code></pre></section></article></div></div></main><script src="/docs.js" data-reactid=".vmaqtjhce8.1.1"></script></body></html>
