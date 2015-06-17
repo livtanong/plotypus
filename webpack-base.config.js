@@ -43,18 +43,16 @@ var baseConfig = function(options) {
   // }));
 
   var cssPlugin = new ExtractTextPlugin("bundle.css");
-  var entry = {docs: path.resolve(__dirname, "docs/js/entry.jsx")};
-  var externals = {};
+  var entry = path.resolve(__dirname, "docs/js/entry.jsx");
   // var cache = true;
   var output = {
     path: path.resolve(__dirname, "build"),
     publicPath: '/', // formerly /build/
-    filename: '[name].js',
-    libraryTarget: "commonjs2"
+    filename: 'docs.js',
+    libraryTarget: "umd"
   }
 
   if (options.docs) {
-    // output.publicPath = "./build/";
     plugins.push(
       cssPlugin
       // new webpack.optimize.UglifyJsPlugin({
@@ -72,10 +70,10 @@ var baseConfig = function(options) {
 
   var routePaths = [
     "/",
-    "/guide",
-    "/guide/data",
-    "/guide/sample",
-    "/guide/structure"
+    "/guide/",
+    "/guide/data/",
+    "/guide/sample/",
+    "/guide/structure/"
   ]
   
   // output.libraryTarget = "umd";
@@ -87,10 +85,6 @@ var baseConfig = function(options) {
     output.path = "lib";
     output.publicPath = "./lib/";
     output.libraryTarget = "commonjs2";
-    // cache = false;
-    externals = {
-      "react": "react"
-    }
     cssPlugin = new ExtractTextPlugin("Plotypus.css");
     plugins.push(cssPlugin);
   }
@@ -106,7 +100,9 @@ var baseConfig = function(options) {
       extensions: ['', '.js', '.jsx']
     },
     plugins: plugins,
-    externals: externals,
+    externals: (options.lib 
+      ? {"react": "react"} 
+      : {}),
     // cache: cache,
     module: {
       loaders: styleLoaders.concat([

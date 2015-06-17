@@ -23,7 +23,7 @@ class DataFormat extends React.Component {
     return (
       <section id="DataFormat">
         <h2>Format</h2>
-        <p>All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the <em>number</em> of keys needed for the datapoints change depending on the plot. For now, let's look at <code>GroupedBarLayer</code></p>
+        <p>All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the <em>number</em> of keys needed for the datapoints change depending on the plot. For now, let’s look at <code>GroupedBarLayer</code></p>
         <p><code>GroupedBarLayer</code> requires the following keys: <code>series, category, value</code>. If you only have one series, you can leave it blank.</p>
         <Highlight>
 {
@@ -101,7 +101,7 @@ export default class DataGuide extends React.Component {
         <section>
           <h1>Data</h1>
           <p>There are a number of things to consider when supplying Plotypus <code>Plot</code> layers data.</p>
-          <p>Plotypus likes thinking about data as a set of points in n-dimensional space. <em>Whoa, n-dimensional space? How did we get here?</em> Relax, young padawan. It isn't as complicated as it sounds.</p>
+          <p>Plotypus likes thinking about data as a set of points in n-dimensional space. <em>Whoa, n-dimensional space? How did we get here?</em> Relax, young padawan. It isn’t as complicated as it sounds.</p>
         </section>
         <DataFormat />
         <ArbitraryKeys />

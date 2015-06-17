@@ -1,5 +1,14 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define(factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -91,10 +100,10 @@ module.exports =
 		{ name: "index", path: "/", handler: _Wrapper2["default"] },
 		_react2["default"].createElement(
 			_reactRouter.Route,
-			{ name: "guide", path: "/guide", handler: _PagesGuide2["default"] },
-			_react2["default"].createElement(_reactRouter.Route, { name: "structureGuide", path: "/guide/structure", handler: _PagesStructureGuide2["default"] }),
-			_react2["default"].createElement(_reactRouter.Route, { name: "dataGuide", path: "/guide/data", handler: _PagesDataGuide2["default"] }),
-			_react2["default"].createElement(_reactRouter.Route, { name: "sampleGuide", path: "/guide/sample", handler: _PagesSampleGuide2["default"] }),
+			{ name: "guide", path: "/guide/", handler: _PagesGuide2["default"] },
+			_react2["default"].createElement(_reactRouter.Route, { name: "structureGuide", path: "/guide/structure/", handler: _PagesStructureGuide2["default"] }),
+			_react2["default"].createElement(_reactRouter.Route, { name: "dataGuide", path: "/guide/data/", handler: _PagesDataGuide2["default"] }),
+			_react2["default"].createElement(_reactRouter.Route, { name: "sampleGuide", path: "/guide/sample/", handler: _PagesSampleGuide2["default"] }),
 			_react2["default"].createElement(_reactRouter.DefaultRoute, { handler: _PagesStructureGuide2["default"] })
 		),
 		_react2["default"].createElement(_reactRouter.DefaultRoute, { name: "home", handler: _Index2["default"] })
@@ -52364,7 +52373,7 @@ module.exports =
 	            null,
 	            "number"
 	          ),
-	          " of keys needed for the datapoints change depending on the plot. For now, let's look at ",
+	          " of keys needed for the datapoints change depending on the plot. For now, let’s look at ",
 	          _react2["default"].createElement(
 	            "code",
 	            null,
@@ -52567,7 +52576,7 @@ module.exports =
 	              null,
 	              "Whoa, n-dimensional space? How did we get here?"
 	            ),
-	            " Relax, young padawan. It isn't as complicated as it sounds."
+	            " Relax, young padawan. It isn’t as complicated as it sounds."
 	          )
 	        ),
 	        _react2["default"].createElement(DataFormat, null),
@@ -52912,4 +52921,6 @@ module.exports =
 	// element.setAttribute("r", 4 + datapoint[depthAxis] * 0.5);
 
 /***/ }
-/******/ ]);
+/******/ ])
+});
+;
