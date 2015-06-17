@@ -9,16 +9,16 @@ var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 var baseConfig = function(options) {
 
   var plugins = [];
-  var pageLoaders = [
-    {
-      include: [
-        path.resolve(__dirname, "docs/js/Pages")
-      ],
-      // test: path.resolve(__dirname, "docs/js/Pages"),
-      loader: "react-router-proxy!babel-loader"
-    }
-  ]
-  // var pageLoaders = [];
+  // var pageLoaders = [
+  //   {
+  //     include: [
+  //       path.resolve(__dirname, "docs/js/Pages")
+  //     ],
+  //     // test: path.resolve(__dirname, "docs/js/Pages"),
+  //     loader: "react-router-proxy!babel-loader"
+  //   }
+  // ]
+  var pageLoaders = [];
   var styleLoaders = [
     { test: /\.css$/, loader: "css" },
     { test: /\.s(a|c)ss$/, loader: "css!sass?includePaths[]="+bourbon }
@@ -47,14 +47,14 @@ var baseConfig = function(options) {
   var externals = {};
   // var cache = true;
   var output = {
-    path: 'build',
-    publicPath: '/build/',
+    path: path.resolve(__dirname, "build"),
+    publicPath: '/', // formerly /build/
     filename: '[name].js',
+    libraryTarget: "commonjs2"
   }
 
   if (options.docs) {
-    output.publicPath = "./build/"
-    output.libraryTarget = "var";
+    // output.publicPath = "./build/";
     plugins.push(
       cssPlugin
       // new webpack.optimize.UglifyJsPlugin({
@@ -70,22 +70,17 @@ var baseConfig = function(options) {
     );
   }
 
-  if (options.prerender) {
-    var routePaths = [
-      "/",
-      "/guide",
-      "/guide/data",
-      "/guide/sample",
-      "/guide/structure"
-    ]
-    output.path = path.resolve(__dirname, "build");
-    output.publicPath = "/";
-    pageLoaders = [];
-    output.libraryTarget = "commonjs2";
-    // output.libraryTarget = "umd";
+  var routePaths = [
+    "/",
+    "/guide",
+    "/guide/data",
+    "/guide/sample",
+    "/guide/structure"
+  ]
+  
+  // output.libraryTarget = "umd";
 
-    plugins.push(new StaticSiteGeneratorPlugin("docs.js", routePaths));    
-  }
+  plugins.push(new StaticSiteGeneratorPlugin("docs.js", routePaths));    
 
   if (options.lib) {
     entry = {PlotypusStyle: path.resolve(__dirname, "docs/js/IAmSorry.jsx")};
