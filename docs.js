@@ -101,9 +101,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		_react2["default"].createElement(
 			_reactRouter.Route,
 			{ name: "guide", path: "guide/", handler: _PagesGuide2["default"] },
-			_react2["default"].createElement(_reactRouter.Route, { name: "structureGuide", path: "guide/structure/", handler: _PagesStructureGuide2["default"] }),
-			_react2["default"].createElement(_reactRouter.Route, { name: "dataGuide", path: "guide/data/", handler: _PagesDataGuide2["default"] }),
-			_react2["default"].createElement(_reactRouter.Route, { name: "sampleGuide", path: "guide/sample/", handler: _PagesSampleGuide2["default"] }),
+			_react2["default"].createElement(_reactRouter.Route, { name: "structureGuide", path: "structure/", handler: _PagesStructureGuide2["default"] }),
+			_react2["default"].createElement(_reactRouter.Route, { name: "dataGuide", path: "data/", handler: _PagesDataGuide2["default"] }),
+			_react2["default"].createElement(_reactRouter.Route, { name: "sampleGuide", path: "sample/", handler: _PagesSampleGuide2["default"] }),
 			_react2["default"].createElement(_reactRouter.DefaultRoute, { handler: _PagesStructureGuide2["default"] })
 		),
 		_react2["default"].createElement(_reactRouter.DefaultRoute, { name: "home", handler: _Index2["default"] })
