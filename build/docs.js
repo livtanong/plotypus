@@ -40943,6 +40943,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _createClass(DataFormat, [{
 	    key: "render",
 	    value: function render() {
+
+	      var demo1 = _react2["default"].createElement(
+	        _srcJsPlotypusJsx.Plot,
+	        null,
+	        _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, { orientation: "v", max: 9 }),
+	        _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	          max: 9,
+	          groupOffset: 1.3,
+	          data: _DataStore.data })
+	      );
+
+	      var demoString1 = "<Plot>\n  <GridLayer orientation=\"v\" max={9} />\n  <GroupedBarLayer \n    max={ 9 }\n    groupOffset={ 1.3 }\n    data={ data }/>\n</Plot>";
+
+	      var demoString2 = "Everything\n" + JSON.stringify(_DataStore.data) + "\n\nThird series (colored yellow)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
+	        return d.series === "c";
+	      })) + "\n\nFourth Category (note zero indexed. so category is 3)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
+	        return d.category === 3;
+	      }));
+
 	      return _react2["default"].createElement(
 	        "section",
 	        { id: "DataFormat" },
@@ -40986,25 +41005,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _react2["default"].createElement(
 	          _reactPrism.PrismCode,
 	          { className: "code-block language-javascript" },
-	          "Everything\n" + JSON.stringify(_DataStore.data) + "\n\nThird series (colored yellow)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
-	            return d.series === "c";
-	          })) + "\n\nFourth Category (note zero indexed. so category is 3)\n" + JSON.stringify(_DataStore.data.filter(function (d) {
-	            return d.category === 3;
-	          }))
+	          demoString2
 	        ),
-	        _react2["default"].createElement(
-	          _srcJsPlotypusJsx.Plot,
-	          null,
-	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, { orientation: "v", max: 9 }),
-	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
-	            max: 9,
-	            groupOffset: 1.3,
-	            data: _DataStore.data })
-	        ),
+	        demo1,
 	        _react2["default"].createElement(
 	          _reactPrism.PrismCode,
 	          { className: "code-block language-jsx" },
-	          "<Plot>\n  <GridLayer orientation=\"v\" max={9} />\n  <GroupedBarLayer \n    max={ 9 }\n    groupOffset={ 1.3 /* basically the spacing between series */}\n    data={ data /* data I'm generating. */}/>\n</Plot>"
+	          demoString1
 	        )
 	      );
 	    }
@@ -41027,6 +41034,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _createClass(ArbitraryKeys, [{
 	    key: "render",
 	    value: function render() {
+	      var demo1 = _react2["default"].createElement(
+	        _srcJsPlotypusJsx.Plot,
+	        null,
+	        _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, { orientation: "v", max: 9 }),
+	        _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
+	          max: 9,
+	          seriesField: "category",
+	          categoryField: "series",
+	          groupOffset: 1.3,
+	          data: _DataStore.data })
+	      );
+
+	      var demoString1 = "<Plot>\n  <GridLayer orientation=\"v\" max={9} />\n  <GroupedBarLayer \n    max={ 9 }\n    seriesField=\"category\"\n    categoryField=\"series\"\n    groupOffset={ 1.3 }\n    data={ data }/>\n</Plot>";
+
 	      return _react2["default"].createElement(
 	        "section",
 	        { id: "ArbitraryKeys" },
@@ -41090,21 +41111,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	          ),
 	          "."
 	        ),
-	        _react2["default"].createElement(
-	          _srcJsPlotypusJsx.Plot,
-	          null,
-	          _react2["default"].createElement(_srcJsPlotypusJsx.GridLayer, { orientation: "v", max: 9 }),
-	          _react2["default"].createElement(_srcJsPlotypusJsx.GroupedBarLayer, {
-	            max: 9,
-	            seriesField: "category",
-	            categoryField: "series",
-	            groupOffset: 1.3,
-	            data: _DataStore.data })
-	        ),
+	        demo1,
 	        _react2["default"].createElement(
 	          _reactPrism.PrismCode,
 	          { className: "code-block language-jsx" },
-	          "<Plot>\n  <GridLayer orientation=\"v\" max={9} />\n  <GroupedBarLayer \n    max={ 9 }\n    seriesField=\"category\"\n    categoryField=\"series\"\n    groupOffset={ 1.3 /* basically the spacing between series */}\n    data={ data /* data I'm generating. */}/>\n</Plot>"
+	          demoString1
 	        ),
 	        _react2["default"].createElement(
 	          "p",
@@ -41177,7 +41188,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports["default"] = DataGuide;
 	module.exports = exports["default"];
-	/* basically the spacing between series */ /* data I'm generating. */ /* basically the spacing between series */ /* data I'm generating. */
 
 /***/ },
 /* 270 */
