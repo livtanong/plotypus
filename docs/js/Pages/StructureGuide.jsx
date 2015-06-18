@@ -1,5 +1,5 @@
 import React from "react";
-import Highlight from "../Highlight.jsx";
+import {PrismCode} from "react-prism";
 import {
   Plotypus, 
   PlotypusRow, 
@@ -29,28 +29,28 @@ class PlotsAndLayers extends React.Component {
           <GridLayer orientation="v" max={9} />
           <GroupedBarLayer 
             max={ 9 }
-            data={ singleSeries /* data I'm generating. */}/>
+            data={ singleSeries }/>
           <FuncLayer
             xMax={ 8 }
             yMax={ 9 }
-            func={ sineFunc /* the sine wave on which sineData is based */}
+            func={ sineFunc }
             samples={ 64 }/>
         </Plot>
-        <Highlight className="solarized_light">
+        <PrismCode className="code-block language-jsx">
 {
 `<Plot>
   <GridLayer orientation="v" max={9} />
   <GroupedBarLayer 
     max={ 9 }
-    data={ singleSeries /* data I'm generating. */}/>
+    data={ singleSeries }/>
   <FuncLayer
     xMax={ 8 }
     yMax={ 9 }
-    func={ sineFunc /* the sine wave on which sineData is based */}
+    func={ sineFunc }
     samples={ 64 }/>
 </Plot>`
 }
-        </Highlight>
+        </PrismCode>
       </section>
     )
   }
@@ -64,7 +64,7 @@ class Composition extends React.Component {
         <h2>Composition</h2>
         <p>Composition with Plotypus is easy. All Plotypus charts can be laid out in a tabular manner: that is, you define a table, then the rows, then the cells.</p>
         <p>The Plotypus components that correspond to this structure are as follows: <code>Plotypus</code>(table), <code>PlotypusRow</code>(row), <code>PlotypusComponent</code>(cell).</p>
-        <Highlight className="solarized_light">
+        <PrismCode className="code-block language-jsx">
 { 
 `<Plotypus>
   <PlotypusRow>
@@ -78,7 +78,7 @@ class Composition extends React.Component {
   </PlotypusRow>
 </Plotypus>` 
 }
-        </Highlight>
+        </PrismCode>
 
         <p>This makes it easy to combine any of the Plotypus components and align them properly. You can have as many <code>Plot</code>, <code>Axis</code>, and other components aligned together as you like.</p>
         <p>Now let's take the Plot from the previous section, place it in the tabular structure and then add axes.</p>
@@ -115,7 +115,7 @@ class Composition extends React.Component {
 
           </PlotypusRow>
         </Plotypus>
-        <Highlight className="solarized_light">
+        <PrismCode className="code-block language-jsx">
 {
 `<Plotypus>
   <PlotypusRow>
@@ -151,7 +151,7 @@ class Composition extends React.Component {
   </PlotypusRow>
 </Plotypus>`
 }
-        </Highlight>
+        </PrismCode>
 
       </section>
     )

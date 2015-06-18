@@ -1,6 +1,5 @@
 import React from "react";
 import Router, {DefaultRoute, Link, Route, RouteHandler} from "react-router";
-import Highlight from "../Highlight";
 
 export default class Guide extends React.Component {
   render() {

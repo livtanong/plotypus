@@ -30,6 +30,11 @@ ul {
 
 code {
 	background-color: $light;
+	&.code-block {
+		display: block;
+		width: 100%;
+		overflow: auto;
+	}
 }
 
 #brand {

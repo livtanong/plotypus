@@ -8,17 +8,17 @@ var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 var baseConfig = function(options) {
 
-  var plugins = [];
+  var plugins = [
+    new ExtractTextPlugin("bundle.css") // cssPlugin
+  ];
   // var pageLoaders = [
   //   {
-  //     include: [
-  //       path.resolve(__dirname, "docs/js/Pages")
-  //     ],
+  //     test: path.resolve(__dirname, "docs/js/Pages"),
   //     // test: path.resolve(__dirname, "docs/js/Pages"),
   //     loader: "react-router-proxy!babel-loader"
   //   }
   // ]
-  var pageLoaders = [];
+  // var pageLoaders = [];
   var styleLoaders = [
     { test: /\.css$/, loader: "css" },
     { test: /\.s(a|c)ss$/, loader: "css!sass?includePaths[]="+bourbon }
@@ -29,20 +29,21 @@ var baseConfig = function(options) {
       item.loader = item.loader.join("!");
     }
 
-    if(options.docs || options.lib) {
-      item.loader = ExtractTextPlugin.extract('style-loader', item.loader);
-    } /*else if (options.prerender) {
-      item.loader = 'null';
-    }*/ else {
-      item.loader = 'style!'+item.loader;
-    }
+    item.loader = ExtractTextPlugin.extract('style-loader', item.loader);
+
+    // if(options.docs || options.lib) {
+    //   item.loader = ExtractTextPlugin.extract('style-loader', item.loader);
+    // } else if (options.prerender) {
+    //   item.loader = 'null';
+    // } else {
+    //   item.loader = 'style!'+item.loader;
+    // }
   });
 
   // plugins.push(new webpack.DefinePlugin({
   //   "__production": options.production,
   // }));
 
-  var cssPlugin = new ExtractTextPlugin("bundle.css");
   var entry = path.resolve(__dirname, "docs/js/entry.jsx");
   // var cache = true;
   var output = {
@@ -52,9 +53,22 @@ var baseConfig = function(options) {
     libraryTarget: "umd"
   }
 
-  if (options.docs) {
+  if (options.lib) {
+    entry = {PlotypusStyle: path.resolve(__dirname, "docs/js/IAmSorry.jsx")};
+    output.path = "lib";
+    output.publicPath = "./lib/";
+    output.libraryTarget = "umd";
+    cssPlugin = new ExtractTextPlugin("Plotypus.css");
+  } else {
+    var routePaths = [
+      "/",
+      "/guide/",
+      "/guide/data/",
+      "/guide/sample/",
+      "/guide/structure/"
+    ]
+
     plugins.push(
-      cssPlugin
       // new webpack.optimize.UglifyJsPlugin({
       //   compress: {
       //     warnings: false
@@ -64,46 +78,22 @@ var baseConfig = function(options) {
       //   "process.env": {
       //     NODE_ENV: JSON.stringify("production")
       //   }
-      // })
+      // }),
+      new StaticSiteGeneratorPlugin("docs.js", routePaths)
     );
   }
 
-  var routePaths = [
-    "/",
-    "/guide/",
-    "/guide/data/",
-    "/guide/sample/",
-    "/guide/structure/"
-  ]
-  
-  // output.libraryTarget = "umd";
-
-  plugins.push(new StaticSiteGeneratorPlugin("docs.js", routePaths));    
-
-  if (options.lib) {
-    entry = {PlotypusStyle: path.resolve(__dirname, "docs/js/IAmSorry.jsx")};
-    output.path = "lib";
-    output.publicPath = "./lib/";
-    output.libraryTarget = "commonjs2";
-    cssPlugin = new ExtractTextPlugin("Plotypus.css");
-    plugins.push(cssPlugin);
-  }
-
   return {
-    __extra: {
-      cssPlugin: cssPlugin
-    },
     entry: entry,
     output: output,
     resolve: {
-      alias: { lib: __dirname+'/js/lib' },
+      // alias: { lib: path.resolve(__dirname, '/js/lib') },
       extensions: ['', '.js', '.jsx']
     },
     plugins: plugins,
     externals: (options.lib 
       ? {"react": "react"} 
       : {}),
-    // cache: cache,
     module: {
       loaders: styleLoaders.concat([
         { test: /\.html$/, loader: 'html' },
@@ -116,7 +106,7 @@ var baseConfig = function(options) {
         { test: /\.png($|\?)/,    loader: "url?limit=10000&mimetype=image/png" },
         { test: /\.jpg($|\?)/,    loader: "url?limit=10000&mimetype=image/jpeg" },
         { test: /\.ico($|\?)/,    loader: "url?limit=10000&mimetype=image/x-icon" }
-      ]).concat(pageLoaders)
+      ])//.concat(pageLoaders)
     }
   }
 

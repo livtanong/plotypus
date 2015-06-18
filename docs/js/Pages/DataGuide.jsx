@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router";
 
-import Highlight from "../Highlight.jsx";
+import {PrismCode} from "react-prism";
 import {
   Plotypus, 
   PlotypusRow, 
@@ -23,9 +23,9 @@ class DataFormat extends React.Component {
     return (
       <section id="DataFormat">
         <h2>Format</h2>
-        <p>All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the <em>number</em> of keys needed for the datapoints change depending on the plot. For now, let’s look at <code>GroupedBarLayer</code></p>
+        <p>All plots require the data to be an array of objects (datapoints) with key-value pairs. The exact keys (or property names) and even the <em>number</em> of keys needed for the datapoints change depending on the plot. For now, let's look at <code>GroupedBarLayer</code></p>
         <p><code>GroupedBarLayer</code> requires the following keys: <code>series, category, value</code>. If you only have one series, you can leave it blank.</p>
-        <Highlight>
+        <PrismCode className="code-block language-javascript">
 {
 `Everything
 ${JSON.stringify(data)}
@@ -36,7 +36,7 @@ ${JSON.stringify(data.filter(d => d.series === 'c'))}
 Fourth Category (note zero indexed. so category is 3)
 ${JSON.stringify(data.filter(d => d.category === 3))}`
 }
-        </Highlight>
+        </PrismCode>
         <Plot>
           <GridLayer orientation="v" max={9} />
           <GroupedBarLayer 
@@ -44,7 +44,7 @@ ${JSON.stringify(data.filter(d => d.category === 3))}`
             groupOffset={ 1.3 /* basically the spacing between series */}
             data={ data /* data I'm generating. */}/>
         </Plot>
-        <Highlight>
+        <PrismCode className="code-block language-jsx">
 {`<Plot>
   <GridLayer orientation="v" max={9} />
   <GroupedBarLayer 
@@ -52,7 +52,7 @@ ${JSON.stringify(data.filter(d => d.category === 3))}`
     groupOffset={ 1.3 /* basically the spacing between series */}
     data={ data /* data I'm generating. */}/>
 </Plot>`}
-        </Highlight>
+        </PrismCode>
       </section>
     )
   }
@@ -75,7 +75,7 @@ class ArbitraryKeys extends React.Component {
             groupOffset={ 1.3 /* basically the spacing between series */}
             data={ data /* data I'm generating. */}/>
         </Plot>
-        <Highlight>
+        <PrismCode className="code-block language-jsx">
 {
 `<Plot>
   <GridLayer orientation="v" max={9} />
@@ -87,7 +87,7 @@ class ArbitraryKeys extends React.Component {
     data={ data /* data I'm generating. */}/>
 </Plot>`
 }
-        </Highlight>
+        </PrismCode>
         <p>The great thing about this system is you can share a single dataset with a large number of properties across multiple plots, and each plot can just define which of these properties to look at.</p>
       </section>
     )
@@ -101,7 +101,7 @@ export default class DataGuide extends React.Component {
         <section>
           <h1>Data</h1>
           <p>There are a number of things to consider when supplying Plotypus <code>Plot</code> layers data.</p>
-          <p>Plotypus likes thinking about data as a set of points in n-dimensional space. <em>Whoa, n-dimensional space? How did we get here?</em> Relax, young padawan. It isn’t as complicated as it sounds.</p>
+          <p>Plotypus likes thinking about data as a set of points in n-dimensional space. <em>Whoa, n-dimensional space? How did we get here?</em> Relax, young padawan. It isn't as complicated as it sounds.</p>
         </section>
         <DataFormat />
         <ArbitraryKeys />

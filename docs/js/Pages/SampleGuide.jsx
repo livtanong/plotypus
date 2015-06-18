@@ -1,5 +1,5 @@
 import React from "react";
-import Highlight from "../Highlight.jsx";
+import {PrismCode} from "react-prism";
 import {
   Plotypus, 
   PlotypusRow, 
@@ -33,7 +33,7 @@ class ScatterLayerSamples extends React.Component {
             yMax={ 9 }
             data={ data } />
         </Plot>
-        <Highlight>
+        <PrismCode className="code-block language-jsx">
 {
 `<Plot>
   <GridLayer orientation="v" max={9} />
@@ -44,7 +44,7 @@ class ScatterLayerSamples extends React.Component {
     data={ data } />
 </Plot>`  
 }
-        </Highlight>
+        </PrismCode>
       </section>
     )
   }
@@ -163,7 +163,7 @@ class MultiplePlots extends React.Component {
           </PlotypusRow>
         </Plotypus>
         
-        <Highlight>
+        <PrismCode className="code-block language-jsx">
 {
 `<Plotypus>
   <PlotypusRow>
@@ -243,7 +243,7 @@ class MultiplePlots extends React.Component {
   </PlotypusRow>
 </Plotypus>`  
 }
-        </Highlight>
+        </PrismCode>
       </section>
     )
   }

@@ -7,17 +7,9 @@ deps:
 	@npm install
 
 development: deps
-	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --progress --colors --hot --content-base ./docs --port 8081
-
-
-# cordova: clean index.html
-# 	./node_modules/.bin/webpack --config webpack-cordova.config.js
-# 	node inject-static-resources.js index.html build -c bundle.css -j cordova.js
-# 	cp -R data build
+	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --progress --colors --hot --content-base . --port 8081
 
 lib: deps
-	# ./node_modules/.bin/webpack --config webpack-prod.config.js
-	# ./node_modules/.bin/webpack --config webpack-docs.config.js
 	./node_modules/.bin/webpack --config webpack-lib.config.js
 	babel src --out-dir lib
 	rm lib/PlotypusStyle.js
@@ -28,7 +20,7 @@ docs: clean deps
 
 prerender: clean deps
 	./node_modules/.bin/webpack --progress --colors --config webpack-prerender.config.js
-	./node_modules/.bin/webpack --progress --colors --config webpack-docs.config.js
+	# ./node_modules/.bin/webpack --progress --colors --config webpack-docs.config.js
 	# node prerender.js
 
 deploy:
