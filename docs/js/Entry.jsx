@@ -12,9 +12,9 @@ import SampleGuide from "./Pages/SampleGuide";
 let Routes = (
 	<Route name="index" path="/" handler={ Wrapper }>
 		<Route name="guide" path="guide/" handler={ Guide }>
-			<Route name="structureGuide" path="guide/structure/" handler={ StructureGuide } />
-			<Route name="dataGuide" path="guide/data/" handler={ DataGuide } />
-			<Route name="sampleGuide" path="guide/sample/" handler={ SampleGuide } />
+			<Route name="structureGuide" path="structure/" handler={ StructureGuide } />
+			<Route name="dataGuide" path="data/" handler={ DataGuide } />
+			<Route name="sampleGuide" path="sample/" handler={ SampleGuide } />
 			<DefaultRoute handler={ StructureGuide } />
 		</Route>
 		<DefaultRoute name="home" handler={ Index }/>
