@@ -100,10 +100,10 @@ return /******/ (function(modules) { // webpackBootstrap
 		{ name: "index", path: "/", handler: _Wrapper2["default"] },
 		_react2["default"].createElement(
 			_reactRouter.Route,
-			{ name: "guide", path: "/guide/", handler: _PagesGuide2["default"] },
-			_react2["default"].createElement(_reactRouter.Route, { name: "structureGuide", path: "/guide/structure/", handler: _PagesStructureGuide2["default"] }),
-			_react2["default"].createElement(_reactRouter.Route, { name: "dataGuide", path: "/guide/data/", handler: _PagesDataGuide2["default"] }),
-			_react2["default"].createElement(_reactRouter.Route, { name: "sampleGuide", path: "/guide/sample/", handler: _PagesSampleGuide2["default"] }),
+			{ name: "guide", path: "guide/", handler: _PagesGuide2["default"] },
+			_react2["default"].createElement(_reactRouter.Route, { name: "structureGuide", path: "guide/structure/", handler: _PagesStructureGuide2["default"] }),
+			_react2["default"].createElement(_reactRouter.Route, { name: "dataGuide", path: "guide/data/", handler: _PagesDataGuide2["default"] }),
+			_react2["default"].createElement(_reactRouter.Route, { name: "sampleGuide", path: "guide/sample/", handler: _PagesSampleGuide2["default"] }),
 			_react2["default"].createElement(_reactRouter.DefaultRoute, { handler: _PagesStructureGuide2["default"] })
 		),
 		_react2["default"].createElement(_reactRouter.DefaultRoute, { name: "home", handler: _Index2["default"] })
@@ -119,34 +119,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		});
 	}
 
-	// <html>
-	// 	<head>
-	// 		<title>Plotypus Documentation</title>
-	// 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css' />
-	// 		<link href="build/bundle.css" rel='stylesheet' type='text/css' />
-	// 	</head>
-	// 	<body>
-	// 		<Toolbar />
-	// 		<RouteHandler />
-	// 		<script src="build/docs.js" />
-	// 	</body>
-	// </html>
-
 	function render(locals, callback) {
 		_reactRouter2["default"].run(Routes, locals.path, function (Handler) {
-			// let eh = (
-			// 	<html>
-			// 		<head>
-			// 			<title>Plotypus Documentation</title>
-			// 			<link href='http://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css' />
-			// 			<link href="build/bundle.css" rel='stylesheet' type='text/css' />
-			// 		</head>
-			// 		<body>
-			// 			<Handler />
-			// 			<script src="build/docs.js" />
-			// 		</body>
-			// 	</html>
-			// )
 			var html = _react2["default"].renderToString(_react2["default"].createElement(Handler, null));
 			callback(null, "<!DOCTYPE html>" + html);
 		});
