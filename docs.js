@@ -23884,6 +23884,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
 	var _scssDocsScss = __webpack_require__(205);
 
 	var _scssDocsScss2 = _interopRequireDefault(_scssDocsScss);
@@ -23942,10 +23944,16 @@ return /******/ (function(modules) { // webpackBootstrap
 					<RouteHandler />
 				</main>*/
 
-	var Wrapper = (function () {
+	var Wrapper = (function (_React$Component) {
 		function Wrapper() {
 			_classCallCheck(this, Wrapper);
+
+			if (_React$Component != null) {
+				_React$Component.apply(this, arguments);
+			}
 		}
+
+		_inherits(Wrapper, _React$Component);
 
 		_createClass(Wrapper, [{
 			key: "render",
@@ -23981,7 +23989,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}]);
 
 		return Wrapper;
-	})();
+	})(_react2["default"].Component);
 
 	exports["default"] = Wrapper;
 	module.exports = exports["default"];
