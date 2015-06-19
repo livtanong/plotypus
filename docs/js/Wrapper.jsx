@@ -29,7 +29,7 @@ import Prism from "./prism";
 				<RouteHandler />
 			</main>*/
 
-class Wrapper {
+class Wrapper extends React.Component {
 	render() {
 		return (
 			<html>

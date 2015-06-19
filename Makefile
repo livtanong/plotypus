@@ -7,7 +7,7 @@ deps:
 	@npm install
 
 development: deps
-	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --inline --progress --colors --hot --content-base . --port 8081
+	./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --config webpack-dev.config.js --progress --colors --content-base . --port 8081
 
 lib: deps
 	./node_modules/.bin/webpack --config webpack-lib.config.js
