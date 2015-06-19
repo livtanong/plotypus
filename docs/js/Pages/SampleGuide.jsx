@@ -255,7 +255,7 @@ export default class SampleGuide extends React.Component {
       <article id="Samples">
         <section>
           <h1>Samples</h1>
-          <p>Here I'll be showing a few use cases—-some sensible, others absurdly extreme.</p>
+          <p>Here I'll be showing a few use cases—some sensible, others absurdly extreme.</p>
         </section>
         <ScatterLayerSamples />
         <MultiplePlots />

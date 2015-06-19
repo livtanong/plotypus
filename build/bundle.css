@@ -327,7 +327,8 @@ code {
   code.code-block {
     display: block;
     width: 100%;
-    overflow: auto; }
+    overflow: auto;
+    margin: 16px 0px; }
 
 #brand {
   cursor: pointer; }

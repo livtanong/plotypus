@@ -194,7 +194,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                null,
 	                _react2["default"].createElement(
 	                  "a",
-	                  null,
+	                  { href: "#PlotsAndLayers" },
 	                  "Plots and Layers"
 	                )
 	              ),
@@ -203,7 +203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                null,
 	                _react2["default"].createElement(
 	                  "a",
-	                  null,
+	                  { href: "#Composition" },
 	                  "Composition"
 	                )
 	              )
