@@ -194,7 +194,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                null,
 	                _react2["default"].createElement(
 	                  "a",
-	                  { href: "#PlotsAndLayers" },
+	                  null,
 	                  "Plots and Layers"
 	                )
 	              ),
@@ -203,7 +203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                null,
 	                _react2["default"].createElement(
 	                  "a",
-	                  { href: "#Composition" },
+	                  null,
 	                  "Composition"
 	                )
 	              )
@@ -41498,7 +41498,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          _react2["default"].createElement(
 	            "p",
 	            null,
-	            "Here I'll be showing a few use cases—-some sensible, others absurdly extreme."
+	            "Here I'll be showing a few use cases—some sensible, others absurdly extreme."
 	          )
 	        ),
 	        _react2["default"].createElement(ScatterLayerSamples, null),
