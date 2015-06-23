@@ -98,7 +98,7 @@ class Composition extends React.Component {
                 <FuncLayer
                   xMax={ 8 }
                   yMax={ 9 }
-                  func={ sineFunc /* the sine wave on which sineData is based */}
+                  func={ sineFunc }
                   samples={ 64 }/>
               </Plot>
             </PlotypusComponent>
@@ -129,11 +129,11 @@ class Composition extends React.Component {
         <GridLayer orientation="v" max={9} />
         <GroupedBarLayer 
           max={ 9 }
-          data={ singleSeries /* data I'm generating. */}/>
+          data={ singleSeries }/>
         <FuncLayer
           xMax={ 8 }
           yMax={ 9 }
-          func={ sineFunc /* the sine wave on which sineData is based */}
+          func={ sineFunc }
           samples={ 64 }/>
       </Plot>
     </PlotypusComponent>

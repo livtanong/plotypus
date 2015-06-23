@@ -35,6 +35,7 @@ code {
 		width: 100%;
 		overflow: auto;
 		margin: 16px 0px;
+		box-sizing: border-box;
 	}
 }
 
@@ -88,6 +89,7 @@ code {
 	@include display(flex);
 	.sidebar {
 		min-width: 25%;
+		overflow-y: auto;
 		// background-color: $light;
 	}
 	.main {
