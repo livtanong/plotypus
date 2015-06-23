@@ -24487,7 +24487,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _react2["default"].createElement(
 	          _reactPrism.PrismCode,
 	          { className: "code-block language-jsx" },
-	          "<Plotypus>\n  <PlotypusRow>\n\n    <PlotypusComponent>\n      <NumberAxis orientation=\"v\" max={ 0.008 }/>\n    </PlotypusComponent>\n\n    <PlotypusComponent>\n      <Plot>\n        <GridLayer orientation=\"v\" max={9} />\n        <GroupedBarLayer \n          max={ 9 }\n          data={ singleSeries /* data I'm generating. */}/>\n        <FuncLayer\n          xMax={ 8 }\n          yMax={ 9 }\n          func={ sineFunc /* the sine wave on which sineData is based */}\n          samples={ 64 }/>\n      </Plot>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n  <PlotypusRow>\n    {/* The Null element simply occupies a space on the lower left corner of the tabular structure. \n    This makes sure that the axis element below is perfectly aligned with the Plot above. */}\n    <Null /> \n\n    <PlotypusComponent>\n      <CategoryAxis categories={[\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\"]} orientation=\"h\"/>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n</Plotypus>"
+	          "<Plotypus>\n  <PlotypusRow>\n\n    <PlotypusComponent>\n      <NumberAxis orientation=\"v\" max={ 0.008 }/>\n    </PlotypusComponent>\n\n    <PlotypusComponent>\n      <Plot>\n        <GridLayer orientation=\"v\" max={9} />\n        <GroupedBarLayer \n          max={ 9 }\n          data={ singleSeries }/>\n        <FuncLayer\n          xMax={ 8 }\n          yMax={ 9 }\n          func={ sineFunc }\n          samples={ 64 }/>\n      </Plot>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n  <PlotypusRow>\n    {/* The Null element simply occupies a space on the lower left corner of the tabular structure. \n    This makes sure that the axis element below is perfectly aligned with the Plot above. */}\n    <Null /> \n\n    <PlotypusComponent>\n      <CategoryAxis categories={[\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\"]} orientation=\"h\"/>\n    </PlotypusComponent>\n\n  </PlotypusRow>\n</Plotypus>"
 	        )
 	      );
 	    }
@@ -24579,8 +24579,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports["default"] = StructureGuide;
 	module.exports = exports["default"];
-	/* data I'm generating. */ /* the sine wave on which sineData is based */ /* The Null element simply occupies a space on the lower left corner of the tabular structure. 
-	                                                                          This makes sure that the axis element below is perfectly aligned with the Plot above. */
+	/* data I'm generating. */ /* The Null element simply occupies a space on the lower left corner of the tabular structure. 
+	                           This makes sure that the axis element below is perfectly aligned with the Plot above. */
 
 /***/ },
 /* 224 */

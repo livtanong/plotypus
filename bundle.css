@@ -328,7 +328,8 @@ code {
     display: block;
     width: 100%;
     overflow: auto;
-    margin: 16px 0px; }
+    margin: 16px 0px;
+    box-sizing: border-box; }
 
 #brand {
   cursor: pointer; }
@@ -425,7 +426,8 @@ code {
   display: -ms-flexbox;
   display: flex; }
   .split-pane .sidebar {
-    min-width: 25%; }
+    min-width: 25%;
+    overflow-y: auto; }
   .split-pane .main {
     overflow-y: auto; }
 
