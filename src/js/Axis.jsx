@@ -76,7 +76,7 @@ export class CategoryAxis extends React.Component {
 			textAlign: "middle"
 		};
 		this._chartLayer = undefined;
-		// this.updateChart = this.updateChart.bind(this);
+		this.updateChart = this.updateChart.bind(this);
 		this.refresh = _.debounce(this.updateChart, 100);
 		// this.render = this.render.bind(this);
 	}
