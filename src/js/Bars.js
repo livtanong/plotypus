@@ -12,8 +12,8 @@ class Bars extends SVGLayer {
 
 		var BarPlot = new CorePlot(
 			[
-				{name: categoryField, type: "DISCRETE", isPrincipal: true}, 
-				{name: seriesField, type: "DISCRETE"}, 
+				{name: categoryField, type: "DISCRETE", isPrincipal: true},
+				{name: seriesField, type: "DISCRETE"},
 				{name: valueField, type: "CONTINUOUS", isPrincipal: true}
 			],
 			data
@@ -72,7 +72,7 @@ export class GroupedBars extends Bars {
 //   	.sortBy(function(d, i){
 //   		return i;
 //   	})
-//     .map(function (values){ 
+//     .map(function (values){
 //     	return _.chain(values)
 //     		.sortBy(function(v){
 //     			return v[data.row]
@@ -105,7 +105,7 @@ export class StackedBars extends Bars {
 						height: Math.abs(datapoint[valueField]),
 						x: catIndex + 0.5 - (0.5 * barWidthFactor),
 						y: this.getPosition(datapoint[valueField], max, yOffset),
-						class: "Bar " + "series-" + (seriesIndex + 1)
+						class: "Bar " + "series-" + (datapoint[seriesField] + 1)
 					}
 
 					this.addSVGElement(this.content, "rect", attrs);
