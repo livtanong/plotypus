@@ -55,7 +55,7 @@ function AxisElements(domNode, ticks, align, orientation, onClickLabel){
 
 	this.renderTicks = function(){
 		// this.domNode.appendChild(this.content);
-		var axisWidth = this.domNode.offsetWidth;
+		var axisWidth = this.domNode.getBoundingClientRect().width;
 
 		var svgTicks = this.ticks.map(function(n, index) {
 			return {
