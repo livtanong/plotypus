@@ -96,7 +96,7 @@ function AxisElements(domNode, ticks, align, orientation, onClickLabel){
 					tick.parentNode.setAttribute("height", textWidth);
 					tick.parentNode.setAttribute("width", 20);
 				}, this);
-			} else {			
+			} else {
 				// 45 deg
 				ticks.forEach(function(tick, index){
 					tick.setAttribute("transform", "translate(10, 0) rotate(45)");
@@ -120,7 +120,7 @@ AxisElements.prototype = new SVGLayer();
 
 function AxisNumbers(domNode, max, min, interval, align, orientation, onUpdate){
 	this.getMinSizeFraction = function(){
-		let axisSize = domNode[{"h": "offsetWidth", "v": "offsetHeight"}[orientation]];
+		let axisSize = domNode.getBoundingClientRect()[{"h": "width", "v": "height"}[orientation]];
 		let minSize = {"h": 36, "v": 18}[orientation];
 		return minSize / axisSize;
 	};
@@ -140,8 +140,8 @@ function AxisNumbers(domNode, max, min, interval, align, orientation, onUpdate){
 			}
 			let ones = (guess=1, divisor=2) => {
 				// find the smallest member of the pattern (1, 0.5, 0.1, 0.05, 0.01...) greater than or equal to n
-				return (guess / divisor < floatInterval) 
-					? guess 
+				return (guess / divisor < floatInterval)
+					? guess
 					: ones(guess / divisor, (divisor === 2) ? 5 : 2);
 			}
 			if (floatInterval > 2.5) {
